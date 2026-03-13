@@ -6,7 +6,7 @@ Estrutura modular proposta:
 - `framework/stage1_1_document_type.py`: subetapa 1.1 (classificação por tipo já conhecido da extração).
 - `framework/stage1_2_preprocessing.py`: subetapa 1.2 (normalização de texto jurídico para classificação).
 - `framework/stage2_finetune.py`: etapa 2 (fine-tuning de BERT).
-- `framework/stage2_embeddings.py`: etapa 2 (embeddings BERT + modelos clássicos).
+- `framework/stage2_embeddings.py`: etapa 2 (usa BERT como encoder e classifica mérito penal com modelos clássicos, foco em `condenação`, `extinto` e `absolvição`).
 - `framework/stage5_ner.py`: etapa 5 (extração de entidades - NER).
 - `framework/cli.py`: interface única para execução etapa por etapa.
 
@@ -26,8 +26,8 @@ No diretório raiz do projeto:
 
 `python -m src.framework.cli stage1_2 --input files/output/dataset_filtered_by_type.csv --output-classification files/output/dataset_normalized.csv --output-ner files/output/dataset_normalized_for_ner.csv`
 
-`python -m src.framework.cli stage2-finetune --input files/datasets/dataset_normalizado.csv --output-dir files/results/stage2_finetune`
+`python -m src.framework.cli stage2-finetune --input files/output/dataset_normalized.csv --output-dir files/results/stage2_finetune`
 
-`python -m src.framework.cli stage2-embeddings --input files/datasets/dataset_normalizado.csv --output-dir files/results/stage2_embeddings`
+`python -m src.framework.cli stage2-embeddings --input files/output/dataset_normalized.csv --output-dir files/results/stage2_embeddings`
 
 `python -m src.framework.cli stage5 --input-json files/Documentos-Segmentados/resultado_anotacao_02.json --output-json files/NER/sentencas_com_entidades.json --output-csv files/NER/sentencas_com_entidades.csv`
