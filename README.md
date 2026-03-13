@@ -24,7 +24,7 @@ No diretório raiz do projeto:
 
 `python -m src.framework.cli stage1_1 --input files/datasets/dataset_completo.csv --output files/output/dataset_filtered_by_type.csv`
 
-`python -m src.framework.cli stage1_2 --input files/datasets/dataset_processos_filtrados_por_merito.csv --output files/datasets/dataset_normalizado.csv`
+`python -m src.framework.cli stage1_2 --input files/output/dataset_filtered_by_type.csv --output-classification files/output/dataset_normalized.csv --output-ner files/output/dataset_normalized_for_ner.csv`
 
 `python -m src.framework.cli stage2-finetune --input files/datasets/dataset_normalizado.csv --output-dir files/results/stage2_finetune`
 

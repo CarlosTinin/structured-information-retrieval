@@ -42,11 +42,18 @@ Acódãos serão descosiderados para a etapa de classificação de mérito penal
 No entanto, dentre os documentos de sentenças, podem haver aquelas com mérito penal, faz-se necessário aprofundar nessa discussão.
 Para fazer isso da melhor forma, seria necessário um **especialista analisar manualmente cada caso**, ou pelo menos um **conjunto de casos** que possam servir de treinamento para um **modelo transformer**.
 
-No código da pipeline, esta macro-etapa foi consolidada em duas subetapas sequenciais: **stage1_1** (classificação/normalização do tipo documental já conhecido na extração, como sentença, decisão, acórdão e despacho, com filtragem inicial de interesse) e **stage1_2** (pré-processamento textual dos documentos filtrados para alimentar os classificadores de mérito).
+No código da pipeline, esta macro-etapa foi consolidada em duas subetapas sequenciais: **stage1_1** (classificação/normalização do tipo documental já conhecido na extração, com filtragem final apenas de sentenças) e **stage1_2** (pré-processamento textual com duas saídas, uma para classificação e outra para segmentação/NER).
 
 Essa organização evita duplicidade entre "etapa 1" e "etapa 2" quando a tipologia documental já está disponível no dado bruto.
 
 Resultando em 99 sentenças.
+
+Na implementação atual, o `stage1_2` gera dois datasets distintos a partir de `files/output/dataset_filtered_by_type.csv`:
+
+- `files/output/dataset_normalized.csv`: versão mais agressiva para classificação de mérito.
+- `files/output/dataset_normalized_for_ner.csv`: versão mais simples para segmentação e NER, preservando padrões relevantes.
+
+Ambas as saídas aplicam a remoção de rodapés duplicados do PJe (por exemplo: "Num. ... - Pág. ...", "Assinado eletronicamente por ...", URL de consulta pública, "Número do documento ...", e "Documento id ...").
 
 ### Filtragem por decisão por mérito penal
 
@@ -75,6 +82,7 @@ Na pasta paper estão os arquivos relacionados à escrita do artigo, como o temp
 
 Na pasta files estão os arquivos relacionados à base de dados, como o arquivo .csv com os documentos jurídicos e o arquivo .json com as entidades extraídas utilizando o modelo NER:
     - files/datasets: dataset_completo.csv contendo os 2581 documentos jurídicos, com as seguintes colunas.
+    - files/output: artefatos intermediários da pipeline (por exemplo `dataset_filtered_by_type.csv`, `dataset_normalized.csv` e `dataset_normalized_for_ner.csv`).
     - files/docs-condenacao: contendo os 25 documentos jurídicos classificados como condenação.
     - files/Documentos-Segmentados: contem os documentos de condenação segmentados pelo tipo, resultado da etapa de segmentação de sentenças.
     - files/NER: contendo os arquivos .json com as entidades extraídas utilizando o modelo NER.

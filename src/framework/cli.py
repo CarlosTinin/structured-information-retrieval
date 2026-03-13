@@ -17,11 +17,13 @@ def build_parser() -> argparse.ArgumentParser:
     p1.add_argument("--text-column", default="Extracted Text")
 
     p2 = sub.add_parser("stage1_2", help="Macro-etapa 1.2: pré-processamento textual")
-    p2.add_argument("--input", required=True)
-    p2.add_argument("--output", required=True)
+    p2.add_argument("--input", default="files/output/dataset_filtered_by_type.csv")
+    p2.add_argument("--output-classification", default="files/output/dataset_normalized.csv")
+    p2.add_argument("--output-ner", default="files/output/dataset_normalized_for_ner.csv")
     p2.add_argument("--text-column", default="Extracted Text")
     p2.add_argument("--label-column", default="decisao")
-    p2.add_argument("--normalized-column", default="texto_normalizado")
+    p2.add_argument("--classification-column", default="texto_normalizado")
+    p2.add_argument("--ner-column", default="texto_ner")
 
     p2f = sub.add_parser("stage2-finetune", help="Etapa 2 (fine-tuning BERT)")
     p2f.add_argument("--input", required=True)
@@ -62,7 +64,17 @@ def main() -> None:
         return
 
     if args.command == "stage1_2":
-        print(run_stage1_2(args.input, args.output, args.text_column, args.label_column, args.normalized_column))
+        print(
+            run_stage1_2(
+                args.input,
+                args.output_classification,
+                args.output_ner,
+                args.text_column,
+                args.label_column,
+                args.classification_column,
+                args.ner_column,
+            )
+        )
         return
 
     if args.command == "stage2-finetune":
