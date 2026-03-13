@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -59,7 +58,7 @@ def flatten_to_csv_rows(results: list[dict]) -> list[dict]:
     return rows
 
 
-def run_stage4_ner(
+def run_stage5_ner(
     input_json: str,
     output_json: str,
     output_csv: str,
@@ -118,7 +117,7 @@ def run_stage4_ner(
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Etapa 4 - Extração NER")
+    parser = argparse.ArgumentParser(description="Etapa 5 - Extração NER")
     parser.add_argument("--input-json", required=True)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--output-csv", required=True)
@@ -130,7 +129,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_arg_parser().parse_args()
-    stats = run_stage4_ner(
+    stats = run_stage5_ner(
         input_json=args.input_json,
         output_json=args.output_json,
         output_csv=args.output_csv,
@@ -138,7 +137,7 @@ def main() -> None:
         sentence_key=args.sentence_key,
         label_key=args.label_key,
     )
-    print("\nResumo etapa 4:")
+    print("\nResumo etapa 5:")
     for k, v in stats.items():
         print(f"- {k}: {v}")
 

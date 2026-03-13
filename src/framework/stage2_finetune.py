@@ -132,7 +132,7 @@ def _train_fold(model, train_loader, val_loader, class_weights, config: FineTune
     return model
 
 
-def run_stage3_finetune(
+def run_stage2_finetune(
     input_csv: str,
     output_dir: str,
     text_column: str = "texto_normalizado",
@@ -215,7 +215,7 @@ def run_stage3_finetune(
         "confusion_matrix": confusion_matrix(all_trues, all_preds).tolist(),
     }
 
-    output_path = Path(output_dir) / "stage3_finetune_results.json"
+    output_path = Path(output_dir) / "stage2_finetune_results.json"
     ensure_parent_dir(output_path)
     save_json(summary, output_path)
     print(f"\nResultados salvos em: {output_path}")
@@ -223,7 +223,7 @@ def run_stage3_finetune(
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Etapa 3.1 - Fine-tuning BERT")
+    parser = argparse.ArgumentParser(description="Etapa 2 (fine-tuning) - BERT")
     parser.add_argument("--input", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--text-column", default="texto_normalizado")
@@ -243,7 +243,7 @@ def main() -> None:
         batch_size=args.batch_size,
         k_folds=args.k_folds,
     )
-    run_stage3_finetune(
+    run_stage2_finetune(
         input_csv=args.input,
         output_dir=args.output_dir,
         text_column=args.text_column,
