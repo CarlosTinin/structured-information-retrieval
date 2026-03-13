@@ -1,7 +1,7 @@
-"""Framework modular para pipeline jurídica (etapas 1-4)."""
+"""Framework modular para pipeline jurídica (stage1_1 a stage4)."""
 
-from .stage1_document_type import run_stage1
-from .stage2_preprocessing import run_stage2
+from .stage1_1_document_type import run_stage1
+from .stage1_2_preprocessing import run_stage2
 from .stage3_finetune import run_stage3_finetune
 from .stage3_embeddings import run_stage3_embeddings
 from .stage4_ner import run_stage4_ner

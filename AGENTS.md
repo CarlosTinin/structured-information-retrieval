@@ -42,6 +42,10 @@ Acódãos serão descosiderados para a etapa de classificação de mérito penal
 No entanto, dentre os documentos de sentenças, podem haver aquelas com mérito penal, faz-se necessário aprofundar nessa discussão.
 Para fazer isso da melhor forma, seria necessário um **especialista analisar manualmente cada caso**, ou pelo menos um **conjunto de casos** que possam servir de treinamento para um **modelo transformer**.
 
+No código da pipeline, esta macro-etapa foi consolidada em duas subetapas sequenciais: **stage1_1** (classificação/normalização do tipo documental já conhecido na extração, como sentença, decisão, acórdão e despacho, com filtragem inicial de interesse) e **stage1_2** (pré-processamento textual dos documentos filtrados para alimentar os classificadores de mérito).
+
+Essa organização evita duplicidade entre "etapa 1" e "etapa 2" quando a tipologia documental já está disponível no dado bruto.
+
 Resultando em 99 sentenças.
 
 ### Filtragem por decisão por mérito penal
@@ -63,6 +67,8 @@ Foi realizada a aplicação de um modelo NER para realizar a obtenção das enti
 ## Estrutura de pastas
 
 Na pasta src estão os códigos utilizados para realizar as atividades descritas acima, como a classificação por tipo de documento, a filtragem por mérito penal, a segmentação de sentenças e a aplicação do modelo NER.
+
+Na implementação atual, a primeira macro-etapa aparece como `stage1_1` e `stage1_2`, para refletir melhor o encadeamento do diagrama de atividades e a origem das informações de tipo documental.
 
 Na pasta paper estão os arquivos relacionados à escrita do artigo, como o template em latex, o arquivo .bib com as referências e o arquivo .tex com o texto do artigo utilizando o template da primeira revista mencionada a Information Processing & Management.
 
