@@ -69,6 +69,7 @@ Foi realizada a aplicação de um modelo NER para realizar a obtenção das enti
 Na pasta src estão os códigos utilizados para realizar as atividades descritas acima, como a classificação por tipo de documento, a filtragem por mérito penal, a segmentação de sentenças e a aplicação do modelo NER.
 
 Na implementação atual, a primeira macro-etapa aparece como `stage1_1` e `stage1_2`, para refletir melhor o encadeamento do diagrama de atividades e a origem das informações de tipo documental.
+Na versão atual do código, as rotinas de classificação anteriormente na etapa 3 foram renumeradas para `stage2` (com variantes de abordagem), e a extração NER foi deslocada para `stage5`, mantendo `stage4` reservado para inclusão posterior.
 
 Na pasta paper estão os arquivos relacionados à escrita do artigo, como o template em latex, o arquivo .bib com as referências e o arquivo .tex com o texto do artigo utilizando o template da primeira revista mencionada a Information Processing & Management.
 
