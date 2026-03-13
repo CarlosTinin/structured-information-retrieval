@@ -1,0 +1,6741 @@
+{
+  "total_sentencas": 1684,
+  "dados": [
+    {
+      "sentenca": "Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PODER JUDICIÁRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "JUSTIÇA FEDERAL",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Subseção Judiciária de Tucuruí-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vara Federal Cível e Criminal da SSJ de Tucuruí-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"A\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1003228-16.2020.4.01.3907",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO:ROGERIO ALMEIDA DA CUNHA e outros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: CADSON LOPES SILVA - PA022203",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "RELATÓRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Trata-se de denúncia formulada pelo Ministério Público Federal em face de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Domingos Sousa dos Santos, Rogério Almeida da Cunha, Edilson de Souza França; Joicilene",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Santos Costa e Rafael Brito Sousa, como incursos nas penas dos crimes previstos nos art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149, com a majorante do § 2º, inciso I, e artigo 288, ambos do Código Penal em concurso com o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "delito do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, inciso II, com a majorante do inciso II do § 4º, tudo da Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "De acordo com a peça acusatória, entre 1997 e 2022, os réus reduziram diversas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas a condição análoga à de escravo, inclusive crianças e adolescentes, submetendo-as a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhos forçados, jornada exaustiva e condições degradantes de trabalho no estabelecimento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "\"Mesa de Bar\" (Tucuruí/PA) e na Comunidade São Lucas (Baião/PA).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nesse mesmo contexto fático-temporal, na Comunidade São Lucas (Baião/PA), os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "réus submetiam diversas pessoas sob sua guarda, poder e autoridade, inclusive crianças e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "adolescentes, a intenso sofrimento físico e mental, como forma de aplicar castigo pessoal e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "medida de caráter preventivo, valendo-se do emprego de violência e grave ameaça (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, §",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97), bem como associaram-se para o fim específico de cometer crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "diversos, dentre eles os de submeter trabalhadores a condição análoga à de escravo e de tortura",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288, CP).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 1",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 18/07/2022 (id 1216091771 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em 19/07/2022 foi realizada audiência para oitiva cautelar das testemunhas de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "acusação: Ahlamah Alves da Silva, Hellen do Socorro Holanda Alves, Yeon Gibo Alves da Silva,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ary Ramos Correa, Raymison Jaspe Costa Correa, Roberto Sandro Patricio Americo, Anderson",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Correa da Costa e Aderson Silva da Conceição (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1221662775)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Citados, os réus apresentaram respostas às acusações, Domingos (id 1313814285),",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Edilson (id 1313867792), Joicilene (id 1313897775), Rafael (id 1313925247) e Rogério (id",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1313925268).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A decisão id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "227435879 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "77 afastou as preliminares e rejeitou os pedidos de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "absolvição sumária.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na fase de instrução probatória, em audiência realizada no dia 13/10/2022 (id",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1355459766 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1), foram ouvidas as testemunhas de acusação Vanusa Vidal Zenha e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rhetysina de Oliveira Barbosa e as testemunhas de defesa Luis Antônio Araújo Lima;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ana",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Roberta de Oliveira Araújo; Joaquim Pereira da Mata; Jarnayra Conceição da Mata.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "oportunidade, Diego Peixoto Bandeira foi ouvido na condição de informante.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ato seguinte, em audiência realizada dia 14/10/2022, foram ouvidas como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "testemunhas de defesa Ane Caroline da Costa Santos e Ailton do Nascimento Cruz e como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "informantes Lucas Costa de Souza;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Gleciane da Silva Cunha e Anny Gyrrel Peixoto Lima.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No dia 17/10/2022 foram ouvidas as testemunhas de defesa Bárbara Fernandes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Lima;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Marciane Pereira dos Santos; Eli Olan Pinheiro Silva; Wilson Silva Junior; Carlos Alberto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pereira da Silva Junior; Dulcineia Machado Cantão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Max Orlando Ramos Veiga; Jeová José",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Santos da Conceição; Aline Ferreira Pedra; Ehloeh Thammim Costa Correa (a última na condição",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de informante).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os réus foram interrogados na audiência realizada dia 10/11/2022 (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1390287272 -",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1), oportunidade em que a defesa requereu a revogação das prisões preventivas, mantidas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pela decisão id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1391367814.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na fase do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "402 do CPP, a defesa apresentou os requerimentos de id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1398163251, indeferidos na decisão id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1400965789.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Alegações finais pelo Ministério Público Federal no id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1413969748 e pela defesa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "nos ids.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1500999863, 1501336349, 1501336357, 1501336358 e 1501336356.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vieram-me os autos conclusos para sentença.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "É o relatório.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Decido.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "FUNDAMENTAÇÃO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Para melhor organização da sentença e compreensão dos fatos, os crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "imputados aos denunciados serão apreciados isoladamente.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 2",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.1.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CONTEXTUALIZAÇÃO FÁTICO-TEMPORAL",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os fatos apontados na presente ação penal são de elevada complexidade e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ocorreram no interior da “Comunidade São Lucas”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Esta comunidade foi criada no ano de 1997,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "quando o seu então líder Ailson, pastor de uma igreja evangélica em Belém/PA, reuniu pessoas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "com a finalidade de fundar uma comunidade na zona rural do município de Baião/PA.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nesta",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade todos teriam direitos iguais e contribuiriam para o benefício comum",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(https://lucasminhacomunidade.blogspot.com/).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A denúncia aponta que, com o passar dos anos, o então líder e seus associados,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "incluindo os denunciados, passaram a explorar do trabalho de membros da comunidade,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "inclusive crianças e adolescentes, atá o ponto de reduzi-los à condição análoga a de escravidão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Para tanto, valiam-se de elementos religiosos para coagir as vítimas a cumprir suas ordens e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "satisfazer suas vontades, sob pena de punições físicas e morais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No ano de 2015, os dirigentes da comunidade passaram a administrar um bar no",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Município de Tucuruí/PA denominado “Nossa Mesa de Bar”, onde atualmente diversos membros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da comunidade trabalham de modo contínuo ou intermitente, além de desenvolverem outras",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "atividades.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O trabalho análogo ao de escravo ocorria tanto no estabelecimento \"Mesa de Bar\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(Tucuruí/PA) quanto na Comunidade São Lucas (Baião/PA), havendo trânsito dos mesmos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhadores entre os dois locais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A denúncia aponta ainda que os réus praticavam tortura contra os integrantes da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, incluindo menores, que infringiam as regras de subordinação.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com o óbito do líder",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e fundador da comunidade, Ailson, em 29/12/2021, os réus, que já faziam parte da cúpula da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, teriam assumido de vez a liderança local.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O conjunto das provas, embora seja complexo, aponta para o cometimento dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "delitos indicados na acusação, conforme passo a demonstrar.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.2.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DO CRIME PREVISTO NO ART.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 DO CP",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Dispõe o teor do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal (Decreto-Lei nº 2.848/1940), com a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "redação alterada pela Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "10.803/03:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Reduzir alguém a condição análoga à de escravo, quer",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetendo-o a trabalhos forçados ou a jornada exaustiva, quer",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "sujeitando-o a condições degradantes de trabalho, quer restringindo,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "por qualquer meio, sua locomoção em razão de dívida contraída com o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "empregador ou preposto:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a oito anos, e multa, além da pena",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "correspondente à violência.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "§ 1o Nas mesmas penas incorre quem:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I – cerceia o uso de qualquer meio de transporte por parte do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhador, com o fim de retê-lo no local de trabalho;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "II – mantém vigilância ostensiva no local de trabalho ou se apodera de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "documentos ou objetos pessoais do trabalhador, com o fim de retê-lo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "no local de trabalho.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "§ 2o A pena é aumentada de metade, se o crime é cometido:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I – contra criança ou adolescente;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "II – por motivo de preconceito de raça, cor, etnia, religião ou origem.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A alteração promovida pela Lei 10.803/03, ao indicar o que pode ser considerado",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "como situação análoga à de escravo, não se limitou a apontar o cerceamento da liberdade como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "único elemento normativo típico único.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A submissão do indivíduo a trabalhos forçados, jornada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "exaustiva ou condições degradantes de trabalho, em caráter alternativo, igualmente configuram a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "prática delitiva.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A nova lei também passou a prever duas hipóteses de causas especiais de aumento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de pena, direcionadas a punir com maior vigor eventos em que o delito fosse cometido contra",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "criança ou adolescente ou fosse praticado por motivo de preconceito de raça, cor, etnia, religião",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ou origem.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Neste particular, promoveu a ampliação da sanção, já que, quanto às condutas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tipificadas no caput e nos incisos do §1º, manteve os patamares de pena privativa de liberdade,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "porém, positivou a possibilidade de legítimo agravamento da reprimenda em razão do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "reconhecimento de desígnios específicos que consubstanciassem violência de maior",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "reprovabilidade em detrimento do obreiro, especificamente esclarecidos no §2º.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Logo, aplicando-se a inteligência da súmula 711 do STF, que admite a aplicação da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "lei penal mais grave ao crime continuado ou ao crime permanente, se a sua vigência é anterior à",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "cessação da continuidade ou da permanência, percebe-se que as alterações introduzidas no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP pela Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "10.803/2003 alcançam o objeto desta ação penal, porquanto os supostos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fatos narrados na denúncia remetem ao período entre 1997 e 2022.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) Materialidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Conforme apontado, a redução a condição análoga à de escravo é um crime de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ação múltipla ou conteúdo variado, considerando-o praticado se quaisquer dos verbos nucleares",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estiverem presentes, ainda que isoladamente.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Considera-se caracterizado o crime, quer seja pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submissão a trabalhos forçados; quer seja pela existência de jornada exaustiva;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pela sujeição a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "condições degradantes de trabalho; ou ainda pela restrição de sua liberdade em razão de dívida",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contraída.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sobre \"reduzir a condição análoga à de escravo\", leciona Bitencourt: \"Reduzir",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "significa sujeitar uma pessoa a outra, em condição semelhante à de escravo, isto é, a condição",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deprimente e indigna.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Consiste em submeter alguém a um estado de servidão, de submissão",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "absoluta, semelhante, comparável à de escravo. É, em termos bem esquemáticos, a submissão",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 4",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "total de alguém ao domínio do sujeito ativo, que o reduz à condição de coisa.\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(BITENCOURT,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Cezar Roberto.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Tratado de Direito Penal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "São Paulo: Saraiva, 2010, p.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "427).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No presente caso, a acusação imputa aos réus a submissão das vítimas ao trabalho",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "degradante, forçado e a jornadas exaustivas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A materialidade foi robustamente comprovada.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vejamos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Entre 18/5/2022 e 2/7/2022, durante uma ação fiscal realizada pelo Grupo Especial",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de Fiscalização Móvel -GEFM, foi constatado que 55 trabalhadores, incluindo crianças e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "adolescentes, foram submetidos a condições similares à de escravidão, envolvendo trabalho",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "forçado, condições degradantes e jornadas exaustivas (conforme o relatório de fiscalização com",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "id nº 1215049271).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Outras 12 vítimas foram identificadas, mas não faziam mais parte da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, foram identificadas nominalmente um total de 67 vítimas (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Segundo a análise técnica dos auditores do trabalho, todas as pessoas encontradas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "em atividade no bar e nos serviços considerados como acessórios ou de apoio apresentavam os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos fático-jurídicos da relação de emprego.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, os denunciados exerciam o poder",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "diretivo sobre os trabalhos desenvolvidos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sobre a natureza empresarial da atividade, esclarece-se que a Comunidade Lucas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "funcionava como uma organização econômica, com interesses definidos e sob o controle de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "líderes que exerciam notório comando nas atividades dos demais membros, não havendo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "qualquer característica de associativismo, cooperativismo, trabalho voluntário ou serviço religioso.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A natureza empresarial ficou clara para toda a equipe que realizou a inspeção (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 -",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "10).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A investigação demonstrou que os réus exerciam dominação física, psicológica e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "econômica sobre as vítimas, valendo-se de violência, ameaça e severa doutrinação ideológica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos membros da comunidade, com a utilização de viés religioso, fazendo-os acreditar que a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "cessão gratuita da sua força de trabalho, dos seus bens e dos seus direitos era uma forma de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vivência fraterna e de se alcançar algum privilégio espiritual.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os primeiros trabalhadores foram atraídos pelo anseio de criar uma comunidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fundada na cooperação, solidariedade e divisão igualitária dos bens auferidos e produzidos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalho sem remuneração era, inclusive, institucionalizado, nos termos da ata de constituição da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Comunidade Lucas, de 27/05/2015: “toda renda será revestida para que residem na Comunidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Lucas (...) os próprios moradores (...) caberá a tarefa de trabalhar e desenvolvê-lo e nenhum dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "moradores fará retirada de algum valor para si, sendo que será retirado somente para calçados,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alimentação, uniforme e remédios dos que trabalham no bar e restaurante e a renda bruta será",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "revestida nos que moram e residem na Comunidade Lucas” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1016472765 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "24).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Contudo, os depoimentos prestados, os objetos e os documentos apreendidos (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1 e ss.) indicam que se desenvolveu uma conjuntura de forte submissão dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "membros, ficando a cargo dos líderes da comunidade a utilização, em proveito próprio, da mão",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de obra e dos benefícios sociais/previdenciários destinados à maioria dos seus membros, bem",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "como o gozo de melhores condições de vida, alimentação e moradia, além da decisão sobre",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aplicação de punições, tais como castigos físicos, psicológicos, expulsão dos membros etc.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Consta do relatório (id 1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "25):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "5",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Os membros da Comunidade, de modo geral, também mostravam respeito",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aos líderes em decorrência do temor de punição em caso de insubordinação;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "histórias de castigos e repreensões cruéis contra aqueles que não seguiam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "as regras impostas puderam ser apuradas em depoimentos de trabalhadores",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que já haviam deixado o local.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Entre os objetos apreendidos, foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "encontradas inscrições em cadernos que mostraram a existência de um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tribunal próprio onde os insubordinados eram julgados e sentenciados",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pelos líderes - tais sentenças incluíam, por exemplo, obrigação de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "silêncio duradouro e outras punições, como a raspagem da cabeça de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mulheres e de crianças.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Além disso, instrumentos para castigos físicos,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "como bastões com a inscrição “Disciplina” e espadas de madeira,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "também foram objeto de apreensão pela Polícia Federal”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sobre o bastão com a inscrição “Disciplina”, a colheita probatória demonstrou que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "era utilizado para aplicar punições aos membros da comunidade que descumprissem as ordens",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estabelecidas pelos líderes.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A defesa dos réus, acerca deste bastão, afirmou que (id nº 1500999863):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“a régua de madeira escrito “disciplina” é utilizado por um cadeirante que vive",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na comunidade Lucas, que se chama Antônio Araújo Lima, que confirmou em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "audiência de maneira inequívoca, sem ser contestado, para que utilizava este",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "instrumento, informando que como é cadeirante, utilizava-se da régua, para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pegar objetos que ficavam mais alto, em prateleiras.”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Essa versão dos fatos, apesar de corroborada pela testemunha Antônio Araújo Lima",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "em seu depoimento, não é digna de fé.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O bastão de disciplinamento não foi encontrado em poder",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de Antônio Araújo Lima, tendo sido apreendido em residência distinta do seu endereço (Avenida",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Magalhães Barata, nº 21, Bairro Jardim Colorado, na cidade de Tucuruí).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Abaixo segue foto do bastão de madeira (id nº 1211089268 -.fls.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "67-70 e id nº",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089267 - fl.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sobre a natureza empresarial das atividades econômicas desempenhadas, a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "auditora fiscal do trabalho, Vanusa Vidal Zenha, ouvida em juízo como testemunha, declarou:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) tecnicamente ficou muito claro que funcionava como uma organização",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "empresarial, era uma empresa que tem objetivos definidos, interesses",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "definidos e controle de determinadas pessoas (....).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Segundo depoimento de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "todas as testemunhas que a gente ouviu, a alimentação que era escassa, era",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "como uma forma de pagamento, quem não desagradasse os líderes teria",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alimentação, em que pese fosse escassa, quem não fizesse isso ficaria com",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fome.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Além disso fazia os castigos físicos e a atuação psicológica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "gente viu poucos ligados ainda pela questão religiosa, a gente entendeu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que a maioria na verdade hoje (...), as pessoas são muito mais presas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "por medo do que por questão religiosa (...).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na comunidade, as mulheres",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que eu entrevistei, por exemplo, ficavam de cabeça baixa e não respondiam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "absolutamente nada, você via o medo e o pavor nos olhos delas de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "responder qualquer coisa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No bar, segundo as testemunhas, o tempo para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "descanso era muito curto (...).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "É consenso de que ninguém recebia os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "benefícios assistenciais do governo, todo valor é entregue nas mãos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos líderes.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na minha percepção, obviamente a operação vazou.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Quando a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "gente chegou, as crianças estavam arrumadas como se fosse para uma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "festa, as mulheres todas de batom, não tinha um adolescente, não tinha um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "adolescente.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As pessoas estavam muito treinadas, as mulheres não falavam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) teve uma senhora que eu ouvi, que ela conversou comigo o tempo inteiro",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de cabeça baixa, ela não me respondia nem balançava a cabeça, eu só via o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "temor na expressão do corpo dela.”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Necessário ainda salientar a utilização de armas de fogo na comunidade, que para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "além das atividades próprias de caça e proteção das pessoas lá residentes, integravam o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contexto de opressão que sofriam as vítimas, coagidas pelos réus.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Transcrevo abaixo trecho do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Relatório de Análise da Polícia Judiciária:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "\"Considerando que quando da chegada da equipe foi observado que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "uma pessoa (provavelmente do sexo masculino) \"correu\" em direção a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mata, a equipe adentrou alguns metros em uma trilha.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No retorno",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "desta trilha foi encontrado escondido próximo a uma árvore uma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "arma de fogo (espingarda de cartucho), alguns arpões de caça e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "duas espadas de metal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Destaca-se que no primeiro dia das buscas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estes objetos não foram encontrados e algumas das pessoas que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "residiam no local informaram que não existiam armas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aliás, mesmo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depois da apreensão alguns informaram que nunca tinha visto aquela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "arma lá, e outros disseram que era normal ter arma de caça na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "localidade, mas que nunca viram aquela arma na localidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(desconversaram)\" (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089268).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A intimidação exercida pelos réus foi relatada por ex-integrantes da comunidade,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "como relata Aderson Silva da Conceição:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) que saiu mais ou menos há 07 ou 08 anos; (...) que conseguiu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fugir da Comunidade depois que começou a trabalhar fora da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Comunidade (...); que, por trabalhar no bar, conheceu pessoas e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "solicitou ajuda de uma dessas pessoas para que providenciasse um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "carro para o depoente pudesse fugir (...); que ainda passou 03 dias em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Tucuruí escondido; que tinha medo de os líderes resgatarem o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoente de volta (...) (Wanderclei de Oliveira Costa – id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354767747); (...) Nesse período que eu saí de lá, eu tive que sair fugido de lá.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ailson, com esse conselho que tem lá – Rogério, Domingos, estava",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "lá o Rafael, eles me colocaram na roda e disseram pra mim dar",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "uma palavra pra eles.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Eu tinha que escolher ou minha família ou eles.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Saí de lá não falei nada abaixei minha cabeça (…) quando foi à noite,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "7",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que era para ir pro bar, eu tive que inventar uma doença, de lá peguei",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "as minhas coisas e fui embora”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(Aderson Silva da Conceição – id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1233135791: 10min42)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Perante o Ministério Público do Estado do Pará, Edilene Lopes de Araújo prestou",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoimento em que apresentou as seguintes informações:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Que conheceu a comunidade Lucas através do seu marido, que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhava no Mesa de bar e foi morar na mesa de bar com ele porque",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o marido não podia sair da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que quando entrou para a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, em 2015, foi destacada para trabalhar na cozinha do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Mesa de bar.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que depois de 5 meses foi enviada para morar na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "zona rural da comunidade por determinação dos líderes por ter se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "negado a trocar de marido.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que após 3 meses da ida da depoente",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "para a cidade, afim de trabalhar no mês e de bar, o marido Ari também",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foi para ficar com ela; porém sem autorização do conselho.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mesma semana o marido foi obrigado a retornar para a área rural,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "enquanto a depoente foi obrigada a permanecer no Mesa de bar”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Condições degradantes são aquelas extremamente precárias, que não propiciam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "satisfação das necessidades mínimas de existência, imprescindíveis à vida com dignidade e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tratamento do ser humano como pessoa livre, e não como coisa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A condição degradante há de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ser aquela que notadamente reduza o trabalhador à condição análoga à de escravo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As provas reunidas demonstram o trabalho em condições degradantes, confirmando",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "as seguintes, dentre outras:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) alojamentos não possuíam condições adequadas de segurança, vedação,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "higiene, privacidade e conforto;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alojamentos não possuíam cômodos suficientes para acomodar todos os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhadores;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) os réus deixaram de implementar ações de segurança e saúde que visassem à",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "prevenção de acidentes e doenças decorrentes do trabalho em todas as unidades",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de produção;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "d) as refeições eram preparadas em fogão a lenha, contudo, o ambiente onde",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estava instalado não possuía paredes e o piso era de terra batida, situações que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "facilitavam a entrada de animais e de poeiras e intempéries, podendo contaminar os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alimentos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e) insuficiência quantitativa e qualitativa de alimentos (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A atuação fiscalizatória do Estado revelou a existência de grande esquema",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "organizado pelos réus, que reduziram diversas pessoas a condições de trabalho análogas à de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "escravo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O contexto de intimidação a que submetidos os trabalhadores, as precárias condições",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de trabalho, a ausência de recebimento de salários e de controle de jornadas, diante do conjunto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "probatório coligido, comprovam a prática do crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 8",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) Autoria",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A despeito de os réus negarem o exercício de qualquer liderança, a instrução",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "probatória comprovou que os réus eram responsáveis pelo gerenciamento das atividades",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "desenvolvidas nos empreendimentos Nossa Mesa de Bar e da movelaria existente na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Comunidade São Lucas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nesse sentido, a testemunha Vanusa Vidal Zenha declarou em audiência:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“A gente entendeu que funcionava como uma empresa, em que o Rogério",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seria o presidente e abaixo dele três deles eram responsáveis pela área",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "rural, que eram Domingos, Joicilene e José Francisco, e outros quatro",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "eram responsáveis pela área urbana, que seriam o bar, a mercearia, que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seriam Edilson, Rafael, Ailton e Maria da Conceição.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "E uma nona pessoa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que seria Janayra, que é responsável pela parte administrativa (...). apesar de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estarem divididos em duas áreas, o Domingos, abaixo do Rogerio, tem uma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "posição de destaque.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No depoimento de absolutamente todas as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "testemunhas que ouvimos, a subordinação era em relação a essas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas, eram quem distribuíam as tarefas (...) a jornada nem era",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fiscalizada porque não podia ficar parado, tinha que trabalhar todo o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tempo”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O papel de liderança do réu Domingos Sousa dos Santos remonta aos primeiros momentos da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, pois era pessoa de confiança do fundador da comunidade, Ailson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Consta dos diversos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoimentos prestados e do relatório da investigação realizada, que no estabelecimento Nossa Mesa de Bar, o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "caixa em dinheiro era controlado pelo falecido Ailson e que toda a movimentação financeira era repassada a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Domingos, o qual permanecia na maior parte do tempo na sede da organização na zona rural de Baião (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749780 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1/1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "17):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Que abaixo de Ailson quem mandava era o Domingos; que conheceu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rogério quando este chegou na comunidade, não lembrando a época,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mas já haviam construído as casas da comunidade” (depoimento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "prestado o Bruce Douglas de Oliveira Costa, no Ministério do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalho, id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749793 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O réu Rogério Almeida da Cunha foi apontado como verdadeiro “empregador” dos integrantes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da comunidade, usufruindo de bens angariados mediante exploração das vítimas, a exemplo de uma casa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "conhecida como “mansão”, onde foi possível verificar a existência de piscina, banheira de hidromassagem,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "armário contendo garrafas de bebidas como uísques, vinhos e espumantes, além de alguns veículos na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "garagem, como Pajero Sport 4x4, placa hxa0569; Kia Cerato sx3 1.6atnb, placa odz-9890; Hp Galloper t.cxllwb,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "placa cog9302; lr freelander 5dr 25l, placa fqg-1818 (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "22/23).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os réus Edilson de Souza França e Rafael Brito Sousa exerciam a supervisão dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhadores que ajudavam na construção dos móveis, bem como exerciam a função de segurança e gerência",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do bar, o que demonstra a integração das atividades.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A ré Joicilene dos Santos Costa comandava o trabalho das mulheres e crianças internamente",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na comunidade, conforme se observa do seguinte depoimento:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Que suas tarefas eram determinadas pela Joicilene. que o filho mais",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "velho da depoente, Gabriel, aos 5 anos de idade, foi obrigado pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Joicilene a trabalhar carregando lenha e limpando o quintal retirando",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fezes dos porcos. que por conta do aumento do movimento do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "restaurante mesa de bar, a depoente foi designada para trabalhar no bar",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "executando diversas tarefas, assando espetinho, executando a limpeza",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "geral e servindo as mesas (...).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que abaixo do Wilson havia um conselho",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "formado por domingos, Rogério, Joicilene, Aiude, Jesaias e Bruce (...).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ao que se sabe, Rafael e Edilson somente passaram a fazer parte da cúpula",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da comunidade após o falecimento de Ailson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(depoimento prestado por",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Edilene Lopes de Araújo no Ministério do Trabalho, id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749780 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que naquele trabalho havia dois adultos que ficavam junto, a Joice e a Ivete; que as duas adultas ficavam apenas para acompanhar o trabalho da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoente e demais meninas que cuidavam das crianças e se envolviam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ativamente apenas para corrigir o comportamento das crianças; batendo nas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crianças com umas ripas grossas; que as ripas eram feitas pelos homens",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "líderes; que já aconteceu da depoente se surrada aos 7 anos de idade; o que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "marcou a depoente; que se recorda de ser levado ao banheiro da casa do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "líder e lá apanhou com a tal ripa de madeira de Roberta, Joyce, Domingos e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ailson” (depoimento prestado por Hisla Siany Costa de Oliveira no Ministério",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do trabalho, id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749794 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, o fato de os réus terem acesso a bens em condições melhores que os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "demais integrantes da comunidade, a exemplo de uma residência maior, acesso a uma ilha fluvial",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "para lazer, melhor alimentação, entre outras, corroboram as alegações de que os réus eram os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "líderes e mantinham o funcionamento estratificado da comunidade em benefício próprio.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) Teses da defesa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A atuante defesa dos denunciados, em suas alegações, sustentou que não",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "existiriam provas acerca da ação criminosa, bem como que o trabalho exercido na Comunidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "São Lucas era prestado de modo voluntário pelos próprios moradores.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não obstante os argumentos esposados, as alegações não encontram amparo no",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "acervo probatório constante dos autos, especialmente na prova testemunhal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os depoimentos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "das testemunhas de defesa não foram hábeis a rechaçar as condições de labor forçado",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "constatadas pelos auditores do trabalho e apontado pelas vítimas ouvidas em juízo e durante a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "diligência empreendida pelos auditores.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A robustez do conjunto probatório encartado atribui especial relevo à coerência e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fidelidade dos depoimentos prestados pelas vítimas e ex-integrantes da comunidade,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "especialmente porque estão em plena harmonia com os demais elementos de prova cotejados",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aos autos, assegurando, por fim, a inequívoca constatação da prática delitiva e a sua autoria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As versões trazidas pelas testemunhas de defesa não possuem verossimilhança",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "diante do contexto fático encontrado na Comunidade São Lucas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, ressalta-se que a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "credibilidade dos depoimentos fica comprometida diante da verificação de que as pessoas da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade demonstram relação de subserviência e adoração subordinação das vítimas aos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "10",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "réus, pois ainda participam da comunidade, e a aparente padronização dos discursos, percebida",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ainda no âmbito da fiscalização realizada:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) Após alguns minutos de conversa, um dos moradores questionou se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "poderia chamar o advogado da comunidade, que rapidamente compareceu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ao local da diligência.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Enquanto o advogado chegava, um dos moradores",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "chegou junto ao que falava e o mandou calar-se, pois no seu ponto de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vista este estaria falando demais” (informação policial nº 008/2022, id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1016472765 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) O que se percebeu foi a presença de discursos iguais, ou seja, que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "todas as pessoas respondiam basicamente da mesma forma a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "perguntas simples.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Quando se aprofundava em algum tipo de pergunta, as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas desconversavam”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(ID 1211089267 - fl.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "5 de relatório do Delegado",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de Polícia Federal Ezequias Martins).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) Que exerce o cargo de Secretário de Assistência do Município desde",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "janeiro de 2021; QUE realizaram a vista em meados do mês de junho/julho",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "após a recomendação do Ministério Público; (...) QUE foi detectado um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "adolescente que estava isolado e muito triste; Que tentaram pegar a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "declaração do adolescente, mas era impedido pelos próprios moradores da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Comunidade; Que não deixavam tirar fotos dos documentos; (...) Que as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mulheres durante as entrevistas estavam sempre sendo vigiadas por",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "uma senhora; (...) a equipe chegou a solicitar a cópia das certidões de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "nascimento das crianças, mas os residentes negavam com a justificativa de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "não ter o documento ou que estava com a mãe/pai que não estavam no",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "momento da visita (...)” (Marcos Antônio Barros Pino – id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749783).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) (Perguntado sobre orientações sobre o que dizer para as fiscalizações)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Se o pessoal chegasse e perguntasse “o que que nós passava” (...) Se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "passava fome, nós dizia que não; se batia, nós dizia que não.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ensinava a ter",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "só uma palavra. “Ah, você ganham brinquedo?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sim.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vocês ganham roupa?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sim” (...) Aquela falsidade lá.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(Perguntado se eram ensinados a ludibriar a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fiscalização) Sim, senhor.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) foi Icmbio, Ibama, outros órgãos (...) uma vez,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "também, que a polícia foi lá dentro também (...) reuniu todo mundo (...)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "sempre a mesma história, sempre tinha que concordar com eles, falar",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que “não”, que sempre era bem de vida, que brincávamos, estudávamos (...)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depois que eles saíam, nós apanhava muito (...)” (Yeon Gibo Alves da Silva –",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1232894770)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "d) Tipificação",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Como se vê, a prova documental e testemunhal, inclusive as declarações dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhadores, vítimas do delito, são indenes no sentido de que os réus submeterem diversos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "integrantes da Comunidade Lucas a condições análogas à de escravo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não bastasse, um dos trabalhadores nominalmente identificados pela auditoria do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalho era menor de idade durante a fiscalização (Pedro Peixoto Lima, nascido em 30/06/2004,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "p.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "60-71 do id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, incidiram os réus, livres e conscientemente, na causa de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aumento do artigo 149, § 2º, I, do Código Penal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "11",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e) Concurso formal de crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em casos de redução à condução análoga com pluralidade de vítimas, a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "jurisprudência pacífica do Superior Tribunal de Justiça e dos Tribunais Regionais Federais vem",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "se assentando com o reconhecimento da ocorrência de concurso formal, com número de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "infrações proporcional ao número de vítimas para os fins de critério de exasperação pela norma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do artigo 70 do Código Penal: \"A existência de mais de uma vítima, no mesmo contexto de fato,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "implica concurso formal\" (TRF1, AC 200839010003648, Tourinho, j.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "26.11.20; STJ, AgRgHC n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "406479, Rel.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Min.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rogério Schietti Cruz, j.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "13.03.18).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DO CRIME DE TORTURA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A prática do crime de redução à condição análoga à de escravo atrai",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a competência da Justiça Federal, uma vez que se trata de crime contra a organização do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalho (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "109, inc.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "VI, da CF/88).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A competência desse juízo federal para o processo e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "julgamento do crime de tortura se dá por força da conexão instrumental ou probatória (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "76, III,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CPP).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pois bem.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A acusação imputa aos réus o crime de tortura na modalidade castigo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O inciso II,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º da Lei nº 9.455/97, pune a conduta daquele que submete alguém, sob sua guarda,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "poder ou autoridade, com emprego de violência ou grave ameaça, a intenso sofrimento físico ou",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mental, como forma de aplicar castigo pessoal ou medida de caráter preventivo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Essa modalidade delitiva, portanto, exige qualidade especial do agente, existindo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "uma prévia relação entre o torturador e a vítima, somente podendo praticá-lo quem tem a guarda,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vigilância, poder ou autoridade sobre o torturado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, exige-se a tentativa de impor à vítima",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "intenso sofrimento físico ou mental da vítima.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) Materialidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Embora as vítimas não tenham sido submetidas a exame de corpo de delito,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "considerando­-se a dinâmica das relações de poder existente na comunidade, que se perpetuou",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "por vários anos, tendo por vezes a violência se revestido de maior relevância psicológica do que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "física, as provas oral e documental se sobressaem.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As imagens colacionadas no id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "26 mostram a existência de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "instrumentos de castigo físico encontrados na casa dos líderes da comunidade, tais como 12",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "espadas de madeira, uma régua com a escrita “Disciplina”, e 02 facões grandes.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ao que consta do conjunto probatório, havia uma espécie de “tribunal” onde os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "integrantes da comunidade eram julgados e sentenciados pelos réus a sofrerem castigos de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ordem física e/ou psicológica (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089268 -.fls.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "43, e 61; id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089267 - fl.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6; e anexos 11 e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "12 do relatório de fiscalização).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 12",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Demonstrando que também eram utilizados métodos de punição psicológica, um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos cadernos apreendidos na comunidade, possui anotações de uma pessoa do sexo feminino",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "nos seguintes termos: “14 de outubro fui chamada atenção; 24 de outubro fui colocada na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "sentença de não falar; 08 novembro fui chamada atenção de novo”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Logo abaixo, na mesma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "página, está escrito: “Pastor Ailson falou não é para mim falar nada para ninguém.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Falar somente",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o necessário com irmão Clei.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Conversar alguma coisa somente com o esposo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ficar em silêncio o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tempo todo” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "27 e 1215049285 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "44).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na informação policial n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2432773/2022 consta uma conversa realizada em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "01/07/2022 entre a auditora fiscal do trabalho Luciana e uma das crianças moradoras da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, em cujo trecho a criança confirma que era vítima de maus tratos sendo que um dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "castigos a ela impostos era ficar amarrada (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1235335776):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Luciana: Dói o seu (braço)?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana:  Pode falar, aqui ó (aponta para o braço da criança)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Criança: Ai!!",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana:  Dói não dói?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Só um pouquinho?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Mais ou menos?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Irmã da criança: (Muda de assunto)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana:  É...",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Isso aqui foi onde?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(aponta para o braço da criança)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana: Me conta.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não pode?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Pode falar “Não pode”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Criança: Quando nasceu...",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana:  Quando nasceu?",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Irmã da criança: Isso aqui chama... uma coisa errada.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luciana:  Ah então não foi não, achei que tinha machucado aqui”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No mesmo documento, consta imagem do menor J.C.S com hematomas no braço,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "bem como áudio transcrito pela Polícia Federal dele afirmando que o lugar que mais machuca",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seria nos braços, indo ao encontro de todos os depoimentos colhidos que versam sobre torturas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e castigos sofridos pelas crianças dentro da Comunidade Lucas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vê-se que, apesar da preparação dos membros da comunidade, da dissimulação da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "realidade quando do recebimento de autoridades públicas no local e da padronização das",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "respostas dadas aos questionamentos, a criminosa realidade não pôde ser encoberta.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em juízo, a testemunha Hellem do Socorro Holanda Alves, ex-integrante da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, declarou que eram aplicados castigos físicos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que chegou a receber “sentença” que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "lhe obrigava a permanecer, pelo período de 2 a 3 meses, em posição corporal de cabeça baixa,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "sob ameaça de agressões físicas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ainda, confirmou que as crianças eram agredidas, os meninos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tinham cabeças raspadas; ficavam longos períodos sem se alimentar como forma de punição, e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alguns chegaram a ser retirados do poder familiar dos pais e entregues a outros integrantes da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Yeon Gibo Alves da Silva, nascido na comunidade, corroborando seu depoimento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "13",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "prestado em sede policial (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089264) narrou que começou trabalhar na infância;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crianças apanhavam em posição de flexão, com estaca de madeira, diante das outras pessoas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da comunidade; que as meninas eram escolhidas ainda na infância e destinadas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "compulsoriamente ao casamento com os homens indicados pelos réus; que viu duas menores ter",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a cabeça raspada como forma de castigo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Anderson Correa da Costa alegou que chegou na comunidade aos 14 anos de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "idade (1998) e saiu no ano de 2019, afirmou em audiência que inicialmente pescava e pegava",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "madeira.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Após, passou a trabalhar no Nossa Mesa de Bar sem receber salário; que as vezes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "trabalhava até a exaustão; que já foi punido com o castigo de um dia sem alimentação; que já",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "presenciou menores sendo agredidos fisicamente; que chegou a ver uma menor com a cabeça",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "raspada; que havia punição para quem consumisse as frutas disponíveis nas plantações, pois",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deviam ser destinadas à cozinha comunitária (depoimento coerente com as alegações prestadas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "em sede policial- id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089264).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No mesmo sentido, a auditora fiscal do trabalho Vanusa Vidal, relatou o clima de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "medo e aflição dos integrantes da comunidade na ocasião da fiscalização in loco.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Apontou, ainda,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ter avistado um menor com hematomas no braço.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em sede extrajudicial, extraem-se os seguintes depoimentos:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) não chegou a apanhar, mas era ameaçado constantemente e, por isso,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "resolveu fugir; que logo no início da Comunidade escapou de sofrer estrupo;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que não foi estuprado porque correu; (...) que foi obrigado a casas na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade depois que assumiu sua homossexualidade, aos 20 e poucos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "anos (...) que se o depoente não casasse com uma mulher ele não era",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "considerado digno (...) que os integrantes da Comunidade são capazes de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "defendê-la por causa da fé, independente de maus tratos (...); (...) existia um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tribunal paralelo chamado de Conselho para julgar as pessoas; que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "faziam parte do Conselho os líderes e suas esposas; (...) a penalidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "era separar os casais, raspar cabeça, não conversar com ninguém; (...)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que já presenciou o momento em que pessoas da Comunidade foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "agredidas; (...) que Rhetycina, seu primo, era bastante agredido pelo fato dele",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ser homossexual;” (...) (Wanderclei de Oliveira Costa – id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354767747).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) JOYCE e IVETE; (...) se envolviam ativamente apenas para “corrigir” o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comportamento das crianças, batendo nas crianças com umas ripas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "grossas; que as ripas eram feitas pelos homens líderes; que já aconteceu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "com a depoente de ser surrada aos 07 anos de idade, o que marcou a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoente; que se recorda de ser levada para o banheiro da casa do líder e lá",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apanhou com a tal ripa de madeira de ROBERTA, JOYCE, DOMINGOS E",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "AILSON; (...) tenho ficado só de calcinha; que ficou com as pernas, bunda e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "braços roxos, levando muito tempo para saírem as marcas; que já assistiu",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "essas mesmas pessoas baterem em várias crianças pequenas; que nenhuma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "criança podia brincar; (...) que já presenciou AILSON E DOMINGOS",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ameaçarem o RHETYCINA de morte, com uma arma pelo fato dele ser",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "homossexual; que após a ameaça bateram muito no rapaz com a mesma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ripa; que este fato se deu no refeitório, na frente de todas as demais",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crianças; que era dito que as surras serviriam de exemplo para os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "demais; (...) que não podia pegar fruta das árvores e se descumprisse tal",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ordem era “carecado”; que já viu vários meninos terem suas cabeças",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "raspadas, tais como RHEYTUCINA, RAIMISON E ELI OLAN; que a punição",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "14",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "era praticada na frente dos demais integrantes da comunidade; (...) quando",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "saiu da comunidade ficou com muito medo, que ela acreditava que no mundo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "exterior seria estuprada, espancada e que não conseguiria sobreviver (...)”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(Hisla Siany Costa de Oliveira - ID 1354749794).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) havia um Conselho para decidir o castigos; que a pessoa castigada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "era colocada numa cadeira e aí era determinada a punição; que a punição",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "era severa; que quando o homem era casado, a mulher era tirada dele ou os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "próprios filhos; que a mulher era dada a outro homem; (...) que quando estava",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "grávida de sua última filha teve um “julgamento” della depoente por Rogério,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Joice, Ailson, Roberta, Domingos, Ivete, Shelk e a fizeram chorar; que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "queriam jogar a depoente do andar de cima porque a depoente reagiu no",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“tribunal”; que a depoente reagiu porque eles falavam barbaridades sobre a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "depoente; (...) que no parto de sua última filha teve eclampsia e que os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "líderes diziam que era estava sendo punida por Deus;” (...) (Adma Correa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da Costa - ID 1354749792).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Que Domingos maltratava crianças que choravam nos cultos batendo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "com um galho de goiabeira e os afundava em um barril com água",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "gelada.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que a depoente questionou o Ailson por isso.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que passou a ser",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "torturada com pouca comida.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que, para torturar a depoente, a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "chamavam de traíra e colocavam um peixe chamado traíra no seu prato",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) Que a sua filha foi ameaçada de ter a cabeça raspada.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que rasparam",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a cabeça do Tiago e do Rhety.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que o Rhety apanhava muito, em especial",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do Domingos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que depois teria sido agredido também pelo Rogério.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "já foi agredido com chutes por Domingos e Ailson, tendo sido feito de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "bola entre os dois (...)” (Lindalgiza da Silva Castelo - ID 1354749790);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) QUE presenciou o menino de nome AIBE (filho da Camila e Levi)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tendo o cabelo raspado porque comeu um caju do cajueiro do terreiro",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) QUE também presenciou o menino chamado SETE (Eli Olan) sendo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "espancado (...) QUE o SETE foi colocado no meio de uma roda em um local",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "chamado coreto e surrado por RAFAEL, ROGÉRIO, DOMINGOS e GEDIAS; que bateram com socos, chutes e madeira; depois deixaram o menino sem",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comer por 3 dias; que a mãe de SETE (LENA) assistiu a cena e não pôde",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "intervir, apenas chorou; o fato se deu na frente de toda a comunidade; (...)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que o menino era obrigado a permanecer careca por tempo indeterminado",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) quando foi enviada para a zona rural da comunidade se deparou com um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "costume que era chamado de ESTICA, pelo qual as pessoas eram amarradas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pelas pernas e braços, penduradas num caibro de madeira e puxadas, de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "forma que permaneciam numa posição como se estivessem crucificadas; o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ato causava lesões nos pulsos e tornozelos, permanecendo roxo por um bom",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tempo”; (Edilene Lopes de Araújo - ID 1354749780);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“(...) (Perguntado se as crianças sofriam maus tratos) Sofrem maus tratos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "físicos, apanham, qualquer coisinha eles apanham.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Eles não podem tirar um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "caju (…) se uma criança tirar um caju daquele ela é torturada e apanha",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "porque não é hora de comer o caju.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Só é dado uma alimentação ao dia (...)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aquele pastor Domingos que tá preso castigava muito os meninos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rogério castigava muito os meninos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A Joyce castigava muito os meninos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "também.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) No dia que ela foi presa, a outra menina que ficou no lugar dela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "lá ficou com o sorriso bem aqui della ser presa, porque fazia poucos dias que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ela tinha castigado o filho dela, deu uma pisa no filho dela que ele ficou",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "todo cagado e botou o moleque pra carregar lenha todo cagado do mato",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "15",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pra lá pra comunidade sem poder ir lá no lago no rio poder se lavar (...)”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(Roberto Sandro Patricio Americo - ID 1233291270: 06min50, 07min40,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "08min20, 08min45).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No âmbito do Ministério Público do Estado do Pará, o assistente social do município",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de Baião/PA, sr.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Marcos Antônio Barros Pino, afirmou:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "“Que encontraram grande dificuldade de realizar a atualização do cadastro",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "único e fiscalizarem se as crianças estavam com sinais de maus tratos. que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foi detectado um adolescente que estava isolado e muito triste.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que tentaram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pegar a declaração da adolescente, mas era impedido pelos próprios",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "moradores da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Que não deixavam tirar fotos dos documentos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...) que as mulheres durante as entrevistas estavam sempre sendo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vigiadas por uma senhora” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1354749783 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ouvido no Ministério Público do Trabalho, Raymison Jasper relatou que foi",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "separado de seus pais e colocado em uma casa com outras 11 crianças, todos sem pais; e que a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "doutrina dos líderes era que não podia nutrir sentimentos, que chegou a ficar cerca de 3 anos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "sem contato com seu pai (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O controle psicológico exercido pelos líderes mediante a fé dos integrantes é",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "reforçado pelos diversos trechos dos cadernos apreendidos na comunidade:  “demônios não",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "entram em ninguém a não ser invocado pela própria pessoa (...) Jaele e Gleice estão em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "condições de caírem endemoniadas por causa da rebeldia, prática que joga a pessoa no inferno,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "iniquidade, teima, arrogância, altivo, prepotente resiste a autoridade” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215986782 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "25);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "¨porque será que o demônio tem entrada, aqui, por rebeldia, desobediência, teimosia” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215986782 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "41 )“havia uma sentença sobre o Abenam, mesmo assim há um demônio",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aqui (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "36)”; (no tribunal o que vai esta oque eu ensinei para vocês,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "verdadeiros conhecimentos são minhas credenciais diante de Deus sou o único que sei a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "expressão rei dos reis e senhor dos senhores.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Se alia ao mestre Du e ouve as palavras dele se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "eu não puder te colocar no céu, ele pode” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "38).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "De acordo com os depoimentos colhidos, inclusive o depoimento da testemunha de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "defesa Jarnayra, o mestre Du seria o réu Domingos, de forma que se depreende que Ailson",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estava transferindo o poder de mestre para o aludido réu (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "73).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O trecho “tirei direito de pai da Abiude e da irma Cristina de mãe do Adabe” (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "43) respalda as alegações de que crianças chegaram a ser retiradas dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "genitores como forma de manter a doutrina do “desapego” aos pais e “apego” ao mestre ou,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ainda, como forma de punição aos genitores.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Uma espécie de desabafo que demonstra o dever de subserviência dos membros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pode ser encontrada no trecho de um dos cadernos apreendidos na comunidade “peço que o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "senhor me de sabedoria e entendimento para saber servir a todos os meus irmãos (...) como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "horta plantar, lavagem das roupas de todos, limpeza da casa grande e limpeza quintal, mas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "preciso confessar” (1215049295 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "22).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os desconcertantes trechos dos cadernos apreendidos, juntados no relatório de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fiscalização (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "36/1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "43), demonstram que diversos crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tais como exploração sexual e violência contra mulheres, adolescentes e crianças, bem como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "16",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tortura eram justificados com base em uma interpretação deturpada de textos bíblicos cultivada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pelos réus e pelo anterior líder da comunidade, Ailson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) Autoria",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os depoimentos testemunhais colhidos em juízo convergem no sentido de que a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "direção da comunidade passou a ser exercida primordialmente pelos réus Domingos e Rogério",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "após o falecimento de Ailson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A testemunha Hellem do Socorro Holanda Alves afirmou em audiência que a ré",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Joicilene era a responsável pela comunidade internamente;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e os líderes máximos seriam os réus",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Domingos, Rogério e Rafael.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A testemunha Anderson Correa da Costa afirmou que, no ano de sua saída (2019),",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "os líderes da comunidade eram Ailson, Domingos e Rogério, enquanto os réus Edilson, Rafael e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Joicilene começavam a fazer parte da liderança.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aderson Silva da Conceição, que atuou na qualidade de presidente da associação",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos trabalhadores de 1998 a 2021, relatou em juízo o papel de liderança exercido por Domingos,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rogério e Joicilene, sendo que Rafael e Edilson trabalhavam na segurança.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Dessa forma, considerando as declarações prestadas pelas vítimas, os relatórios e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "imagens juntados aos autos, a natureza do crime em apreço e as circunstâncias do fato, resta",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "evidente que os réus Domingos, Rogério, Rafael e Joicilene praticavam o crime de tortura, sendo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "certo que esta última infligia sofrimento moral e físico primordialmente nas crianças, adolescentes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e mulheres residentes na comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na qualidade de líder, Domingos definia quem deveria receber punições físicas e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "outros castigos e impedia a saída dos demais membros que quisessem sair da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Também era o destinatário do dinheiro arrecadado no Estabelecimento Nossa Mesa de Bar.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os depoimentos colhidos apontam algumas das vítimas diretas das torturas físicas e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "psicológicas praticadas por Rogério, inclusive enquanto eram crianças e adolescentes: Adma,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Rheytisina (Eliaquim), Lindalgiza, Eli Olan e Aderson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "De igual modo, foram apontadas torturas físicas e psicológicas praticadas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "diretamente por Joicilene: Hisla Siany, Adma, Eli Olan, Rheytisina (Eliaquim), Gabriel, Raymison",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Jaspe, Yeon Gibo e seus próprios filhos com Ary.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ainda, algumas das vítimas diretas das torturas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "físicas e psicológicas praticadas por Rafael foram: Rheytisina (Eliaquim), Eli Olan, Yeon Gibo e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aderson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por outro lado, quanto ao acusado Edilson, não há nos autos nenhum elemento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "indubitável de prova que justifique sua condenação no crime de tortura.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) Teses da defesa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 17",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em seus interrogatórios, os réus negaram as acusações de tortura.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em suas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "alegações, sustentaram que não foi apurada a materialidade do delito diante da ausência de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "realização de exame de corpo de delito sobre as vítimas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A negativa dos réus não se presta a determinar que a violência não ocorreu, isto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "porque, o depoimento das vítimas em crimes dessa espécie, em que se praticam na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "clandestinidade, é crucial, mormente no caso em questão em que encontra amparo em prova",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "robusta produzida ao longo da instrução criminal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, não se vislumbra a ocorrência de qualquer ilegalidade pela não realização",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de exame de corpo de delito sobre as vítimas ou instrumentos do crime nesta situação",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "específica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Dispõe o art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "158 do CPP que quando a infração deixar vestígios, será",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "acusado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A realização do exame pericial sobre os instrumentos utilizados para prática",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "criminosa, porém, somente se faz necessário quando a infração penal deixa vestígios e esses",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vestígios são encontrados.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Malgrado os depoimentos prestados em juízo e na fase pré-",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "procesual tenham aludido ao uso de “espadas de madeira” como instrumentos para a prática de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tortura, a apreensão dos objetos não ocorreu logo após a prática delitiva, não sendo necessário,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "portanto, a realização de exame sobre os bastões de madeira ou mesmo a realização de exame",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de corpo de delito sobre as supostas vítimas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os réus também negaram exercer qualquer liderança na comunidade, sustentando",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que todos tinham livre acesso aos bens e desempenhavam a tarefa que lhes fossem",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "convenientes, sem qualquer tipo de coerção.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Esta narrativa, entretanto, carece de plausibilidade diante da convivência mútua e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "coordenada de considerável número de pessoas, por longo período, inclusive logrando êxito em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "empreendimentos empresariais como bar, restaurante e fábrica de móveis.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os depoimentos das testemunhas arroladas pela acusação são coerentes e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "corroboram a condição de hostilidade a que eram submetidos os integrantes da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "outro lado, é possível apontar diversas incoerências nos depoimentos das testemunhas de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "defesa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na audiência de instrução, as testemunhas de defesa afirmaram que Luís Antônio",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Araújo Lima, que é portador de deficiência física e conhecido como \"Toninho\", utilizava a régua",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "com o nome \"Disciplina\" como um suporte.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No entanto, a referida régua foi encontrada em uma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "casa na Comunidade Lucas, em Baião/PA (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "25).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A defesa, ao arrolar Luís",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Antônio como testemunha, porém, indicou como seu endereço a Avenida Magalhães Barata, nº",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "21, Bairro Jardim Colorado, em Tucuruí (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1313925247 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "28).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luís Antônio é cantor no",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Mesa de Bar e mora e trabalha em Tucuruí, o que torna improvável que a régua fosse utilizada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "por ele em Baião/PA.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Além disso, a versão de que Luís Antônio habitava a casa de madeira mostrada na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "figura 7 do id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089273 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "122, que tem acesso por escada, não é plausível, já que ele",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "usa cadeira de rodas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Segundo a testemunha Bárbara Fernandes, essa casa é habitada pelo Sr.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "18",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Francisco, suas esposas e filhos, e não por Luís Antônio (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1361204783 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1; minuto 14:51).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Anny Gyrrel, arrolada pela defesa e ouvida como informante do Juízo,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "primeiramente respondeu que “nunca viu” a régua da disciplina, após novamente perguntada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pelo advogado, afirmou que Luis Antônio, “toinho”, usava a régua como suporte na comunidade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(minuto 14:30; id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1358768753 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A testemunha Gleiciane da Silva Cunha, encontrada em atividade na cozinha pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "inspeção trabalhista, informou que as espadas foram feitas na época da pandemia (00:39 id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1358568760 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1), porém não soube informar sua utilidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por outro lado, confirmou que o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "réu Edilson era chefe da segurança (min.12:30);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "além de não saber informar nenhuma criança",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que estudou fora da comunidade após o 5º ano letivo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As testemunhas Ailton e Jarnayra, indo na contramão de todas as demais",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "testemunhas de defesa, informaram que não há atividade de caça na comunidade (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1358590268 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1; min.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "04:26 e id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1358452261 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1, min.11:10).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Após, reiterada a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pergunta pelo Ministério Público Federal, Ailton confirmou a informação.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A testemunha Lucas, ouvida como informante, relatou que a movelaria não fazia",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "móveis para vender (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1358690260 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1, min.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "08:41).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Entretanto, a inspeção achou um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "catálogo de móveis com modelos de diversos tipos de camas, armários e outros, um mostruário",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "com fotos coloridas dos móveis fabricados no local e seus respectivos preços anotados com",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "caneta, além da anotação CL Movelaria e do nome de Edilson de Souza Franca.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, José",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Luis Araújo Lima informou aos fiscais que os móveis eram feitos sob encomenda (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1215049271",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "- Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "18 e 1215049271 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "18).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em contrapartida, as mulheres ouvidas na qualidade de testemunhas de defesa que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "convivem em união estável, confirmaram que seus maridos têm mais de uma esposa;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "conferindo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "veracidade aos depoimentos acerca dos costumes na comunidade e aos trechos dos cadernos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "encontrados.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os réus alegaram em defesa escrita que as ripas encontradas “são espadas de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "madeira utilizadas para treino de artes marciais, esporte, facilmente encontradas em qualquer loja",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de esporte, sendo essas que foram apreendidas impossível de ter sido usadas para agredir",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "qualquer pessoa antes da pandemia de covid 19, pois foram fabricadas exatamente no período",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da pandemia por um dos membros da comunidade São Lucas”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O fato de supostamente serem destinadas ao treinamento de artes marciais não",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "exclui a possibilidade de também serem utilizadas para o cometimento de agressões, conforme",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apontado pela testemunha Yeon Gibo Alves da Silva em audiência “usava para treinamento e, às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vezes, pra correção (...) eu mesmo já fiquei com as costas tudo avermelhado de tanto apanhar",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(...)”.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Algumas testemunhas de defesa afirmam que existiam armas para serem usadas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "para caça.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Outras, porém, alegaram que não havia armas, não havendo coerência nas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "informações.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O relatório de id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089268 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "36 destaca que no primeiro dia das buscas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "não foram encontradas armas e algumas das pessoas que residiam no local informaram que não",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "existiam armas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Porém, depois da apreensão, alguns integrantes informaram que nunca tinha",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "visto aquela arma na localidade, enquanto outros disseram que era normal ter arma de caça na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "comunidade, mas que nunca viram aquela arma no local (id.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1211089264 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "22),",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "19",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "demonstrando a fragilidade das alegações das testemunhas de defesa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "d) Tipificação",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os réus Domingos, Rogério, Rafael e Joicilene, de forma livre e consciente, nos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "municípios de Baião-PA e Tucuruí/PA submeteram diversas pessoas sob sua guarda, poder e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autoridade, inclusive crianças e adolescentes, a intenso sofrimento físico e mental, como forma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de aplicar castigo pessoal e medida de caráter preventivo, valendo-se do emprego de violência e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "grave ameaça (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e) Concurso de crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Diante da ausência de elementos suficientes para identificar o número exato de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "vítimas, deixo de aplicar a regra do concurso material de crimes, posto que, tratando-se de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crimes autônomos, praticados contra vítimas diferentes e modo de execução diversos, é incabível",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o concurso formal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.4.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DO CRIME PREVISTO NO ART.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 DO CP",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O crime de associação criminosa consiste em \"associarem-se 3 (três) ou mais",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas, para o fim específico de cometer crimes\" (CP, art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288, caput).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, são dois os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos que integram o delito: i) a conduta de associarem três ou mais pessoas;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ii) para o fim",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "específico de cometer crimes.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Exige-se ainda que a vinculação dos agentes seja sólida quanto à",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "estrutura e durável quanto ao tempo, conforme a doutrina majoritária e a jurisprudência pátria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Dos fundamentos até aqui esposados, ficou comprovado que os denunciados se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "associaram, de forma estável e permanente, com o objetivo específico de cometer diversos e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "graves crimes, incluindo redução de adultos, crianças e adolescentes a condições análogas às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de escravo e tortura.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Cada réu detinha sua atribuição na direção da comunidade, atuando em união de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "desígnios, para a exploração compulsória da força do trabalho alheio e a execução de torturas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "físicas e psicológicas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DISPOSITIVO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ante o exposto, JULGO PROCEDENTE, em parte, a pretensão punitiva estatal",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deduzida na denúncia, para:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) CONDENAR os réus Domingos Sousa dos Santos, Rogério Almeida da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Cunha, Joicilene dos Santos Costa e Rafael Brito Sousa pela prática dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crimes tipificados no artigo 149, §2º, II do CP, artigo 288 do mesmo diploma",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "legal e art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, todos em concurso material (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69, do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 20",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) CONDENAR o réu Edilson de Souza França pela prática dos crimes",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "tipificados no artigo 149 do CP, em concurso material com os delitos do artigo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do mesmo diploma legal, na condição de partícipe;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) ABSOLVER o réu Edilson de Souza França pela prática do crime tipificado",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "4.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DOSIMETRIA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Passo à dosimetria da pena em conjunto dos crimes, em estrita observância ao",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "disposto no artigo 68, caput, do Código Penal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réu DOMINGOS SOUSA DOS SANTOS",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Analisadas as diretrizes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "59 do CP, verifico que a culpabilidade do réu é",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "grave, pois a sua conduta desenvolveu-se sob dolo direito e intenso, na medida em que desde os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "primórdios da comunidade já exercia atribuições de confiança junto ao mestre fundador, Ailson.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ainda, vários foram os depoimentos que o apontavam como agressor direto, como autoridade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que definia quem deveria receber punições físicas e outros castigos e impedia a saída dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "demais membros que quisessem sair da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O réu gerenciava a associação criminosa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "praticados a fim de angariar ganhos financeiros e satisfazer a lascívia do réu.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Domingos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "também transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas humildes, além da utilização da religião e da fé como elemento para subjugá-las e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetê-las seja ao trabalho análogo ao de escravo, seja à tortura psicológica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, há que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "se considerar o longo período que perdurou a situação criminosa, tendo nascido e crescido várias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crianças inseridas na exploração.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As consequências dos crimes excedem qualquer normalidade pois, além de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "causarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "direitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contribuições previdenciárias devidas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Demais disso, o trabalho forçado aliado à contínua tortura",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e doutrinação psicológica certamente causaram traumas nas vítimas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "consequências, posto que fora constituída para o cometimento de graves crimes, contra as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mesmas vítimas, ao longo de muitos anos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 21",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apurados nos autos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "judiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos crimes previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal (pelo menos 55 crimes);",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Atento à situação econômica do réu, que exercia o controle financeiro de todos os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "bens e empreendimentos da comunidade, estabeleço no valor integral do salário-mínimo do ano",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de 2022 (data do fato), o valor de cada dia-multa (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 1º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "facilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP e art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, por se constituir causa de aumento de pena a ser utilizada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na última fase da dosimetria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na terceira fase:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso I do § 2º do artigo 149, uma vez que crianças foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "metade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4º do artigo 1º da Lei nº 9.455/97 em um terço",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foram apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, aplico a regra disciplinada pelo art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dias-multa para os crimes previstos no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 22",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 do CP), fica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9 (nove) meses e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "setenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seu efetivo pagamento (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 2º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com fundamento no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33, caput, e § 2º, alínea “a” c/c art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 (parte final), todos do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "regime fechado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réu ROGÉRIO ALMEIDA DA CUNHA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Analisadas as diretrizes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "59 do CP, verifico que a ré agiu com atitude",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "consciente e premeditada, demonstrando um índice elevado de reprovabilidade na prática dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crimes previstos nos art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, tendo em vista o número de vítimas e o longo período de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "subjugação, o que merece a devida censura.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, o réu ocupava o segundo lugar na",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "hierarquia do comando da comunidade e vários foram os depoimentos que o apontavam como",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "agressor direto, nas punições físicas e outros castigos e impedia a saída dos demais membros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que quisessem sair da comunidade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "praticados a fim de angariar ganhos financeiros e satisfazer a lascívia do réu.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Rogério também",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "humildes, além da utilização da religião e da fé como elemento para subjugá-las e submetê-las",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seja ao trabalho análogo ao de escravo, seja à tortura psicológica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois além de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "causarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "direitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contribuições previdenciárias devidas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Demais disso, o trabalho forçado aliado à contínua tortura",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e doutrinação psicológica certamente causaram traumas nas vítimas, que foi possível verificar",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos depoimentos da testemunha Helen e Yeon, que se emocionaram ao relatar os fatos em juízo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "consequências, posto que fora constituída para o cometimento de graves crimes, contra as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mesmas vítimas, ao longo de muitos anos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "23",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apurados nos autos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "judiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos crimes previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Atento à situação econômica do réu, que juntamente ao réu Domingos exercia o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "controle financeiro de todos os bens da comunidade, estabeleço o 1 salário-mínimo integral do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "ano de 2022 (data do fato), como o valor de cada dia-multa (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 1º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "facilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP e art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, por se constituir causa de aumento de pena a ser utilizada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na última fase da dosimetria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na terceira fase:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso I do § 2º do artigo 149, uma vez que crianças foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "metade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4º do artigo 1º da Lei nº 9.455/97 em um terço",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foram apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, aplico a regra disciplinada pelo art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dias-multa para os crimes previstos no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "24",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 do CP), fica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9 (nove) meses e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "setenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seu efetivo pagamento (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 2º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com fundamento no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33, caput, e § 2º, alínea “a” c/c art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 (parte final), todos do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "regime fechado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réu JOICILENE DOS SANTOS COSTA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A culpabilidade de Joicilene também se mostrou mais acentuada e merece ser",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "valorada negativamente, uma vez que não só gerenciava a associação criminosa juntamente a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Domingos e Rogério, ainda que em um patamar inferior, como demonstrava extrema crueldade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "no seu modo de agir em relação a crianças e mulheres.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade da ré, tendo em vista que não há",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "praticados a fim de angariar ganhos financeiros e levar um estilo de vida superior em detrimento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "das vítimas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Joicilene também",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "humildes, além da utilização de seu papel na cúpula da comunidade para infligir tortura nos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "menores.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois além de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "causarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "direitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contribuições previdenciárias devidas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "consequências, posto que fora constituída para o cometimento de graves crimes, contra as",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mesmas vítimas, ao longo de muitos anos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável, diante dos fatos apurados nos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "judiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "25",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos crimes previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Atento à situação econômica da ré, que juntamente ao réu Domingos e Rogério",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "desfrutava dos ganhos financeiros da comunidade, estabeleço o 1 salário-mínimo integral do ano",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "de 2022 (data do fato), como o valor de cada dia-multa (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 1º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "facilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP e art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, por se constituir causa de aumento de pena a ser utilizada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na última fase da dosimetria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na terceira fase:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso I do § 2º do artigo 149, uma vez que crianças foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "metade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4º do artigo 1º da Lei nº 9.455/97 em um terço",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foram apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, aplico a regra disciplinada pelo art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dias-multa para os crimes previstos no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 do CP), fica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9 (nove) meses e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "um deles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "setenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seu efetivo pagamento (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 2º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág. 26",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com fundamento no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33, caput, e § 2º, alínea “a” c/c art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 (parte final), todos do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "regime fechado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réu RAFAEL BRITO SOUSA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Analisadas as diretrizes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "59 do CP, verifico que o réu merece a valoração",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "negativa da culpabilidade, visto que diversas vítimas citam que ele foi responsável por agressões",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "e espancamentos, tendo inclusive raspado o cabelo de uma delas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "praticados a fim de angariar ganhos financeiros e permanecer parte da cúpula da comunidade,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "aderindo dolosamente ao intento criminoso de Domingos e Rogério.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Rafael também",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "humildes, além da utilização da religião e da fé como elemento para subjugá-las e submetê-las",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "seja ao trabalho análogo ao de escravo, seja à tortura psicológica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois as agressões e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "espancamentos evidentemente causaram traumas nas vítimas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O crime de associação criminosa",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "também merece valoração negativa quanto as consequências, posto que fora constituída para o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "cometimento de graves crimes, contra as mesmas vítimas, ao longo de muitos anos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apurados nos autos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "judiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos crimes previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Tendo em vista que não houve informações acerca da ingerência do réu nos ganhos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "financeiros da comunidade, tampouco se possui outros bem e rendas, estabeleço 1/30 do salário-",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mínimo do ano de 2022 (data do fato), como o valor de cada dia-multa (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 1º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "27",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "facilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "autoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP e art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97, por se constituir causa de aumento de pena a ser utilizada",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "na última fase da dosimetria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na terceira fase:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso I do § 2º do artigo 149, uma vez que crianças foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "metade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4º do artigo 1º da Lei nº 9.455/97 em um terço",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foram apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, aplico a regra disciplinada pelo art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dias-multa para os crimes previstos no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1º, II, § 4º, II, Lei n.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9.455/97;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 do CP), fica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9 (nove) meses e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "deles, o valor anteriormente fixado, o que implica o valor total de R$ 12.766,4 (doze mil,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "setecentos e sessenta e seis reais e quatro centavos), a ser monetariamente atualizado desde a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "data do fato até seu efetivo pagamento (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 2º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com fundamento no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33, caput, e § 2º, alínea “a” c/c art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 (parte final), todos do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "regime fechado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réu EDILSON DE SOUZA FRANÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Analisadas as diretrizes do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "59 do CP, a culpabilidade foi normal aos tipos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "penais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "28",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "elementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Os motivos foram normais às espécies.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos, merece valoração",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "negativa, uma vez que houve o envolvimento de menores e pessoas humildes, além da utilização",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "da religião e da fé como elemento para subjugá-las e submetê-las seja ao trabalho análogo ao de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "escravo, seja à tortura psicológica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois o delito do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do código penal foi cometido por longo lapso temporal, contra elevada quantidade de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "pessoas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "apurados nos autos.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "judiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 2 (anos) anos e 8 (oito) meses de reclusão e 15 (quinze) dias-multa para cada um",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "dos crimes previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do Código Penal;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Tendo em vista que não houve informações acerca da ingerência do réu nos ganhos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "financeiros da comunidade, tampouco se possui outros bem e rendas, estabeleço 1/30 do salário-",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mínimo do ano de 2022 (data do fato), como o valor de cada dia-multa (CP art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 1º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na segunda fase, aplico a agravante do artigo 61, II, “h”, do CP, ao crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do CP, fixando a pena intermediária em 2 (dois) anos e 4 (quatro) meses de reclusão e 15 dias-",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, ao crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "por se constituir causa de aumento de pena a ser utilizada na última fase da dosimetria.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Na terceira fase:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso I do § 2º do artigo 149, uma vez que crianças foram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "submetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "metade.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena definitiva em 4 anos e 2 meses de reclusão e 23 dias-multa.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "foram apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP, aplico a regra disciplinada pelo art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "29",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) 6 (seis) anos e 3 (três) meses de reclusão e 35 (trinta e cinco) dias-multa para os",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "crimes previstos no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "149 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "288 do CP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 do CP), fica",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o sentenciado condenado, definitivamente, a pena de 9 (nove) anos;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3 (três) meses de reclusão e",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "35 (trinta e cinco) dias-multa, mantendo-se, para cada um deles, o valor anteriormente fixado, o",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que implica o valor total de R$ 1.414,00 (doze mil, setecentos e sessenta e seis reais e quatro",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "centavos), a ser monetariamente atualizado desde a data do fato até seu efetivo pagamento (CP",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "49, § 2º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Com fundamento no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "33, caput, e § 2º, alínea “a” c/c art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "69 (parte final), todos do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "regime fechado.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "DAS PRISÕES PREVENTIVAS E DISPOSIÇÕES FINAIS",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Considerando a gravidade dos fatos, a ingerência dos réus na perpetuação da",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "empreitada criminosa, a atuação violenta contra as vítimas e o poder reverencial que os réus",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "detêm sobre os integrantes da Comunidade São Lucas, com respaldo no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "312 do CPP,",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "mantenho a prisão preventiva de todos os réus.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Conquanto a condenada JOICILENE DOS SANTOS COSTA seja genitora de dois",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "filhos com idade inferior a 12 (doze) anos, ficou comprovada a prática do crime de tortura, delito",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "praticado mediante emprego de violência e ameaça em detrimento de outras pessoas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "A gravidade dos delitos em que incorreram os condenados impõe a necessidade de",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "que a prisão preventiva seja mantida.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ademais, observa-se que as circunstâncias que ensejaram",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "o decreto de prisão não se alteraram, motivo pelo qual adoto como razões desta decisão a",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "fundamentação esposada nos processos 1002628-24.2022.4.01.3907 e 1002792-",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "86.2022.4.01.3907.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de aplicar a detração prevista no § 2º, do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "387 do Código de Processo",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Penal, vez que o lapso de prisão já cumprido não se afigura suficiente para modificar o regime",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "inicial da pena, cabendo ao juízo da execução realizar tal providência.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Deixo de fixar valor mínimo para reparação dos danos causados pelo delito (CPP",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "387, IV, com redação dada pela Lei nº 11.719, de 22.06.2008), porque não houve pedido do",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ministério Público Federal neste sentido.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Proceda-se, em relação às armas apreendida, conforme determinado no artigo 25",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do Estatuto do Desarmamento.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Custas devidas pelos sentenciados, ora condenados (Lei nº 9.289, de 04.07.96, art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6º).",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "30",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047Documento id 1532923378 - Sentença Tipo A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Proceda-se ao recolhimento do valor atribuído a título de pena pecuniária, nos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "termos do art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "686 do CPP;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Oficie-se ao Tribunal Regional Eleitoral do Estado do Pará/PA para cumprimento",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "do disposto no art.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "15, III, da CF;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Oficie-se ao Instituto de Identificação Civil, informando sobre a condenação dos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Réus;",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "4.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Expeçam-se guias de execução penal.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Publique-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Registre-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Tucuruí/PA, data da assinatura.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Diogo da Mota Santos",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal Substituto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "TUCURUÍ, 16 de março de 2023.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1532923378 - Pág.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "31",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: DIOGO DA MOTA SANTOS - 21/03/2023 15:44:57",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23031613114534000001519591047",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23031613114534000001519591047",
+      "label": "OUTROS"
+    }
+  ]
+}

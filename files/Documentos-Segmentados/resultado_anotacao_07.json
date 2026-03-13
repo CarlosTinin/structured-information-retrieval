@@ -1,0 +1,653 @@
+{
+  "total_sentencas": 162,
+  "dados": [
+    {
+      "sentenca": "Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PODER JUDICIÁRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "JUSTIÇA FEDERAL",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Subseção Judiciária de Altamira-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Vara Federal Cível e Criminal da SSJ de Altamira-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "PROCESSO: 0000359-46.2019.4.01.3903",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "POLO PASSIVO:SEBASTIAO FERREIRA CUNHA",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: VINICIUS DOMINGUES BORBA - PA13895-B",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "RELATÓRIO",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Cuida-se ação penal movida pelo MPF em face de SEBASTIÃO FERREIRA CUNHA pela prática, quatro vezes, dos crimes previstos no art. 149, caput, no art. 203 e no art. 297, § 4°, todos do Código Penal, na forma do art. 69 do CP, c/c Art. Da Lei 8.176/91 e Art. 55 da 9.605/98 em concurso formal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 17.12.2020 (id. 364697876).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O Denunciado apresentou resposta a acusação (Id749252452), a qual foi analisada na decisão de id. 1133058278.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Foi realizada audiência de instrução e julgamento (id. 1388447260).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em alegações finais orais, o MPF requereu a condenação.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa, por seu turno, pugnou pela absolvição.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Sentencio.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "II – FUNDAMENTAÇÃO",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "1-DO CRIME DO ART. 149, CP em relação aos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O tipo penal do artigo 149 é de ação múltipla, de modo que o delito resta configurado se constatada qualquer uma das seguintes circunstâncias: i) submissão de alguém a trabalhos forçados ou a jornada exaustiva;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "ii) sujeição de alguém a condições degradantes de trabalho;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "iii) restrição à locomoção de alguém em razão de dívida contraída com o empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O Manual de Combate ao Trabalho em condições Análogas às de Escravo, editado pelo Ministério do Trabalho e Emprego, cita as seguintes circunstâncias que devem ser consideradas pelos auditores para formação de um juízo sobre a existência ou não de um estado de degradação: i) fornecimento de Epis;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "ii) instalações sanitárias e abrigos; c) existência de acidentes e doenças; iv) fornecimento de água potável; v) alimentação adequada;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "vi) condições dos veículos de transportes; vii) instalações elétricas; viii) alojamentos; ix) existência de instalações sanitárias; x) locais para realização de refeições.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Num. 1556116863 - Pág. 1",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Por fim, quanto à possibilidade de se considerar as particularidades locais e geográficas como relevantes para densificação do conceito de trabalho degradante, não desconheço existir precedentes em ambos os sentidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Até que a questão seja decidida de modo definitivo pelo Supremo Tribunal Federal no bojo do RE 1.323.708, adoto a perspectiva segundo a qual o conceito de trabalho degradante não varia de acordo com diferenciações geográficas ou regionais, pelos seguintes motivos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Primeiro, porque a Constituição Federal proíbe que o Estado proteja, por meio da legislação penal, a liberdade e dignidade dos cidadãos de maneira diferenciada, a depender da localização geográfica na qual estão inseridos ou do tipo de trabalho que exercem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O artigo 3º, inciso IV, da Constituição Federal, impõe que a dignidade dos trabalhadores seja protegida de igual forma, independentemente da natureza do trabalho exercido ou do local em que o serviço é prestado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo, porque admitir o raciocínio inverso seria proteger com menos intensidade a dignidade dos trabalhadores mais vulneráveis, que atuam na zona rural e em locais menos desenvolvidos do país.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Terceiro, porque a Convenção Americana de Direitos Humanos (Pacto de San Jose da Costa Rica), ratificada pelo Brasil por meio do Decreto 678/1992, em seu artigo primeiro, impede que os Estados-Partes discriminem cidadãos com base em sua origem nacional, origem social e/ou posição econômica",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quarto, porque no caso “Trabalhadores da Fazenda Brasil Verde vs. Brasil”, o Estado Brasileiro foi responsabilizado internacionalmente por proteger de modo deficiente os trabalhadores que atuam nas regiões norte e nordeste do país, conforme se observa do seguinte trecho da sentença proferida:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "417. Enel presente caso la Corte nota que existía una afectación desproporcional en contra de una parte de lapoblación que compartía características relativas a sucondición de exclusión, pobreza y falta de estudios.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Se constató que lasvíctimas de lainspeccióndelaño 2000 compartían estas características, lascualesloscolocabanen una particular situação de vulnerabilidade (supra párr. 41).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "418. La Corte nota que delanálisis de losprocesos que se promovieronrespecto de loshechos que ocurríanenlaHacienda Brasil Verde puedeobservarse que las autoridades no otorgaron a loshechosdenunciados la extrema gravedad que losmismosrepresentaban, y como consecuencia de ello no actuaronconladebidadiligencianecesaria para garantizarlosderechos de lasvíctimas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "La falta de actuación, así como la poca severidad de losacuerdosgenerados y Num. 1556116863 - Pág. 2",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "lasrecomendaciones emitidas reflejaron una falta de condena a loshechos que ocurríanenlaHacienda Brasil Verde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "La Corte considera que la falta de acción y de sanción de estoshechospuedeexplicarse a través de una normalización de las condiciones a las que continuamente eran sometidas personas con determinadas características enlosestados más pobres de Brasil.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "419. Es assim, que é razonable concluir que la falta de debidadiligencia y de sanción por loshechos de sometimiento a condição análoga ala de esclavoestaba relacionada a una preconcepción de las condiciones a las que podía ser normal que fueran sometidos lostrabajadores de lashaciendasdel norte y noreste de Brasil.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esta preconcepciónresultódiscriminatoriaenrelación a lasvíctimasdel caso e impactólaactuación de las autoridades obstaculizando laposibilidad de conducirprocesos que sancionaran a losresponsables.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fixadas essas premissas, observo que a materialidade delitiva do crime do artigo 149 do Código Penal restou devidamente comprovada nos autos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O relatório de fiscalização lavrado pelo Ministério do Trabalho (ids. 242946908 - Pág. 3/32) é bastante minucioso e relata uma situação de intensa gravidade envolvendo o trabalhador resgatado da propriedade do denunciado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dentre as situações relatadas, destaco as seguintes:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "i) Todos os barracos tinham estrutura de troncos de madeira retirada da mata e estavam cobertos com uma lona plástica preta.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O piso dos barracos era de chão batido e não havia paredes nem qualquer outra proteção lateral.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "ii) No garimpo a água utilizada para higienização dos alimentos e utensílios, bom como para cozinhar, era retirada de um poço cavado próximo aos barracos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "iii) não havia recipiente para armazenamento adequado de água; iv) os trabalhadores, quando da execução de suas atividades, não utilizavam equipamentos de proteção individual.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Tais circunstâncias foram ilustradas com imagens da situação precária dos trabalhadores, bem como foram corroboradas pelos depoimentos das testemunhas arroladas pela acusação, que afirmaram o seguinte em seus depoimentos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "ANTONIO DIAS - Que o resgate se deu em razão da situação degradante dos trabalhadores; estavam alojados e qualidade de água entendeu que era degradante; que trabalhavam em regime de porcentagem; não se recorda se foi apresentado o contrato de parceria;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "JOSE MARCELINO - Que os trabalhadores estavam na extração do garimpo; eles estavam em barracos cobertos com lonas; que por informações do gerente chegou ao empregador; que trabalhavam em regime de percentual; que o alojamento era precário e a água era de um pequeno poço cavado pelos trabalhadores; que ficavam expostos a perigo; que a sede tinha condições de alojar os trabalhadores; que não lembra a distância entre o local a sede da Fazenda, só lembra que não era muito distante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, não há dúvidas de que os trabalhadores resgatados exerciam suas atividades em condições degradantes, o que já é suficiente para caracterizar os elementos descritivos do tipo penal, considerando tratar-se de crime de ação múltipla.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à autoria delitiva, o réu SEBASTIÃO FERREIRA CUNHA afirmou que Num. 1556116863 - Pág. 3",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "contratou os trabalhadores na condição de parceiros e negou o trabalho em condições degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação ao primeiro aspecto, penso não assistir razão à defesa, uma vez que os depoimentos prestados pelos trabalhadores em sede administrativa revelam que existia vínculo de subordinação (id. 242946908 - Pág. 34, 37 e 38).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange ao segundo aspecto, igualmente não tem razão a defesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como demonstrado anteriormente, restou comprovado que os trabalhadores exerciam suas atividades em condições degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, restou devidamente comprovado que o réu SEBASTIÃO FERREIRA CUNHA praticou o crime do art. 149, do CP em relação aos quatro trabalhadores resgatados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2-DOS CRIMES DO ARTIGO 297, PARÁGRAFO QUARTO, DO CÓDIGO PENAL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos termos do artigo 297, parágrafo quarto, do Código Penal, comete crime quem omite, na Carteira de Trabalho e Previdência social, “nome do segurado e seus dados pessoais, a remuneração, a vigência do contrato de trabalho ou de prestação de serviços”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A jurisprudência do Superior Tribunal de Justiça possui jurisprudência no sentido de que o delito em comento é “crime formal, que, portanto, não exige resultado naturalístico consistente em prejuízo aos empregados ou à Previdência Social, tendo em vista que o bem juridicamente tutelado pela norma é a fé pública” .",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Contudo, essa afirmação não significa que a mera ausência de registro enseja o cometimento do delito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É necessário que exista comprovação de que o agente atuou dolosamente, com vontade livre e consciente de não realizar o registro dos empregados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, cito o seguinte precedente:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. PROCESSUAL PENAL. CONDIÇÃO ANÁLOGA À DE ESCRAVO. CP, ART. 149. OMISSÃO DE DADOS DA CARTEIRA DE TRABALHO E PREVIDÊNCIA SOCIAL. CP, ART. 297, § 4º. ATIPICIDADE DAS CONDUTAS.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "MANUTENÇÃO DA ABSOLVIÇÃO. RECURSO DE APELAÇÃO NÃO PROVIDO. 1. Para a configuração do delito de redução à condição análoga de escravo faz-se necessária a comprovação inequívoca do dolo, ou seja, o agente, consciente e voluntariamente tem a intenção de cometer atos que violem os princípios, regras e normas de convivência pacífica, com esteio no texto constitucional e nas demais normas supraconstitucionais que regulam os direitos fundamentais, mormente, a liberdade individual, corolário do princípio da dignidade humana.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2. Na espécie, não se extrai dos autos a configuração do status libertatis dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os depoimentos das testemunhas de acusação revelam que o apelado não contratou e não teve qualquer relação direta com os trabalhadores, não havendo dolo na conduta perpetrada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os trabalhadores estavam no local por espontânea vontade, recebiam alimentação regular e tinham folga semanal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3. Prevalece no egrégio Superior Tribunal de Justiça o entendimento no sentido de que a simples omissão de anotação de contrato na Carteira de Trabalho já preenche o tipo penal descrito no § 4º do art. 297 do Código Penal. Entretanto, \"faz-se necessária uma análise parcimoniosa do referido tipo penal, porquanto indispensável que a conduta preencha não apenas a tipicidade formal, mas também a tipicidade material. Com Num. 1556116863 - Pág. 4",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "efeito, trata-se de crime contra a fé pública, cujo tipo penal depende da verificação do dolo, consistente na vontade de falsificar ou alterar o documento público, sabendo o agente que o faz ilicitamente.\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Precedente do STJ. 4. Não evidenciado, num primeiro momento, a efetiva vulneração ao bem jurídico tutelado, qual seja, a fé pública, haja vista o documento público - Carteira de Trabalho e Previdência Social - não ter perdido sua autenticidade, não há se falar em falsidade material.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De igual modo, não havendo a anotação de quaisquer dados não há como se afirmar, peremptoriamente, que se pretendia alterar ideologicamente a realidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "5. A melhor interpretação a ser dada ao art. 297, § 4º, do Código Penal, é a que exige a efetiva inserção de dados na Carteira de Trabalho, com a omissão de informação juridicamente relevante, demonstrando-se, da mesma forma, o dolo do agente em falsear a verdade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se revela suficiente para inaugurar um processo penal de forma automática a simples omissão de registro em Carteira de Trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "6. Manutenção da r. sentença absolutória. 7. Recurso de apelação não provido.(TRF-1 - APR: 00005825420094013901, Relator: DESEMBARGADORA FEDERAL MONICA SIFUENTES, Data de Julgamento: 19/02/2019, TERCEIRA TURMA, Data de Publicação: 01/03/2019).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso, a materialidade delitiva restou demonstrada, uma vez que, segundo o relatório de fiscalização juntado aos autos, nenhum dos trabalhadores resgatados possuía anotações do vínculo em suas Carteiras de Trabalho, fato corroborado pelas testemunhas ouvidas em juízo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se trata de mero ilícito trabalhista, mas sim, de conduta delituosa, ante a evidente ofensa ao bem jurídico protegido – fé pública.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria também restou comprovada, conforme fundamentação no item 1, porquanto os trabalhadores resgatados teriam sido contratados pelo réu por intermédio de seu Gerente Jefferson, conforme depoimento prestado pelo aludido gerente e os trabalhadores (id. 242946908 - Pág. 34, 37 e 38).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, não havendo causa que exclua a ilicitude dos crimes imputados e isente o réu de culpabilidade, reputo que o réu também incidiu no crime tipificado no Art. 297, § 4º, do CP em relação aos três trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, restou caracterizado o concurso formal homogêneo de crimes, porque praticados tipos descritos pela mesma figura.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aplicam-se as penas de cada um dos delitos, sem cumulação, mas com incidência da causa de aumento em relação aos quatro trabalhadores sem registros em suas CTPS.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3 CRIMES DO ARTIGO 203 DO CÓDIGO PENAL (FRUSTRAÇÃO DE DIREITO ASSEGURADO POR LEI TRABALHISTA).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O réu também foi denunciado pela prática do delito previsto pelo artigo 203 do Código Penal, cuja descrição típica é.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, para configurar o referido delito é necessária a presença de fraude ou de violência, as quais constituem elementares do tipo penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso, as provas carreadas aos autos não corroboram os elementos descritos na Num. 1556116863 - Pág. 5",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "acusação acerca de eventual ardil por parte do denunciado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, os próprios fiscais ouvidos em juízo asseguraram que não havia violência e nem restou caracterizado que havia submissão dos trabalhadores a qualquer fraude por parte do empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, a absolvição é a medida mais adequada, nos termos do art. 386, VII, do CPP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "4-DO CRIME DESCRITO NO ART.55 da Lei 9605/98 e o previsto no art. 2º da Lei 8.176/91.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, em que pese o recebimento da denúncia e a decisão de resposta à acusação, ao analisar a denúncia ofertada pelo MPF, observo que não foi realizada a exposição do fato criminoso, e nem suas circunstâncias e a conduta empreendida pelo réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa linha, denota-se que o MPF se limitou a narra a conduta de trabalho escravo e os demais delitos, e somente no dispositivo apontou ao réu os crimes descritos no art. 55 da Lei 9605/98 e 2º da Lei 8176/91, o que não é suficiente, tornando a peça acusatória inepta, nos termos do art. 395, I, do CPP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, em suas alegações finais, o MPF nada menciona acerca dos aludidos delitos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, com relação ao aspecto, a denúncia é inepta.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "III- DISPOSITIVO",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, ACOLHO PARCIALMENTE A DENÚNCIA para:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "1-Condenar SEBASTIÃO FERREIRA CUNHA nas sanções do art. 149, do Código Penal e Art. 297, § 4º, CP por 4(quatro) este c/c com 70, CP, em concurso material;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "2-Absolver o réu pelo delito do Art. 203, CP, com base no art. 386, VII, do CPP;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "3-Rejeitar a denúncia em relação aos delitos dos Art. 55 da Lei 9.605/98 e 2º da 8.176/91, com base no art. 386, VII, CPP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo a dosar as penas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que determina o art. 59 do Código Penal, passo à dosimetria da pena do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase da dosimetria, valoro como negativas apenas as consequências do delito, em razão de se ter constado que os trabalhadores estavam submetidos a risco físico elevado, pela possibilidade de desabamentos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a pena base em 03 (três) anos de reclusão e 20 (vinte) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e nem atenuantes, tampouco causas de aumento ou de diminuição.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Num. 1556116863 - Pág. 6",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da orientação jurisprudencial, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2 (metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de infrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 4 (quatro) infrações penais, razão pela qual majoro a pena em 1/3, fixando a pena privativa de liberdade em 4 (quatro) anos de reclusão e o pagamento de multa em 80 (oitenta) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "DO CRIME DESCRITO NO ART. 297, § 4º, CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há nenhuma circunstância judicial negativa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a pena base em 02 (dois) anos de reclusão e 10 (dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e nem atenuantes, tampouco causas de aumento ou de diminuição.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da orientação jurisprudencial, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2 (metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de infrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 4 (quatro) infrações penais, razão pela qual majoro a pena em 1/3, fixando a pena privativa de liberdade em 2 (dois) anos e 8 (oito) meses de reclusão e o pagamento de multa em 40 (quarenta) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Do concurso material de crimes (art. 149 e 297, § 4º, do CP).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando que o réu, mediante mais de uma ação ou omissão, praticou dois crimes diversos, aplicam-se cumulativamente as penas privativas de liberdade cominadas, motivo pelo qual somo as penas cominadas para fixar a pena privativa de liberdade em 06 (seis) anos e 8 (oito) meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A pena de multa resta fixada em 120 (cento e vinte) dias-multa",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à multa, considerando a ausência de informações acerca da condição econômica do réu, fixo cada dia-multa no valor correspondente a 01/30 salário-mínimo vigente à época do fato, consoante dispõe o art. 49, § 1º, observado, ainda o disposto no art. 60, ambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de substituir a pena, na forma do art. 44.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de fixar o valor mínimo para reparação dos danos, prevista no art. 387, IV, do CPP, em razão da ausência de pedido neste sentido por parte do Ministério Público Federal ou pela União, bem como da ausência de contraditório a respeito.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "O início de cumprimento da pena deverá ocorrer no regime semi-aberto, com base no art. 33, § 2º, “b” do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Do direito de apelar em liberdade",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Num. 1556116863 - Pág. 7",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545Documento id 1556116863 - Sentença Tipo D",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Considerando que o réu permaneceu em liberdade durante toda a instrução, o montante da pena aplicada e o regime inicial de seu cumprimento, bem como a ausência de qualquer circunstância justificadora de sua segregação preventiva, deve permanecer em liberdade.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Com fundamento no art. 804 do Código de Processo Penal e no art. 6º da Lei nº 9.289/1996, condeno os réus ao pagamento das custas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado: a) comunique-se à autoridade policial e ao Tribunal Regional Eleitoral, para os fins do artigo 15, III, da Constituição Federal;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "c) oficie-se ao órgão de estatística, para os fins do artigo 809 do CPP;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) expeça a guia de recolhimento definitiva e encaminhe-se ao Juízo Estadual competente, na forma Resolução Nº 113 de 20/04/2010, PORTARIA CONJUNTA PRESI/COGER – 9418775 e da Resolução CNJ nº 417/2021.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Promovam-se as diligências necessárias.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Altamira/PA,data da assinatura digital.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(assinado digitalmente)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Mateus Pontalti",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Num. 1556116863 - Pág. 8",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente por: MATEUS BENATO PONTALTI - 27/04/2023 10:56:32",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "https://pje1g.trf1.jus.br:443/consultapublica/Processo/ConsultaDocumento/listView.seam?x=23033112252122300001542207545",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Número do documento: 23033112252122300001542207545",
+      "label": "OUTROS"
+    }
+  ]
+}
