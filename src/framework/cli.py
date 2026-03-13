@@ -4,9 +4,6 @@ import argparse
 
 from .stage1_1_document_type import run_stage1_1
 from .stage1_2_preprocessing import run_stage1_2
-from .stage2_embeddings import run_stage2_embeddings
-from .stage2_finetune import FineTuneConfig, run_stage2_finetune
-from .stage5_ner import run_stage5_ner
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -14,9 +11,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
 
     p1 = sub.add_parser("stage1_1", help="Macro-etapa 1.1: classificação por tipo de documento")
-    p1.add_argument("--input", required=True)
-    p1.add_argument("--out-with-type", required=True)
-    p1.add_argument("--out-sentencas-acordaos", required=True)
+    p1.add_argument("--input", default="files/datasets/dataset_completo.csv")
+    p1.add_argument("--output", default="files/output/dataset_filtered_by_type.csv")
+    p1.add_argument("--out-with-type", default=None)
     p1.add_argument("--text-column", default="Extracted Text")
 
     p2 = sub.add_parser("stage1_2", help="Macro-etapa 1.2: pré-processamento textual")
@@ -60,7 +57,7 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command == "stage1_1":
-        counts = run_stage1_1(args.input, args.out_with_type, args.out_sentencas_acordaos, args.text_column)
+        counts = run_stage1_1(args.input, args.output, args.out_with_type, args.text_column)
         print(counts.to_string(index=False))
         return
 
@@ -69,6 +66,8 @@ def main() -> None:
         return
 
     if args.command == "stage2-finetune":
+        from .stage2_finetune import FineTuneConfig, run_stage2_finetune
+
         cfg = FineTuneConfig(
             model_name=args.model_name,
             epochs=args.epochs,
@@ -79,10 +78,14 @@ def main() -> None:
         return
 
     if args.command == "stage2-embeddings":
+        from .stage2_embeddings import run_stage2_embeddings
+
         print(run_stage2_embeddings(args.input, args.output_dir, args.text_column, args.label_column, args.model_name, args.k_folds))
         return
 
     if args.command == "stage5":
+        from .stage5_ner import run_stage5_ner
+
         print(run_stage5_ner(args.input_json, args.output_json, args.output_csv, args.model_name, args.sentence_key, args.label_key))
         return
 

@@ -22,7 +22,7 @@ No diretório raiz do projeto:
 
 1. Executar uma etapa:
 
-`python -m src.framework.cli stage1_1 --input files/NER/temp/extracted_pdf_text.csv --out-with-type files/NER/temp/extracted_pdf_text_com_tipo.csv --out-sentencas-acordaos files/NER/temp/extracted_pdf_text_sentencas_acordaos.csv`
+`python -m src.framework.cli stage1_1 --input files/datasets/dataset_completo.csv --output files/output/dataset_filtered_by_type.csv`
 
 `python -m src.framework.cli stage1_2 --input files/datasets/dataset_processos_filtrados_por_merito.csv --output files/datasets/dataset_normalizado.csv`
 
