@@ -60,7 +60,7 @@ def get_models(seed: int) -> dict:
     }
 
 
-def run_stage3_embeddings(
+def run_stage2_embeddings(
     input_csv: str,
     output_dir: str,
     text_column: str = "texto_normalizado",
@@ -130,7 +130,7 @@ def run_stage3_embeddings(
             ),
         }
 
-    output_path = Path(output_dir) / "stage3_embeddings_results.json"
+    output_path = Path(output_dir) / "stage2_embeddings_results.json"
     ensure_parent_dir(output_path)
     save_json(report, output_path)
     print(f"\nResultados salvos em: {output_path}")
@@ -138,7 +138,7 @@ def run_stage3_embeddings(
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Etapa 3.2 - BERT embeddings + classificadores")
+    parser = argparse.ArgumentParser(description="Etapa 2 (embeddings) - BERT embeddings + classificadores")
     parser.add_argument("--input", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--text-column", default="texto_normalizado")
@@ -150,7 +150,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = build_arg_parser().parse_args()
-    run_stage3_embeddings(
+    run_stage2_embeddings(
         input_csv=args.input,
         output_dir=args.output_dir,
         text_column=args.text_column,
