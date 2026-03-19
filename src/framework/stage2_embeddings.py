@@ -51,8 +51,11 @@ def get_models(seed: int) -> dict:
         "SVM (Linear)": SVC(kernel="linear", random_state=seed, class_weight="balanced"),
         "Random Forest": RandomForestClassifier(
             n_estimators=150,
-            max_depth=12,
+            max_depth=6,
             random_state=seed,
+            min_samples_split=7,
+            min_samples_leaf=3,
+            max_features="sqrt",
             class_weight="balanced",
             n_jobs=-1,
         ),
@@ -61,7 +64,7 @@ def get_models(seed: int) -> dict:
     if xgb is not None:
         models["XGBoost"] = xgb.XGBClassifier(
             n_estimators=150,
-            max_depth=6,
+            max_depth=4,
             learning_rate=0.1,
             random_state=seed,
             n_jobs=-1,
