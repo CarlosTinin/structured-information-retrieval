@@ -37,11 +37,12 @@ def build_parser() -> argparse.ArgumentParser:
 
     p2e = sub.add_parser("stage2-embeddings", help="Etapa 2 (embeddings BERT + modelos clássicos)")
     p2e.add_argument("--input", required=True)
-    p2e.add_argument("--output-dir", required=True)
+    p2e.add_argument("--output-root", default="output")
     p2e.add_argument("--text-column", default="texto_normalizado")
     p2e.add_argument("--label-column", default="decisao")
     p2e.add_argument("--model-name", default="dominguesm/legal-bert-base-cased-ptbr")
     p2e.add_argument("--k-folds", type=int, default=3)
+    p2e.add_argument("--target-labels", default="condenação,extinto,absolvição")
 
     p5 = sub.add_parser("stage5", help="Etapa 5 - Extração NER")
     p5.add_argument("--input-json", required=True)
@@ -92,7 +93,18 @@ def main() -> None:
     if args.command == "stage2-embeddings":
         from .stage2_embeddings import run_stage2_embeddings
 
-        print(run_stage2_embeddings(args.input, args.output_dir, args.text_column, args.label_column, args.model_name, args.k_folds))
+        target_labels = tuple(x.strip() for x in args.target_labels.split(",") if x.strip())
+        print(
+            run_stage2_embeddings(
+                input_csv=args.input,
+                output_root=args.output_root,
+                text_column=args.text_column,
+                label_column=args.label_column,
+                model_name=args.model_name,
+                k_folds=args.k_folds,
+                target_labels=target_labels,
+            )
+        )
         return
 
     if args.command == "stage5":

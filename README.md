@@ -28,6 +28,8 @@ No diretório raiz do projeto:
 
 `python -m src.framework.cli stage2-finetune --input files/output/dataset_normalized.csv --output-dir files/results/stage2_finetune`
 
-`python -m src.framework.cli stage2-embeddings --input files/output/dataset_normalized.csv --output-dir files/results/stage2_embeddings`
+`python -m src.framework.cli stage2-embeddings --input files/output/dataset_normalized.csv --output-root output`
+
+Saídas da etapa `stage2-embeddings`: tabela LaTeX em `output/tables/table.tex` e matrizes de confusão por modelo em `output/images/matriz_confusao_*modelo*.png`.
 
 `python -m src.framework.cli stage5 --input-json files/Documentos-Segmentados/resultado_anotacao_02.json --output-json files/NER/sentencas_com_entidades.json --output-csv files/NER/sentencas_com_entidades.csv`
