@@ -1,0 +1,219 @@
+\documentclass[a4paper,fleqn]{cas-sc}
+\usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+\shorttitle{Multi-layer Legal NLP for Criminal Labor-Law Decisions}
+\shortauthors{Author et al.}
+
+\title[mode=title]{A Multi-Layer Framework for Filtering, Merit Classification, Sentence Segmentation, and Named-Entity Extraction in Brazilian Criminal Labor-Law Decisions}
+
+\author[1]{First Author}
+\cormark[1]
+\ead{first.author@email.com}
+\credit{Conceptualization, Methodology, Software, Writing -- original draft}
+
+\author[1]{Second Author}
+\ead{second.author@email.com}
+\credit{Validation, Formal analysis, Writing -- review \& editing}
+
+\affiliation[1]{organization={Federal University of Rio Grande do Sul},
+            city={Porto Alegre},
+            state={RS},
+            country={Brazil}}
+
+\cortext[1]{Corresponding author}
+
+\begin{abstract}
+This paper presents a multi-layer legal NLP framework for extracting structured information from Brazilian criminal labor-law judicial decisions related to modern slavery. Starting from a heterogeneous corpus (2,581 documents), the framework applies: (i) document-type filtering to retain only final decisions, (ii) legal-text normalization with task-specific outputs for classification and NER, (iii) penal-merit classification using Legal-BERT embeddings with classical classifiers, (iv) LLM-assisted sentence segmentation for conviction-focused documents, and (v) legal-domain NER for entity extraction. We describe the full pipeline, evaluation protocol, and error analysis, and discuss practical deployment constraints, reproducibility, and ethical/legal considerations. Results indicate that layered filtering and task-oriented preprocessing substantially improve downstream extraction quality in low-resource legal settings.
+\end{abstract}
+
+\begin{highlights}
+\item Multi-layer filtering for noisy, heterogeneous legal corpora.
+\item Task-specific normalization improves classification and NER compatibility.
+\item Conviction-focused segmentation and legal-domain NER for structured extraction.
+\item Reproducible benchmark design for Portuguese criminal labor-law decisions.
+\end{highlights}
+
+\begin{keywords}
+Legal NLP \sep Information extraction \sep Named entity recognition \sep Judicial decisions \sep Modern slavery \sep Portuguese language resources
+\end{keywords}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+\subsection{Problem context and motivation}
+\begin{itemize}
+    \item Explain the supply-chain transparency challenge in modern slavery investigations.
+    \item Justify why judicial decisions are high-value evidence sources.
+\end{itemize}
+\subsection{Research gap}
+\begin{itemize}
+    \item Existing legal NLP pipelines are often single-stage and not robust to document heterogeneity.
+    \item Limited resources for Portuguese criminal labor-law datasets and benchmarks.
+\end{itemize}
+\subsection{Research questions}
+\begin{itemize}
+    \item RQ1: How much does multi-layer filtering improve downstream extraction reliability?
+    \item RQ2: Which merit-classification model is most robust under class imbalance?
+    \item RQ3: How do segmentation quality and NER quality interact in the final extraction output?
+\end{itemize}
+\subsection{Main contributions}
+\begin{enumerate}
+    \item End-to-end framework from raw legal documents to structured entities.
+    \item Task-adaptive preprocessing design with separate outputs for classification and NER.
+    \item Comparative evaluation of embedding-based classifiers for penal-merit prediction.
+    \item Practical protocol for LLM-assisted segmentation plus legal-domain NER.
+\end{enumerate}
+
+\section{Related Work}
+\label{sec:related}
+\subsection{Legal document filtering and classification}
+\subsection{Legal sentence segmentation and structure mining}
+\subsection{Legal NER in low-resource languages}
+\subsection{Comparative synthesis with at least three high-impact studies}
+\textbf{Required output in this section:} a compact comparison table with dataset size, language, task formulation, model family, metrics, and limitations.
+
+\section{Dataset and Problem Definition}
+\label{sec:data}
+\subsection{Corpus description}
+\begin{itemize}
+    \item Raw corpus size: 2,581 documents.
+    \item Document heterogeneity (senten\c{c}a, ac\'ord\~ao, despacho, ata, etc.).
+\end{itemize}
+\subsection{Task definitions}
+\begin{itemize}
+    \item T1: Document-type filtering.
+    \item T2: Penal-merit classification (classes: condena\c{c}\~ao, absolvi\c{c}\~ao, extinto).
+    \item T3: Decision segmentation.
+    \item T4: Named-entity extraction.
+\end{itemize}
+\subsection{Annotation and label governance}
+\begin{itemize}
+    \item Define legal criteria for label assignment (Art. 149 framing).
+    \item Report annotation process and expert validation protocol.
+\end{itemize}
+\subsection{Data governance and ethics}
+\begin{itemize}
+    \item LGPD/privacy handling, anonymization strategy, and legal-compliance statement.
+\end{itemize}
+
+\section{Methodology}
+\label{sec:methodology}
+\subsection{Overview of the multi-layer pipeline}
+Include a full activity diagram showing stage1\_1 $\rightarrow$ stage1\_2 $\rightarrow$ stage2 $\rightarrow$ stage3 $\rightarrow$ stage5.
+
+\subsection{Stage1\_1: Document-type normalization and filtering}
+\begin{itemize}
+    \item Pattern-based extraction of document type from metadata-like spans.
+    \item Final retention of \textit{senten\c{c}a} documents.
+\end{itemize}
+
+\subsection{Stage1\_2: Task-adaptive legal text preprocessing}
+\begin{itemize}
+    \item PJe duplicate-footer removal.
+    \item Aggressive normalization for classification output.
+    \item Conservative normalization for NER/segmentation output.
+\end{itemize}
+
+\subsection{Stage2: Penal-merit classification with Legal-BERT embeddings}
+\begin{itemize}
+    \item Encoder: \texttt{dominguesm/legal-bert-base-cased-ptbr}.
+    \item Classifiers: Logistic Regression, linear SVM, Random Forest, XGBoost.
+    \item Stratified $k$-fold protocol and weighted metrics.
+\end{itemize}
+
+\subsection{Stage3: LLM-assisted segmentation of conviction decisions}
+\begin{itemize}
+    \item Input restricted to conviction subset.
+    \item Prompting protocol and JSON schema validation.
+    \item Retry/failure handling and quality-control checks.
+\end{itemize}
+
+\subsection{Stage5: Legal-domain NER extraction}
+\begin{itemize}
+    \item Model: \texttt{dominguesm/legal-bert-ner-base-cased-ptbr}.
+    \item Entity aggregation strategy and output schema.
+\end{itemize}
+
+\section{Experimental Setup}
+\label{sec:experiments}
+\subsection{Evaluation protocol}
+\begin{itemize}
+    \item Data splits, fold strategy, seeds, and confidence intervals.
+    \item Primary metrics: macro-F1, weighted-F1, precision, recall, per-class scores.
+\end{itemize}
+
+\subsection{Baselines and ablations}
+\begin{itemize}
+    \item Baseline without multi-layer filtering.
+    \item Baseline with single normalization stream.
+    \item Ablation removing each stage (one-at-a-time).
+\end{itemize}
+
+\subsection{Implementation details}
+\begin{itemize}
+    \item Software stack, hardware profile, runtime, and cost profile (LLM calls).
+\end{itemize}
+
+\section{Results}
+\label{sec:results}
+\subsection{Merit classification performance}
+Insert quantitative table and confusion matrices.
+
+\subsection{Segmentation quality}
+Report schema-valid rate, section-level agreement, and representative errors.
+
+\subsection{NER extraction quality}
+Report entity-level precision/recall/F1 (strict and relaxed matching if possible).
+
+\subsection{End-to-end pipeline gains}
+Compare extraction quality before vs. after multi-layer filtering.
+
+\section{Discussion}
+\label{sec:discussion}
+\subsection{Why the pipeline works}
+\subsection{Failure modes and error taxonomy}
+\subsection{Generalization to other legal domains/languages}
+\subsection{Operational and policy implications}
+
+\section{Threats to Validity}
+\label{sec:validity}
+\begin{itemize}
+    \item Internal validity: label noise, annotation drift, prompt sensitivity.
+    \item External validity: transfer to other courts, years, and jurisdictions.
+    \item Construct validity: legal meaning vs. NLP proxy metrics.
+\end{itemize}
+
+\section{Reproducibility Statement}
+\label{sec:reproducibility}
+\begin{itemize}
+    \item Public code structure, dependency pinning, random seeds, and artifact inventory.
+    \item Which resources can/cannot be publicly shared due to legal constraints.
+\end{itemize}
+
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+\begin{itemize}
+    \item Summarize empirical and practical contributions.
+    \item Future work: stage4 integration, active learning, expert-in-the-loop verification.
+\end{itemize}
+
+\section*{Acknowledgments}
+Funding and institutional acknowledgments.
+
+\printcredits
+\bibliographystyle{cas-model2-names}
+\bibliography{cas-refs}
+
+\end{document}
