@@ -44,6 +44,17 @@ def build_parser() -> argparse.ArgumentParser:
     p2e.add_argument("--k-folds", type=int, default=3)
     p2e.add_argument("--target-labels", default="condenação,extinto,absolvição")
 
+    p3 = sub.add_parser("stage3-segmentation", help="Etapa 3 - Segmentação de sentenças com Gemini")
+    p3.add_argument("--input", default="files/output/dataset_normalized_for_ner.csv")
+    p3.add_argument("--prompt-file", default="src/prompts/prompt_segmentation.txt")
+    p3.add_argument("--output-json", default="files/Documentos-Segmentados/resultado_anotacao.json")
+    p3.add_argument("--model-name", default="gemini-2.0-flash")
+    p3.add_argument("--text-column", default="texto_ner")
+    p3.add_argument("--id-column", default="id")
+    p3.add_argument("--max-docs", type=int, default=None)
+    p3.add_argument("--sleep-seconds", type=float, default=0.0)
+    p3.add_argument("--api-key-env", default="GEMINI_API_KEY")
+
     p5 = sub.add_parser("stage5", help="Etapa 5 - Extração NER")
     p5.add_argument("--input-json", required=True)
     p5.add_argument("--output-json", required=True)
@@ -103,6 +114,24 @@ def main() -> None:
                 model_name=args.model_name,
                 k_folds=args.k_folds,
                 target_labels=target_labels,
+            )
+        )
+        return
+
+    if args.command == "stage3-segmentation":
+        from .stage3_segmentation import run_stage3_segmentation
+
+        print(
+            run_stage3_segmentation(
+                input_csv=args.input,
+                prompt_file=args.prompt_file,
+                output_json=args.output_json,
+                model_name=args.model_name,
+                text_column=args.text_column,
+                id_column=args.id_column,
+                max_docs=args.max_docs,
+                sleep_seconds=args.sleep_seconds,
+                api_key_env=args.api_key_env,
             )
         )
         return
