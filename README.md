@@ -8,10 +8,10 @@ Estrutura modular proposta:
 - `framework/stage2_finetune.py`: etapa 2 (fine-tuning de BERT).
 - `framework/stage2_embeddings.py`: etapa 2 (usa BERT como encoder e classifica mérito penal com modelos clássicos, foco em `condenação`, `extinto` e `absolvição`).
 - `framework/stage3_segmentation.py`: etapa 3 (segmentação de sentenças com Gemini, usando prompt em `src/prompts/prompt_segmentation.txt`).
-- `framework/stage5_ner.py`: etapa 5 (extração de entidades - NER).
+- `framework/stage4_ner.py`: etapa 4 (extração de entidades - NER, etapa final).
 - `framework/cli.py`: interface única para execução etapa por etapa.
 
-> Nota: a macro-etapa 1 foi dividida em `stage1_1` e `stage1_2`. A antiga etapa 3 foi renumerada para etapa 2. A antiga etapa 4 foi movida para `stage5`, deixando a etapa 4 reservada para inclusão posterior.
+> Nota: a macro-etapa 1 foi dividida em `stage1_1` e `stage1_2`. A antiga etapa 3 foi renumerada para etapa 2. A segmentação permanece em `stage3` e a NER é a etapa final em `stage4`.
 
 ## Execução
 
@@ -37,5 +37,6 @@ Saídas da etapa `stage2-embeddings`: tabela LaTeX em `output/tables/table.tex` 
 
 Observação da etapa `stage3-segmentation`: cada linha do dataset é enviada para o Gemini com o prompt-base e o resultado consolidado é salvo em JSON.
 Autenticação Gemini: a chave pode ser lida de `GEMINI_API_KEY` no ambiente ou automaticamente do arquivo `.env` na raiz do projeto.
+Por padrão, a etapa filtra apenas `decisao=condenação` antes de enviar para a LLM (para processar o subconjunto de interesse, ~25 documentos). Isso pode ser alterado por `--filter-label-column` e `--filter-label-value`.
 
-`python -m src.framework.cli stage5 --input-json files/Documentos-Segmentados/resultado_anotacao_02.json --output-json files/NER/sentencas_com_entidades.json --output-csv files/NER/sentencas_com_entidades.csv`
+`python -m src.framework.cli stage4 --input-json files/Documentos-Segmentados/resultado_anotacao_02.json --output-json files/NER/sentencas_com_entidades.json --output-csv files/NER/sentencas_com_entidades.csv`
