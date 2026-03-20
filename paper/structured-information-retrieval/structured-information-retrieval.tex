@@ -169,7 +169,7 @@ Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in t
 
 \subsection{Stage2: Penal-merit classification with Legal-BERT embeddings}
 \begin{itemize}
-    \item Encoder: \texttt{dominguesm/legal-bert-base-cased-ptbr}.
+    \item Encoders avaliados: \texttt{dominguesm/legal-bert-base-cased-ptbr} e \texttt{neuralmind/bert-base-portuguese-cased}.
     \item Classifiers: Logistic Regression, linear SVM, Random Forest, XGBoost.
     \item Stratified $k$-fold protocol and weighted metrics.
 \end{itemize}
@@ -210,7 +210,27 @@ Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in t
 \section{Results}
 \label{sec:results}
 \subsection{Merit classification performance}
-Insert quantitative table and confusion matrices.
+Table~\ref{tab:encoder_comparison} compares the two encoder backbones under the same downstream classifiers, using weighted F1 as the primary criterion. The best overall result is highlighted in bold and corresponds to Legal-BERT with XGBoost ($F1=0.6114 \pm 0.0871$). BERTimbau shows small gains for Logistic Regression and Random Forest, but does not surpass the best Legal-BERT configuration.
+
+In practical terms, this indicates that domain adaptation in the encoder is beneficial when paired with a stronger non-linear classifier (XGBoost), whereas gains are less consistent for simpler classifier families. Given this trade-off, we keep the legal encoder as the default configuration in Stage2 because it provides the highest best-case performance for the penal-merit task.
+
+\begin{table}[t]
+\centering
+\caption{Stage2 encoder comparison across downstream classifiers (weighted F1, mean $\pm$ std across folds).}
+\label{tab:encoder_comparison}
+\begin{tabular}{lcc}
+\toprule
+Classifier & Legal-BERT (dominguesm) & BERTimbau (neuralmind) \\
+\midrule
+XGBoost & $\mathbf{0.6114 \pm 0.0871}$ & $0.5261 \pm 0.0590$ \\
+SVM (Linear) & $0.5415 \pm 0.0484$ & $0.5350 \pm 0.0664$ \\
+Random Forest & $0.5406 \pm 0.1249$ & $0.5611 \pm 0.0622$ \\
+Logistic Regression & $0.5399 \pm 0.0522$ & $0.5627 \pm 0.0613$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+TODO: Mention that the BERT models were not fine-tuned for this specific case due to the limited amount of available data.
 
 \subsection{Segmentation quality}
 Report schema-valid rate, section-level agreement, and representative errors.

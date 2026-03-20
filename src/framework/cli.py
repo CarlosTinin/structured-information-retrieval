@@ -25,16 +25,6 @@ def build_parser() -> argparse.ArgumentParser:
     p2.add_argument("--classification-column", default="texto_normalizado")
     p2.add_argument("--ner-column", default="texto_ner")
 
-    p2f = sub.add_parser("stage2-finetune", help="Etapa 2 (fine-tuning BERT)")
-    p2f.add_argument("--input", required=True)
-    p2f.add_argument("--output-dir", required=True)
-    p2f.add_argument("--text-column", default="texto_normalizado")
-    p2f.add_argument("--label-column", default="decisao")
-    p2f.add_argument("--model-name", default="neuralmind/bert-base-portuguese-cased")
-    p2f.add_argument("--epochs", type=int, default=8)
-    p2f.add_argument("--batch-size", type=int, default=8)
-    p2f.add_argument("--k-folds", type=int, default=3)
-
     p2e = sub.add_parser("stage2-embeddings", help="Etapa 2 (embeddings BERT + modelos clássicos)")
     p2e.add_argument("--input", required=True)
     p2e.add_argument("--output-root", default="output")
@@ -92,18 +82,6 @@ def main() -> None:
                 args.ner_column,
             )
         )
-        return
-
-    if args.command == "stage2-finetune":
-        from .stage2_finetune import FineTuneConfig, run_stage2_finetune
-
-        cfg = FineTuneConfig(
-            model_name=args.model_name,
-            epochs=args.epochs,
-            batch_size=args.batch_size,
-            k_folds=args.k_folds,
-        )
-        print(run_stage2_finetune(args.input, args.output_dir, args.text_column, args.label_column, cfg))
         return
 
     if args.command == "stage2-embeddings":
