@@ -14,7 +14,7 @@ from sklearn.utils.class_weight import compute_class_weight
 from torch.utils.data import DataLoader, Dataset
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-from .io_utils import ensure_parent_dir, read_csv_smart, save_json
+from .io_utils import ensure_parent_dir, load_json_flexible, read_csv_smart, save_json
 
 
 @dataclass
@@ -134,9 +134,11 @@ def _train_fold(model, train_loader, val_loader, class_weights, config: FineTune
 
 def run_stage2_finetune(
     input_csv: str,
-    output_dir: str,
+    output_root: str = "output",
     text_column: str = "texto_normalizado",
     label_column: str = "decisao",
+    target_labels: tuple[str, ...] = ("condenação", "extinto", "absolvição"),
+    embeddings_results_json: str = "output/stage2_embeddings_results.json",
     config: FineTuneConfig | None = None,
 ) -> dict:
     config = config or FineTuneConfig()
@@ -145,6 +147,28 @@ def run_stage2_finetune(
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     df = load_dataset(input_csv, text_column=text_column, label_column=label_column)
+
+    if target_labels:
+        target_set = {x.strip().lower() for x in target_labels}
+        before = len(df)
+        df = df[df["label"].isin(target_set)].copy()
+        print(f"Filtrando classes-alvo: {sorted(target_set)} | {before} -> {len(df)} documentos")
+
+    class_counts = df["label"].value_counts()
+    if class_counts.empty:
+        raise ValueError("Nenhum documento disponível após filtragem de classes-alvo.")
+
+    min_class_size = int(class_counts.min())
+    if min_class_size < 2:
+        raise ValueError(
+            "Pelo menos uma classe tem menos de 2 exemplos após filtragem. "
+            "Não é possível executar validação cruzada estratificada."
+        )
+
+    if config.k_folds > min_class_size:
+        print(f"[Aviso] Ajustando k_folds de {config.k_folds} para {min_class_size} (classe minoritária).")
+        config.k_folds = min_class_size
+
     encoder = LabelEncoder()
     df["label_encoded"] = encoder.fit_transform(df["label"])
 
@@ -215,23 +239,75 @@ def run_stage2_finetune(
         "confusion_matrix": confusion_matrix(all_trues, all_preds).tolist(),
     }
 
-    output_path = Path(output_dir) / "stage2_finetune_results.json"
+    output_path = Path(output_root) / "stage2_finetune_results.json"
     ensure_parent_dir(output_path)
     save_json(summary, output_path)
+
+    # Gera tabela separada de comparação em output/tables (formato LaTeX)
+    fine_row = {
+        "Abordagem": "BERT fine-tuned",
+        "Modelo": config.model_name,
+        "Accuracy": float(summary["mean_accuracy"]),
+        "Precision": float(np.mean([m["precision"] for m in fold_metrics])) if fold_metrics else 0.0,
+        "Recall": float(np.mean([m["recall"] for m in fold_metrics])) if fold_metrics else 0.0,
+        "F1": float(summary["mean_f1"]),
+    }
+
+    rows = [fine_row]
+    embed_path = Path(embeddings_results_json)
+    if embed_path.exists():
+        try:
+            emb_results = load_json_flexible(str(embed_path))
+            emb_models = emb_results.get("models", {}) if isinstance(emb_results, dict) else {}
+            if emb_models:
+                best_name, best_data = max(
+                    emb_models.items(),
+                    key=lambda kv: float(kv[1].get("mean_f1", 0.0)),
+                )
+                fold_m = best_data.get("fold_metrics", [])
+                rows.append(
+                    {
+                        "Abordagem": "BERT encoder + clássico",
+                        "Modelo": best_name,
+                        "Accuracy": float(np.mean([m.get("accuracy", 0.0) for m in fold_m])) if fold_m else 0.0,
+                        "Precision": float(np.mean([m.get("precision", 0.0) for m in fold_m])) if fold_m else 0.0,
+                        "Recall": float(np.mean([m.get("recall", 0.0) for m in fold_m])) if fold_m else 0.0,
+                        "F1": float(best_data.get("mean_f1", 0.0)),
+                    }
+                )
+        except Exception as exc:
+            print(f"[Aviso] Não foi possível ler resultados de embeddings em {embed_path}: {exc}")
+
+    comparison_df = pd.DataFrame(rows).sort_values("F1", ascending=False).reset_index(drop=True)
+
+    tables_dir = Path(output_root) / "tables"
+    tables_dir.mkdir(parents=True, exist_ok=True)
+
+    render_df = comparison_df.copy()
+    for col in ["Accuracy", "Precision", "Recall", "F1"]:
+        render_df[col] = render_df[col].map(lambda x: f"{x:.4f}")
+
+    table_tex_path = tables_dir / "table_stage2_finetune_comparison.tex"
+    latex_table = render_df.to_latex(index=False, escape=True)
+    table_tex_path.write_text(latex_table, encoding="utf-8")
+
     print(f"\nResultados salvos em: {output_path}")
+    print(f"Tabela de comparação (LaTeX) salva em: {table_tex_path}")
     return summary
 
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Etapa 2 (fine-tuning) - BERT")
     parser.add_argument("--input", required=True)
-    parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--output-root", default="output")
     parser.add_argument("--text-column", default="texto_normalizado")
     parser.add_argument("--label-column", default="decisao")
     parser.add_argument("--model-name", default="neuralmind/bert-base-portuguese-cased")
     parser.add_argument("--epochs", type=int, default=8)
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--k-folds", type=int, default=3)
+    parser.add_argument("--target-labels", default="condenação,extinto,absolvição")
+    parser.add_argument("--embeddings-results-json", default="output/stage2_embeddings_results.json")
     return parser
 
 
@@ -243,11 +319,14 @@ def main() -> None:
         batch_size=args.batch_size,
         k_folds=args.k_folds,
     )
+    target_labels = tuple(x.strip() for x in args.target_labels.split(",") if x.strip())
     run_stage2_finetune(
         input_csv=args.input,
-        output_dir=args.output_dir,
+        output_root=args.output_root,
         text_column=args.text_column,
         label_column=args.label_column,
+        target_labels=target_labels,
+        embeddings_results_json=args.embeddings_results_json,
         config=cfg,
     )
 
