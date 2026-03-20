@@ -17,19 +17,50 @@
 
 \title[mode=title]{A Multi-Layer Framework for Filtering, Merit Classification, Sentence Segmentation, and Named-Entity Extraction in Brazilian Criminal Labor-Law Decisions}
 
-\author[1]{First Author}
+\author[1]{Carlos A. V. Tinin}
 \cormark[1]
-\ead{first.author@email.com}
+\ead{carlostinin@gmail.com}
 \credit{Conceptualization, Methodology, Software, Writing -- original draft}
 
-\author[1]{Second Author}
-\ead{second.author@email.com}
+\author[2]{Edison P. de Freitas}
+\ead{edison.pignaton@inf.ufrgs.br}
 \credit{Validation, Formal analysis, Writing -- review \& editing}
 
-\affiliation[1]{organization={Federal University of Rio Grande do Sul},
+\author[3]{Kevin H. M. Gularte}
+\ead{kevinhmg@gmail.com}
+\credit{Validation, Formal analysis, Writing -- review \& editing}
+
+\author[4]{Elena J. da Costa}
+\ead{elena.javidi@ufrgs.br}
+\credit{Validation, Formal analysis, Writing -- review \& editing}
+
+\author[5]{João Paulo J. da Costa}
+\ead{joao.costa@ufrgs.br}
+\credit{Validation, Formal analysis, Writing -- review \& editing}
+
+\affiliation[1, 2]{organization={Federal University of Rio Grande do Sul (UFRGS)},
             city={Porto Alegre},
+            postalcode={90010-150},
             state={RS},
             country={Brazil}}
+
+\affiliation[2]{organization={Halmstad University},
+            city={Halmstad},
+            postalcode={30118},
+            state={Halland},
+            country={Sweden}}
+
+\affiliation[3]{organization={University of Brasília (UnB)},
+            city={Brasília},
+            postalcode={70910-900},
+            state={DF},
+            country={Brazil}}
+
+\affiliation[4, 5]{organization={Hamm-Lippstadt University of Applied Sciences (HSHL)},
+            city={Lippstadt},
+            postalcode={59557},
+            state={NRW},
+            country={Germany}}
 
 \cortext[1]{Corresponding author}
 
@@ -111,7 +142,7 @@ Legal NLP \sep Information extraction \sep Named entity recognition \sep Judicia
 \section{Methodology}
 \label{sec:methodology}
 \subsection{Overview of the multi-layer pipeline}
-Include a full activity diagram showing stage1\_1 $\rightarrow$ stage1\_2 $\rightarrow$ stage2 $\rightarrow$ stage3 $\rightarrow$ stage5.
+Include a full activity diagram showing stage1\_1 $\rightarrow$ stage1\_2 $\rightarrow$ stage2 $\rightarrow$ stage3 $\rightarrow$ stage4.
 
 \subsection{Stage1\_1: Document-type normalization and filtering}
 \begin{itemize}
@@ -140,7 +171,7 @@ Include a full activity diagram showing stage1\_1 $\rightarrow$ stage1\_2 $\righ
     \item Retry/failure handling and quality-control checks.
 \end{itemize}
 
-\subsection{Stage5: Legal-domain NER extraction}
+\subsection{Stage4: Legal-domain NER extraction}
 \begin{itemize}
     \item Model: \texttt{dominguesm/legal-bert-ner-base-cased-ptbr}.
     \item Entity aggregation strategy and output schema.
@@ -206,7 +237,7 @@ Compare extraction quality before vs. after multi-layer filtering.
 \label{sec:conclusion}
 \begin{itemize}
     \item Summarize empirical and practical contributions.
-    \item Future work: stage4 integration, active learning, expert-in-the-loop verification.
+    \item Future work: active learning, expert-in-the-loop verification, and cross-court transfer evaluation.
 \end{itemize}
 
 \section*{Acknowledgments}
