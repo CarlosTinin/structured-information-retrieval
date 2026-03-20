@@ -48,20 +48,25 @@ def build_parser() -> argparse.ArgumentParser:
     p3.add_argument("--input", default="files/output/dataset_normalized_for_ner.csv")
     p3.add_argument("--prompt-file", default="src/prompts/prompt_segmentation.txt")
     p3.add_argument("--output-json", default="files/Documentos-Segmentados/resultado_anotacao.json")
-    p3.add_argument("--model-name", default="gemini-2.0-flash")
+    p3.add_argument("--model-name", default="gemini-2.5-flash-lite")
     p3.add_argument("--text-column", default="texto_ner")
     p3.add_argument("--id-column", default="id")
+    p3.add_argument("--filter-label-column", default="decisao")
+    p3.add_argument("--filter-label-value", default="condenação")
     p3.add_argument("--max-docs", type=int, default=None)
     p3.add_argument("--sleep-seconds", type=float, default=0.0)
     p3.add_argument("--api-key-env", default="GEMINI_API_KEY")
+    p3.add_argument("--request-timeout", type=int, default=180)
+    p3.add_argument("--max-retries", type=int, default=3)
+    p3.add_argument("--retry-backoff-seconds", type=float, default=3.0)
 
-    p5 = sub.add_parser("stage5", help="Etapa 5 - Extração NER")
-    p5.add_argument("--input-json", required=True)
-    p5.add_argument("--output-json", required=True)
-    p5.add_argument("--output-csv", required=True)
-    p5.add_argument("--model-name", default="dominguesm/legal-bert-ner-base-cased-ptbr")
-    p5.add_argument("--sentence-key", default="sentenca")
-    p5.add_argument("--label-key", default="label")
+    p4 = sub.add_parser("stage4", help="Etapa 4 - Extração NER (etapa final)")
+    p4.add_argument("--input-json", required=True)
+    p4.add_argument("--output-json", required=True)
+    p4.add_argument("--output-csv", required=True)
+    p4.add_argument("--model-name", default="dominguesm/legal-bert-ner-base-cased-ptbr")
+    p4.add_argument("--sentence-key", default="sentenca")
+    p4.add_argument("--label-key", default="label")
 
     return parser
 
@@ -129,17 +134,22 @@ def main() -> None:
                 model_name=args.model_name,
                 text_column=args.text_column,
                 id_column=args.id_column,
+                filter_label_column=args.filter_label_column,
+                filter_label_value=args.filter_label_value,
                 max_docs=args.max_docs,
                 sleep_seconds=args.sleep_seconds,
                 api_key_env=args.api_key_env,
+                request_timeout=args.request_timeout,
+                max_retries=args.max_retries,
+                retry_backoff_seconds=args.retry_backoff_seconds,
             )
         )
         return
 
-    if args.command == "stage5":
-        from .stage5_ner import run_stage5_ner
+    if args.command == "stage4":
+        from .stage4_ner import run_stage4_ner
 
-        print(run_stage5_ner(args.input_json, args.output_json, args.output_csv, args.model_name, args.sentence_key, args.label_key))
+        print(run_stage4_ner(args.input_json, args.output_json, args.output_csv, args.model_name, args.sentence_key, args.label_key))
         return
 
 

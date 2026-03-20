@@ -76,10 +76,10 @@ Foi realizada a aplicação de um modelo NER para realizar a obtenção das enti
 Na pasta src estão os códigos utilizados para realizar as atividades descritas acima, como a classificação por tipo de documento, a filtragem por mérito penal, a segmentação de sentenças e a aplicação do modelo NER.
 
 Na implementação atual, a primeira macro-etapa aparece como `stage1_1` e `stage1_2`, para refletir melhor o encadeamento do diagrama de atividades e a origem das informações de tipo documental.
-Na versão atual do código, as rotinas de classificação anteriormente na etapa 3 foram renumeradas para `stage2` (com variantes de abordagem), e a extração NER foi deslocada para `stage5`, mantendo `stage4` reservado para inclusão posterior.
+Na versão atual do código, as rotinas de classificação anteriormente na etapa 3 foram renumeradas para `stage2` (com variantes de abordagem), a segmentação foi consolidada em `stage3` e a extração NER ficou como etapa final em `stage4`.
 No `stage2_embeddings`, o texto normalizado é convertido em embeddings com um modelo BERT jurídico (encoder), e em seguida são treinados classificadores clássicos (Logistic Regression, SVM, Random Forest e XGBoost) para prever o tipo de decisão de mérito, com foco nas classes `condenação`, `extinto` e `absolvição`.
 Essa etapa imprime métricas no terminal e também exporta artefatos para análise no paper: tabela em LaTeX (`output/tables/table.tex`) e matrizes de confusão por modelo (`output/images/matriz_confusao_*.png`).
-No `stage3_segmentation`, o dataset `files/output/dataset_normalized_for_ner.csv` é usado como entrada, e cada linha é enviada para uma LLM Gemini com um prompt-base em `src/prompts/prompt_segmentation.txt` para gerar a segmentação estruturada em JSON, salva em `files/Documentos-Segmentados/resultado_anotacao.json`.
+No `stage3_segmentation`, o dataset `files/output/dataset_normalized_for_ner.csv` é usado como entrada, com filtragem padrão para `decisao=condenação` (subconjunto de interesse, ~25 documentos), e cada linha é enviada para uma LLM Gemini com um prompt-base em `src/prompts/prompt_segmentation.txt` para gerar a segmentação estruturada em JSON, salva em `files/Documentos-Segmentados/resultado_anotacao.json`.
 
 Na pasta paper estão os arquivos relacionados à escrita do artigo, como o template em latex, o arquivo .bib com as referências e o arquivo .tex com o texto do artigo utilizando o template da primeira revista mencionada a Information Processing & Management.
 
