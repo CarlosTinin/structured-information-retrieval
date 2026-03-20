@@ -6,6 +6,9 @@
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\makeatletter
+\def\fps@figure{t}
+\makeatother
 
 \begin{document}
 \let\WriteBookmarks\relax
@@ -22,7 +25,7 @@
 \ead{carlostinin@gmail.com}
 \credit{Conceptualization, Methodology, Software, Writing -- original draft}
 
-\author[2]{Edison P. de Freitas}
+\author[1,2]{Edison P. de Freitas}
 \ead{edison.pignaton@inf.ufrgs.br}
 \credit{Validation, Formal analysis, Writing -- review \& editing}
 
@@ -34,11 +37,11 @@
 \ead{elena.javidi@ufrgs.br}
 \credit{Validation, Formal analysis, Writing -- review \& editing}
 
-\author[5]{João Paulo J. da Costa}
+\author[4]{João Paulo J. da Costa}
 \ead{joao.costa@ufrgs.br}
 \credit{Validation, Formal analysis, Writing -- review \& editing}
 
-\affiliation[1, 2]{organization={Federal University of Rio Grande do Sul (UFRGS)},
+\affiliation[1]{organization={Federal University of Rio Grande do Sul (UFRGS)},
             city={Porto Alegre},
             postalcode={90010-150},
             state={RS},
@@ -56,7 +59,7 @@
             state={DF},
             country={Brazil}}
 
-\affiliation[4, 5]{organization={Hamm-Lippstadt University of Applied Sciences (HSHL)},
+\affiliation[4]{organization={Hamm-Lippstadt University of Applied Sciences (HSHL)},
             city={Lippstadt},
             postalcode={59557},
             state={NRW},
@@ -142,7 +145,14 @@ Legal NLP \sep Information extraction \sep Named entity recognition \sep Judicia
 \section{Methodology}
 \label{sec:methodology}
 \subsection{Overview of the multi-layer pipeline}
-Include a full activity diagram showing stage1\_1 $\rightarrow$ stage1\_2 $\rightarrow$ stage2 $\rightarrow$ stage3 $\rightarrow$ stage4.
+Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in this study. The process starts with document-type normalization and filtering (Stage1\_1), keeping only judicial sentences that are relevant to criminal-merit analysis. Next, Stage1\_2 applies task-adaptive preprocessing and generates two normalized outputs: one optimized for merit classification and one that preserves legal-text patterns for segmentation and NER. Stage2 performs penal-merit classification, Stage3 applies LLM-assisted segmentation to the conviction subset, and Stage4 performs legal-domain named-entity extraction over segmented content.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.98\linewidth]{figs/activity_diagram.png}
+    \caption{Activity diagram of the proposed multi-layer pipeline for legal document filtering, penal-merit classification, segmentation, and NER extraction.}
+    \label{fig:activity_pipeline}
+\end{figure}
 
 \subsection{Stage1\_1: Document-type normalization and filtering}
 \begin{itemize}
