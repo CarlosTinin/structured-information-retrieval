@@ -1,4 +1,4 @@
-\documentclass[a4paper,fleqn]{cas-sc}
+\documentclass[preprint,a4paper,fleqn]{cas-dc}
 \usepackage[authoryear,longnamesfirst]{natbib}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -147,12 +147,12 @@ Legal NLP \sep Information extraction \sep Named entity recognition \sep Judicia
 \subsection{Overview of the multi-layer pipeline}
 Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in this study. The process starts with document-type normalization and filtering (Stage1\_1), keeping only judicial sentences that are relevant to criminal-merit analysis. Next, Stage1\_2 applies task-adaptive preprocessing and generates two normalized outputs: one optimized for merit classification and one that preserves legal-text patterns for segmentation and NER. Stage2 performs penal-merit classification, Stage3 applies LLM-assisted segmentation to the conviction subset, and Stage4 performs legal-domain named-entity extraction over segmented content.
 
-\begin{figure}
+\begin{figure*}
     \centering
     \includegraphics[width=0.98\linewidth]{figs/activity_diagram.png}
     \caption{Activity diagram of the proposed multi-layer pipeline for legal document filtering, penal-merit classification, segmentation, and NER extraction.}
     \label{fig:activity_pipeline}
-\end{figure}
+\end{figure*}
 
 \subsection{Stage1\_1: Document-type normalization and filtering}
 \begin{itemize}
@@ -169,7 +169,7 @@ Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in t
 
 \subsection{Stage2: Penal-merit classification with Legal-BERT embeddings}
 \begin{itemize}
-    \item Encoders avaliados: \texttt{dominguesm/legal-bert-base-cased-ptbr} e \texttt{neuralmind/bert-base-portuguese-cased}.
+    \item Encoders avaliados: \texttt{dominguesm/legal-bert-base-cased-ptbr}, \texttt{neuralmind/bert-base-portuguese-cased} e \texttt{neuralmind/bert-large-portuguese-cased}.
     \item Classifiers: Logistic Regression, linear SVM, Random Forest, XGBoost.
     \item Stratified $k$-fold protocol and weighted metrics.
 \end{itemize}
@@ -210,25 +210,25 @@ Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in t
 \section{Results}
 \label{sec:results}
 \subsection{Merit classification performance}
-Table~\ref{tab:encoder_comparison} compares the two encoder backbones under the same downstream classifiers, using weighted F1 as the primary criterion. The best overall result is highlighted in bold and corresponds to Legal-BERT with XGBoost ($F1=0.6114 \pm 0.0871$). BERTimbau shows small gains for Logistic Regression and Random Forest, but does not surpass the best Legal-BERT configuration.
+Table~\ref{tab:encoder_comparison} compares three encoder backbones under the same downstream classifiers, using weighted F1 as the primary criterion. The best overall result is highlighted in bold and corresponds to BERTimbau-large with linear SVM ($F1=0.6152 \pm 0.0808$). Legal-BERT remains competitive and obtains the strongest XGBoost result ($F1=0.6114 \pm 0.0871$), while BERTimbau-base shows gains for Logistic Regression and Random Forest.
 
-In practical terms, this indicates that domain adaptation in the encoder is beneficial when paired with a stronger non-linear classifier (XGBoost), whereas gains are less consistent for simpler classifier families. Given this trade-off, we keep the legal encoder as the default configuration in Stage2 because it provides the highest best-case performance for the penal-merit task.
+In practical terms, this indicates that domain adaptation in the encoder remains beneficial for the XGBoost configuration, while larger general-purpose Portuguese encoders can provide stronger performance with linear classifiers. Given this trade-off, both Legal-BERT+XGBoost and BERTimbau-large+SVM should be considered viable Stage2 operating points depending on interpretability and computational constraints.
 
-\begin{table}[t]
+\begin{table*}[t]
 \centering
 \caption{Stage2 encoder comparison across downstream classifiers (weighted F1, mean $\pm$ std across folds).}
 \label{tab:encoder_comparison}
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-Classifier & Legal-BERT (dominguesm) & BERTimbau (neuralmind) \\
+Classifier & Legal-BERT (dominguesm) & BERTimbau-base (neuralmind) & BERTimbau-large (neuralmind) \\
 \midrule
-XGBoost & $\mathbf{0.6114 \pm 0.0871}$ & $0.5261 \pm 0.0590$ \\
-SVM (Linear) & $0.5415 \pm 0.0484$ & $0.5350 \pm 0.0664$ \\
-Random Forest & $0.5406 \pm 0.1249$ & $0.5611 \pm 0.0622$ \\
-Logistic Regression & $0.5399 \pm 0.0522$ & $0.5627 \pm 0.0613$ \\
+XGBoost & $0.6114 \pm 0.0871$ & $0.5261 \pm 0.0590$ & $0.5661 \pm 0.0558$ \\
+SVM (Linear) & $0.5415 \pm 0.0484$ & $0.5350 \pm 0.0664$ & $\mathbf{0.6152 \pm 0.0808}$ \\
+Random Forest & $0.5406 \pm 0.1249$ & $0.5611 \pm 0.0622$ & $0.5284 \pm 0.0420$ \\
+Logistic Regression & $0.5399 \pm 0.0522$ & $0.5627 \pm 0.0613$ & $0.6136 \pm 0.0799$ \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 TODO: Mention that the BERT models were not fine-tuned for this specific case due to the limited amount of available data.
 
