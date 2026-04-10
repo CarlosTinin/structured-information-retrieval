@@ -1,0 +1,1287 @@
+Artificial Intelligence and Law
+https://doi.org/10.1007/s10506-025-09476-4
+ORIGINAL RESEARCH
+
+Adversarial training flat-lattice transformer for named
+entity recognition of chinese legal texts
+Jiabao Wang1 · Kaixuan Wang1 · Yang Weng1 · Xin Li2
+Accepted: 10 July 2025
+© The Author(s), under exclusive licence to Springer Nature B.V. 2025
+
+Abstract
+Judgment documents are the legally binding written conclusion made by the court
+based on the facts of the case and the law. Due to the use of professional terms and
+nested combinations of words, potential information of judgment documents has
+not been deeply excavated. Named Entity Recognition (NER) is a necessary task in
+Natural Language Processing (NLP), and has been widely introduced into Chinese
+texts processing for many years. However, the professional terms and nested words
+lead to the boundaries between entities being blurred, which can not accurately
+divide entities. In this paper, a new NER model Adversarial Training Flat-Lattice
+Transformer (AT-Flat) which combines adversarial training and Flat-Lattice Transformer (Flat) is proposed to weaken these problems. In AT-Flat, the Flat combines
+character and word information to get sequence information, and the CRF is used
+to output the final entity prediction results. Moreover, the key point is an adversarial
+training framework introduced to integrate task-shared word boundary information from Chinese Word Segmentation (CWS) task into Chinese NER task. The
+framework is able to filter out the noise caused by CWS task and further enhance
+the effect of Chinese NER task. More importantly, experiments on NER task of
+Chinese traffic accident and financial lending judgment documents show that our
+method outperforms other state-of-the-art methods. These verify that our method
+can effectively alleviate the problem of poor NER effect caused by professional
+terms and nested words. In addition, three public Chinese NER datasets were also
+used to evaluate our method.
+Keywords Chinese judgment documents · Nested named entity recognition ·
+Adversarial training · Flat-lattice transformer
+
+Xin Li
+lx860518@sina.com
+1
+
+School of Mathematics, Sichuan University, Chengdu 610065, China
+
+2
+
+School of Law, Sichuan University, Chengdu 610065, China
+
+13
+
+J. Wang et al.
+
+1 Introduction
+The amount of data in the judicial field has increased rapidly in recent years. Legal
+professionals such as judges, lawyers, and prosecutors not only handle a large number of cases, but also need to consult numerous references. Judgment documents are
+the legally binding written conclusion made by the court based on the facts of the
+case and the law. With the development of judicial online system, nearly 100 million
+judgment documents have been published online in China, accumulating abundant
+judicial data of various cases (Tang et al. 2020). Judgment documents can help professionals get similar cases to assist in sentencing. The information mining of judgment documents can reduce the labor cost of professionals and improve legal work
+efficiency.
+Natural Language Processing (NLP) is a common way for processing data, of
+which Named Entity Recognition (NER) is an indispensable research topic. NER
+aims to extract the words or expressions denoting specific entities from documents
+(Huang et al. 2020), which is composed of two parts: detecting the entity boundaries
+and classifying the entities into predefined categories such as Name, Judicial Organization, and Location (Tang et al. 2020). Chinese judicial NER can improve the
+efficiency of court operations and provide support to judges in their trial work.
+Due to the differences from other languages such as English, there are significant
+challenges in the Chinese NER task. The reasons are as follows: first, the Chinese
+language doesn’t have spaces between words and lacks semantic features like uppercase, which makes many NER methods are not suitable for Chinese; secondly, the
+Chinese dataset for NLP is small compared to the English dataset; third, there are
+multiple meanings of words in Chinese, and the meaning of the same word may be
+vary in different contexts (Chang et al. 2021).
+Furthermore, judicial entities are mostly nested, making structures complicated.
+For example, the nested types of the legal entities in Fig. 1, include "Judicial Organization and Location", "Causing-trouble Vehicle and defendant", "Location and Defendant", and “Stolen Goods and Causing-trouble Vehicle". "
+(Chengdu Intermediate People’s Procuratorate)" is supposed to be categorized into
+’Judicial Organization’, but "
+(Chengdu)" may be categorized into ’Location’
+in other text (Tang et al. 2020). On the one hand, it leads to a decline in the accuracy of entity recognition. On the other hand, it loses the correlation between words,
+which also affects the subsequent downstream tasks (Zhang et al. 2023). These entities are rare in other domains, which makes some existing NER methods ineffective
+for the judicial documents.
+Although existing NER methods achieve great success in many domains, most of
+them normally ignore the nested nature of named entities (Wang et al. 2022). There
+are some researches on the nested NER task by applying deep learning models in
+resent years, such as Long Short-Term Memory (LSTM), attention mechanism, and
+neural layered model. Ju et al. (2018) proposed a novel neural model to identify
+nested entities by dynamically stacking flat NER layers. Each flat NER layer is based
+on a bidirectional long short-term memory (BiLSTM) layer to capture sequential
+context representation and a Conditional Random Field (CRF) decoder. Fei et al.
+(2020) introduced a dispatched attention neural model with multi-task learning for
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+Fig. 1 Nested types of legal entities
+
+the task, including a BiLSTM encoder, an attention network, and a CRF decoder.
+Wang et al. (2020) presented Pyramid, a novel layered model for nested NER. In the
+Pyramid, token or text region embeddings are recursively inputted into L flat NER
+layers, from bottom to top, stacked in a pyramid shape. They also designed an inverse
+pyramid to allow bidirectional interaction between layers. Although there are some
+methods for nested NER, few of them have been applied to the Chinese legal texts.
+There are probably only few methods are effective in the Chinese judicial NER
+task for the above problems. As to the techniques applied in NER, there are three
+streams (Li et al. 2020): 1) Rule-based approaches, which do not need annotated data
+as they rely on hand-crafted rules; 2) Statistic-based methods, including conditional
+random field (Chen et al. 2006), maximum entropy model (Bender et al. 2003), and
+hidden Markov model (Morwal et al. 2012), etc. 3) Deep-learning based approaches.
+Rule-based and statistic-based methods are very corpus-dependent and the experts
+need to manually extract features from the dataset. Due to domain-specific rules
+and incomplete dictionaries, high precision and low recall are often observed from
+these methods, and they cannot be transferred to other domains (Li et al. 2020). In
+recent years, with the development of deep learning, deep-learning NER models have
+received more attention and achieved better results. However, deep-learning methods
+predict each character with a given feature independently without considering the
+previously predicted labels, which may lead to invalid predicted label sequences and
+thus reduce the accuracy of entity recognition results (Tang et al. 2020). These NER
+methods mentioned above are rarely applied to the judicial field.
+
+13
+
+J. Wang et al.
+
+Based on these problems, this paper proposes a new NER model Adversarial
+Training Flat-Lattice Transformer (AT-Flat) that combines adversarial training and
+Flat-Lattice Transformer (Flat). We summarize the major contributions as follows:
+•To improve the performance of Chinese judgment documents NER task, a wordenhanced model combining character and word information is built. The fusion of
+character and word can enhance the entity’s information, and provide more help for
+NER task.
+•In order to analyze judgment documents, the adversarial framework is introduced
+into the legal field. The adversarial training framework extractes the common features of CWS and NER task, while the noise of CWS task can be filtered. It makes
+the boundary of legal entities more clear and improve the effect of NER. To the best
+of our knowledge, this is the first work introducing adversarial training to process the
+nested NER of Chinese judgment documents.
+•Applying the proposed method to the NER task of real Chinese judgment documents and public Chinese NER datasets, and the results show that our method outperforms other state-of-the-art methods.
+This paper is organized as follows. Section 2 reviews the related works in judgment documents analysis. Section 3 presents the proposed model architecture and
+detailed descriptions. The experimental results of real datasets are discussed in Section 4. Finally, the conclusion is drawn in Section 5.
+
+2 Related work
+The processing methods for Chinese legal texts are mainly applied to judgment prediction, case text classification and information extraction. Liu and Hsieh (2006)
+built a domain dependent word list with the help of Chien’s PAT tree-based method
+and HowNet, and used the resulting word list for defining relevant phrases for classifying Chinese judicial documents. Xiao et al. (2018) implemented several conventional text classification baselines for judgment prediction and experimental results
+have showed that it is still a challenge for current models to predict the judgment
+results of legal cases, especially on prison terms. Chen et al. (2020) proposed a Legal
+Triplet Extraction System for drug-related criminal judgment documents. The system
+extracts the entities and the semantic relations jointly and benefits from the proposed
+legal lexicon feature and multi-task learning framework. Wang et al. (2020) divided
+entity type into four categories, and presented a model of NER based on attention
+mechanism; the structure improvement of input vector fusion CNN embed mode.
+In the judicial field, only a few researchs on named entity recognition for Chinese legal texts. Shi et al. (2022) established the corpus dataset of specific cause of
+action and proposed RoBERTa (a variant of the pre-trained language model BERT)BiLSTM-CRF legal case entity recognition model to improve the performance of
+Chinese legal NER. Zhang et al. (2023) respectively used RoBERTa and Skip-Gram
+method to extract char-level and word-level feature of a legal document, and fused
+them. Dong et al. (2022) developed NERP, NERCGP, and NERFPP to expand the
+named entity recognition corpus in the judicial field, and introduced BERT-WWM
+(whole-word mask)-EXT(extra) and BiLSTM-CRF for Chinese NER task. Lee et al.
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+(2023) proposed NER model for Chinese legal texts, LeArNER, utilized minimal
+annotated data for model training to reduce expenses associated with corpus collection and training.
+To sum up, NLP technology has been developing. However, due to the limitations of the text characteristics and the scarcity of judicial entity tagging corpus, the
+research on the processing of judgment documents by NER technology is still in its
+infancy (Yuan and Zhang 2021).
+
+3 Methodology
+Though various NER methods have been proposed in recent years, most of the existing methods only considered one kind of word-enhanced information, which may
+not be effective for the Chinese characters. In addition, there are rare NER methods
+applied to Chinese judgment documents, so it is necessary for us to propose a model
+that can be well applied in this field.
+Aiming at the problem of nested entities in Chinese legal texts, we proposed a
+method that combines adversarial training and add word information into the NER
+task. It mainly includes two parts: (1) Combining character and word information to
+make each Chinese character provide more valuable resources for the model than a
+single word or character, and provide more help for NER task. (2) The adversarial
+training framework extractes the common features of CWS and NER task, while the
+noise of CWS task can be filtered. It makes the boundary of legal entities more clear
+and improve the effect of legal nested NER.
+3.1 Model architecture
+Generative Adversarial Net (GAN) (Goodfellow et al. 2020) have received considerable attention since the 2014 groundbreaking work (Wang 2020). GAN is inspired by
+a minimax two-player game. The optimization goal is to achieve Nash equilibrium
+so that the generator can estimate the distribution of data samples (Su et al. 2022).
+GAN is mainly used in computer vision (Mirza and Osindero 2014). In recent years,
+the idea of adversarial training is introduced in NLP. Different from computer vision,
+the input sequences in NLP are discrete values. Although the adversarial training has
+been successfully applied in some fields of NLP, there is little research in the judicial
+domain to use the idea of adversarial training to the NER task of Chinese judgment
+documents. In addition, the Chinese NER task and CWS task have many similar
+word boundaries. Most existing NER methods do not fully exploit the word boundary
+information of CWS.
+In this paper, a novel word-enhanced model called AT-Flat is proposed that combines adversarial training and add word information into the NER task. The first
+dynamic framework is the adversarial training which aims to extract common features of the Chinese CWS task and NER task. The another dynamic framework is
+the Flat-Lattice Transformer for the NER task. With the power of Transformer and
+well-designed position encoding, FLAT can fully leverage the sequence information
+between words.
+
+13
+
+J. Wang et al.
+
+The model architecture is shown in Fig. 2. The model consists of three parts: the
+NER task, the CWS task and the adversarial training dynamic framework. The NER
+task is the goal of our methods, and the core structure is Flat. The CWS task divides
+sentences into words, which is similar to the NER task. The adversarial training is a
+dynamic framework for adding word information, including a shared BiLSTM generator, a self-attention layer and a task discriminator. In the following subsections, the
+parts of model will be described in detail.
+3.2 Embeddings
+The first step is character embedding, which aims to map discrete characters into
+the distribute representations. The BIO annotation method is used to label data in
+character form, which B represents the beginning part of the entity; I represents the
+middle part of the entity, and O represents the non-entity. For example, to label a
+person entity, the first character is labeled B-PER, and the other characters are labeled
+I-PER. For a given Chinese sentence x = {c1 , c2 , . . . , cn } from Chinese NER dataset or CWS dataset, we lookup embedding vector from pre-trained embedding matrix
+for each character ci as xi ∈ Rde . The word embedding will be introduced in the
+subsection Flat-Lattice Transformer.
+3.3 Adversarial training
+Long short term memory (LSTM) (Hochreiter and Schmidhuber 1997) is a variant
+of recurrent neural network (RNN) (Schuster and Paliwal 1997), which enables to
+address the gradient vanishing and exploding problems in RNN via introducing gate
+mechanism and memory cell. The unidirectional LSTM only leverages information
+from the past, ignoring the future information. The BiLSTM model is used in the
+shared generator instead of the LSTM model in AT-Flat. The reason is that BiLSTM outputs the hidden layer vectors of forward and backward, which can fully
+
+Fig. 2 The architecture of AT-Flat
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+integrate the contextual information. The hidden state of BiLSTM could be expressed
+as follows:
+−
+→ −−−−→
+−−→
+hi = LSTM(xi , hi−1 ),(1)
+←
+− ←−−−−
+←−−
+hi = LSTM(xi , hi+1 ),(2)
+−
+→ ←
+−
+hi = hi ⊕ hi ,(3)
+
+−
+→
+←
+−
+where hi ∈ Rdh and hi ∈ Rdh are the hidden states of the forward and backward
+LSTM at position i, respectively. ⊕ denotes concatenation operation.
+
+Before the output of the generator enters the discriminator, a self-attention layer
+is added to explicitly learn the dependencies between any two characters in sentence
+and capture the inner structure information of sentence (Cao et al. 2018). The functions can be expressed as
+QKT
+Attention(Q, K, V) = softmax( √ )V,(4)
+d
+K
+V
+headi = Attention(QWQ
+i , KWi , VWi ),(5)
+
+H′ = (headi ⊕ . . . headh )Wo ,(6)
+
+where Q ∈ RN ×2dh is query matrix, K ∈ RN ×2dh is key matrix and V ∈ RN ×2dh is
+value matrix. The four matrix are set Q = K = V = H. d is the dimension of hidden
+units of BiLSTM, and it is usually set to be 2dh . WiQ ∈ R2dh ×dk , WiK ∈ R2dh ×dk ,
+WiV ∈ R2dh ×dk and Wo ∈ R2dh ×dk . The four parameters are trainable. dk is usually set to be 2dh /h.
+The discriminator includes a max-pooling layer and a softmax layer:
+s′k = Maxpooling(S′k ), (7)
+D(s′k ; θd ) = softmax(Wd s′k + bd ), (8)
+
+where s′k is the output of the self-attention layer after the shared BiLSTM generator of task k. θd is the parameter of the discriminator. Wd ∈ RK×2dh and bd ∈ RK .
+These two parameters are also trainable. K is the number of tasks. D(s′k ; θd ) is the
+output of the discriminator, which can be seen as a softmax function. The softmax
+function is a standard mapping method that converts values into probabilities. The
+activation function uses softmax to make the discriminator output the probability that
+the sentence comes from the NER task.
+The adversarial loss Ladv is introduced to prevent specific features of CWS task
+from creeping into shared space. The optimization function can be expressed as
+
+13
+
+J. Wang et al.
+
+Ladv = min(max
+θs
+
+θd
+
+Tk
+K
+∑∑
+
+log D(s′k ; θd )),(9)
+
+k=1 i=1
+
+where θs is the trainable parameter of the shared BiLSTM generator. Tk is the number
+of training sentences. Therefore, the adversarial training becomes a minimax optimization problem. The adversarial loss encourages the shared encoder to learn taskinvariant features such that the task discriminator cannot reliably determine whether
+a sample originates from the NER or CWS task. These shared features capture information that is crucial for identifying entity boundaries in the NER task. Importantly,
+the goal is not to enforce alignment with CWS segmentation, but to promote representations that remain robust under perturbation and are semantically consistent
+across tasks.For example, as shown in Fig. 3, given a sentence "
+(defendant assumes primary responsibility)", the NER task and the CWS task have the
+same boundary for some words such as "
+(defendant)", "
+(assumes)", while
+the boundary in NER task is "
+(primary responsibility)" and the boundary
+of CWS task is "
+(primary)", "
+(responsibility)". In such cases, the adversarial framework does not force the model to follow the CWS segmentation. Instead,
+it encourages the model to retain the span "
+(primary responsibility)" as a
+unified representation if doing so leads to more stable and consistent features, thereby
+favoring boundary patterns that benefit NER performance.
+In the whole processing of the adversarial training, the character embedding of
+the NER task and CWS task are alternately input into the shared BiLSTM generator.
+Then, the multi-head self-attention mechanism is used to explicitly learn the dependencies between any two characters in a sentence and capture the inner structure
+information of a sentence. The output will be sent into the discriminator. If the discriminator determines that the input is from the NER task, the output of the selfattentive layer is sent to a independent NER task for subsequent processing. If the
+input is determined to be from the CWS task, the output is sent to a independent CWS
+task structure. There is no output labeling for the CWS task in this paper because we
+focuse on the Chinese NER task. The character embeddings of the two tasks alternate
+input and continue to conduct the adversarial training. Finally, the shared BiLSTM
+generator will generate the result that the discriminator cannot distinguish which task
+the input comes from. The result is the common features learned by the shared BiL-
+
+Fig. 3 An example of describing the similarities and differences between Chinese NER and CWS
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+STM. The common features contain the task-shared word boundaries, which is useful
+for the Chinese NER task to recognize the boundary of the entities.
+3.4 Flat-lattice transformer
+Focusing on the NER task, the flat-lattice architecture (Li et al. 2020) uses Transformer encoder. It is mainly composed of self-attention and feedforward network
+(FFN) layers. Each sublayer is followed by residual connection and layer normalization. FFN is a position-wise multi-layer perceptron with non-linear transformation.
+The flat-lattice is defined as a set of spans, and a span corresponds to a token, a
+head and a tail, like in Fig. 4. The token is a character or word. The head and tail
+represent the position index of the token’s first and last characters in a sequence, and
+they indicate the position of the token in the lattice. The head and tail are the same
+for each character.
+The flat-lattice structure consists of spans with different lengths. The relative position encoding of spans is used to encode the interactions among spans. For two spans
+xi and xj in the lattice, according to their heads and tails, there are three kinds of
+relations between them: intersection, inclusion and separation. A dense vector is used
+to represent the relationships, and it is calculated by continuous transformations of
+the head and tail information. So it can not only represent the relation between two
+tokens, but also show more detailed information, such as the distance between words.
+Four kinds of relative distances can be calculated with xi and xj :
+(hh)
+
+= head[i] − head[j], (10)
+
+(ht)
+
+= head[i] − tail[j], (11)
+
+(th)
+
+= tail[i] − head[j], (12)
+
+dij
+
+dij
+dij
+
+(tt)
+
+dij = tail[i] − tail[j], (13)
+
+Fig. 4 Flat-Lattice Transformer
+
+13
+
+J. Wang et al.
+(hh)
+
+where head[i] and tail[i] are the head and tail position of span xi ; dij
+
+is the dis-
+
+(ht)
+(th)
+(tt)
+tance between head of xi and tail of xj , and the meanings of dij , dij and dij are
+
+similar. The final relative position encoding of spans is a non-linear transformation
+of the four distances:
+Rij = ReLU(Wr (pd(hh) ⊕ pd(th) ⊕ pd(ht) ⊕ pd(tt) )), (14)
+ij
+
+ij
+
+ij
+
+ij
+
+where Wr is a learnable parameter, ⊕ denotes the concatenation operator, and pd is
+calculated as in Vaswani et al. (2017):
+(2k)
+
+pd
+
+= sin(d/100002k/dmodel ), (15)
+
+(2k+1)
+
+pd
+(hh)
+
+(ht)
+
+(th)
+
+= cos(d/100002k/dmodel ), (16)
+(tt)
+
+where d is dij , dij , dij or dij and k is the index of dimension of position
+encoding. Then a variant of self-attention (Dai et al. 2019) is used to leverage the
+relative span position encoding:
+⊤ ⊤
+⊤
+⊤
+A∗i,j = Wq⊤ E⊤
+xi Exj Wk,E + Wq Exi Rij Wk,R + u Exj Wk,E + v Rij Wk,R , (17)
+
+where Wq , Wk,R , Wk,E ∈ Rdmodel ×dhead and u, v ∈ Rdhead are learnable parameters. The following calculation is the same to the vanilla Transformer. The architecture of FLAT is shown in Fig. 5.
+3.5 Conditional random field of the NER task
+Considering the dependence between tags, Conditional random field (CRF) (Lafferty
+et al. 2001) is used to output the final entity prediction results. The CRF layer can add
+some constraints to the predicted labels to ensure that they are legal. For example, the
+first word in a sentence should always start at the label "B-" or "O", not "I-". Due to
+the difference in the tasks, a specific CRF layer is introduced for each task. Due to the
+difference in the tasks, a specific CRF layer is used for each task.
+For a sentence k, the final representation via concatenating the representations
+from NER and shared module after self-attention layer is computed:
+H′′k = H′k ⊕ S′k , (18)
+
+where H′k and S′k are the outputs of NER module and shared module of task k,
+respectively.
+Given a sentence x = {c1 , c2 , . . . , cn } and a sequence y = {y1 , y2 , . . . , yn }
+with predicted tags, the CRF tagging process can be described as follows:
+oi = Ws h′′i + bs ,(19)
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+Fig. 5 The architecture of FLAT
+
+s(x, y) =
+
+N
+∑
+i=1
+
+(oi,yi + Tyi −1,yi ),(20)
+
+ȳ = arg max s(x, y),(21)
+y∈Yx
+
+where Ws ∈ R|T |×4dh and bs ∈ R|T | are trainable parameters. |T | is the number
+of output labels. oi,yi represents the score of the yi -th tag of the character ci . T is a
+transition score matrix which defines the scores of two successive labels. Yx is all
+candidate tag sequences for given sentence x. In decoding, the Viterbi algorithm is
+used to get the predicted tag sequence ȳ. The probability of the true label sequence
+can be calculated as follows:
+p(ŷ|x) = ∑ e
+
+s(x,ŷ)
+
+ỹ∈Yx
+
+es(x,ỹ)
+
+, (22)
+
+where ŷ is the ground-truth label sequence. Given T training examples (x(i) ; ŷ(i) ), the
+loss function LT ask can be defined:
+
+13
+
+J. Wang et al.
+
+LT ask = −
+
+T
+∑
+
+i=1
+
+log p(ŷ(i) |x(i) ), (23)
+
+The back gradient propagation method is used to minimize the loss function. According to the adversarial training, the loss function Ladv is computed. According to the
+independent NER and CWS task, the loss function LT ask is computed. So the final
+loss function of the model can be expressed:
+L = LN ER · I(x){+ LCW S · (1 − I(x)) + λLadv ,
+1,
+if x ∈ DN ER ;
+(24)
+I(x) =
+0,
+if x ∈ DCW S ,
+
+where λ is a hyper-parameter. LN ER and LCW S can be obtained via (23). I(x) is
+a switching function to identify which task the input comes from. In training for
+each iteration, the NER and CWS tasks are selected in turn. Then a batch of training
+examples is selected from a given task to update the parameters. Since Chinese NER
+task and CWS task may have different convergence rate, the total iteration number
+can be chosen according to the performance of the NER task.
+
+4 Experiments
+In this section, experiments of the proposed model are showed with real Chinese
+judgment documents and public Chinese NER datasets. It includes five subsections:
+datasets, parameter setting, evaluation metrics, baselines and experimental results.
+4.1 Datasets
+In this paper, we conducted our experiments on 500 traffic accident judgment documents, and 3,300 paragraphs from financial lending judgment documents. As shown
+in Table 1, 20 types of named entity in traffic accident judgment documents is defined.
+Financial lending judgment documents have 12 types named entities in Table 2.
+In addition, three public Chinese nested NER datasets1 were used, including (1)
+Bank, a bank lending dataset; (2) ECommerce, a named entity recognition dataset for
+e-commerce domain (3) Fned, a dataset containing different domain event detection.
+Figure 6 shows the examples of nested entities in these public datasets. In the experiments, 70% of the datasets is randomly chosen as the training set and the other is
+taken as the test set. Some experiments further adopt 10-fold cross-validation on the
+training set to ensure robust evaluation.
+4.2 Parameter setting
+Hyperparameters are summarized in Table 3, and most of them are common setting
+in many references (e.g., Li et al. 2020).
+1
+
+https://github.com/liucongg/NLPDataSet
+
+13
+
+Table 1 Statistic of traffic accident dataset
+
+Adversarial training flat-lattice transformer for named entity…
+
+13
+
+J. Wang et al.
+
+4.3 Evaluation metrics
+Three widely-adopted metrics are used to evaluate our method, i.e., Precision (P),
+Recall (R) and F1 score:
+Precision =
+
+1 ∑ (T Pi + T Ni ) × T Pi
+,(25)
+|C|
+T P i + F Pi
+i∈C
+
+1
+Recall = |C|
+
+∑ (T Pi +T Ni )×T Pi
+
+i∈C
+
+T Pi +F Ni
+
+, (26)
+
+F1 = 2×Precision×Recall
+Precision+Recall , (27)
+
+where T Pi is the number of instances correctly assigned to one class; F Pi is the
+number of instances which belong to other classes but are assigned to that class;
+F Ni is the number of instances that belong to that class but are mistakenly assigned
+to other classes. C represents the number of all categories. F1 value is the harmonic
+mean of the Precision and Recall.
+4.4 Baseline
+We compare AT-Flat with five state-of-the-art methods for the NER task, including BiLSTM-CRF (Huang et al. 2015), which is the most widely used basic model
+for the NER task; BiLSTM-Softmax; Att-BiLSTM (Zhou et al. 2016), which is a
+BiLSTM-CRF enhanced model; BiLSTM + CRF + adversarial + self-attention (Cao
+et al. 2018), and Flat-Lattice Transformer (Li et al. 2020).
+4.5 Results and analysis
+4.5.1 Traffic accident dataset
+We compare our model AT-Flat with other baselines, and the results in traffic accident
+dataset can be seen from Table 4, where the best method is marked in bold. Overall,
+AT-Flat achieves the best performance on the recall rate of 96.07%, and F1 score
+of 95.35%. Compared to the worst-performing BiLSTM-Softmax, AT-Flat improves
+at least 3% in each metric. These metrics of the proposed model also significantly
+increased compared to BiLSTM-CRF. Att-BiLSTM contains the attention mechanism but without introducing adversarial training and word information, which is
+probably the reason that its performance is worse than AT-Flat. Similarly, Flat does
+not include adversarial training, and the model with adversarial training (BiLSTM +
+CRF + adversarial + self-attention) do not contain word information, which makes
+their performance weaker. The reason why these methods are not effective may be
+that they do not identify the boundaries of legal entities well and divide many entities
+from the inside. These results show that AT-Flat combines the information of characters and words, and expands the range of recognized legal entities, so it can obtain
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+Table 2 Statistic of financial lending dataset
+
+Fig. 6 Nested entities in public datasets
+
+Table 3 Hyperparameter values
+
+Description
+Size of character embedding
+Size of Flat word embedding
+Batch size
+Size of the LSTM
+Embed dropout
+Learning rate
+Warmup
+Optimizer
+Head
+
+Value
+50
+50
+10
+105
+0.5
+8e-04
+0.01
+SGD
+8
+
+more information of Chinese judgment documents and get better recognition results.
+In addition, the adversarial training framework can learn task-shared word boundary
+information from CWS task.
+To make the results more reliable, we also conducted the experiments of 10-fold
+cross-validationand, and the results are shown in Table 5. Although BiLSTM-CRF
+
+13
+
+J. Wang et al.
+Table 4 Comparison of experimental results on traffic accident
+dataset
+
+Models
+BiLSTM-CRF
+BiLSTM-Softmax
+Att-BiLSTM
+BiLSTM+CRF+adversarial+self-attention
+Flat
+AT-Flat
+
+P%
+93.95
+91.46
+92.28
+94.49
+94.19
+94.64
+
+R%
+93.63
+93.00
+93.22
+94.92
+94.78
+96.07
+
+F1%
+93.79
+92.22
+92.75
+92.80
+93.02
+95.35
+
+Table 5 10-fold cross-validation
+experimental results on traffic
+accident dataset
+
+Models
+BiLSTM-CRF
+BiLSTM-Softmax
+Att-BiLSTM
+BiLSTM+CRF+adversarial+self-attention
+Flat
+AT-Flat
+
+P%
+94.69
+91.79
+91.67
+93.79
+94.88
+94.58
+
+R%
+91.46
+93.39
+93.40
+94.47
+94.91
+95.83
+
+F1%
+93.05
+92.58
+92.52
+92.43
+93.05
+95.20
+
+Fig. 7 The Precision of each
+method with different epochs on
+traffic accident dataset
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+0.95
+0.90
+
+0.80
+
+0.70
+
+20
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+160
+
+180
+
+200
+
+got the highest Precision of 94.69%, AT-FLAT is comparable to it with the values of
+94.58%. Meanwhile, AT-FLAT achieved the highest Recall of 95.83% and the highest F1 of 95.20%, respectively. It was also much better than the second one. In general, compared with other methods, AT-Flat performs well in all three metrics, which
+confirms the stronger stability of our method.
+In additon, Figs. 7, 8, and 9 show the metrics of each method with different
+epochs. It can be seen that our model is more stable and has better performance in the
+iterative process, especially on Recall (Fig. 8). Among these methods, the training
+speed of BiLSTM-CRF is slowest, and the results are worst. Although Att-BiLSTM
+introduces the attention mechanism, the results are not so different from BiLSTMSoftmax. It shows that only adding the attention layer does not significantly improve
+the results of NER. Flat adds word information, so it works better compared to other
+BiLSTM methods, which indicating that word information is important in the NER
+task. BiLSTM + CRF + adversarial + self-attention is second only to AT-Flat, which
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+Fig. 8 The Recall of each
+method with different epochs on
+traffic accident dataset
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+0.95
+0.90
+
+0.80
+
+0.70
+
+20
+
+Fig. 9 The F1 of each method
+with different epochs on traffic
+accident dataset
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+160
+
+180
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+200
+
+0.95
+0.90
+
+0.80
+
+0.70
+
+20
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+160
+
+180
+
+200
+
+indicating that adversarial training with CWS and NER can improve the accuracy of
+NER. However, the training process without word information, it is not as effective
+as AT-Flat. In summary, AT-Flat adds adversarial training and word information can
+effectively improve the accuracy of the NER task, and achieve more than 95% in all
+metrics within 200 iterations.
+4.5.2 Financial lending dataset
+Table 6, and 7 and Figs. 10, 11, and 12 show the results of each method on financial
+lending dataset. It can be seen that AT-Flat still performs well on Recall and F1 ,
+and they were stabilized after training 80 epochs. BiLSTM-CRF, Att-BiLSTM and
+BiLSTM-Softmax are significantly less effective on this dataset. Although AT-Flat’s
+performance on Precision is not the best, it has a tendency to grow slowly as the number of training epochs increases (Fig. 10). The Recall of AT-Flat is markedly superior
+to other methods (Fig. 11), so its F1 value is no less impressive (Fig. 12).
+
+13
+
+J. Wang et al.
+Table 6 Comparison of experimental results on financial
+lending dataset
+
+Models
+BiLSTM-CRF
+BiLSTM-Softmax
+Att-BiLSTM
+BiLSTM+CRF+adversarial+self-attention
+Flat
+AT-Flat
+
+P%
+58.30
+39.31
+40.61
+62.51
+63.09
+59.68
+
+R%
+52.49
+42.18
+46.24
+66.69
+67.17
+73.95
+
+F1%
+55.24
+40.69
+43.25
+64.53
+65.07
+66.05
+
+Table 7 10-fold cross-validation
+experimental results on financial
+lending dataset
+
+Models
+BiLSTM-CRF
+BiLSTM-Softmax
+Att-BiLSTM
+BiLSTM+CRF+adversarial+self-attention
+Flat
+AT-Flat
+
+P%
+64.23
+50.68
+49.34
+65.61
+63.69
+62.59
+
+R%
+65.01
+59.71
+60.15
+62.44
+68.85
+73.92
+
+F1%
+64.60
+54.81
+54.13
+63.91
+66.17
+67.72
+
+Fig. 10 The Precision of each
+method with different epochs on
+financial lending dataset
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+0.6
+
+0.5
+
+0.4
+
+20
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+160
+
+180
+
+200
+
+Surprisingly, Att-BiLSTM and BiLSTM-Softmax got less than 50% of the metrics
+When 200 epochs were trained, which is completely different from the results of
+the traffic accident dataset. Methods other than ours also show less stability in this
+dataset. Financial lending and traffic accident are different fields of Chinese judgment
+documents. Therefore, the features and the types of entity are various, which affects
+the experimental results. There are also some special terms in the legal field that may
+make it difficult for normal models to accurately identify entity boundaries.
+We observe a substantial performance drop on this dataset compared to other
+domains, which we attribute primarily to limited training data. Although AT-Flat
+improves the recognition of nested entities compared to baselines, some challenges
+persist, including:
+•Lengthy and compound entities: For example, the model failed to correctly identify the full span of entities like "
+" ("China Construction Bank Shenzhen Branch Longgang Sub-branch"), predicting
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+Fig. 11 The Recall of each
+method with different epochs on
+financial lending dataset
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+0.7
+
+0.6
+
+0.5
+
+0.4
+20
+
+Fig. 12 The F1 of each method
+with different epochs on financial lending dataset
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+BiLSTM−CRF
+BiLSTM−Softmax
+
+160
+
+180
+
+Att−BiLSTM
+BiLSTM+CRF+adversarial+self−attention
+
+Flat
+AT−Flat
+
+200
+
+0.6
+
+0.5
+
+0.4
+
+20
+
+40
+
+60
+
+80
+100
+120
+140
+Number of training epoch
+
+160
+
+180
+
+200
+
+only a partial entity. Such long and hierarchical organization names challenge the
+boundary modeling capacity of AT-Flat.
+•Domain-specific terminology: Specialized legal and financial terms such as
+"
+" (guarantor) and "
+" (performance obligation) are occasionally
+misclassified or missed due to subtle contextual cues and vocabulary sparsity.
+These observations indicate that the performance degradation arises not merely
+from dataset size but also from the inherent complexity of the domain. Future work
+will explore integrating domain adaptation techniques and structure-aware models to
+better address these challenges.
+4.5.3 Public datasets
+The experimental results of three public Chinese NER datasets are shown in Table 8,
+and 9. Overall, our proposed model still has steady and superior results. A interesting conclusion can be observed that blindly increasing the complexity of the model
+does not necessarily get good results with comparing the results. Att-BiLSTM intro-
+
+13
+
+J. Wang et al.
+Table 8 Comparison of experimental results on public datasets
+Bank
+ECommerce
+Models
+P%
+R%
+F1% P%
+R%
+BiLSTM-CRF
+82.53 81.77 82.14 81.98 81.46
+BiLSTM-Softmax
+76.07 79.51 77.75 73.12 79.19
+Att-BiLSTM
+72.01 74.66 73.30 70.95 76.49
+BiLSTM+CRF+adversarial
+83.23 82.47 82.84 81.59 84.19
++self-attention
+Flat
+83.24 81.44 82.33 81.74 83.86
+AT-Flat
+83.25 85.89 84.55 82.58 83.96
+
+F1%
+81.72
+76.03
+73.61
+82.85
+
+Fned
+P%
+75.15
+67.29
+62.74
+77.47
+
+R%
+72.95
+70.75
+66.64
+78.26
+
+F1%
+74.03
+68.97
+64.62
+77.85
+
+82.74
+83.25
+
+76.22
+77.01
+
+83.15
+83.74
+
+79.51
+80.22
+
+Fned
+P%
+75.27
+67.33
+62.89
+77.82
+
+R%
+73.39
+71.09
+66.83
+78.72
+
+F1%
+74.31
+69.16
+64.79
+78.26
+
+75.79
+76.44
+
+82.54
+84.07
+
+79.01
+80.06
+
+Table 9 10-fold cross-validation experimental results on public datasets
+Bank
+Ecommerce
+Models
+P%
+R%
+F1% P%
+R%
+F1%
+BiLSTM-CRF
+83.09 81.56 82.31 84.07 83.49 83.77
+BiLSTM-Softmax
+76.50 79.60 78.01 76.01 81.64 78.72
+Att-BiLSTM
+72.92 75.48 74.17 73.66 78.67 76.08
+BiLSTM+CRF+adversarial
+83.63 81.56 82.58 82.58 83.96 83.25
++self-attention
+Flat
+83.41 83.35 83.37 83.09 84.71 83.85
+AT-Flat
+85.02 85.18 84.99 84.34 85.54 84.93
+
+duces the attention module, but the performance was worse than BiLSTM-CRF and
+BiLSTM-Softmax. The difference is AT-Flat adds adversarial network and introduces word-character information can improve the effectiveness of named entity
+recognition.
+In general, the performance of AT-Flat on these datasets in different fields can
+verify: (1) The increase of word and character information does contribute to the
+enhancement of the dataset, thus affecting the entity recognition effect. (2) Adversarial training helps to determine the entity boundaries, thus making AT-Flat better
+applicable to different domains.
+
+5 Conclusion
+In this paper, we propose AT-Flat, an adversarial training model integrates task-shared
+word boundary information from CWS to improve Chinese judgment documents
+NER performance, and combines character and word information to get more legal
+entities information. Extensive experiments based on two different Chinese judgment
+document datasets and three public Chinese NER datasets show that AT-Flat achieves
+the best performance compared to the state-of-the-art models. For future work, We
+will adjust the model to expand its application fields.
+Although AT-Flat achieves strong performance, it still has some limitations. One
+potential bottleneck is its limited capacity to model long-range dependencies, which
+may affect its effectiveness when processing lengthy legal documents. Additionally,
+the model’s inference efficiency might degrade as input length increases, posing chal-
+
+13
+
+Adversarial training flat-lattice transformer for named entity…
+
+lenges for real-world deployment in legal or industrial scenarios. We leave addressing these issues for future work.
+Acknowledgements This work is supported by the Sichuan Province Key Research and Development Proect “Constructon ot Judcal Big Data Governance System and Key Technologies for Open Sharing” (Project Number: 2024YFFK0113), and Sichuan University Interdisciplinary lnnovation Fund “Judicial Big
+Data Governance: Framework and Implementation Pathways”.
+Author Contributions Jiabao Wang and Yang Weng conceived the study. Jiabao Wang designed the algorithm, and Kaixuan Wang performed the computation. The analysis and manuscript was written by Jiabao
+Wang. Jiabao Wang, Yang Weng, and Xin Li revised the manuscript.
+
+References
+Bender O, Och FJ, Ney H (2003) Maximum entropy models for named entity recognition. In: Proceedings
+of the Seventh Conference on Natural Language Learning at HLT-NAACL 2003, pp 148–151
+Cao P, Chen Y, Liu K, Zhao J, Liu S (2018) Adversarial transfer learning for chinese named entity recognition with self-attention mechanism. In: Proceedings of the 2018 Conference on Empirical Methods
+in Natural Language Processing, pp 182–192
+Chang Y, Kong L, Jia K, Meng Q (2021) Chinese named entity recognition method based on bert. In: 2021
+IEEE International Conference on Data Science and Computer Application (ICDSCA), pp 294–299.
+IEEE
+Chen W Zhang Y, Isahara H (2006) Chinese named entity recognition with conditional random fields. In:
+Proceedings of the Fifth SIGHAN Workshop on Chinese Language Processing, pp 118–121
+Chen Y, Sun Y, Yang Z, Lin H (2020) Joint entity and relation extraction for legal documents with legal
+feature enhancement. In: Proceedings of the 28th International Conference on Computational Linguistics, pp 1561–1571
+Dai Z, Yang Z, Yang Y, Carbonell J, Le QV, Salakhutdinov R (2019) Transformer-xl: Attentive language
+models beyond a fixed-length context. arXiv preprint arXiv:1901.02860
+Dong H, Kong Y, Gao W, Liu J (2022) Named entity recognition for public interest litigation based on a
+deep contextualized pretraining approach. Scientific Programming
+Fei H, Ren Y, Ji D (2020) Dispatched attention with multi-task learning for nested mention recognition.
+Inf Sci 513:241–251
+Goodfellow I, Pouget-Abadie J, Mirza M, Xu B, Warde-Farley D, Ozair S, Courville A, Bengio Y (2020)
+Generative adversarial networks. Commun ACM 63(11):139–144
+Hochreiter S, Schmidhuber J (1997) Long short-term memory. Neural Comput 9(8):1735–1780
+Huang W, Hu D, Deng Z, Nie J (2020) Named entity recognition for chinese judgment documents based
+on bilstm and crf. EURASIP J Image Video Process 2020(1):1–14
+Huang Z, Xu W, Yu K (2015) Bidirectional lstm-crf models for sequence tagging. arXiv preprint
+arXiv:1508.01991
+Ju M, Miwa M, Ananiadou S (2018) A neural layered model for nested named entity recognition. In:
+Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pp 1446–1459
+Lafferty J, McCallum A, Pereira FC (2001) Conditional random fields: Probabilistic models for segmenting and labeling sequence data
+Lee S-M, Tan Y-H, Yu H-T (2023) Learner: Few-shot legal argument named entity recognition. In: 19th
+International Conference on Artificial Intelligence and Law (ICAIL), pp 422–426
+Li J, Sun A, Han J, Li C (2020) A survey on deep learning for named entity recognition. IEEE Trans Knowl
+Data Eng 34(1):50–70
+Liu C-L, Hsieh C-D (2006) Exploring phrase-based classification of judicial documents for criminal
+charges in chinese. In: Foundations of Intelligent Systems: 16th International Symposium, ISMIS
+2006, Bari, Italy, September 27-29, 2006. Proceedings 16, pp 681–690. Springer
+Li X, Yan H, Qiu X, Huang X (2020) Flat: Chinese ner using flat-lattice transformer. arXiv preprint
+arXiv:2004.11795
+
+13
+
+J. Wang et al.
+Mirza M, Osindero S (2014) Conditional generative adversarial nets. arXiv preprint arXiv:1411.1784
+Morwal S, Jahan N, Chopra D (2012) Named entity recognition using hidden markov model (hmm). Int J
+Nat Lang Comput (IJNLC) 1
+Schuster M, Paliwal KK (1997) Bidirectional recurrent neural networks. IEEE Trans Signal Process
+45(11):2673–2681
+Shi J, Zheng K, ZhiHuaLiu Q (2022) A named entity recognition method based on deep learning for
+chinese legal documents. In: 2022 7th International Conference on Image, Vision and Computing
+(ICIVC), pp 65–68
+Su S, Qu J, Cao Y, Li R, Wang G (2022) Adversarial training lattice lstm for named entity recognition of
+rail fault texts. IEEE Trans Intell Transp Syst 23(11):21201–21215
+Tang P, Yang P, Shi Y, Zhou Y, Lin F, Wang Y (2020) Recognizing chinese judicial named entity using
+bilstm-crf. In: Journal of Physics: Conference Series, vol 1592, p 012040. IOP Publishing
+Vaswani A, Shazeer N, Parmar N, Uszkoreit J, Jones L, Gomez AN, Kaiser Ł, Polosukhin I (2017) Attention is all you need. Adv Neural Inf Process Syst 30
+Wang Y (2020) A mathematical introduction to generative adversarial nets (gan). ArXiv.
+arxiv:abs/2009.00169
+Wang Y, Tong H, Zhu Z, Li Y (2022) Nested named entity recognition: A survey. ACM Trans Knowl
+Discov Data (TKDD). 16:1–29
+Wang C, Li B, Zhang W (2020) Attention-blstm-crf based method for named entity recognition in judicial
+domain. In: Journal of Physics: Conference Series, vol 1616, p 012108. IOP Publishing
+Wang J, Shou L, Chen K, Chen G (2020) Pyramid: A layered model for nested named entity recognition.
+In: Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pp
+5918–5928
+Xiao C, Zhong H, Guo Z, Tu C, Liu Z, Sun M, Feng Y, Han X, Hu Z, Wang H et al (2018) Cail2018: A
+large-scale legal dataset for judgment prediction. arXiv preprint arXiv:1807.02478
+Yuan Z, Zhang H (2021) Improving named entity recognition of chinese legal documents by lexical
+enhancement. In: 2021 IEEE International Conference on Artificial Intelligence and Computer Applications (ICAICA), pp 999–1004. IEEE
+Zhang H, Guo J, Wang Y, Zhang Z, Zhao H (2023) Judicial nested named entity recognition method with
+mrc framework. Int J Cogn Comput Eng 4:118–126
+Zhang X, Luo X, Wu J (2023) A roberta-globalpointer-based method for named entity recognition of legal
+documents. In: 2023 International Joint Conference on Neural Networks (IJCNN), pp 1–8
+Zhou P, Shi W, Tian J, Qi Z, Li B, Hao H, Xu B (2016) Attention-based bidirectional long short-term
+memory networks for relation classification. In: Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (volume 2: Short Papers), pp 207–21
+Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law.
+
+13
+
+

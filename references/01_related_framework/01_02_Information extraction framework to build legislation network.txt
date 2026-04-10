@@ -1,0 +1,1321 @@
+Artificial Intelligence and Law (2021) 29:35–58
+https://doi.org/10.1007/s10506-020-09263-3
+ORIGINAL RESEARCH
+
+Information extraction framework to build legislation
+network
+Neda Sakhaee1
+
+· Mark C. Wilson1
+
+Published online: 28 January 2020
+© Springer Nature B.V. 2020
+
+Abstract
+This paper concerns an information extraction process for building a dynamic legislation network from legal documents. Unlike supervised learning approaches which
+require additional calculations, the idea here is to apply information extraction methodologies by identifying distinct expressions in legal text in order to extract network information. The study highlights the importance of data accuracy in network
+analysis and improves approximate string matching techniques to produce reliable
+network data-sets with more than 98% precision and recall. The applications and
+the complexity of the created dynamic legislation network are also discussed and
+challenged.
+Keywords Optical character recognition · Information extraction · Named entity
+recognition · Relation extraction · Approximate string matching · Legislation
+network · Evaluation
+
+1 Introduction
+The process of legal text retrieval for machine-readable structured documents is well
+explored in the literature. Fowler et al. in 2007 used a computer based search-andretrieval strategy that automated the process of finding Shepard’s citation1 in the
+HTML files of U.S Supreme Court cases (Fowler et al. 2007). In 2011 De Maat et al.
+developed a context-free grammar approach to find references in and between Dutch
+legal sources. This approach was proposed to parse the text files, but the evaluation
+results are only available for XML structured files from MetaLex2 (De Maat et al.
+2006).
+1
+2
+
+Shepard’s Citations include a judicial history of cases and statutes.
+For more details about MetaLex please refer to Boer et al. (2010).
+
+* Neda Sakhaee
+nsak206@aucklanduni.ac.nz
+1
+
+University of Auckland, Auckland, New Zealand
+Vol.:(0123456789)
+1
+3
+
+36
+
+N. Sakhaee, M. C. Wilson
+
+Fig. 1  Married Women Property Protection Act 1860
+
+Gultemen and Engers proposed a graph-based linking and visualisation process
+for legal texts based on parsing structured or semi-structured XML files (Gultemen and van Engers 2013). In an earlier study in 2017, we used similar methods in
+parsing structured legal texts in XML format and built New Zealand legislation network of the live acts. In 2017 we studied New Zealand current acts network, and we
+addressed a limitation in accessing data from historical documents in poor quality
+scanned files. We mentioned that this limitation impacts network science in-depth
+analysis of time evolution and generative models (Sakhaee et al. 2017).
+The main contribution of this study is the proposed information extraction framework which engages several processes and enables researchers to have access to
+the network information from historical documents. This framework makes it possible to study legislation networks as dynamic graphs. In this paper, the case study
+covers all Acts in the New Zealand legislation corpus including historical, expired,
+repealed and consolidated Acts as at the end of September 2018. This comes to a set
+of 23,870 PDF files of which about 87% are in scanned image format.
+Figure 1 shows a sample image of an average quality scanned PDF document.
+Our proposed framework suggests a high-performance procedure to derive network information from such poor quality documents. In the following sections,
+examples and the experimental results are used to illustrate the framework, its performance, and its potential applications.
+We provided an overview of the research problem and our contribution. In
+Sect. 2, we give a summary of the required information extraction processes and
+methodologies. In Sect. 3, we present the proposed framework and explore it with
+various examples. We then in Sect. 4 discuss the case study analysis and examine
+the application of the proposed framework. Next, in Sect. 5, we design and study
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+37
+
+several experiments to evaluate the accuracy of extracted information and to explore
+the robustness of legislation network. The study finishes in Sect. 6 with a quick
+review of the novelty and the importance of discovering time-varying behaviours of
+legislation networks.
+
+2 Methodologies
+Legislation networks were first introduced in 2015 (Koniaris et al. 2017) and further
+discussed in Sakhaee et al. (2016, 2017). These networks are essential to explore
+the relationship between legislation and societies’ evolution (Sakhaee et al. 2016).
+There are many obvious benefits from studying legislation networks (Sakhaee et al.
+2016, 2017; Zhang and Koppaka 2007; Fowler et al. 2007), but building these networks is not always a straightforward task, as only a few legislation systems provide
+machine-readable documents or structured databases (EUR-Lex 2020; Boer et al.
+2010). The majority of legislation systems supply legal documents in a human-readable format. For example, the New Zealand Parliamentary Counsel Office provides
+machine-readable XML files (New Zealand Parliamentary Counsel Office 2018)
+only for the current active Acts, which constitute around ten percent of the entire
+set of Acts. All other historical documents are scanned and supplied by a third party
+institute in Portable Document Format (PDF) (PDF) (New Zealand Legal Information Institute 2018).
+For extracting information from legal documents, the first step is the conversion
+of images into the text if the text is not available. This concept is well studied as
+optical character recognition (OCR) (Trier et al. 1996), and there are several techniques and tools developed to convert typewritten or handwritten images to text.
+OCR is the first step of the proposed framework, and for the case study we selected
+ABBYY FineReader (Mendelson 2008).
+Information extraction (IE) involves locating and extracting specific information
+from text (Andersen et al. 1992). Information extraction assumes that in each text
+file, there are one or more patterns or entities that are similar to those in other text
+documents but differing in the details (Freitag 2000). Using different IE processes,
+these patterns and entities can be extracted.
+IE approaches in the legal domain are considerably different from other knowledge areas because of two main characteristics of legal texts. Legal documents
+exhibit a wide range of internal structure, and they often have a significant amount
+of manual editorial value added. One of the earliest information retrieval approaches
+for legal materials based on searching inside the document was proposed in 1978
+(Hafner 1978). Later works mainly used supervised learning techniques to retrieve
+the required data from legal texts, but with a substantial error (Tin et al. 2009; Kartoun 2017). Some researchers developed simple grammar IE processes to extract the
+network information from the legal text. But they only tested and evaluated their
+model with processing structured XML files, and didn’t discuss any error estimation
+of parsing poor quality image files (De Maat et al. 2006).
+In the proposed framework of this study, we use several IE tasks, which we
+describe them later in this section.
+
+13
+
+38
+
+N. Sakhaee, M. C. Wilson
+
+Named entity recognition (NER) is one of the main sub-tasks of IE. The goal
+of this task is to find each occurrence of a named entity in the text (Jurafsky and
+Martin 2014). Entities usually include people, locations, quantities, and organizations but also more specific entities such as the names of genes and proteins
+(Cohen and Demner-Fushman 2014), the names of college courses (McCallum
+2005), and drugs (Krallinger et al. 2013). In the New Zealand legislation corpus,
+entities could be the name of legislative documents such as Acts, Regulations,
+Bills, Orders, or Case-Laws (Sakhaee et al. 2016). In the case study which we
+will discuss in Sect. 4, the main required entities inside the text documents are
+the names of the New Zealand Acts.
+The main traditional NER algorithm that identifies and classifies the named
+entities is statistical sequence modeling (Jurafsky and Martin 2014). But there are
+other modern approaches based on combinations of lists, rules, and supervised
+machine learning (Chiticariu et al. 2013). For extracting the required information
+for legislation network, there are clear rules to identify the named entities, and
+the classification of the entities is not needed. Therefore we found that a rulebased NER approach is more appropriate for the proposed framework.
+The next IE task which we use in our study is to detect the relationships that
+exist among the recognized entities. This task is called relation extraction (RE)
+(Jurafsky and Martin 2014). The earliest algorithm for relation extraction is the
+use of lexico-syntactic patterns (Hearst 1992). This algorithm is still valid and
+widely used, but there are other algorithms introduced later such as supervised
+learning (Jurafsky and Martin 2014) and bootstrapping (Carlson and Schafer
+2008; Canisius and Sporleder 2007). Considering that legislation texts are well
+structured, it is assumed that there is a large collection of patterns and identifiers
+that can define the rules for classifiers.
+Approximate string matching techniques find items in a database when there may
+be a spelling mistake or other error in the keyword (Hall and Dowling 1980). This
+method is becoming a more relevant issue for fast-growing knowledge areas such as
+information retrieval (Navarro 2001). Various techniques are studied to address the
+identity uncertainty of the objects that we briefly review in this study. These techniques could be distance-based, token-based, or a hybrid model of the distance and
+token-based models.
+Damerau–Levenshtein metrics are the main approximate string matching techniques to address the distance functions between the two strings (Damerau 1964;
+Levenshtein 1966). The most famous function in this category is edit-distance, and
+it is defined as the minimum number of single-character changes required to convert one string into the other (Levenshtein 1966). Several alternative distance functions to the edit-distance have been proposed, such as q-gram and maximal matches
+(Ukkonen 1992).
+The next set of techniques are token-based or probabilistic object identification
+methods adapted for string matching tasks (Cohen et al. 2003; Pasula et al. 2003;
+Hall and Dowling 1980). Jaccard similarity and cosine similarity are common
+token-based measures widely used in the information retrieval community (Cohen
+et al. 2003). Hybrid techniques combine distance-based and token-based string
+matching measures such as Jaro–Winkler (Winkler 1999).
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+39
+
+The fastest algorithms use a combination of filters to discard most of the text by
+focusing on the potential matches. Hybrid models significantly improve precision
+and recall reducing the error in a range between 0.1 to 0.2 (Navarro 2001).
+Network inferences require high accuracy of data (Butts 2003). For this study,
+various string matching techniques are examined for the legislation network and
+comparing the results, a hybrid model of Jaccard similarity and edit-distance is
+used as described in the next section.
+Before discussing our framework in the next section, it is essential to note that
+this research aims to propose an automatic process of legal text retrieval. Two steps
+unquestionably require manual work. First, to explore and identify IE rules from a
+few sampled documents, we explain this exploration processes in Sect. 3. Second for
+model evaluation and error estimation while comparing the automatically generated
+results with actual links in sampled documents. We will use these types of manual
+review of the sampled documents in Sect. 3.3 and more specifically, in Sect. 5. Our
+proposed framework provides sets of best practices that are all automated in the case
+study and can be automated for similar research topics. For identifying the rules, we
+suggest a minimal sample set (in our case study 0.2%) but in a layered structure to
+cover varieties. To estimate the errors, we recommend sampling and comparing the
+automatically generated results with actual values in the documents.
+
+3 The proposed information extraction framework
+In this section, we discuss the information extraction framework to build the legislation network. We shared the case study results based on our proposed framework in
+Sakhaee (2018). Figure 2 depicts the overview of the proposed framework.
+The process starts with the conversion of non-machine-readable files to text
+by using OCR available tools. This step is relatively straightforward but could be
+time-consuming, considering the number of documents in the study. As mentioned
+earlier, in the case study, we use the tool named ABBYY FineReader (Mendelson
+2008). To evaluate the results of the OCR, we picked one random sentence from
+15 random files and calculated the number of correctly captured words to the total
+number of words. We observed that the average accuracy of this step is just above
+80% and implies the need for a typos analysis step that we develop in Sect. 3.3.
+3.1 Text canonicalization
+The next step in the proposed framework is text canonicalization (Zhang and Patrick 2005). With this step, we convert all of the text files into a unique format. Such
+a concluding format can improve and ease the IE rules exploration and identification. The text canonicalization step could be implemented via different approaches
+depending on the text style and language. In this paper, we propose some of the
+common tasks and describe two potentially required tasks.
+In the case study, the designed system transfers all letters to lowercase.
+This transition applies a level of consistency across the text documents and the
+
+13
+
+40
+
+N. Sakhaee, M. C. Wilson
+
+Fig. 2  Legal text IE framework
+
+information extraction rules. In the experiments, the system also replaces Special
+Characters with generic tags in the text. The only character which is not replaced
+is the parenthesis, as it is often used in the title of the legislation. The other suggested generic text canonicalization task is to replace multiple spaces with one
+space.
+Apart from the general text canonicalization steps, other potential corrections
+shape the text to make it a better input for the information extraction process. The
+first is to remove text margins that OCR mistakenly merges to the main body of the
+text. Figure 1 includes examples of these margins that might impact the information
+extraction rules and result in an error. As an example, in the case study, the phrase
+short title is often used in the margin, and OCR merges it to the nearest part of
+the text. This phrase might impact the named entity recognition task, so the system
+removes this phrase and many of its possible misspelled forms from the text.
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+41
+
+Table 1  OCR and text canonicalization result comparison
+OCR
+
+I∼ The Short Title’ of this’ Act shall be, the (Married Short Title, ’Vomen’s
+’Property’Protectio$Aot, 1860.”)
+
+Text canonicalization
+
+I the short title of this act shall be the (married vomens propertyprotectio act
+1860)
+
+The next recommended text canonicalization step is to resolve the misspelling
+issues for the keywords used in the information extraction process. As an example,
+in this study, Acts are the main entities, and the rule to recognize them applies the
+keyword Act. So the system automatically corrects some of the possible misspelling
+forms of the word—act—and other keywords in the rules using Metaphone algorithm as described in Philips (1990). To provide a better explanation of this step,
+Table 1 provides an example referring to the third paragraph of the Fig. 1 image. As
+can be seen, the text canonicalization converts the text to a simpler unique structure
+that prepares it for the next steps of named entity recognition and relation extraction. Typo resolution is not expected at this step, being covered under the last step
+via approximate string matching.
+3.2 Named entity recognition and relation extraction
+As explained, the text canonicalization step normalizes the text files to a unique format and prepares them for in-depth information extraction steps. For network node
+information, we propose a combined named entity recognition approach which
+engages rules and supervised learning. First, we need to identify the rules, so a sample set of the documents should be reviewed. The sample size does not require to be
+large. For example, in our case study, around 0.2% of the documents is selected. We
+suggest a stratified sampling approach to eliminate the impact of time-period style
+and the author’s writing style.
+In the case study stratified sampling method is used and the strata are five different time periods in a range of more than 200 years. A total number of 55 text files
+are reviewed, and several clear rules engaging a set of keywords and lists are built to
+identify the named entities. Table 2 provides examples of the rules in each stratum
+and y represents the year in which the Act is commenced.
+Once the rules are identified, they are applied in the algorithm, so the system is
+enabled to capture the entities automatically for all input files from the text canonicalization step.
+Table 3 shows examples of the extracted entities in the case study based on the
+Acts recognition rules. Acts are the main part of the New Zealand legislation system, and as explained before the case study only considers the Acts. So the named
+entities that we look for in the case study are Act as well as Year. After this step, we
+recognised more than 400,000 entities.
+Alongside recognizing the entities, to extract the network edge information,
+we propose a rule-based relation extraction approach considering that legislation texts are contextually structured. In this study, for identifying the rules, we
+
+13
+
+42
+
+N. Sakhaee, M. C. Wilson
+
+Table 2  Examples of the named entity recognition rules
+Strataa Keyword example
+
+Rule example
+
+Sample document
+
+1
+
+ordinance
+
+an [keyword] to any phrase of [act name]
+[date]
+
+Police Magistrates Act 1841
+
+2
+
+short title, shall be
+
+the [keyword] of this act [keyword] the [act
+name] [year]
+
+Customs Tariff Act 1873
+
+3
+
+amend, consolidate an act to [keyword] any phrase of the [act
+name] [date]
+
+Mining Act 1926
+
+4
+
+meaning, section
+
+[keyword] as in [keyword] [#] of the [act
+name] [year]
+
+Copyright Act 1962
+
+5
+
+act
+
+this [keyword] is the [act name] [year]
+
+Social Security Act 2018
+
+a
+Strata are based on the selected five periods, 1 = y < 1850, 2 = 1850 < y < 1900, 3 = 1900 < y < 1950,
+4 = 1950 < y < 2000, and 5 = 2000 < y
+
+Table 3  Entities of the case
+study—examples
+
+Type Tag
+
+Entity
+
+Canonicalized text
+
+Year YR
+
+1860
+
+The short title of this act
+shall be the (Married
+vomens propertyprotectio
+act 1860)
+
+Act
+
+ACT​ Married vomens prop- The short title of this act
+ertyprotectio act 1860
+shall be the (Married
+vomens propertyprotectio
+act 1860)
+
+Table 4  Examples of the relation extraction rules
+Relation
+
+Keyword
+
+Rule example
+
+Source
+
+Target
+
+Amendment
+
+amend
+
+an act to [keyword]
+any phrase of the
+[act name] [date]
+
+Mining Act 1926
+
+Mining Act 1898
+
+Citation
+
+meaning
+
+[keyword] as in
+Sect. 4 of the [act
+name] [year]
+
+Copyright Act 1962
+
+Post Office Act 1959
+
+recommend using the same sample set, which is used for the named entity recognition. From the case study, we observed that the style of writing legislation
+had changed considerably over time. So the sampling approach is fundamental to
+minimize the impact of various text styles.
+In the case study by reviewing the 0.2% sample files, there is a collection of
+previously identified relationships between entities that can define the rules for
+relation classifiers. A total number of 55 text files was reviewed, and several classifier rules engaging a set of keywords are built to identify the relations between
+the named entities. Table 4 provides examples of the rules.
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+43
+
+Table 5  Entities relations of the case study—examples
+Relation
+
+Type
+
+Citation
+
+CIT
+
+Amendment
+
+AMD
+
+Partial Repeal
+
+PRP
+
+Repeal
+
+FRP
+
+Source
+Trade Marks Act 2002
+
+Trade Marks Act 2002
+
+trade marks amendment act 2011
+
+Married Women Property Protection Act 1880
+
+Target
+Companiees act 1993
+Trade marks amendment act 2005
+
+Trade Marks Act 2002
+
+Married Womens Property Protection Act, 1860
+
+Once the relation extraction rules are identified, they are applied in the algorithm,
+so the system is enabled to capture the relation between the entities automatically for
+all input files. Table 5 provides examples of automatically identified the entity relation for the case study.
+In Table 5 we show the name of the documents being parsed in Bold Capitalised
+format. So the other entity is the relation the system extracted. As can be seen, there
+are typo issues in the extracted text that requires the assistance of approximate string
+matching techniques.
+This proposed process can be generalized for any other case study in legislation
+network building process considering that legislation texts are coherently structured.
+So there is always a large collection of patterns and identifiers that can define the
+rules for entity recognition and relation classifiers.
+3.3 Approximate string matching
+Named entity recognition identifies the Acts and relation extraction recognizes the
+relationship between them. So these two steps result in an initial version of the node
+list and the edge list of the intended legislation network. However testing this network shows that the extracted data is shoddy with an average error rate of 12% .3
+Later in Sect. 5, we show that legislation network structure is not robust to error
+rates more significant than 2%. We will also show that network science measure,
+such as centrality measures, are robust for error rates more substantial than 5%. So
+if we proceed to the network analysis step without typo resolution, the results will
+be inaccurate. This poor-quality data implies the need for the approximate string
+matching step to resolve typo issues and imperfect entities. To run this step two
+main components are required, the technique and the correct pattern.
+First, as mentioned earlier after the implementation of different approximate
+string matching techniques, we recommend a hybrid model of Jaccard and EditDistance. Algorithm 1 shows the proposed hybrid model.
+Second, in the case study the pattern which is used for the approximate string
+matching step is the list of all NZ Acts provided by NZLII New Zealand Legal Information Institute (2018). In case of not having access to such a master list, the typo
+
+3
+To estimate this error rate, a cluster sampling method is used to randomly choose ten sets of 30 entities. By manual check of the samples, the rate of incorrectly matched entities is observed.
+
+13
+
+44
+
+N. Sakhaee, M. C. Wilson
+
+Table 6  Approximate string matching example
+Technique
+
+Extracted entity
+
+First match
+
+Hybrid model
+
+Married vomens propertyprotectio act 1860
+
+Married Women Property Protection Act
+1860
+
+resolution could be more time consuming. In such a complicated scenario, more indepth phonetic algorithms is required, and any selected algorithm should address
+particular names and equivalent translations, for example, Māori terms in New
+Zealand.
+
+Table 6 provides an example which shows the first match as the output of the proposed approximate string matching technique.
+Next, we evaluate the proposed hybrid algorithm by comparing precision and
+recall measures. To run the comparison between the three methods of Edit-Distance
+and Jaccard techniques and our hybrid model, we recommend a stratified sampling
+experiment, and strata are documents in six different periods.4 The sample size is
+30, and for each sampled document, we use the output of NER and RE and the three
+target ASM algorithms independently and find the best match. Until this step, the
+experiment is automatic. For each observed entity, we manually map the actual
+match. Then we automatically compare the exact match with the best match from
+
+4
+
+Time periods: before 1800, 1800–1850, 1850–1900, 1900–1950, 1950–2000, 2000–2018.
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+45
+
+Fig. 3  Precision and recall comparison of the approximate string matching techniques
+
+the ASE techniques and calculate the error rates. Figure 3 compares the results of
+the hybrid model with Edit-Distance and Jaccard techniques in terms of precision
+and recall of the approximate string matching step.
+The graph shows the error rates in each time sample of documents based on the
+chosen approximate string matching model. For example for the documents commenced prior to 1850, the first marker point at each graph line shows the false negative error and the precision of the chosen approximate string matching method. As
+can be seen, samples from this oldest group of acts show a higher error rate regardless of the approximate string matching method, and Edit-Distance performs slightly
+better for the old documents to the Jaccard index. In summary the proposed hybrid
+model performs significantly better than the other two methods for all documents
+regardless of their age with less than 2% of false-negative error and average precision of more than 98%.
+Approximate string matching considerably improves the quality of the extracted
+information, result in reliable edge list and node list. Later in this study the evaluation of the final extracted data set and the robustness of the network is discussed.
+The robustness study proves the value of a high performing approximate string
+matching technique which improves the data quality significantly.
+
+4 Application
+In our previous works, we defined the legislation network and clarified the data
+extraction and network building process for the current version of the New Zealand
+Act Network with examples. We concluded that the main barrier to network evolution studies was the inadequacy of the historical data set, which is in the scanned
+image format (Sakhaee et al. 2016, 2017).
+
+13
+
+46
+
+N. Sakhaee, M. C. Wilson
+
+Table 7  NZ legislation network, this study versus previous studies
+Network
+
+Nodes
+
+Edges
+
+Average degree
+
+Average CCa
+
+Average
+Network type
+path-length
+
+This study
+
+16,385
+
+137,751
+
+8.407
+
+0.216
+
+4.873
+
+Dynamic
+
+Previous studies
+
+3856
+
+33884
+
+8.878
+
+0.39
+
+3.569
+
+One snapshot
+
+a
+The average clustering coefficient (CC) is calculated based on the assumption that the network is
+directed using the approach that discussed in Sakhaee et al. (2016). The clustering coefficient of node i is
+defined as the ratio between all the possible triangles that include node i and the number of all possible
+triangles that could be formed. In directed networks, triangles with edges pointing in different directions
+that are shown in have different impacts in terms of the resulting pattern (Tabak et al. 2014)
+
+The proposed information extraction framework in this paper resolves the historic
+data limitation in our previous studies and results in a large and reliable dynamic
+network data set which is called LegiNet and is available at Sakhaee (2018). This
+dynamic (Casteigts et al. 2012) and complex network has a very interesting range
+of characteristics and behaviours. To maintain the subject consistency of this paper,
+more in-depth analyses of network behaviours are delayed to the future studies. In
+this section, generic network science characteristics of the case studied network are
+discussed, and an overall view of the structural and node importance evolution is
+presented.
+Table 7 compares the produced network based on the information extraction process with the earlier versions of the network that was built with parsing of limited
+available XML resources.
+As illustrated the network size and structure is significantly changed comparing
+to its earlier versions. Figures 4 and 8 capture the overall evolution of the legislation network in New Zealand from 1267 to the second quarter of 2018. To visualize
+the data, a network force-directed approach is used. In the layouts in Fig. 4 each
+node is placed depending on their connection to the other nodes. As can be seen
+references between the Acts first appear in the 1840s, but the data-set visually looks
+like a graph since the 1850s and it gets denser from the 1870s. As can be seen in
+Table 8 the graphs show some small-world properties from 1860s with 𝜎 > 1 and
+small-world property of the graphs is significant from 1970s comparing to 50 random graphs. As illustrated overlay the network gets denser and the average degree
+is growing. More significant clusters are observed during the most recent decades
+which can be seen in Fig. 4. These clusters could be the outcome of housekeeping
+activities such as edge and node removal, or it could be the result of a mature referencing approach in the legal drafting process. Both of the above hypotheses should
+be examined in future studies.
+Based on the network structure information provided in Table 8 and Fig. 4, six
+different time periods are chosen for the centrality evolution analysis. Figure 5 captures the time evolution of the top 10 nodes and the most frequent words5 in the top
+20 nodes based on Katz prestige centrality measure.
+5
+To find the frequent words, Textalyzer Python module is used. The frequent prepositions, conjunctions
+and articles are excluded from the analysis.
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+(a) 1267-1839
+σ = NA
+
+(b) 1840s
+
+σ = 0 .000
+
+47
+
+(c) 1850s
+
+σ = 0 .447
+
+(d) 1860s
+
+(e) 1870s
+
+(f) 1880-1909
+
+(g) 1910s
+
+(h) 1920s
+
+(i) 1930-1959
+
+(k) 1980-2009
+
+(l) 2010s,
+
+σ = 1 .165
+
+σ = 82 .519
+
+(j) 1960-1979
+
+σ = 16 .131
+
+σ = 15 .587
+
+σ = 80 .122
+
+σ = 195 .837
+
+σ = 75 .173
+
+σ = 24 .239
+
+σ = 208 .084
+
+Fig. 4  Overview of the network structure evolution
+
+As mentioned earlier, prior to the 1860s the graphs don’t show significant smallworld properties. The visual presentation in Fig. 4a–c also reflects that the network can be considered as a random graph during this period. So the Katz centrality degree distribution is nearly a uniform distribution in these time periods and is
+excluded from Fig. 5.
+
+13
+
+13
+
+1.046
+
+0.001
+
+0.081
+
+1
+
+0
+
+0
+
+Average degree
+
+Average path lengtha
+
+0.447
+
+0.203
+
+64
+
+1.165
+
+0.007
+
+2.605
+
+1.333
+
+1252
+
+939
+
+1860s
+
+15.587
+
+0.12
+
+3.592
+
+2.445
+
+4756
+
+1945
+
+1870s
+
+75.173
+
+0.13
+
+8.061
+
+3.152
+
+14,851
+
+4712
+
+1880–1909
+
+82.519
+
+0.133
+
+7.514
+
+3.429
+
+18,767
+
+5473
+
+1910s
+
+80.122
+
+0.143
+
+8.301
+
+3.900
+
+24,538
+
+6292
+
+1920s
+
+24.239
+
+0.161
+
+6.164
+
+5.203
+
+44,859
+
+8622
+
+1930–1959
+
+16.131
+
+0.193
+
+5.554
+
+5.920
+
+70,683
+
+11,940
+
+1960–1979
+
+195.837
+
+0.213
+
+5.051
+
+7.796
+
+121,019
+
+15,524
+
+1980–2009
+
+208.084
+
+0.212
+
+4.927
+
+8.085
+
+130,969
+
+16,199
+
+2010s
+
+world 𝜎 significantly larger than 1 are small-world networks and are significantly different from random graphs
+
+L
+
+be calculated based on the trade-off between high local clustering and short path length (Humphries and Gurney 2008). 𝜎 = LCp Based on the definition, graphs with small-
+
+Cp
+
+b The small-world sigma 𝜎 is calculated by comparing clustering coefficient and average path length of each network to 50 equivalent random network with same average
+degree. Graphs are considered to have the small-world property if they have small average shortest-path lengths and large clustering coefficients (Watts 2004). To examine
+the significance of small-world effect for real-world graphs, the best way is to compare their average path length and clustering coefficient with Erdős–Rényi random
+graphs of same size. According to Watts and Strogatz where the average shortest path length of the graph Lp is approximately as small as L in random graphs and clustering coefficient of the graph Cp is significantly larger than C in random graphs, then the graph is a small-world network (Watts and Strogatz 1998; Watts 2004). So the 𝜎 can
+
+a
+The average path length of the network is the average of the lengths of all shortest paths between all pairs of nodes. The shortest path length between two nodes is the
+minimum number of edges that must be crossed to get from one node to the other
+
+0
+
+0
+
+0
+
+NA
+
+Directed CC
+
+Small-world sigma (𝜎)b
+
+12
+
+315
+
+0
+
+148
+
+28
+
+Number of edges
+
+1850s
+
+Number of nodes
+
+1840s
+
+≤1839
+
+Time
+
+Table 8  Overview of the network measures evolution
+
+48
+N. Sakhaee, M. C. Wilson
+
+Information extraction framework to build legislation network﻿	
+
+49
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+(f)
+
+Fig. 5  Time evolution of the top ten legislation and the top subjects in the top twenty legislation
+
+13
+
+50
+
+N. Sakhaee, M. C. Wilson
+
+Figure 5a shows the most important nodes with the impression that Land was
+the most important law subject back at that time. In the next selected time period
+the network shows small-world properties, and as can be seen in Fig. 5b the centrality measure shows a higher kurtosis with the word Council being the most frequent
+topic in legal domain.
+Similarly the other graphs reflect the change in the network structure and highlights the relationship between the laws and the socio-economic requirements of the
+country. In the current decade, with the new sets of legislation being introduced and
+referenced to the older documents, the centrality measure is increased comparing to
+the previous decade, and the hot legal topics show a change which could be a good
+reflection of the society’s needs.
+
+5 Evaluation and robustness
+In this section, we discuss the performance of the proposed framework. As explained
+in the previous section, the main goal of the study is to extract the information to
+build the legislation network. The framework includes named entity recognition,
+relation extraction, and approximate string matching jointly to obtain the network’s
+node and edge information. In this section, we evaluate our proposed framework and
+calculate the related errors.
+It is crucial to study first the error rate in the proposed framework, and second the
+robustness and error tolerance of legislation networks. With these two studies that
+we aim in this section, we then will be able to evaluate our model and claim the confidence of network science studies based on the output graph data of the proposed
+framework.
+We start with error estimation. In this section, the familiar metrics of recall and
+precision are used to evaluate the system and the errors. High precision means that
+the framework returns substantially more relevant results than irrelevant ones, while
+high recall implies that the process returns most of the proper results. Finally, we
+review the identified errors’ impact on the network structure and assess the robustness. By this analysis, we highlight the importance of network data quality and confirm that the error rates of our framework support reliable network information.
+5.1 Error estimation, precision, and recall
+In the proposed information extraction process, named entity recognition is combined with approximate string matching to recognize, validate and optimize the entities (the nodes and the edges). Figure 6 illustrates the occurrence of the false-positive and false-negative errors in this process and helps in studying the robustness of
+the network.
+If the Entity Recognition process finds the entities, then there is a possibility that the approximate string matching process fails to find the correct match.
+A type I error 𝛼1 occurs when the approximate string matching process fails to
+find the correct match. From one side, this issue contributes to the false-positive
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+51
+
+Fig. 6  Error diagram
+Table 9  Errors, sensitivity and specificity
+Measure
+
+𝛼̄ 1
+
+𝛽̄1
+
+𝛽̄2
+
+𝛽̄3
+
+𝛼̄
+
+𝛽̄
+
+𝜇
+
+0.0160
+
+0.0160
+
+0.0012
+
+0.0007
+
+0.0160
+
+0.0179
+
+𝜎
+
+0.0012
+
+0.0012
+
+0.0001
+
+0.0001
+
+0.0012
+
+0.0012
+
+(0.0156 , 0.0164)
+
+(0.0175 , 0.0183)
+
+95% confidence
+interval
+
+error because it adds invalid entities to the output. These invalid entities impact
+the accuracy of the node list and the edge list of legislation network. To estimate
+the 𝛼̄ 1 in the case study, a cluster sampling method is used to choose ten sets
+of 30 entities randomly. By comparing actual values in samples with automatically generated results, we observed the rate of incorrectly matched entities. A
+
+13
+
+52
+
+N. Sakhaee, M. C. Wilson
+
+Kolmogorov-Smirnov test suggests that the estimated error of 𝛼̄ 1 has a normal
+distribution with the parameters in Table 9.
+𝛽1 also occurs when the approximate string matching system picks a wrong
+match for the entities. This issue can contribute to the false-negative error
+because those entities that system matches them to other entities are missing from
+the data set. The estimation methodology and the estimated value of 𝛽̄1 are equal
+to that of 𝛼̄ 1 as indicated in Table 9.
+𝛽2 is measuring the information extraction rules’ performance. If it fails to recognize entities, then those entities are missed, and it results in another type of
+false-negative error. The estimation process for 𝛽̄2 is different from the previous
+two errors, and it is harder to address. For the case study, a sample set of 30
+text files are randomly chosen using cluster sampling method. Then all of the
+extracted entities for each document is compared to the actual entities. We categorized the list of missing entities into two parts: caused by a typo, or caused by
+insufficient rules to recognize the entity. We calculated the rate of missing entities caused by weak or missing rules for each document and denoted by 𝛽̄2 . The
+Kolmogorov-Smirnov results through all of the 30 documents show that 𝛽̄2 has a
+normal distribution with the parameters in Table 9.
+𝛽3 addresses the error when typos cause problems for recognizing the entities.
+The estimation process is very similar to that of 𝛽̄2 . We collected a sample of 30
+text files. Then calculated the rate of missing entities caused by OCR typos for
+each document and addressed as 𝛽̄3. The Kolmogorov-Smirnov results through
+the selected documents show that 𝛽̄3 has a normal distribution with the parameters in Table 9. In the sample, we observed that the typos that cause the entity
+recognition failure are only numeric typos. For example, OCR might produce an
+error and convert 1987 to l987 by misspelling number 1 to letter l. Then the information extraction rules are impacted to recognize l987 as a year, so the entity is
+missed.
+As Fig. 6 shows 𝛼1 is the only false positive error which contributes to the overall
+false positive error of the system. Table 9 captures 𝛼̄ , assuming that 𝛼̄ estimates the
+overall type one error. To estimate the overall false negative error of the system, 𝛽1,
+𝛽2, and 𝛽3 are considered as mutually exclusive events. From Fig. 6 it is also clear
+that the intersections of each two of these errors are empty, so they are independent.
+Table 9 shows 𝛽̄ , the estimated value for the overall false negative, or the type II
+error.
+To calculate the precision and recall, we used the following equations.
+
+Precision =
+
+1 − 𝛼̄ − 𝛽̄
+TruePositive
+=
+TruePositive + FalsePositive
+1 − 𝛽̄
+
+Recall =
+
+1 − 𝛼̄ − 𝛽̄
+TruePositive
+=
+TruePositive + FalseNegative
+1 − 𝛼̄
+
+Based on the above equations and the information provided in Table 9, we calculated the precision of 98.37% and Recall of 98.18% . These outcomes suggest the
+high performance of the proposed information extraction framework that results in
+high data reliability of the output legislation network.
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+53
+
+Fig. 7  Changes of the network diameter d as the function of fraction f
+
+As explained in Sect. 3.3, the proposed hybrid approximate string matching technique substantially reduces the errors. It is essential to mention that at the earlier
+stages of the study by using the classic string matching techniques, the error rates
+were considerably higher. The accuracy of the network was questionable at that
+stage. We applied a time-consuming examination process engaging manual checks
+to explore and propose our hybrid model, which resulted in an impressive performance and high precision and recall. The improvement involved a lot of efforts and
+time but resulted in accuracy and confidence in legislation network studies.
+5.2 Robustness
+With a coherent understanding of the errors, it is very important to study the robustness of the network to the error. We showed in Sect. 5.1 that the proposed framework results in errors smaller than 5%. We observe how robust legislation networks
+are towards data issues so we can explain that our framework doesn’t result in inaccurate network science analysis.
+The robustness study proves the importance of the data accuracy, which supports
+the value of the proposed hybrid model for the approximate string matching. In this
+section to study the network robustness, we use and evaluate diameter and three primary centrality measures towards data failure or attack scenarios.
+To understand the diameter robustness of the network, attack and failure analysis is required. As discussed earlier, legislation networks, in general, show scalefree characteristics. So we expected to observe a reasonable error tolerance of the
+network as the result of random failures, but vulnerability as the result of attacks
+(Albert et al. 2000). For studying the network robustness to node failures, the
+method is to randomly remove a fraction of nodes f and recalculate the diameter of
+the network d. To study the network robustness to attack by removing a fraction f of
+
+13
+
+54
+
+N. Sakhaee, M. C. Wilson
+
+Fig. 8  Robustness of the top nodes as the function of fraction of manipulated edges f
+
+the most significant nodes6 and observe the change to the diameter d. The results of
+both failure and attack to the nodes are captured in Fig. 7. The observed tolerance
+to failures and the vulnerability to attacks shows that a few highly connected nodes
+provide the connectivity, and the majority of nodes have only a few edges. As can
+be seen the vulnerability to the attacks starts immediately after removing a small
+fraction f = 0.3% of the highly connected nodes. This scenario of attack is highly
+unlikely in legislation network considering the high precision and recall of the proposed data extraction process.
+As discussed in the previous studies (Sakhaee et al. 2016, 2017), the most relevant centrality measure for legislation network is the Katz second prestige measure.
+In recent studies, the reliability of different centrality measurements against network
+manipulation has been addressed (Borgatti et al. 2006; Niu et al. 2015). But Katz
+prestige centrality is not much discussed. In this paper, we study the impact of edge
+deletion error on Katz, betweenness, and degree centrality of legislation network. To
+address the robustness, we use four significant measures of accuracy that proposed
+in Borgatti et al. (2006) and Niu et al. (2015). These measures are Top 1, Top 3, Top
+
+6
+
+Based on their connectivity (total degree).
+
+13
+
+Information extraction framework to build legislation network﻿	
+Table 10  Node centrality
+Pearson correlation between the
+manipulated network and the
+original network
+
+55
+Betweenness
+centrality
+
+Degree centrality
+
+Significance (p value) 2.2e−16
+
+0.001
+
+0.003
+
+Correlation
+
+0.948
+
+0.67
+
+Measure
+
+Katz
+prestige
+centrality
+0.939
+
+10%, and the Pearson correlation to compare the centrality measures between the
+true network and the manipulated network.
+We considered the error level as a specific percentage value from the set of 1%,
+5%, 10%, 20%, that is relative to the number of manipulated edges from the original
+true network. Figure 8 shows the results of the different Centrality measure as the
+function of the fraction of manipulated edges f. For each fraction level, we repeated
+the test for 100 times, and the graphs show the average of all sampled sets. Table 10
+shows the Pearson correlation between the nodes centrality in the manipulated network and the original network when 10% of the edges are randomly deleted.
+The pattern and level of robustness of the three selected centrality measures considered in this paper are not as similar, as suggested in Borgatti et al. (2006). The
+in-degree measure shows more fragility comparing to betweenness and Katz measures. This difference could be related to the network topology, as indicated by Niu
+et al. (2015). The results also confirm the findings of Niu et al. (2015), Borgatti et al.
+(2006) that accuracy declines monotonically with the increasing error.
+As can be seen in the graph, the Katz centrality is fairly robust to the edge deletion when less than 20% of the network structure is touched. The graphs indicate a
+moderate fragility when the network structure is hugely manipulated. For example,
+the removal of 20% of the edges somehow impacts the in-degree centrality. However, in more than 90% of these extreme samples, the top 1 node in the manipulated
+network is a member of top 10% of nodes in the original graph. The results imply
+that centrality measures on legislation network are quite robust under small amounts
+of error (such as 5% or under) and to some extent fragile under more significant data
+errors. So the reliability of the network information is essential for in-depth network
+studies. As explained earlier the precision and the recall of the proposed information
+extraction process is above 98%, so it is reasonable to compute the centrality measures when studying the legislation network.
+
+6 Conclusion
+This study focused on time as an essential attribute in understanding and analyzing legislation. Legislation network has been discussed in recent years, but the
+importance of having access to the historic legislation was never discussed much.
+This paper underlined the value of studying legislation as dynamic networks and
+proposed a new information extraction process to achieve a highly accurate legislation network. The performance of the data extraction framework is examined, is
+compared to the previous studies and proved to be considerably high. This work
+
+13
+
+56
+
+N. Sakhaee, M. C. Wilson
+
+contributed to the literature of network information extraction from old documents
+and insisted on the value and applications of the dynamic legislation network.
+The proposed process can be used not only in the legal domain but also in various
+research areas involving documented knowledge, facts, and cases.
+Analyzing a dynamic legislation network is a novel approach to understand the
+underlying process behind the generation of the laws, and to study the behaviour,
+culture and growth of societies. This subject is very interesting but mathematically
+complicated. So it will be discussed in a separate study.
+In this paper, we introduced a method to extract reliable data and build dynamic
+legislation networks. The next step is to explore growth behaviour indications to
+model the network evolution mathematically. The number of edges introduced at
+each time and the growing behaviour of each node in-degree can lead us to collect enough assumptions to fill the gap in the literature of generative network models. Our next goal is to apply a stochastic modelling approach to study network
+evolution.
+Another subject in which a network science approach shows relevance for legislation network is to study the betweenness measure and observe the impact of
+removing hubs in legislation networks. Network-based measures of a local structure may be able to distinguish between the expired and repealed acts. In this work,
+we provided only a small sample of the application of network science to legislation systems. Much remains in application studies of network science in the legal
+domain. We used a network science method in this work to explain the applications
+of legislation networks. But there is much more to do in the literature of community
+detection methodologies for directed dynamic graphs. The comparison between legislation networks of different jurisdictions is another interesting study as a signal of
+differences between the societies.
+
+References
+Albert R, Jeong H, Barabási A-L (2000) Error and attack tolerance of complex networks. Nature
+406(6794):378
+Andersen PM, Hayes PJ, Huettner AK, Schmandt LM, Nirenburg IB, Weinstein SP (1992) Automatic
+extraction of facts from press releases to generate news stories. In: Proceedings of the third conference on applied natural language processing. Association for Computational Linguistics, pp
+170–177
+Alexander B, Hoekstra R, De Maat E, Vitali F, Palmirani M, Ratai B (2010) Metalex (open xml interchange format for legal and legislative resources). Management Center, Akon
+Borgatti SP, Carley KM, Krackhardt D (2006) On the robustness of centrality measures under conditions
+of imperfect data. Soc Netw 28(2):124–136
+Butts CT (2003) Network inference, error, and informant (in) accuracy: a Bayesian approach. Soc Netw
+25(2):103–140
+Canisius S, Sporleder C (2007) Bootstrapping information extraction from field books. In: Proceedings of
+the 2007 joint conference on empirical methods in natural language processing and computational
+natural language learning (EMNLP-CoNLL)
+Carlson A, Schafer C (2008) Bootstrapping information extraction from semi-structured web pages. In:
+Joint European conference on machine learning and knowledge discovery in databases. Springer,
+Berlin, pp 195–210
+Casteigts A, Flocchini P, Quattrociocchi W, Santoro N (2012) Time-varying graphs and dynamic networks. Int J Parallel Emergent Distrib Syst 27(5):387–408
+
+13
+
+Information extraction framework to build legislation network﻿	
+
+57
+
+Chiticariu L, Li Y, Reiss FR (2013) Rule-based information extraction is dead! long live rule-based information extraction systems! In: Proceedings of the 2013 conference on empirical methods in natural
+language processing, pp 827–832
+Cohen KB, Demner-Fushman D (2014) Biomedical natural language processing, vol 11. John Benjamins
+Publishing Company, Amsterdam
+Cohen W, Ravikumar P, Fienberg S (2003) A comparison of string metrics for matching names and
+records. In: KDD workshop on data cleaning and object consolidation, vol 3, pp 73–78
+Damerau FJ (1964) A technique for computer detection and correction of spelling errors. Commun ACM
+7(3):171–176
+De Maat E, Winkels R, van Engers T (2006) Automated detection of reference structures in law. Frontiers
+in artificial intelligence and applications. IOS Press, Amsterdam, p 41
+EUR-Lex (2020) Access to European Union law. https​://eur-lex.europ​a.eu/homep​age.html. Accessed 10
+Sept 2017
+Fowler JH, Johnson TR, Spriggs JF, Jeon S, Wahlbeck PJ (2007) Network analysis and the law: measuring the legal importance of precedents at the US supreme court. Polit Anal 15(3):324–346
+Freitag D (2000) Machine learning for information extraction in informal domains. Mach Learn
+39(2–3):169–202
+Gultemen D, van Engers T (2013) Graph-based linking and visualization for legislation documents
+(glvd). In: Network analysis in law workshop, at ICAIL 2013: XIV international conference on AI
+and law, NAiL2013 ICAIL, Rome, Italy, 14 June
+Hafner CD (1978) An information retrieval system based on a computer model of legal knowledge. UMI
+Research Press, Ann Arbor, MI
+Hall PAV, Dowling GR (1980) Approximate string matching. ACM Comput Surv (CSUR) 12(4):381–402
+Hearst MA (1992) Automatic acquisition of hyponyms from large text corpora. In: Proceedings of the
+14th conference on computational linguistics, vol 2. Association for Computational Linguistics, pp
+539–545
+Humphries MD, Gurney K (2008) Network small-world-ness: a quantitative method for determining
+canonical network equivalence. PLoS ONE 3(4):e0002051
+Jurafsky D, Martin JH (2014) Speech and language processing, vol 3. Pearson, London
+Kartoun U (2017) Text nailing: an efficient human-in-the-loop text-processing method. Interactions
+24(6):44–49
+Koniaris M, Anagnostopoulos I, Vassiliou Y (2017) Network analysis in the legal domain: a complex
+model for European Union legal sources. J Complex Netw 6(2):243–268
+Krallinger M, Leitner F, Rabal O, Vazquez M, Oyarzabal J, Valencia A (2013) Overview of the chemical
+compound and drug name recognition (chemdner) task. In: BioCreative challenge evaluation workshop, vol 2, p 2
+Levenshtein VI (1966) Binary codes capable of correcting deletions, insertions, and reversals. Sov Phys
+Dokl 10:707–710
+McCallum A (2005) Information extraction: distilling structured data from unstructured text. Queue
+3(9):4
+Mendelson E (2008) Abbyy finereader professional 9.0. PC Magazine
+Navarro G (2001) A guided tour to approximate string matching. ACM Comput Surv CSUR) 33(1):31–88
+New Zealand Legal Information Institute (2020) Free access to legal information in New Zealand. http://
+www.nzlii​.org. Accessed 31 Oct 2018
+New Zealand Parliamentary Counsel Office (2020) The authoritative source of New Zealand legislation.
+http://www.legis​latio​n.govt.nz. Accessed 31 Oct 2018
+Niu Q, Zeng A, Fan Y, Di Z (2015) Robustness of centrality measures against network manipulation.
+Physica A 438:124–131
+Pasula H, Marthi B, Milch B, Russell SJ, Shpitser I (2003) Identity uncertainty and citation matching. In:
+Advances in neural information processing systems, pp 1425–1432
+Philips L (1990) Hanging on the metaphone. Comput Lang 7(12):39–43
+Sakhaee N (2018) Leginet New Zealand, first outcome of the new information extraction framework proposed to build legislation network. https​://doi.org/10.7910/dvn/ib3qs​f. Published 21 Sept 2018
+Sakhaee N, Wilson M, Hendy S, Zakeri G (2017) Network analysis of New Zealand legislation. NZ Law
+J 10:332–337
+Sakhaee N, Wilson MC, Zakeri G (2016) New Zealand legislation network. In: Legal knowledge and
+information systems: JURIX 2016: the twenty-ninth annual conference, vol 294. IOS Press, p 199
+
+13
+
+58
+
+N. Sakhaee, M. C. Wilson
+
+Tabak BM, Takami M, Rocha JMC, Cajueiro DO, Souza SRS (2014) Directed clustering coefficient as
+ameasure of systemic risk in complex banking networks. Phys A Stat Mech Appl 394:211–216
+Tin CT, Jeffrey LC, Mark DT, Kenneth GY, Rachel E (2009) Information extraction from legal documents. In: 2009 eighth international symposium on natural language processing
+Trier OD, Jain AK, Taxt T et al (1996) Feature extraction methods for character recognition-a survey.
+Pattern Recognit 29(4):641–662
+Ukkonen E (1992) Approximate string-matching with q-grams and maximal matches. Theor Comput Sci
+92(1):191–211
+Watts DJ (2004) Small worlds: the dynamics of networks between order and randomness, vol 9. Princeton
+University Press, Princeton
+Watts DJ, Strogatz SH (1998) Collective dynamics of small-world networks. Nature 393(6684):440
+Winkler WE (1999) The state of record linkage and current research problems. Statistical Research Division, US Census Bureau, Suitland
+Zhang P, Koppaka L (2007) Semantics-based legal citation network. In: Proceedings of the 11th international conference on artificial intelligence and law. ACM, pp 123–130
+Zhang Y, Patrick J (2005) Paraphrase identification by text canonicalization. In: Proceedings of the Australasian language technology workshop, pp 160–166
+
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published
+maps and institutional affiliations.
+
+13
+
+

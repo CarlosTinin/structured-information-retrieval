@@ -1,0 +1,2892 @@
+Neural Networks 194 (2026) 108114
+
+Contents lists available at ScienceDirect
+
+Neural Networks
+journal homepage: www.elsevier.com/locate/neunet
+
+Full Length Article
+
+A domain-speciﬁc cross-lingual semantic alignment learning model for
+low-resource languages
+Yurong Wang a,b,c , Min Lin a,b,c,d,∗, Qitu Hu a,b,c , Shuangcheng Bai b,c,e , Yanling Li e , Longjie Bao f
+a
+
+College of Mathematics Science, Inner Mongolia Normal University, Hohhot, 010022, Inner Mongolia, China
+
+b Center for Applied Mathematics Inner Mongolia, Hohhot, 010022, Inner Mongolia, China
+c
+
+Key Laboratory of Inﬁnite-dimensional Hamiltonian Systems and Algorithmic Applications of the Ministry of Education, Hohhot, 010022, Inner Mongolia, China
+
+d Inner Mongolia Electronic Information Vocational and Technical College, Hohhot, 010070, Inner Mongolia, China
+e
+f
+
+College of Computer Science and Technology, Inner Mongolia Normal University, Hohhot, 010022, Inner Mongolia, China
+Inner Mongolia International Mongolian Medical Hospital, Hohhot, 010020, Inner Mongolia, China
+
+a r t i c l e
+
+i n f o
+
+Keywords:
+Low-resource languages
+Domain-speciﬁc
+Cross-lingual multi-granularity semantic
+alignment
+Cross-lingual mapping
+Cross-lingual knowledge distillation
+
+a b s t r a c t
+Cross-lingual semantic alignment models facilitate the sharing and utilization of multilingual domain-speciﬁc
+data (e.g., medical, legal), oﬀering cost-eﬀective solutions for improving low-resource language tasks. However,
+existing methods are challenged by parallel data scarcity, semantic space heterogeneity, morphological complexity, and weak robustness-particularly for agglutinative languages. Therefore, this paper proposes CLWKD,
+a cross-lingual mapping and knowledge distillation framework. CLWKD leverages domain-speciﬁc pretrained
+models from high-resource languages as teachers and integrates multi-granularity alignment matrices with limited parallel data to guide cross-lingual knowledge transfer. CLWKD jointly learns multi-granularity semantic
+alignment mapping matrices at the token, word, and sentence levels from general-domain data. It eases domain
+data scarcity and helps bridge structural gaps caused by morphological and syntactic diﬀerences. To alleviate
+data sparsity and out-of-vocabulary issues in agglutinative languages, multilingual embedding sharing and morphological segmentation strategies are introduced. To improve the stability of unsupervised mapping training,
+generator pretraining is introduced and further combined with high-conﬁdence word and sentence pairs to optimize the mapping matrix.To preserve alignment with fewer parameters, a parameter recycling and embedding
+bottleneck design is adopted. Experiments across the medical, legal, and educational domains on MongolianChinese and Korean-Chinese language pairs demonstrate the eﬀectiveness of CLWKD in three cross-lingual tasks.
+
+1. Introduction
+In recent years, pretrained language models (PLMs) have achieved
+remarkable progress in open-domain tasks for high-resource languages.
+However, owing to the severe scarcity of both general-domain and
+domain-speciﬁc corpora, low-resource languages still exhibit limited capability in domain-speciﬁc text mining, such as in the medical and legal
+ﬁelds. Cross-lingual semantic alignment models facilitate the sharing
+and utilization of domain data across multiple languages, providing an
+eﬀective and low-cost approach to improve the performance of deep
+learning models for low-resource languages in speciﬁc domains. Therefore, exploring cross-lingual semantic alignment models tailored for
+low-resource languages has become increasingly important in domainspeciﬁc scenarios.
+Current mainstream approaches to cross-lingual semantic alignment
+can be broadly categorized into three types: cross-lingual ﬁne-tuning,
+
+cross-lingual mapping, and cross-lingual knowledge distillation. These
+methods enhance the semantic alignment capability of multilingual
+models at the sentence level, word level, and intermodel level.
+Cross-lingual ﬁne-tuning methods aim to align sentence-level semantics by optimizing the [CLS] representation in multilingual PLMs.
+To further improve sentence alignment, researchers have introduced
+auxiliary token-level alignment tasks during training (Hu et al., 2020;
+Li et al., 2023; Zhang et al., 2023), and some studies leverage word
+alignment supervision to increase sentence-level performance (Artetxe
+et al., 2017b; Chousa et al., 2020; Lample et al., 2017; Lian et al., 2020;
+Miao et al., 2024; Schwenk et al., 2019). Recently, Zhu et al. (2024)
+argued that hard token-to-token alignment may disrupt sentence-level
+structure and thus proposed the use of alignment matrices to preserve
+contextual dependencies, coupled with a self-distillation mechanism to
+improve model robustness. To further improve multilingual embedding
+alignment for low-resource languages, Ai and Huang (2024) proposed
+
+∗ Corresponding author.
+
+E-mail addresses: 15049138357@163.com (Y. Wang), linmin@imnu.edu.cn (M. Lin), huqitu@gmail.com (Q. Hu), bsc@onon.cn (S. Bai),
+liyanling7871397@163.com (Y. Li), 1016486749@qq.com (L. Bao).
+https://doi.org/10.1016/j.neunet.2025.108114
+Received 8 November 2024; Received in revised form 29 July 2025; Accepted 11 September 2025
+Available online 16 September 2025
+0893-6080/© 2025 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+initializing embeddings into similar geometrical structures across languages before training by modeling word frequency ranks from monolingual vocabularies. Pham et al. (2024) introduced an embedding initialization method that jointly leverages lexical and semantic alignment,
+along with a systematic search for the optimal vocabulary size. Li and
+Li (2024) proposed an angular optimization mechanism to preserve the
+structural relationships among sentence embeddings.
+Cross-lingual mapping methods focus on word-level semantic
+alignment by learning a mapping matrix between word embeddings to
+project diﬀerent languages into a shared representation space. This strategy is particularly well suited for low-resource languages (Artetxe et al.,
+2018; Mikolov et al., 2013; Ruder et al., 2019; Wang et al., 2019). The
+approach was ﬁrst introduced by Mikolov et al. (2013), and subsequent
+studies have incorporated adversarial training mechanisms to iteratively
+optimize the mapping matrix between a generator and a discriminator via parallel or contrastive corpora (Bai et al., 2019; Conneau et al.,
+2017; Liang et al., 2023; Tao et al., 2023; Zhang et al., 2017). Although
+such methods support weakly supervised or even unsupervised learning, the adversarial mechanism is often sensitive to initialization and
+prone to instability during training, especially with respect to agglutinative languages with complex morphological structures. Recently, Hu
+and Xu (2024) proposed aligning multiple subspaces to alleviate structural inconsistency in the embedding space, exhibited in improvements
+in medium-resource languages. This method struggles to address semantic misalignment caused by syntactic and morphological variations.
+Cross-lingual knowledge distillation methods transfer semantic
+knowledge from high-resource languages to low-resource models via a
+teacher-student architecture. Typically, a high-resource PLM serves as
+the teacher to guide the student model in learning task-speciﬁc semantics and achieving cross-lingual representation alignment (Ding et al.,
+2022; Reimers & Gurevych, 2020; Wang et al., 2023). Unlike the previous two methods, knowledge distillation requires no large-scale labeled
+data in the target language and oﬀers high transfer eﬃciency. It also enables the direct use of high-resource language representations in vertical domains to improve task performance for low-resource languages. In
+addition, the distillation mechanism naturally supports model compression, making it more suitable for deployment. Despite its theoretical advantages, the practical eﬀectiveness of cross-lingual knowledge distillation remains constrained by two major challenges. First, the distillation
+process relies on high-quality domain-speciﬁc parallel corpora, which
+are extremely scarce for low-resource languages in specialized ﬁelds
+such as medicine and law. Second, the signiﬁcant structural diﬀerences
+between the semantic spaces of the source and target languages often
+lead to unstable knowledge transfer. To alleviate the problem of semantic space heterogeneity, prior studies have explored techniques such as
+prototype modeling, similarity-based constraints, and contrastive learning (Ge et al., 2023; Park et al., 2024; Yang et al., 2023). For example,
+the IMASCL (Park et al., 2024) method addresses semantic space divergence by employing a soft contrastive learning strategy. Speciﬁcally,
+this method distills the similarity structure derived from a monolingual
+teacher model to guide the student model in aligning semantic representations across multiple languages. These methods perform well when applied to languages with similar syntactic and part-of-speech structures.
+Their alignment eﬀectiveness remains limited when dealing with agglutinative languages that exhibit rich morphological variations and complex structures.
+These challenges are particularly pronounced in China’s multi-ethnic
+linguistic context. With the deepening of cultural integration, traditional
+Chinese medicine has evolved into a comprehensive system that includes Tibetan, Miao, Mongolian, and other ethnic medical traditions.
+Similarly, domains such as law and education also widely adopt minority languages. However, many of these languages—such as Mongolian,
+Tibetan, Kazakh, and Uyghur—suﬀer from severe data scarcity, strong
+agglutinative morphology, and ﬂexible word order, which further complicate semantic modeling and cross-lingual knowledge transfer.
+
+In summary, current cross-lingual semantic alignment for domainspeciﬁc tasks in low-resource agglutinative languages faces three core
+challenges: 1) Insuﬃcient data coverage: The insuﬃcient corpus coverage of low-resource languages (e.g., Mongolian) in multilingual pretraining, coupled with the scarcity of large-scale domain-parallel data,
+signiﬁcantly hinders cross-lingual semantic alignment and domain
+knowledge transfer. 2) Semantic space heterogeneity: Signiﬁcant differences in syntactic structures and lexical morphology between source
+and target languages lead to inconsistencies in semantic representation
+spaces, increasing the diﬃculty of alignment. 3) Strong agglutinative
+morphology: Agglutinative languages such as Mongolian exhibit complex word formation and rich inﬂection, which further exacerbates data
+sparsity and the out-of-vocabulary (OOV) problem.
+Therefore, the objective of this study is to develop a cross-lingual
+semantic alignment model tailored for low-resource languages that
+can eﬀectively address three key issues-domain-speciﬁc data scarcity,
+semantic space heterogeneity, and data sparsity caused by complex
+morphology-while ensuring model robustness.
+To this end, we proposes CLWKD, a cross-lingual mapping and
+knowledge distillation framework for multilevel semantic alignment in
+low-resource scenarios. The overall model architecture of CLWKD is illustrated in Fig. 1. Compared with existing approaches, CLWKD not only
+introduces a multi-granularity collaborative strategy for semantic alignment, but also, for the ﬁrst time, combines a general-domain mapping
+matrix with domain-speciﬁc knowledge distillation to address modeling
+challenges in extremely low-resource language settings. The key components are as follows:
+First, to alleviate the problem of domain-speciﬁc data scarcity, we
+introduce a domain-speciﬁc pretrained model from a high-resource language as the teacher network. Using a general-domain mapping matrix
+and a small amount of domain parallel data as a bridge, we eﬀectively
+transfer and align domain knowledge to a multilingual PLM. Unlike
+existing approaches, CLWKD reduces reliance on large-scale domainspeciﬁc data by leveraging a general-domain mapping matrix. It adaptively incorporates contextual representations through the mapping matrix to preserve lexical and syntactic structures from the general domain,
+thereby enhancing modeling capacity in low-resource scenarios. Compared with models such as IMASCL (Park et al., 2024), which focus on
+aligning the similarity structure distilled from teacher models, CLWKD
+places greater emphasis on maintaining multi-granularity consistency
+across lexical, syntactic, and semantic levels within the mapping space.
+Moreover, CLWKD further integrates domain knowledge distillation to
+achieve coordinated alignment of structural and semantic representations.
+Second, to address the problem of semantic space heterogeneity,
+we jointly learn multi-granularity semantic alignment mapping matrices at the token, word, and sentence levels via general-domain parallel corpora. This design mitigates the substantial morphological and
+syntactic diﬀerences between the source and target languages. In contrast to prior methods based on single-granularity mappings (either at
+the word or sentence level), our approach employs a multi-granularity
+alignment strategy to leverage complementary information. Speciﬁcally,
+sentence-level alignment is guided by word-level supervision signals,
+and word-level alignment is supported by sentence-level contextual representations. We argue that in low-resource languages, word-level and
+sentence-level alignment are not isolated tasks but rather mutually reinforcing and coevolving processes. Relying solely on either layer may
+lead to semantic drift or grammatical inconsistency, especially for language pairs with signiﬁcant structural divergence. Therefore, joint modeling across granularities oﬀers a more robust and eﬃcient solution.
+Compared with methods such as DM-BLI (Hu & Xu, 2024), which rely
+on bilingual dictionaries and are less sensitive to contextual information, CLWKD demonstrates stronger robustness in semantic alignment,
+particularly for structurally divergent and extremely low-resource language pairs.
+2
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Fig. 1. The CLWKD framework consists of two stages. In the ﬁrst stage: 1
+⃝ A morphological decomposition strategy is introduced to split words in the target language
+(e.g., Mongolian) into stems and aﬃxes. This alleviates the issues of morphological complexity and OOV words, and constructs multi-granularity representations at
+the token, word, and sentence levels; 2
+⃝ A GAN structure is employed. The generator is pretrained to project source language embeddings into the semantic space
+of the target language across diﬀerent granularities. The discriminator determines whether the projected embeddings resemble real target language representations,
+thereby guiding the generator to learn eﬀective cross-lingual semantic mappings; 3
+⃝ High-conﬁdence word and sentence pairs are then leveraged to further optimize
+the mapping matrix under unsupervised or weakly supervised settings. In the second stage, a domain-speciﬁc PLM is used as the teacher model. With the multigranularity mapping matrix learned in the ﬁrst stage and a small amount of domain parallel data, knowledge distillation is performed to transfer and align domain
+knowledge from the high-resource language to the low-resource language model.
+
+Third, to address the limited corpus coverage of low-resource languages (e.g., Mongolian) in multilingual pretraining, as well as the data
+sparsity and OOV issues caused by their complex agglutinative morphology, CLWKD proposes leveraging a shared multilingual PLM embedding layer combined with morphological decomposition strategies
+to enhance modeling eﬀectiveness and cross-lingual alignment capability. Unlike existing approaches that rely on monolingual word frequency
+modeling (Ai & Huang, 2024) or optimize vocabularies through lexical
+
+alignment (Pham et al., 2024) for cross-lingual space alignment, CLWKD
+enables Mongolian embeddings to directly beneﬁt from the representation spaces of high-resource languages such as Chinese and English
+during the initialization stage, and further reﬁnes subword-level modeling through morphological segmentation to alleviate data sparsity issues. Notably, in real-world Mongolian domain corpora (e.g., medical
+texts), the frequent code-switching between Chinese and English provides a natural context for cross-lingual representation sharing, further
+3
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+promoting semantic interaction and enhancing the model’s eﬀectiveness
+in practical tasks.
+Finally, with respect to mapping matrix training, CLWKD ﬁrst employs an adversarial network to generate an initial alignment structure, after which, it then iteratively improves the mapping performance
+through gradient-based optimization, guided by high-conﬁdence word
+and sentence pairs. To mitigate instability and initialization sensitivity
+commonly observed in adversarial training, we introduce a generator
+pretraining mechanism, which enhances both the stability of the mapping matrix and its cross-lingual adaptability. For model compression,
+we adopt a combination of parameter recycling and an embedding bottleneck strategy to retain the semantic alignment capacity while reducing model size.
+We conduct a systematic evaluation of CLWKD on two language pairs
+across three domains—medical, legal, and educational—covering three
+cross-lingual tasks. The results demonstrate that CLWKD has signiﬁcant
+advantages in domain-speciﬁc word and sentence alignment tasks for
+low-resource agglutinative languages.
+The main contributions of this paper are as follows:
+We propose a uniﬁed framework, CLWKD, which integrates crosslingual mapping and knowledge distillation. It is designed to address key challenges in domain-speciﬁc semantic alignment for lowresource languages-namely, the scarcity of domain parallel data, semantic space heterogeneity, and data sparsity caused by complex morphology. CLWKD eﬀectively enhances word- and sentence-level semantic
+alignment across languages.
+We design a context-aware alignment strategy based on generaldomain corpora, which leverages a generative adversarial network
+(GAN) framework to jointly learn token-, word-, and sentence-level
+cross-lingual semantic mapping matrices. This is achieved through multiple techniques, including generator pretraining, gradient-based mapping optimization, shared multilingual PLM embeddings, and morphological decomposition.
+We leverage multi-granularity mapping matrices and a small amount
+of domain-speciﬁc data as a bridge for cross-lingual knowledge distillation, enabling the transfer of high-resource domain knowledge to multilingual models for semantic alignment. During model compression, we
+employ parameter recycling and embedding bottleneck strategies to preserve alignment capacity.
+In
+experiments
+conducted
+on
+two
+language
+pairs—
+Mongolian–Chinese and Korean–Chinese—across three cross-lingual
+tasks (word alignment, bitext retrieval, and entity recognition) and
+multiple domains (medical, legal, and educational), the results show
+that CLWKD signiﬁcantly outperforms existing methods. Moreover, the
+compressed variant, CLWKD_S, also achieves strong performance and
+competitive eﬀectiveness.
+
+PLMs for the medical ﬁeld. Lee et al. (2020) proposed BioBERT, a pretrained model that is similar in structure to BERT and is further trained
+on biomedical abstracts from PubMed and full-text articles from PMC.
+Symeonidou (Symeonidou et al., 2019) introduced a transfer learning
+model for named entity recognition (NER) that is based on BioBERTBiLSTM-CRF, which demonstrated improved performance over previous NER models across three medical datasets. Rasmy et al. (2021) developed Med-BERT, a pre-trained model trained from scratch using abstracts from PubMed and full text from PMC, which signiﬁcantly boosts
+performance in small sample tasks. Yang (2021) proposed MedBERT, a
+model designed for Chinese clinical natural language processing tasks.
+Subsequently, other researchers further ﬁne-tuned and improved MedBERT (Gan et al., 2021). Zhang et al. (2020) from Alibaba introduced
+MC-BERT, a pre-trained model for Chinese medical texts that is built on
+BERT and trained with Chinese medical data. ERNIE-Health, which is
+based on Baidu’s ERNIE model, learns the relationships between symptoms and treatment plans through medical entity masking and questionanswer matching tasks and outperformed BERT on the CCKS2019 medical entity recognition and question-answer matching tasks.
+To improve semantic understanding and task performance in the
+legal domain, researchers have developed several Chinese legal pretrained language models, among which Lawformer (Xiao et al., 2021)
+and LegalRoBERTa1 are representative. The Lawformer is based on the
+Longformer architecture with sparse attention, enabling eﬃcient processing of lengthy legal documents. Pretrained on large-scale real-world
+legal texts, it has been applied to tasks such as legal classiﬁcation, statute
+matching, and question answering. LegalRoBERTa is a RoBERTa-based
+model further pretrained on Chinese legal corpora, retaining general
+language understanding while adapting to legal-speciﬁc tasks such as
+document classiﬁcation and legal entity recognition.
+In the education domain, TAL-EduBERT2 and EduBERT (Clavié &
+Gal, 2019) are two notable Chinese pretrained models. TAL-EduBERT,
+developed by the TAL Education Group, is pretrained on large-scale
+educational data, including textbooks, teaching materials, and student
+answers. EduBERT, built on BERT, is further pretrained on educationrelated corpora and is used in tasks such as academic writing analysis
+and educational resource recommendation.
+2.2. Cross-lingual ﬁne-tuning and mapping semantic alignment
+Currently, cross-lingual ﬁne-tuning semantic alignment methods
+based on multilingual PLMs are primarily used for learning sentencelevel semantic alignment, while cross-lingual mapping methods are
+mainly applied to word-level semantic alignment. The following section
+provides a detailed explanation.
+Cross-lingual ﬁne-tuning for sentence-level semantic alignment
+methods. InfoXLM (Sun et al., 2019) extends the XLM-R model, which
+is pre-trained on a large corpus of parallel data through masked language modeling and translation language modeling. XLM-Align (Chi
+et al., 2021), which also uses many parallel sentences, ﬁrst performs
+self-supervised word alignment on these sentences and then trains by
+masked language modeling. Recently, the importance of token-level
+auxiliary tasks has been recognized. Zhang et al. (2023) achieved signiﬁcant results on the XTREME benchmark (Hu et al., 2020) by using
+synonym-based token alignment. Li et al. (2023) improved sentencelevel semantic alignment models on multilingual PLMs through token
+alignment tasks. Owing to the scarcity of parallel corpora, research
+on cross-lingual sentence embeddings for low-resource languages has
+lagged. To address this, researchers have proposed enhancing crosslingual sentence embeddings for low-resource languages by utilizing
+word alignment tasks on top of multilingual PLMs (Miao et al., 2024).
+The basic idea of unsupervised sentence alignment is to further achieve
+
+2. Related work
+2.1. Pre-trained language models
+Multilingual pre-trained models. To address the performance issues of PLMs for low-resource languages, researchers have proposed
+multilingual PLMs (Conneau, 2019; Liu, 2020; Shliazhko et al., 2022;
+Xue, 2020), which provide the possibility for learning representations
+of multiple languages jointly. Multilingual bidirectional encoder representations from transformers (mBERT) (Kenton & Toutanova, 2019) was
+pre-trained on Wikipedia data in 104 languages and achieved signiﬁcant
+performance in downstream tasks. XLM (Conneau & Lample, 2019) introduced the translation language modeling objective, leveraging parallel data to enhance cross-lingual transferability. XLM-R (Conneau, 2019)
+continued training on RoBERTa (Liu, 2019) via parallel corpora.
+Domain-speciﬁc pre-trained language models. Owing to the
+abundance of specialized medical terminology in medical texts, general PLMs often perform poorly in extracting information from medical content. In recent years, researchers have developed domain-speciﬁc
+
+1
+
+https://data.thunlp.org/legal/LegalRoBERTa.zip
+
+2 https://github.com/tal-tech/edu-bert
+
+4
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+sentence-level alignment on the basis of prealigned word embeddings
+(Artetxe et al., 2017b; Lample et al., 2017). Schwenk et al. (2019)
+mapped word embeddings from diﬀerent languages to a uniﬁed vector space to obtain bilingual sentence pairs. Lian et al. (2020) proposed
+a similarity calculation method that maps monolingual corpora from
+each language to a low-dimensional semantic space via autoencoders.
+Then, the diﬀerence between each language’s distribution in this semantic space and a central distribution is measured via the Wasserstein
+distance, and this distance is minimized to establish alignment relationships with the central distribution. Chousa et al. (2020) determined the
+optimal sentence alignment by predicting the similarity between segments in source and target language sentences.
+Cross-lingual mapping for word-level semantic alignment methods.
+Mikolov et al. (2013) trained word vectors for two languages separately
+and then learned a linear mapping matrix between vector spaces from
+a small bilingual dictionary. Building on this, Xing et al. (2015) proposed normalizing word vectors so that their inner product and cosine
+distance are equal. Artetxe et al. (2017a) used self-learning methods
+to iteratively optimize the mapping matrix. With the development of
+pre-trained model techniques, dynamic word embedding models have
+emerged (Kenton & Toutanova, 2019; Liu et al., 2024). Wang et al.
+(2019) learned cross-lingual mapping matrices for dynamic word embeddings from parallel sentences and demonstrated that their performance exceeds that of static word embedding mapping matrices. Li
+et al. (2022) proposed a two-stage contrastive learning framework. In
+the ﬁrst stage, contrastive learning is used to reﬁne cross-lingual linear mappings between static word embeddings; in the second stage,
+contrastive ﬁne-tuning of multilingual BERT enhances word-level translation capabilities. Compared with supervised learning methods, unsupervised and weakly supervised mehods are more suitable for scenarios
+where aligned data are scarce in low-resource languages. Zhang et al.
+(2017) introduced GANs and used adversarial training to match distributions for bilingual word alignment. Conneau et al. (2017) generated
+high-quality aligned dictionaries after GAN training to optimize transformation matrices and proposed the cross-domain similarity local scaling (CSLS) metric to address the hubness problem in high-dimensional
+spaces by calculating the similarity between cross-lingual vocabularies.
+Bai et al. (2019) learned a shared semantic space for the source and target languages and used this space for unsupervised bilingual dictionary
+extraction. Tao et al. (2023)proposed an unsupervised word alignment
+method based on evolutionary algorithms and bidirectional recurrent
+GANs to address the instability of GAN training. Liang et al. (2023)
+developed a framework for constructing multilingual embeddings for
+domain transfer learning by extracting pivot words from current data
+and incorporating them as weight factors into embedding alignment.
+Recently, Recently, Hu and Xu (2024) further proposed a multisubspace alignment strategy to enhance the robustness of embedding
+alignment.
+In contrast to these approaches, this paper combines multiple strategies to jointly ﬁne-tune and learn multi-granularity cross-lingual semantic mapping matrices for token, word, and sentence embeddings between Mongolian and Chinese. It fully leverages the interdependencies
+between word alignment and sentence alignment tasks while eﬀectively
+
+addressing challenges related to syntactic structure and morphological
+diﬀerences.
+2.3. Cross-lingual knowledge distillation for knowledge transfer and
+semantic alignment
+As mentioned earlier, knowledge distillation has three major advantages: model compression, knowledge transfer, and semantic alignment.
+In the context of model compression, BERT-PKD (Sun et al., 2019) extracts knowledge from both the ﬁnal layer and intermediate layers of the
+model during ﬁne-tuning. DistilBERT (Sanh, 2019) performs distillation
+during pre-training, halving the number of hidden layers in BERT. TinyBERT (Jiao et al., 2019) extracts knowledge from BERT during both pretraining and ﬁne-tuning. Mobile-BERT (Sun et al., 2020) reﬁnes BERT
+into a model with smaller dimensions for each layer. Additionally, Wang
+et al. (2020) conducted deep self-attention distillation of BERT.
+In the areas of cross-lingual knowledge transfer and vector space
+alignment, researchers have recently made signiﬁcant progress. Reimers
+and Gurevych (2020) proposed a multilingual knowledge distillation
+method that transfers source language vector spaces to various target language spaces through parallel corpora, achieving vector space
+alignment. To obtain compact models with cross-lingual matching capabilities, Ding et al. (2022) proposed a multistage distillation framework that combines contrastive learning, bottleneck, and parameter cycling strategies to align multilingual vector spaces while transferring
+knowledge from large models to smaller models. Wang et al. (2023)
+used cross-lingual knowledge distillation to transfer temporal knowledge from high-resource language knowledge graphs to low-resource
+language knowledge graphs, addressing the issue of limited cross-lingual
+alignment corpora between two temporal knowledge graphs by generating pseudoalignments via time information extracted by the representation module. Yang et al. (2023) proposed a bidirectional semantic
+alignment-based similarity measurement method for mapping representations of diﬀerent languages into the same space, addressing issues of
+diﬀering representation spaces between teacher and student models. Ge
+et al. (2023) addressed the problem of feature distribution diﬀerences
+between source and target languages in teacher-student networks by
+adjusting the distance between source and target language features via
+prototype networks for feature alignment.
+Unlike these knowledge distillation methods, CLWKD maps source
+language domain vectors to multilingual target language domain spaces
+via a universal cross-lingual matrix W, achieving domain data augmentation and addressing the issue of diﬀering language spaces. During
+model compression, CLWKD initializes the compressed model with the
+transformer layers of CLWKD and uses bottleneck layers to reduce the
+embedding size.
+2.4. Mongolian
+Mongolian, like Japanese, Korean, and Turkish, is an agglutinative
+language. Fig. 2 illustrates the structure of the Mongolian word “factory”, which consists of a root (or stem) connected to a varying number
+of suﬃxes. The root forms the basis for deriving new words and is the
+
+Fig. 2. Example of the morphological structure of the Mongolian word “factory.” The root conveys basic meaning, such as “work” (noun). This is followed by the
+sequential addition of word-forming aﬃxes that change the part of speech: ﬁrst deriving a verb (e.g., “do”) and then further deriving a noun (e.g., “factory”). In
+addition, additional constituents may be attached to modify or constrain the noun, such as in the “factory attribute”.
+5
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+The following sections provide detailed descriptions of each module
+and its implementation.
+3.1. Cross-lingual multi-granularity semantic mapping
+In cross-lingual domain semantic alignment tasks involving lowresource agglutinative languages, the scarcity of domain-speciﬁc parallel data and the structural diﬀerences between languages lead to semantic space inconsistencies, further increasing the diﬃculty of crosslingual alignment. To address these challenges, by leveraging multigranularity mapping matrices from general-domain data, the model ﬁrst
+learns morphological and syntactic information across diﬀerent granularities and languages, which reduces the divergence between semantic
+spaces of diﬀerent languages. In addition, word-level and sentence-level
+alignment tasks can provide mutual supervision, enabling better overall alignment. After learning interlingual features from general-domain
+data, the model can then focus on the alignment and transfer of domainspeciﬁc knowledge during the knowledge distillation stage, thereby reducing reliance on domain-speciﬁc data.
+Therefore, our ﬁrst objective is to map the source language’s token, word, and sentence embeddings to the corresponding representations in the target language. Given source language vectors 𝑋 =
+𝑥1 , 𝑥2 , 𝑥3 , … , 𝑥|𝑋| and target language vectors 𝑌 = 𝑦1 , 𝑦2 , 𝑦3 , … , 𝑦|𝑌 | , we
+aim to learn a linear mapping matrix 𝑊 between the source and target
+spaces so that 𝑊 𝑋 is mapped as close as possible to 𝑌 .
+
+Fig. 3. Example of latin transliteration of Mongolian text. It includes three processing strategies for transliteration: Segmentation of aﬃxes—separating aﬃx
+components from the original Mongolian word; Aﬃx removal—removing afﬁxes and retaining only the core part of the word; Root retention—preserving
+only the root to retain the basic semantic meaning of the word.
+
+fundamental unit preserving the word’s meaning. Suﬃxes attached to
+the root alter the word’s part of speech and meaning, signiﬁcantly impacting the semantic context of sentences. The root combined with several suﬃxes forms a stem. Suﬃxes that are attached to the root (or stem)
+through a narrow, uninterrupted space are called aﬃxes, which indicate
+grammatical meanings such as case, number, and possession. A single
+root (or stem) can have multiple aﬃxes to express diﬀerent grammatical
+meanings (Wang, 2009). Owing to the complex morphological changes
+in Mongolian word formation, various roots (or stems) with diﬀerent
+suﬃxes can produce approximately one million Mongolian vocabulary
+items. Examples of Mongolian Latin transliteration, where aﬃxes are
+segmented and removed and the stem is retained, are shown in Fig. 3.
+Studies have shown that segmenting Mongolian text can alleviate data
+sparsity issues (Hou et al., 2009; Li et al., 2017; Ren et al., 2019).
+
+𝑊 ∗ = arg
+
+min
+
+𝑊 ∈𝕄𝑑 (ℝ)
+
+‖𝑊 𝑋 − 𝑌 ‖
+
+(1)
+
+where 𝑑 is the embedding dimension; 𝕄𝑑 (ℝ) is the real space of matrices of size 𝑑 × 𝑑; and 𝑋 and 𝑌 are alignment matrices of size 𝑑 × |𝑋|
+that represent token, word, and sentence embeddings in the source and
+target languages.
+3.1.1. Multi-granularity embedding representation
+Token embedding learning. Some existing studies (Ai & Huang,
+2024), such as those based on monolingual word frequency modeling,
+perform coarse-grained spatial structure alignment across multiple languages by ranking word frequencies. However, these approaches overlook true cross-lingual interaction information and do not optimize the
+morphological characteristics of agglutinative languages, resulting in
+clear limitations when modeling low-resource domain corpora, particularly for morphologically complex languages such as Mongolian. To address this issue, we further analyze the characteristics of low-resource
+languages (e.g., Mongolian) within multilingual PLMs. Due to limited
+corpus coverage, Mongolian representations in PLMs often suﬀer from
+data sparsity and OOV problems. In addition, in real-world domain
+corpora (such as Mongolian medical texts), we observe frequent codeswitching between Mongolian, Chinese, and English terms, thus providing a natural semantic bridge for cross-lingual representation sharing.
+This phenomenon helps the model to better capture cross-lingual associations and enhances performance in practical tasks. To fully exploit this
+characteristic, we ﬁrst perform Latin transliteration for Mongolian, mapping its character representation into the vocabulary space supported by
+multilingual PLMs. This strategy maximizes the reuse of existing subword fragments, improves representation consistency between Mongolian and other languages, and eﬀectively mitigates the OOV problem.
+On this basis, we further initialize Mongolian token embeddings using
+the multilingual PLM’s embedding layer, enabling Mongolian representations to directly inherit semantic knowledge from high-resource languages such as Chinese and English at the early stage of training.
+We then input the source language 𝑋 into its domain-speciﬁc PLM
+(e.g., Chinese-BERT) and the target language 𝑌 into a multilingual PLM
+(e.g., mBERT) and perform contextual encoding for their respective token representations. Speciﬁcally, let the input be a sentence-level token sequence consisting of 𝑛 vectors 𝑥1 , 𝑥2 , … , 𝑥𝑛 , and the output be a
+new set of vectors 𝑜1 , 𝑜2 , … , 𝑜𝑛 corresponding to each input vector. Different three-parameter matrices 𝑊 𝑞 , 𝑊 𝑘 , 𝑊 𝑣 are used to map 𝑥𝑖 into
+
+3. Method
+The CLWKD framework consists of two stages, as illustrated in Fig. 1.
+In the ﬁrst stage (Section 3.1), we construct a uniﬁed cross-lingual
+multi-granularity semantic space based on general-domain parallel data
+between the source and target languages. This stage consists of three
+functional modules: In module 1
+⃝, we apply a morphological decomposition strategy to the target language (e.g., Mongolian). Each word is
+segmented into a stem and its aﬃxes to address the challenges of morphological complexity and out-of-vocabulary issues commonly found
+in agglutinative languages. Based on a pretrained language model, we
+construct shared token, word, and sentence-level embeddings using a
+uniﬁed embedding layer. In Module 2
+⃝, we introduce a generative adversarial network. The pretrained generator projects source-language
+embeddings into the target-language semantic space. The discriminator
+then determines whether these projected embeddings come from real
+target-language representations. This adversarial setup helps the generator learn an eﬀective cross-lingual semantic mapping. In module 3
+⃝, we
+incorporate high-conﬁdence word and sentence pairs to reﬁne the mapping matrix under unsupervised or weakly supervised conditions. This
+step improves both the accuracy and stability of the learned alignment.
+In the second stage (Section 3.2), a domain-speciﬁc PLM trained
+on a high-resource language serves as the teacher model. The multigranularity mapping matrices learned in Stage 1, along with a small
+amount of domain-speciﬁc parallel data, are used as a bridge to transfer and align domain knowledge to the multilingual PLM for the lowresource language. During this process, we apply a mean squared error
+(MSE) loss to align the [CLS] representations of the source and target
+languages at the sentence level. Meanwhile, the student model incorporates a bottleneck embedding structure and a parameter recycling
+mechanism to enable model compression while preserving cross-lingual
+alignment capability.
+6
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+•
+
+additional constituents(𝑤𝑖 ) = {𝑥(𝑚+1)
+, … , 𝑥(𝑘)
+𝑖
+𝑖 }: the additional constituents.
+
+We design three decomposition strategies for constructing subwordlevel word embeddings using mean pooling:
+Root Strategy. Only the root is retained:
+1∑
+Emb(𝑥(𝑗)
+𝑖 )
+𝑟 𝑗=1
+𝑟
+
+𝐞Root (𝑤𝑖 ) =
+
+(5)
+
+Seg Strategy. The stem and aﬃx are separated into two components:
+𝐞stem
+(𝑤𝑖 ) =
+Seg
+
+1 ∑
+Emb(𝑥(𝑗)
+𝑖 )
+𝑚 𝑗=1
+
+𝐞aﬃx
+(𝑤𝑖 ) =
+Seg
+
+𝑘
+∑
+1
+Emb(𝑥(𝑗)
+𝑖 )
+𝑘 − 𝑚 𝑗=𝑚+1
+
+𝑚
+
+Fig. 4. Illustration of self-attention weight computation.
+
+𝑞𝑖 = 𝑊 𝑞 𝑥𝑖 , 𝑘𝑖 = 𝑊 𝑘 𝑥𝑖 , 𝑣𝑖 = 𝑊 𝑣 𝑥𝑖 , which denote the vectors corresponding to the query, key and value, respectively. The formula for 𝑜𝑖 is as
+follows:
+𝑜𝑖 =
+
+𝑛
+∑
+
+𝛼𝑖,𝑗 𝑣𝑗 ,
+
+𝛼𝑖,𝑗 = softmax( ̂
+𝜶)𝑗 ,
+
+𝛼̂ 𝑖,𝑗 = attn(𝑞𝑖 , 𝑘𝑗 )
+
+(6)
+
+Cut Strategy. The additional constituents are removed, and only the ﬁnal stem is preserved:
+1 ∑
+Emb(𝑥(𝑗)
+𝑖 )
+𝑚 𝑗=1
+𝑚
+
+𝐞Cut (𝑤𝑖 ) =
+
+(2)
+
+(7)
+
+𝑗=1
+
+Here, Emb(⋅) denotes the embedding of each subword, and the mean operator is used to aggregate multiple subword embeddings into a uniﬁed
+word-level representation.
+Through this mechanism, the model can eﬀectively unify the representation of words with complex morphology, alleviating the issue
+of word-level distribution sparsity. A schematic of the decomposition
+process is shown in Fig. 2, and the eﬀects of this decomposition are
+discussed in Section 5.1.
+Sentence embedding learning. At the sentence level, to obtain the
+global semantic representation, we use the representation vector at the
+[CLS] position as the sentence embedding:
+
+where 𝛼𝑖,𝑗 denotes the attentional weight between 𝑥𝑖 and 𝑥𝑗 , with larger
+values indicating greater correlation, as illustrated in Fig. 4.
+When self-attention is normalized, it is not possible to assign larger
+attention values to multiple inputs at the same time, so multiple sets
+of self-attention models are used to produce multiple sets of diﬀerent
+attention results, thus enhancing the expressive power of the model, as
+shown in Eq. (3):
+MultiHead(𝑄, 𝐾, 𝑉 ) = Concat(head1 , … , headℎ )𝑊 𝑂
+
+(3)
+
+where
+each
+attention
+head
+is
+computed
+as
+ℎ𝑒𝑎𝑑𝑖 =
+𝐴𝑡𝑡𝑒𝑛𝑡𝑖𝑜𝑛(𝑄𝑊𝑖𝑄 , 𝐾𝑊𝑖𝐾 , 𝑉 𝑊𝑖𝑉 ), and 𝑄, 𝐾, and 𝑉 are the input token embedding matrices; and 𝑊 𝑂 denotes the output projection
+matrix.
+Word embedding learning. In our experiments, we selected Chinese, Mongolian, Korean, and English as target languages and applied
+language-speciﬁc preprocessing accordingly. For Chinese texts, we used
+the Jieba tokenizer for word segmentation. In contrast, Mongolian, Korean, and English naturally use whitespace to separate words and thus
+do not require additional segmentation. However, when PLM tokenizers
+are used, words in these languages may still be further split into multiple
+subword tokens, which can hinder accurate word-level semantic modeling. To address this issue, we introduce word boundary information to
+identify the token span corresponding to each original word and compute word-level representations via mean pooling. Speciﬁcally, we let
+the 𝑘-th word 𝑤𝑘 span the token sequence positions (𝑖𝑘 , 𝑗𝑘 ). The wordlevel embedding of 𝑤𝑘 is computed as follows:
+𝑤𝑘 =
+
+𝑗𝑘
+∑
+1
+𝑡
+𝑗𝑘 − 𝑖𝑘 + 1 𝑚=𝑖 𝑚
+
+𝐬 = 𝑥[CLS] ∈ ℝ𝑑
+
+tence in the PLM, representing the aggregated semantic representation
+of the entire sentence.
+3.1.2. Generative adversarial layer
+To achieve semantic alignment between the source and target languages under unsupervised or weakly supervised conditions, we introduce a generative adversarial network structure. This structure consists
+of a generator and a discriminator, with the goal of learning a crosslingual mapping matrix 𝑊 such that the source language embeddings
+approximate the distribution of the target language.
+The core of the generator is a trainable mapping matrix 𝑊 ∈ ℝ𝑑×𝑑 ,
+which projects the source language embedding 𝑥𝑖 into the target language embedding space, such that 𝑦̂𝑖 = 𝑊 𝑥𝑖 . Ideally, the distribution of
+𝑦̂𝑖 should match the distribution of the real target language embedding
+𝑦𝑖 as closely as possible. The goal of the generator is to deceive the discriminator into believing that the mapped representations come from
+the target language. The loss function for the generator is as follows:
+
+(4)
+
+𝑘
+
+Here, 𝑡𝑚 ∈ ℝ𝑑 denotes the embedding of the 𝑚-th token, and 𝑑 is the embedding dimension. The denominator 𝑗𝑘 − 𝑖𝑘 + 1 represents the number
+of tokens corresponding to the word, thereby serving as a normalization factor to ensure balanced representation across words of varying
+lengths.
+To address the data sparsity caused by rich morphological variations
+in agglutinative languages (e.g., Mongolian), we adopt a morphological
+decomposition strategy. Each word 𝑤𝑖 is decomposed into a sequence
+(2)
+(𝑘)
+of tokens {𝑥(1)
+𝑖 , 𝑥𝑖 , … , 𝑥𝑖 }. The decomposition granularity is deﬁned
+as follows:
+•
+•
+
+(8)
+
+Here, 𝑥[CLS] is the output of the [CLS] token at the beginning of the sen-
+
+1∑
+log 𝑃𝜃𝐷 (source = 0 ∣ 𝑊 𝑥𝑖 )
+𝑛 𝑖=1
+𝑛
+
+𝐿𝐺 (𝑊 ∣ 𝜃𝐷 ) = −
+
+1 ∑
+log 𝑃𝜃𝐷 (source = 1 ∣ 𝑦𝑖 )
+𝑚 𝑖=1
+𝑚
+
+−
+
+(9)
+
+The discriminator 𝐷 is a binary classiﬁcation network. The training
+objective of the discriminator is to classify real target language embeddings 𝑦𝑖 as positive, and to classify the projected embeddings from the
+generator 𝑦̂𝑖 = 𝑊 𝑥𝑖 as negative. Accordingly, the binary cross-entropy
+loss of the discriminator is deﬁned as:
+𝑛
+1∑
+𝐿𝐷 (𝜃𝐷 ∣ 𝑊 ) = −
+log 𝑃𝜃𝐷 (source = 1 ∣ 𝑊 𝑥𝑖 )
+𝑛 𝑖=1
+
+(𝑟)
+root(𝑤𝑖 ) = {𝑥(1)
+𝑖 , … , 𝑥𝑖 }: the root of the word;
+
+(𝑚)
+stem(𝑤𝑖 ) = {𝑥(1)
+𝑖 , … , 𝑥𝑖 }: the stem of the word, where 𝑚 ≥ 𝑟;
+
+7
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+1 ∑
+log 𝑃𝜃𝐷 (source = 0 ∣ 𝑦𝑖 )
+𝑚 𝑖=1
+𝑚
+
+−
+
+ers for 𝑙 = 2, … , 𝐿; and 𝐖(𝐿+1) ∈ ℝ1×ℎ denotes the weight matrix of the
+output layer. The activation function is deﬁned as:
+
+(10)
+
+LeakyReLU(𝑥) = max(0.2𝑥, 𝑥)
+
+To enhance robustness, we apply label smoothing to the positive
+samples. Let 𝛼 denote the smoothing factor, then the label for target
+language samples is set to 1 − 𝛼:
+𝐿𝐷 (𝜃𝐷 ∣ 𝑊 ) = −
+
+The output is passed through a sigmoid function:
+
+𝑛
+∑
+
+1
+log 𝑃𝜃𝐷 (source = 1 ∣ 𝑊 𝑥𝑖 )
+𝑛 𝑖=1
+
+𝜎(𝑥) =
+
+𝑚 [
+1 ∑
+(1 − 𝛼) log 𝑃𝜃𝐷 (source = 0 ∣ 𝑦𝑖 )
+𝑚 𝑖=1
+]
++ 𝛼 log 𝑃𝜃𝐷 (source = 1 ∣ 𝑦𝑖 )
+
+1
+1 + 𝑒−𝑥
+
+(14)
+
+It is well known that although GANs can be applied for unsupervised
+alignment learning, their training process is highly challenging. In particular, during the early stages of training, there is often a capability
+imbalance between the generator and the discriminator. The discriminator typically converges faster and dominates the adversarial process.
+This imbalance hinders the optimization of the generator and leads to
+poor alignment quality.
+To address this issue, we introduce a pretraining phase, where a
+small set of high-quality word pairs is used to train an initial mapping
+matrix 𝑊0∗ . This initialization enhances the generator’s alignment capability in the early stages, accelerates model convergence, and improves
+the semantic consistency of the generated samples. Speciﬁcally, we obtain a set of word pairs {(𝑥𝑖 , 𝑦𝑖 )}𝑁
+from 5000 high-quality parallel sen𝑖=1
+tence pairs via fast_align (Dyer et al., 2010). Then, using the obtained
+word pairs, we minimize the following objective:
+
+−
+
+(11)
+
+Algorithm 1 Adversarial training loop.
+Require: Number of epochs 𝑁, batch size 𝐵, dataset , BERT encoder
+, mapping module 𝑀, discriminator 𝐷, statistics dictionary stats
+Ensure: Optimized mapping 𝑀 ∗
+1: for 𝑛epoch = 1 to 𝑁 do
+2: 𝑛dis ← 0, 𝑛map ← 0, 𝑛proc ← 0
+3: for each batch (𝑋𝑎 , 𝑀𝑎 , 𝑋𝑏 , 𝑀𝑏 , 𝐵𝑎 , 𝐵𝑏 , 𝐵𝑎𝑚𝑎𝑠𝑘 , 𝐵𝑏𝑚𝑎𝑠𝑘 , idx) ∈  do
+4:
+𝐻𝑎 ← (𝑋𝑎 , 𝑀𝑎 ), 𝐻𝑏 ← (𝑋𝑏 , 𝑀𝑏 )
+5:
+𝑊𝑎 ← token2word(𝐻𝑎 , 𝐵𝑎 , 𝐵𝑎𝑚𝑎𝑠𝑘 )
+6:
+𝑊𝑏 ← token2word(𝐻𝑏 , 𝐵𝑏 , 𝐵𝑏𝑚𝑎𝑠𝑘 )
+7:
+try:
+8:
+dis_step(𝑊𝑎 , 𝑊𝑏 , stats)
+9:
+catch:
+10:
+Log idx
+11:
+12:
+𝑛dis ← 𝑛dis + 1
+13:
+if 𝑛dis mod dis_steps = 0 then
+14:
+try:
+15:
+mapping_step(stats)
+16:
+catch:
+17:
+Log idx
+18:
+19:
+𝑛map ← 𝑛map + 1
+20:
+end if
+21:
+if 𝑛dis mod save_every = 0 then
+22:
+𝑚𝑒𝑡𝑟𝑖𝑐 sent ← eval_sim()
+23:
+𝑚𝑒𝑡𝑟𝑖𝑐 word ← dist_mean_cosine()
+24:
+𝑠𝑐𝑜𝑟𝑒 ← 𝜆 ⋅ 𝑚𝑒𝑡𝑟𝑖𝑐 sent + (1 − 𝜆) ⋅ 𝑚𝑒𝑡𝑟𝑖𝑐 word
+25:
+𝑎𝑐𝑐 𝐷 ← eval_dev_dis()
+26:
+if 𝑠𝑐𝑜𝑟𝑒 > best_score then
+27:
+Save model checkpoint
+28:
+end if
+29:
+end if
+30: end for
+31: Save model: “epoch-𝑛epoch ”
+32: Update learning rate using 𝑚𝑒𝑡𝑟𝑖𝑐 word
+33: if learning rate < min_lr then
+34:
+break
+35: end if
+36: end for
+
+𝑊0∗ = arg min
+𝑊
+
+𝑁
+∑
+𝑖=1
+
+‖𝑊 𝑥𝑖 − 𝑦𝑖 ‖2
+‖
+‖2
+
+(15)
+
+This problem has an analytical solution, and the optimal solution is obtained through singular value decomposition (SVD):
+𝑊0∗ = 𝑈 𝑉 ⊤ ,
+
+where
+
+𝑈 Σ𝑉 ⊤ = SVD(𝑌 𝑋 ⊤ )
+
+(16)
+
+By fully exploring the interdependencies between word alignment
+and sentence alignment tasks, this paper introduces two cross-lingual
+similarity evaluation strategies during training, which are used for
+model parameter selection and alignment performance evaluation: word
+mean similarity (Conneau et al., 2017) and sentence similarity.
+Word Mean Similarity. This metric measures the closeness between
+the source and target language embedding spaces. Let {𝑥𝑖 }1000
+represent
+𝑖=1
+the embeddings of the 1000 most frequent words in the source language.
+For each word 𝑥𝑖 , we retrieve the most similar word 𝑦̂𝑖 from the target
+language embedding set and compute their cosine similarity :
+1 ∑
+cos(𝑥𝑖 , 𝑦̂𝑖 )
+1000 𝑖=1
+1000
+
+Words_Mean =
+
+(17)
+
+Sentence Similarity. This metric is calculated via the [CLS] token
+representation as the global semantic embedding of the sentence. The
+cosine similarity between the source language sentence 𝑠𝑥 and the target
+language sentence 𝑠𝑦 is computed as:
+Sentsim = cos(𝐬𝑥 , 𝐬𝑦 ) =
+
+𝐬⊤
+𝑥 𝐬𝑦
+‖𝐬𝑥 ‖ ⋅ ‖𝐬𝑦 ‖
+
+(18)
+
+We deﬁne a composite similarity metric that integrates both word-level
+and sentence-level information:
+
+In our experiments, the discriminator is implemented as a multi-layer
+perceptron (MLP). Let the input be an embedding vector 𝐳 ∈ ℝ𝑑 , with 𝐿
+hidden layers and hidden dimension ℎ. The structure of the discriminator is deﬁned as follows:
+𝐡(0) = Dropoutin (𝑧)
+(
+(
+))
+𝐡(𝑙) = Dropout LeakyReLU 𝐖(𝑙) 𝐡(𝑙−1) + 𝐛(𝑙) ,
+( (𝐿+1) (𝐿)
+)
+𝐃(𝑧) = 𝜎 𝐖
+𝐡 + 𝐛(𝐿+1)
+
+(13)
+
+Score(𝑡) = 𝜆 ⋅ Sent(𝑡)
++ (1 − 𝜆) ⋅ Words_Mean(𝑡)
+sim
+
+(19)
+
+The entire adversarial training process consists of the following steps
+(see Algorithm 1):
+1) Initialize the mapping matrix 𝑊 and discriminator parameters 𝜃𝐷 ;
+2) Fix 𝑊 and update the discriminator 𝐷, minimizing D ;
+3) Fix the discriminator and update the generator 𝑊 , minimizing G ;
+Repeat Steps 2)-3) until the discriminator can no longer distinguish
+between real and generated samples (training converges).
+
+for 𝑙 = 1, … , 𝐿 (12)
+
+Here, 𝐖(1) ∈ ℝℎ×𝑑 denotes the weight matrix of the ﬁrst hidden layer;
+𝐖(𝑙) ∈ ℝℎ×ℎ represents the weight matrices of the remaining hidden lay8
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+3.1.3. Optimizing the mapping layer
+After GAN training, the mapping matrix is further optimized by constructing high-quality aligned lexicons. We use both unsupervised and
+weakly supervised methods to build these aligned lexicons.
+Unsupervised method: Using the mapping matrix to project bilingual word embeddings into a shared space, aligned lexicons are constructed by calculating the word similarity with CSLS:
+CSLS(𝑊 𝑥𝑠 , 𝑦𝑡 ) = 2 cos(𝑊 𝑥𝑠 , 𝑦𝑡 ) − 𝑟𝑇 (𝑊 𝑥𝑠 ) − 𝑟𝑆 (𝑦𝑡 )
+
+Mapping-then-pooling strategy: After word embeddings are processed through a mapping matrix, the semantic information of the target language can be more accurately reﬂected. This information is then
+aggregated via the [CLS] token of the PLM to improve the quality of
+sentence embeddings.
+3.2.2. Model compression
+Inspired by ALBERT (Lan, 2019), we design the smaller multilingual
+student model CLWKD_S by using parameter cycling and embedding bottleneck strategies. Parameter cycling: We initialize the smaller student
+model CLWKD_S with the parameters of the ﬁrst 𝑀 layers from CLWKD
+𝑅𝑈 = {𝑖 |𝑖 ∈ [1, 𝑀]}, where 𝑖 represents the 𝑖-th transformer layer.
+Embedding bottleneck: CLWKD, which is based on multilingual PLM
+training, usually requires large vocabularies 𝑉 to support multiple languages, which leads to a very large number of parameters in the embedding layer. We add a bottleneck layer of size 𝐵 between the embedding
+layer and the hidden layer 𝐻 (Lan, 2019); thus, the size of the embedding layer is reduced from 𝑂(𝑉 × 𝐻) to 𝑂(𝑉 × 𝐵 + 𝐵 × 𝐻). As shown in
+Fig. 5, we align the CLWKD and CLWKD_S embedding spaces via the loss
+𝑠
+𝑡𝑖
+function in Eq. (27), where ℎ𝑀𝑖 , ℎ𝑀
+denote the output of the CLWKD em-
+
+(20)
+
+where 𝑟𝑇 (𝑊 𝑥𝑠 ) is the average cosine similarity of the top 𝑘 most similar
+word vectors in the target vector space after the source word vector 𝑥 is
+mapped by the generator, and 𝑟𝑆 (𝑦𝑡 ) is the average cosine similarity of
+the top 𝑘 most similar word vectors in the source word vector space for
+the target vector 𝑦.
+{
+Aligned
+𝑦1 − 𝑦2 ≥ 𝜇
+𝑊 (𝐺(𝑥), 𝑦1 ) =
+(21)
+Unaligned 𝑦1 − 𝑦2 < 𝜇
+where 𝑦𝑖 represents the top 𝑘 most similar words in the target language
+space found for the source language word 𝑥 . When 𝑦1 − 𝑦2 is greater
+than the threshold, the corresponding target language-aligned word is
+considered found; otherwise, it is considered not found.
+Weakly supervised method: Unsupervised contextual word alignment construction is performed based on word alignment tools. We refer
+to this method as weakly supervised because there are some supervised
+signals, but the accuracy is not 100 %.
+In this stage, although SVD is fast for training, its memory consumption increases as the amount of data increases. Therefore, we use gradient descent (GD) to optimize the mapping matrix 𝑊 , seeking an approximate solution. The loss function is shown in Eq. (22), where 𝑁 is
+the batch size.
+loss =
+
+𝑁
+∑
+
+1
+(𝑊 𝑥𝑖 − 𝑦𝑖 )2
+|𝑁| 𝑖=1
+
+𝑠
+
+𝑡
+
+bedding layer and ℎ𝑆𝑖 , ℎ𝑆𝑖 denote the output of the CLWKD_S bottleneck
+layer. After obtaining the smaller student model, we use a second-stage
+approach to transfer the domain knowledge from the teacher model to
+the smaller student model CLWKD_S.
+[
+( ′
+)2 ]
+𝑁
+𝑡𝑖
+1 ∑ ( 𝑠𝑖
+𝑠 )2
+𝑡
+loss =
+ℎ𝑀 − ℎ𝑆𝑖 + ℎ𝑀
+− ℎ𝑆𝑖
+(27)
+|𝑁| 𝑖=1
+4. Experimentation
+4.1. Data and settings
+In the experiments, we selected Mongolian and Korean, both of
+which are agglutinative languages, as target languages, with highresource Chinese as the source language. Mongolian, as a typical
+low-resource agglutinative language, is underrepresented in many
+
+(22)
+
+3.2. Cross-lingual knowledge distillation
+3.2.1. Knowledge transfer and semantic alignment
+As shown in Fig. 1, in the second stage, we use the domain-speciﬁc
+pretrained model (PLM) of the source language as the teacher network
+T and a multilingual PLM as the student network S to perform crosslingual semantic alignment and knowledge transfer. Speciﬁcally, given
+a parallel sentence pair between the source language (e.g., Chinese) and
+the target language (e.g., Mongolian) ⟨𝑠𝑖 , 𝑡𝑖 ⟩, we ﬁrst input the Chinese
+𝑠
+sentence 𝑠𝑖 into the teacher model 𝑇 to obtain the word embeddings ℎ𝑇𝑖 .
+Using the mapping matrix W obtained from the ﬁrst stage, we map the
+word embeddings to the target language space:
+𝑠′
+
+𝑠
+
+𝐸𝑇𝑖 = 𝐸𝑇𝑖 × 𝑊
+
+(23)
+
+To obtain the sentence-level representation, we further apply the CLS
+pooling operation to the word embeddings, resulting in sentence representation as follows:
+𝑠′
+
+𝑠′
+
+𝐸𝑇CLS = CLS(𝐸𝑇𝑖 )
+
+(24)
+
+Moreover, the parallel word pairs ⟨𝑠𝑖 , 𝑡𝑖 ⟩ are input into the 𝑆 model to
+generate word embeddings 𝐸𝑆𝑠𝑖 and 𝐸𝑆𝑡𝑖 , and the CLS pooling operation
+is applied to obtain:
+𝐸𝑆CLS = CLS(𝐸𝑆𝑠𝑖 ),
+
+𝐸𝑆CLS = CLS(𝐸𝑆𝑡𝑖 )
+
+(25)
+
+We achieve knowledge transfer and alignment by minimizing the mean
+squared error (MSE) between the outputs of the teacher and student
+models, and the loss function is deﬁned as:
+loss =
+
+𝑁 [
+]
+𝑠 ′
+𝑠 ′
+1 ∑
+𝑠
+𝑡
+(𝐸𝑇CLS − 𝐸𝑆𝐶𝐿𝑆 )2 + (𝐸𝑇CLS − 𝐸𝑆𝐶𝐿𝑆 )2
+|𝑁| 𝑖=1
+
+(26)
+Fig. 5. Model compression.
+9
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 1
+Distributions of the datasets.
+Dataset
+
+Units
+
+Training set
+
+Dev set
+
+Test set
+
+Total
+
+CWMT
+KCSP
+MMCPT + CWMT
+CMLQA
+CM-Edu
+CK-Med + KCSP
+MDNER
+MLNER
+
+Sentence Pairs
+Sentence Pairs
+Sentence Pairs
+Sentence Pairs
+Sentence Pairs
+Sentence Pairs
+Sentences
+Sentences
+
+66,000
+10,000
+1695+10000
+8000
+1658+10000
+4800+3200
+3065
+1920
+
+1000
+1000
+213+200
+1000
+208+200
+600+200
+383
+240
+
+200
+200
+213+200
+200
+207+200
+600+200
+383
+240
+
+67,200
+11,200
+2121+10400
+9200
+2073+10400
+6000+3600
+3831
+2400
+
+is applied to stabilize early updates, using a learning rate of 16 × 10−5 .
+In the compression phase, the student model retains only 3 transformer
+layers.
+
+mainstream multilingual pre-trained models (such as mBERT and XLM),
+making its domain semantic alignment tasks particularly challenging. To
+further evaluate the model’s generalizability, we extended the experiments to Korean. Although Korean is considered a high-resource language in terms of pre-training corpora, it still lacks large-scale KoreanChinese parallel corpora in speciﬁc domains, making this task equally
+representative and challenging.
+In the ﬁrst stage of CLWKD, we used general-domain parallel corpora
+for Mongolian-Chinese and Korean-Chinese, including publicly available datasets such as the CWMT and KCSP.3 In the second stage, we
+used parallel corpora from three domains: medical, legal, and educational. Since there is no publicly available Mongolian-Chinese medical domain dataset, we constructed our own Mongolian-Chinese medical terminology parallel dataset (MMCPT). For the legal domain, we
+used the publicly available CMLQA4 dataset. The educational domain
+data were sourced from Mongolian-Chinese abstracts of master’s and
+doctoral theses from Inner Mongolia Normal University, and we built
+the Mongolian-Chinese educational parallel dataset (MC-Edu). For the
+Korean-Chinese medical domain, we used the publicly available Korean
+medical monolingual dataset KBMC5 and generated Chinese translations
+via machine translation to create the Korean-Chinese medical parallel
+dataset (CK-Med).
+The performance of CLWKD was evaluated through three downstream tasks: cross-lingual word alignment, cross-lingual sentence retrieval, and cross-lingual entity recognition. The evaluation data for the
+word alignment and sentence retrieval tasks were selected from parts of
+the aforementioned corpora. For the entity recognition evaluation, we
+used the CCKS 2020 entity recognition dataset, along with the v1 version
+of the Mongolian medicine entity recognition dataset (MDNER) and a
+small-scale legal entity recognition dataset (MLNER), both constructed
+in our lab. Detailed information about all the datasets is provided in
+Table 1.
+In the experiments, we used MC-BERT (Wang, 2023) as the multilingual PLM for low-resource languages. MC-BERT is a model ﬁne-tuned
+on 150,000 Mongolian monolingual sentences and 67,200 MongolianChinese parallel sentence pairs based on multilingual BERT.
+In the adversarial training framework, the discriminator is a threelayer perceptron (MLP) with a hidden layer size of 2048. The dropout
+rate for the input layer is 0.1, whereas the dropout rate for the hidden layers is set to 0. The smoothing factor is 0.2, and the generator
+is updated every 5 steps. The batch size for both the discriminator and
+generator is 32, with a learning rate of 0.1 and a learning rate decay
+rate of 0.95. The adversarial training runs for 50 epochs. The alignment
+vector threshold is set to 0.002. In the reﬁnement phase, the mapping
+matrix optimizer uses SGD with a learning rate of 0.1 trained for 20
+epochs.
+In the cross-lingual knowledge distillation phase, training is conducted for 100 epochs with a batch size of 32. A warmup rate of 0.1
+
+4.2. Compared models
+To evaluate the model’s cross-lingual semantic alignment performance at diﬀerent granularities, three cross-lingual evaluation tasks
+were designed: word alignment, bitext retrieval, and cross-lingual entity recognition. The comparison models included classic cross-lingual
+semantic alignment models, multilingual PLMs, recent ﬁne-tuned multilingual PLMs, and knowledge distillation models.
+Adv-SVD-CSLS (Conneau et al., 2017) and Adv-SVD-NN (Conneau
+et al., 2017): Based on GANs, these models are further trained by constructing aligned words and using the CSLS and NN methods to select
+nearest-neighbor word embeddings during evaluation tasks.
+CLBT_SVD (Wang et al., 2019) and CLBT_GD (Wang et al., 2019):
+These methods ﬁrst obtain contextually aligned word pairs via fast_align
+and then compute contextual word embeddings via BERT. The mapping
+matrix W is then learned via SVD and GD.
+mBERT (Kenton & Toutanova, 2019): A multilingual BERT model
+released by Google, supporting over 100 languages and demonstrating
+strong cross-lingual transfer capabilities.
+CINO (Yang et al., 2022): This method continues training XLM-R on
+corpora of various minority languages, enhancing its understanding of
+Tibetan, Mongolian, Uyghur, Kazakh, Korean, Zhuang, Cantonese, and
+other minority languages and dialects.
+InfoXLM (Chi et al., 2020): This method continues training XLMR by masked language modeling, translation language modeling and
+translation ranking tasks.
+XLM-Align (Chi et al., 2021): This method performs self-supervised
+word alignment on parallel sentences and trains by randomly masking
+some tokens in bilingual text pairs.
+DAP (Li et al., 2023): This is a state-of-the-art cross-lingual sentence
+embedding model that uses token-level information.
+AoE (Li & Li, 2024): Enhances the precision of semantic representations by optimizing angular diﬀerences in complex spaces and mining
+text similarities within saturated regions.
+mKD (Reimers & Gurevych, 2020): This model learns multilingual
+sentence embeddings via cross-lingual knowledge distillation.
+msKD (Ding et al., 2022): This method trains small cross-lingual
+models via multistage knowledge distillation.
+IMASCL (Park et al., 2024): It primarily guides the student model
+to learn relationships between cross-lingual sentences by aligning the
+monolingual sentence similarity structures of the teacher model.
+All the comparison models, except for CINO, were trained on our
+datasets.
+4.3. Word alignment
+On the basis of previous work (Chi et al., 2021), word-level semantic
+alignment performance was evaluated via word alignment. Word alignment involves identifying corresponding word pairs within parallel sentences.
+
+3 KCSP is a Korean-Chinese parallel corpus obtained from the OPUS project
+(https://opus.nlpl.eu)
+4
+http://csdata.org/en/p/1061/
+5 https://huggingface.co/datasets/SungJoo/KBMC
+
+10
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 2
+Evaluation results for word alignment.
+Model
+
+Adv_SVD_CSLS
+_NN
+CLBT_SVD_CSLS
+_GD_CSLS
+CINO
+InfoXLM
+XLM-Align
+CLWKD_SVD_CSLS
+_GD_CSLS
+_GD_NN
+
+Weakly Supervised
+
+performance of mBERT+W is signiﬁcantly lower; on the one hand, this
+is due to the limited coverage of Mongolian during the mBERT pretraining process (we used the ﬁne-tuned version, while the original mBERT
+model hardly covered Mongolian). On the other hand, the mapping matrix W is the result of CLWKD’s ﬁrst-stage training, which was trained
+solely on the general Mongolian-Chinese dataset and does not include
+domain-speciﬁc data, thus limiting its domain-speciﬁc word alignment
+capability.
+After introducing a small amount of domain data, further training
+of CLWKD signiﬁcantly outperforms the ﬁne-tuned InfoXLM and XLMAlign models. The Avg_F1 score improved by 9.26 % and 8.41 % in the
+legal and educational domains, respectively. The DAP model, which
+also performs token-level alignment during ﬁne-tuning, shows competitive performance in word alignment tasks: the Avg_F1 score improved
+by 0.23 % in the legal and educational domains. This ﬁnding indicates
+that token alignment methods have a positive eﬀect on improving word
+alignment performance. Compared with the state-of-the-art text embedding similarity model AoE, CLWKD achieved an Avg_F1 improvement of
+0.14 % in the legal and educational domains; this suggests that CLWKD
+is more suitable for ﬁne-grained semantic alignment tasks such as word
+alignment, where weak supervision via parallel sentences is employed.
+Moreover, the experimental results vary when diﬀerent domain models
+are used as teacher networks in CLWKD, indicating that the performance
+of the teacher model itself signiﬁcantly aﬀects the alignment results. A
+detailed analysis of this will be provided in Section 4.4, in conjunction
+with sentence retrieval performance.
+To evaluate the model’s cross-lingual word alignment capability on
+other low-resource agglutinative languages, we conducted word-level
+alignment experiments on the smaller Korean-Chinese dataset. The experimental results are shown in Table 4. Since mBERT’s pretraining covers both Korean and Chinese, its performance on this task is signiﬁcantly
+better than the Mongolian-Chinese word alignment results presented in
+Table 3. However, the mBERT pretraining process involves training on a
+large amount of multilingual data without explicitly utilizing semantic
+alignment information, which limits its alignment performance. When
+we trained the cross-lingual semantic alignment mapping matrix on
+general-domain parallel corpora and applied it to mBERT, the model’s
+word alignment performance improved signiﬁcantly in both the general and medical domains. Building upon this, the CLWKD model, obtained through knowledge distillation using cross-lingual domain data,
+demonstrated even greater advantages in both domains. Compared with
+the InfoXLM, XLM-Align, DAP, and AoE models ﬁne-tuned with domain data, CLWKD achieved the highest F1 score improvements of
+12.91 %, 9.22 %, 2.4 %, and 3.55 % in the medical domain, respectively, and 4.26 %, 2.13 %, 4.06 %, and 3.55 % in the general domain,
+respectively. These experimental results indicate that combining crosslingual semantic alignment mapping with domain knowledge distillation can eﬀectively address the shortcomings of pretrained models in
+word-level semantic alignment, signiﬁcantly improving word alignment
+accuracy.
+Overall, domain-speciﬁc semantic alignment methods primarily
+use sentence-level alignment as the main training objective, resulting
+in relatively weaker performance on word-level alignment. To more
+comprehensively evaluate the model’s alignment capability, we next
+focus on analyzing its performance in the domain sentence alignment task and further analyze the performance of the two stages of
+CLWKD.
+
+Unsupervised
+
+P
+
+R
+
+F1
+
+P
+
+R
+
+F1
+
+54.97
+53.41
+55.37
+60.80
+51.99
+51.54
+45.82
+68.25
+71.96
+69.30
+
+59.05
+57.32
+59.45
+65.47
+51.43
+45.32
+39.43
+57.56
+60.00
+54.76
+
+56.94
+55.30
+57.34
+63.05
+51.71
+48.23
+42.39
+62.45
+65.43
+61.18
+
+42.91
+36.94
+–
+–
+–
+–
+–
+–
+47.80
+41.85
+
+45.71
+39.39
+–
+–
+–
+–
+–
+–
+43.01
+36.96
+
+44.27
+38.13
+–
+–
+–
+–
+–
+–
+45.28
+39.25
+
+Table 2 shows the precision, recall and F1 scores for word alignment
+in both languages. In weakly supervised learning, our CLWKD_GD_CSLS
+model outperformed the classic Adv_SVD_CSLS and Adv_SVD_NN models, with F1 improvements of 8.49 % and 10.13 %, respectively, in
+Mongolian-Chinese word vector alignment, demonstrating the superiority of our proposed method over traditional models. Compared with
+the CLBT_GD_CSLS model, our CLWKD_GD_CSLS model showed a 2.38 %
+improvement in the evaluation task and a 5.11 % improvement over
+the CLBT_SVD_CSLS model, indicating that the generative adversarial
+network (GAN) eﬀectively reduces the distance between the Mongolian and Chinese vector spaces.Compared with the pre-trained CINO
+model, the SVD method used in CLWKD showed a 10.74 % improvement, whereas the GD method resulted in a 13.72 % improvement. Furthermore, compared with the ﬁne-tuned InfoXLM and XLM-Align models, the CLWKD_GD_CSLS method yielded enhancements of 17.2 % and
+23.04 %, respectively. These comparison results fully demonstrate that
+weakly supervised and self-supervised training methods that rely solely
+on limited data cannot achieve the desired results when the multilingual
+XLM-R large model is used.In contrast, CLWKD signiﬁcantly improves
+performance in cross-lingual word alignment tasks through more eﬀective alignment methods and optimization strategies. This suggests that
+in multilingual tasks, appropriate alignment techniques and advanced
+optimization methods are crucial for fully realizing model potential, especially when data are limited.
+Compared with the baseline model, our unsupervised learning models yielded improvements of 1.01 % and 6.03 %. In addition, among all
+the models, the CSLS method consistently outperformed the NN method
+in ﬁnding aligned word vectors, with the F1 score being higher by up to
+6.03 %.
+In the experiments, we also attempted to introduce the CycleGAN
+cyclic consistency constraint strategy. However, during training, we frequently encounter gradient vanishing or gradient explosion issues, making it diﬃcult for the model to converge stably. CycleGAN relies on the
+cycle consistency loss of “A → B → A” and “B → A → B” to ensure
+reversible transformations. However, owing to signiﬁcant diﬀerences
+in syntax, word order, and morphology between Mongolian and Chinese, maintaining a one-to-one correspondence when transforming back
+is challenging, thus causing the cycle consistency constraint to fail. In
+contrast, the standard GAN optimizes only the distribution alignment
+of cross-lingual mappings, making it potentially more stable for text
+alignment tasks. CycleGAN was originally designed for style transfer
+tasks, but owing to the large structural diﬀerences between Mongolian and Chinese, its eﬀectiveness in unsupervised alignment may be
+limited. Additionally, CycleGAN is sensitive to data distribution consistency, making it prone to optimization diﬃculties or mode collapse
+in low-resource scenarios. Although we attempted to combine parallel
+data and word pairs for training, achieving stable mapping results was
+diﬃcult.
+Table 3 presents the word alignment results for the MongolianChinese legal and educational domain datasets. It is evident that the
+
+4.4. Bitext retrieval
+Based on previous works (Artetxe & Schwenk, 2019; Chi et al., 2020;
+Feng et al., 2020), we evaluate the sentence-level semantic alignment
+capability via the dual-text retrieval task. The evaluation metrics include
+the average retrieval accuracy from the source language to the target
+language (s2t) and from the target language to the source language (t2s).
+Tables 5 and 6 present the sentence retrieval performance of CLWKD on
+11
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 3
+Evaluation results of word alignment on the Mongolian-Chinese datasets in the legal and education domains.
+Model
+
+Teacher Model
+
+Law
+
+mBERT+W
+InfoXLM
+XLM-Align
+DAP
+AoE
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+
+LegalRoBERTa/TAL-EduBERT
+RoBERTa-wwm-ext
+Zh-BERT
+CKIP BERT
+Lawformer
+
+Education
+
+P
+
+R
+
+F1
+
+P
+
+R
+
+F1
+
+Avg_F1
+
+15.30
+34.47
+36.65
+50.44
+45.85
+
+16.52
+36.25
+46.19
+50.90
+54.87
+
+15.89
+35.35
+40.87
+50.67
+49.94
+
+14.02
+47.96
+40.09
+50.79
+51.48
+
+17.13
+51.87
+44.02
+54.50
+55.66
+
+15.42
+49.84
+46.02
+52.58
+53.48
+
+15.66
+42.60
+43.45
+51.63
+51.72
+
+46.15
+44.44
+45.44
+45.50
+45.66
+
+54.93
+52.85
+54.22
+53.98
+54.26
+
+50.16
+48.28
+49.44
+49.38
+49.59
+
+51.41
+49.14
+49.13
+–
+–
+
+55.88
+53.49
+53.11
+–
+–
+
+53.55
+51.22
+51.04
+–
+–
+
+51.86
+49.75
+50.24
+–
+–
+
+Table 4
+Evaluation results of word alignment on the Korean-Chinese cross-lingual datasets.
+Model
+
+Teacher Model
+
+mBERT
+mBERT+W
+InfoXLM
+XLM-Align
+DAP
+AoE
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+
+MedBERT
+ERNIE-Health
+BioBERT
+MC-BERT
+
+Medical
+
+General
+
+P
+
+R
+
+F1
+
+P
+
+R
+
+F1
+
+Avg_F1
+
+30.31
+23.44
+40.30
+42.84
+49.65
+38.42
+
+30.11
+47.33
+39.90
+42.60
+49.43
+38.08
+
+30.21
+31.35
+39.75
+42.72
+49.54
+38.25
+
+28.07
+37.22
+35.72
+38.75
+36.00
+43.92
+
+27.86
+42.57
+36.33
+37.56
+36.44
+43.74
+
+27.96
+39.72
+36.02
+38.15
+36.22
+43.83
+
+29.09
+35.54
+37.89
+40.44
+42.88
+41.04
+
+50.40
+53.09
+47.06
+44.91
+
+50.27
+50.83
+46.87
+44.72
+
+50.33
+51.94
+46.96
+44.81
+
+33.66
+39.70
+32.22
+32.76
+
+31.36
+40.88
+29.20
+29.99
+
+32.47
+40.28
+30.64
+31.31
+
+41.40
+46.11
+38.80
+38.06
+
+Table 5
+Evaluation results of bilingual bitext retrieval on Mongolian-Chinese and Korean-Chinese datasets across medical and general
+domains.
+Model
+
+Teacher
+
+Mongolian-Chinese
+Medical
+
+mBERT
+mBERT+W
+XLM-Align
+InfoXLM
+DAP_cls
+DAP_avg
+AoE
+IMASCL
+mKD
+MsKD
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+CLWKD_S
+
+mE5
+MedBERT
+MedBERT
+MedBERT
+ERNIE-Health
+BioBERT
+MC-BERT
+MedBERT
+
+Korean-Chinese
+General
+
+Medical
+
+General
+
+s2t
+
+t2s
+
+s2t
+
+t2s
+
+s2t
+
+t2s
+
+s2t
+
+t2s
+
+Avg_s2t
+
+Avg_t2s
+
+–
+10.63
+15.09
+16.04
+70.61
+69.66
+33.49
+24.83
+77.47
+73.14
+81.13
+76.88
+14.56
+72.16
+74.52
+
+–
+8.92
+14.24
+15.47
+69.19
+68.72
+36.42
+27.25
+78.26
+74.23
+79.24
+75.94
+12.13
+67.45
+75.47
+
+–
+16.83
+27.14
+26.13
+65.45
+64.47
+70.67
+31.90
+66.43
+65.44
+69.66
+66.74
+–
+53.88
+66.26
+
+–
+10.89
+24.12
+25.53
+65.69
+64.96
+74.40
+35.74
+67.42
+65.93
+70.63
+63.10
+–
+50.97
+65.04
+
+12.77
+15.56
+17.00
+19.00
+75.84
+73.44
+38.30
+83.74
+85.83
+82.00
+90.33
+76.83
+60.50
+84.66
+84.5
+
+10.83
+14.30
+15.00
+16.50
+74.15
+71.83
+40.83
+88.09
+83.33
+80.5
+89.83
+72.00
+57.00
+84.16
+82.5
+
+14.00
+16.83
+20.21
+15.96
+68.59
+67.65
+53.72
+73.37
+48.60
+46.3
+51.34
+35.24
+37.43
+42.91
+47.90
+
+12.50
+10.89
+17.02
+20.74
+67.29
+64.82
+54.50
+77.33
+47.10
+45.10
+49.85
+33.97
+34.92
+39.92
+46.80
+
+13.39
+14.96
+19.86
+19.28
+70.12
+68.81
+49.05
+53.46
+69.58
+66.72
+73.12
+63.92
+37.50
+63.40
+68.30
+
+11.67
+11.25
+17.06
+19.56
+69.08
+67.58
+51.54
+57.10
+69.03
+66.44
+72.39
+61.25
+34.68
+60.63
+67.45
+
+Mongolian-Chinese and Korean-Chinese language pairs in the medical,
+general, legal, and educational domains.
+Compared with classic multilingual PLM models, Tables 5 and 6
+show that CLWKD signiﬁcantly improves both Avg_s2t and Avg_t2s
+in the medical and general domains for both Mongolian-Chinese and
+Korean-Chinese language pairs, as well as in the legal and educational
+domains for Mongolian-Chinese, compared with models such as mBERT,
+mBERT+W, XLM-Align, and InfoXLM. This ﬁnding indicates that multilingual models trained on large-scale general-domain corpora, when
+ﬁne-tuned with only a small amount of domain-speciﬁc data in lowresource settings, struggle to achieve good domain-speciﬁc sentencelevel semantic alignment. Although mBERT+W shows improvements
+in word-level alignment, its mapping matrix 𝑊 is constructed based
+on general-domain corpora, with the optimization objective focused on
+
+word alignment, which limits its performance on sentence-level semantic alignment tasks for speciﬁc domains.
+Compared with the recent sentence embedding semantic alignment
+models DAP and AoE, Table 5 shows that CLWKD improves the retrieval accuracy of Avg_s2t and Avg_t2s by 2.99 % and 3.31 %, respectively, when compared with DAP and by 24.07 % and 20.85 %, respectively, when compared with AoE, in the medical and general domains
+for both language pairs. Notably, CLWKD shows a particularly signiﬁcant improvement in the medical domain compared with AoE, whereas
+the advantage in the general domain is relatively smaller, indicating
+its greater advantage under limited domain data conditions. Furthermore, as shown in Table 6, in the legal domain, owing to the relatively
+large scale of the Mongolian-Chinese legal dataset, AoE’s performance
+is close to that of CLWKD, demonstrating some competitiveness but also
+12
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 6
+Evaluation results of bilingual bitext retrieval on Mongolian-Chinese datasets across the law and
+education domains.
+Model
+
+mBERT+W
+XLM-Align
+InfoXLM
+DAP_cls
+DAP_avg
+AoE
+IMASCL
+mKD
+MsKD
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+
+Teacher
+
+mE5
+Lawformer/TAL-EduBERT
+Lawformer/TAL-EduBERT
+Lawformer/TAL-EduBERT
+CKIP BERT
+LegalRoBERTa
+RoBERTa
+Zh-BERT
+
+Law
+
+Education
+
+s2t
+
+t2s
+
+s2t
+
+t2s
+
+Avg_s2t
+
+Avg_t2s
+
+6.00
+20.00
+16.50
+74.20
+73.21
+86.05
+26.47
+80.10
+76.80
+87.00
+32.00
+85.90
+81.7
+70.02
+
+9.50
+21.30
+17.45
+77.13
+76.90
+84.20
+25.36
+79.20
+73.70
+87.70
+33.00
+84.30
+80.2
+69.13
+
+12.43
+37.27
+34.55
+50.96
+50.17
+50.76
+24.82
+48.89
+47.66
+50.63
+–
+–
+50.12
+35.38
+
+10.89
+33.64
+31.82
+51.44
+50.25
+53.75
+22.54
+44.71
+43.98
+51.47
+–
+–
+48.64
+31.94
+
+9.21
+28.63
+25.525
+62.58
+61.69
+68.40
+25.64
+64.49
+62.23
+68.81
+–
+–
+65.91
+52.7
+
+10.19
+27.47
+24.63
+64.28
+63.57
+68.97
+23.95
+61.95
+58.84
+69.58
+–
+–
+64.42
+50.53
+
+reﬂecting its sensitivity to the data scale. Finally, as shown in Table 6,
+CLWKD outperforms DAP and AoE by 6.23 % and 5.3 %, respectively, in
+Avg_s2t, and by 0.41 % and 0.61 %, respectively, in Avg_t2s, in the legal
+and educational domains. These results demonstrate that the dual-stage
+training strategy employed by CLWKD provides signiﬁcant advantages
+in low-resource domain tasks.
+Compared with cross-lingual knowledge distillation models, particularly the recently proposed IMASCL method, Tables 5 and 6 show
+that CLWKD achieves signiﬁcantly higher performance across three
+Mongolian-Chinese domain datasets. IMASCL primarily guides the student model to learn cross-lingual semantic relations by aligning sentence similarity structures from the teacher model; however, due to
+the substantial syntactic and morphological diﬀerences between Mongolian and Chinese, relying solely on similarity alignment fails to capture
+the complex semantic mappings between the two languages. Moreover,
+we observed that IMASCL heavily relies on sentence embedding-based
+PLMs. When replacing the teacher model from mE56 to mBERT, the performance drop became more pronounced, as shown in the comparison
+experiments under the 5.8 high-resource setting. This reliance makes
+IMASCL less suitable for low-resource domain scenarios, where it is typically necessary to leverage both sentence-level and word-level alignment data to compensate for data scarcity. Compared to mKD, Tables 5
+and 6 show that CLWKD, with MedBERT as the teacher model, improves
+Avg_s2t and Avg_t2s by 3.53 % and 3.36 %, respectively, in the medical
+and general domains for both language pairs. In the Mongolian-Chinese
+legal and educational domains, with Lawformer and TAL-EduBERT as
+teacher models, Avg_s2t and Avg_t2s improve by 4.32 % and 7.63 %, respectively. These results indicate that the cross-lingual mapping matrix
+𝑊 , trained on a general-domain dataset, not only enhances the model’s
+performance in speciﬁc domains but also signiﬁcantly improves its applicability and transferability in broader tasks.
+Compared with the recent cross-lingual knowledge distillation compression model MsKD, Tables 5 and 6 show that the compressed
+CLWKD_S, with MedBERT as the teacher model, improves Avg_s2t and
+Avg_t2s by 1.58 % and 1.01 %, respectively, in the medical and general
+domains for both language pairs. These results validate the eﬀectiveness
+and robustness of the “cross-lingual mapping matrix + cross-lingual
+knowledge distillation” dual-stage strategy in small model scenarios,
+demonstrating that this method retains strong cross-lingual semantic
+transfer capabilities even in parameter-limited compressed settings.
+Impact of Diﬀerent Teacher Models on CLWKD. In the medical
+domain, CLWKD performs best in the word alignment task when ERNIE-
+
+Health is used as the teacher model, whereas MedBERT achieves better
+results in the sentence retrieval task. During pre-training, ERNIE-Health
+introduces an entity-level masking strategy that masks key medical entities such as disease names, medications, and symptoms. This strategy
+guides the model to focus on the word-level representation and semantic boundary recognition of medical terms, thereby enabling more targeted transfer of entity-level semantic information to the student model
+during knowledge distillation. As a result, CLWKD performs best in the
+word alignment task when using ERNIE-Health as the teacher model. In
+contrast, MedBERT is pre-trained on large-scale clinical text, including
+numerous clinical sentences, physician notes, and patient complaints. Its
+training objectives include random token masking and sentence order
+prediction, which help enhance the model’s ability to capture sentencelevel semantic structures. Therefore, MedBERT is better at modeling
+contextual logic and domain-speciﬁc concepts at the sentence level,
+and achieves better performance in the sentence retrieval task within
+the CLWKD framework. Both models are pre-trained on large-scale Chinese medical corpora, giving them a signiﬁcant advantage in semantic transfer for the medical domain. In contrast, although BioBERT is
+also a model for the medical domain, its training data mainly consist
+of English text, resulting in weaker performance on Mongolian-Chinese
+and Korean-Chinese parallel corpora. However, in the model generalization experiments in Section 5.8, it performs well on the high-resource
+English-Chinese dataset, indicating that its transfer capability is better
+suited to languages that are closer or have suﬃcient resources.
+In the legal domain, Tables 3 and 6 show that LegalRoBERTa and
+Lawformer, with deep pretraining on Chinese legal texts, signiﬁcantly
+outperform other models. The rich legal knowledge embedded in these
+models is eﬀectively transferred to low-resource languages through
+cross-lingual distillation. In the educational domain, TAL-EduBERT also
+helps CLWKD achieve optimal performance due to its task alignment
+and specialized training. In contrast, CKIP-BERT, which is trained only
+on Chinese legal texts, performs poorly in distillation due to the limited data scale and diversity. General models such as RoBERTa and ZhBERT also show a signiﬁcant decrease in performance on specialized domain datasets. These results suggest that the match between the teacher
+model’s language coverage and domain adaptability directly determines
+the eﬀectiveness of knowledge transfer and is a key factor inﬂuencing
+cross-lingual distillation performance.
+Impact of Domain Data Characteristics on Model Transfer Alignment Capability. We identiﬁed that, in addition to the model architecture and teacher model, the language structure and expression style of
+diﬀerent domain data signiﬁcantly aﬀect cross-lingual sentence alignment performance. Taking the legal domain as an example, this type of
+data primarily consists of question-and-answer-style legal documents,
+
+6 https://huggingface.co/intﬂoat/multilingual-e5-large
+
+13
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 7
+Evaluation results for NER on the medical and legal datasets.
+Model
+
+mBERT
+mBERT-BiGRU
+mBERT-BiLSTM
+DAP_cls
+AoE
+mKD
+MsKD
+CLWKD (Stage 1)
+
+Medical
+
+cross-lingual semantic capturing ability, making it more suitable for
+macrolevel semantic modeling in sentence-level alignment tasks.
+
+Law
+
+P
+
+R
+
+F1
+
+P
+
+R
+
+F1
+
+Avg_F1
+
+60.90
+61.86
+59.34
+71.11
+70.18
+70.46
+66.9
+70.79
+
+60.84
+59.20
+58.91
+69.39
+68.35
+68.86
+63.14
+69.71
+
+60.87
+60.50
+59.12
+70.24
+69.52
+69.65
+64.97
+70.25
+
+50.29
+52.26
+49.15
+55.48
+58.41
+55.30
+50.82
+60.36
+
+50.82
+51.33
+50.86
+56.44
+57.61
+59.05
+52.76
+58.94
+
+50.55
+51.79
+49.99
+55.96
+58.01
+57.11
+51.77
+59.64
+
+55.71
+56.15
+54.56
+63.10
+63.63
+63.38
+58.37
+64.95
+
+5. Analysis
+5.1. Diﬀerent word segmentation methods for cross-lingual semantic
+mapping
+To alleviate the data sparsity problem, this study incorporates the
+morphological characteristics of agglutinative languages and adopts a
+morphological decomposition approach. Table 8 presents experimental
+results on Mongolian as a representative agglutinative language. In the
+table, “Root” denotes retaining only the root form, “Seg” refers to segmenting the aﬃxes, and “Cut” indicates directly removing the aﬃxes.
+Table 8 shows that the best results are obtained by removing aﬃxes,
+regardless of whether the method is weakly supervised or unsupervised.
+In the weakly supervised experiments, removing aﬃxes yielded an average F1 score that was 3.8 % higher than that when segmenting aﬃxes
+and 17.67 % higher than that when retaining only the root. The analysis
+revealed that when only the root is retained, the word alignment accuracy when fast_align is used is relatively low, and the average similarity
+between words during training is also low, resulting in a lower alignment rate in the vector space. Although the root retains the most basic
+information of the word, it is diﬃcult to align its meaning with Chinese
+in context, and the semantic information is still insuﬃcient.
+In unsupervised learning, when only the root is retained, the model
+often encounters issues such as gradient vanishing or gradient explosion. Despite the root retaining the basic information of the word, the
+lack of contextual information makes it diﬃcult to express the semantics when aligning with Chinese. In practice, even though attempts have
+been made to mitigate these issues by adding thresholds when training
+the model with the root, the results are still unsatisfactory. These ﬁndings further validate the challenges of ﬁne-tuning GAN networks with
+small samples under unsupervised conditions.
+
+which have clear sentence structures and a high proportion of general
+vocabulary. The language structure is closer to that of general-domain
+corpora, making it more conducive to the transfer application of the
+general-domain mapping matrix, thus enabling CLWKD to perform relatively stably in this domain. The data in the educational domain are
+obtained from abstracts of master’s and doctoral theses in education
+at Inner Mongolia Normal University. The overall structure is highly
+consistent, and the themes are concentrated. Although a random sentence selection strategy was used during training to increase sample
+diversity, the strong semantic similarity and thematic consistency between the texts limited the model’s ability to recognize semantic differences between sentences. In the medical domain, the dataset used
+is the Mongolian-Chinese medical domain parallel terminology dataset,
+which is highly standardized and specialized in terms of terminology;
+this helps the model align speciﬁc semantic units, leading to superior
+performance in this domain.
+These results indicate that diﬀerences in sentence structure and semantic span of the corpus have a signiﬁcant eﬀect on sentence-level semantic modeling capability. CLWKD performs better on domain corpora
+with higher degrees of structural and terminological consistency.
+4.5. Cross-lingual named entity recognition
+
+5.2. Ablation experiments for cross-lingual semantic mapping
+
+To evaluate the model’s performance on cross-lingual named entity recognition tasks, we conducted an experimental analysis using
+Mongolian-Chinese medical and legal domain datasets. First, we ﬁnetuned the cross-lingual alignment model via the CCKS 2020 Chinese medical named entity recognition dataset. We then incorporated
+cross-lingual prompting techniques, where Chinese prompt information
+guided the entity recognition process for Mongolian medical and legal
+domain texts, followed by further training and testing. We believe that
+if the model has already developed strong Mongolian-Chinese semantic
+alignment during pretraining, the Chinese prompts can provide clear semantic cues for low-resource languages, thereby signiﬁcantly improving
+recognition performance.
+As shown in Table 7, CLWKD (Stage 1) achieved average F1 improvements of 9.23 %, 8.80 %, and 10.39 % in entity recognition tasks
+across the two domains compared with multilingual baseline models
+(mBERT, mBERT-BiGRU, and mBERT-BiLSTM). Compared with the AoE
+model, CLWKD achieved a 1.32 % average F1 improvement; compared
+with the traditional knowledge distillation model mKD, the improvement was 1.56 %. Although DAP performed worse than did CLWKD sentence retrieval tasks, it showed strong competitiveness in entity recognition tasks. This is especially evident on medical datasets. Its strategy
+of enhancing language unit mapping through subword alignment helps
+improve the model’s sensitivity to ﬁne-grained entities. We analyze this
+phenomenon further in Section 5.6.
+Overall, the multigranularity mapping matrix generated in Stage 1 of
+CLWKD (pretrained model + mapping structure) demonstrates stronger
+representational capacity in cross-lingual word alignment and entity
+recognition tasks, reﬂecting its signiﬁcant advantage in ﬁne-grained
+semantic alignment. In contrast, Stage 2 exhibits greater stability and
+
+The purpose of this experiment was to conduct an ablation analysis
+to evaluate the contributions of diﬀerent modules in the ﬁrst stage of the
+model. Speciﬁcally, we set the weights of the model’s pre-trained generator (Pre_Mapping), optimized mapping (Opt_mapping), training threshold (train_threshold), and testing threshold (test_threshold) to zero and
+then compared the performance with that of the original model. Table 9
+presents the results of the ablation study on cross-lingual mapping conducted on the Mongolian-Chinese general-domain dataset.
+As shown in the 4th row of Table 9, the Opt_mapping module plays
+a crucial role in the model; removing Opt_mapping resulted in a direct
+decrease in the F1 score of 33.13 %. The 5th row of Table 9 indicates
+that the pre-trained generator also has a signiﬁcant eﬀect on the overall model. When this module was removed, the F1 score decreased by
+3.83 % on the evaluation task. Pre-training the generator not only stabilizes the training process of the GAN but also enhances the overall
+model performance. The 6th row of the table shows that removing the
+training threshold led to a decrease of 2.55 % in the F1 score, whereas
+Table 8
+Diﬀerent word slicing methods.
+Model
+
+CLWKD_SVD_Cut
+CLWKD_GD_Cut
+CLWKD_SVD_Root
+CLWKD_GD_Root
+CLWKD_SVD_Seg
+CLWKD_GD_Seg
+14
+
+Weakly Supervised
+
+Unsupervised
+
+P
+
+R
+
+F1
+
+P
+
+R
+
+F1
+
+68.25
+71.96
+36.49
+53.70
+60.26
+63.46
+
+57.56
+60.00
+40.80
+54.34
+57.58
+59.42
+
+62.45
+65.43
+38.52
+54.02
+58.89
+61.38
+
+–
+47.80
+–
+–
+–
+35.15
+
+–
+43.01
+–
+–
+–
+32.48
+
+–
+45.28
+–
+–
+–
+33.76
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 9
+Ablation analysis of cross-lingual mapping.
+
+general datasets, respectively. This highlights the crucial role of the bottleneck layer in preserving the model’s semantic integrity.
+
+Model
+
+P
+
+R
+
+F1
+
+Baseline
+Full system
+- Opt_mapping
+- Pre_Mapping
+- train_threshold
+- test_threshold
+
+54.97
+71.96
+34.18
+59.62
+60.62
+70.88
+
+59.05
+60.00
+31.88
+63.74
+65.30
+58.19
+
+56.94
+65.43
+32.30
+61.61
+62.88
+63.91
+
+5.4. Impact of dataset size
+The impact of training dataset size on the performance of unsupervised cross-lingual mapping. To improve model performance, we
+attempted to train the GAN with more data. When 360,000 MongolianChinese sentence pairs were used, we observed increases in both unsupervised evaluation metrics, as shown in Fig. 6. This ﬁnding indicates that unsupervised training beneﬁts from larger datasets. However, when the alignment matrix was optimized with 360,000 sentence pairs, the highest alignment accuracy achieved was 52 %. In contrast, using 67,000 sentence pairs yielded an alignment accuracy of
+58 %. Neither approach matched the eﬀectiveness of the alignment
+achieved with the 67,000 sentence pairs when adversarial training and
+matrix optimization were applied. Our analysis revealed that the quality of the 360,000 Mongolian-Chinese sentences was not high; many
+contained nonstandard characters, and the Latin transliteration was
+not manually preprocessed. This highlights the importance of data
+quality.
+Impact of Training Data Size on Cross-lingual Knowledge Distillation Performance. As shown in Fig. 7, with increasing data size, the
+model’s retrieval accuracy in both the s2t and t2s directions improves
+signiﬁcantly. The convergence trend shows that models with larger data
+sizes (e.g., s2t_15, s2t_20) quickly improve in the ﬁrst 20 epochs and
+converge earlier. However, models with smaller data sizes struggle to
+eﬀectively learn semantic alignment features, even when trained for
+100 epochs. We found that medium-sized datasets (e.g., s2t_8, s2t_10)
+already achieve near-optimal performance in both retrieval directions,
+and the training process is stable and reliable; this indicates that in practical applications, large-scale datasets are not necessary to achieve eﬃcient and eﬀective knowledge distillation.
+
+removing the testing threshold resulted in a 1.52 % decrease. This suggests that setting thresholds is critical for model performance, as it helps
+ﬁlter out noise or incorrect correspondences, retaining only the correct
+correspondences.
+5.3. Ablation analysis of cross-lingual knowledge distillation
+The ablation study included experiments that removed the crosslanguage mapping matrix W from CLWKD, examined the eﬀects of the
+order of mapping and pooling, compared average pooling and [CLS]
+pooling results, and analyzed the impact of removing the bottleneck
+layer from the compressed CLWKD_S. During model compression, the
+mapping matrix was not used, as CLWKD_S was initialized with the bottleneck layer and embedding layer from CLWKD. Table 10 presents the
+results of cross-lingual knowledge distillation experiments conducted on
+the Mongolian-Chinese medical and general-domain datasets.
+When training the CLWKD model using only domain-speciﬁc data,
+the limited amount of such data led to overﬁtting on both the medical
+and general-domain test sets. This ﬁnding indicates that the data constraints hinder the model’s ability to learn broadly applicable features,
+thereby reducing its performance across diﬀerent tasks and domains.
+Table 10 shows that removing the general domain cross-language
+mapping matrix from CLWKD resulted in decreases of 2.47 % and 0.17 %
+on the s2t and t2s tasks, respectively, on the medical dataset and decreases of 1.22 % and 1.7 %, respectively, on the general dataset. This
+result highlights the signiﬁcant role of the cross-language mapping matrix W in enhancing the model’s domain alignment performance.
+Pooling after mapping (i.e., [CLS] pooling) led to a 1.93 % average
+decrease in performance across both datasets compared with mapping
+after pooling. This suggests that mapping ﬁrst retains ﬁne-grained relationships between word embeddings, thereby enhancing sentence alignment performance through preserved word alignment capabilities.
+Additionally, using CLS pooling after mapping outperforms average
+pooling by an average of 0.77 % on the sentence retrieval tasks across
+the two datasets. These results demonstrate that [CLS] pooling is more
+eﬀective in capturing sentence-level semantic information and improving performance in cross-language tasks.
+Removing the bottleneck layer from CLWKD_S led to a signiﬁcant
+drop in the model’s cross-lingual sentence-level semantic alignment performance, with reductions of 8.02 % and 21.96 % on the medical and
+
+5.5. Data augmentation
+This section explores two data augmentation methods to alleviate the
+“lack of parallel corpora” problem. We introduced two data augmentation strategies, back-translation (BT) and machine translation (MT),
+on the training set of the Mongolian-Chinese medical dataset. Backtranslation generates semantically equivalent but diversely expressed
+sentence pairs by translating Chinese sentences into Mongolian and then
+back to Chinese. Machine translation involves translating the CCKS Chi-
+
+Table 10
+Ablation analysis of cross-lingual knowledge distillation. OVF stands for overﬁtting.
+Model
+
+CLWKD (MMCPT)
+CLWKD (MMCPT)
+CLWKD-W
+CLWKD
+CLWKD
+CLWKD_S
+CLWKD_S -bottle
+CLWKD(all)
+
+Mapping or Pooling
+
+Mapping+Average Pooling
+Mapping+CLS Pooling
+Mapping+CLS Pooling
+CLS Pooling
+Mapping+Average Pooling
+–
+–
+Mapping+CLS Pooling
+
+MMCPT
+
+CWMT
+
+s2t
+
+t2s
+
+s2t
+
+t2s
+
+OVF
+OVF
+78.66
+78.13
+79.71
+74.52
+67.45
+81.13
+
+OVF
+OVF
+79.07
+78.54
+78.77
+75.47
+66.50
+79.24
+
+OVF
+OVF
+68.44
+67.63
+68.44
+66.26
+44.66
+69.66
+
+OVF
+OVF
+68.93
+68.63
+70.63
+65.04
+42.71
+70.63
+
+Fig. 6. Impact of training data size on the performance of unsupervised crosslingual mapping, where the number of sentence pairs is measured in thousands.
+15
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Table 11
+Case study analysis of cross-lingual NER.
+Context
+
+SINJI TEMDEG : D0T0R BACIMDAHV, VCAGARDAHV,
+HEBTEBEL B0SHV DVR_A UGEI, CISVN DARVLTA NI D00R_A,
+S0LIYARAJV GUYUHU JERGE SINJI-TEY.
+
+Answer
+
+D0T0R BACIMDAHV, VCAGARDAHV, CISVN DARVLTA NI
+D00R_A, S0LIYARAJV GUYUHU
+
+CLWKD
+
+CISVN DARVLTA NI D00R_A, D0T0R BACIMDAHV,
+S0LIYARAJV GUYUHU
+
+DAP
+
+CISVN DARVLTA NI D00R_A, D0T0R BACIMDAHV,
+S0LIYARAJV GUYUHU
+
+MsKD
+
+CISVN DARVLTA NI D00R_A, D0T0R BACIMDAHV
+
+5.6. Case study
+To explore the generalizability of CLWKD, we conducted a case study
+using neurology case data. The training set did not include neurology
+case data and consisted mainly of inpatient data from the respiratory
+department.
+Table 11 shows that the two models trained with token alignment
+information, CLWKD and DAP, were able to identify the entity “S0LIYARAJV GUYUHU” (translated as “crazy running”), which was not
+present in the training set, whereas the other models failed to do so.
+This further demonstrates that token alignment models have a stronger
+ability to handle the ﬁne-grained features and patterns of language. By
+breaking words into smaller token units, token alignment models can
+better capture subtle diﬀerences and details in language, enabling recognition of even unseen vocabulary through the combination of existing
+tokens. This ﬁne-grained alignment mechanism is more eﬀective at addressing complex morphological phenomena, such as aﬃx changes and
+word form reduction, thus improving the accuracy of entity recognition.
+To further validate this performance, experiments were conducted
+on a general data test set. When only word roots were used, the performances for the bitext retrieval tasks, s2t and t2s, were 32.03 % and
+28.64 %, respectively. These results indicate that although stemming reduces vocabulary diversity, the model is still able to maintain high alignment and retrieval performance in bitext retrieval tasks. This suggests
+that token alignment models, even in the face of reduced vocabulary
+diversity, possess excellent generalization and semantic understanding
+capabilities, eﬀectively enhancing their performance in handling complex language tasks.
+
+Fig. 7. Impact of training data size on the performance of cross-lingual knowledge distillation, where the number following the underscore (“_”) indicates the
+corresponding number of training sentence pairs (in thousands).
+
+nese medical domain text into Mongolian, generating sentence pairs
+with actual semantic context.
+The experimental results, shown in Fig. 8, indicate that both augmentation strategies outperform the original terminology data (OR), effectively improving the model’s training and alignment performance.
+Among them, back-translation (BT_s2t and BT_t2s) shows the best performance in terms of both convergence speed and ﬁnal accuracy, with a
+signiﬁcant improvement, especially between epochs 10–40. This demonstrates that by introducing structurally diverse but semantically consistent training samples, back-translation eﬀectively enhances the model’s
+robustness to cross-lingual expression diﬀerences. Machine translation
+(MT_s2t and MT_t2s) also outperforms the original data group, indicating its ability to expand data diversity and improve the model’s generalizability; however, its performance improvement is slightly lower
+than that of back-translation, which may be attributed to the following
+reasons. First, the translation corpus comes from real medical sentences,
+whereas the original training data consists of terminology-based parallel
+sentences, which diﬀer in sentence structure style; second, the complete
+medical sentence structure is more complex and semantically noisy, and
+machine translation quality ﬂuctuates, making it prone to errors or amplifying noise, thus aﬀecting the augmentation eﬀect.
+
+5.7. Visualization analysis
+The blue dots represent high-resource Chinese medical domain characters, whereas the red dots represent low-resource Mongolian medical
+domain words. In Fig. 9(a), which presents the results of the mBERT
+model, while the red dots form noticeable clusters, these clusters are
+relatively isolated and not closely related to the blue dots. In Fig. 9(b),
+the DAP model displays a more uniform distribution of points, indicating that the model performed a more extensive dispersion of word
+embeddings. However, the lack of distinct clustering and strong alignment eﬀects suggests that the model may have limitations in capturing
+semantic features and performing cross-lingual alignment. In Fig. 9(c),
+the CLWKD model shows more pronounced clustering, indicating that
+the model can, to some extent, group semantically similar words together, especially frequently used or contextually similar words. For
+low-resource languages, this clustering may suggest that the model
+achieves better semantic alignment for certain vocabularies.
+5.8. Performance analysis on high-resource datasets
+
+Fig. 8. Impact of back-translation and machine translation on MongolianChinese sentence alignment performance. The evaluation metrics are sentence
+retrieval accuracies in both the s2t and t2s directions across diﬀerent epochs.
+
+To validate the model’s performance on high-resource data, we used
+Chinese-English general data for the ﬁrst stage of cross-lingual mapping
+16
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Fig. 9. Visualization of 200 pairs of Mongolian-Chinese medical parallel terms.
+
+Table 12
+Cross-lingual sentence retrieval results on the EnglishChinese medical domain. The highest values are highlighted in bold, and the second-highest values are underlined.
+Model
+
+DAP_cls
+AoE
+IMASCL
+IMASCL
+CLWKD
+CLWKD
+CLWKD
+CLWKD
+
+Teacher
+
+–
+–
+mBERT
+mE5
+MedBERT
+ERNIE-Health
+BioBERT
+MC-BERT
+
+strategies are employed, including agglutinative language morphological decomposition, shared multilingual PLM embedding layers, pretraining the generator, gradient optimization of the mapping matrix, and
+threshold setting, to learn the multi-granularity cross-lingual mapping
+matrix for the general domain in an unsupervised and weakly supervised manner. In the second stage, the learned general-domain matrix is
+applied to cross-lingual knowledge distillation, enhancing domain data
+and semantic space alignment, thus transferring high-resource domain
+knowledge to low-resource models while also performing model compression. The experimental results show that CLWKD achieves excellent performance in three cross-lingual tasks (cross-lingual word alignment, dual-text retrieval, and cross-lingual named entity recognition)
+across Mongolian-Chinese and Korean-Chinese language pairs, covering
+multiple domains, including medical, legal, and educational. Compared
+with strong baseline models, CLWKD shows improvements in crosslingual word alignment tasks. In the Mongolian-Chinese legal and educational domains, the average F1 score increases by 0.14-9.26 %, and in
+the Korean-Chinese medical and general domains, it improves by 3.2317.03 %. In dual-text retrieval tasks, CLWKD improves the average F1
+score by 0.41-7.12 % in the medical and general domains for both language pairs and by 1.58-24 % in the Mongolian-Chinese legal and educational domains. In the Mongolian-Chinese medical and legal named
+entity recognition tasks, the average F1 score improves by 1.32-6.57 %.
+The CLWKD_S model, which is compressed via parameter recycling and
+bottleneck layer strategies, is also highly competitive compared with
+the baseline. Additionally, experimental analysis shows that, in agglutinative languages with complex morphology, combining shared multilingual PLM embedding layers and token alignment task training helps
+improve the model’s generalization ability.
+Limitations Although our approach is eﬃcient and scalable, we
+have not yet leveraged high-resource, large-scale medical domain models as teacher models to transfer their knowledge to low-resource models and perform parallel compression owing to computational resource
+constraints.
+
+Medical Dataset
+s2t
+
+t2s
+
+93.40
+95.10
+88.22
+96.20
+73.05
+90.00
+95.72
+89.42
+
+90.20
+93.60
+87.83
+96.77
+73.24
+89.6
+92.67
+88.00
+
+training and Chinese-English medical domain data for the second stage
+of cross-lingual knowledge distillation. In the general domain, we selected 20,000 Chinese-English sentence pairs from the OPUS-Europarl
+dataset.7 In the medical domain, we used 10,000 sentence pairs from
+the New England Journal of Medicine Chinese-English medical paper
+dataset8 . Both datasets were split into training, validation, and test sets
+at an 8:1:1 ratio.
+The experimental results, shown in Table 12, demonstrate that
+CLWKD is highly competitive compared with recent sentence-level semantic alignment models such as DAP, AoE, and IMASCL in the crosslingual sentence alignment task. This validates the model’s adaptability and generalizability in diﬀerent resource scenarios, providing strong
+theoretical and experimental support for low-resource language transfer. As shown in Table 12, in the Chinese-English cross-lingual task,
+BioBERT, as a teacher model pretrained on English medical data, significantly outperforms other models, indicating its stronger transfer capability in this language direction. This result also reaﬃrms the conclusion
+in Section 4.4 that the choice of teacher model has a signiﬁcant eﬀect
+on the eﬀectiveness of cross-lingual knowledge distillation.
+
+CRediT authorship contribution statement
+Yurong Wang: Writing – original draft, Software, Methodology; Min
+Lin: Writing – review & editing; Qitu Hu: Investigation, Data curation;
+Shuangcheng Bai: Supervision; Yanling Li: Supervision; Longjie Bao:
+Resources, Data curation.
+
+6. Conclusions
+In this paper, a cross-lingual multi-granularity semantic alignment
+model CLWKD for low-resource languages is proposed, which can be
+used for both word-level and sentence-level cross-lingual semantic alignment tasks. CLWKD is divided into two stages. In the ﬁrst stage, multiple
+
+Declaration of competing interest
+The authors declare that they have no known competing ﬁnancial
+interests or personal relationships that could have appeared to inﬂuence
+the work reported in this paper.
+
+7
+
+https://object.pouta.csc.ﬁ/OPUS-Europarl/v8/moses/en-zh.txt.zip
+8 https://github.com/boxiangliu/ParaMed
+17
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Acknowledgement
+
+Li, J., Hou, H., Wu, J., Wang, H., & Fan, W. (2017). Impact of corpus preprocessing on Mongolian-Chinese statistical machine translation. Computer Science, 44(10),
+259–264.
+Li, X., & Li, J. (2024). AoE: Angle-optimized embeddings for semantic textual similarity. In L.-W. Ku, A. Martins, & V. Srikumar (Eds.), Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: Long papers)
+(pp. 1825–1839). Bangkok, Thailand: Association for Computational Linguistics. https:
+//doi.org/10.18653/v1/2024.acl-long.101
+Li, Y., Liu, F., Collier, N., Korhonen, A., & Vulić, I. (2022). Improving word translation via
+two-stage contrastive learning. arXiv:2203.08307
+Li, Z., Huang, S., Zhang, Z., Deng, Z.-H., Lou, Q., Huang, H., Jiao, J., Wei, F., Deng, W., &
+Zhang, Q. (2023). Dual-alignment pre-training for cross-lingual sentence embedding.
+arXiv:2305.09148
+Lian, X., Jain, K., Truszkowski, J., Poupart, P., & Yu, Y. (2020). Unsupervised multilingual
+alignment using wasserstein barycenter. arXiv:2002.00743
+Liang, X., Gu, Z., Xie, Y., Wang, L., & Tian, Z. (2023). MUSEDA: Multilingual unsupervised and supervised embedding for domain adaption. Knowledge-Based Systems, 273,
+110560.
+Liu, X., Zheng, Y., Du, Z., Ding, M., Qian, Y., Yang, Z., & Tang, J. (2024). Gpt understands,
+too. AI Open, 5, 208–215
+Liu, Y. (2019). RoBERTa: A robustly optimized bert pretraining approach.
+arXiv:1907.11692
+Liu, Y. (2020). Multilingual denoising pre-training for neural machine translation.
+arXiv:2001.08210
+Miao, Z., Wu, Q., Zhao, K., Wu, Z., & Tsuruoka, Y. (2024). Enhancing cross-lingual sentence embedding for low-resource languages with word alignment. arXiv:2404.02490
+Mikolov, T., Le, Q. V., & Sutskever, I. (2013). Exploiting similarities among languages for
+machine translation. arXiv:1309.4168
+Park, M., Choi, S., Choi, C., Kim, J.-S., & Sohn, J.-y. (2024). Improving multi-lingual
+alignment through soft contrastive learning. In Y. T. Cao, I. Papadimitriou, A. Ovalle,
+M. Zampieri, F. Ferraro, & S. Swayamdipta (Eds.), Proceedings of the 2024 conference of the North American chapter of the association for computational linguistics: Human language technologies (volume 4: Student research workshop) (pp. 138–145). Mexico
+City, Mexico: Association for Computational Linguistics. https://doi.org/10.18653/
+v1/2024.naacl-srw.16
+Pham, T., Le, K., & Luu, A. T. (2024). UniBridge: A uniﬁed approach to cross-lingual
+transfer learning for low-resource languages. In L.-W. Ku, A. Martins, & V. Srikumar
+(Eds.), Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: Long papers) (pp. 3168–3184). Bangkok, Thailand: Association for
+Computational Linguistics. https://doi.org/10.18653/v1/2024.acl-long.174
+Rasmy, L., Xiang, Y., Xie, Z., Tao, C., & Zhi, D. (2021). Med-BERT: Pretrained contextualized embeddings on large-scale structured electronic health records for disease
+prediction. NPJ Digital Medicine, 4(1), 86.
+Reimers, N., & Gurevych, I. (2020). Making monolingual sentence embeddings multilingual using knowledge distillation. arXiv:2004.09813
+Ren, Z., Hou, H., Jiatu, Wu, Z., Bai, T., & Lei, Y. (2019). Application of sub-character
+granularity segmentation in Mongolian-Chinese neural machine translation. Journal
+of Chinese Information Processing, 33(01), 85–92.
+Ruder, S., Vulić, I., & Søgaard, A. (2019). A survey of cross-lingual word embedding models. Journal of Artiﬁcial Intelligence Research, 65, 569–631.
+Sanh, V. (2019). DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and
+lighter. arXiv:1910.01108
+Schwenk, H., Chaudhary, V., Sun, S., Gong, H., & Guzmán, F. (2019). WikiMatrix: Mining
+135m parallel sentences in 1620 language pairs from wikipedia. arXiv:1907.05791
+Shliazhko, O., Fenogenova, A., Tikhonova, M., Mikhailov, V., Kozlova, A., & Shavrina, T.
+(2022). mGPT: Few-shot learners go multilingual. arXiv:2204.07580
+Sun, S., Cheng, Y., Gan, Z., & Liu, J. (2019). Patient knowledge distillation for bert model
+compression. arXiv:1908.09355
+Sun, Z., Yu, H., Song, X., Liu, R., Yang, Y., & Zhou, D. (2020). MobileBERT: A compact
+task-agnostic bert for resource-limited devices. arXiv:2004.02984
+Symeonidou, A., Sazonau, V., & Groth, P. (2019). Transfer learning for biomedical named
+entity recognition with bioBERT. In Semantics (posters & demos).
+Tao, Q., Xiong, Z., Han, B., Fan, X., & Li, L. (2023). A novel unsupervised approach for
+cross-lingual word alignment in low isomorphic embedding spaces. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31, 3027–3041.
+Wang, R., Li, Z., Yang, J., Cao, T., Zhang, C., Yin, B., & Abdelzaher, T. (2023). Mutuallypaced knowledge distillation for cross-lingual temporal knowledge graph reasoning.
+In Proceedings of the ACM web conference 2023 (pp. 2621–2632).
+Wang, S. (2009). Research on Chinese-Mongolian machine translation and related technologies based on hybrid strategies. Ph.D. thesis. Inner Mongolia University.
+Wang, W., Bao, H., Huang, S., Dong, L., & Wei, F. (2020). MiniLMv2: Multihead self-attention relation distillation for compressing pretrained transformers.
+arXiv:2012.15828
+Wang, Y. (2023). Research on cross-lingual word vector learning in Mongolian and Chinese based on BERT. Ph.d. thesis Inner Mongolia Normal University. https://doi.org/
+10.27230/d.cnki.gnmsu.2022.000773
+Wang, Y., Che, W., Guo, J., Liu, Y., & Liu, T. (2019). Cross-lingual BERT transformation
+for zero-shot dependency parsing. arXiv:1909.06775
+Xiao, C., Hu, X., Liu, Z., Tu, C., & Sun, M. (2021). Lawformer: A pre-trained language
+model for chinese legal long documents. AI Open, 2, 79–84.
+Xing, C., Wang, D., Liu, C., & Lin, Y. (2015). Normalized word embedding and orthogonal
+transform for bilingual word translation. In Proceedings of the 2015 conference of the
+North American chapter of the association for computational linguistics: Human language
+technologies (pp. 1006–1011).
+Xue, L. (2020). mT5: A massively multilingual pre-trained text-to-text transformer.
+arXiv:2010.11934
+
+This work was supported in part by the National Natural Science
+Foundation of China (NSFC) under grant 62266033, in part by the Key
+Laboratory of Inﬁnite-dimensional Hamiltonian System and Its Algorithm Application (Inner Mongolia Normal University), Ministry of Education (2023KFZD03), and in part by the Graduate Students’ Research &
+Innovation Fund of Inner Mongolia Normal University (CXJJB23011).
+References
+Ai, X., & Huang, Z. (2024). Zero-shot cross-lingual alignment for embedding initialization. In L.-W. Ku, A. Martins, & V. Srikumar (Eds.), Findings of the association for computational linguistics: ACL 2024 (pp. 5997–6007). Bangkok, Thailand: Association for
+Computational Linguistics. https://doi.org/10.18653/v1/2024.ﬁndings-acl.358
+Artetxe, M., Labaka, G., & Agirre, E. (2017a). Learning bilingual word embeddings with
+(almost) no bilingual data. In Proceedings of the 55th annual meeting of the association
+for computational linguistics (volume 1: Long papers) (pp. 451–462).
+Artetxe, M., Labaka, G., & Agirre, E. (2018). A robust self-learning method for fully unsupervised cross-lingual mappings of word embeddings. arXiv:1805.06297
+Artetxe, M., Labaka, G., Agirre, E., & Cho, K. (2017b). Unsupervised neural machine translation. arXiv:1710.11041
+Artetxe, M., & Schwenk, H. (2019). Massively multilingual sentence embeddings for zeroshot cross-lingual transfer and beyond. Transactions of the Association for Computational
+Linguistics, 7, 597–610.
+Bai, X., Cao, H., Chen, K., & Zhao, T. (2019). A bilingual adversarial autoencoder for
+unsupervised bilingual lexicon induction. IEEE/ACM Transactions on Audio, Speech,
+and Language Processing, 27(10), 1639–1648.
+Chi, Z., Dong, L., Wei, F., Yang, N., Singhal, S., Wang, W., Song, X., Mao, X.-L., Huang,
+H., & Zhou, M. (2020). InfoXLM: An information-theoretic framework for cross-lingual
+language model pre-training. arXiv:2007.07834
+Chi, Z., Dong, L., Zheng, B., Huang, S., Mao, X.-L., Huang, H., & Wei, F. (2021). Improving pretrained cross-lingual language models via self-labeled word alignment.
+arXiv:2106.06381
+Chousa, K., Nagata, M., & Nishino, M. (2020). SpanAlign: Sentence alignment method
+based on cross-language span prediction and ILP. In Proceedings of the 28th international
+conference on computational linguistics (pp. 4750–4761).
+Clavié, B., & Gal, K. (2019). EduBERT: Pretrained deep language models for learning analytics. https://arxiv.org/abs/1912.00690.
+Conneau, A. (2019). Unsupervised cross-lingual representation learning at scale.
+arXiv:1911.02116
+Conneau, A., & Lample, G. (2019). Cross-lingual language model pretraining. Advances in
+Neural Information Processing Systems, 32.
+Conneau, A., Lample, G., Ranzato, M., Denoyer, L., & Jégou, H. (2017). Word translation
+without parallel data. arXiv:1710.04087
+Ding, K., Liu, W., Fang, Y., Zhao, Z., Ju, Q., & Yang, X. (2022). Multi-stage distillation
+framework for cross-lingual semantic similarity matching. arXiv:2209.05869
+Dyer, C., Lopez, A., Ganitkevitch, J., Weese, J., Ture, F., Blunsom, P., Setiawan, H., Eidelman, V., & Resnik, P. (2010). cdec: A decoder, alignment, and learning framework for
+ﬁnite-state and context-free translation models. In Proceedings of the ACL 2010 system
+demonstrations (pp. 7–12). Association for Computational Linguistics.
+Feng, F., Yang, Y., Cer, D., Arivazhagan, N., & Wang, W. (2020). Language-agnostic BERT
+sentence embedding. arXiv:2007.01852
+Gan, Z., Li, Z., Zhang, B., Wan, J., Chen, Y., Liu, K., Zhao, J., Shi, Y., & Liu, S. (2021).
+Enhance both text and label: Combination strategies for improving the generalization
+ability of medical entity extraction. In Proceedings of the China conference on knowledge
+graph and semantic computing (pp. 92–101). Springer, Singapore.
+Ge, L., Hu, C., Ma, G., Zhang, H., & Liu, J. (2023). ProKD: An unsupervised prototypical
+knowledge distillation network for zero-resource cross-lingual named entity recognition. In Proceedings of the AAAI conference on artiﬁcial intelligence (pp. 12818–12826).
+(vol. 37).
+Hou, H., Liu, Q., Wuritu, N., Murengowa, & Li, J. (2009). Mongolian word segmentation based on statistical language models. Pattern Recognition and Artiﬁcial Intelligence,
+22(01), 108–112.
+Hu, J., Ruder, S., Siddhant, A., Neubig, G., Firat, O., & Johnson, M. (2020). XTREME: A
+massively multilingual multi-task benchmark for evaluating cross-lingual generalisation. In International conference on machine learning (pp. 4411–4421). PMLR.
+Hu, L., & Xu, Y. (2024). DM-BLI: Dynamic multiple subspaces alignment for unsupervised
+bilingual lexicon induction. In L.-W. Ku, A. Martins, & V. Srikumar (Eds.), Proceedings of the 62nd annual meeting of the association for computational linguistics (volume
+1: Long papers) (pp. 2041–2052). Bangkok, Thailand: Association for Computational
+Linguistics. https://doi.org/10.18653/v1/2024.acl-long.112
+Jiao, X., Yin, Y., Shang, L., Jiang, X., Chen, X., Li, L., Wang, F., & Liu, Q. (2019). TinyBERT:
+Distilling BERT for natural language understanding. arXiv:1909.10351
+Kenton, J. D. M.-W. C., & Toutanova, L. K. (2019). BERT: Pre-training of deep bidirectional
+transformers for language understanding. In Proceedings of NAACL-HLT (p. 2). (Vol. 1).
+Lample, G., Conneau, A., Denoyer, L., & Ranzato, M. (2017). Unsupervised machine translation using monolingual corpora only. arXiv:1711.00043
+Lan, Z. (2019). ALBERT: A lite bert for self-supervised learning of language representations. arXiv:1909.11942
+Lee, J., Yoon, W., Kim, S., Kim, D., Kim, S., So, C. H., & Kang, J. (2020). BioBERT: A pretrained biomedical language representation model for biomedical text mining. Bioinformatics, 36(4), 1234–1240.
+18
+
+Neural Networks 194 (2026) 108114
+
+Y. Wang et al.
+
+Yang, F. (2021). Research on BERT models for clinical natural language processing in
+Chinese, Master’s thesis, Peking Union Medical College. https://doi.org/10.27648/d.
+cnki.gzxhu.2021.000896
+Yang, X., Yun, J., Zheng, B., Liu, L., & Ban, Q. (2023). Oversea cross-lingual summarization
+service in multilanguage pre-trained model through knowledge distillation. Electronics,
+12(24), 5001.
+Yang, Z., Xu, Z., Cui, Y., Wang, B., Lin, M., Wu, D., & Chen, Z. (2022). CINO: A chinese
+minority pre-trained language model. arXiv:2202.13558
+Zhang, M., Liu, Y., Luan, H., & Sun, M. (2017). Adversarial training for unsupervised
+bilingual lexicon induction. In Proceedings of the 55th annual meeting of the association
+for computational linguistics (volume 1: Long papers) (pp. 1959–1970).
+
+Zhang, N., Jia, Q., Yin, K., Dong, L., Gao, F., & Hua, N. (2020). Conceptualized representation learning for chinese biomedical text mining. arXiv:2008.10813
+Zhang, Z.-R., Tan, C., Huang, S., & Huang, F. (2023). VECO 2.0: Cross-lingual
+language model pre-training with multi-granularity contrastive learning.
+arXiv:2304.08205
+Zhu, Z., Cheng, X., Chen, Z., Zhuang, X., Huang, Z., & Zou, Y. (2024). Code-switching
+can be better aligners: Advancing cross-lingual SLU through representation-level and
+prediction-level alignment. In L.-W. Ku, A. Martins, & V. Srikumar (Eds.), Proceedings
+of the 62nd annual meeting of the association for computational linguistics (volume 2: Short
+papers) (pp. 153–160). Bangkok, Thailand: Association for Computational Linguistics.
+https://doi.org/10.18653/v1/2024.acl-short.15
+
+19
+
+

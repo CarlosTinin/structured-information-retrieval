@@ -1,0 +1,3531 @@
+Artificial Intelligence and Law (2025) 33:1151–1187
+https://doi.org/10.1007/s10506-024-09414-w
+ORIGINAL RESEARCH
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset
+of ITalian constitutional court verdicts
+Luca Ragazzi1
+
+· Gianluca Moro1
+
+· Stefano Guidi1 · Giacomo Frisoni1
+
+Accepted: 5 July 2024 / Published online: 9 September 2024
+© The Author(s) 2024
+
+Abstract
+Large-scale public datasets are vital for driving the progress of abstractive summarization, especially in law, where documents have highly specialized jargon. However,
+the available resources are English-centered, limiting research advancements in
+other languages. This paper introduces LAWSUIT, a collection of 14K Italian legal
+verdicts with expert-authored abstractive maxims drawn from the Constitutional
+Court of the Italian Republic. LAWSUIT presents an arduous task with lengthy
+source texts and evenly distributed salient content. We offer extensive experiments
+with sequence-to-sequence and segmentation-based approaches, revealing that the
+latter achieve better results in full and few-shot settings. We openly release LAWSUIT to foster the development and automation of real-world legal applications.
+Keywords Italian legal documents · Abstractive summarization · Large-scale
+dataset · Law · Natural language processing
+
+All authors contributed equally to this paper.
+* Luca Ragazzi
+l.ragazzi@unibo.it
+* Gianluca Moro
+gianluca.moro@unibo.it
+Stefano Guidi
+stefano.guidi10@studio.unibo.it
+Giacomo Frisoni
+giacomo.frisoni@unibo.it
+1
+
+Department of Computer Science and Engineering ‑ DISI, University of Bologna, Via
+dell’Universitá 50, 47522 Cesena, Italy
+Vol.:(0123456789)
+
+1152
+
+L. Ragazzi et al.
+
+1 Introduction
+Text summarization (Sharma and Sharma 2023) is a persistent pursuit of natural
+language processing (NLP). Recently, there has been a growing interest in abstractive summarization (AS), which involves paraphrasing the essential details of textual
+documents in a succinct and accessible language (Zhang et al. 2022). This surge in
+interest is primarily attributed to the availability of large pretrained language models (Lewis et al. 2020; Guo et al. 2022; Moro et al. 2022) and publicly accessible
+datasets spanning various domains (Cohan et al. 2018; Narayan et al. 2018). One
+particularly impactful domain in real-world applications is law, where documents
+often consist of thousands of words filled with jargon and intricate expressions.
+The complexity of these documents makes their comprehension a time-consuming
+and labor-intensive process, even for legal experts (Kanapala et al. 2019). Therefore, legal AS (Moro et al. 2023) is a practical, useful, and essential task to promote
+knowledge acquisition. Lamentably, current legal summarization corpora are almost
+entirely devoted to English. There are yet no Italian datasets for legal AS, which
+limits the research, access, and elaboration of lawful texts and their implications to
+Italian law practitioners.
+To fill this gap, we present the first large-scale Italian legal AS dataset, LAWSUIT,1 consisting of 14,000 source documents with expert-authored summaries
+(Fig. 1). LAWSUIT allows the community to study the AS of legal verdicts in a
+critical application setting found in the Constitutional Court of the Italian Republic
+(CCIR). As the highest court in Italy for constitutional law matters, the CCIR maintains a comprehensive record of legal verdicts, accessible through an open-access
+data portal (https://​dati.​corte​costi​tuzio​nale.​it). In particular, highly qualified legal
+experts meticulously crafted and reviewed each ruling and the accompanying maxims, i.e., the synopses that clarify the events and core decisions. Beyond its potential
+to expand summarization capabilities, benefiting legal NLP benchmarks and tangible uses, LAWSUIT boasts several key features:
+• The average number of source and target words is significantly higher than that
+
+contemplated by existing Italian summarization datasets (+269% and +589%,
+respectively) (Casola and Lavelli 2021), encouraging long document AS for Italian.
+• In contrast to existing English legal benchmarks (Kornilova and Eidelman 2019;
+Huang et al. 2021), the salient content in the input is more uniformly distributed,
+and summary-worthy words are not concentrated in specific sections of the text.
+This characteristic poses a unique challenge for summarization tasks, requiring
+comprehensive processing of the entire source document rather than relying on
+localized content.
+• Unlike many summarization datasets that undergo automatic construction processes (Cohan et al. 2018; Grusky et al. 2018; Sharma et al. 2019; Huang et al.
+2021), our inputs and targets are authored by experts. Specifically, university law
+1
+
+The dataset is available at: https://​disi-​unibo-​nlp.​github.​io/​publi​catio​ns-​site/​lawsu​it/.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1153
+
+Summary
+Maxim no. 15219
+Unlike civil servants of the State, the doctors in charge who serve in the prevention and punishment institutions can freely
+practice their profession and take on other jobs or tasks, so the provision which excludes the payment of any allowance
+during precautionary suspension does not appear in 'unfair nor unreasonable. (Unfounded - in reference to articles 3 and 36
+of the Constitution - of the question of constitutionality of article 27, last paragraph, Law no. 740 of 9 October 1970, in the
+part in which it prohibits the payment of maintenance allowances to doctors suspended from service as a precaution).
+
+Document
+
+RULING 13-22 DECEMBER 1989
+
+EPIGRAPH
+
+THE CONSTITUTIONAL COURT
+composed of the following: Presidente: Dr. Francesco SAJA; Giudici: prof. Giovanni CONSO, prof. Ettore GALLO, Dr. Aldo
+CORASANITI, prof. Giuseppe BORZELLINO, Dr. Francesco GRECO, prof. Gabriele PESCATORE, lawyer Ugo SPAGNOLI,
+prof. Francesco Paolo CASAVOLA, prof. Antonio BALDASSARRE, prof. Vincenzo CAIANIELLO, layer Mauro FERRI, prof.
+Luigi MENGONI, prof. Enzo CHELI;
+pronounced the following
+JUDGMENT
+in the judgment of constitutional legitimacy of the art. 27, last paragraph, of law 9 October 1970 n. 740 (Regulation of the
+categories of healthcare personnel employed in prevention and punishment institutions not belonging to the organic roles of the
+Penitentiary Administration), promoted with an order issued on 22 November 1988 by the T.A.R. for Sicily, separate section of
+Catania, on the appeal brought by Guarnera Francesco against the Ministry of Justice, registered at no. 332 of the 1989 ordinance
+register and published in the Official Gazette of the Republic no. 27, first special series, from 1989;
+
+TEXT
+
+Believed in fact
+The Regional Administrative Court for Sicily - separate section of Catania, raised an incidental question of the constitutional
+legitimacy of the art. 27, last paragraph, of law 9 October 1970, n. 740, which, in the event of precautionary suspension from
+service, makes it mandatory for doctors in charge who serve in prevention and punishment institutes to fail to pay maintenance
+allowances, without any evaluation of the concrete case, and this for alleged conflict with the articles 3 and 36 of the Consti tution.
+[...]
+Considered in law
+1. The T.A.R. of Sicily, a separate section of Catania, doubts the constitutional legitimacy of the art. 27 last paragraph of law 9
+October 1970 n. 740 (Regulation of the categories of healthcare personnel employed in prevention and punishment institutions not
+belonging to the organic roles of the Penitentiary Administration). This provision provides that "during the period of precautionary
+suspension" - regulated by the previous paragraphs of the same art. 27 - "the doctor in charge is not entitled to any allowance". It
+would therefore be in conflict with the art. 3 of the Constitution as it would give rise to an unjustified difference in treatment
+compared to civil state employees, to which art. 82 of the Presidential Decree 10 January 1957 n. 3 grants a maintenance
+allowance in the event of suspension, as well as with art. 36 of the Constitution. [...]
+
+FOR THESE REASONS
+
+DECISION
+
+THE CONSTITUTIONAL COURT
+Declares the question of constitutional legitimacy of the art to be unfounded. 27 last Declares paragraph of law 9
+October 1970 n. 740 (Regulation of the categories of healthcare personnel assigned to prevention and punishment
+institutions not belonging to the organic roles of the Penitentiary Administration) raised, in reference to the articles. 3 and
+36 of the Constitution, by the T.A.R. of Sicily, detached section of Catania, with the ordinance in the epigraph.
+The President: SAJA
+The editor: FERRI
+The chancellor: MINELLI
+Deposited in the registry on December 22, 1989.
+The director of the chancellery: MINELLI
+
+Fig. 1  Sample legal ruling in LAWSUIT (English translated). The input comprises three sections: epigraph, text, and decision. The original Italian version is given in Appendix 10
+
+professors and magistrates are responsible for drafting the verdicts, and the corresponding maxims are compiled by the supervisory office. The supervisory office
+oversees the formal control of the texts in collaboration with the study assistants
+of the President. This meticulous procedure ensures a high level of quality con-
+
+1154
+
+L. Ragazzi et al.
+
+trol and supervision, mitigating the risk of model hallucination (Maynez et al.
+2020), which refers to the generation of unfaithful outputs due to training on targets that contain facts that are not supported by the source text.
+We benchmark LAWSUIT using various extractive and abstractive summarization
+solutions, including a segmentation-based pipeline that demonstrates superior performance in both full and few-shot summarization scenarios, namely training models with all or just a few dozen instances.
+
+2 Related work
+Natural Language Processing for Legal Texts Legal NLP has been the subject of
+extensive research in various legal tasks, including information retrieval (Chalkidis
+et al. 2018; Hendrycks et al. 2021; Sansone and Sperlí 2022), question answering (Ravichander et al. 2019; Huang et al. 2020; Kien et al. 2020; Zhong et al.
+2020), text classification (Chalkidis et al. 2019; Tuggener et al. 2020; Chalkidis
+et al. 2021, 2022; Feng et al. 2022), and automatic text summarization (Duan et al.
+2019; Zhong et al. 2019; Bhattacharya et al. 2021; Elaraby and Litman 2022; Moro
+and Ragazzi 2022; Moro et al. 2023). Moreover, recent endeavors have increasingly
+shifted towards non-English applications (Metsker et al. 2019; Wang et al. 2019;
+Malik et al. 2021; Xiao et al. 2021; Bakker et al. 2022; Qin et al. 2022; Niklaus et al.
+2023), including Italian (Bellandi et al. 2022; Galli et al. 2022; Licari and Comandé
+2022; Tagarelli and Simeri 2022), thus stimulating research in low-resource language contexts. These studies focus on fetching past court decisions and predicting
+outcomes. To the best of our knowledge, we pioneer the exploration of Italian legal
+document summarization grounded in a non-common law system. This is achieved
+by releasing the first large-scale legal abstractive summarization dataset derived
+from the CCIR.
+Legal Document Summarization Previous studies on automatic summarization of
+court proceedings have mainly relied on extractive approaches, where the predicted
+summary consists of exact sentences taken directly from the source material. This
+ranges from unsupervised methods (Farzindar and Lapalme 2004; Saravanan et al.
+2006; Polsley et al. 2016; Zhong et al. 2019) to supervised methods (Liu and Chen
+2019). In contrast, our work is centered on AS, where the output is a rewording of
+the input. Abstraction is more closely aligned with the actual conditions of legal
+practices (Kornilova and Eidelman 2019; Sharma et al. 2019; Huang et al. 2021;
+Shen et al. 2022).
+Legal Summarization Datasets Given the crucial social role of the legal domain
+and the growing demand for summarization tools (Jain et al. 2021), numerous datasets have been introduced, covering various types of documents. These
+include case reports (Greenleaf et al. 1995), judgments (Grover et al. 2004), legislative bills (Kornilova and Eidelman 2019), patents (Sharma et al. 2019), government reports (Huang et al. 2021), and federal civil rights LawSuITs (Shen et al.
+2022). Diversity allows the development of large language models pretrained on
+legal text (Chalkidis et al. 2020; Zheng et al. 2021). Our dataset presents unique
+
+44,001
+
+39,997
+
+84,365
+
+GovReport (Huang et al. 2021)
+
+IlPost (Landro et al. 2022)
+
+Mlsum-IT (Landro et al. 2022)
+
+Fanpage (Landro et al. 2022)
+
+58,411
+112,876
+
+1403
+
+1101
+
+14,000
+
+EUR-Lex-Sum (Aumiller et al. 2022)
+
+ITA-CaseHold (Licari and Comandé 2022)
+
+206,791
+3120.49
+
+4687.86
+
+17590.71
+
+845.27
+
+412.97
+
+349.67
+
+200.89
+
+199.17
+
+8765.01
+
+1673.25
+
+Words
+
+Source
+
+98.26
+
+152.10
+
+421.10
+
+23.93
+
+21.17
+
+11.67
+
+6.07
+
+5.88
+
+298.69
+
+46.49
+
+Sents
+
+444.56
+
+799.78
+
+1106.05
+
+64.42
+
+43.95
+
+49.85
+
+17.55
+
+30.13
+
+556.30
+
+212.96
+
+Words
+
+Target
+
+17.64
+
+22.77
+
+30.96
+
+2.44
+
+4.98
+
+1.96
+
+1.06
+
+1.91
+
+18.10
+
+4.99
+
+Sents
+
+0.92
+
+0.96
+
+0.85
+
+0.55
+
+0.67
+
+0.72
+
+0.63
+
+0.69
+
+0.94
+
+0.90
+
+Cov
+
+14.07
+
+113.43
+
+6.40
+
+0.99
+
+1.33
+
+2.72
+
+1.80
+
+1.97
+
+9.08
+
+6.86
+
+Den
+
+Source → Target
+
+8.19
+
+7.18
+
+16.24
+
+15.92
+
+11.68
+
+7.84
+
+12.73
+
+7.05
+
+17.85
+
+12.21
+
+Comp-W
+
+6.92
+
+8.38
+
+13.93
+
+11.42
+
+4.50
+
+6.84
+
+5.88
+
+3.22
+
+31.32
+
+15.61
+
+Comp-S
+
+Measurements include dataset and vocabulary size, number of words and sentences in the source and target texts, and source–target coverage, density, and compression
+ratio of the words and sentences. Except for the number of samples, all reported values are averaged across all instances
+
+LAWSUIT (Ours)
+
+Legal
+
+136,750
+3,493,303
+
+50,943
+
+699,400
+
+Wits (Casola and Lavelli 2021)
+
+260,915
+
+161,942
+
+128,205
+
+316,428
+
+70,596
+
+Vocab
+
+WikiLingua-IT (Ladhak et al. 2020)
+
+Italian
+
+23,455
+
+19,463
+
+BillSum (Kornilova and Eidelman 2019)
+
+English (Legal)
+
+Samples
+
+Dataset
+
+Table 1  Comparison of LAWSUIT to other related datasets
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+1155
+
+1156
+
+L. Ragazzi et al.
+
+challenges, as it consists of lengthy domain-specialized documents that are inherently difficult to summarize. Challenges arise due to (i) the scattered distribution of
+summary-worthy information throughout the input and (ii) the occasional presence
+of formulaic expressions in the targets. Previous works have introduced Italian summarization datasets featuring short documents, such as those in the news (Landro
+et al. 2022) and articles related to Wikipedia (Ladhak et al. 2020; Casola and Lavelli
+2021). Instead, LAWSUIT comprises longer texts (refer to Table 1), establishing
+itself as the first dataset for the Italian long document summarization task. Notably,
+the dataset includes gold summaries, diverging from the cases where summaries are
+automatically generated using the first sentence (Ladhak et al. 2020) or by concatenating the title with a description (Landro et al. 2022), a procedure that can compromise the factual consistency of models trained on such data (Maynez et al. 2020).
+In terms of legal contributions, LAWSUIT establishes the first large-scale legal
+resource, distinguishing itself from smaller datasets (Aumiller et al. 2022) and those
+designed exclusively for extractive summarization (Licari and Comandé 2022).
+Italian Legal Language Models Since 2017, legal text analysis has been revolutionized by transformer-based architectures. Despite these advancements, accurately
+training machines to understand legal language remains a significant challenge.
+Legal language models, often benefitting from specialized pretraining (Chalkidis
+et al. 2020), currently achieve state-of-the-art results on various benchmarks (Zheng
+et al. 2021; Chalkidis et al. 2022). However, public generative models pretrained on
+legal corpora are scarce, forcing reliance on general models instead (Hwang et al.
+2022; Shen et al. 2022). An extensive literature review (Katz et al. 2023) shows that
+English dominates open-source Legal NLP (56%), followed by Chinese (≈10%),
+with models usually requiring extensive training hardware (Song et al. 2023). The
+main challenge in applying current language models to Italian documents is their
+inadequate training in comprehending instructions in that language.
+Some contributions have explored Italian encoder-only models. UmBERTo
+(110 M) (Parisi et al. 2020) is the result of continual pretraining on top of RoBERTa using whole-word masking with filtered resources from Wikipedia and CommonCrawl. In the legal domain, Licari et al. introduced Italian-Legal-BERT (111 M)
+(Licari and Comandé 2022), which runs the continual pre-training of a generaldomain Italian BERT model with civil law corpora and from scratch pre-training
+based on CamemBERT (111 M) (Martin et al. 2020), with distilled and long-document variants. However, these works fall outside of our scope, which is instead
+concerned with generative architectures.
+In this sense, Mattei et al. proposed GePpeTto (117 M) (Mattei et al. 2020), a
+GPT-2 model fine-tuned on Italian Wikipedia and the ItWac corpus (Baroni et al.
+2009), mainly aimed at text completion. Sarti and Nissim devised IT5 (60 M, 220 M,
+738 M) (Sarti and Nissim 2024), a family of encoder-decoder transformer models
+pretrained on a cleaned version of the Italian mC4 corpus,2 a web-crawled text collection that includes more than 40 billion words. La Quatra and Cagliero submitted BART-IT (Quatra and Cagliero 2023), an Italian version of BART trained on
+the same mixture of IT5. Santilli et al. released Camoscio (7B) (Santilli and Rodolà
+2
+
+https://​huggi​ngface.​co/​datas​ets/​gsarti/​clean_​mc4_​it.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1157
+
+2023), an instruction-tuned LLaMA model trained with low-rank (LoRA) adaptation
+on an Italian (ChatGPT-translated) version of Stanford Alpaca (Taori et al. 2023).
+Regarding conversational objectives, Bacciu et al. (2023) presented Fauno
+(7B/13B), a LoRA fine-tuned version of Baize (Xu et al. 2023) in heterogeneous
+synthetic Italian datasets. LLaMantino (7B, 13B, 70B) (Basile et al. 2023) is a family of Italian-adapted LLaMA-2 models, trained using QLoRA on the IT5 data mixture. Maestrale (7B)3 is a Mistral model specialized in Italian through continual pretraining and instruction fine-tuning. Zefiro (7B)4 is a porting of the Mistral model to
+the Italian language, obtained through continual pretraining on a random subset of
+Oscar and Wikipedia data, supervised fine-tuning on UltraChat-ITA (silver translation), and DPO alignment (Rafailov et al. 2023) with the ultrafeedback preference
+dataset (silver translation). Minerva (350 M, 1B, 3B)5 is a family of large language
+models pretrained from scratch on 660B tokens (330B in Italian, 330B in English).
+DanteLLM (Bacciu et al. 2024) is a QLoRA fine-tuned version of Mistral-Instruct
+(7B), trained on the Italian SQuAD dataset (Croce et al. 2018), 25K sentences from
+the Europarl dataset (Koehn 2005), the Fauno’s Quora dataset and the Camoscio
+dataset. Notably, as underscored by the current leaderboard dedicated to Italian
+language modeling available on HuggingFace,6 the results achievable by language
+models pretrained from scratch on the Italian language are significantly inferior
+compared to those achievable by foundational models that have undergone extensive
+pretraining on larger multilingual corpora.
+Taking LAWSUIT as a testbed, we fairly compare the effectiveness and efficiency
+of available Italian-adapted or multi-lingual encoder–decoder models with millionscale parameters, which offer significant advantages in hardware-constrained scenarios. We examine their adaptability to different tasks, languages, and amounts of
+labeled training data.
+
+3 
+LAWSUIT
+LAWSUIT is a large-scale Italian AS dataset that collects CCIR-sourced legal verdicts, serving as a new and demanding benchmark for the NLP community. The corpus comprises 14,000 long texts from 1956 to 2022, classified into orders and judgments (see Fig. 2 for statistics based on the year), each meticulously paired with a
+set of maxims (concatenated to form the target summary). The term order denotes
+a legal ruling declared during the judicial proceeding to settle questions and disputes verified during the trial, while judgment refers to a legal ruling declared by the
+judicial body at the end of the trial. The maxims summarize the judicial process by
+encapsulating key details about the ruling, general legal characteristics, references,
+and the final provision. Each source consists of three informative sections (Fig. 1):
+3
+
+https://​huggi​ngface.​co/​mii-​llm/​maest​rale-​chat-​v0.3-​alpha-​sft.
+https://​www.​giux78/​zefiro-​7b-​beta-​ITA-​v0.1-​GGUF.
+5
+https://​huggi​ngface.​co/​colle​ctions/​sapie​nzanlp/​miner​va-​llms-​661e6​01182​8fe67​de4fe​7961.
+6
+https://​huggi​ngface.​co/​spaces/​Finan​cialS​upport/​open_​ita_​llm_​leade​rboard.
+4
+
+1158
+
+L. Ragazzi et al.
+O. Target
+J. Target
+
+O.
+J.
+1
+0.9
+0.8
+0.7
+0.6
+0.5
+0.4
+0.3
+0.2
+0.1
+0
+
+# Words
+
+6,000
+5,000
+4,000
+3,000
+2,000
+1,000
+1956-1980
+
+1981-2000
+
+2001-2022
+
+Orders
+Years
+1956–1980
+1981–2000
+2001–2022
+Full
+
+·104
+
+# Docs
+
+O. Source
+J. Source
+
+Full
+
+Judgments
+
+# Docs
+
+Source
+
+Target
+
+# Docs
+
+Source
+
+Target
+
+62
+1105
+3008
+4175
+
+1639
+1377
+2048
+1865
+
+242
+267
+290
+283
+
+2238
+4062
+3525
+9825
+
+2612
+2982
+5087
+3653
+
+413
+455
+669
+522
+
+Fig. 2  Graphical and tabular representation of the statistics of orders (O.) and judgments (J.) based on
+the year. In the figure, dotted boxes refer to document numbers, whereas solid boxes refer to word numbers. The table provides the exact values. An increase in the length of legal verdicts is observable over
+the years
+
+• Epigraph: the introduction detailing the main gist of the ruling and the context
+
+in which the request is addressed.
+
+• Text: the core content that highlights the legal extremes.
+• Decision: the concluding segment of the ruling that contains the final provisions
+
+of the Court.
+
+Additional details on data access are provided in Appendix 6.
+3.1 
+LAWSUIT Processing
+To construct the LAWSUIT dataset, we started with 21,331 instances obtained from
+the CCIR open data, discarding verdicts that were too recent and lacked an associated maxim.
+Size Filtering We retained records with summary lengths between 100 and
+2000 words and source texts between 1000 and 20,000 words, resulting in 14,072
+instances. This step aimed to remove unbalanced texts (i.e., outliers) that do not
+reflect the average typical characteristics of these legal documents. Specifically,
+excessively short texts often lack sufficient context, while very long texts can introduce redundancy. Therefore, retaining only texts within the specified length ranges
+ensures that the model is exposed to a more homogeneous and representative sample
+of the data, leading to better generalization and performance.
+Duplicate Data Removal To identify and eliminate duplicate instances, we
+employed an approach similar to Kornilova and Eidelman (2019), resulting in
+14,054 instances. Technically, the process involved (i) removing stop words and
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1159
+
+the 30 most common terms (e.g., article, law, court), (ii) vectorizing texts using
+scikit-learn’s CountVectorizer, (iii) computing average cosine similarity
+between the texts and the summaries for each pair of verdicts, and (iv) iteratively
+adding verdicts while discarding instances highly similar (>96%) to any verdicts
+already included. Duplicates were often orders on related subjects pronounced in
+close time frames or written as corrections to previous orders with drafting errors;
+we kept the most recent version of the document.
+Compression Ratio Filtering The compression ratio quantifies how much a
+document is condensed to produce its summary. This metric is defined as the ratio
+between the number of words in the input and its corresponding target (Grusky et al.
+2018). As for the size filtering procedure, we aimed to create a high-quality homogeneous dataset without outliers. Thus, due to the considerable variation in the sizes of
+both sources and summaries, we retained verdicts with a compression ratio between
+2 and 70, ending up with 14,000 instances.
+Quality Control and Text Cleaning Besides traditional operations (e.g., extra
+spaces and newline chars disposal), we implemented a preprocessing pipeline aimed
+at ensuring the textual quality of the dataset. The steps involved were as follows:
+• Removal of epigraph and decision prefixes containing personal names, such as
+
+those of the president, editors, and directors;
+
+• Given that several instances lacked a clear structural separation between the epi•
+•
+•
+•
+
+graph and the main text, we have explicitly delineated these sections to enhance
+overall structuring;
+Elimination of duplicated notes found at the end of maxims, which were deemed
+irrelevant due to versioning management;
+Replacement of apostrophes in vowels with correct accents by applying UTF-8
+encoding;
+Removal of publisher, judge, and reviewer information at the end of the decision;
+Deletion of backslashes in ruling codes to address encoding errors present in the
+original JSON files.
+
+On the other hand, certain elements, recognized for their high frequency and factuality role, were intentionally retained: (i) cf., bibliographic citations pointing to
+external references; (ii) artt., legal jargon signifying the citation of multiple articles; (iii) personal names, except for publisher, judge, and reviewer.
+Train-test Split. Following prior work (Cripwell et al. 2023), we employ a dataset
+split size of 90-5-5 to ensure sufficient training data while allowing for adequate
+validation and testing. Therefore, the dataset was divided into train (90%, 12,600
+samples), validation (5%, 700), and test (5%, 700) sets. We carried out a proportional stratified random sampling without replacement, considering the categorization and lengths of the sources. To be precise, we (i) evenly distributed the orders
+and judgments in the splits to have the same percentage of each type in each split
+and (ii) divided them equally based on their lengths (tertiles are calculated to assign
+{short, medium, long} classes). Table 2 shows the equal distribution of documents
+among the splits, specifying fine-graned statistics about the number of words within
+the three source sections (i.e., epigraph, text, and decision).
+
+1160
+
+L. Ragazzi et al.
+
+Table 2  LAWSUIT’s train-test splits
+LAWSUIT
+Train (90%, 12,600)
+
+Validation (5%, 700)
+
+Test (5%, 700)
+
+Statistic
+
+Mean
+
+Min
+
+Max
+
+25th
+
+50th
+
+75th
+
+Source words
+
+3116.03
+
+932
+
+19,531
+
+1562.00
+
+2349.50
+
+3864.00
+
+Target words
+
+449.54
+
+94
+
+1995
+
+221.00
+
+340.00
+
+560.00
+
+Source sents
+
+93.18
+
+6
+
+998
+
+41.00
+
+68.00
+
+118.00
+
+Target sents
+
+18.10
+
+1
+
+137
+
+9.00
+
+14.00
+
+23.00
+
+Epigraph words
+
+164
+
+56
+
+4953
+
+116
+
+140
+
+179
+
+Text words
+
+2827
+
+212
+
+18,876
+
+1319
+
+2089
+
+3542
+
+Decision words
+
+128
+
+27
+
+1640
+
+80
+
+105
+
+151
+
+Source words
+
+3180.53
+
+938
+
+18,671
+
+1572.00
+
+2390.50
+
+3762.25
+
+Target words
+
+479.30
+
+103
+
+1984
+
+236.00
+
+368.50
+
+608.00
+
+Source sents
+
+94.01
+
+10
+
+666
+
+42.00
+
+67.00
+
+114.50
+
+Target sents
+
+19.47
+
+1
+
+110
+
+9.00
+
+15.00
+
+24.00
+
+Epigraph words
+
+172
+
+69
+
+3803
+
+115
+
+144
+
+185
+
+Text words
+
+2873
+
+174
+
+17,549
+
+1324
+
+2129
+
+3445
+
+Decision words
+
+138
+
+27
+
+1201
+
+84
+
+108
+
+158
+
+Source words
+
+3124.34
+
+937
+
+18,085
+
+1589.75
+
+2398.50
+
+3869.50
+
+Target words
+
+447.11
+
+101
+
+1865
+
+214.00
+
+335.50
+
+586.25
+
+Source sents
+
+94.25
+
+10
+
+810
+
+41.00
+
+72.00
+
+117.00
+
+Target sents
+
+18.49
+
+1
+
+116
+
+8.00
+
+14.00
+
+24.00
+
+Epigraph words
+
+164
+
+70
+
+2093
+
+114
+
+138
+
+179
+
+Text words
+
+2830
+
+572
+
+17,121
+
+1358
+
+2130
+
+3577
+
+Decision words
+
+132
+
+28
+
+713
+
+82
+
+109
+
+155
+
+The results indicate the equal distribution of samples across splits
+
+3.2 Dataset characterization
+Table 1 offers a comparative analysis of key statistics between LAWSUIT and
+other relevant text summarization datasets. Concretely, we present corpus sizes
+and the average number of words and sentences in both source documents and
+target summaries, calculated using the NLTK library (Bird 2006). Additionally,
+we furnish information on the average coverage, density, and compression ratio
+of extractive fragments in terms of words and sentences, as defined by Grusky
+et al. (2018). In particular, LAWSUIT exhibits longer source texts and target summaries than existing datasets, except for GovReport, where the targets contain
+more source-related tokens, indicating greater coverage. Moreover, we observe
+a slightly smaller frequency of vocabulary words w.r.t. corpora with a higher
+number of documents, suggesting that while our dataset is more concise, it still
+captures the essential linguistic diversity, maintaining a robust and representative vocabulary distribution. In terms of legal contributions, it is noteworthy that
+LAWSUIT represents the inaugural dataset composed exclusively of Italian documents, distinguishing it from multilingual datasets that include only limited subsets of Italian texts.
+
+Novel n-grams (%)
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+
+1161
+
+BS
+GR
+L-IT
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+n
+
+7
+
+8
+
+9
+
+10
+
+S
+
+Coverage of unique
+salient unigrams (%)
+
+Fig. 3  % of novel n-grams in the summaries compared to BillSum (BS) and GovReport (GR). S indicates the novelty at the sentence level. The results show the abstractiveness of the summaries in LAWSUIT
+
+90
+80
+70
+60
+50
+40
+30
+
+BS
+GR
+L-IT
+
+10
+
+20
+
+30
+
+40
+50
+60
+70
+80
+Position in the source (%)
+
+90
+
+100
+
+Fig. 4  % of unique salient unigrams accumulated across the input. The summary-relevant details are
+spread over the sources in LAWSUIT, emphasizing the importance of understanding the entire input
+
+Summary Abstractiveness Compared to previous contributions, we observe that
+the summaries within LAWSUIT exhibit substantial coverage (0.92).7 This implies
+that the target generations contain fewer unsupported entities and facts, ensuring
+faithfulness while mitigating the risk of hallucinations, an imperative consideration
+in legal applications. Simultaneously, we note that the density, which represents the
+average length of the extractive fragments, is the highest among the datasets, suggesting that the summaries in LAWSUIT might have an extractive nature. To dispel this assumption, following established methodologies (See et al. 2017; Chen and
+Bansal 2018; Sharma et al. 2019), we compute abstractiveness as the fraction of
+novel n-grams in the summary that do not appear in the input source. Figure 3 illustrates the percentage of novel sentences and n-grams with n ∈ [1, 10], indicating that
+many summary details are not verbatim extractions from sources but rather abstractive, despite the high density.
+Coverage increment and section informativeness Given the obstacles presented
+by lengthy sources in identifying salient content for inclusion in the summary, we
+examine the coverage increment of summary-worthy unigrams in the input. To
+7
+
+Coverage is defined as the average fraction of token spans that can be jointly identified in both the
+source and target. For example, a coverage of 0.92 indicates that 92% of the summary words appear in
+extractive source fragments.
+
+1162
+
+Section inf. (%)
+
+L. Ragazzi et al.
+
+100
+80
+60
+40
+20
+
+85
+
+Unique
+Total
+
+23.27
+
+20.52
+Text
+
+Epigraph
+
+Decision
+
+Summary
+form. (%)
+
+Fig. 5  % of unique and total unigrams for each ruling section in LAWSUIT (informativeness). Despite
+the concentration in the central text part, the epigraph and decision n-grams are crucial to briefly reporting the references and conclusions inside the summaries
+
+14
+12
+10
+8
+6
+
+WITS
+
+BS
+
+GR
+
+L-IT
+
+Fig. 6  Average summary formulaicness. LAWSUIT (L-IT) has fewer occurrences of structural patterns
+than BillSum (BS) and GovReport (GR)
+
+achieve this, we divide each source into ten equal partitions, according to Huang
+et al. (2021). Specifically, we count the number of unique unigrams that also appear
+in the target, accumulated from the document’s start to the end of each partition.
+Figure 4 illustrates that relevant information is spread throughout documents, with
+novel salient unigrams being covered more uniformly as more content is consumed.
+This means that LAWSUIT exhibits less positional bias and requires a comprehensive reading of the entire input. To further elucidate this aspect, we break down the
+informativeness across the three sections (i.e., epigraph, text, decision) by computing the percentage of unique salient unigrams occurring in each text span. Figure 5
+demonstrates that the core content of a summary is generally concentrated in the text
+section of the ruling to which it refers. However, through a deeper qualitative investigation (Appendix 10), we discover that the epigraph and the decision are essential
+at both ends of the generation, where the maxim is likely to mention references and
+final court judgments, briefly rephrasing and aggregating them.
+Summary Formulaicness Legal summaries often incorporate common expressions and shared standard structures, enabling models to learn patterns during training without a deep understanding of the input. To quantify this phenomenon, we
+analyze the formulaicness of summaries in the training set by calculating the longest
+common subsequence (LCS) (Lin 2004). Technically, we compute the LCS for each
+subset by taking 5 non-overlapping subsets of 100 random samples.8 Figure 6 highlights that summaries in LAWSUIT have a lower occurrence of structural patterns
+across targets than related English legal datasets, especially BillSum, despite the latter having shorter summaries. In fact, the longer the resumes, the higher the chance
+that words overlap.
+8
+Random subsets avoid the need for computing all combinations of targets in the dataset, thereby alleviating space and time complexity.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1163
+
+4 Experiments
+Our goal with LAWSUIT is to establish a novel and challenging benchmark to
+advance Legal NLP in real-world applications. Therefore, our experiments with
+LAWSUIT delve into two research questions.
+• RQ1: can current models effectively summarize Italian legal verdicts to support
+
+legal practitioners and automate downstream applications?
+
+• RQ2: given the high cost of human annotation for creating labeled examples, can
+
+models be configured to produce useful summaries in real-world scenarios with
+only a handful of training instances?
+
+To answer them, we set up the following tasks.
+• Full summarization: this involves training models with the entire set of avail-
+
+able instances in LAWSUIT, totaling 12,600 samples.
+
+• Few-shot summarization: this simulates a scenario marked by data scarcity for
+
+model supervision due to the high cost of labeling. To replicate this setting, models are provided with only the first 10 and 100 training samples, aligning with
+previous works (Zhang et al. 2020; Chen and Shuai 2021; Moro and Ragazzi
+2022).9
+
+4.1 Models
+We investigate the performance of multiple extractive and abstractive solutions on
+LAWSUIT.
+Extractive Baselines For upper-bound performance, we consider an oracle: Oracle-Opt selects, for each of the k gold summary sentences—extrapolated with the
+NLTK library—the input sentence that maximizes the average ROUGE-{1,2,L}
+F1 score. LexRank-PLM is a graph-based unsupervised extractive summarizer
+that leverages LexRank’s eigenvector centrality (Erkan and Radev 2004) and a pretrained language model (paraphrase-multilingual-MiniLM-L12-v2) to
+enhance sentence representation during text encoding. Epi, Text, and Dec select
+the first n sentences from the epigraph, text, and decision, respectively. Cat concatenates the first n∕3 sentences from the three sections, maintaining the occurrence
+order in the source document.10
+Abstractive Baselines mBART​ (Liu et al. 2020; Tang et al. 2020) is a sequenceto-sequence model largely pretrained on multiple languages using Bart’s denoising
+objective (Lewis et al. 2020); it can process inputs up to 1024 tokens.11 IT5 (Sarti
+9
+
+We use the same sample size also for the validation set.
+We choose n = 18 (also for LexRank-Plm) because it is the average number of target sentences in
+LAWSUIT (Table 1). If a section has < 18 sentences, we take all available sentences. Results with different n are provided in Appendix 8.
+10
+
+11
+
+Preliminary experiments led us to prefer mBART​ over BART-IT, as the latter showed extremely low
+quality in the legal domain.
+
+1164
+
+L. Ragazzi et al.
+
+and Nissim 2022) is a text-to-text model centered on T5 (Raffel et al. 2020) and pretrained on Italian corpora; it is unbounded in the input dimension thanks to its positional embedding mechanism. mT5 (Xue et al. 2021) is a T5-based model pretrained
+on multiple languages. We employ the small (s), base (b), and large (l) model checkpoints (see Table 8 for technical details).
+Segmentation-based Pipeline Inspired by the necessity of (i) comprehensively
+processing the entire input source without overlooking details, (ii) minimizing the
+risk of model hallucination through careful consideration of small, highly correlated
+source–target pairs, and (iii) generating precise summaries in scenarios with limited
+data availability, we introduce a straightforward yet powerful language-agnostic segmentation-based approach. Let D = {d1 , … , dn } be the long input document, where
+each di is a sentence; this solution divides D into non-overlapping chunks (i.e., a set
+of consecutive sentences), each containing a maximum of M tokens. Specifically,
+we start with an empty chunk c and iteratively add sentences until M. To train our
+solution, we assign each summary sentence—selected with NLTK—to the chunk
+that maximizes the ROUGE-1 precision metric—creating small high-correlated
+training pairs (ci , ti)—as defined by Moro and Ragazzi (2022). On the other hand, at
+inference time, the chunks are summarized, and their predictions are concatenated in
+the order of occurrence of the source document to produce the final summary. We
+refer to this approach with the term SegSumm, depicted in Fig. 7.
+This pipeline is related to but differs from Moro and Ragazzi (2022) because the
+segmentation is model-agnostic—and thus language-agnostic—making it applicable
+to multiple languages, including Italian (see Sect. 4.4.2 for experiments on English
+legal texts).
+Note: when small values of M are used, the document is divided into multiple
+chunks. Consequently, if the number of summary sentences is fewer than the number
+of chunks, the chunks without corresponding target sentences are discarded during
+the training process. In toher words, the above target-matching algorithm does not
+ensure ti ≠ ∅, which is evident if the number of chunks is greater than the target sentences. However, the summaries in LAWSUIT have an averagely higher number of
+sentences (see Table 1) than the hypothetical number of source chunks.
+4.2 Implementation and hardware
+For abstractive summarizers, we fine-tune the models using the PyTorch (Paszke
+et al. 2019) implementation from the HuggingFace library (Wolf et al. 2019), leveraging publicly available checkpoints. The models are trained for 3 epochs on a
+single NVIDIA GeForce RTX 3090 GPU (24GB VRAM) from an internal cluster,
+with a learning rate of 5e-5. In the decoding process, we apply beam search with 4
+beams and n-gram repetition blocks for n>5, using 1024 as the maximum summary
+length. The seed is fixed at 42 for reproducibility. Additional details are available in
+Appendix 7.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1165
+
+4.3 Evaluation setup
+To gauge a comprehensive evaluation, we conduct both a quantitative and qualitative analysis with automatic metrics and human annotators, respectively.
+Automatic ROUGE-{1,2,L} F1 (Lin 2004) and BERTScore F1 (BS) (Zhang
+et al. 2020) are used to calculate the lexical overlap and estimated semantic overlap between the generated and the gold summaries, respectively. For
+BS, we use the bert-base-multilingual-cased model and set
+rescale_with_baseline=True.
+Human Given the potential failure of automatic metrics to act as reliable proxies
+for summary quality dimensions, we perform an in-depth human evaluation. In the
+steps of previous work (Narayan et al. 2018; Fabbri et al. 2019; Moro et al. 2023),
+we use Best-Worst Scaling (Louviere and Woodworth 1991; Louviere et al. 2015),
+which is more trustworthy and less expensive than rating scales (Kiritchenko and
+Mohammad 2017). Pointedly, we provide 3 legal expert evaluators with the source
+document and the artificial summaries from the best-performed models. We ask
+them to rank predictions according to informativeness, fluency, and factuality. The
+assessment is done on 30 randomly selected documents from LAWSUIT’s test set
+by comparing all the possible summary pair combinations, i.e., 90 binary preference annotations per participant. We randomize the order of pairs and per-example
+sources to guard the rating against being gamed. Elicited labels are used to establish
+a score in [−1, 1] for each summary source s: %best (s) − %worst (s). The annotation
+process takes ≈6 h per judge, 18 in total. Appendix 9 illustrates our setup.
+4.4 Results and discussion
+4.4.1 Dataset
+Italian Legal Ruling Summarization Table 3 presents the performance of each baseline in LAWSUIT, where the summarizers are tasked with extracting and synthesizing crucial information from lengthy sources, utilizing varying numbers of training
+samples (Table 4). Table 5 presents the transfer learning performance of IT5-small
+when trained and tested across orders and judgments. In terms of abstractive summarizers, models that allow long inputs (IT5) perform better than input-constrained
+models (mBart) on all tasks, underscoring the utility of an extensive input context.
+Longer input also brings consistent performance gains for IT5 across tasks. Interestingly, SegSumm significantly exceeds the baselines (p-value < 0.05 with student
+t-test) in full and few-shot summarization. Human evaluation results are reported
+in Table 6. SegSumm is rated the best in all dimensions. These findings demonstrate
+that existing language models can effectively support Italian legal summarization,
+particularly when equipped with segmentation capabilities (RQ1). Indeed, text segmentation allows the model to process the entire document without truncating information that exceeds the maximum input size permitted by its architecture. In plausible few-shot scenarios, SegSumm emerges as the sole model offering satisfactory
+
+–
+
+–
+
+–
+
+–
+
+–
+
+512
+
+Text
+
+Dec
+
+Cat
+
+LexRank-Plm
+
+mBart-l
+
+512
+
+512
+
+512
+
+1024
+
+1024
+
+1024
+
+1024
+
+2048
+
+2048
+
+2048
+
+4096
+
+4096
+
+4096
+
+8192
+
+8192
+
+IT5-s
+
+IT5-b
+
+IT5-l
+
+mBart-l
+
+IT5-s
+
+IT5-b
+
+IT5-l
+
+IT5-s
+
+IT5-b
+
+IT5-l
+
+IT5-s
+
+IT5-b
+
+IT5-l
+
+IT5-s
+
+mT5-b
+
+Abstractive
+
+–
+
+Epi
+
+Input
+
+Oracle-Opt
+
+Extractive
+
+Models
+
+14.70
+
+35.82
+
+24.56
+
+26.76
+
+35.66
+
+25.00
+
+25.90
+
+34.94
+
+22.69
+
+24.64
+
+33.98
+
+34.41
+
+20.96
+
+23.51
+
+31.71
+
+34.54
+
+38.90
+
+38.45
+
+30.98
+
+39.23
+
+26.48
+
+63.03
+
+R-1 f 1
+
+1.22
+
+15.03
+
+8.66
+
+12.90
+
+14.91
+
+8.88
+
+12.57
+
+13.80
+
+8.76
+
+12.06
+
+13.67
+
+12.53
+
+7.53
+
+11.35
+
+13.13
+
+13.21
+
+21.31
+
+18.36
+
+18.55
+
+18.37
+
+10.21
+
+46.06
+
+R-2 f 1
+
+LAWSUIT (10)
+
+14.26
+
+32.59
+
+23.21
+
+24.86
+
+32.34
+
+23.39
+
+24.10
+
+31.43
+
+21.27
+
+22.85
+
+31.00
+
+30.83
+
+19.39
+
+21.74
+
+29.43
+
+31.17
+
+36.37
+
+35.64
+
+29.50
+
+36.00
+
+24.02
+
+60.07
+
+R-L f 1
+
+10.45
+
+21.01
+
+1.29
+
+10.71
+
+20.68
+
+3.43
+
+10.94
+
+19.17
+
+2.20
+
+9.67
+
+17.88
+
+19.55
+
+0.61
+
+8.12
+
+14.41
+
+19.44
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+BS f 1
+
+33.78
+
+41.63
+
+31.40
+
+31.34
+
+40.87
+
+29.00
+
+28.86
+
+38.48
+
+26.62
+
+27.01
+
+36.16
+
+37.74
+
+24.34
+
+24.32
+
+34.10
+
+37.36
+
+38.90
+
+38.45
+
+30.98
+
+39.23
+
+26.48
+
+63.03
+
+R-1 f 1
+
+16.53
+
+22.19
+
+12.11
+
+13.62
+
+21.29
+
+10.40
+
+12.25
+
+18.58
+
+8.86
+
+12.38
+
+16.89
+
+17.59
+
+8.28
+
+11.39
+
+16.03
+
+17.20
+
+21.31
+
+18.36
+
+18.55
+
+18.37
+
+10.21
+
+46.06
+
+R-2 f 1
+
+LAWSUIT (100)
+
+30.47
+
+37.94
+
+29.02
+
+28.83
+
+37.10
+
+27.05
+
+26.62
+
+34.71
+
+24.93
+
+25.14
+
+33.15
+
+34.83
+
+22.94
+
+22.67
+
+31.67
+
+34.43
+
+36.37
+
+35.64
+
+29.50
+
+36.00
+
+24.02
+
+60.07
+
+R-L f 1
+
+21.67
+
+27.08
+
+11.66
+
+12.63
+
+27.99
+
+8.65
+
+9.26
+
+24.30
+
+3.62
+
+9.11
+
+21.18
+
+23.00
+
+1.48
+
+8.53
+
+19.52
+
+22.90
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+BS f 1
+
+Table 3  Performance of small (s), base (b), and large (l) models on LAWSUIT with 10, 100, and full (12,600) training instances
+
+46.44
+
+51.58
+
+43.97
+
+44.91
+
+50.94
+
+39.94
+
+41.46
+
+47.64
+
+37.04
+
+37.56
+
+42.14
+
+41.84
+
+33.71
+
+33.81
+
+39.07
+
+41.16
+
+38.90
+
+38.45
+
+30.98
+
+39.23
+
+26.48
+
+63.03
+
+R-1 f 1
+
+30.19
+
+33.77
+
+27.20
+
+27.72
+
+31.87
+
+23.00
+
+22.41
+
+27.52
+
+18.54
+
+19.41
+
+21.74
+
+21.52
+
+14.96
+
+15.20
+
+19.81
+
+21.06
+
+21.31
+
+18.36
+
+18.55
+
+18.37
+
+10.21
+
+46.06
+
+R-2 f 1
+
+43.42
+
+48.50
+
+40.97
+
+41.67
+
+47.59
+
+37.08
+
+38.24
+
+44.13
+
+34.54
+
+34.50
+
+38.78
+
+38.52
+
+31.63
+
+31.75
+
+36.38
+
+38.20
+
+36.37
+
+35.64
+
+29.50
+
+36.00
+
+24.02
+
+60.07
+
+R-L f 1
+
+LAWSUIT (12,600 - Full)
+
+13.62
+
+15.99
+
+31.63
+
+32.51
+
+38.69
+
+28.45
+
+27.91
+
+36.97
+
+23.98
+
+25.33
+
+32.68
+
+33.85
+
+21.69
+
+19.94
+
+31.16
+
+29.41
+
+–
+
+–
+
+–
+
+–
+
+–
+
+–
+
+BS f 1
+
+1166
+L. Ragazzi et al.
+
+1024
+
+1024
+
+2048
+
+4096
+
+8192
+
+mBart-l
+
+IT5-s
+
+IT5-s
+
+IT5-s
+
+IT5-s
+
+36.21
+
+37.87
+
+40.75
+
+46.59
+
+45.83
+
+46.86
+
+46.86
+
+R-1 f 1
+
+15.28
+
+16.75
+
+19.18
+
+24.17
+
+21.32
+
+24.48
+
+24.19
+
+R-2 f 1
+
+LAWSUIT (10)
+
+32.94
+
+34.43
+
+36.89
+
+42.47
+
+41.54
+
+43.04
+
+43.00
+
+R-L f 1
+
+21.25
+
+22.40
+
+24.50
+
+28.72
+
+29.30
+
+28.14
+
+30.13
+
+BS f 1
+
+42.25
+
+44.34
+
+46.49
+
+48.41
+
+47.37
+
+47.97
+
+46.95
+
+R-1 f 1
+
+22.77
+
+24.07
+
+25.18
+
+26.42
+
+23.51
+
+26.28
+
+24.45
+
+R-2 f 1
+
+LAWSUIT (100)
+
+38.69
+
+40.52
+
+42.41
+
+44.31
+
+43.40
+
+44.24
+
+43.08
+
+R-L f 1
+
+28.61
+
+29.47
+
+30.24
+
+31.79
+
+31.32
+
+30.86
+
+29.85
+
+BS f 1
+
+52.61
+
+53.97
+
+53.90
+
+52.56
+
+48.51
+
+50.91
+
+48.01
+
+R-1 f 1
+
+34.41
+
+34.97
+
+34.72
+
+32.84
+
+27.17
+
+30.73
+
+26.89
+
+R-2 f 1
+
+49.51
+
+50.80
+
+50.75
+
+49.27
+
+47.50
+
+47.50
+
+45.50
+
+R-L f 1
+
+LAWSUIT (12,600 - Full)
+
+The best overall scores are in bold. Moreover, for each model (i.e., IT5 and mBart), the configuration achieving the best average scores is highlighted in bold
+
+512
+
+512
+
+Input
+
+IT5-s
+
+mBart-l
+
+SegSumm
+
+Models
+
+Table 3  (continued)
+
+38.48
+
+38.79
+
+38.65
+
+14.72
+
+32.50
+
+34.46
+
+32.00
+
+BS f 1
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+1167
+
+1168
+
+L. Ragazzi et al.
+X
+
+y
+
+X
+
+y
+
+Document
+
+Summary
+
+Segmentation
+
+Labeling
+
+Concatenation
+
+Summarization
+
+Summary
+
+Chunk Summaries
+
+Fig. 7  The overview of SegSumm. The segmentation ensures that each chunk has a max length ≤ M,
+corresponding to the model’s max input size. The dashed gray module is only used at training time
+
+Table 4  ROUGE F1 performance of IT5-small (8192) in full summarization for generating the summaries from individual and combination of sections
+E
+
+T
+
+D
+
+All (E + T + D)
+
+R-1
+
+R-2
+
+R-L
+
+R-1
+
+R-2
+
+R-L
+
+R-1
+
+R-2
+
+R-L
+
+R-1
+
+R-2
+
+R-L
+
+34.90
+
+15.15
+
+32.75
+
+50.15
+
+31.73
+
+46.96
+
+37.30
+
+18.44
+
+35.27
+
+51.58
+
+33.77
+
+48.50
+
+Compared when giving the model all sections concatenated (All), performance is lower, suggesting that
+all sections are informative for the summary
+
+Table 5  Transfer learning
+performance
+
+Orders (491)
+
+Judgments (209)
+
+Train data (size)
+
+R-1 f 1
+
+R-2 f 1
+
+R-L f 1
+
+R-1 f 1
+
+R-2 f 1
+
+R-L f 1
+
+Orders (3757)
+
+57.39
+
+41.52
+
+40.84
+
+49.20
+
+28.73
+
+26.52
+
+Judgments (8843)
+
+51.79
+
+34.18
+
+33.54
+
+49.62
+
+29.12
+
+27.02
+
+Full (12600)
+
+58.10
+
+42.71
+
+43.17
+
+52.20
+
+31.71
+
+29.23
+
+Table 6  Human evaluation ranking
+Model (input)
+
+Info (↑)
+
+Fluency (↑)
+
+Factuality (↑)
+
+Average (↑)
+
+SegSumm-IT5-s (4096)
+
+0.344
+−0.378
+
+mBart-l (1024)
+
+0.767
+−0.122
+−0.644
+
+0.033
+
+0.678
+−0.111
+−0.567
+
+0.596
+−0.204
+−0.393
+
+Kendall’s W Inter-rater agreement
+
+0.69
+
+0.51
+
+0.80
+
+0.67
+
+IT5-s (8192)
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+Table 7  Performance of
+models on BillSum in few-shot
+summarization
+
+1169
+
+BillSum (10)
+
+BillSum (100)
+
+Models
+
+R-1 f 1
+
+R-2 f 1
+
+R-L f 1
+
+R-1 f 1
+
+R-2 f 1
+
+R-L f 1
+
+MTL-ABS
+
+41.22
+
+18.61
+
+26.33
+
+45.29
+
+22.74
+
+29.56
+
+Pegasus
+
+40.48
+
+18.49
+
+27.27
+
+44.78
+
+26.40
+
+34.40
+
+Bart
+
+45.59
+
+22.83
+
+29.05
+
+49.74
+
+27.15
+
+32.93
+
+Se3
+
+46.58
+
+22.03
+
+28.23
+
+49.88
+
+26.84
+
+33.33
+
+Lw-Ml
+
+46.64
+
+25.07
+
+30.90
+
+48.18
+
+27.18
+
+33.28
+
+Athena
+
+47.57
+
+24.14
+
+30.35
+
+51.59
+
+29.36
+
+SegSumm
+
+49.51
+
+25.88
+
+31.45
+
+51.79
+
+29.59
+
+35.04
+
+35.01
+
+We use the SegSumm on top of IT5-small (4096). The best scores are
+in bold and the second best results are underlined
+
+effectiveness (RQ2). We provide some examples of the generated summaries for
+few shot training and training on entire data in Appendix 12.
+Generating summaries from sections To further explore the importance of reading the entire input source in LAWSUIT, we train summarizers on individual sections (i.e., epigraph, text, decision) to generate the summary.
+As shown in Table 4, the model trained on the three concatenated sections reveals
+significant improvements compared to processing only the epigraph and the decision. As the text section is longer, models processing only that part are marginally
+less efficient. However, this analysis indicates that all the source sections are sufficiently informative to produce a comprehensive summary. This further underscores
+the importance of avoiding the truncation of longer texts due to context limitations
+and instead leveraging segmentation-based approaches.
+4.4.2 Method
+Generality of SegSumm Due to the language independence of the SegSumm
+approach, we gauge its generality to analyze whether it can improve legal applications in other languages. Specifically, we experiment with the BillSum dataset under
+low-resource conditions (Moro et al. 2023, 2023, 2023), simulating a real-world
+legal scenario.12 We compare with existing solutions concentrating on few-shot summarization: Pegasus (Zhang et al. 2020), a transformer-based model pretrained with
+a summarization-specific objective that allows for fast adaptation with few labeled
+samples. MTL-ABS (Chen and Shuai 2021), a meta-transfer learning approach that
+augments training data with similar corpora. Se3 (Moro and Ragazzi 2022), a segmentation-based solution equipped with metric learning. Athena (Moro and Ragazzi 2023), a segmentation-based model with a dynamic learned size of the chunks.
+LW-ML (Huh and Ko 2022), a meta-learning algorithm that inserts a lightweight
+module into the attention mechanism of a pretrained language model. Regarding our
+12
+We used the same training settings but set 100 and 300 as the min and max summary size and 3 as the
+n-grams penalty.
+
+1170
+
+L. Ragazzi et al.
+
+solution, we test SegSumm on top of Bart-base (Lewis et al. 2020). Table 7 points
+out that SegSumm largely outperforms previous models, confirming the usefulness
+of text segmentation for legal texts.
+
+5 Conclusion
+In this paper, we introduced LAWSUIT, the first large-scale dataset for the abstractive summarization of long Italian legal verdicts. The challenges presented by LAWSUIT include lengthy sources, the uniform distribution of relevant information
+throughout the input, and the lower presence of formulaic patterns in the targets.
+Through an extensive series of experiments, we found that a text segmentation pipeline significantly outperforms other methods in both few-shot and full summarization. We anticipate that LAWSUIT will contribute to the development of real-world
+legal summarization systems and stimulate research towards effective long-range
+solutions for Italian legal documents. Future works will extend LAWSUIT to new
+tasks, such as cross-domain and in-domain ruling classification (Domeniconi et al.
+2014a, b, 2015, 2016, 2017; Moro et al. 2018), legal reasoning (Guha et al. 2023;
+Moro et al. 2024), open-domain question answering (Frisoni et al. 2024), corpuslevel knowledge extraction (Frisoni and Moro 2020), and lay summarization (Ragazzi et al. 2024). By representing the source document as a graph (Moro et al. 2023),
+researchers could explore efficient segmentation and summarization techniques
+based on graph sparsification (Domeniconi et al. 2014, 2016; Zaheer et al. 2020),
+eventually using distributed algorithms (Lodi et al. 2010; Cerroni et al. 2015) to
+handle a large number of nodes and edges.
+
+6 Limitations
+As there are no publicly available Italian datasets specifically designed to summarize long legal documents, we conducted a comparison between LAWSUIT and
+existing English legal datasets. However, it is crucial to acknowledge that English
+and Italian differ not only in language but also in dictionary and style, potentially
+introducing linguistic biases when comparing statistics. While SegSum serves as a
+baseline, it requires the generation of at least one sentence for each chunk during
+inference. Although this is suitable for extensive summaries, such as those found in
+typical long document summarization datasets such as LAWSUIT and GovReport,
+it might be less scalable for concise summaries. Regarding low-resource experiments, our method is guided by published top-tier work, but we recognize that the
+sample selection process could significantly impact the final results. Hence, future
+contributions should explore various subsets of the training set to gain a more comprehensive understanding.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1171
+
+Table 8  The used abstractive summarization models
+Model
+
+# Params
+
+URL
+
+IT5-s
+
+143 M
+
+https://​huggi​ngface.​co/​it5/​it5-​effic​ient-​small-​el32-​news-​summa​rizat​ion
+
+IT5-b
+
+220 M
+
+https://​huggi​ngface.​co/​it5/​it5-​base-​news-​summa​rizat​ion
+
+IT5-l
+
+738 M
+
+https://​huggi​ngface.​co/​it5/​it5-​large-​news-​summa​rizat​ion
+
+mBart-l
+
+680 M
+
+https://​huggi​ngface.​co/​ARTeL​ab/​mbart-​summa​rizat​ion-​ilpost
+
+Table 9  The models’ training
+batch size with different input
+sizes. Oom means “out of
+memory” exception
+
+Size
+
+IT5-small
+
+IT5-base
+
+IT5-large
+
+mBart-large
+
+512
+
+32
+
+16
+
+8
+
+2
+
+1024
+
+16
+
+8
+
+4
+
+1
+
+2048
+
+8
+
+4
+
+2
+
+Oom
+
+4096
+
+4
+
+2
+
+1
+
+Oom
+
+8192
+
+2
+
+Oom
+
+Oom
+
+Oom
+
+Appendix A: LAWSUIT release
+Accessing The dataset files are stored in JSON format and will be uploaded to
+Google Drive and GitHub in case of acceptance. We will also integrate our dataset
+into the HuggingFace Datasets library (Lhoest et al. 2021).
+License LAWSUIT is distributed under the CC-BY-SA 3.0 IT license, while the
+sources and summaries are already in the public domain. The authors assume all
+responsibility in the event of a breach of rights and accept the dataset licenses.
+Maintenance The authors intend to provide long-term support for LAWSUIT,
+monitor usage, and produce necessary updates.
+
+Appendix B: Implementation details
+We trained abstractive summarization models using the Adam optimizer with
+𝛽1 = 0.9 and 𝛽2 = 0.99 , setting the learning rate to 5e-5 with linear scheduling.
+We evaluated the performance in the validation set at the end of each epoch,
+using only the first 100 samples to save time. We then tested the checkpoint
+on the test set that performed best on the validation set. Table 8 lists the model
+checkpoints used for pretrained models. Table 9 reports the batch size used during the training.
+
+Appendix c: Insights on extractive results
+Table 10 reports results with extractive baselines by varying the number of extracted
+sentences.
+
+Epi R-1 / R-2 / R-L
+
+23.43/10.17/21.29
+
+26.09/10.29/23.67
+
+26.37/10.24/23.92
+
+26.45/10.24/24.00
+
+26.47/10.22/24.02
+
+26.48/10.21/24.02
+
+26.48/10.21/24.02
+
+n
+
+3
+
+6
+
+9
+
+12
+
+15
+
+18
+
+21
+
+38.69/18.52/35.64
+
+39.23/18.37/36.00
+
+39.50/18.16/36.04
+
+39.54/18.14/35.92
+
+38.53/17.90/34.87
+
+34.67/16.71/31.33
+
+23.86/11.42/21.41
+
+Text R-1 / R-2 / R-L
+
+31.03/18.57/29.54
+
+30.98/18.55/29.50
+
+30.92/18.52/29.44
+
+30.82/18.48/29.33
+
+30.54/18.34/29.05
+
+29.69/17.99/28.24
+
+25.55/16.09/24.25
+
+Dec R-1 / R-2 / R-L
+
+Table 10  Extractive summarization ROUGE F1 scores with different numbers of target sentences
+
+38.64/18.48/35.80
+
+38.45/18.36/35.64
+
+38.21/18.18/35.40
+
+37.72/17.95/34.94
+
+36.61/17.34/33.78
+
+32.60/15.26/29.92
+
+18.74/8.32/16.98
+
+Cat R-1 / R-2 / R-L
+
+37.61/21.24/35.37
+
+38.90/21.31/36.37
+
+40.06/21.18/37.17
+
+41.01/21.03/37.79
+
+41.06/20.30/37.42
+
+39.08/18.66/35.16
+
+31.18/14.67/27.68
+
+LexRank-PLM R-1 / R-2 / R-L
+
+1172
+L. Ragazzi et al.
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1173
+
+Appendix D: Human evaluation
+The interface with human evaluation instructions is sketched in Fig. 8.
+Instructions for Human Evaluators
+Two neural models attempt to summarize a legal document while retaining the relevant information.
+Which summary do you think is better in the following 3 dimensions: informativeness, fluency, and factuality?
+
+Document
+[ ... ]
+
+Read carefully the following two summaries and then
+select the radio buttons below about the summary that you prefer
+Summary 1
+[ ... ]
+
+Summary 2
+[ ... ]
+
+Which is...
+
+1
+
+More informative?
+
+Fig. 8  Human assessment interface
+
+2
+
+More fluent?
+
+3
+
+More factual?
+
+1174
+
+L. Ragazzi et al.
+
+Appendix E: The role of epigraph and decision
+Table 11 shows how the gold summaries compress the ruling epigraph and the
+decision information.
+
+Table 11  Epigraph (yellow) and Decision (green) overlap between a sample document and its gold summary. English translated. (Color figure online)
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1175
+
+Appendix F: Data example
+Figure 9 reports the original Italian-language LAWSUIT version of the example
+depicted in Fig. 1.
+Summary
+Massima n. 15219
+Diversamente dagli impiegati civili dello Stato, i medici incaricati che prestano servizio presso gli istituti di prevenzione e
+pena possono esercitare liberamente la professione ed assumere altri impieghi o incarichi, sicche' la disposizione che
+esclude la corresponsione di alcun assegno durante la sospensione cautelare non appare ne' iniqua ne' irragionevole. (Non
+fondatezza - in riferimento agli artt. 3 e 36 Cost. - della questione di costituzionalita' dell'art. 27, ultimo comma, L. 9 ottobre
+1970 n. 740, nella parte in cui vieta la corresponsione degli assegni alimentari ai medici sospesi cautelarmente dal servizio).
+
+Document
+
+SENTENZA 13-22 DICEMBRE 1989
+
+EPIGRAPH
+
+LA CORTE COSTITUZIONALE
+composta dai signori: Presidente: dott. Francesco SAJA; Giudici: prof. Giovanni CONSO, prof. Ettore GALLO, dott. Aldo
+CORASANITI, prof. Giuseppe BORZELLINO, dott. Francesco GRECO, prof. Gabriele PESCATORE, avv. Ugo SPAGNOLI,
+prof. Francesco Paolo CASAVOLA, prof. Antonio BALDASSARRE, prof. Vincenzo CAIANIELLO, avv. Mauro FERRI, prof.
+Luigi MENGONI, prof. Enzo CHELI;
+ha pronunciato la seguente
+SENTENZA
+nel giudizio di legittimità costituzionale dell'art. 27, ultimo comma, della legge 9 ottobre 1970 n. 740 (Ordinamento delle
+categorie di personale sanitario addetto agli istituti di prevenzione e pena non appartenenti ai ruoli organici dell'Amministrazione
+penitenziaria), promosso con ordinanza emessa il 22 novembre 1988 dal T.A.R. per la Sicilia, sezione staccata di Catania, sul
+ricorso proposto da Guarnera Francesco contro il Ministero di Grazia e Giustizia, iscritta al n. 332 del registro ordinanze 1989 e
+pubblicata nella Gazzetta Ufficiale della Repubblica n. 27, prima serie speciale, dell'anno 1989;
+Ritenuto in fatto
+
+TEXT
+
+Il Tribunale amministrativo regionale per la Sicilia - sezione staccata di Catania, ha sollevato questione incidentale di legittimità
+costituzionale dell'art. 27, ultimo comma, della legge 9 ottobre 1970, n. 740, che, in caso di sospensione cautelare dal servizio,
+rende obbligatoria, per i medici incaricati che prestano servizio presso gli istituti di prevenzione e pena, la mancata corresponsione
+degli assegni alimentari, senza alcuna valutazione del caso concreto, e ciò per preteso contrasto con gli artt. 3 e 36 della
+Costituzione. [...]
+Considerato in diritto
+1. Il T.A.R. della Sicilia, sezione staccata di Catania, dubita della legittimità costituzionale dell'art. 27 ultimo comma della legge
+9 ottobre 1970 n. 740 (Ordinamento delle categorie di personale sanitario addetto agli istituti di prevenzione e pena non
+appartenenti ai ruoli organici dell'Amministrazione penitenziaria). Tale disposizione prevede che "durante il periodo della
+sospensione cautelare" - regolata dai precedenti commi dello stesso art. 27 - "al medico incaricato non compete alcun assegno".
+Essa sarebbe perciò in contrasto con l'art. 3 della Costituzione in quanto darebbe luogo ad una ingiustificata disparità di
+trattamento rispetto agli impiegati civili dello Stato, cui l'art. 82 del d.P.R. 10 gennaio 1957 n. 3 concede in caso di sospensione un
+assegno alimentare, nonché con l'art. 36 della Costituzione. [...]
+
+PER QUESTI MOTIVI
+
+DECISION
+
+LA CORTE COSTITUZIONALE
+Dichiara non fondata la questione di legittimità costituzionale dell'art. 27 ultimo Dichiara comma della legge 9 ottobre
+1970 n. 740 (Ordinamento delle categorie di personale sanitario addetto agli istituti di prevenzione e pena non
+appartenenti ai ruoli organici dell'Amministrazione penitenziaria) sollevata, in riferimento agli artt. 3 e 36 della
+Costituzione, dal T.A.R. della Sicilia, sezione staccata di Catania, con l'ordinanza in epigrafe.
+Così deciso in Roma, nella sede della Corte costituzionale, Palazzo della Consulta, il 13 dicembre 1989.
+Il Presidente: SAJA
+Il redattore: FERRI
+Il cancelliere: MINELLI
+Depositata in cancelleria il 22 dicembre 1989.
+Il direttore della cancelleria: MINELLI
+
+Fig. 9  Sample legal ruling in LAWSUIT (original Italian language). The input comprises three sections:
+epigraph, text, and decision
+
+1176
+
+L. Ragazzi et al.
+
+Appendix G: Examples of generated summaries
+Tables 12 and 13 present qualitative examples from two distinct instances within
+the LAWSUIT test set. In particular, we provide the summaries generated by the
+Table 12  Qualitative examples on the instance #3 of the LAWSUIT’s test set
+Gold Summary
+
+A differenza dell’adozione dei minori, disciplinata dalla legge n. 184 del 1983, l’adozione di persone
+maggiori di età regolata dagli artt. 291 e seguenti cod. civ. non implica necessariamente l’instaurarsi o
+il permanere della convivenza familiare, non determina la soggezione alla potestà dei genitori adottivi,
+nè impone all’adottante l’obbligo di mantenere, istruire ed educare l’adottato. Inoltre, l’adozione di
+persone maggiori di età è essenzialmente determinata dal consenso dell’adottante e dell’adottando, giacchè il controllo del Tribunale verte sui requisiti che legittimano l’adozione, essendo rimesso al giudice
+il ristretto potere di valutare se l’adozione "conviene" all’adottando (art. 312 cod. civ.), senza alcun
+discrezionale apprezzamento dell’interesse della persona dell’adottando e senza gli incisivi controlli
+previsti per l’adozione di minori. Risulta quindi razionalmente giustificata una diversità di disciplina
+anche nel superamento - consentito solo per l’adozione di minori, in casi eccezionali che esigono una
+specifica indagine e la rigorosa valutazione del giudice - del limite posto dal divario di età ordinariamente
+richiesto tra adottante ed adottando. (Non fondatezza della questione di legittimità costituzionale, in
+riferimento agli artt. 2, 3 e 30, primo e secondo comma, Cost. dell’art. 291 cod. civ. nella parte in cui,
+limitatamente al caso del coniuge che chieda di adottare - come nella specie - il figlio dell’altro coniuge,
+non consente al giudice di ridurre, in presenza di determinate circostanze, il previsto intervallo di età tra
+adottante e adottando). - Sulla illegittimità della mancata previsione, in casi eccezionali, nella disciplina
+dell’adozione di minori, della possibilità di ridurre l’intervallo di età tra adottante e adottando, v. s. nn.
+44/1990 e 148/1992
+IT5-small-8192-10
+
+La Corte d’appello di Roma ha sollevato, con ordinanza emessa dal 10 dicembre 1991, questione di legittimità costituzionale dell’art. 291 del codice civile, nella parte in cui, limitatamente al caso del coniuge
+che chiede di adottare il figlio, anche adottivo dell’altro coniuge, non consente al giudice di derogare,
+in caso di adozione ordinaria, l’obbligo dell’adottando di mantenere, istruire ed educare l’adottato, in
+ragione del raccordo tra l’unità familiare ed il momento ineliminabilmente formativo ed educativo,
+l’adozione di età di età di adozione di età di età dell’adozione di non consente al giudice, in caso di età di
+età, l’obbligo di età dell’obbligo dell’adozione di età dellart. 381 del minore, in caso dell’adozione di un
+erede, in caso di non consente al limite del minore, l’obbligo del minore, per la prescrizione relativa al
+giudice di un erede, l’adottato ed educare ed educare ed educare ed educare l’adottando, per preservare
+i valori di età dell’adottato ed educare l’adozione di adozione di età del minore, per preservare i principi
+di adottare, per tutelare i principi di età dell’adottante e l’adozione di adottare, l’adozione, l’adozione del
+figlio dell’obbligo di età di età del minore
+IT5-small-8192-100
+
+L’organica disciplina della adozione dei minori, dettata dalla legge n. 184 del 1983, ha come essenziale e
+dominante obiettivo - in conformità alle convenzioni internazionali volte a disciplinare e proteggere in
+modo specifico i minori (si veda in proposito la Convenzione di Strasburgo sulla loro adozione, ratificata
+in forza della legge 22 maggio 1974, n. 357) - l’interesse di quest’ultimo ad un ambiente familiare stabile
+ed armonioso, nel quale si possa sviluppare la loro personalità, godendo di un equilibrato contesto affettivo ed educativo che caratterizza lo sviluppo del minore in una famiglia ed adottante, non determina la
+soggezione alla potestà dei genitori adottivi, non consente al giudice, secondo comma, secondo comma,
+in caso eccezionali che esigono una specifica indagine e per ampiezza dei poteri attribuiti al giudice, per
+salvaguardare i valori di protezione del minore, assicurando allo stesso una particolare protezione che solo
+quella famiglia ed impone al giudice, per tutelare i valori di tutelare i valori di protezione che soltanto
+quella famiglia può assicurare allo stesso una famiglia ed educativo che solo quella famiglia può garantire
+allo stesso una famiglia, assicurando allo stesso un equilibrato contesto educativo ed educativo che caratterizzano lo sviluppo del momento ineliminabilmente formativo ed educativo ed educativo che l’adozione
+di età dell’adottato ed educativo che legittimano l’adozione di un equilibrato contesto familiare stabile ed
+educativo ed educativo, garantendo allo stesso una famiglia
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1177
+
+Table 12  (continued)
+IT5-small-8192-Full
+
+Non è fondata, in riferimento agli artt. 2, 3, e 30, primo e secondo comma, Cost. la questione di legittimità
+costituzionale dell’art. 291 cod. civ. nella parte in cui, disciplinando le condizioni dell’adozione di persone maggiori di età, stabilisce che l’adottante deve superare di almeno diciotto anni l’età dell’adottando,
+senza prevedere che il giudice possa ridurre la differenza di età richiesta da questa disposizione, nel caso
+di adozione del figlio maggiorenne, anche adottivo, dell’altro coniuge. L’esigenza di evitare gravi danni
+allo sviluppo della personalità del minore, causati dal venir meno dell’unità di vita e di educazione tra fratelli minori, uno dei quali già adottato, ha consentito inoltre, in casi altrettanto rigorosamente circoscritti
+ed eccezionali, il superamento dello stesso limite del divario di età massimo tra adottante ed adottato,
+limite che può essere eccezionalmente superato quando sia indispensabile, secondo il rigoroso apprezzamento del giudice, per salvaguardare i valori di protezione del minore, assicurando allo stesso una
+famiglia. (Non fondatezza della questione di legittimità costituzionale, in riferimento agli articoli 2, 3, 3,
+30 e secondo comma, della Costituzione, nella parte in cui prevede che l’adozione di minori in casi particolari), non consente al giudice di ridurre, quando l’adottando sia di fatto stabilmente inserito nel nucleo
+familiare e sussistano validi motivi per la realizzazione dell’unità familiare, l’obbligo dell’adottante
+l’obbligo di mantenere, istruire ed educare l’adottato, in conformità a quanto prescritto dall’art. 147 cod.
+per i figli nati nel matrimonio (art. 48 della legge n. 184 del 1983). - V. S. n. 148/1992
+IT5-small-512-10-SegSumm
+
+La Corte d’appello di Roma ha sollevato, con ordinanza emessa il 10 dicembre 1991, questione di legittimità costituzionale dell’art. 291 del codice civile, nella parte in cui, limitatamente al caso del coniuge che
+chiede di adottare il figlio, anche adottivo, dell’altro coniuge, non consente al giudice di ridurre, quando
+l’adottando sia di fatto stabilmente inserito nel contesto familiare e sussistano validi motivi per la realizzazione dell’unità familiare, l’intervallo di età di diciotto anni che la stessa disposizione prevede debba
+intercorrere tra adottante e adottante. L’adozione di persone maggiori di età ha la finalità di trasmettere
+il nome di chi non ha discendenti legittimi o legittimati e di dare all’adottando un erede, ma lo scopo
+dell’istituto, ad avviso del giudice rimettente, non è necessariamente limitato ai risvolti patrimoniali, ben
+potendo comprendere anche quello di inserire a pieno titolo l’adottando nella famiglia alla quale di fatto
+partecipa. La Corte d’appello sollecita, in definitiva, l’applicazione anche all’adozione ordinaria delle
+ragioni in base alle quali è stata ritenuta costituzionalmente illegittima, per l’adozione di minori in casi
+particolari, la mancata previsione del potere del giudice di accordare una ragionevole riduzione della differenza di età di diciotto anni tra il coniuge adottante ed il minore adottato, quando quest’ultimo sia figlio,
+anche adottivo, dell’altro coniuge. La Cassazione del 14.2.2016 n. 148 ha stabilito che l’adozione di un
+minore figlio del coniuge dell’adottante è necessaria per assicurare all’adottato, con l’inserimento a pieno
+titolo nella famiglia e con l’attribuzione del cognome dei fratelli uterini generati in costanza di matrimonio, il superamento del limite del divario di età tra adottante ed adottato, limite che può essere eccezionalmente superato quando sia indispensabile, secondo il rigoroso apprezzamento del giudice, per salvaguardare i valori di protezione del minore stesso. La Corte d’appello di Roma ha stabilito che nell’adozione
+di persone maggiori di età al giudice non è attribuito alcun discrezionale apprezzamento dell’interesse
+della persona dell’adottato, né impone all’adottando l’obbligo di mantenere, istruire ed educare l’adottato,
+poiché il controllo del Tribunale verte sui requisiti che legittimano l’adozione, essendo rimesso al giudice
+il ristretto potere di valutare se l’adozione “conviene” all’adottato
+
+1178
+
+L. Ragazzi et al.
+
+Table 13  Qualitative examples on the instance #10 of the LAWSUIT’s test set
+Gold Summary
+
+Non sussiste ostacolo alcuno nel nostro sistema costituzionale in ordine al riconoscimento della legittimità di "attività di mero rilievo internazionale delle Regioni" consistenti nello scambio di informazioni
+utili ovvero nell’approfondimento di conoscenze in materie di comune interesse, oppure, ancora,
+nell’enunciazione di analoghi intenti ed aspirazioni - allo scopo di favorirne unilateralmente la realizzazione mediante atti propri o, al più, mediante sollecitazione dei competenti organi nazionali - e, come
+tali, insuscettibili di incidere nei rapporti internazionali o di impegnare la responsabilità internazionale
+dello Stato. Non spettava quindi allo Stato il potere di negare l’assenso alla partecipazione di un delegato della Regione Umbria al Forum di Amsterdam del 22-23 novembre 1980 e conseguentemente è
+annullato il telegramma della Presidenza del Consiglio dei Ministri, Ufficio Regioni n. 200/8761 del 22
+novembre 1980 e la delibera della Commissione di controllo sugli atti della Regione Umbria n. 5719
+del 28 novembre 1980. - cfr. S.n. 179/1987
+IT5-small-8192-10
+
+La Regione Umbria ha sollevato conflitto di attribuzione nei confronti dello Stato in relazione al
+telegramma della Presidenza del Consiglio dei Ministri, Ufficio Regioni, del 22 novembre 1980,
+depositato in cancelleria il 31 gennaio successivo ed iscritto al n. 4 del registro ricorsi 1981, in quanto
+dotate di autonomia costituzionalmente garantita ai sensi degli articoli 5, 114, 115, 117, 117, 118 e 122
+Cost. La sentenza di questa Corte n. 179 del 1987 ha ritenuto di dover ravvisare il fondamento di possibili interventi inibitori dello Stato nei confronti delle attività internazionali delle Regioni, in quanto in
+tema della rappresentanza politica di unilaterre la responsabilità internazionale, in tema della Regione
+Umbria del Forum sul tema della Presidenza del Comitato olandese del Forum sul di unila delibera
+della Presidenza del 22 novembre 1980 n. 5719, non può farsi rientrare tra gli atti propri atti propri o
+di tale da impegnare la decisione della Regione Umbria, in tema della Giunta regionale, in tema della
+Presidenza del 29 novembre 1980, in materia di cui si limita a seguito all’e la legittimità delle rispettive
+condotte, in tema della responsabilità internazionale, in materia di tali attività regionali, in tema della
+rappresentanza internazionale, in tema di tali attività che non vincolare la responsabilità internazionale
+del Comitato olandese, in materia di interesse, in tema della partecipazione al Forum sul tema della
+responsabilità internazionale del Consiglio dei Ministri del Comitato olandese n
+IT5-small-8192-100
+
+La semplice partecipazione di un delegato della Regione Umbria al Forum internazionale di Amsterdam, indetto dal Comitato olandese per la pace ed il disarmo, può farsi rientrare tra quelle attività di
+mero rilievo internazionale consentite alle Regioni, in quanto insuscettibili di incidere nei rapporti
+internazionali o di impegnare la responsabilità internazionale dello Stato. Né tale partecipazione, date
+le finalità umanitarie connesse all’incontro o di informazione (in materie tecniche) oppure la previsione
+di partecipazione a manifestazioni dirette ad agevolare il processo culturale o economico, in ambito
+locale, ovvero l’enunciazione di propositi intesi ad armonizzare unilateralmente le rispettive condotte,
+in cui questa Corte, nella sentenza della Regione Umbria n. 179 del 1987, n. 179/1988/1984/8761/8761
+/8661/8761/1981, non può farsi rientrare tra le Regioni, in riferimento agli interessi del Paese. La semplice partecipazione di altri (di norma omologhi) organismi esteri, aventi per oggetto finalità umanitarie legate all’incontro o la previsione di informazioni utili ovvero l’approfondimento di conoscenze in
+materie tecniche) oppure, ad enunciare analoghi intenti ed aspirazioni delle tendenze ivi rappresentate
+- in materia tecnica, ovvero l’escettibili di interesse o economico, ovvero l’impegno la responsabilità
+internazionale
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1179
+
+Table 13  (continued)
+IT5-small-8192-Full
+
+Non spettava allo Stato il potere di negare l’assenso alla partecipazione di un delegato della Regione
+Umbria al Forum di Amsterdam del 22-23 novembre 1980 e conseguentemente annulla il telegramma
+della Presidenza del Consiglio dei Ministri, Ufficio Regioni, del 22 novembre 1980, n. 200/8761 e della
+delibera della Commissione di controllo sugli atti della Regione Umbria n. 5719 del 28 novembre 1980.
+La semplice partecipazione di un delegato regionale al Forum internazionale di Amsterdam, indetto
+dal Comitato olandese per la pace ed il disarmo, pu farsi rientrare tra quelle "attività di mero rilievo
+internazionale" consentite alle Regioni, in quanto insuscettibili di incidere nei rapporti internazionali
+o di impegnare la responsabilità internazionale dello Stato, ma si limitano a prevedere "lo scambio di
+informazioni utili ovvero l’approfondimento di conoscenze in materie di comune interesse, oppure,
+ancora, ad enunciare analoghi intenti ed aspirazioni, proponendosi di favorirne unilateralmente la realizzazione mediante atti propri o, al più, mediante sollecitazione dei competenti organi nazionali. - S. n.
+179/1987/1988. - S. nn. 179/1988 e 179/1988. - V. la citata sentenza n. 179 del 1987, n. 179/87/1988
+IT5-small-512-10-SegSumm
+
+È manifestamente inammissibile il conflitto di attribuzione sollevato dalla Regione Umbria in relazione al
+telegramma della Presidenza del Consiglio dei Ministri, Ufficio Regioni, datato 22 novembre 1980, n.
+200/8761 e alla conseguente delibera della Commissione di controllo sugli atti della Regione Umbria del
+28 novembre 1980, con la quale è stata annullata la delibera della Giunta regionale del 18 novembre 1980
+n. 6427 avente ad oggetto la partecipazione di un delegato della Regione al Forum sul disarmo indetto dal
+Comitato olandese per la pace. 5, 114, 115, 117, 118 e 122 Cost. 4 del d.P.R. 612/77, in quanto dotate di
+autonomia costituzionalmente garantita ai sensi degli artt. 5, 114, 114, 117, 118, 118, 122 Cost. - Sulla
+rilevanza della questione di legittimità costituzionale dell’art. Non sussiste ostacolo alcuno nel nostro
+sistema costituzionale a riconoscere la legittimità di tali attività, per le quali può essere accolta la denominazione, proposta dalla dottrina, di "attività di mero rilievo internazionale delle Regioni" (nella specie, in
+quanto le Regioni non pongono in essere veri accordi né assumono diritti ed obblighi tali da impegnare
+la responsabilità internazionale dello Stato) ma si limitano a prevedere "lo scambio di informazioni utili
+ovvero l’approfondimento di conoscenze in materie di comune interesse, oppure, ancora, ad enunciare
+analoghi intenti ed aspirazioni, proponendosi di favorirne unilateralmente la realizzazione mediante atti
+propri o, al più, mediante sollecitazione dei competenti organi nazionali. Non spettava allo Stato il potere
+di negare l’assenso alla partecipazione di un delegato della Regione Umbria al Forum internazionale di
+Amsterdam del 22-23 novembre 1980 e conseguentemente annulla il telegramma della Presidenza del
+Consiglio dei Ministri, Ufficio Regioni n. 200/8761 del 22 novembre 1980 e la delibera della Commissione di controllo sugli atti della Regione Umbria n. 5719 del 28 novembre 1980
+
+top-notch baselines, such as IT5-small-8192 and IT5-small-512-SegSumm, with
+a varying size of trainable examples.
+Acknowledgements This research is partially supported by (i) Artificial Intelligence for Public Administration Connected (AI-PACT): https://​disi-​unibo-​nlp.​github.​io/​proje​cts/​aipact/, (ii) the Complementary National Plan PNC-I.1, “Research initiatives for innovative technologies and pathways in the health
+and welfare sector” D.D. 931 of 06/06/2022, DARE—DigitAl lifelong pRevEntion initiative, code
+PNC0000002, CUP B53C22006450001, (iii) the PNRR, M4C2, FAIR—Future Artificial Intelligence
+Research, Spoke 8 “Pervasive AI,” funded by the European Commission under the NextGeneration EU
+program. We thank the Maggioli Group (https://​www.​maggi​oli.​com/​who-​we-​are/​compa​ny-​profi​le) for
+granting the Ph.D. scholarship to Luca Ragazzi from November 2020 to January 2024.
+
+1180
+
+L. Ragazzi et al.
+
+Funding Open access funding provided by Alma Mater Studiorum - Università di Bologna within the
+CRUI-CARE Agreement.
+
+Declarations
+Ethical approval The data used to create LAWSUIT have the license that gives us the right to transform
+and share the dataset publicly.13 Regarding the experimental methods, due to the high societal impact of
+the legislation, experts should verify the quality of the inferred summaries to make the proposed solutions
+work in real-world applications.
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License,
+which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source, provide a link to the Creative
+Commons licence, and indicate if changes were made. The images or other third party material in this
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line
+to the material. If material is not included in the article’s Creative Commons licence and your intended
+use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/
+licenses/by/4.0/.
+
+References
+Aumiller D, Chouhan A, Gertz M (2022) Eur-lex-sum: a multi- and cross-lingual dataset for longform summarization in the legal domain. In: Goldberg Y, Kozareva Z, Zhang Y (eds.) EMNLP,
+pp 7626–7639. ACL. https://​aclan​tholo​gy.​org/​2022.​emnlp-​main.​519
+Bacciu A, Campagnano C, Trappolini G, Silvestri F (2024) DanteLLM: let’s push Italian LLM
+research forward! In: Calzolari N, Kan M-Y, Hoste V, Lenci A, Sakti S, Xue N (eds.) Proceedings of the 2024 Joint international conference on computational linguistics, language resources
+and evaluation (LREC-COLING 2024), pp 4343–4355. ELRA and ICCL, Torino, Italia. https://​
+aclan​tholo​gy.​org/​2024.​lrec-​main.​388
+Bacciu A, Trappolini G, Santilli A, Rodolà E, Silvestri F (2023) Fauno: the Italian large language
+model that will leave you senza parole! In: Nardini FM, Tonellotto N, Faggioli G, Ferrara A
+(eds) Proceedings of the 13th Italian information retrieval workshop (IIR 2023), Pisa, Italy,
+June 8–9, 2023. CEUR Workshop Proceedings, vol. 3448, pp 9–17. CEUR-WS.org. https://​ceur-​
+ws.​org/​Vol-​3448/​paper-​24.​pdf
+Bakker R, van Drie RAN, de Boer M, van Doesburg R, et al. (2022) Semantic role labelling for
+Dutch law texts. In: LREC, pp 448–457. European Language Resources Association, Marseille,
+France. https://​aclan​tholo​gy.​org/​2022.​lrec-1.​47
+Baroni M, Bernardini S, Ferraresi A, Zanchetta E (2009) The wacky wide web: a collection of very
+large linguistically processed web-crawled corpora. Lang Resour Eval 43(3):209–226. https://​
+doi.​org/​10.​1007/​S10579-​009-​9081-4
+Basile P, Musacchio E, Polignano M, Siciliani L, Fiameni G, Semeraro G (2023) Llamantino: Llama 2
+models for effective text generation in italian language. arXiv:​2312.​09993
+Bellandi V, Castano S, Ceravolo P, Damiani E, et al. (2022) Knowledge-based legal document
+retrieval: a case study on Italian civil court decisions. In: EKAW. CEUR Workshop proceedings, vol. 3256. CEUR-WS.org. http://​ceur-​ws.​org/​Vol-​3256/​km4la​w2.​pdf
+Bhattacharya P, Poddar S, Rudra K, Ghosh K, et al. (2021) Incorporating domain knowledge for
+extractive summarization of legal case documents. In: ICAIL, pp 22–31. ACM. https://​doi.​org/​
+10.​1145/​34627​57.​34660​92
+Bird S (2006) NLTK: the natural language toolkit. In: ACL. The Association for Computer Linguistics.
+https://​doi.​org/​10.​3115/​12254​03.​12254​21
+
+13
+
+https://​creat​iveco​mmons.​org/​licen​ses/​by-​sa/3.​0/​it/
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1181
+
+Casola S, Lavelli A (2021) WITS: wikipedia for italian text summarization. In: CLiC-it. CEUR workshop
+proceedings, vol. 3033. CEUR-WS.org. http://​ceur-​ws.​org/​Vol-​3033/​paper​65.​pdf
+Cerroni W, Moro G, Pasolini R, Ramilli M (2015) Decentralized detection of network attacks through
+P2P data clustering of SNMP data. Comput Secur 52:1–16. https://​doi.​org/​10.​1016/J.​COSE.​2015.​
+03.​006
+Chalkidis I, Androutsopoulos I, Aletras N (2019) Neural legal judgment prediction in English. In: ACL,
+pp 4317–4323. ACL, Florence, Italy. https://​doi.​org/​10.​18653/​v1/​P19-​1424
+Chalkidis I, Androutsopoulos I, Michos A (2018) Obligation and prohibition extraction using hierarchical
+RNNs. In: ACL, pp 254–259. ACL, Melbourne, Australia. https://​doi.​org/​10.​18653/​v1/​P18-​2041
+Chalkidis I, Fergadiotis M, Androutsopoulos I (2021) Multieurlex - A multi-lingual and multi-label legal
+document classification dataset for zero-shot cross-lingual transfer. In: EMNLP, pp 6974–6996.
+Association for Computational Linguistics. https://​doi.​org/​10.​18653/​v1/​2021.​emnlp-​main.​559
+Chalkidis I, Fergadiotis M, Malakasiotis P, Aletras N, et al (2020) LEGAL-BERT: The muppets straight
+out of law school. In: EMNLP, pp 2898–2904. ACL, Online. https://​doi.​org/​10.​18653/​v1/​2020.​
+findi​ngs-​emnlp.​261
+Chalkidis I, Jana A, Hartung D, Bommarito M, et al. (2022) LexGLUE: a benchmark dataset for legal
+language understanding in English. In: ACL, pp 4310–4330. ACL, Dublin, Ireland https://​doi.​org/​
+10.​18653/​v1/​2022.​acl-​long.​297
+Chen Y-C, Bansal M (2018) Fast abstractive summarization with reinforce-selected sentence rewriting.
+In: ACL, pp 675–686. ACL, Melbourne, Australia. https://​doi.​org/​10.​18653/​v1/​P18-​1063
+Chen Y, Shuai H (2021) Meta-transfer learning for low-resource abstractive summarization. In: AAAI, pp
+12692–12700. AAAI Press. https://​ojs.​aaai.​org/​index.​php/​AAAI/​artic​le/​view/​17503
+Cohan A, Dernoncourt F, Kim DS, Bui T, et al. (2018) A discourse-aware attention model for abstractive summarization of long documents. In: NAACL, pp 615–621. ACL, New Orleans, Louisiana.
+https://​doi.​org/​10.​18653/​v1/​N18-​2097
+Cripwell L, Legrand J, Gardent, C (2023) Simplicity level estimate (SLE): a learned reference-less metric
+for sentence simplification. In: Bouamor H, Pino J, Bali K (eds) Proceedings of the 2023 conference on empirical methods in natural language processing, EMNLP 2023, Singapore, December
+6–10, 2023, pp 12053–12059. Association for Computational Linguistics. https://​doi.​org/​10.​18653/​
+V1/​2023.​EMNLP-​MAIN.​739
+Croce D, Zelenanska A, Basili R (2018) Neural learning for question answering in italian. In: Ghidini
+C, Magnini B, Passerini A, Traverso P (eds) AI*IA 2018 - advances in artificial intelligence XVIIth international conference of the Italian Association for artificial intelligence, Trento, Italy,
+November 20–23, 2018, proceedings. Lecture Notes in Computer Science, vol. 11298, pp 389–402.
+Springer. https://​doi.​org/​10.​1007/​978-3-​030-​03840-3_​29
+Domeniconi G, Masseroli M, Moro G, Pinoli P (2016) Cross-organism learning method to discover new
+gene functionalities. Comput Methods Programs Biomed 126:20–34. https://​doi.​org/​10.​1016/J.​
+CMPB.​2015.​12.​002
+Domeniconi G, Masseroli M, Moro G, Pinoli P (2014) Discovering new gene functionalities from random perturbations of known gene ontological annotations. In: Fred ALN, Filipe J (eds) KDIR 2014
+- Proceedings of the international conference on knowledge discovery and information retrieval,
+Rome, Italy, 21–24 October, 2014, pp 107–116. SciTePress.https://​doi.​org/​10.​5220/​00050​87801​
+070116
+Domeniconi G, Moro G, Pagliarani A, Pasolini R (2015) Markov chain based method for in-domain and
+cross-domain sentiment classification. In: Fred ALN, Dietz JLG, Aveiro D, Liu K, Filipe J (eds)
+KDIR 2015 - Proceedings of the international conference on knowledge discovery and information
+retrieval, part of the 7th international joint conference on knowledge discovery, knowledge engineering and knowledge management (IC3K 2015), Volume 1, Lisbon, Portugal, November 12–14,
+2015, pp 127–137. SciTePress.https://​doi.​org/​10.​5220/​00056​36001​270137
+Domeniconi G, Moro G, Pagliarani A, Pasolini R (2017) On deep learning in cross-domain sentiment
+classification. In: Fred ALN, Filipe J (eds.) Proceedings of the 9th International joint conference on
+knowledge discovery, knowledge engineering and knowledge management - (Volume 1), Funchal,
+Madeira, Portugal, November 1–3, 2017, pp 50–60. SciTePress. https://​doi.​org/​10.​5220/​00064​
+88100​500060
+Domeniconi G, Moro G, Pasolini R, Sartori C (2014) Cross-domain text classification through iterative
+refining of target categories representations. In: Fred ALN, Filipe J (eds) KDIR 2014 - proceedings of the international conference on knowledge discovery and information retrieval, Rome, Italy,
+21–24 October, 2014, pp 31–42. SciTePress. https://​doi.​org/​10.​5220/​00050​69400​310042
+
+1182
+
+L. Ragazzi et al.
+
+Domeniconi G, Moro G, Pasolini R, Sartori C (2014) Iterative refining of category profiles for nearest
+centroid cross-domain text classification. In: Fred ALN, Dietz JLG, Aveiro D, Liu K, Filipe J (eds)
+Knowledge discovery, knowledge engineering and knowledge management - 6th international joint
+conference, IC3K 2014, Rome, Italy, October 21–24, 2014, Revised Selected Papers. Communications in Computer and Information Science, vol. 553, pp 50–67. Springer. https://​doi.​org/​10.​1007/​
+978-3-​319-​25840-9_4
+Domeniconi G, Semertzidis K, López V, Daly EM, Kotoulas S, Moro G (2016) A novel method for unsupervised and supervised conversational message thread detection. In: Francalanci C, Helfert M
+(eds) DATA 2016 - Proceedings of 5th international conference on data management technologies and applications, Lisbon, Portugal, 24–26 July, 2016, pp 43–54. SciTePress. https://​doi.​org/​10.​
+5220/​00060​01100​430054
+Duan X, Zhang Y, Yuan L, Zhou X, et al. (2019) Legal summarization for multi-role debate dialogue via
+controversy focus mining and multi-task learning. In: CIKM, pp 1361–1370. ACM. https://​doi.​org/​
+10.​1145/​33573​84.​33579​40
+Elaraby M, Litman D (2022) ArgLegalSumm: improving abstractive summarization of legal documents
+with argument mining. In: COLING, pp 6187–6194. International Committee on Computational
+Linguistics, Gyeongju, Republic of Korea. https://​aclan​tholo​gy.​org/​2022.​coling-​1.​540
+Erkan G, Radev DR (2004) Lexrank: graph-based lexical centrality as salience in text summarization. J
+Artif Intell Res 22:457–479. https://​doi.​org/​10.​1613/​jair.​1523
+Fabbri A, Li I, She T, Li S, et al (2019) Multi-news: a large-scale multi-document summarization dataset
+and abstractive hierarchical model. In: ACL, pp 1074–1084. ACL, Florence, Italy. https://​doi.​org/​
+10.​18653/​v1/​P19-​1102
+Farzindar A, Lapalme G (2004) Legal text summarization by exploration of the thematic structure and
+argumentative roles. In: Text Summarization branches out, pp 27–34. ACL, Barcelona, Spain.
+https://​aclan​tholo​gy.​org/​W04-​1006
+Feng Y, Li C, Ng V (2022) Legal judgment prediction via event extraction with constraints. In: ACL, pp
+648–664. ACL, Dublin, Ireland https://​doi.​org/​10.​18653/​v1/​2022.​acl-​long.​48
+Frisoni G, Cocchieri A, Presepi A, Moro G, Meng Z (2024) To generate or to retrieve? On the effectiveness of artificial contexts for medical open-domain question answering. arXiv:​2403.​01924
+Frisoni G, Moro G (2020) Phenomena explanation from text: Unsupervised learning of interpretable and
+statistically significant knowledge. In: Hammoudi S, Quix C, Bernardino J (eds) Data management
+technologies and applications - 9th international conference, DATA 2020, Virtual Event, July 7–9,
+2020, Revised Selected Papers. Communications in Computer and Information Science, vol. 1446,
+pp 293–318. Springer. https://​doi.​org/​10.​1007/​978-3-​030-​83014-4_​14
+Galli F, Grundler G, Fidelangeli A, Galassi A, et al. (2022) Predicting outcomes of italian VAT decisions.
+In: JURIX. Frontiers in artificial intelligence and applications, vol. 362, pp 188–193. IOS Press.
+https://​doi.​org/​10.​3233/​FAIA2​20465
+Greenleaf G, (1995) Public access to law via internet: the Australasian legal information institute. In:
+Paper presented at the asian pacific specials, health and law librarians conference (6th, et al Sydney). J Law Inf Sci 6(1):49–69
+Grover C, Hachey B, Hughson I (2004) The HOLJ corpus. supporting summarisation of legal texts. In:
+LINC, pp 47–54. COLING, Geneva, Switzerland (2004). https://​aclan​tholo​gy.​org/​W04-​1907
+Grusky M, Naaman M, Artzi Y (2018) Newsroom: a dataset of 1.3 million summaries with diverse
+extractive strategies. In: NAACL, pp 708–719. ACL, New Orleans, Louisiana. https://​doi.​org/​10.​
+18653/​v1/​N18-​1065
+Guha N, Nyarko J, Ho DE, Ré C, Chilton A, K A, Chohlas-Wood A, Peters A, Waldon B, Rockmore
+DN, Zambrano D, Talisman D, Hoque E, Surani F, Fagan F, Sarfaty G, Dickinson GM, Porat H,
+Hegland J, Wu J, Nudell J, Niklaus J, Nay JJ, Choi JH, Tobia K, Hagan M, Ma M, Livermore MA,
+Rasumov-Rahe N, Holzenberger N, Kolt N, Henderson P, Rehaag S, Goel S, Gao S, Williams S,
+Gandhi S, Zur T Iyer V, Li Z (2023) Legalbench: A collaboratively built benchmark for measuring legal reasoning in large language models. In: Oh, A., Naumann, T., Globerson, A., Saenko, K.,
+Hardt, M., Levine, S.(eds.) Advances in neural information processing systems 36: annual conference on neural information processing systems 2023, NeurIPS 2023, New Orleans, LA, USA,
+December 10–16, 2023. http://​papers.​nips.​cc/​paper_​files/​paper/​2023/​hash/​89e44​582fd​28ddf​ea1ea​
+4dcb0​ebbf4​b0-​Abstr​act-​Datas​ets_​and_​Bench​marks.​html
+Guo M, Ainslie J, Uthus D, Ontanon S, et al. (2022) LongT5: efficient text-to-text transformer for long
+sequences. In: NAACL, pp 724–736. ACL, Seattle, United States . https://​doi.​org/​10.​18653/​v1/​
+2022.​findi​ngs-​naacl.​55
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1183
+
+Hendrycks D, Burns C, Chen A, Ball S (2021) CUAD: an expert-annotated NLP dataset for legal contract
+review. In: NeurIPS. https://​datas​ets-​bench​marks-​proce​edings.​neuri​ps.​cc/​paper/​2021/​hash/​6ea9a​
+b1baa​0efb9​e1909​4440c​317e2​1b-​Abstr​act-​round1.​html
+Huang L, Cao S, Parulian N, Ji H, et al. (2021) Efficient attentions for long document summarization. In:
+NAACL, pp 1419–1436. ACL. https://​doi.​org/​10.​18653/​v1/​2021.​naacl-​main.​112
+Huang W, Jiang J, Qu Q, Yang M (2020) AILA: a question answering system in the legal domain. In:
+IJCAI, pp 5258–5260. ijcai.org. https://​doi.​org/​10.​24963/​ijcai.​2020/​762
+Huh T, Ko Y (2022) Lightweight meta-learning for low-resource abstractive summarization. In: SIGIR,
+pp. 2629–2633. ACM. https://​doi.​org/​10.​1145/​34774​95.​35319​08
+Hwang W, Lee D, Cho K, Lee H, et al (2022) A multi-task benchmark for korean legal language understanding and judgement prediction. In: NeurIPS. http://​papers.​nips.​cc/​paper_​files/​paper/​2022/​hash/​
+d15ab​d14d5​894ee​bd185​b7565​41d42​0e-​Abstr​act-​Datas​ets_​and_​Bench​marks.​html
+Jain D, Borah MD, Biswas A (2021) Summarization of legal documents: where are we now and the way
+forward. Comput Sci Rev 40:100388. https://​doi.​org/​10.​1016/j.​cosrev.​2021.​100388
+Kanapala A, Pal S, Pamula R (2019) Text summarization from legal documents: a survey. Artif Intell Rev
+51(3):371–402. https://​doi.​org/​10.​1007/​s10462-​017-​9566-2
+Katz DM, Hartung D, Gerlach L, Jana A, et al (2023) Natural language processing in the legal domain.
+arXiv:​2302.​12039
+Kien PM, Nguyen H-T, Bach NX, Tran V, et al. (2020) Answering legal questions by learning neural
+attentive text representation. In: COLING, pp. 988–998. International Committee on Computational Linguistics, Barcelona, Spain (Online). https://​doi.​org/​10.​18653/​v1/​2020.​coling-​main.​86
+Kiritchenko S, Mohammad S (2017) Best-worst scaling more reliable than rating scales: a case study on
+sentiment intensity annotation. In: ACL, pp 465–470. ACL, Vancouver, Canada.https://​doi.​org/​10.​
+18653/​v1/​P17-​2074
+Koehn P (2005) Europarl: a parallel corpus for statistical machine translation. In: Proceedings of machine
+translation summit X: Papers, MTSummit 2005, Phuket, Thailand, September 13–15, 2005, pp
+79–86. https://​aclan​tholo​gy.​org/​2005.​mtsum​mit-​papers.​11
+Kornilova A, Eidelman V (2019) BillSum: a corpus for automatic summarization of US legislation. In:
+Proceedings of the 2nd workshop on new frontiers in summarization, pp 48–56. ACL, Hong Kong,
+China. https://​doi.​org/​10.​18653/​v1/​D19-​5406
+Ladhak F, Durmus E, Cardie C, McKeown, K (2020) WikiLingua: a new benchmark dataset for crosslingual abstractive summarization. In: EMNLP, pp 4034–4048. ACL. https://​doi.​org/​10.​18653/​v1/​
+2020.​findi​ngs-​emnlp.​360
+Landro N, Gallo I, La Grassa R, Federici E (2022) Two new datasets for Italian-language abstractive text
+summarization. Information 13(5). https://​doi.​org/​10.​3390/​info1​30502​28
+Lewis M, Liu Y, Goyal N, Ghazvininejad M, et al. (2020) BART: denoising sequence-to-sequence pretraining for natural language generation, translation, and comprehension. In: ACL, pp 7871–7880.
+ACL. https://​doi.​org/​10.​18653/​v1/​2020.​acl-​main.​703
+Lhoest Q, Villanova del Moral A, Jernite Y, Thakur A, et al (2021) Datasets: a community library for
+natural language processing. In: EMNLP, pp 175–184. ACL, Online and Punta Cana, Dominican
+Republic. https://​doi.​org/​10.​18653/​v1/​2021.​emnlp-​demo.​21
+Licari D, Comandé G (2022) ITALIAN-LEGAL-BERT: a pre-trained transformer language model for
+italian law. In: Symeonidou D, Yu R, Ceolin D, Poveda-Villalón M, Audrito D, Caro LD, Grasso F,
+Nai R, Sulis E, Ekaputra FJ, Kutz O, Troquard N (eds) Companion proceedings of the 23rd international conference on knowledge engineering and knowledge management, Bozen-Bolzano, Italy,
+September 26–29, 2022. CEUR workshop proceedings, vol. 3256. CEUR-WS.org. https://​ceur-​ws.​
+org/​Vol-​3256/​km4la​w3.​pdf
+Lin C-Y (2004) ROUGE: A package for automatic evaluation of summaries. In: Text summarization
+branches out, pp 74–81. ACL, Barcelona, Spain. https://​aclan​tholo​gy.​org/​W04-​1013
+Liu Y, Gu J, Goyal N, Li X et al (2020) Multilingual denoising pre-training for neural machine translation. TACL 8:726–742. https://​doi.​org/​10.​1162/​tacl_a_​00343
+Liu C, Chen K (2019) Extracting the gist of Chinese judgments of the supreme court. In: ICAIL, pp
+73–82. ACM. https://​doi.​org/​10.​1145/​33226​40.​33267​15
+Lodi S, Moro G, Sartori C (2010) Distributed data clustering in multi-dimensional peer-to-peer networks. In: Shen, H.T., Bouguettaya, A.(eds.) Database Technologies 2010, Twenty-First Australasian Database Conference (ADC 2010), Brisbane, Australia, 18–22 January, 2010, Proceedings.
+CRPIT, vol. 104, pp 171–178. Australian Computer Society. http://​portal.​acm.​org/​citat​ion.​cfm?​id=​
+18622​64 &​CFID=​17470​975 &​CFTOK​EN=​71845​406
+
+1184
+
+L. Ragazzi et al.
+
+Louviere JJ, Flynn TN, Marley AAJ (2015) Best-worst scaling: theory. Cambridge University Press,
+Methods and Applications
+Louviere JJ, Woodworth, GG (1991) Best-worst scaling: a model for the largest difference judgments.
+Technical report, Working paper
+Malik V, Sanjay R, Nigam SK, Ghosh K, et al. (2021) ILDC for CJPE: Indian legal documents corpus
+for court judgment prediction and explanation. In: ACL, pp 4046–4062. ACL. https://​doi.​org/​10.​
+18653/​v1/​2021.​acl-​long.​313
+Martin L, Muller B, Ortiz Suárez PJ, Dupont Y, Romary L, de la Clergerie É, Seddah D, Sagot B (2020)
+CamemBERT: a tasty French language model. In: Jurafsky D, Chai J, Schluter N, Tetreault J (eds)
+Proceedings of the 58th annual meeting of the association for computational linguistics, pp 7203–
+7219. Association for Computational Linguistics. https://​doi.​org/​10.​18653/​v1/​2020.​acl-​main.​645
+Mattei LD, Cafagna M, Dell’Orletta F, Nissim M, Guerini M (2020) Geppetto carves italian into a language model. In: Monti J, Dell’Orletta F, Tamburini F (eds) Proceedings of the Seventh Italian
+conference on computational linguistics, CLiC-it 2020, Bologna, Italy, March 1–3, 2021. CEUR
+Workshop Proceedings, vol. 2769. CEUR-WS.org. https://​ceur-​ws.​org/​Vol-​2769/​paper_​46.​pdf
+Maynez J, Narayan S, Bohnet B, McDonald R (2020) On faithfulness and factuality in abstractive summarization. In: ACL, pp 1906–1919. ACL. https://​doi.​org/​10.​18653/​v1/​2020.​acl-​main.​173
+Metsker OG, Trofimov E, Grechishcheva S (2019) Natural language processing of russian court decisions
+for digital indicators mapping for oversight process control efficiency: disobeying a police officer
+case. In: EGOSE. communications in computer and information science, vol. 1135, pp 295–307.
+Springer. https://​doi.​org/​10.​1007/​978-3-​030-​39296-3_​22
+Moro G, Ragazzi L (2023) Align-then-abstract representation learning for low-resource summarization.
+Neurocomputing 548:126356. https://​doi.​org/​10.​1016/J.​NEUCOM.​2023.​126356
+Moro G, Piscaglia N, Ragazzi L, Italiani P (2023) Multi-language transfer learning for low-resource legal
+case summarization. Artif Intell Law. https://​doi.​org/​10.​1007/​s10506-​023-​09373-8
+Moro G, Ragazzi L, Valgimigli L, Frisoni G, Sartori C, Marfia G (2023) Efficient memory-enhanced
+transformer for long-document summarization in low-resource regimes. Sensors 23(7):3542.
+https://​doi.​org/​10.​3390/​S2307​3542
+Moro G, Pagliarani A, Pasolini R, Sartori C (2018) Cross-domain & in-domain sentiment analysis with
+memory-based deep neural networks. In: Fred ALN, Filipe J (eds) Proceedings of the 10th international joint conference on knowledge discovery, knowledge engineering and knowledge management, IC3K 2018, Volume 1: KDIR, Seville, Spain, September 18–20, 2018, pp 125–136. SciTePress. https://​doi.​org/​10.​5220/​00072​39101​270138
+Moro G, Ragazzi L (2022) Semantic self-segmentation for abstractive summarization of long documents
+in low-resource regimes. In: Thirty-Sixth AAAI conference on artificial intelligence, AAAI 2022,
+thirty-fourth conference on innovative applications of artificial intelligence, IAAI 2022, The twelveth symposium on educational advances in artificial intelligence, EAAI 2022 Virtual Event, February 22–March 1, 2022, pp 11085–11093. AAAI Press. https://​doi.​org/​10.​1609/​AAAI.​V36I10.​
+21357
+Moro G, Ragazzi L, Valgimigli L (2023) Carburacy: summarization models tuning and comparison in
+eco-sustainable regimes with a novel carbon-aware accuracy. In: Williams B, Chen Y, Neville J
+(eds.) Thirty-seventh AAAI conference on artificial intelligence, AAAI 2023, Thirty-fifth conference on innovative applications of artificial intelligence, IAAI 2023, Thirteenth symposium on
+educational advances in artificial intelligence, EAAI 2023, Washington, DC, USA, February 7–14,
+2023, pp 14417–14425. AAAI Press. https://​doi.​org/​10.​1609/​AAAI.​V37I12.​26686
+Moro G, Ragazzi L, Valgimigli L (2023) Graph-based abstractive summarization of extracted essential
+knowledge for low-resource scenarios. In: Gal K, Nowé A, Nalepa GJ, Fairstein R, Radulescu R
+(eds) ECAI 2023 - 26th European conference on artificial intelligence, September 30–October 4,
+2023, Kraków, Poland—Including 12th conference on prestigious applications of intelligent systems (PAIS 2023). Frontiers in Artificial Intelligence and Applications, vol. 372, pp 1747–1754.
+IOS Press. https://​doi.​org/​10.​3233/​FAIA2​30460
+Moro G, Ragazzi L, Valgimigli L, Freddi D (2022) Discriminative marginalized probabilistic neural
+method for multi-document summarization of medical literature. In: Muresan S, Nakov P, Villavicencio A (eds) Proceedings of the 60th annual meeting of the association for computational
+linguistics (Volume 1: Long Papers), ACL 2022, Dublin, Ireland, May 22-27, 2022, pp 180–189.
+Association for Computational Linguistics. https://​doi.​org/​10.​18653/​V1/​2022.​ACL-​LONG.​15
+Moro G, Ragazzi L, Valgimigli L, Molfetta L (2023) Retrieve-and-rank end-to-end summarization of
+biomedical studies. In: Pedreira, O., Estivill-Castro, V (eds) Similarity search and applications
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1185
+
+- 16th international conference, SISAP 2023, A Coruña, Spain, October 9–11, 2023, proceedings. Lecture Notes in Computer Science, vol. 14289 pp 64–78. Springer. https://​doi.​org/​10.​1007/​
+978-3-​031-​46994-7_6
+Moro G, Ragazzi L, Valgimigli L, Vincenzi F, Freddi D (2024) Revelio: Interpretable long-form question
+answering. In: The second tiny papers track at ICLR 2024, Tiny Papers @ ICLR 2024, Vienna,
+Austria, May 7–11, 2024. OpenReview.net. https://​openr​eview.​net/​pdf?​id=​fyvEJ​XsaQf
+Narayan S, Cohen SB, Lapata M (2018) Don’t give me the details, just the summary! topic-aware convolutional neural networks for extreme summarization. In: EMNLP, pp 1797–1807. ACL, Brussels,
+Belgium. https://​doi.​org/​10.​18653/​v1/​D18-​1206
+Niklaus J, Matoshi V, Rani P, Galassi A, et al. (2023) LEXTREME: a multi-lingual and multi-task benchmark for the legal domain. arXiv:​2301.​13126
+Parisi L, Francia S, Magnani P (2020) UmBERTo: an Italian Language Model trained with Whole Word
+Masking. GitHub
+Paszke A, Gross S, Massa F, Lerer A, et al (2019) Pytorch: an imperative style, high-performance deep
+learning library. In: NeurIPS, pp 8024–8035. https://​proce​edings.​neuri​ps.​cc/​paper/​2019/​hash/​
+bdbca​288fe​e7f92​f2bfa​9f701​27277​40-​Abstr​act.​html
+Polsley S, Jhunjhunwala P, Huang R (2016) CaseSummarizer: a system for automated summarization of
+legal texts. In: COLING, pp 258–262. COLING, Osaka, Japan. https://​aclan​tholo​gy.​org/​C16-​2054
+Qin R, Huang M, Luo Y (2022) A comparison study of pre-trained language models for chinese legal
+document classification. In: ICAIBD, pp 444–449. https://​doi.​org/​10.​1109/​ICAIB​D55127.​2022.​
+98204​66
+Quatra ML, Cagliero L (2023) BART-IT: an efficient sequence-to-sequence model for Italian text summarization. Future Internet 15(1):15. https://​doi.​org/​10.​3390/​FI150​10015
+Rafailov R, Sharma A, Mitchell E, Manning CD, Ermon S, Finn C (2023) Direct preference optimization:
+your language model is secretly a reward model. In: Oh A, Naumann T, Globerson A, Saenko K,
+Hardt M, Levine S (eds) Advances in neural information processing systems 36: annual conference
+on neural information processing systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10–16, 2023. http://​papers.​nips.​cc/​paper_​files/​paper/​2023/​hash/​a85b4​05ed6​5c647​7a4fe​8302b​
+5e06c​e7-​Abstr​act-​Confe​rence.​html
+Raffel C, Shazeer N, Roberts A, Lee K et al (2020) Exploring the limits of transfer learning with a unified
+text-to-text transformer. J Mach Learn Res 21:140–114067
+Ragazzi L, Italiani P, Moro G, Panni M (2024) What are you token about? differentiable perturbed top-k
+token selection for scientific document summarization. In: Findings of the Association for Computational Linguistics: ACL 2024, Bangkok, Thailand, August 11–16, 2024, pp 9427-9440. Association for Computational Linguistics. https://​aclan​tholo​gy.​org/​2024.​findi​ngs-​acl.​561
+Ravichander A, Black AW, Wilson S, Norton T, et al. (2019) Question answering for privacy policies:
+Combining computational and legal perspectives. In: EMNLP-IJCNLP, pp 4947–4958. ACL,
+Hong Kong, China. https://​doi.​org/​10.​18653/​v1/​D19-​1500
+Sansone C, Sperlí G (2022) Legal information retrieval systems: state-of-the-art and open issues. Inf Syst
+106:101967. https://​doi.​org/​10.​1016/j.​is.​2021.​101967
+Santilli A, Rodolà E (2023) Camoscio: an Italian instruction-tuned llama. In: Boschetti F, Lebani GE,
+Magnini B, Novielli N (eds) Proceedings of the 9th Italian conference on computational linguistics,
+Venice, Italy, November 30–December 2, 2023. CEUR workshop proceedings, vol. 3596. CEURWS.org. https://​ceur-​ws.​org/​Vol-​3596/​paper​44.​pdf
+Saravanan M, Ravindran B, Raman S (2006) Improving legal document summarization using graphical
+models. In: JURIX. Frontiers in artificial intelligence and applications, vol. 152, pp 51–60. IOS
+Press. http://​www.​books​online.​iospr​ess.​nl/​Conte​nt/​View.​aspx?​piid=​2367
+Sarti G, Nissim M (2022) IT5: large-scale text-to-text pretraining for italian language understanding and
+generation. arXiv:​2203.​03759
+Sarti G, Nissim M (2024) IT5: text-to-text pretraining for italian language understanding and generation. In: Calzolari N, Kan M, Hoste V, Lenci A, Sakti S, Xue N (eds) Proceedings of the
+2024 joint international conference on computational linguistics, language resources and evaluation, LREC/COLING 2024, 20–25 May, 2024, Torino, Italy, pp 9422–9433. ELRA and ICCL.
+https://​aclan​tholo​gy.​org/​2024.​lrec-​main.​823
+See A, Liu PJ, Manning CD (2017) Get to the point: summarization with pointer-generator networks.
+In: ACL, pp 1073–1083. ACL, Vancouver, Canada. https://​doi.​org/​10.​18653/​v1/​P17-​1099
+Sharma G, Sharma D (2023) Automatic text summarization methods: a comprehensive review. SN
+Comput Sci 4(1):33. https://​doi.​org/​10.​1007/​s42979-​022-​01446-w
+
+1186
+
+L. Ragazzi et al.
+
+Sharma E, Li C, Wang L (2019) BIGPATENT: a large-scale dataset for abstractive and coherent
+summarization. In: ACL, pp 2204–2213. ACL, Florence, Italy. https://​doi.​org/​10.​18653/​v1/​
+P19-​1212
+Shen Z, Lo K, Yu L, Dahlberg N, et al (2022) Multi-lexsum: real-world summaries of civil rights lawsuits at multiple granularities. In: NeurIPS. http://​papers.​nips.​cc/​paper_​files/​paper/​2022/​hash/​
+552ef​803be​f9368​c29e5​3c167​de34b​55-​Abstr​act-​Datas​ets_​and_​Bench​marks.​html
+Shen Z, Lo K, Yu L, Dahlberg N, et al. (2022) Multi-lexsum: real-world summaries of civil rights
+lawsuits at multiple granularities. arXiv:​2206.​10883
+Song P, et al (2023) LaWGPT. https://​github.​com/​pengx​iao-​song/​LaWGPT/​tree/​main
+Tagarelli A, Simeri A (2022) Unsupervised law article mining based on deep pre-trained language
+representation models with application to the italian civil code. Artif Intell Law 30(3):417–473.
+https://​doi.​org/​10.​1007/​s10506-​021-​09301-8
+Tang Y, Tran C, Li X, Chen P, et al (2020) Multilingual translation with extensible multilingual pretraining and finetuning. arXiv:​2008.​00401
+Taori R, Gulrajani I, Zhang T, Dubois Y, Li X, Guestrin C, Liang P, Hashimoto TB (2023) Stanford
+Alpaca: an instruction-following LLaMA model. GitHub
+Tuggener D, von Däniken P, Peetz T, Cieliebak M (2020) LEDGAR: A large-scale multi-label corpus
+for text classification of legal provisions in contracts. In: LREC, pp 1235–1241. European Language Resources Association, Marseille, France. https://​aclan​tholo​gy.​org/​2020.​lrec-1.​155
+Wang Z, Wang B, Duan X, Wu D, et al. (2019) Iflylegal: A chinese legal system for consultation, law
+searching, and document analysis. In: EMNLP-IJCNLP, pp 97–102. Association for Computational Linguisticshttps://​doi.​org/​10.​18653/​v1/​D19-​3017
+Wolf T, Debut L, Sanh V, Chaumond J, et al (2019) Huggingface’s transformers: state-of-the-art natural language processing. arXiv:​1910.​03771
+Xiao C, Hu X, Liu Z, Tu C et al (2021) Lawformer: a pre-trained language model for chinese legal
+long documents. AI Open 2:79–84. https://​doi.​org/​10.​1016/j.​aiopen.​2021.​06.​003
+Xue L, Constant N, Roberts A, Kale M, Al-Rfou R, Siddhant A, Barua A, Raffel C (2021) mt5: a
+massively multilingual pre-trained text-to-text transformer. In: Toutanova K, Rumshisky A, Zettlemoyer L, Hakkani-Tür D, Beltagy I, Bethard S, Cotterell R, Chakraborty T, Zhou Y (eds)
+Proceedings of the 2021 conference of the North American Chapter of the association for computational linguistics: human language technologies, NAACL-HLT 2021, Online, June 6–11,
+2021, pp 483–498. Association for Computational Linguistics. https://​doi.​org/​10.​18653/​V1/​
+2021.​NAACL-​MAIN.​41
+Xu C, Guo D, Duan N, McAuley J (2023) Baize: An open-source chat model with parameter-efficient
+tuning on self-chat data. In: Bouamor H, Pino J, Bali K (eds) Proceedings of the 2023 conference on empirical methods in natural language processing, pp 6268–6278. Association for
+Computational Linguistics, Singapore. https://​doi.​org/​10.​18653/​v1/​2023.​emnlp-​main.​385
+Zaheer M, Guruganesh G, Dubey KA, Ainslie J, Alberti C, Ontañón S, Pham P, Ravula A, Wang Q,
+Yang L, Ahmed A (2020) Big bird: transformers for longer sequences. In: Larochelle H, Ranzato M, Hadsell R, Balcan M, Lin H (eds) Advances in neural information processing systems
+33: annual conference on neural information processing systems 2020, NeurIPS 2020, December 6–12, 2020, Virtual. https://​proce​edings.​neuri​ps.​cc/​paper/​2020/​hash/​c8512​d142a​2d849​
+725f3​1a9a7​a361a​b9-​Abstr​act.​html
+Zhang T, Kishore V, Wu F, Weinberger KQ, et al (2020) Bertscore: evaluating text generation with
+BERT. In: ICLR. OpenReview.net. https://​openr​eview.​net/​forum?​id=​SkeHu​CVFDr
+Zhang J, Zhao Y, Saleh M, Liu PJ (2020) PEGASUS: pre-training with extracted gap-sentences for
+abstractive summarization. In: ICML. Proceedings of machine learning research, vol. 119, pp
+11328–11339. PMLR. http://​proce​edings.​mlr.​press/​v119/​zhang​20ae.​html
+Zhang M, Zhou G, Yu W, Huang N, et al. (2022) A comprehensive survey of abstractive text summarization based on deep learning. Comput Intell Neurosci 2022
+Zheng L, Guha N, Anderson BR, Henderson P, et al (2021) When does pretraining help? Assessing selfsupervised learning for law and the casehold dataset of 53,000+ legal holdings. In: ICAIL, pp 159–
+168. ACM. https://​doi.​org/​10.​1145/​34627​57.​34660​88
+Zheng L, Guha N, Anderson BR, Henderson P, et al (2021) When does pretraining help?: assessing selfsupervised learning for law and the casehold dataset of 53,000+ legal holdings. In: ICAIL, pp 159–
+168. ACM. https://​doi.​org/​10.​1145/​34627​57.​34660​88
+Zhong H, Xiao C, Tu C, Zhang T, et al. (2020) JEC-QA: a legal-domain question answering dataset. In:
+AAAI, pp 9701–9708. AAAI Press. https://​ojs.​aaai.​org/​index.​php/​AAAI/​artic​le/​view/​6519
+
+LAWSUIT: a LArge expert‑Written SUmmarization dataset of…
+
+1187
+
+Zhong L, Zhong Z, Zhao Z, Wang S, et al. (2019) Automatic summarization of legal decisions using
+iterative masking of predictive sentences. In: ICAIL, pp 163–172. ACM. https://​doi.​org/​10.​1145/​
+33226​40.​33267​28
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+
+

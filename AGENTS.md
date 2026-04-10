@@ -110,7 +110,7 @@ scopus: para obtenção dos artigos relacionados ao tema do trabalho
 
 ### Apendice
 
-#### Query do Scopus para obtenção dos artigos com atividades semelhantes
+#### Query do Scopus para obtenção dos artigos com a construção de frameworks de AI semelhantes
 
 query textual:
 "machine learning" OR "learning of machine" OR "NLP" OR "natural language processing" OR "NER" OR "Named entity recognition"
@@ -134,3 +134,31 @@ critérios de busca:
 obtive 45 artigos
 
 Especifiquei mais por NER, dado que quero comparar com minha abordagem obtive 3 artigos para análise.
+
+#### Query do Scopus para obtenção dos artigos de filtragem e classificação de documentos jurídicos
+
+query textual:
+"Legal document" AND "filtering" AND "classification"
+
+critérios de busca:
+
+- 2021 - 2026
+- em ingles
+- ordenados por quantidade de citações
+- artigos de periódico
+- remover artigos com < 50% de percentil ou < 100 citações
+
+Obtive 3 artigos para análise.
+
+#### Query do Scopus para obtenção dos artigos de segmentação de documentos jurídicos
+
+query textual:
+"Legal sentences" or "legal documents" or "legal texts" AND "segmentation"
+
+critérios de busca:
+
+- 2021 - 2026
+- em ingles
+- ordenados por quantidade de citações
+- artigos de periódico
+- remover artigos com < 50% de percentil ou < 100 citações
