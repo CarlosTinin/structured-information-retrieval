@@ -1,0 +1,1054 @@
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+Contents lists available at ScienceDirect
+
+International Journal of Accounting
+Information Systems
+journal homepage: www.elsevier.com/locate/accinf
+
+The use of information technology for international transfer
+pricing in multinational enterprises
+Lars Hemling a, Jacob Christian Plesner Rossing b, *, Andreas Hoffjan a
+a
+b
+
+TU Dortmund University, Faculty of Business and Economics, Germany
+The University of Tampa, Sykes College of Business, Department of Accounting, United States
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+Information technology
+ERP systems
+Tax risk management
+Transfer pricing
+Multinational enterprises
+Intra-organizational power
+Functional hierarchies
+
+This paper studies the degree to which multinational enterprises (MNEs) use information tech­
+nology for managing international transfer pricing (ITP). Based on 21 interviews conducted with
+in-house accounting and tax professionals in MNEs, we observed limited use of information
+technology for ITP management. However, some degree of ITP automation was observed in
+workflow management to produce transfer pricing documentation. The limited degree of auto­
+mation observed was driven by both system- and individual-level barriers. Overall, we found that
+management accountants and information technology experts dominate the enterprise resource
+planning system design agenda, and the tax departments’ ITP tax compliance objective plays a
+relatively limited role. This reduces the ability for ITP automation partly because the data seg­
+mentation that is prioritized for management reporting does not support the tax departments’
+needs for legal-entity data segmentation to document tax compliance.
+
+1. Introduction
+The tax strategies deployed by multinational enterprises (MNEs) continue to receive public attention. Several high-profile legal
+disputes between MNEs and tax authorities have demonstrated the significance of the tax practices of MNEs, particularly those related
+to international transfer pricing (ITP). ITP entails opportunities for tax avoidance resulting from the ability to exploit tax rate dif­
+ferentials between countries hosting affiliated companies. For example, an MNE with a company located in a tax haven can decrease its
+group-level tax burden by transferring goods at artificially high prices to an affiliated company located in a high-tax jurisdiction. This
+increases the selling company’s profit, which is subject to limited taxation, while reducing the pre-tax profit of the buying company
+due to the inflated cost. The net effect is a reduced tax payment for the MNE group.
+In response to alleged tax avoidance by MNEs, prominent trade institutions, such as the European Union and Organisation for
+Economic Co-operation and Development (OECD), exert continuous efforts to enhance global tax policy and promote tax compliance.
+In particular, the OECD and its recent action plan on base erosion and profit shifting (BEPS) have caught the attention of MNEs’ top
+managers and tax departments. The BEPS action plan was initiated in 2013 by the OECD based on the G20 leaders’ push for a su­
+pranational initiative to mitigate tax avoidance. The final BEPS reports (OECD, 2015) address various tax issues, including revised
+guidelines for setting and documenting transfer prices based on the arm’s length principle.
+Given the tightened tax regulatory environment facing MNEs combined with the increased attention to tax digitization in the tax
+* Corresponding author.
+E-mail addresses: lars.hemling@tu-dortmund.de (L. Hemling), jrossing@ut.edu (J.C. Plesner Rossing), andreas.hoffjan@tu-dortmund.de
+(A. Hoffjan).
+https://doi.org/10.1016/j.accinf.2021.100546
+Received 18 February 2021; Received in revised form 15 December 2021; Accepted 20 December 2021
+Available online 29 December 2021
+1467-0895/© 2021 Elsevier Inc. All rights reserved.
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+departments of MNEs (EY, 2017), the issue of information technology and automation relating to ITP are becoming increasingly
+important. More fundamentally, ITP is inherently part of MNEs’ information technology environment, as intercompany pri­
+cing—similar to third party transactions—is typically processed within the enterprise resource planning (ERP) system. Academic
+studies and professional surveys of ITP have demonstrated how MNEs have responded to increasing tax regulatory pressures by
+deploying ITP strategies focused on tax compliance (Cools et al., 2008; Cools and Plesner Rossing, 2021; EY, 2019; Hummel et al.,
+2019; Klassen et al., 2017). However, the degree to which MNEs utilize information technology to manage ITP tax risks, particularly
+the extent to which MNEs depend on technology for pricing and documenting1 intercompany transactions to meet tax regulatory
+requirements, has received surprisingly limited attention. For example, the degree to which MNE tax departments rely on manual
+processes and Excel spreadsheet solutions to manage ITP is unclear. At the same time, accounting and tax service providers are
+marketing various ITP software applications, which suggests some MNE interest in these applications. Overall, the degree of and
+motives for the adoption of these tools by MNEs remains unexplored in the academic literature, despite ITP tax risks receiving un­
+precedented organizational attention (EY, 2016, 2019; Klassen et al., 2017). Therefore, we seek to answer the following research
+question: How are MNEs using information technology to manage ITP?
+Our paper contributes to a stream of contingency theory-based literature in accounting in which researchers interact directly with
+the MNE tax department professionals to understand how they adapt to the current tax environment (Cools et al., 2008; Cools and
+Slagmulder, 2009; Hasseldine et al., 2011; Hummel et al., 2019; Mulligan and Oats, 2009, 2016; Plesner Rossing, 2013; Rogers and
+Oats, 2019). Based on 21 interviews conducted between August 2018 and January 2019 with in-house accounting and tax pro­
+fessionals employed by MNEs, we found only limited use of information technology for ITP management. The main automation that
+was observed relates to the management of intra-organizational workflows for developing local documentation in accordance with the
+comprehensive 2017 update to the OECD Guidelines.2 The limited use of information technology for ITP is significantly driven by
+system-level conditions, including fragmented ERP system environments. However, functional hierarchies also play a role in the
+limited use of ITP automation that was observed. Specifically, ERP system design is based on the prioritization of management
+reporting needs, typically divisional or business unit-level reporting, by the management accounting and information technology
+functions within the MNE. Conversely, ITP tax compliance is based on legal entity-level reporting. These differing data segmentation
+needs ultimately reduce the tax departments’ ability to automate ITP processes.
+The remainder of this paper is organized as follows: Section 2 presents the literature review and theoretical guidance, Section 3
+presents the research strategy and design, Section 4 presents the empirical findings emerging from analysis of the empirical data, and
+Section 5 includes a discussion of our observations and suggestions for future research.
+2. Literature review and theoretical guidance
+2.1. Transfer pricing literature
+Transfer pricing has a direct impact on management control systems in both domestic and multinational organizations, as it im­
+pacts the entire accounting cycle from planning and budgeting to performance measurement (Merchant and Van der Stede, 2017;
+Zimmerman, 2020). Initial research focused on transfer pricing for the purpose of optimizing resource allocation (Hirshleifer, 1956)
+and ensuring integration between diversified units (Colbert and Spicer, 1995; Van der Meer-Kooistra, 1994; Watson and Baumler,
+1975). As globalization increased, the tax dimension of transfer pricing started to receive attention from tax policy makers looking to
+mitigate tax avoidance. At the same time, academics observed tax avoidance through transfer pricing (Clausing, 2001, 2003; Harris
+1993) based on quantitative data obtained from public financial databases, see Hanlon and Heitzman (2010) for a review, and Becker
+et al. (2020), Blouin et al. (2012), De Simone et al. (2017), and Klassen and Laplante (2012) for more recent contributions.
+Another stream of literature using contingency theory identified structural variables for the design of MNEs’ transfer pricing
+systems (Borkowski, 1990; Borkowski, 1992a; Borkowski, 1992b; Borkowski, 1996; Emmanuel and Mehafdi, 1994). Using survey
+instruments as the typical data collection method, the literature identified relationships between organizational structures and the
+choice of transfer pricing methods (cost, market, or negotiated prices) and the managerial priorities and strategic objectives of transfer
+pricing decisions (Cravens and Shearon, 1996; Cravens, 1997). A more recent stream of qualitative research (Cools et al., 2008; Cools
+and Slagmulder, 2009; Plesner Rossing, 2013) expanded on the initial findings within the contingency school of ITP research,
+demonstrating the value of case studies for understanding complex ITP dynamics in MNEs. Cools et al. (2008) found that a tax
+compliance strategy has a direct impact on the control system design, including planning, budgeting, and performance measurement.
+Similarly, Cools and Slagmulder (2009) showed that ITP tax compliance policies require a redesign of responsibility accounting
+structures, including a conversion of cost centers into pseudo-profit centers. Plesner Rossing (2013) illustrated how interactive controls
+are used to refine ITP strategies in a dynamic and highly uncertain tax environment, including the role of interorganizational network
+ties.
+Recent research has identified a shift in the strategic tax objectives of MNEs, and in many cases, previous tax avoidance practices
+
+1
+Operational ITP involves two main tasks: a) setting transfer prices for intercompany, cross-border transactions based on the arm’s length
+principle in the OECD Transfer Pricing Guidelines and b) producing documentation for tax authorities that demonstrates compliance with the arm’s
+length principle.
+2
+The revised OECD Guidelines (OECD, 2017) Chapter V requires MNEs to produce extensive transfer pricing documentation for business entities
+involved in intercompany transactions in order to demonstrate compliance with the arm’s length principle.
+
+2
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+have been replaced with more compliance-oriented strategies (Cools et al., 2008; Hummel et al., 2019; Klassen et al., 2017; Mulligan
+and Oats, 2009, 2016; Plesner Rossing, 2013; Wunder, 2009). These tax compliance strategies are typically driven by technical tax
+risks from double taxation as well as reputational risks (Austin and Wilson, 2017; Cools and Plesner Rossing, 2021). Moreover, research
+(Wunder, 2009) and professional surveys (EY, 2016, 2019) have identified tax risk management as a top priority for MNEs in transfer
+pricing. However, the use of technology for ITP in MNE tax departments, as well as tax departments’ interaction with other key
+functions of accounting and information technology, needs to be better understood. In this context, the role of management ac­
+countants, including management accountants’ transition from the traditional controller function to the role of strategic business
+partner for operational management, has been debated in accounting literature for decades (Byrne and Pierce, 2007; Horton and
+Wanderley, 2018; Shields, 1997). During this transition, it has become evident that management accountants play a key role in
+collaborating with in-house information technology staff to ensure that ERP system designs provide a basis for achieving the com­
+mercial goals of the organization (Grabski et al., 2011; Granlund, 2011; Rikhardsson and Yigitbasioglu, 2018). We believe the
+increasing importance of tax risk management in MNEs implies the need for a more direct interaction between the management ac­
+countants, information technology experts, and tax department professionals, which warrants further investigation.
+2.2. Automation of accounting
+Accounting and information technology are considered in a variety of literature streams, with most research residing in the ac­
+counting information system (AIS) and ERP system domains. The literature often applies a functionalistic approach, examining systemlevel drivers of information technology and ERP system adoption, design, and functionality. Some literature has advanced the un­
+derstanding of the different pressures emerging from within and outside of organizations, driving the adoption of AIS systems and the
+degree of sophistication of these systems. For example, Kung et al. (2015) examined the influence of environmental factors on or­
+ganization’s intention to adopt specific software, using a taxonomy of mimetic, coercive, and normative pressures (Powell and
+DiMaggio, 1991). In context of technological adoption, mimetic pressures stem from isomorphic dynamics that drive imitation of peer
+organizations’ technology systems and environments. Coercive pressures refer to formal or informal pressures for technological
+adoption from organizations upon which the adopter is dependent. Normative pressures involve forces driven by professional stan­
+dards or professional communities within which an organization exists.
+Other literature, including work emphasizing the importance of recognizing the individual-level drivers in explaining organizational
+practices and human behavior, has studied the impact of AIS and ERP systems on organizational decision making and control (Kocsis,
+2019). Henri (2006) noted the importance of cultural variation across organizations to enhance the quality of performance man­
+agement system design and managerial decision making. Other researchers have focused on the role of management accountants in the
+process of information system change (Byrne and Pierce, 2007; Granlund and Malmi, 2002; Jack and Kholeif, 2008; Malmi and
+Granlund, 2009; Quattrone and Hopper, 2005). Chapman (2005) noted that the theoretical potential of ERP system research goes
+beyond “technological curiosities” (p. 685) to explore and answer more fundamental issues of management control. Similarly, earlier
+work by Bariff and Galbraith (1978) suggested that the political significance of organizational reporting systems should be explicitly
+recognized in information system research, including the powerful coalition between organizational accountants and information
+system experts in the administration and distribution of organizational information through AIS and ERP applications.
+However, despite an active AIS research agenda recognizing that all aspects of accounting data collection are impacted by tech­
+nology (Arnold, 2018) and in some cases, controlled by technology (Sutton et al., 2016), research on the automation of accounting
+remains surprisingly limited. Kocsis (2019) reviewed current research and noted that while accounting professionals are seeing
+automation and artificial intelligence take over auditing and control, the academic literature does not reflect this empirical reality:
+“Automation only appears a few times in the [reviewed] articles, as does artificial intelligence” (Kocsis 2019, p. 8). Finally, in the
+context of transfer pricing, Taipaleenmäki and Ikäheimo (2013) conceptualized the recent convergence of management accounting
+and financial accounting with advancements in information technology, noting, “Within the technical and technological domain,
+recent developments in activities, such as financial reporting and stock market regulation, voluntary disclosures, performance mea­
+surement, transfer pricing3, competitor, customer and contractor analysis, as well as due diligence in M&A activities, all contain major
+converging elements in which IT plays an important, even pivotal role.” (p. 343).
+Notwithstanding academics’ and tax professionals’ recognition of the inherent role of technology in tax risk management, few
+contributions have focused on the link between information technology and tax (Gallemore and Labro, 2015; Hamilton and Stekelberg,
+2017). To our knowledge, no existing research, including research that interacts directly with the in-house accounting and tax pro­
+fessionals responsible for implementing MNEs’ tax strategies, explores the degree to which MNE tax departments use technology to
+manage tax risks in general and ITP in particular. Therefore, in this paper we study MNE tax departments’ use of information tech­
+nology in the context of ITP and focus on the two main tasks of operational ITP, i.e., the implementation of the ITP policy through price
+setting and the subsequent development of documentation to demonstrate compliance with the arm’s length principle. We examine
+two potential contingent factors of ITP automation: system-level drivers, e.g., ERP system design, and individual-level drivers, e.g., tax
+department managers’ perceptions of ITP automation tools. Therefore, we use contingency theory as the theoretical basis for our
+analysis and the tax departments of MNEs as the level of our analysis. Fig. 1 illustrates the guiding framework for the empirical
+analysis.
+3
+
+Emphasis added.
+3
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+Fig. 1. Guiding framework.
+
+3. Research strategy and design
+This qualitative study focuses on 20 MNEs that operate in various industries and are all based in Germany, except one that is based
+in the US. The data were collected between August 2018 and January 2019 as part of a broader study on ITP and tax risk management
+in MNEs and include specific insights into ITP in the context of information technology as well as operational insights into the general
+management of ITP. The timing of the data collection provides a basis for making observations regarding the MNEs’ perspectives and
+responses to OECD’s BEPS initiative. The MNEs under study conduct high volumes of inter-company, cross-border transactions that
+interact with the ERP system by design. In addition, EY’s transfer pricing survey found that Germany was the most frequently cited
+nation where transfer pricing policies have faced official examination (EY 2016, p. 18), creating a suitable context for our study.
+Our analysis draws from a variety of data sources, and the main data input comes from 21 interviews with 25 in-house accounting
+and tax professionals.4 These interviewees were carefully selected and either have direct ITP responsibility or at least functional
+involvement with ITP as part of their professional duties. This is in accordance with the “purposive” approach to sampling and
+interviewee identification recommended in the qualitative research methodology literature (Miles and Huberman, 1984, p. 27).
+Table 1 illustrates the characteristics of the MNEs and interviewees.
+Prior to the interviews conducted by one of the researchers, the MNEs’ websites were reviewed to ensure a sufficient degree of
+commercial understanding of the MNEs in question. In addition, publicly available documents from commercial vendors offering ITP
+software were reviewed, including the software’s intended functionality for ITP automation. The total interview time amounted to 26 h
+and 59 min. Except for one interview in which detailed notes were taken, all interviews were recorded and transcribed. The interviews
+consisted of a pre-determined list of questions to guide the conversation (see Appendix A) but still allowed interviewees to elaborate on
+Table 1
+MNE and interviewee characteristics.
+MNEs
+
+MNE Size by Revenue (EUR Billions)
+
+Sectors
+
+<1
+
+1–10
+
+Mechanical and Plant Engineering
+Pharmaceutical Industry
+Consumer Goods Industry
+Retail and Wholesale
+Industrial Conglomerate
+Manufacturer Household Appliances
+Manufacturer Electrical Material
+Total
+
+1
+
+8
+
+>10
+3
+1
+1
+1
+
+3
+1
+2
+
+1
+12
+
+6
+
+Ʃ
+
+Ʃ
+
+MNEs
+
+Interviews
+
+9
+3
+1
+4
+1
+1
+1
+20
+
+9
+3
+1
+4
+2
+1
+1
+21
+
+INTERVIEWEES
+
+Headquarters
+
+Subsidiary
+
+Ʃ
+
+Duration
+
+Tax/TP manager
+Internal auditor
+Controller
+Total
+
+21
+1
+
+1
+
+22
+1
+2
+25
+
+24h 42m
+0h 56m
+1h 21m
+26h 59m
+
+2
+3
+
+22
+
+issues specific to their industry or unique to their organizational context (Yin, 2018). The interview guide was primarily based on the
+existing ITP literature, and also benefited from input from a Big Four partner, as well as insights obtained by one of the researchers who
+
+4
+
+Two interviews had two interviewees participating, and one interview had three interviewees participating.
+4
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+participated in a two-day network group meeting with in-house tax and accounting professionals.
+One of the researchers coded the interviews based on a detailed coding scheme using a qualitative research analysis software tool
+(MAXQDA). The initial coding scheme was based on the themes and questions in the interview guide and the guiding framework in
+Fig. 1. The coding scheme was developed by two of the researchers through a highly interactive process based on careful review and
+analysis of the interview data. The coding of interviews followed a reconciliation approach to arrive at a mutually agreeable coding
+solution. Specifically, one of the researchers coded three interviews and shared the coding via MAXQDA with the other researcher who
+carefully reviewed the coding to check for consistency and completeness vis-à-vis the coding scheme. This process resulted in valuable
+conversations that guided the subsequent coding of the remaining interviews, and these coded interviews were also shared via
+MAXQDA for review before the joint analysis proceeded. The analysis of the coded interviews can be described as a highly interactive
+process to ensure alignment in the analytical process and enhance validity and reliability in the conclusions derived from iterative
+reflections. As part of the analytical process, a thematic matrix was developed based on the guidance of Miles, Huberman, and Saldana
+(2019). This matrix also served as the basis for the summary of the findings in Table 2.
+4. Findings
+4.1. The MNE tax function
+The MNEs examined in this study were subject to increased attention from global tax authorities in recent years. In addition, the
+MNEs’ boards and C-suite executives have started to interact more directly with their tax departments regarding tax risk management
+strategies, including those linked with ITP.
+“This is high risk and therefore high value. They know BEPS5; they have heard from their network, forums, and their advisors. Therefore,
+they come to us and ask, ‘How do we handle it?’ That is actually also why you see BEPS everywhere in the compliance guideline because
+it is a game changer.” (INT 9)
+Tax departments are typically organized as a subdepartment of the finance function, which handles group-level accounting,
+reporting, and compliance. Tax departments typically have international responsibility for direct and indirect taxes, including ITP, and
+generally apply a centralized approach to ITP tax risk management—a phenomenon that seems to be further accelerated by BEPS—to
+ensure consistent ITP control across the group. Only in a few cases, interviewees reported having dedicated tax people located at the
+subsidiary level. The main operational ITP responsibility of tax departments involves setting arm’s length budget targets and corre­
+sponding transfer prices and producing the necessary documentation at year-end. More ad hoc ITP tasks handled by the centralized tax
+department relate to providing support to subsidiaries during local tax audits.
+We observed that top management sets the tone that conveys the organizational appetite for tax risk to the tax department pro­
+fessionals responsible for the implementation of the tax strategy. This indicates a move away from tax being a decentralized
+compliance exercise receiving little active top management attention to an open-door policy relating to the tax strategy.
+“Since BEPS, the door of the board of directors is always open to us. In the past, the topic (ITP) was still viewed very negatively, and we
+only did what was necessary to meet the legal requirements.” (INT 6)
+As part of the transition towards implementing tax strategies for ITP in accordance with BEPS, we found that the vast majority of
+MNEs considered establishing some degree of automation for price setting and documentation. These ITP automation tools could be
+either a software solution that integrates with conventional ERP software systems or add-on software that extracts and processes data
+from the ERP system. Key software functionality for ITP price setting promoted by the external vendors includes the automated
+creation of segmented profit and loss statements and dashboard-based margin monitoring. Scenario-generating features that simulate
+the profit margin effects of specific ITP policies are mentioned in the marketing materials as being key features of ITP automation tools.
+For the automation of ITP documentation processes, the tools typically offer prebuilt text narratives to describe the business functions
+and risks of legal entities. In addition, several tools offer workflow process management to assist tax departments in obtaining feedback
+from key organizational functions responsible for providing inputs for completing local documentation files. This includes controllers,
+subsidiary finance managers, and business operational experts holding detailed transactional and operational knowledge to support
+ITP decisions. Section 4.2 and 4.3 consider the way in which the MNEs under study perceived these tools and the degree to which they
+are used for managing price setting and documentation for ITP.
+4.2. ITP automation: Setting transfer prices
+Regarding organizational structure, the German headquarters can generally be viewed as the main entrepreneur of the group that
+assumes significant business risks and owns the key intangible assets. However, to ensure operational and tax efficiency and due to
+historic acquisitions of companies holding significant intangibles, the group’s intangible property (IP) is not always owned and
+maintained by the parent company.
+
+5
+Base Erosion and Profit Shifting. For details on the OECD’s BEPS initiative to reduce MNE tax avoidance, see the Introduction section. The
+specific BEPS reports that resulted from the OECD action plan can be accessed at https://www.oecd.org/tax/beps/.
+
+5
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+“For example, if we had acquisitions and the acquired company had some kind of IP, which happened to be in a low-tax country, then the
+IP was left there, which then led to us having a lot of IP owners.” (INT 11)
+The main intercompany transactions observed were transfers of physical goods and services. In addition, the use of intangible
+property through intercompany licensing arrangements was emphasized.
+“The most important cross-border supply and service relationships are…the tangible goods transactions, [such as] physical goods
+transactions in the various divisions of a company. Then there are IP-related transactions, such as a licensing system between affiliated
+companies. And the third major area is the clearing of services between affiliated companies, which is then split up into various sub­
+categories.” (INT 25)
+The standard approach observed for transfer price setting is one in which the tax department at headquarters develops an ITP policy
+for the group in cooperation with top management, primarily involving the CFO who typically assumes the ultimate tax responsibility.
+Interviewees stressed that the centralization of ITP is important to ensure a consistent approach across the group. Therefore, while
+managers of subsidiaries provide important operational information to the tax department in Germany, they generally have a limited
+influence over the formal ITP policy design. The policy typically highlights the tax compliance objective and ITP methods applied to
+specific intercompany transactions. It was evident from the interviewees that the tax department is deeply dependent upon other
+administrative functions to ensure the successful implementation of the policy. In particular, the accounting department and infor­
+mation technology specialists were emphasized due to their extensive involvement in handling policy implementation, including their
+assistance in ensuring that the methods selected by the tax department are applied to specific intercompany transactions.
+“Systemic conversion takes place in SAP. This means that we pass information to colleagues in the shared service centers who then enter
+this information in the accounting organization (system) so that prices can be calculated correctly.” (INT 25)
+We found that one of the main issues in the ITP exercise that has significant implications for automating the process is ensuring
+useful data segmentation. Given the tax departments’ need to document the arm’s length nature of intercompany transactions based on
+ex-post accounting data, useful segmentation of intercompany transactions in the ERP system is a crucial prerequisite for automation.
+“We actually want to define certain data that we need from the individual SAP ERP systems of the various companies…this is the only
+way to determine, for example, the segmented income statement.” (INT 8)
+We observed several limitations in the tax departments’ ability to integrate ITP policies with existing ERP system designs. In
+general, interviewees agreed that the attention to ITP from top managers increased post-BEPS. However, the tax departments’ ability
+to influence the ERP system design based on the data and segmentation needs for tax compliance remains rather limited. Instead, the
+ERP system design decisions are generally made by the management accountants and information technology specialists to ensure the
+ability to convert the ERP system information into a format that satisfies the reporting needs of the business and operational managers.
+“We have to acknowledge that tax is not the center of the world. We follow business; business does not follow us.” (INT 9)
+In general, the accounting techniques applied in ERP systems for control and periodic management reporting are different to the
+segmentation needed for tax compliance. This includes accounting practices that are not necessarily aligned with the tax departments’
+objectives and rationale for what constitutes arm’s length behaviors. For example, the management accountants and controllers
+perform cost allocations strictly for business decision making and reporting purposes without explicit regard to tax compliance, which
+can cause significant issues for the tax department, including the risk of double taxation.
+“It is indeed the case that there is a field of tension between Controlling and the tax department, in the sense that Controlling is often
+interested in a very detailed, cause-related cost allocation…this applies particularly to services. In the case of material goods, there are
+normally not many problems, but in the case of intercompany service allocation, it is often the case that from the point of view of
+Controlling, an allocation is necessary, and the tax department or the transfer price team may then have to say, ‘No, we can’t do that
+easily.’ or, ‘It is not possible in this country. We can indeed offset, but then these are non-deductible business expenses.’” (INT 25)
+A related issue that was found to limit interviewees’ enthusiasm for automating the transfer price setting process is the fact that
+several MNEs use a variety of different ERP systems. One reason for these fragmented ERP environments is past mergers and acqui­
+sitions in which the acquired company’s ERP platform remains in use after the acquisition. Such fragmented ERP structures create a
+barrier to ITP automation, as they require significant reconfiguration and standardization before an automated ITP solution can be
+implemented:
+“In my view, the basic prerequisites for the transfer pricing process to be integrated into tax operations would be the standardization of
+ERP systems, which is not the case in all of our countries at present.” (INT 17)
+“A heterogeneous SAP landscape, that is where it starts.” (INT 10)
+However, this does not mean that MNEs’ tax departments consider ITP automation solely an issue of ensuring more structure and
+uniformity in ERP systems. Some interviewees noted the importance of having a greater degree of standardization in the ITP policy
+throughout the MNE value chain. In fact, the standardization of the ITP policies and methods was considered a precondition for ITP
+automation to be possible.
+“As soon as we can standardize, we can start automate.” (INT 9)
+“The simpler the transfer pricing system, the more it can be automated. If you have a transfer pricing system with a thousand exceptions,
+then in theory, you can still automate it, but it is difficult.” (INT 11)
+Interviewees generally seemed to be intrigued by the vision of ITP automation, with some being in the experimental phases of
+automating the pricing of specific intercompany transactions. This was perceived to be a long-term and costly project subject to
+6
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+significant uncertainty because of system-based limitations.
+“We are also talking about a period of probably ten years for implementation.” (INT 16)
+We observed only limited degrees of automation for the diagnostic control of profit margins relating to arm’s length profit targets.
+One of the perceived benefits of these tools is the tax departments’ ability to handle cases in real-time to which the management
+accountants were unsuccessful in implementing the ITP policy conveyed by the tax department. Some interviewees noted that while
+the ITP policy guiding intercompany invoicing was formalized at the beginning of the fiscal year, they would often experience sig­
+nificant variance from targets when reviewing the financial results.
+“If you had detailed planning for the entities, then you could check during the year with margin-oriented transfer pricing methods
+whether I am heading in the right direction…then you could ideally make adjustment entries during the year and not only at the end of the
+year. This would mean less discussion during the tax audits. There are already these cases in which the budget values you offset against
+are not correct, and then there is, for example, another double offsetting at the end of the year. Then, of course, every auditor comes and
+asks, ‘What is this? Why is this? So, is it really based on arm’s length data or not?’ That’s always a topic of discussion.” (INT 24)
+For those relatively few tax departments that use monitoring tools to enhance their real-time arm’s length-based diagnostic control,
+we found that the tools were not integrated with the ERP system but are add-on solutions that pulled data from the relevant ERP
+modules. The tax department subsequently processed the data to assess the degree of periodic adherence to arm’s length earnings
+targets, as well as forecasting for the individual subsidiaries.
+“With the help of this system, forecast values can also be determined for the profit margins, so to speak, which can then be applied for the
+following quarters on a certain observation date…It gets data from SAP. This data is imported separately, but we then report the
+calculation result back to our colleagues…who then enter it into the [SAP] system via the appropriate interfaces.” (INT 25)
+However, these solutions have not been integrated in a way that provides a basis for full ITP automation, including an automated
+journal entry adjustment within the relevant ERP system module. Instead, we found that manual assessment and data processing using
+Microsoft Excel is still widely practiced in tax departments. The outputs are then communicated to controllers who perform the
+necessary accounting journal entry adjustments in the ERP system for tax compliance purposes.
+“The calculation process and simulation process is all done in Excel.” (INT 19)
+The general ITP automation vision of these MNEs is a solution in which the ERP system can handle the implementation of the ITP
+policy. However, for some MNEs it is not only a matter of automating the policy-based price setting process but also the ability to
+perform real-time simulations, including the ability to directly simulate pre- and post-tax effects from potential changes to transfer
+prices for specific transactions.6 An interviewee currently involved in an ITP automation project commented:
+“So, you can imagine, we have different SAP systems in use…and from these systems, it should be possible to import the individual tables
+from the financial, controlling, and materials management data into the uniform business warehouse in which it will be possible to
+monitor and adjust the margins in a permanent manner, and, of course, we also imagine that modulation calculations can be made on
+this basis. What will change if we modify a parameter for a specific country in a specific transfer pricing transaction? Then it can
+immediately calculate…what the effects will be. Then you can include the tax rate and so on. This is what we envision for the IT system at
+the end of the project.” (INT 8)
+Of note, we also received interesting feedback on the affinity for information technology among the tax department professionals.
+For example, one interviewee indicated a preference for playing a more limited role in relation to ERP system design to ensure that the
+scope of ITP responsibilities does not create an unrealistic burden for the tax department or distort operational control.
+“We also have to think carefully about this from the [perspective of the] tax department: How much responsibility we can take; how
+much do we want to take on; how are our resources at that point. Because that is always my example or my position here that I represent
+in the company. We cannot build up a second controlling department with our resources in the tax department. That is simply not
+possible. There are only a handful of people who deal with transfer pricing in the company, but hundreds, if not thousands, of colleagues
+who deal with business analytics or controlling, and we cannot, so to speak, saddle up on that. We can’t do that. You just have to work
+together, and the tax department has to think about what it is able to achieve with the human resources it has.” (INT 25)
+Along these lines, it seems that tax department professionals are mainly comfortable with more traditional domains of tax
+compliance, e.g., corporate tax law, accounting, and finance. One interviewee noted that tax department professionals are reluctant
+when it comes to becoming directly involved in more complex information technology and system applications.
+“If they (tax departments) want to be perceived as doing the right thing, they have to work more with IT. This scares a lot of tax
+professionals because many of them are tax nerds. They do not like IT, and they do not understand IT. I actually look forward to the new
+generation of the so-called tax technologist; the guys who understand tax from a structured perspective and…are able to squeeze that into
+an IT system. This is what we will see. It [has been] stressed for the last couple of years, and it will be bigger and bigger. We need more IT
+systems and automation because our compliance burden will increase, and we will not get more people. That is the direction.” (INT 9)
+Furthermore, the importance of information technology in tax departments’ recruitment decisions was highlighted. There appears
+to be an important generational factor at play here, as the younger staff who currently fill entry-level positions within tax departments
+
+6
+For example, such analysis would be relevant under a transactional net margin method to test whether relevant earnings margins fall too far
+from a benchmark median value or a similar measure of arm’s length comparability.
+
+7
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+were reported to have more technological affinity.
+“I have people in my team who not only [understand] tax law but also have knowledge of the systems, [i.e.], SAP and other IT-based
+systems. The whole department becomes much more technical. We are now reaching a technical level that the controlling department has
+developed for years. This is a good development…maybe it’s also due to the low average age in the tax department that people there are
+more open to such topics.” (INT 24)
+“My experience with the older colleagues here is that they have problems with Excel alone.” (INT 13)
+Other interviewees echoed the importance of tax department professionals acquiring general information technology knowledge
+and a genuine interest in working with system applications to achieve ITP objectives.
+“IT knowledge is definitely an advantage. There must also be an IT affinity, in other words, the willingness to work a lot with systems. In
+transfer pricing, you can’t just rely on saying, ‘I’m working on the topic from a legal perspective.’“ (INT 25)
+4.3. ITP Automation: Documenting transfer prices
+The MNEs under study are subject to increased documentation requirements, both in Germany and abroad, because of global tax
+authorities implementing the results of Action 13 in the BEPS action plan. The formal result of Action 13 was the introduction of a
+master/local file documentation approach accompanied by a country-by-country report to assist tax authorities in their risk assessment
+of individual MNEs. The master file causes only limited issues for MNEs, as it contains holistic, descriptive information regarding the
+value chain of the MNE and does not involve quantitative accounting data that is potentially subject to automation. However, the local
+documentation now requires more detailed information regarding specific intercompany transactions to justify accounting practices
+for ITP. MNEs generally manage the documentation process in-house and often use consultants to ensure that documentation files are
+aligned with local tax compliance requirements, although some MNEs with large tax functions utilize consultants less frequently.
+“We do [the documentation] in-house. Consultants are minimally involved…because we have a very large tax department, with almost
+40 people worldwide.” (INT 1)
+Notably, the documentation exercise is not detached from the initial transfer price setting exercise (see Section 4.2). Rather, they
+were found to be closely linked, as the documentation essentially requires justifying the arm’s length nature of transfer prices that have
+been applied to specific transactions. Given that transfer price setting is deeply integrated with the ERP systems, the tax department is
+forced to interact closely with the relevant ERP modules to extract and process accounting data for documentation purposes.
+“In my opinion, transfer pricing is 80% IT because I must crystallize the transaction. I have to know how it was calculated [and] what
+margins are involved. In other words, very IT intensive in my opinion.” (INT 6)
+One of the main obstacles observed to automating the ITP documentation process related to the lack of alignment between the
+segmentation required for management reporting versus for transfer pricing documentation purposes. Specifically, we observed that
+operational control and periodic management reporting were based on measuring commercial profitability at the divisional or
+business-unit level and were therefore relatively aggregated. In contrast, tax regulations require profitability to be documented at the
+transactional level for each legal entity. This difference in data segmentation causes a significant barrier to automating the production
+of documentation for the tax function, which was noted by several interviewees.
+“The controllers often look at business units and not at legal entities. They also combine business units from different entities and…across
+borders. We (tax department) only ever look at if there is a company and if it settles with another company across the border and what
+the result is. This perspective is almost only needed in the tax area.” (INT 24)
+That said, we do see a more widespread use of automation tools for ITP documentation than for price setting, and the interviewees
+exhibited a more positive attitude regarding the ways in which the tools from external vendors could assist the tax department in
+effectively completing documentation tasks. However, the lack of automation in the transfer pricing setting creates a barrier to the
+degree of automation in creating documentation owing to the aforementioned interdependencies. Therefore, the limited automation in
+price setting was found to limit the ability to automate the documentation process via direct data imports from the ERP system to the
+documentation files. Instead, a rather time-consuming and error-prone manual documentation process was observed, typically using
+Microsoft Excel for reorganizing ERP data imports. One of the popular features mentioned by the interviewees from MNEs that use
+documentation tools was the pre-narrated text modules that can be customized and reformatted to the specific commercial circum­
+stances. Several MNEs were intrigued by these tools and had already implemented them or were actively planning to do so because
+they can enhance standardization in formatting the documentation reports.
+“We have a layout. The [MNE name] local (documentation) file always looks the same, the structure is always the same so that we know
+afterwards where to find specific information.” (INT 13)
+Several MNEs had previously developed fragmented and misaligned documentation in specific jurisdictions, making it difficult and
+time consuming to review and update the files. By using the template text modules from these tools, the local files can be created in a
+more consistent manner and revised as needed, typically by a local consultant who adjusts to the local documentation requirements.
+The increased documentation requirements that emerged from BEPS seem to be a key driver in switching from the manual, loose-leaf
+documentation approach to a more standardized and rigorous format by using documentation tools.
+“We are currently in the process of introducing a new tool, which takes a much more centralized approach. Where we centrally issue
+transfer pricing templates from the tax department. Where we describe our main transactions in coordination with the business. We also
+8
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+do centralized competition and industry analyses, which we all feed centrally into this tool and actually tell the group companies that this
+is your basic framework in terms of content [and say], ‘Please take a local consultant who will only adapt the local content to your
+needs.’” (INT 13)
+“The best example is the documentation tool, which has simply not been an issue for us up until now. Before that we had a collection of
+sheets of paper that have been accepted by the German tax authorities in this format. We can no longer continue to use this format after
+BEPS, and either we do everything manually, which is extremely time-consuming, especially if you want to harmonize internationally, or
+we buy a tool and set up a reasonable process…with the business divisions. This was definitely initiated by BEPS. I personally see this as a
+great advantage.” (INT 1)
+Some MNEs were even planning on making the use of the tool mandatory for local subsidiaries, which they believed would enhance
+consistency in the documentation outputs and efficiency in producing and updating the annual documentation.
+“We have the manpower so that we can actually do more, and we did a project last year in which we created templates for the most
+important transactions, for documentation templates that we will use for the German companies, which we will also give to the foreign
+companies, and now, in principle, we have also established a process, which is already in place. It has not yet been approved by the Board
+of Management but by the decisive, let’s say, middle management divisions and [company] CFO, and so on. They have already agreed.
+What counts is that the local companies must basically work with our templates and produce annual documentation…In this respect, we
+work with templates, but we are only in the process of getting rid of this really seriously.” (INT 11)
+As stated, one of the benefits of increased consistency in local files is the ability to present standardized local documentation across
+tax jurisdictions in which the functional profile of the legal entities is similar. Given that global tax authorities are increasingly
+exchanging information to assess consistency in MNEs’ ITP practices throughout their value chains, having a consistent documentation
+approach was found to be an important driver when considering or using software tools for ITP documentation.
+“Ideally, our templates will of course improve from year to year because we intend to review and adapt them, but so does an auditor in
+Spain who perhaps also talks to an Italian auditor who says that they can, for example, lay the transfer price documentation of both units
+next to each other and say, ‘Well, exactly the same thing here.’ So, that is our vision, I would say.” (INT 13)
+“We are currently converting them (documentation files) based on BEPS. Up until now, it was rather a loose-leaf collection. Now we are
+really building up a consistent documentation, which is then used uniformly everywhere. Currently, we are still doing it in [Microsoft]
+Word, but we are in the process of introducing a tool that will take the work off our shoulders and keep the whole thing consistent. At the
+moment, whenever we submit a local file somewhere, we have to manually check that it is consistent with other local files. This is, of
+course, incredibly time consuming.” (INT 1)
+These tools typically offer pre-built text narratives for the documentation files that can be used when local subsidiary controllers
+and the central tax department collaborate to develop documentation files. Moreover, some tools also have integrated workflow
+modules that facilitate the central tax department’s workflow management for developing ITP documentation. For example, one
+feature of these tools is the ability to manage the timing of specific actions and communication between in-house tax personnel and
+business professionals to ensure that the necessary actions are taken timeously, e.g., automated emails to subsidiary finance managers
+and controllers at certain dates during the documentation cycle to ensure that compliance deadlines are met. Tax departments
+generally recognize that local controllers and finance managers are not only involved in tax compliance but many other tasks that need
+to be prioritized. Therefore, such documentation tools were perceived by several interviewees to be valuable in facilitating an
+organized workflow schedule that is integrated with busy subsidiary-level work schedules.
+“What we’ve actually done is to buy a system that ensures, for example, automatic emails that request people to actively do something…
+This is something that will be big in the next couple of years because this is how to push the [documentation] processes to life. I am positive
+but it woń t be easy…To be honest, we are not asking to do more, we are only asking to do it more structured. Sometimes it is difficult for
+some people when they work in the year-end closing period or the budget phases. If they work 60 hours a week, it is difficult to squeeze in
+transfer pricing compliance, but we are focusing on the periods in which they are not so busy and making sure that they do it consis­
+tently.” (INT 9)
+Other interviewees explored these documentation tools in demo formats but seemed to be discouraged because they believed that a
+significant number of resources are needed to customize and maintain these tools.
+“We once looked at an online documentation tool that automatically generates documentation from the text modules…I think that it is
+also extremely time consuming to maintain.” (INT 22)
+An additional issue that caused some interviewees to be less interested in these tools was that they believed that they would not be
+able to adequately adapt to the local documentation requirements, which means that a local consultant would still need to be engaged
+to ensure that the final documentation file was compliant with local rules.
+“We still had a local consultant who created transfer pricing documentation in addition to our tool because the documentation, which
+was tool-based, did not meet local requirements.” (INT 13)
+Of note, some individual tax authorities are implementing short deadlines for MNEs to respond to information requests during tax
+audits. In some cases, this results in the manual ITP approach not being viable. One interviewee pointed to South Korea as a jurisdiction
+in which, in some cases, MNEs’ feedback to tax authorities during tax audits needs to be provided within a matter of days. This adds
+tremendous pressure to the manual data processing approach and incentivizes MNEs to automate the ITP documentation process.
+“Korea, for example, has an extremely short review period…You have two or three days between the request from the auditor and the
+presentation of the documents, if you are lucky.” (INT 1)
+9
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+In general, we observed a more positive and optimistic attitude towards the automation of the documentation tasks relative to the
+price setting process. The majority of the MNEs studied were either strongly considering automating the creation of the documentation
+files, including the process workflows, or were actively involved in projects to implement various automation tools to facilitate this
+process. Of note, while the BEPS project has significantly increased attention from top management on the activities of the tax
+department, the allocation of resources to deal with the BEPS documentation requirements generally do not seem to have increased
+accordingly. In this context, it appears that for some MNEs, the decision on whether to convert from a manual documentation approach
+to a more automated documentation process is driven by more than just the fundamental appeal of automation. Specifically, there
+seems to be an urgent need for automation to ensure that the scarce tax department personnel can process the increasing number of
+tasks required of them.
+
+Table 2
+Summary of findings.
+Setting transfer prices
+
+Documenting transfer prices
+
+General
+Observations
+
+• The use of information technology for automating price
+setting and monitoring margins is limited.
+• Some MNEs are skeptical that a full ITP automation is
+realistic.
+• A few MNEs have invested in price setting tools for margin
+monitoring (ex-post) and transfer price simulation analysis
+(ex-ante).
+• Many MNEs engage in manual processing of accounting
+data and depends on Excel applications.
+• Tax departments have been subject to increased
+organizational awareness, particularly from top
+management teams.
+
+System-level
+observations
+
+• ERP system fragmentation significantly reduces the degree
+of ITP automation.
+• Standardized group-wide ITP policies and methods, which
+are perceived to be a prerequisite for automation, are not in
+place within all MNEs.
+• Only a few MNEs are in the initial phase of costly long-term
+ITP–ERP system harmonization and automation projects.
+Another small group of MNEs are using external pricesetting tools that are not integrated with the ERP system.
+• The implementation process is complex and timeconsuming, adding to the currently limited ITP automation
+that was observed.
+• The tools are generally perceived as being valuable.
+However, an effective implementation requires a
+significant adjustment to the ERP environment and an
+allocation of additional resources to the tax function.
+• ERP system designs are based on internal control and
+management reporting needs. In addition, the system
+design and functionality are handled by the management
+accountants or the IT department - not the tax department.
+• Tax departments play a subordinate role to the more
+powerful management accountants and in-house IT experts
+in charge of ERP system design, which limits their ability to
+automate ITP due to conflicting data segmentation for
+managerial reporting versus tax reporting.
+• Tax professionals are generally aware of the need for
+increasing information technology capabilities to enhance
+the integration of tax compliance in ERP systems.
+• Some tax professionals are perceived as having limited
+information technology skills and, in some cases, portrayed
+as being uncomfortable working with complex
+applications.
+• The importance of technology for ITP is generally
+recognized, and some MNEs are actively employing
+technically skilled human resources.
+
+• ITP documentation processes are more automated than ITP
+price setting
+• New OECD documentation guidelines create a need for
+more consistent and standardized documentation file
+formats. Consequently, MNEs are producing local file
+templates to enhance standardization across tax
+jurisdictions.
+• Several MNEs use ITP documentation tools that include
+pre-narrated templates, which can be customized to spe­
+cific business functional circumstances.
+• ITP documentation tools are mainly used to support
+workflow management. In contrast, the use of software to
+process ERP data and the automated importing of
+accounting information into documentation files are
+limited.
+• ERP system fragmentation reduces the basis for the
+automation of documentation files.
+• The format of management reporting reduces the ability to
+automate ITP documentation. Specifically, management
+reporting is based on divisional or business unit-level
+reporting, while ITP tax compliance is based on legal entity
+(company)-level reporting.
+• ITP documentation tools generally have strong appeal
+among MNEs and in many cases, are either being
+considered or in the process of being implemented.
+However, in some cases, these tools are considered to be
+too time consuming and expensive, e.g., if local tax rules
+necessitate extensive customization of the tools’ text
+templates.
+
+Individual-level
+observations
+
+10
+
+• Tax professionals at MNEs generally have a vision of
+automating the documentation process.
+• The motivation for automation appears to be partly driven
+by tax departments’ limited human resources for dealing
+with the increasing documentation requirements as a result
+of BEPS.
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+“We have to make sure that we have the right resources and that we have the right system because the compliance burden will increase,
+and the number of employees will not increase, at least in the tax department.” (INT 9)
+Table 2 shows a summary of the findings of the empirical analysis discussed above.
+5. Discussion
+In this paper, we studied MNEs’ use of information technology for managing ITP tax risks, including the degree to which they have
+automated their ITP processes to ensure compliance with the arm’s length principle. While our respondents generally viewed ITP
+automation as an appealing idea, we observed that the ERP system configurations in MNEs create numerous barriers to ITP automation
+at both the system and individual level. At the system level, the main barriers observed were fragmentation in ERP systems and
+differences in the accounting information needs for management reporting and tax reporting. Our findings confirmed observations
+within the contingency school of accounting research that MNEs’ tax departments are subject to increased organizational attention
+(Cools et al., 2008; Cools and Slagmulder, 2009; Plesner Rossing, 2013). However, we discovered that tax departments still play a
+subordinate role to more powerful in-house accountants and information technology experts in charge of ERP system design. Spe­
+cifically, ERP system designs were found to be based on the need for internal control and management reporting, while tax compliance
+objectives still received relatively limited priority in this. Ultimately, the prioritization of management reporting over tax compliance
+in ERP system design caused tax departments to gravitate towards traditional Excel solutions to handle ITP. When considering the issue
+of fragmented ERP structures, our results imply that the top management of MNEs should consider ITP as an additional important
+factor when evaluating the pros and cons of investment in organizational ERP system alignment. Specifically, when conducting a
+cost–benefit analysis of an ERP system, its ability to reduce ITP tax risks should be considered as an additional benefit.
+In contrast to the limited automation observed in transfer price setting, the degree of automation using ITP tools seemed to be more
+widespread in the documentation process. However, automation using ITP tools is mainly tied to workflow management, and not the
+automated importing of accounting data into the local documentation files. Our findings showed that tax departments in MNEs use a
+highly manual documentation process based on Excel models developed in-house, which ultimately reduces data integrity and con­
+sistency in ITP outputs. An important implication of this is that the tax department has a reduced ability to accurately demonstrate to
+tax authorities the process by which accounting data were imported to documentation files. Even though tax authorities are enhancing
+their digitization of the tax risk assessment and audit processes (EY, 2017), we found that MNEs continue to use manual and potentially
+error-prone processes. We believe that as the tax authorities continue this digitization, it will drive the expectation that MNEs should
+also improve their digitization and automation for ITP. Importantly, we believe that the tax authorities will impose stricter re­
+quirements on MNEs being able to effectively produce a trail from the accounting data extracted from ERP systems to the intercompany
+accounting information presented in the documentation. Our research implies that many tax departments in MNEs still need to make
+significant improvements in their ERP systems before being able to provide such a trail in an efficient and transparent manner. At the
+most fundamental level, our findings suggest that a standardized ITP policy across the value chain is a prerequisite for effectively
+automating intercompany transactions within ERP applications.
+We also observed several individual-level barriers to ITP automation. Historically, some in-house tax professionals have been
+reluctant to be involved in the link between ITP and ERP functionality. Based on our research, we observed that tax departments are
+increasingly recognizing the importance of the complex integration between ITP and ERP systems, particularly in the wake of BEPS.
+We believe our research implies a significant need for CFOs and senior-level tax directors to initiate more focused efforts to ensure
+agility in terms of information technology within tax departments. These efforts could entail reassigning in-house experts from the
+information technology function to the tax department to inject a technological affinity in ITP activities. Another related implication is
+that the recruitment efforts of tax departments need to focus more explicitly on candidates’ technological capabilities, including
+assessing their direct experience with complex ERP structures and knowledge relating to how ITP policies can be integrated with the
+organizational ERP infrastructure. We argue that if tax departments are to successfully engage in organizational debates on ERP system
+design to promote ITP automation, they need to enhance their technological knowledge base.
+In the context of Kung et al (2015) and the taxonomy of mimetic, coercive, and normative pressures (Powell and DiMaggio, 1991),
+we found that the limited degree of ITP automation was primarily driven by the need to reduce manual data processing and improve
+the workflow management of the documentation process. We conclude that the 2017 revision to the OECD Guidelines, particularly the
+updated ITP documentation format, poses a significant coercive pressure on MNEs’ tax departments and their resources. While ITP
+automation is not explicitly promoted in the OECD Guidelines, the coercive pressure from domestic OECD-based tax regulations was
+found to be a key driver for more automated documentation processes.
+Our findings contribute to research into the role of management accountants (Byrne and Pierce, 2007; Goretzki et al., 2013; Horton
+and Wanderley, 2018; Shields, 1997), as we demonstrated their extensive power in MNEs in comparison to in-house tax professionals.
+While tax departments in MNEs have significantly increased their standing within the organizational hierarchy and are increasingly
+involved in business strategic decision making, we found that they still play a secondary role in ERP system design decisions.
+Therefore, our findings echo previous research regarding the notion that management accountants in collaboration with in-house
+information technology staff play a key role in ensuring that ERP designs provide a basis for organizations to achieve their com­
+mercial goals (Grabski et al., 2011; Granlund, 2011; Rikhardsson and Yigitbasioglu, 2018). Based on our findings, we add to this stream
+of literature by confirming that the powerful position of management accountants continues to exist in MNEs and, importantly, that it
+exists at the expense of tax strategic objectives. This dynamic was most obvious in relation to the different data segmentation needs for
+management reporting versus tax compliance.
+Finally, we will outline some limitations of this research and provide suggestions for future research. First, our research focused on
+11
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+the degree of ITP automation in MNEs but did not consider the use of specific ERP software applications or add-on ITP tools in detail.
+Therefore, future research could conduct a more detailed study of the degree to which specific ERP applications allow for more
+efficient ITP automation and their compatibility with specific add-on software solutions. This includes exploring the trade-offs between
+ITP automation via ITP modules integrated in ERP software packages and ITP automation based on add-on ITP software solutions.
+Second, future work could study whether certain types of value chains, business models, and other organizational attributes fit ITP
+automation objectives better than others. Third, this research focuses primarily on MNEs based in Germany and tax department
+professionals employed at organizational headquarters. Future research could explore MNEs based outside of Europe and interact more
+directly with senior controllers, information technology specialists, and local business unit finance managers to determine how they
+perceive the opportunities for ITP automation. Finally, it would be interesting to understand the perspectives of external tax con­
+sultants and ITP software developers on ITP automation in MNEs. Specifically, the literature could benefit from insights into how these
+external stakeholders—given their experience and expertise with ITP automation—perceive the ability to reduce the barriers to
+automation observed in our research.
+Appendix A
+Interview guideline
+I General information about the interviewee
+1. What is your current job title?
+2. To whom do you report in your professional capacity?
+a. Management accounting
+b. Tax
+c. Financial accounting
+d. CFO
+e. Other
+3. Where is your department located in the organizational structure? Which decisions are your department authorized to make?
+4. How many years of work experience do you have?
+a. 1–3 years
+b. 3–5 years
+c. 5–10 years
+d. >10 years
+5. For how many years have you been involved in transfer pricing as part of your professional duties?
+a. 1–3 years
+b. 3–5 years
+c. 5–10 years
+d. >10 years
+6. Which of the following transfer pricing areas are you involved in?
+a. Strategy
+b. Price setting
+c. Compliance
+7. Do you collaborate with other departments to set transfer prices? If yes, with which departments do you collaborate?
+II General information about the company
+(obtained from annual reports and website research)
+III General questions about transfer pricing transactions
+1. Which intercompany cross-border transactions exist in your company?
+2. What is the current cross-border intercompany volume in your company?
+a. Between 200 million and 500 million euros
+b. Between 500 million and 1 billion euros
+c. Between 1 billion and 5 billion euros
+d. Between 5 billion and 10 billion euros
+e. More than 10 billion euros
+3. Does your company have a guideline for transfer pricing? What does the guideline entail?
+4. How is the guideline implemented?
+a. Transfer prices for business purposes (management accounts)
+b. Transfer prices for tax purposes
+c. Uniform transfer prices for business and tax purposes
+IV General questions about the transfer pricing system’s design and process
+1. How are responsibilities for transfer pricing tax compliance allocated across your organization?
+a. Geographically
+b. Transaction-based
+12
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+c. Departmental/individual (transfer pricing manager)
+2. Who is responsible for developing and implementing the following areas in the process of transfer pricing? Which other
+functions are involved, and which interfaces exist for (daily) cooperation?
+a. Development of a holistic transfer pricing strategy
+b. Transfer pricing calculation and setting
+c. Creation of a transfer pricing policy
+d. Design of operational processes and purchase/development of IT transfer pricing solutions
+e. Systematic transfer pricing settlement and margin monitoring
+f. Creation of the transfer pricing documentation
+g. Defense and dispute resolution in tax audits
+3. How do you evaluate the cooperation between the tax function and other operational functions involved in the process of
+transfer pricing?
+a. Integrated
+b. Transparent
+c. Improvable
+d. No cooperation
+How could you improve this cooperation?
+4. How do you ensure adherence with the arm’s length principle for transfer prices when no benchmark studies are available?
+5. How do you use information technology (IT) in the process of transfer pricing in your company? Do you use special software
+for transfer pricing?
+a. ERP
+b. Excel
+c. Other software
+6. How do you evaluate the future role of IT in the process of transfer pricing? Which requirements and characteristics of an IT
+system would be necessary for a holistic and integrated implementation?
+7. What are the responsibilities of employees within the transfer pricing function?
+8. What training opportunities are provided to them?
+9. Do you participate in networking events to interact with other specialists about transfer pricing?
+V General questions about the transfer pricing objectives and the influence of internal and external factors
+1. What are the current objectives of your transfer pricing system, and how are these objectives prioritized?
+2. What influence do external factors have on the transfer pricing system? How are these external factors taken into account in
+the internal design of the transfer pricing system?
+a. Increased focus on tax compliance, especially because of the OECD BEPS project
+b. Different tax systems and practices of tax authorities
+c. Digitalization, customers, suppliers, external accounting rules, market volatility, tariffs, etc.
+3. For which internal transactions and in which specific countries did problems occur in previous audits? What were the reasons
+for these complications?
+4. Has the transfer pricing system been changed due to these complications? If so, what measures have been taken?
+5. To what extent have the following internal factors impacted past tax audits and the adaption processes in the transfer pricing
+system?
+a. Historical facts of the organizational structure
+b. Overall corporate strategy
+c. Taxation strategy
+d. Cultural differences between the employees involved
+e. Different skills of the employees involved
+f. Impairment of divisional goals or corporate goals
+VI General questions about planning and evaluating a transfer pricing system
+1. Do you use planning, control, and evaluation tools in the process of transfer pricing?
+2. How do you assess your current transfer pricing system vis-à-vis the four objectives below?
+a. Functionality (fulfillment of legal requirements)
+b. Economics (efficiency of resource allocation, evaluation of performance, and cost savings through tax planning)
+c. Organization (optimal balance between differentiation and integration)
+d. Strategy (promotion or influence of corporate strategy through the transfer pricing process)
+3. Does your company use key measures to assess transfer pricing managers’ performance?
+a. Group tax rate
+b. Other key figures
+c. No evaluation
+4. Does your company use performance measures to incentivize tax compliance?
+5. How could you use key measures to strike a satisfactory balance between optimal tax planning and compliance? Which types
+of key measures would be required?
+VII Challenges and opportunities in the current transfer pricing processes
+13
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+1. What should be improved in the phases of planning, controlling, and evaluating the transfer pricing process in your com­
+pany? How could this improvement be achieved?
+a. Planning
+b. Controlling
+c. Performance evaluation
+What are perceived as the future challenges of planning, controlling, and evaluating your transfer pricing process?
+2. What would be required to achieve an integrated and holistic transfer pricing process? Could you give three characteristics of
+an optimal transfer pricing system and justify your choices?
+3. Would you say that the BEPS project brings opportunities for your business? If so, how could you leverage those
+opportunities?
+
+References
+Arnold, V., 2018. The changing technological environment and the future of behavioural research in accounting. Account. Finance 58 (2), 315–339.
+Austin, C.R., Wilson, R.J., 2017. An examination of reputational costs and tax avoidance: evidence from firms with valuable consumer brands. J. Am. Tax. Assoc. 39
+(1), 67–93.
+Bariff, M.L., Galbraith, J., 1978. Intraorganizational power considerations for designing information systems. Acc. Organ. Soc. 3 (1), 15–27.
+Becker, J., Johannesen, N., Riedel, N., 2020. Taxation and the allocation of risk inside the multinational firm. J. Publ. Econ. 183, 104138.
+Blouin, J., Krull, L.K., Robinson, L.A., 2012. Is U.S. multinational dividend repatriation policy influenced by reporting incentives? Account. Rev. 87 (5), 1463–1491.
+Borkowski, S.C., 1990. Environmental and organizational factors affecting transfer pricing: a survey. J. Manag. Account. Res. (Fall) 78–99.
+Borkowski, S.C., 1992a. Organizational and international factors affecting multinational transfer pricing. Adv. Int. Account. 5, 173–192.
+Borkowski, S.C., 1992b. Choosing a transfer pricing method: a study of the domestic and international decision-making process. J. Int. Account., Audit. Tax. 1 (1),
+33–49.
+Borkowski, S.C., 1996. An analysis (meta- and otherwise) of multinational transfer pricing research. Int. J. Account. 31 (1), 39–53.
+Byrne, S.M., Pierce, B., 2007. Towards a more comprehensive understanding of the roles of management accountants. Eur. Account. Rev. 16 (3), 469–498.
+Chapman, C.S., 2005. Not because they are new: developing the contribution of enterprise resource planning systems to management control research. Acc. Organ.
+Soc. 30 (7–8), 685–689.
+Clausing, K.A., 2001. The impact of transfer pricing on intrafirm trade. In: Hines, J.R. (Ed.), International Taxation and Multinational Activity. University of Chicago
+Press, Chicago, pp. 173–194.
+Clausing, K.A., 2003. Tax-motivated transfer pricing and US intrafirm trade prices. J. Publ. Econ. 87 (9–10), 2207–2223.
+Colbert, G.J., Spicer, B.H., 1995. A multi-case investigation of a theory of the transfer pricing process. Acc. Organ. Soc. 20 (6), 423–456.
+Cools, M., Emmanuel, C., Jorissen, A., 2008. Management control in the transfer pricing tax compliant multinational enterprise. Acc. Organ. Soc. 33 (6), 603–628.
+Cools, M., Slagmulder, R., 2009. Tax-compliant transfer pricing and responsibility accounting. J. Manag. Account. Res. 21 (1), 151–178.
+Cools, M., Plesner Rossing, J.C., 2021. International transfer pricing: MNE dependency on knowledge of external tax consultants. J. Manag. Account. Res. 33 (1),
+33–51.
+Cravens, K., 1997. Examining the role of transfer pricing as a strategy for multinational firms. Int. Bus. Rev. 6 (2), 127–145.
+Cravens, K., Shearon, W.T., 1996. An outcome-based assessment of international transfer pricing policy. Int. J. Account. 31 (4), 419–443.
+De Simone, L., Klassen, K.J., Seidman, J.K., 2017. Unprofitable Affiliates and Income Shifting Behavior. Account. Rev. 92 (3), 113–136.
+Emmanuel, C.R., Mehafdi, M., 1994. Transfer Pricing. Academic Press Ltd, London.
+EY, 2016. Transfer Pricing Survey Series. In the Spotlight: A New Era of Transparency and Risk. EYGM Limited.
+EY, 2017. Tax Technology and Transformation: Tax Functions ‘go digital’. Ernst & Young LLP, India.
+EY, 2019. 2019 Transfer Pricing and International Tax Survey. EYGM Limited.
+Gallemore, J., Labro, E., 2015. The importance of the internal information environment for tax avoidance. J. Account. Econ. 60 (1), 149–167.
+Goretzki, L., Strauss, E., Weber, J., 2013. An institutional perspective on the changes in management accountants’ professional role. Manag. Account. Res. 24 (1),
+41–63.
+Grabski, S.V., Leech, S.A., Schmidt, P.J., 2011. A review of ERP research: a future agenda for accounting information systems. J. Inf. Syst. 25 (1), 37–78.
+Granlund, M., 2011. Extending AIS research to management accounting and control issues: a research note. Int. J. Account. Inf. Syst. 12 (1), 3–19.
+Granlund, M., Malmi, T., 2002. Moderate impact of ERPS on management accounting: a lag or permanent outcome? Manag. Account. Res. 13 (3), 299–321.
+Hamilton, R., Stekelberg, J., 2017. The effect of high-quality information technology on corporate tax avoidance and tax risk. J. Inf. Syst. 31 (2), 83–106.
+Hanlon, M., Heitzman, S., 2010. A review of tax research. J. Account. Econ. 50 (2–3), 127–178.
+Harris, D.G., 1993. The impact of US tax law revision on multinational corporations’ capital location and income-shifting decisions. J. Account. Res. 31, 111–140.
+Hasseldine, J., Holland, K., van der Rijt, P., 2011. The market for corporate tax knowledge. Crit. Perspect. Account. 22 (1), 39–52.
+Henri, J.-F., 2006. Organizational culture and performance measurement systems. Acc. Organ. Soc. 31 (1), 77–103.
+Hirshleifer, J., 1956. On the economics of transfer pricing. J. Bus. 29 (3), 172–184.
+Horton, K.E., Wanderley, C., 2018. Identity conflict and the paradox of embedded agency in the management accounting profession: adding a new piece to the
+theoretical jigsaw. Manag. Account. Res. 38 (March), 39–50.
+Hummel, K., Pfaff, D., Bisig, B., 2019. Can the integration of a tax-compliant transfer pricing system into the management control system be successful? Yes, it can!
+J. Account. Org. Change 15 (2), 198–230.
+Jack, L., Kholeif, A., 2008. Enterprise Resource Planning and a contest to limit the role of management accountants: a strong structuration perspective. Account.
+Forum 32 (1), 30–45.
+Klassen, K.J., Laplante, S.K., 2012. Are U.S. multinational corporations becoming more aggressive income shifters? J. Account. Res. 50 (5), 1245–1285.
+Klassen, K.J., Lisowsky, P., Mescall, D., 2017. Transfer pricing: strategies, practices, and tax minimization. Contemp. Account. Res. 34 (1), 455–493.
+Kocsis, D., 2019. A conceptual foundation of design and implementation research in accounting information systems. Int. J. Account. Inf. Syst. 34, 1–10.
+Kung, L., Cegielski, C.G., Kung, H., 2015. An integrated environmental perspective on software as a service adoption in manufacturing and retail firms. J. Inf. Technol.
+30 (4), 352–363.
+Malmi, T., Granlund, M., 2009. In search of management accounting theory. Eur. Account. Rev. 18 (3), 597–620.
+Merchant, K., Van der Stede, W., 2017. Management Control Systems: Performance Measurement, Evaluation, and Incentives, fourth ed. Pearson, Harlow.
+Miles, M.B., Huberman, A.M., 1984. Drawing valid meaning from qualitative data: toward a shared craft. Educ. Res. 13 (5), 20–30.
+Miles, M.B., Huberman, A.M., Saldana, J., 2019. Qualitative Data Analysis: A Methods Sourcebook, fourth ed. SAGE, Los Angeles.
+Mulligan, E., Oats, L., 2009. Tax risk management: evidence from the United States. Br. Tax Rev. 6, 680–703.
+Mulligan, E., Oats, L., 2016. Tax professionals at work in Silicon Valley. Acc. Organ. Soc. 52 (July), 63–76.
+Organisation for Economic Co-Operation and Development (OECD), 2015. BEPS 2015 Final Reports. OECD, Paris.
+
+14
+
+International Journal of Accounting Information Systems 44 (2022) 100546
+
+L. Hemling et al.
+
+Organisation for Economic Co-Operation and Development (OECD), 2017. Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations. OECD,
+Paris.
+Plesner Rossing, C., 2013. Tax strategy control: the case of transfer pricing tax risk management. Manag. Account. Res. 24 (2), 175–194.
+Powell, W.W., DiMaggio, P.J. (Eds.), 1991. The New Institutionalism in Organizational Analysis. University of Chicago Press, Chicago, IL.
+Quattrone, P., Hopper, T., 2005. A ‘time-space odyssey’: management control systems in two multinational organisations. Acc. Organ. Soc. 30 (7–8), 735–764.
+Rikhardsson, P., Yigitbasioglu, O., 2018. Business intelligence & analytics in management accounting research: status and future focus. Int. J. Account. Inf. Syst. 29
+(June), 37–58.
+Rogers, H., Oats, L., 2019. Emerging perspectives on the evolving arm’s length principle and formulary apportionment. Br. Tax Rev. 2, 150–165.
+Shields, M.D., 1997. Research in Management Accounting by North Americans in the 1990s. J. Manag. Account. Res. 9, 3–61.
+Sutton, S., Holt, M., Arnold, V., 2016. “The reports of my death are greatly exaggerated” – artificial intelligence research in accounting. Int. J. Account. Inf. Syst. 22,
+60–73.
+Taipaleenmäki, J., Ikäheimo, S., 2013. On the convergence of management accounting and financial accounting – the role of information technology in accounting
+change. Int. J. Account. Inf. Syst. 14 (4), 321–348.
+Van der Meer-Kooistra, J., 1994. The coordination of internal transactions: the functioning of transfer pricing systems in the organizational context. Manag. Account.
+Res. 5 (2), 123–152.
+Watson, D.J., Baumler, J.V., 1975. Transfer pricing: a behavioral context. Account. Rev. 50 (3), 466–474.
+Wunder, H.F., 2009. Tax risk management and the multinational enterprise. J. Int. Account., Audit. Tax. 18 (1), 14–28.
+Yin, R.K., 2018. Case Study Research and Applications: Design and Methods, sixth ed. Sage, Los Angeles.
+Zimmerman, J., 2020. Accounting for Decision Making and Control, tenth ed. McGraw-Hill Education, New York: NY.
+
+15
+
+
