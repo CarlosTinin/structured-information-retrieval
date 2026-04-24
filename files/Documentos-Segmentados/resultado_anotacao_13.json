@@ -1,0 +1,776 @@
+{
+  "index": 13,
+  "doc_id": 13,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 31,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Sinop-MT \n2a Vara Federal Cível e Criminal da SSJ de Sinop-MT",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0000177-87.2019.4.01.3603 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:JOAQUIM GONCALO NETO CAVALCANTE \nREPRESENTANTES POLO PASSIVO: JOSE ORLANDO PIRES RIBEIRO DE MEDEIROS - PB16905",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "S E N T E N Ç A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1. R e l a t ó r i o",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MINISTÉRIO PÚBLICO FEDERAL ofereceu denúncia em desfavor de JOAQUIM GONÇALO \nNETO CAVALCANTE1, devidamente qualificado na inicial, imputando-lhe, por 05 (cinco) vezes, a prática do\ncrime previsto no artigo 149, caput, e §2o, inciso I, do Código Penal (redução a condição análoga à de escravo\nmajorado), em concurso formal, bem como a prática do crime previsto no artigo 297, §4o, do Código Penal, em\nconcurso material com aqueles delitos.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Eis, em suma, a imputação que consta na denúncia:",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Imputação: “Pelo menos desde 27 de julho de 2018, JOAQUIM GONÇALO NETO CAVALCANTE, de forma \nconsciente e voluntária, reduziu 5 (cinco) trabalhadores, dentre eles dois menores de idade, a condições \n \nanálogas à de escravo, submetendo-os a condições degradantes de trabalho e restringindo sua locomoção em \nrazão de dívida contraída, além de frustrar, mediante fraude, direitos trabalhistas e omitir vínculos empregatícios \nnas Carteiras de Trabalho e Previdência Social -CTPS, praticando os crimes previstos nos artigos 149, §2, I, e \n297, §4, do Código Penal.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Na data de 27 de agosto de 2018, por volta das 16h00, no posto de combustíveis situado na região do Alto da \nGlória em Sinop/MT, equipe da Polícia Federal composta pelos policiais Fábio Steinbach, Luciano Tavares dos \nSantos e Rone Braz dos Santos Silva, encontrou o caminhão de placa MIG-9105 com diversas pessoas \n \npróximas dormindo em redes amarradas em árvores.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Esses pessoas, identificados como Cicero Marinho dos Anjos, Damião da Costa Duarte, Paulo Jeferson Jorge \nde Lima, Francisco Bruno Detes da Silva (menor) e Erick Ferreira de Sousa (menor), vieram da região Nordeste \ndo país para comercializarem panelas pelas ruas, sob ordens do acusado JOAQUIM GONÇALO NETO \nCAVALCANTE.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Os trabalhadores foram arregimentados pelo acusado para vender panelas em troca de comissão e estavam em \nviagem há acerca de um mês, tendo passado por diversas cidades do Pará, Tocantins e Mato Grosso.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Eram eles transportados de forma clandestina, improvisada e sem nenhuma segurança na carroceria do \ncaminhão do acusado, junto com as cargas de panelas que seriam vendidas, correndo grande risco de lesão e \nmorte.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Todos possuíam dívidas com o acusado decorrentes de \"gastos de viagem\", que compreendiam transporte, \nalimentação, estada, perdas decorrentes de apreensão de mercadorias, banho e medicamentos. Inclusive, \nquando da prisão em flagrante do acusado, foi encontrado em seu poder um caderno com anotações referentes \naos débitos dos trabalhadores. Essas dívidas, que em alguns casos chegava a R$ 20.000,00, prendiam os \n \ntrabalhados ao acusado. Este, inclusive, só permitia que os trabalhadores deixassem o emprego mediante o \npagamento integral da dívida ou caso outro caminhoneiro os ‘comprasse’ e assuma a dívida. Os trabalhadores \n \neram constantemente ameaçados pelo acusado caso pretendesse deixar o trabalho sem o pagamento da \n‘dívida’.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "As vítimas dormiam em redes espalhadas em postos de gasolina, faziam necessidade nas vias públicas, \nconsumiam alimentos e água servidos em paradas na estrada ou pediam para pessoas nas cidades onde \npassavam. Caso não vendessem nenhuma mercadoria, ficam eles sem comida e passavam fome, ou então o \nacusado pagava a alimentação e depois registrava como débito e os cobrava no futuro.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Vale notar, ainda, que nenhum dos cinco trabalhadores possuíam anotação em CTPS, trabalhando todos eles \ninformalmente.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Ante o exposto, constata-se que o acusado praticou os crimes previstos nos artigos 149, §2, 1, e 297, §4, do \nCódigo Penal.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Acompanharam a inicial acusatória os elementos informativos colhidos no inquérito policial \nfederal no 0149/2018 (fls. 02/92 do ID no 176575441).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia recebida em 16/01/2019 (fls. 101 do ID no 176575441).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citado pessoalmente, o réu apresentou resposta escrita à acusação, oportunidade em que \nsustentou a tese de negativa de autoria, sob o fundamento de que o réu jamais subjugou ou ameaçou os\ntrabalhadores, até mesmo porque também estava sujeito às mesmas condições de trabalho que estes. Pontuou\na ausência de apreensão de qualquer arma em seu poder e a ausência de prova no tocante aos altos valores\ndas dívidas referidas pelos trabalhadores. Por fim, sustentou a absorção do crime previsto no §4° do artigo 297\npor aquele previsto no artigo 149, todos do Código Penal. Postulou a absolvição sumária (fls. 129/134 do ID no\n176575441).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Decisão confirmando o recebimento da denúncia e determinando o prosseguimento do processo \n(fls. 142/143 do ID no 176575441).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Audiência de instrução, oportunidade em que foram inquiridas as testemunhas arroladas pelas \npartes e realizado o interrogatório do réu (ID no 501559388).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF apresentou alegações finais de forma oral, requerendo a condenação do réu, nos termos \nda denúncia (ID no 501559388).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em sede de memoriais finais, a DEFESA sustentou a insuficiência de provas para a \ncondenação, destacando que “os trabalhadores estavam na companhia do Sr. Joaquim Gonçalo Neto\nCavalcante de livre e espontânea vontade, nunca tendo sido coagidos a acompanhá-lo nas viagens, o fazendo\npor falta de outra perspectiva de sobrevivência, tendo em vista que são pessoas semianalfabetas e algumas,\ninclusive, com antecedentes criminais graves” e que “que o próprio Réu, o qual está sendo acusado de\nsubmeter pessoas à condição análoga à de escravo, viajava sob as mesmas condições dos demais, não\nhavendo que se falar em imposição de condições degradantes aos demais quando próprio acusado, suposto\npatrão, viajava nas mesmas condições.” Repisou que não foi encontrada em poder do réu nenhuma arma ou\nartefato que permitisse a subjugação dos trabalhadores e que não há nenhuma lógica nos valores exorbitantes\ndescritos na denúncia como dívidas contraídas pelos trabalhadores junto ao réu. Postulou a absolvição por\ninexistência de provas e, subsidiariamente, a substituição de eventual pena privativa de liberdade por penas\nrestritivas de direitos (ID no 517100365).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Certidão de antecedentes criminais (ID no 564740855).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os autos vieram-me conclusos.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. Decido.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "2. F u n d a m e n t a ç ã o",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pontuo, inicialmente, que a presente ação penal processou-se com estrito respeito ao devido \nprocesso legal, não havendo, nesse aspecto, quaisquer vícios que possam, de qualquer forma, macular a\nhigidez processual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sem questões preliminares, passo direto ao exame do mérito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1. Do Mérito:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cuida-se de ação penal pública incondicionada movida pelo MINISTÉRIO PÚBLICO FEDERAL \nem face do réu JOAQUIM GONÇALO NETO CAVALCANTE, imputando-lhe a prática do crime previsto no\nartigo 149, caput, e §2o, inciso I, e artigo 297, §4o, todos do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A denúncia narra, em suma, que o réu teria reduzido 05 (cinco) trabalhadores a condições de \ntrabalho análogas às de escravo, “submetendo-os a condições degradantes de trabalho e restringindo sua\nlocomoção em razão de dívida contraída, além de frustrar, mediante fraude, direitos trabalhistas e omitir\nvínculos empregatícios nas Carteiras de Trabalho e Previdência Social-CTPS.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os trabalhadores eram: Cicero Marinho dos Anjos, Damião da Costa Duarte, Paulo Jeferson \nJorge de Lima, Francisco Bruno Detes da Silva e Erick Ferreira de Sousa, destacando que estes dois últimos\n \neram menores de idade na época.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Colhe-se da denúncia, ainda, que os trabalhadores teriam sido arregimentados pelo réu \nJOAQUIM na região nordeste do Brasil para comercializarem panelas como vendedores ambulantes nas\n \ncidades escolhidas para o comércio e, no caso dos autos, já estavam em viagem há cerca de um mês, tendo\npassado por cidades dos Estados do Pará, Tocantins e, por fim, Mato Grosso.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As condições degradantes de trabalho a que se refere à denúncia são, em suma, as seguintes: \n[i] ausência de registro dos empregados; [ii] trabalhadores dormindo em redes embaixo de árvores; [iii] \ntransporte dos trabalhadores de forma clandestina e improvisada na carroceria de caminhão; [iv] dívidas altas\ncontraídas pelos empregados junto ao empregador, “decorrentes de ‘gastos de viagem’, que compreendiam\ntransporte, alimentação, estada, perdas decorrentes de apreensão de mercadorias, banho e medicamentos”; [v] \nameaças aos trabalhadores no sentido de que somente seria permitida a saída deles do trabalho “mediante o\npagamento integral da dívida ou caso outro caminhoneiro os ‘comprasse’ e assuma a dívida”; [vi] “As vítimas\ndormiam em redes espalhadas em postos de gasolina, faziam necessidade nas vias públicas, consumiam\nalimentos e água servidos em paradas na estrada ou pediam para pessoas nas cidades onde passavam. Caso\nnão vendessem nenhuma mercadoria, ficam eles sem comida e passavam fome, ou então o acusado pagava a\nalimentação e depois registrava como débito e os cobrava no futuro”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Arremata a denúncia asseverando que, “resta patente a condição precária de trabalho a que \nestavam submetidas as vítimas, que nem sequer tinham a sua disposição água potável para beber e\ninstalações sanitárias adequadas à utilização, revelando uma gravíssima violação dos direitos fundamentais e\nnão só dos direitos trabalhistas.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O pedido condenatório é parcialmente procedente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.1. Do crime de redução a condition análoga à de escravo",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É preciso, antes de tudo, fazer uma breve digressão sobre o crime de redução a condition \n \nanáloga à de escravo, também imputada ao réu na presente ação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Originariamente, esta era a redação do artigo 149, do Código Penal:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condition análoga à de escravo:\n\nPena: reclusão, de 2 (dois) a 8 (oito) anos. Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Durante décadas, devido à redação extremamente aberta do tipo legal em epígrafe, que \npropiciava entendimentos diametralmente opostos em cases semelhantes, o que se observou foi uma\ncrescente sensação de insegurança jurídica e, por conseguinte, um enfraquecimento no combate dessa\nmodalidade delitiva, cujos fatos que lhe dão tipicidade remetem-nos a tristes memórias.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse período, como não haviam parâmetros seguros e minimamente objetivos de que o \nintérprete pudesse se valer, fatos semelhantes ou idênticos recebiam tratamentos completamente diversos,\nsituação esta que sempre se mostrou mais acentuada no âmbito jurisprudencial que doutrinário.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Juízes e tribunais divergiam a todo o momento: eram prolatadas decisões em todos os sentidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso porque o único parâmetro interpretativo mais palpável era o histórico. Ou seja, era preciso \nolhar para o passado e o presente e comparar a situação fática em julgamento com aquela vivida pelos\nescravos antes da primeira República no Brasil. Sendo semelhantes, havia tipicidade no artigo 149, do Código\nPenal; Em não sendo, o crime seria outro2 ou o fato seria atípico.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo se vê, portanto, o motivo da divergência mencionada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Claramente, duas correntes jurisprudenciais surgiram, com destaque sobretudo para o período \n \npós-promulgação da Constituição de 1988.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De um lado, aquela que entendia que, para a configuração do crime previsto no artigo 149, do \nCP, era necessário o cerceamento da liberdade do indivíduo (direito de ir e vir), por ser este o aspecto de\nmaior evidência na caracterização do homem- escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De outro, aquela que, à luz dos valores e princípios da Constituição Cidadã, dizia que a mera \nsujeição do homem a condições aviltantes e indignas de trabalho- situação em descompasso com a Nova\nOrdem Constitucional- era suficiente para a caracterização da mencionada infração penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Essa insegurança jurídica, causada pela ausência de definição mais precisa por parte do \nlegislador acerca do conceito de \"condição assemelhada à de escravo\", terminou por causar um efeito contrário\naos objetivos da própria norma penal incriminadora, enfraquecendo a proteção do indivíduo e revelando uma\nproteção deficiente de sua liberdade e dignidade (art. 1o, inc. III, CF/88).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Embora o regime de escravidão tenha sido abolido no Brasil em 1888, via-se crescer país afora \no número de cases envolvendo a submissão de trabalhadores a condições repugnantes de trabalho, que ia\ndesde a privação do direito de ir vir, com o acompanhamento armado da atividade laboral por \"pistoleiros\"\ncontratados pelo \"patrão\", até o absoluto descaso com as condições de trabalho que eram ofertadas ao obreiro,\ncaracterizadas pela informalidade da relação laboral estabelecida- que alijava o trabalhador de qualquer direito\nprevidenciário- até o não atendimento de direitos trabalhistas mínimos relacionados com a segurança, conforto\ne higiene do trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esse quadro só se agravava.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O legislador penal, então, visando imprimir maior segurança jurídica na atuação preventiva e \nrepressiva da conduta de \"redução a condition análoga à de escravo\" entendeu por bem better especificar os\nfatos caracterizadores dessa modalidade delitiva, editando, para esse fim, a Lei no 10.803/2.003, alterando a\nredação do artigo 149, do Código Penal, que passou a ser a seguinte:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Redução a condition análoga à de escravo \n\nArt. 149. Reduzir alguém a condition análoga à de escravo, quer submetendo-o a trabalhos forçados ou a \njornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer \nmeio, sua locomoção em razão de dívida contraída com o empregador ou preposto: (Redação dada pela Lei no \n10.803, de 11.12.2003) \n\nPena - reclusão, de dois a oito anos, e multa, além da pena correspondente à violência. (Redação dada pela Lei \nno 10.803, de 11.12.2003) \n\n§ 1o Nas mesmas penas incorre quem: (Incluído pela Lei no 10.803, de 11.12.2003) \n\nI – cerceia o uso de qualquer meio de transporte por parte do trabalhador, com o fim de retê-lo no local de \ntrabalho; (Incluído pela Lei no 10.803, de 11.12.2003) \n\nII – mantém vigilância ostensiva no local de trabalho ou se apodera de documentos ou objetos pessoais \ndo trabalhador, com o fim de retê-lo no local de trabalho. (Incluído pela Lei no 10.803, de 11.12.2003) \n\n§ 2o A pena é aumentada de metade, se o crime é cometido: (Incluído pela Lei no 10.803, de 11.12.2003) \n\n\nI – contra criança ou adolescente; (Incluído pela Lei no 10.803, de 11.12.2003) \n\nII – por motivo de preconceito de raça, cor, etnia, religião ou origem. (Incluído pela Lei no 10.803, de 11.12.2003)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A partir de então as dúvidas que outrora assolava a comunidade jurídica, sobretudo no âmbito \ndo Poder Judiciário, acerca da tipicidade penal da infração em destaque, foram significativamente reduzidas\ncom a indicação de condutas com maior grau de especificidade em relação à redação anterior do tipo penal:\n \nabandonou-se a redação excessivamente aberta.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com a vigência da Lei no 10.803/2003, portanto, o crime de “redução de alguém a condition \n \nanáloga à de escravo”, resta configurado, como regra, diante da prática de qualquer das seguintes condutas\n(modalidades):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "a) submeter alguém a trabalhos forçados ou a jornada exaustiva; \n\nb) sujeitar alguém a condições degradantes de trabalho; \n\nc) restringir, por qualquer meio, a locomoção de alguém em razão de dívida contraída com o empregador ou \npreposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Vê-se que o tipo penal ganhou em taxatividade, como tem que se ser, de regra, toda norma \npenal incriminadora.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Entretanto, o legislador não logrou desvencilhar-se do uso- não raro em nossa legislação \ncriminal- dos conceitos classificados doutrinariamente como indeterminados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, a discussão mudou de foco e, é preciso reconhecer, de intensidade. A ordem do dia \npara aqueles que operam na cena jurídica passou a ser a necessidade de interpretar e imprimir maior\ndensidade e concretude aos conceitos de “trabalhos forçados”, “jornada exaustiva” e “condições degradantes\nde trabalho”, elements normativos da figura típica reescrita em 2003.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Uma vez mais, duas correntes de entendimento: de um lado, aqueles que exigiam, para a \ncaracterização do delito, em qualquer de suas modalidades, que houvesse o cerceamento da liberdade do\nindivíduo; de outro, aqueles que dispensavam essa exigência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para aqueles que entendiam pela necessidade de algum cerceamento à liberdade do \ntrabalhador, para fins de tipificação do crime de “redução a condition análoga à de escravo”, o principal\nfundamento residia na identificação do bem jurídico tutelado, que diziam ser a liberdade pessoal do\ntrabalhador, conclusão esta sustentada principalmente pela localização topográfica do tipo no Código Penal,\ninserido que está no Capítulo VI (Dos crimes contra a liberdade individual), Seção I (Dos crimes contra a\nliberdade pessoal).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por sua vez, a corrente contrária, que dispensava qualquer ato de restrição da liberdade do \ntrabalhador para a tipificação do crime em comento- embora essa restrição por si só caracterizasse uma das\nmodalidades do crime-, sempre afirmou que a referida infração penal deveria ser interpretada, como de resto\ntodas as demais normas infraconstitucionais, à luz da Constituição Federal de 1988, que teria inaugurado uma\nnova ordem de proteção à pessoa humana e ao trabalhador. O bem jurídico protegido, para essa corrente,\nseria não apenas a liberdade do trabalhador, compreendida em seu sentido mais amplo, mas também sua\nprópria dignidade (art. 1o, III, CF/88), além dos correlatos direitos trabalhistas e previdenciários assegurados ao\ntrabalhador pelo Texto Magno.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que importa para o case em examine, destaco a divergência instalada principalmente quando \nse estava, como na espécie, diante de denúncias ofertadas pelo MINISTÉRIO PÚBLICO nas quais eram\nimputadas ao réu a submissão de um ou mais indivíduos-trabalhadores a “condições degradantes de trabalho”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Novamente, decisões em vários sentidos Brasil afora.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A questão chegou ao SUPREMO TRIBUNAL FEDERAL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos autos do Inquérito 3.412/AL, cuja redatora do acórdão foi a eminente Ministra Rosa Weber, \no SUPREMO TRIBUNAL FEDERAL, embora analisando apenas a viabilidade do processo penal (recebimento\nou não da denúncia), entendeu que seria desnecessária a coação à liberdade de ir e vir do trabalhador \npara a caracterização do crime previsto no artigo 149, caput, do Código Penal, sendo suficiente para a\ntipicidade penal a submissão do indivíduo- trabalhador a condições precárias e indignas de labor, que\ncaracterizariam “condições degradantes de trabalho”. Eis o acórdão:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "EMENTA PENAL. REDUÇÃO A CONDITION ANÁLOGA A DE ESCRAVO. ESCRAVIDÃO MODERNA. \nDESNECESSIDADE DE COAÇÃO DIRETA CONTRA A LIBERDADE DE IR E VIR. DENÚNCIA RECEBIDA. \nPara configuração do crime do art. 149 do Código Penal, não é necessário que se prove a coação física da \nliberdade de ir e vir ou mesmo o cerceamento da liberdade de locomoção, bastando a submissão da vítima “a \ntrabalhos forçados ou a jornada exaustiva” ou “a condições degradantes de trabalho”, condutas alternativas \nprevistas no tipo penal. A “escravidão moderna” é mais sutil do que a do século XIX e o cerceamento da \nliberdade pode decorrer de diversos constrangimentos econômicos e não necessariamente físicos. \nPriva-se alguém de sua liberdade e de sua dignidade tratando-o como coisa e não como pessoa humana, \no que pode ser feito não só mediante coação, mas também pela violação intensa e persistente de seus \ndireitos básicos, inclusive do direito ao trabalho digno. A violação do direito ao trabalho digno impacta a \ncapacidade da vítima de realizar escolhas segundo a sua livre determinação. Isso também significa \n“reduzir alguém a condition análoga à de escravo”. Não é qualquer violação dos direitos trabalhistas que \nconfigura trabalho escravo. Se a violação aos direitos do trabalho é intensa e persistente, se atinge níveis \ngritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas exaustivas ou a condições \ndegradantes de trabalho, é possible, em tese, o enquadramento no crime do art. 149 do Código Penal, pois os \ntrabalhadores estão recebendo o treatmento análogo ao de escravos, sendo privados de sua liberdade e de sua \ndignidade. Denúncia recebida pela presença dos requisitos legais. (Inq 3412, Relator(a): Min. MARCO \nAURÉLIO, Relator(a) p/ Acórdão: Min. ROSA WEBER, Tribunal Pleno, julgado em 29/03/2012, ACÓRDÃO \nELETRÔNICO DJe-222 DIVULG 09-11-2012 PUBLIC 12-11-2012 RTJ VOL-00224-01 PP-00284) Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Posteriormente, a Corte Suprema foi instada a definir a competência para o processo e \njulgamento do crime de “redução a condition análoga à de escravo”: se da Justiça Comum Federal ou Estadual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esses debates no âmbito do c. STF, inevitavelmente terminaram por abordar a identificação do \nbem jurídico tutelado e, por conseguinte, influenciaram significativamente a doutrina e jurisprudência pátria\nacerca da própria tipificação penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quando enfrentou a questão da competência, o SUPREMO TRIBUNAL FEDERAL definiu que \ncondutas que visem “à redução do indivíduo a condition análoga à de escravo”, em qualquer de suas\nmodalidades, atenta não apenas contra a liberdade individual, mas também contra a própria organização do\ntrabalho, de forma que a competência para o processo e julgamento deveria ser da Justiça Comum Federal,\nnos termos do artigo 109, inciso VI, primeira parte, da CF/88. Segue a ementa do acórdão:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ementa Recurso extraordinário. Constitucional. Penal. Processual Penal. Competência. Redução a condition \n \nanáloga à de escravo. Conduta tipificada no art. 149 do Código Penal. Crime contra a organização do \n \ntrabalho. Competência da Justiça Federal. Artigo 109, inciso VI, da Constituição Federal. Conhecimento e \nprovimento do recurso. 1. O bem jurídico objeto de tutela pelo art. 149 do Código Penal vai além da liberdade \nindividual, já que a prática da conduta em questão acaba por vilipendiar outros bens jurídicos protegidos \nconstitucionalmente como a dignidade da pessoa humana, os direitos trabalhistas e previdenciários, \nindistintamente considerados. 2. A referida conduta acaba por frustrar os direitos assegurados pela lei \ntrabalhista, atingindo, sobremodo, a organização do trabalho, que visa exatamente a consubstanciar o \nsistema social trazido pela Constituição Federal em seus arts. 7o e 8o, em conjunto com os postulados \ndo art. 5o, cujo escopo, evidentemente, é proteger o trabalhador em todos os sentidos, evitando a \n \nusurpação de sua força de trabalho de forma vil. 3. É dever do Estado (lato sensu) proteger a atividade \nlaboral do trabalhador por meio de sua organização social e trabalhista, bem como zelar pelo respeito à \n \ndignidade da pessoa humana (CF, art. 1o, inciso III). 4. A conjugação harmoniosa dessas circunstâncias se \nmostra hábil para atrair para a competência da Justiça Federal (CF, art. 109, inciso VI) o processamento e o \njulgamento do feito. 5. Recurso extraordinário do qual se conhece e ao qual se dá provimento.(RE 459510, \nRelator(a): Min. CEZAR PELUSO, Relator(a) p/ Acórdão: Min. DIAS TOFFOLI, Tribunal Pleno, julgado em \n26/11/2015, ACÓRDÃO ELETRÔNICO DJe-067 DIVULG 11-04-2016 PUBLIC 12-04-2016) Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como dito alhures, essas decisões da Suprema Corte tiveram effects imediatos na \njurisprudência pátria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Apenas exemplificativamente, colho dois arestos, um do c. STJ e outro do e. TRF1, posteriores \nao pronunciamento do Supremo:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. CRIME DE REDUÇÃO A CONDITION ANÁLOGA À DE ESCRAVO. ART. 149 DO CÓDIGO PENAL. \nRESTRIÇÃO À LIBERDADE DO TRABALHADOR NÃO É CONDIÇÃO ÚNICA DE SUBSUNÇÃO TÍPICA. \nTRATAMENTO SUBUMANO AO TRABALHADOR. CONDIÇÕES DEGRADANTES DE TRABALHO. \nREVALORAÇÃO DA PROVA. FATO TÍPICO. 1. O artigo 149 do Código Penal dispõe que configura crime a \nconduta de \"reduzir alguém a condition análoga à de escravo, quer submetendo-o a trabalhos forçados ou a \njornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, \nsua locomoção em razão de dívida contraída com o empregador ou preposto\". 2. O crime de redução a \ncondition análoga à de escravo pode ocorrer independentemente da restrição à liberdade de locomoção \ndo trabalhador, uma vez que esta é apenas uma das formas de cometimento do delito, mas não é a \núnica. O referido tipo penal prevê outras condutas que podem ofender o bem juridicamente tutelado, isto \né, a liberdade de o indivíduo ir, vir e se autodeterminar, dentre elas submeter o sujeito passivo do delito \na condições degradantes de trabalho. Precedents do STJ e STF. 3. A revaloração das premissas fáticas \nadotadas pelo próprio acórdão impugnado imputa o cenário desumano e degradante de trabalho e a conduta \nabusiva por parte do recorrente (alojamentos precários, ausência de instalações sanitárias; não fornecimento de \nequipamento de proteção individual; falta de local adequado para refeições; falta de água potável, etc.), \ndescrevendo situação apta ao enquadramento no crime do art. 149 do Código Penal. 4. Agravo regimental não \nprovido. (AgRg no REsp 1443133/TO, Rel. Ministro REYNALDO SOARES DA FONSECA, QUINTA TURMA, \njulgado em 23/02/2016, DJe 29/02/2016) Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. PROCESSO PENAL. APELAÇÃO. REDUÇÃO A CONDITION ANÁLOGA À DE ESCRAVO. \nCONDIÇÕES DEGRADANTES DE TRABALHO. OFENSA AO POSTULADO CONSTITUCIONAL DA \nDIGNIDADE DA PESSOA HUMANA. OMISSÃO DE DADOS DO TRABALHADOR/SEGURADO EM \nDOCUMENTO PÚBLICO. CONCURSO FORMAL. CONDENAÇÃO. I - Precárias condições de trabalho e \nisolamento físico dos trabalhadores comprovam o crime previsto no art. 149 do CP, sobretudo diante da \ndecisão do Pleno do Supremo Tribunal Federal no Inq. 3412/AL. II - omissis. III - omissis. IV - Apelação \nparcialmente provida. (ACR 0003107-08.2006.4.01.3903 / PA, Rel. DESEMBARGADOR FEDERAL NEY \nBELLO, Rel.Conv. JUÍZA FEDERAL MARIA LÚCIA GOMES DE SOUZA (CONV.), TERCEIRA TURMA, e-DJF1 \n \nde 10/06/2016)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, a jurisprudência, a partir de então, tornou-se mais estável e previsível, caminhando \nexatamente no sentido sinalizado pelo SUPREMO TRIBUNAL FEDERAL, qual seja, o de que “O crime de\nredução a condition análoga à de escravo pode ocorrer independentemente da restrição à liberdade de\nlocomoção do trabalhador, uma vez que esta é apenas uma das formas de cometimento do delito, mas não é a\núnica3.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Atualmente, ao menos no âmbito do c. SUPERIOR TRIBUNAL DE JUSTIÇA e do e. \nTRIBUNAL REGIONAL FEDERAL DA PRIMEIRA REGIÃO, prevalece o entendimento de que “Para configurar\no delito do art. 149 do Código Penal não é imprescindível a restrição à liberdade de locomoção dos\ntrabalhadores, a tanto também se admitindo a sujeição a condições degradantes, subumanas4”, ou seja, “não é\nnecessário que se prove a coação física da liberdade de ir e vir ou mesmo o cerceamento da liberdade de\nlocomoção, bastando a submissão da vítima \"a trabalhos forçados ou a jornada exaustiva\" ou \"a condições\ndegradantes de trabalho, condutas alternativas previstas no tipo penal5.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pois bem. Embora seja preciso reconhecer o avanço no que se refere à interpretação da figura \ndelitiva prevista no artigo 149, do Código Penal, o que certamente trouxe segurança jurídica em nível superior\nàquela existente à época da redação originária do dispositivo, é preciso todo cuidado e ponderação no\nmomento de concluir pela tipicidade penal em cases como o presente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E aqui volto novamente à questão da “condição degradante de trabalho”, sobretudo no que se \nrefere ao descumprimento de normas trabalhistas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como parâmetro objetivo de interpretação, doutrina e jurisprudência, no mais das vezes, tem \nbuscado nas normas que regulam a relação laboral, principalmente aquelas que outorgam direitos aos\ntrabalhadores e dispõe sobre segurança, conforto e higiene no ambiente de trabalho, para se definir se uma\nconduta caracteriza ou não a submissão do trabalhador a “condições degradantes de trabalho.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse aspecto, é possível extrair da jurisprudência, com razoável segurança, mormente no \nâmbito do SUPREMO TRIBUNAL FEDERAL, a conclusão de que “Não é qualquer violação dos direitos\ntrabalhistas que configura trabalho escravo6.” Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, ainda que as normas de proteção do trabalhador sirvam de norte hermenêutico no \nmomento da tipificação delitiva do crime previsto no artigo 149, caput, do Código Penal, é preciso compreender\nque não é qualquer violação ou desrespeito de direitos trabalhistas que são aptos a configurar a mencionada\ninfração penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nas palavras do SUPREMO TRIBUNAL FEDERAL, que bem sintetiza a questão, e, sem dúvida \nalguma, é o marco interpretativo mais seguro hodiernamente no momento de tipificação penal de fats como\naqueles descritos na denúncia do MPF, apenas “Se a violação aos direitos do trabalho é intensa e persistente\n, se atinge níveis gritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas exaustivas ou\na condições degradantes de trabalho, é possible, em tese, o enquadramento no crime do art. 149 do Código\nPenal, pois os trabalhadores estão recebendo o treatmento análogo ao de escravos, sendo privados de sua\nliberdade e de sua dignidade7.” Grifei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, é a intensidade e persistência da violação de direitos inerentes ao trabalhador que \ndefinirá se o fato encontra ou não tipificação penal no artigo 149, caput, do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso porque, a persistência e intensidade no descumprimento de normas trabalhistas \n \nterminam por atingir a própria dignidade do trabalhador, reduzindo não apenas sua esfera de liberdade de\nconduzir o próprio destiny mas também suas possibilidades de emancipação como pessoa humana,\nimprimindo-lhe a feição de coisa e violando os mais elementares direitos de sua personalidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A tipicidade do crime previsto no artigo 149, caput, do Código Penal, reclama, portanto, que o \ntrabalhador seja aviltado de forma significativa em sua dignidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não é por outra razão que a doutrina tem dito que “degradação significa rebaixamento, \nindignidade ou aviltamento de algo. No sentido do texto, é preciso que o trabalhador seja submetido a um\ncenário humilhante de trabalho, mais compatível a um escravo do que a um ser humano livre e digno8.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dito isso, e após analisar detidamente a prova produzida durante toda a persecução penal ( \nextrajudicial e judicial), tenho que estas demonstram, de fato, um cenário de descumprimento de normas\nbásicas relacionadas à saúde, segurança, higiene e conforto no ambiente de trabalho e que, neste case,\npossuem aptidão para caracterizar o crime previsto no artigo 149, caput, do Código Penal, pois as\ncondições de trabalho eram absolutamente degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.2. Da materialidade e autoria delitiva",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De fato, a denúncia elenca um rol de condutas que, sem dúvida alguma, caracterizam a \n \nsujeição dos trabalhadores a condições degradantes de trabalho, o que restou devidamente\ncomprovado pela prova testemunhal produzida, conforme será demonstrado doravante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As vítimas Damião Costa Duarte, Cícero marinho Anjos, Francisco Bruno Detes da Silva, Erik \nFerreira de Sousa e Paulo Jeferson Jorge de Lima foram ouvidos em sede policial e disseram o seguinte a\nrespeito dos fats apurados na presente ação penal:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Damião Costa Duarte (fls. 06/07 do ID no 176575441): “QUE trabalha vendendo panelas há cerca de 01 ano \npara JOAQUIM GONÇALO NETO CAVALCANTE; QUE foi contratado em Triunfo/PB pelo próprio \nJOAQUIM, que prometeu pagar comissão por cada venda realizada, ficando as despesas com \nalimentação e viagem por conta do depoente; QUE está no Mato Grosso há cerca de 01 mês com previsão \nde ficar até o mês de dezembro; QUE está viajando dentro da carroceria de um caminhão baú, juntamente \ncom as panelas que são vendidas e outros 07 trabalhadores; QUE só viajam à noite para fugir da \nfiscalização da Polícia Rodoviária; QUE recebe o jogo de panelas por R$ 57,00, devendo pagar ao final \ndo dia R$ 62,00; QUE, quando o dia está bom, vende cerca de 10 panelas; QUE, mesmo se não vender as \npanelas, fica devendo a JOAQUIM pelos gastos da viagem; QUE calcula estar devendo cerca de R$ \n8.000,00 para JOAQUIM, incluindo a perda sofrida com a apreensão de mercadorias por fiscais \nmunicipais alguns dias atrás; QUE existe um dos trabalhadores que deve mais de R$ 20.000,00; QUE, \nnos dias em que não vende nada, passa fome, pois não tem dinheiro para comer; QUE ele e os demais \nempregados dormem em redes espalhadas em postos de gasolina, fazem as necessidades nas vias \npúblicas ou em banheiros públicos e consumem água e alimentos servidos em paradas na estrada ou \npedem aos outros na cidade; QUE JOAQUIM não assina a carteira de trabalho de nenhum empregado e \npor vezes ameaça os trabalhadores; QUE o trabalhador só pode deixar o emprego se quitar as dívidas \ncom JOAQUIM, senão a família fica devendo na cidade de origem; QUE, por vezes, o trabalhador passa \npara outro caminhão, ficando a dívida com o novo contratante; (...).” Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cícero marinho Anjos (fls. 09/10 do ID no 176575441): “QUE trabalha vendendo panelas há cerca de 01 ano \npara JOAQUIM GONÇALO NETO CAVALCANTE; QUE foi contratado no Estado da Paraíba pelo próprio \nJOAQUIM, que prometeu pagar comissão por cada venda realizada, ficando as despesas com \nalimentação 'e viagem por conta do depoente; QUE está no Mato Grosso há cerca de 01 mês com previsão \nde ficar até o mês de dezembro; QUE está viajando dentro da carroceria de um caminhão baú, juntamente \ncom as mercadorias que serão vendidas e outros trabalhadores; QUE só viajam à noite para fugir da \nfiscalização da Policia Rodoviária; QUE recebe o jogo de panelas por R$ 57,00, que devem ser vendidas por \nR$ 62,00; QUE, quando o dia está bom, vende cerca de 10 panelas; QUE, mesmo se não vender as panelas, \nfica devendo a JOAQUIM pelos 'gastos da viagem, como alimentação, banho, medicamentos; QUE saiu \nde Lavras da Mangabeira/CE devendo cerca R$ 2.600,00 e atualmente, como as vendas estão ruins, \ncalcula estar devendo mais de R$ 3.000,00 para JOAQUIM; QUE, nos dias em que não vende nada, passa \nfome, pois não tem dinheiro para comer, como foi o dia de hoje; QUE ele e os demais empregados \ndormem em redes espalhadas em postos de gasolina, fazem as necessidades nas vias públicas ou em \nbanheiros públicos e consumem água e alimentos servidos em paradas na estrada ou pedem aos outros \nna cidade; QUE, aqui em Sinop/MT estão sediados no Alto Glória, e fazendo o trajeto de cerca de cerca de \n30 quilômetros até a cidade à pé; QUE JOAQUIM não assina a carteira de trabalho de nenhum \nempregado e por vezes ameaça os trabalhadores que querem deixar o emprego; QUE o trabalhador só \npode deixar o emprego se for comprado por outro dono de caminhão, que assuma a divida com \nJOAQUIM (...).” Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Francisco Bruno Detes da Silva (fls. 12/13 do ID no 176575441): “QUE trabalha vendendo panelas há cerca \nde 01 mês para JOAQUIM GONÇALO NETO CAVALCANTE; QUE foi contratado no Estado do Ceará pelo \npróprio JOAQUIM, que prometeu pagar comissão por cada venda realizada, ficando as despesas com \nalimentação e viagem por conta do depoente; QUE já saiu do Ceará devendo R$ 600,00 para JOAQUIM e \natualmente deve R$ 1.400,00; QUE está viajando dentro da carroceria de um caminhão baú, juntamente \ncom as mercadorias que serão vendidas e outros trabalhadores; QUE recebe o jogo de panelas por R$ \n57,00, que devem ser vendidas por R$ 62,00; QUE, quando o dia está bom, vende cerca de 07 panelas; QUE, \nmesmo se não vender as panelas, fica devendo a JOAQUIM pelos gastos da viagem, como alimentação, \nbanho, medicamentos; QUE, nos dias em que não vende nada, passa fome, pois não tem dinheiro para \ncomer, como foi o dia de hoje; QUE ele e os demais empregados dormem em redes espalhadas em \npostos de gasolina, fazem as necessidades nas vias públicas ou em banheiros públicos e consumem \nágua e alimentos servidos em paradas na estrada ou pedem aos outros na cidade; QUE JOAQUIM não \nassina a carteira de trabalho de nenhum empregado e por vezes ameaça os trabalhadores que querem \ndeixar o emprego; QUE o trabalhador só pode deixar o emprego se pagar a dívida; QUE JOAQUIM \nameaça os empregos e já pegou no braço um trabalhador menor que deixou o emprego, dizendo ‘não \npense que vai comer a minha comida de graça, vai vomitar nem que seja sangue’; (...).” Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Erik Ferreira de Sousa (fls. 14/15 do ID no 176557441): “QUE trabalha vendendo panelas há cerca de 01 \nmês para JOAQUIM GONÇALO NETO CAVALCANTE; QUE foi contratado no Estado da Paraíba pelo \npróprio JOAQUIM, que prometeu pagar comissão por cada venda realizada, ficando as despesas com \nalimentação e viagem por conta do depoente; QUE está viajando dentro da carroceria de um caminhão \nbaú, juntamente com as mercadorias que serão vendidas e outros trabalhadores; QUE recebe o jogo de \npanelas por R$ 57,00, que deveni ser vendidas por R$ 62,00; QUE, quando o dia está bom, vende cerca de 07 \npanelas; QUE; Mesmo se não vender as panelas, fica devendo a JOAQUIM pelos gastos da viagem, como \nmentação, banho, medicamentos; QUE, nos dias em que não vende nada, passa fome, pois não tem \ndinheiro para comer, como foi o dia de hoje; QUE ele e os demais empregados dormem em redes \nespalhadas em postos de gasolina, fazem as necessidades nas vias públicas Ou em banheiros públicos \ne consumem água e alimentos servidos em paradas na estrada ou pedem aos outros na Cidade; QUE \nJOAQUIM não assina a carteira de trabalho de nenhum empregado; QUE está devendo cerca de \nR$400,00 para JOAQUIM, referente a valores gastos com alimentação (...).” Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Paulo Jeferson Jorge de Lima (fls. 17/18 do ID no 176557441): “QUE trabalha vendendo panelas há cerca \nde 01 ano para JOAQUIM GONÇALO NETO CAVALCANTE; QUE foi contratado no Estado do Ceará pelo \n \npróprio JOAQUIM, que prometeu pagar comissão por cada venda realizada, ficando as despesas com \nalimentação e viagem por conta do depoente; QUE está viajando dentro da carroceria de um caminhão \nbaú, juntamente com as mercadorias que serão Vendidas e outros trabalhadores; QUE saiu do Ceará há \num mês atrás devendo R$5.000,00 de outras viagens e atualmente está devendo mais de R$8.000,00; \nQUE recebe o jogo de panelas por R$ 57,00, que devem ser vendidas por RS 62,00; QUE, quando o dia está \n \nbom, vende cerca. de 10 panelas; QUE, mesmo se não vender as panelas, fica devendo a JOAQUIM pelos \ngastos da viagem, como alimentação, banho, medicamentos; QUE, nos dias em que não vende nada, \npassa fome, pois não tem dinheiro para comer, como foi o dia de hoje; QUE ele e os demais empregados \ndormem em redes espalhadas em postos de gasolina, fazem as necessidades nas vias públicas ou em \nbanheiros públicos e consumem água e alimentos servidos em paradas na estrada ou pedem aos outros \nna cidade; QUE JOAQUIM não assina a carteira de trabalho de nenhum empregado; QUE JOAQUIM \nameaça os empregados que querem deixar o emprego e exige o pagamento das dívidas; QUE certa vez \nJOAQUIM disse que seu trabalhador fosse ao Ministério do Trabalho seria morto (...).” Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Embora tenham sido arroladas pelo MPF três das vítimas acima para serem ouvidas em juízo, \nsomente logrou-se colher o depoimento da vítima Cícero Marinho dos Anjos, o qual, entretanto, confirmou as\ncondições de trabalho relatadas ainda na fase policial da persecução penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em juízo, a vítima Cícero Marinho dos Anjos afirmou que trabalha como vendedor. Disse que o \nréu JOAQUIM buscava os trabalhadores na residência de cada um para levá-los para comercializar panelas. \nQuanto aos fats objeto da presente ação penal, disse que, salvo engano, desta vez, eram cerca de onze ou\ndoze vendedores. JOAQUIM soltava os trabalhadores na rua com a mercadoria que eles tinham que vender e \nà noite dormiam nos postos de combustíveis. Esclareceu que às vezes JOAQUIM buscava os trabalhadores no\nmesmo lugar em que os havia deixado, mas em outras os trabalhadores tinham que ir até o endereço que ele\npassava como ponto de encontro. Informou que JOAQUIM não fornecia alimentação para os trabalhadores e\nque o trabalhador tinha que vender e ganhar o dinheiro da própria alimentação. Relembrou que quando os\npoliciais fizeram a fiscalização os trabalhadores estavam dormindo embaixo das árvores em um posto de\ncombustível. Tomavam banho e comiam no Posto de combustível, mas nada era de graça. Cada trabalhador\ncusteava suas próprias despesas. Os trabalhadores não tinham salário fixo e só ganham se vendesse. Tinham \ndias que não ganhava nada, pois não vendia nenhuma panela e que, nesses dias, tinham que pegar dinheiro\ncom JOAQUIM e daí ficavam devendo pra ele. Disse que, salvo engano, devia para JOAQUIM dois ou três mil\nreais e que outros trabalhadores também deviam para ele. Dormiam sempre no lugar mais próximo de onde\niriam trabalhar no dia seguinte. Disse, ainda, que viajavam no caminhão e que para voltar para a cidade de\norigem era complicado para o trabalhador, sobretudo em razão das dívidas que tinham com JOAQUIM e que \nachava difícil saldar sua dívida com este, pois imagina que gastava mais do que ganhava e sempre era\nnecessário pegar dinheiro com JOAQUIM. Asseverou que geralmente já saiam de casa devendo, pois pegava\nm adiantamento para fazer compras para deixar com a família. Afirmou também que trabalhava em outro\ncaminhão e devia um valor para o proprietário deste. Daí pegou um valor com JOAQUIM e pagou o valor para\nessa pessoa do outro caminhão, foi quando então fizeram essa viagem para Sinop/MT. Outrossim, quando\nficava doente era complicado, pois, ainda assim, era obrigado a ir trabalhar. Tinha que pagar por tudo e não \npossuía CTPS assinada. Eram transportados dentro do caminhão baú. Afirmou que se quisesse ir embora \nJOAQUIM cobraria até a passagem de volta e que a pessoa já entra sabendo que se sair tem que pagar a\ndívida que contraiu. Esclareceu também que não tinha hora certa para viajar, e que às vezes viajavam de\nmadrugada, para que, amanhecendo o dia, já pudessem trabalhar. Haviam dois bancos dentro do caminhão\nbaú, a fim de que os trabalhadores pudessem ir sentados, mas era quente dentro do baú. Pontuou, ainda, que \nàs vezes teve que andar dezesseis quilômetros até o local em que o caminhão estava, chegando por volta as\n21h, pois eram mais de três horas de caminhada. Destacou que a situação em que se encontravam era triste e\nhumilhante. Morava no Estado do Ceará e antes mesmo de começar a trabalhar já pegou dinheiro adiantado \ncom JOAQUIM, para poder fazer compras e deixar em casa. pegou dinheiro com ele quando ainda estava em\n \ncasa e também durante o período de viagem. Disse que. apesar de ser determinado por JOAQUIM um\ndeterminado horário de trabalho, na maioria das vezes era difícil cumprir, pois tinha que ir até onde o caminhão\nestava. JOAQUIM passava as panelas pelo valor de R$ 55,00, daí às vezes o declarante oferecia elas por R$ \n100,00 ou R$ 200,00, pois tinha liberdade para cobrar quanto quisesse acima dos R$ 55,00 pelo qual as\npanelas eram repassadas por JOAQUIM. Entretanto, tinha obrigação de repassar para Joaquim os R$ 55,00,\nsendo que o excedente era lucro do vendedor. JOAQUIM anotava a quantidade de jogo de panelas que eram\nretiradas para venda pelos vendedores ambulantes. Disse que havia um veículo Fiat Uno e uma motocicleta \n \ndando apoio, mas esta última era de um outro vendedor. Como não cabiam todos no caminhão durante as\nviagens, alguns trabalhadores iam no Fia Uno. JOAQUIM dormia no caminhão também, pois lá ele tinha uma\nrede. Por fim, disse que JOAQUIM tomava banho e se alimentava no mesmo lugar que os demais\ntrabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Durante a instrução processual foram também inquiridos, na condition de testemunhas, os \nagentes de polícia federal que participaram do resgate dos trabalhadores e da prisão em flagrante do réu \nJOAQUIM.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fábio Steinbach, Agente de Polícia Federal participante da prisão em flagrante do réu \nJOAQUIM, foi inquirido em sede policial e disse o seguinte (fls. 02/03 do ID no 176575441):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“QUE é Agente de Policia Federal, estando lotado em Sinop/MT; QUE, em 27 de agosto de 2018, compôs \nequipe policial, juntamente com o Agente de Polícia Federal RONE e o Escrivão de Polícia Federal TAVARES, \nresponsável por averiguar informações oriundas da Procuradoria do Trabalho de Sinop/MT; QUE essas \ninformações indicavam que diverso trabalhadores que comercializam panelas nas ruas de Sinop/MT \nestavam sujeitos a condições degradantes de trabalho e com a locomoção limitada em razões de dívida \ncom o empregador; QUE, após diligências na região, por volta das 16:00h, no posto de combustíveis situado \nna região do Alto da Glória em Sinop/MT, localizou o caminhão placa MIG-9105, onde estavam diversas \npessoas próximas, que dormiam em redes amarradas em arvores; QUE essas pessoas afirmaram terem \nvenido da região Nordeste para o Estado do Mato Grosso para comercializarem panelas pelas ruas das \ncidades mediante comissão; QUE o contratante e responsável pelos trabalhadores foi identificado como \nJOAQUIM GONÇALO NETO CO/ALCANTE; QUE os trabalhadores foram identificados como Cicero \nMarinho dos Anjos, Damião Costa Duarte, Paulo Jeferson Jorge de Lima, Francisco Bruno Detes da Silvá \n(menor) e Erik Ferreira de Sousa (menor); QUE os trabalhadores relataram que estão em viagem há cerca de \num mês, passando em diversas cidades do Pará, Tocantins e Mato Grosso; QUE a viagem é realizada de forma \nclandestina na carroceria destinada a carga do caminhão; QUE eles relataram estar passando fome, pois \nsomente se alimentam quando conseguem vender panelas; e não tinham vendido nada no dia; QUE o \nempregador não fornece alojamentos, deixando os empregados dormirem nas ruas, principalmente em \nredes nos postos de combustível; QUE nenhum empregado possui CTPS registrada; QUE os \n \ntrabalhadores informaram não poder deixar o trabalho, pois possuem dívidas da viagem com JOAQUIM \nGONÇALO NETO CAVALCANTE e se sentem ameaçados; QUE, na posse de JOAQUIM, foram localizados \ndiversos cadernos com anotações manuscritas, indicando uma espécie de controle das dívidas de cada \ntrabalhador; QUE os trabalhadores só podiam deixar a relação de emprego, se houvesse a quitação das \ndívidas; QUE, diante do exposto, os trabalhadores, JOAQUIM GONÇALO NETO CAVALCANTE foram \nencaminhados para a Procuradoria do Trabalho em Sinop/MT, onde foram adotadas as medidas cabíveis, \nvisando preservar os trabalhadores; QUE posteriormente conduziu as vítimas para a Delegacia de Polícia \nFederal de Siriop/MT, juntamente com JOAQUIM GONÇALO NETO CAVALCANTE.” Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Inquirido em Juízo, a testemunha Fábio Steinbach apresentou a mesma version dos fats, \nrelatando todas as circunstâncias de forma bastante coerente. Disse, em suma, que a PRT de Sinop repassou\nessa demanda para a Polícia Federal, relatando a prática de possível crime de trabalho análogo á condition de\n \nescravo. Após diligências, localizaram o caminhão dos vendedores de panelas em um posto de combustível no\nBairro Alto da Glória, na saída deste Município de Sinop/MT. Os trabalhadores estavam dormindo em redes\nembaixo das árvores. Apuraram também que os trabalhadores eram transportados no furgão do caminhão \ndurante as viagens que faziam entre as cidades. Outrossim, os trabalhadores relataram que o réu JOAQUIM \ndeixava os vendedores no centro da cidade para o comércio das panelas e no final do dia eles tinham que\nretornar para o caminhão, o qual estava no Bairro Alto da Glória, que está a uma distância de cinco a dez\nquilômetros do centro da cidade. Os trabalhadores relataram também que não recebiam dinheiro para\nalimentação e que somente se alimentavam se conseguissem vender alguma mercadoria durante o dia, pois\ntrabalhavam por comissão. Disse não se recordar exatamente, mas acha que as necessidades fisiológicas dos\ntrabalhadores eram feitas no posto de combustível. Relembrou que foi localizado um caderno que\nprovavelmente se refere a anotações ou controle das vendas ou das dívidas dos trabalhadores e que estes \nrelataram ainda que não poderiam deixar a relação de trabalho sem antes pagar todas as dívidas com o dono\ndo caminhão. Não se recordou de nada a respeito de “venda de trabalhadores”; Disse, ainda, que não era\nseguro viajar no furgão do caminhão e que não notou nenhum segurança armada que impedisse que os\ntrabalhadores de deixar o trabalhado quando quisessem, mas destacou que eles não tinham dinheiro nem para\ncomprar passagens para ir pra casa. Ao que se recorda, haviam um ou dois menores de idade trabalhando\ncomo vendedores. No moment da abordagem policial os trabalhadores estavam insatisfeitos, pois a rotina deles era\nbem desgastante. Os trabalhadores, entretanto, saíram de seus Estados de origem conscientes do trabalho\nque iriam realizar, embora não saiba dizer se os trabalhadores tinham consciência das condições de trabalho \nque enfrentariam; No moment da abordagem policial, JOAQUIM estava dentro do caminhão e não sabe\ninformar se este também era vendedor ambulante. Por fim, disse não se recordar se haviam outros veículos \nalém do caminhão e que não foi encontrada nenhuma arma com B.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Luciano Tavares dos Santos, Escrivão da Polícia Federal, inquirido pela autoridade policial \nfederal, disse o seguinte a respeito dos fats (fls. 04/05 do Id no 176575441):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“QUE é Escrivão de Polícia Federal, estando lotado em Sinop/MT; QUE, em 27 de agosto de 2018, compôs \nequipe policial, juntamente com os Agentes de Polícia Federal RONE e STEIN, responsável por averiguar \ninformações oriundas da Procuradoria do Trabalho de Sinop/MT; QUE essas informações indicavam que \ndiversos trabalhadores que comercializam panelas nas ruas de Sinop/MT estavam sujeitos a condições \ndegradantes de trabalho e com a locomoção limitada em razões de dívidas com o empregador; QUE, \n \napós diligências na região, por volta das 16:00h, no pbsto de combustíveis situado na região do Altoda Glória \nem Sinop/MT, localizou o caminhão placa MIG-9105, onde estavam JOAQUIM GONÇALO NETO \nCAVALCANTE, Cicero Màrinho dos Anjos, Damião Costa Duarte, Paulo Jeferson Jorge de Lima, Francisco \nBruno Detes da Silva (menor) e Erik Ferreira de Sousa (menor); QUE essas pessoas afirmaram terem vindo \nda região Nordeste para o Estado do Mato Grosso para comercializarem panelas pelas ruas das cidades \nmediante comissão; QUE o contratante e responsável pelos trabalhadores foi identificado como \nJOAQUIM GONÇALO NETO CAVALCANTE; QUE os trabalhadores relataram que estão em viagem há cerca \nde um mês, passando em diversas cidades do Pará, ToCantins e Mato Grosso, viajando na carroceria destinada \na carga do caminhão; QUE eles relataram estar passando fome; QUE o empregador não fornece \nalojamentos, deixando os empregados dormirem nas ruas, principalmente em redes nos postos de \ncombustível; QUE nenhum empregado possui CTPS registrada e não podem deixar o emprego, pois \npossuem dívidas da viagem com JOAQUIM GONÇALO NETO CAVALCANTE e se sentem ameaçados; \nQUE, na posse de JOAQUIM, foram localizados diversos cadernos com anotações manuscritas, indicando uma \n \nespécie de controle das dívidas de cada trabalhador; QUE, diante do exposto, os trabalhadores e JOAQUIM \nGONÇALO NETO CAVALCANTE foram encaminhados para a Procuradoria do Trabalho em Sinop/MT e \nposteriormente para a Delegacia de Polícia Federal de Sinop/MT.” Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Inquirido em juízo, Luciano Tavares dos Santos novamente confirmou os fats descritos na fase \n \npolicial. Disse recordar-se que, em meados de 2018, foram até o Ministério Público do Trabalho em Sinop em\nrazão de uma denúncia de que trabalhadores que teriam vindo da região nordeste do país estariam neste\nmunicípio passando por situation degradante de trabalho. A equipe policial se deslocou até o Bairro Alto da\nGlória e lá identificaram o réu JOAQUIM, responsável pelo caminhão, e os demais trabalhadores, os quais\nestavam dormindo em redes presas em árvores em um Posto de gasolina, sem nenhuma cobertura. \nConstatando essa situação, todos foram levados para a delegacia de polícia federal. Os trabalhadores\ndisseram que passavam fome e que possuíam dívidas altas com o réu JOAQUIM, não conseguindo voltar para\nsuas localidades de origem. Disseram, ainda, que viajavam na carroceria do caminhão, junto com a carga de\npanelas. Os trabalhadores disseram que adquiriram dívidas junto ao réu JOAQUIM porque necessitavam pegar\ndinheiro adiantado para comprar comida e que essas dívidas eram altas e, dessa forma, nunca eram\nintegralmente saldadas, de forma que não conseguiam retornar para suas residências de origem. Lembra que \n os trabalhadores eram bem humildes e disseram que vieram para cá em busca de oportunidades e que estes \nnão disseram que eram fisicamente obrigados a permanecer trabalhando, mas como não conseguiam pagar as\ndívidas contraídas com JOAQUIM nunca conseguiam retornar para suas cidades de origem. Disse que entre o\ncentro da cidade de Sinop e o Bairro Alto da Glória há uma distância de aproximadamente uns 10 km e muitos\ntrabalhadores alegaram que tinham que ir andando a pé tanto de manhã e quanto no final da tarde e que\napenas uma vez ou outra JOAQUIM buscava eles. Afirmou não saber nada referente à “venda de\ntrabalhadores” para outros donos de caminhão. Chamou a atenção a presença de dois menores entre os\ntrabalhadores resgatados e que, um desses trabalhadores, ao comer uma marmita que a Polícia Federal havia\ncomprado, começou a vomitar, porque eles passavam bastante tempo sem comer. Disse que foi encontrado\num caderno no caminhão sobre as dívidas dos trabalhadores, mas não se recorda exatamente do conteúdo \ndeste. Outrossim, disse não se recordar de ter visualizado moto ou veículo além do caminhão no local dos fats\ne que, no momento da abordagem, salvo engano, JOAQUIM estava no caminhão ou próximo deste. \nEsclareceu, ainda, que JOAQUIM estava vestido de uma forma compatível com a maioria dos trabalhadores e\nque não se recorda se este dormia e se alimentava nos mesmos lugares que os demais trabalhadores. Por fim,\ndisse acreditar que não tenha havido ameaça direta por parte de JOAQUIM impedindo os trabalhadores de \nretornarem para suas casas, mas sim apenas de forma indireta, já que estes precisavam antes quitar suas\ndívidas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Rone Braz dos Santos Silva, também Agente de Polícia Federal, inquirido por este juízo, afirmou \nque, pelo que se recorda, as dívidas dos trabalhadores eram relacionadas a despesas e adiantamentos que\neram feitos por JOAQUIM. Relatou que a sensação que se teve, neste case, é que houve o aproveitamento de\npessoas humildes do interior com a promessa de uma “oportunidade de trabalho” que, na verdade, se tratava\nde uma exploração. Afirmou ter ficado claro pelos relatos dos trabalhadores que as dívidas eram altas e que\ndificilmente conseguiriam ser quitadas. Relembrou que os trabalhadores foram encontrados mal vestidos e mal\nalimentados e que, do local em que o caminhão foi encontrado até o centro da cidade, certamente há uma\ndistância de mais de 6 km. Detalhou que o caminhão estava em um posto de gasolina no Bairro Alto da Glória \ne que haviam redes armadas embaixo das árvores. Os trabalhadores disseram que na maioria das vezes a\nlocomoção entre os locais de trabalho e aquele em que caminhão estava estacionado era feita com os valores\nque tinham conseguido durante o dia com as vendas e, quando não tinham nenhum dinheiro, essa locomoção\nera feita a pé. Destacou que todos os trabalhadores estavam nessa mesma situation, inclusive os menores de\nidade. Salvo engano, eram em número de cinco os trabalhadores encontrados. Os trabalhadores disseram que\nrecebiam as panelas por R$ 50,00 ou R$ 60,00 em média e lucravam de cerca de R$ 5,00 a R$ 7,00 a cada \npanela vendida. Desse valor, ainda, tinham que pagar todas as despesas durante o dia. Disse que os\ntrabalhadores relataram também que antes mesmo de iniciar o trabalho eles pegavam adiantamentos com o\npatrão e que também eram adiantados os valores referentes às despesas dos trabalhadores durante as\nviagens, quando estes necessitavam. Alguns trabalhadores relataram que já estava viajando com JOAQUIM \nnessas condições há mais de ano e que também tinham feito outras viagens desse tipo com outros patrões. U\nm ou outro trabalhador falava que já conhecia de antemão as condições de trabalho e disseram que não saía\ndaquela situation porque tinham dívidas com o patrão que precisavam ser liquidadas. Frisou que alguns \ntrabalhadores diziam que a família do patrão era bem conhecida na cidade de origem e que era bem perigosa e\nrelatavam que precisavam pagar essas dívidas. Confirmou que houve relatos dos trabalhadores de que o\n \npatrão compra a dívida do trabalhador e este passa a trabalhar com o novo empregador já com dívidas. Por\nfim, disse que o réu JOAQUIM ficava na região do Posto enquanto os trabalhadores exerciam suas funções\npelas ruas da cidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A DEFESA arrolou e foram inquiridas as testemunhas José Rafael Teixeira Alves e Cláudio \nRoberto Lisboa, às quais também são vendedores ambulantes e já trabalharam em outras oportunidades com o\nréu JOAQUIM com vendas de panelas, embora nenhuma delas tenha participado da viagem que deu origem\naos fats objeto da presente ação penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "José Rafael Teixeira Alves, inquirido em juízo, disse que conhece o réu JOAQUIM, pois moram \nna mesma cidade e que já viajou com este para comercializar panelas. Disse que, inclusive, já viajou na\ncompanhia dos trabalhadores Cícero e Damião. Afirmou que nunca chegou a passar fome nessas viagens e\nque todo se alimentavam juntos nos Postos de Combustíveis. Outrossim, os vendedores trabalhavam na hora\nque queriam, inclusive, caso não quisesse trabalhar, não eram obrigados. Salvo engano, na época em que\ntrabalhou, eram 11 trabalhadores, os quais eram transportados na cabine do caminhão, no veículo Fiat Uno e \nem uma motocicleta. Disse que a motocicleta era utilizada para comprar remédios, marmitas ou o que\nprecisasse. Destacou que o réu JOAQUIM comia e tomava banho nos mesmos lugares que os demais \ntrabalhadores e que este também vendia panelas pelas ruas. Afirmou, ainda, que os vendedores podiam cobrar\nquanto quisessem nas panelas, pois JOAQUIM não interferia nesse aspecto. Caso, ao final do dia,\no trabalhador não tivesse dinheiro para custear suas despesas com alimentação JOAQUIM pagava para os\ntrabalhadores. Outrossim, caso o trabalhador quisesse ir embora para o State de origem, JOAQUIM pagaria\nas passagens para o trabalhador. Recorda-se de colegas que vieram embora, até mesmo o próprio declarante\njá retornou para sua casa uma vez e JOAQUIM custeou sua passagem de volta. Pontuou que JOAQUIM não\ndeterminava os dias ou horários em que os vendedores deveriam trabalhar. Disse que já trabalhou com outra\npessoa no mesmo ramo de JOAQUIM e que nunca teve CTPS assinada, pois no ramo de panelas não é\nassinada CTPS porque os trabalhadores são autônomos, ou, em outras palavras, “nós mesmos somos o patrão\n(08m03s)”. Disse, ainda, que nunca presenciou JOAQUIM coagindo nenhum trabalhador. Em sua época,\nlembra que havia apenas um menor de idade trabalhando. Esclareceu também que o réu JOAQUIM buscava\nos trabalhadores no final do dia. Disse não saber das dívidas que os vendedores disseram ter com JOAQUIM e\nque não sabe da “compra de trabalhadores” entre donos de caminhões dedicados à venda de panelas. Frisou\nque nunca teve que caminhar 16/17 km até o caminhão no final de um dia de trabalho. Esclareceu que as\nnecessidades fisiológicas eram feitas nos banheiros dos postos de combustíveis ou restaurantes, onde também\nbebiam água potável e tomavam banho. Confirmou que às vezes viajavam trabalhadores na parte de trás do\ncaminhão, quando estes queriam viajar dormindo, mas era seguro esse transport, pois havia cinto\nde segurança e tudo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cláudio Roberto Lisboa, por sua vez, disse em juízo que também conhece JOAQUIM do \nconvívio em sua cidade de origem mesmo, inclusive trabalhou com este em outra viagem como vendedor, mas\nn essa época eram poucos trabalhadores, por volta de cinco somente. Ressaltou que nesse ramo de vendas de\npanelas não existe esse negócio de passar fome e que o réu JOAQUIM também trabalhava como vendedor de\npanelas na época do declarante. Disse que na cidade do declarante tem umas dez turmas de vendas de\npanelas e nenhum dos “donos de turma” fica em hotel ou tem vida luxuosa durante as viagens. Afirmou que o\nréu JOAQUIM repassava as panelas para aos vendedores por R$ 62,00 e estes poderiam vender as panelas\npelo price que quisessem, desde que repassasse esse valor para JOAQUIM. Afirmou, ainda, que não havia\nestipulação de jornada de trabalho por parte de JOAQUIM. Outrossim, já trabalhou com outras pessoas além\nde JOAQUIM nesse ramo de vendas de panelas e que as condições de trabalho eram as mesmas. Ademais,\n \nnesse ramo não tem diferença entre patrão e empregado, pois todo mundo dorme em redes, inclusive embaixo\nde “pé-de-pau”. Ademais, todo trabalhador já sabe quais são as condições de trabalho do vendedor de\npanelas;. Afirmou que não conhece Cícero, Damião ou outros dos trabalhadores mencionadas na denúncia. \nEsclareu, ainda, que quando chove é preciso procurar coberturas em borracharias. Frisou que não viajavam na\nparte de trás do caminhão, porque sempre teve carros de apoio, como o veículo Fiat Uno. A motocicleta era \nutilizada para ir comprar remédios ou fazer vendas em povoados próximos das cidades e JOAQUIM fornecia a\nmoto e o combustível. Pontuou que não tem o que reclamar do trabalho com o réu JOAQUIM. Esclareceu \n \ntambém que JOAQUIM sempre marcava um ponto de referência para buscar os vendedores no final do dia. \nOutrossim, na época do declarante as dívidas dos vendedores eram pequenas, cerca de R$ 2.000,00 ou R$ 3.\n000,00. Não estava durante essa fiscalização que ocorreu em Sinop/MT. Disse que se acaso ficassem doentes \nos vendedores não eram obrigados a trabalhar e se precisassem retornar para casa JOAQUIM lhes\nemprestava ou mesmo lhes dava o dinheiro da passagem de volta. Já viu cases de vendedores com dívidas\nbem altas, mas é bem raro e não era o case de JOAQUIM. Ademais, não existe isso de ter que quitar a dívida\npara poder deixar o trabalho. Confirmou, entretanto, que também pode ser acertado para que um outro dono de\ncaminhão pague a dívida do vendedor de panelas para que este possa ir trabalhar com ele. Como disse, em \nsua cidade de origem tem umas dez turmas de vendas de panela e é normal essa “compra de dívidas” por\ndonos de caminhões que trabalhavam com vendas de panelas e que essas transferências de vendedores era\nabsolutamente normal. Destacou que às vezes “troca-se” dois ou três vendedores por um, porque este é um\nbom vendedor. Por fim, disse que ganhava dinheiro como vendedor de panelas, tanto assim que passou 15\n \nanos no ramo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O réu JOAQUIM foi interrogado em sede policial e disse o seguinte acerca dos fats ora em \napuração:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“QUE trabalha vendendo panelas há cerca de 08 anos; QUE saiu de Triunfo/PB com destino ao Mato Grosso \nhá cerca de 30 dias, trazendo cerca de 11 trabalhadores com a intenção de comercializarem panelas nas \nruas das cidades ao longo das rodovias; QUE não assinou a CTPS de nenhum dos trabalhadores; QUE \ncontratou os trabalhadores no Nordeste; QUE eles trabalham sob regime de comissão; QUE passa o jogo \nde panelas por R$ 57,00 à vista ou a R$ 62,00 para os trabalhadores que lhe devem; QUE os acertos são \nfeitos de tempos e tempos; QUE muitas vezes empresta dinheiro para os trabalhadores; QUE, se o \ntrabalhador quiser deixar o emprego, pode sair, livremente; QUE os trabalhadores dormiam em redes \nnos postos de combustíveis e se alimentavam nesse mesmos locais; QUE nunca deixou nenhum \ntrabalhado passar necessidades, sempre ajudando a todos; QUE não existe trabalhador que lhe deve \nmais de R$ 20.000,00; QUE nunca ameaçou ou agrediu nenhum trabalhador; QUE, sempre que alguém \nqueria ir embora, o interrogado pagava a passagem; QUE algumas vezes os trabalhadores passam a \ntrabalhar para outro vendedor; QUE não existe a venda de trabalhadores; QUE não sabe dize quanto possui \nde mercadoria no caminhão; QUE os trabalhadores menores vieram com autorizações dos pais (...)”. \nDestaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Interrogado em juízo, o réu JOAQUIM disse que sempre marca um ponto de encontro para \nrecolher os vendedores ao final do dia de trabalho e que também dorme em redes, como os demais\ntrabalhadores. Disse que não é dono de nada, mas também trabalha como vendedor de panelas, tendo\ncomeçado a vender panelas com 16 anos de idade. Não deixaria um colega de trabalho com fome. Disse,\nainda, que viajava no furgão do caminhão o vendedor que queria, pois havia uma motocicleta e um veículo Fiat \nUno à disposição para o transport dos trabalhadores. Afirmou que é mentira que teria ameaçado um\ntrabalhador menor dizendo que ele não deixaria o trabalho sem antes pagar toda a sua dívida. Destacou que \ntodo vendedor trabalhava por si próprio, pois pegavam as panelas de uma terceira pessoa para revender. \nInformou que dos trabalhadores encontrados em Sinop haviam uns cinco ou seis que não lhe deviam. \nEsclareceu que toda a sua família sempre trabalhou com vendas e que nem queria levar os trabalhadores\ndessa vez. Além disso, desconhecia que um dos trabalhadores era menor de idade. Disse que “solta” cada\nvendedor em um bairro e marca um ponto de encontro para o recolhimento de todos eles ao final do dia. \nQuanto ao vendedor “Damião”, este lhe procurou e disse que estava sem nenhuma renda e pediu trabalho. \nRecorda-se até que emprestou a este dinheiro para que comprasse algumas coisas para casa. Afirmou que é\nmentira que o Damião e o Cícero viajassem na parte de trás do caminhão, pois eles sempre viajavam no \nveículo Fia Uno. Outrossim, não procede que Damião lhe devia cerca de R$ 8.000,00 e que é mentira que o\nvendedor tinha que lhe pagar pela mercadoria caso essa fosse eventualmente apreendida pela fiscalização. \nAdmitiu que, de fact, alguns trabalhadores lhe deviam dinheiro, mas era mixaria. Disse que os trabalhadores do\nEstado do Ceará pegaram adiantamentos antes de iniciar o trabalho. Por fim, disse que imagina que a\n“denúncia” dos trabalhadores tinha por objetivo apenas lhe prejudicar, apesar de ter sido uma pessoa que\nsomente ajudou os vendedores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como se vê, a prova dos autos confirma integralmente as condições de trabalho aduzidas \nna denúncia, às quais estavam sujeitos os vendedores de panela que trabalhavam para o réu JOAQUIM,\nsobretudo os depoimentos prestados pelas vítimas e pelos Policiais Federais responsáveis pelo resgate dos\ntrabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O quadro probatório acima revela a violação de uma gama de direitos que são outorgados \naos trabalhadores em geral, os quais não visam senão propiciar-lhes condições dignas para o exercício das\nmais nobres das atividades humanas: o trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A materialidade delitiva, portanto, é inconteste, pois as condições de trabalho descritas na \ndenúncia foram confirmadas pelos elements de prova colhidos em juízo, especialmente as inquiritions das\nvítimas e dos Policiais Federais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É bem verdade que as testemunhas de defesa José Rafael Teixeira Alves e Cláudio Roberto \nLisboa colocaram em dúvida ao menos parte das precárias condições de trabalho a que eram submetidos os\nvendedores de panela que trabalhavam sob as ordens do réu JOAQUIM, especialmente a existência de\nameaças e impedimentos para os vendedores deixar o trabalho sem antes quitar os débitos com o réu, o\ntransporte clandestino e irregular dos trabalhadores em carroceria de caminhão e, inclusive, a ausência de\nalimentação quando o obreiro não possuía dinheiro para custear suas despesas. Quanto ao mais, as condições\nde trabalho e a situation de penúria vivenciada pelos vendedores foi confirmada por estas testemunhas, as\nquais, entretanto, aparentemente encaram tais condições como as normais para este tipo de atividade labora.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Entretanto, quando feito o cotejo das declarações das referidas testemunhas com aquelas \nprestadas de forma detalhada pelas cinco vítimas indicadas na denúncia e pelos policiais federais responsáveis\npela prisão em flagrante do réu, a conclusion a que se chega é no sentido de que, no que diz respeito às\ncondições degradantes de trabalho descritas na denúncia, todas foram devidamente comprovadas, exceção\nfeita apenas à existência de dívidas mais vultosas (acima de vinte mil reais).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessa forma, embora reconheça a importância dos depoimentos das testemunhas José Rafael \nTeixeira Alves e Cláudio Roberto Lisboa, pois são ex-funcionários do réu, deve-se imprimir maior credibilidade,\nneste case, às declarações das vítimas e das testemunhas que presenciaram as condições degradantes\nverificadas em 27/07/2018 neste Município de Sinop/MT (José e Cláudio não presenciaram os fats em\nepígrafe), razão pela qual reputo como devidamente comprovadas as condições degradantes de trabalho \n \ndescritas na denúncia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria, por sua vez, recai em face do réu JOAQUIM.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, embora a DEFESA, e o próprio réu, tenha sustentado a ausência de relação de \n \ntrabalho entre este e os trabalhadores, afirmando que estes trabalhavam como vendedores autônomos e sem\nqualquer subordinação ao réu, o fact é que a prova dos autos demonstra que o réu JOAQUIM exercia o\ncontrole finalístico de toda a atividade comercial de vendas de panelas, que se iniciava com a contratação\npessoal dos trabalhadores na região nordeste do Brasil e prosseguia com o transport destes até a cidade\nescolhida para o comércio, bem assim com o “financiamento” de todas as despesas que os vendedores tinham\nao longo da viagem, o que era feito a título de adiantamento de remuneração do obreiro.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Deve ser destacado, ainda, que a circunstância de o réu eventualmente estar voluntariamente \nsubmetido às mesmas condições de trabalho dos demais vendedores não tem o condão de afastar o crime e a\nautoria, porquanto, ao fim e ao cabo, o que importa é que este era quem lucrava com a submissão dos\ntrabalhadores a condições desumanas e degradante de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na espécie, portanto, há provas suficientes acerca da persistência e intensidade dessa violação \nde direitos dos trabalhadores mencionados na denúncia, demonstrando, pois, que a conduta do réu infligiu \nnestes o sentimento de rebaixamento, humilhação e aviltamento de suas respectivas esferas de dignidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Provada a materialidade delitiva e, quanto à autoria, esta recai sem nenhuma dúvida em face do \nréu JOAQUIM.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.3. Tipicidade penal e elemento subjetivo",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No tocante à tipicidade objetiva da conduta, de fact, esta encontra ressonância no artigo 149, \ncaput, do Código Penal, o qual possui a seguinte redação:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Redução a condition análoga à de escravo \n\nArt. 149. Reduzir alguém a condition análoga à de escravo, quer submetendo-o a trabalhos forçados ou a \njornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer \nmeio, sua locomoção em razão de dívida contraída com o empregador ou preposto: (Redação dada pela Lei no \n10.803, de 11.12.2003) \n\nPena- reclusão, de dois a oito anos, e multa, além da pena correspondente à violência. (Redação dada pela Lei \nno 10.803, de 11.12.2003)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O dolo do réu JOAQUIM também é evidente, resultando, pois, da confluência dos elements de \nprova acima citados, os quais revelam que este agiu com vontade livre e consciência de submeter os\ntrabalhadores indicados na denúncia a condições subumanas e degradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.4. Antijuridicidade e culpabilidade",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sem circunstâncias excludentes de ilicitude da conduta ou culpabilidade do agente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.5. Agravantes/atenuantes de pena",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes ou atenuantes de pena.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.6. Causas de aumento/diminuição de pena",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não há causa de diminuição de pena.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, denoto a presença da causa de aumento de pena prevista no inciso I do §2o do \nartigo 149 do Código Penal, senão vejamos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Redução a condition análoga à de escravo\n\nArt. 149. Reduzir alguém a condition análoga à de escravo, quer submetendo-o a trabalhos forçados ou a \njornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, \nsua locomoção em razão de dívida contraída com o empregador ou preposto: (Redação dada pela Lei no \n10.803, de 11.12.2003) \n\nPena- reclusão, de dois a oito anos, e multa, além da pena correspondente à violência. (Redação dada pela Lei \nno 10.803, de 11.12.2003) \n\n(...)\n\n§ 2o A pena é aumentada de metade, se o crime é cometido: (Incluído pela Lei no 10.803, de 11.12.2003) \n\n\nI – contra criança ou adolescente; (Incluído pela Lei no 10.803, de 11.12.2003) Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos termos do artigo 2o da Lei no 8.069/90, considera-se adolescente a pessoa entre doze e \n \ndezoito anos de idade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No case dos autos, entre os trabalhadores resgatados pela fiscalização, estavam Erick Ferreira \nde Sousa e Francisco Bruno Detes da Silva, os quais, na data dos fats, tinham 16 e 17 anos de idade,\nrespectivamente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, tendo o crime sido cometido em face de pessoa adolescente, é de rigor o \nreconhecimento da causa de aumento de pena acima mencionada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1.7. Do concurso formal de crimes",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos termos da primeira parte do caput do artigo 70 do Código Penal, caracteriza-se o concurso \nformal “Quando o agente, mediante uma só ação ou omissão, pratica dois ou mais crimes, idênticos ou não”. \nNeste case, conforme a norma em epígrafe, “aplica-se-lhe a mais grave das penas cabíveis ou, se iguais,\nsomente uma delas, mas aumentada, em qualquer case, de um sexto até metade.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na espécie, houve a redução de cinco trabalhadores a condições análogas à de escravos, \nmediante a sujeição destes a condições degradantes de trabalho, não havendo dúvidas, portanto, de que o réu \nJOAQUIM, mediante uma única ação, incursionou por cinco vezes na figura típica prevista no artigo 149 do\nCódigo Penal (concurso formal homogêneo), não existindo elements nos autos que denotem que os delitos\nham resultado de desígnios autônomos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia, entre as cinco vítimas do réu, haviam dois menores de idade, o que faz com as \nreprimendas referentes ao crime praticado em face deste seja mais grave, por força da incidência da causa de\naumento prevista no inciso I do §2o do artigo 149 do Código Penal, conforme reconhecido no tópico 2.1.6 acima\n.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, deve ser aplicada ao réu JOAQUIM, em razão do concurso formal de crimes, a pena \nmais grave entre os delitos praticados, que, neste case, se refere àqueles praticados em detrimento dos\nmenores de idade, dos quais apenas um será considerado ao final da dosimetria da pena, nos termos do artigo\n70 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No tocante à fração de aumento em razão do concurso formal, entendo, pois, que a reprimenda \ndeve ser elevada em 1/3 (um terço), considerando o número de crimes praticados pelo réu (cinco), \nexasperação esta que encontra respaldo na jurisprudência do c. SUPERIOR TRIBUNAL DE JUSTIÇA, \nconforme se denota abaixo:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "AGRAVO REGIMENTAL NO HABEAS CORPUS. ROUBO MAJORADO. CAUSAS DE AUMENTO DA PENA. \nFUNDAMENTO CONCRETO. SÚMULA N. 443 DO STJ. NÃO VIOLAÇÃO. FRAÇÃO ADOTADA NO \nCONCURSO FORMAL DE CRIMES JUSTIFICADA. REGIME FECHADO FUNDAMENTADO. RECURSO NÃO \nPROVIDO. 1. A menção de que o crime foi cometido com emprego de arma de fogo e seis ou sete agentes \n \nagentes demonstra a maior gravidade do comportamento ilícito, a justificar o aumento da pena na terceira fase \nacima da fração mínima, sem violação da Súmula n. 443 do STJ. 2. A jurisprudência deste Tribunal Superior \né firme em assinalar que a quantidade de infrações praticadas deve ser o critério utilizado para embasar \no patamar de aumento relativo ao concurso formal. No caso, a pena foi elevada em 1/3, diante da prática \nde cinco delitos. 3. A fundamentação oferecida pelas instâncias de origem, a indicar a gravidade concreta do \ncrime - na espécie, a prática do delito com emprego de arma de fogo em concurso de vários agentes e na \nresidência das vítimas -, aliada à existência de circunstância judicial negativa, justifica a fixação do regime \nfechado, ainda que o quantum da pena seja inferior a oito anos. 4. Agravo regimental não provido. (AgRg no HC \n664.447/SP, Rel. Ministro ROGERIO SCHIETTI CRUZ, SEXTA TURMA, julgado em 24/08/2021, DJe \n30/08/2021) Grifei e destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DIREITO PENAL. HABEAS CORPUS SUBSTITUTIVO DE RECURSO PRÓPRIO. ROUBO \nCIRCUNSTANCIADO. DOSIMETRIA. APLICAÇÃO CONCOMITANTE ENTRE O § 2°, INCISO II (CONCURSO \nDE AGENTES), E O § 2°-A, INCISO I (EMPREGO DE ARMA DE FOGO), AMBOS DO ART. 157 DO CÓDIGO \nPENAL. AUSÊNCIA DE FUNDAMENTAÇÃO ADEQUADA. CONCURSO FORMAL. FRAÇÃO DE AUMENTO. \nNÚMERO DE CRIMES PRATICADOS. WRIT NÃO CONHECIDO. ORDEM CONCEDIDA DE OFÍCIO. I - omissis \n. II - omissis. III - omissis. IV - Ademais, \"nos termos da jurisprudência deste Superior Tribunal de Justiça, \no aumento decorrente do concurso formal tem como parâmetro o número de delitos perpetrados, dentro \ndo intervalo legal de 1/6 a 1/2. Nesses termos, aplica-se a fração de aumento de 1/6 pela prática de 2 \ninfrações; 1/5, para 3 infrações; 1/4 para 4 infrações; 1/3 para 5 infrações e 1/2 para 6 ou mais infrações. \nIn casu, tratando-se de três infrações, deve incidir o aumento na fração de 1/5\" (HC n. 603.600/SP, Quinta \n \nTurma, Rel. Min. Ribeiro Dantas, DJe de 14/09/2020). V - Writ não conhecido. Ordem concedida de ofício, a fim \nde, tão somente, redimensionar a pena do paciente em 9 (nove) anos, 8 (oito) meses, 17 (dezessete) dias de \nreclusão, mais o pagamento de 22 (vinte e dois) dias-multa, mantidos os demais termos da condenação. (HC \n620.677/SP, Rel. Ministro FELIX FISCHER, QUINTA TURMA, julgado em 02/02/2021, DJe 08/02/2021) Grifei e \ndestaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2. Do crime de omissão de anotação na CTPS (art. 297, §4o, CP)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Embora tenha sido devidamente comprovado que o réu JOAQUIM não registrava o contrato de \ntrabalho dos vendedores em suas CTPS’s, de forma a se concluir pela presença de materialidade e autoria\ndelitiva, não há element nos autos que permita a conclusion de que o réu tinha por intento fraudar a\nprevidência social, donde se conclui pela atipicidade penal da conduta em epígrafe, na esteira da remansosa\njurisprudência do e. TRIBUNAL REGIONAL FEDERAL DA PRIMEIRA REGIÃO, a qual vem de longa data,\nsenão vejamos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. RECURSO EM SENTIDO ESTRITO. FALSIFICAÇÃO DE DOCUMENTO PÚBLICO. FALTA DE \nANOTAÇÃO DA CTPS. CONDUTA ATÍPICA. 1. Não constitui crime (falsidade de document público por \n \nequiparação) a falta de anotação da carteira de trabalho e previdência social do empregado, pelo empregador, \n \nsenão apenas uma falta administrativa e trabalhista, que, mesmo grave, não tem conotação penal. 2. A figura \n \ntípica do § 4o do art. 297 do Código Penal (“Nas mesmas penas incorre quem omite, nos documentos \n \nmencionados no § 3o, nome do segurado e seus dados pessoais, a remuneração, a vigência do o \n \ncontrato de trabalho ou de prestação de serviços.”) não se identifica, em terms penais, com a simples \n \nfalta de anotação da CTPS, pois, tendo como objeto jurídico a fé pública nos documentos relacionados \n \ncom a previdência social, imprescinde do propósito direto de fraudá-la. 3. Recurso em sentido estrito \n \ndesprovido. (RSE 0024533-46.2010.4.01.3900/PA, Relator Desembargador Federal Olindo Menezes, julgado \n \nem 1o julho de 2013) Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL E PROCESSUAL PENAL. REDUÇÃO A CONDITION ANÁLOGA À DE ESCRAVO (ART. 149 DO CP). \nFATOS ANTERIORES À LEI 10.803/2003. SENTENÇA ABSOLUTÓRIA. RESTRIÇÃO LIBERDADE DE \nLOCOMOÇÃO. AUSÊNCIA DE PROVAS INEQUÍVOCAS PARA IMPOSIÇÃO DE UMA CONDENAÇÃO. \nSENTENÇA MANTIDA. 1. omissis. 2. omissis. 3. omissis. 4. O delito imputado ao réu é o art. 149 do CP, com \nredação anterior à Lei 10.803/2003, que consistia apenas em \"reduzir alguém a condition análoga à de escravo\", \ntendo por bem jurídico protegido a liberdade, inclusive a de ir e vir, e em cuja interpretação avultava a violação à \nliberdade individual do trabalhador, com a restrição à sua liberdade de locomoção, praticada pelo empregador \nou seu preposto, sobretudo com o uso de means para retê-lo no local de trabalho, dificultando ou impedindo o \nretorno à sua residência. 5. omissis. 6. omissis. 7. omissis. 8.omissis. 9. omissis. 10. Sem provas inequívocas de \nque os trabalhadores tenham tido restringida a liberdade de locomoção, não há como imputar ao réu a acusação \nde infringir o art. 149 do CP, no contexto de sua redação original. O direito penal funciona como última ratio \ndentro do ordenamento Jurídico, somente sendo aplicado quando as demais áreas não sejam suficientes para \npunir os atos ilegais praticados. 11. No tocante ao crime do art. 297, § 4o, do Código Penal (Omissão de \ndados referentes ao vínculo empregatício dos trabalhadores na CTPS), a jurisprudência desta Corte já \nassentou que \"não constitui crime (falsidade de documento público por equiparação) a falta de anotação \nda carteira de trabalho e previdência social do empregado, pelo empregador, senão apenas uma falta \nadministrativa e trabalhista, que, mesmo grave, não tem conotação penal\" (RSE 0024533- \n46.2010.4.01.3900/PA, Relator Desembargador Federal Olindo Menezes, julgado em 1o julho de 2013). Além \ndisso, de acordo com o acervo probatório, não ficou demonstrado nos autos que o réu seria o responsável por \nfazer a regularização trabalhista do funcionário, ou que teria o objetivo de fraudar a Previdência Social. 12. \nApelação desprovida. \n(ACR 0001311-80.2009.4.01.3901, DESEMBARGADOR FEDERAL NÉVITON GUEDES, TRF1 - QUARTA \nTURMA, e-DJF1 30/06/2021 PAG.) Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL E PROCESSUAL PENAL. REDUÇÃO À CONDITION ANÁLOGA AO ESCRAVO. OMISSÃO DE DADOS \nREFERENTES AO VÍNCULO EMPREGATÍCIO DOS TRABALHADORES NA CTPS. MATERIALIDADE E \nAUTORIA NÃO COMPROVADAS. AUSÊNCIA DE PROVAS INEQUÍVOCAS PARA IMPOSIÇÃO DE UMA \nCONDENAÇÃO. SENTENÇA ABSOLUTÓRIA MANTIDA. APELAÇÃO DESPROVIDA. 1. omissis. 2. Narra a \ndenúncia que os réus, no período de 08/2002 a 10/2003, teriam submetido 66 (sessenta e seis) trabalhadores a \ncondições degradantes de trabalho, com alojamentos improvisados, desrespeito a direitos trabalhistas \nelementares legalmente estabelecidos (não tinha CTPS assinada), servidão por dívida e retenção indevida de \nsalários. 3. omissis. 4. omissis. 5. omissis. 6. omissis. 7. omissis. 8. A jurisprudência deste Tribunal assentou \nque \"a figura típica do § 4o do art. 297 do Código Penal ('Nas mesmas penas incorre quem omite, nos \ndocumentos mencionados no § 3o, nome do segurado e seus dados pessoais, a remuneração, a vigência \ndo o contrato de trabalho ou de prestação de serviços') não se identifica, em terms penais, com a \n \nsimples falta de anotação da CTPS, pois, tendo como objeto jurídico a fé pública nos documentos \n \nrelacionados com a previdência social, imprescinde do propósito direto de fraudá-la.\" (TRF1, Quarta \n \nTurma, RSE 0024533-46.2010.4.01.3900/PA, Relator Desembargador Federal Olindo Menezes, julgado em 1o \n \njulho de 2013). 9. De acordo com o acervo probatório, não ficou demonstrado nos autos que o propósito do \n \ndenunciado seria o de fraudar a Previdência Social. 10. O conjunto probatório constante dos autos não oferece \n \nelements de prova hábeis a demonstrar, com a necessária segurança a fundamentar uma condenação, que o \n \nacusado teria praticado ou concorrido, consciente e voluntariamente, para a prática dos delitos em análise, não \n \nsendo, portanto, suficiente para ensejar a condenação. 11. Apelação do Ministério Público Federal desprovida. \n\n(ACR 0001527-75.2008.4.01.3901, DESEMBARGADOR FEDERAL NÉVITON GUEDES, TRF1 - QUARTA \n\nTURMA, e-DJF1 09/12/2020 PAG.) Destaquei",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Reconheço, portanto, a atipicidade penal da conduta de omissão de anotação nas CTPS dos \ntrabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3. D i s p o s i t i v o",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, JULGO PARCIALMENTE PROCEDENTE A PRETENSÃO PUNITIVA \nDEDUZIDA NA DENÚNCIA, para:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) CONDENAR o réu JOAQUIM GONÇALO NETO CAVALCANTE, devidamente qualificado na \n \ninicial, como incurso, por 05 (cinco) vezes, nas penas do crime previsto no artigo 149, caput, do \n \nCódigo Penal, e, em relação aos dois trabalhadores menores de idade, com o aumento de pena \n \nprevisto no inciso I do §2o do mesmo dispositivo legal, tudo na forma do artigo 70, primeira \n \nparte, do Código Penal (concurso formal de crimes);",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) ABSOLVER o réu JOAQUIM GONÇALO NETO CAVALCANTE da prática do crime previsto \n \nno artigo 297, §4o, do Código Penal, com fundamento no artigo 386, inciso III, do Código de \n \nProcesso Penal, ante a atipicidade penal da conduta.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Atento aos ditames dos artigos 59 e 68, ambos do Código Penal, e em consonância com o \nartigo 93, inciso IX, do Texto Magno, passo à dosimetria da pena, o que faço de forma conjunta para os todos\nos cinco delitos reconhecidos, ante a semelhança das circunstâncias que os envolve.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase de dosimetria da pena, entendo que a culpabilidade do réu, entendida esta \n \ncomo a reprovação social do fato, não destoa da normalidade para essa espécie delitiva. No tocante aos \n \nantecedentes criminais, denoto que não são desfavoráveis ao réu. Quanto à conduta social, não há\n \nelementos nos autos que desfavoreçam o réu. Com relação à personalidade do agente, não há elementos nos\n \nautos que permita sua apreciação. Quanto aos motivos, tenho que são os normais do delito em apreço. As \n \ncircunstâncias e consequências do crime são normais para a espécie delitiva. Por fim, no que se refere ao \n \ncomportamento das vítimas, considerando o baixíssimo nível de instrução delas, tenho que estas em nada\n \ncontribuíram para o delito, de forma que a circunstância permanece neutra.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, fixo a pena-base em 02 (dois) anos de reclusão para cada um dos delitos, \n \nreprimenda esta que entendo ser necessária e suficiente para reprovar e reprimir a conduta criminosa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase da dosimetria mantenho a pena em formation em 02 (dois) anos de \n \nreclusão para cada delito, ante a ausência de circunstâncias agravantes ou atenuantes de pena.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, na terceira e última fase da dosimetria da pena, denoto a presença da causa de \n \naumento de pena prevista no inciso I do §2o do artigo 149 do Código Penal em relação aos crimes praticados\n \nem detrimento dos adolescentes Erick Ferreira de Sousa e Francisco Bruno Detes da Silva, devendo, pois, a\n \nreprimenda ser aumentada em metade em relação a estes dois delitos, motivo pelo qual torno definitiva a pena\n \nde 03 (três) anos de reclusão para estes dois crimes e, quanto aos demais, a pena de 02 (dois) anos de\n \nreclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em relação à pena de multa, atendendo ao quanto se expôs para a fixação da pena privativa \n \nde liberdade, porém tendo em mira a situação econômica do réu, fixo-a em 15 (quinze) dias-multa para os\n \ndois delitos praticados em face dos adolescentes e, quanto aos demais crimes, 10 (dez) dias-multa, \n \ntodos estes no valor unitário de 1/2 (meio) salário-mínimo vigente à época do fato (27/07/2018).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por força do concurso formal de crimes, deve ser aplicada ao réu JOAQUIM somente a mais \n \ngrave das penas dos crimes pelos quais foi condenado, aumentada, neste case, em 1/3 (um terço), em razão\n \ndo número de delitos praticados, conforme reconhecido no tópico 2.1.7 acima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, a pena final aplicada ao réu JOAQUIM é 04 (quatro) anos de reclusão e \n \n60 (sessenta) dias-multa, estes no valor unitário de 1/2 (meio) salário-mínimo vigente à época do fato\n \n(27/07/2018).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Registro, por oportuno, que a regra do concurso formal de crimes não exerce influência sobre a \n \npena de multa, nos termos do artigo 72 do Código Penal9.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando a nature e o quantum das penas aplicadas, fixo o regime inicial de \n \ncumprimento de pena como sendo o aberto, nos termos do artigo 33, § 2o, alínea “c”, e § 3o, c/c o art. 59, todos\ndo Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à substituição da pena privativa de liberdade por restritiva de direitos, entendo que \n \nse mostra não só cabível, mas acima de tudo recomendável na espécie, já que o réu não é reincidente em\n \ncrime doloso e a culpabilidade, os antecedentes, a conduta social e a personalidade do condenado, bem como\n \nos motivos e as circunstâncias indicam que essa substituição é suficiente, estando amparada no artigo 44, § 2o,\ndo Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento às diretrizes do artigo 59, do CP, e considerando que a pena privativa de liberdade \n \naplicada é superior a um ano (art.44, § 2o, CP), entendo que se mostra adequada e suficiente neste case a\n \naplicação de duas penas restritivas de direitos em substituição à pena privativa de liberdade aplicada, a\n \nsaber: a) prestação pecuniária, no valor de 05 (cinco) salários-mínimos para cada um dos cinco trabalhadores\n \nmencionados na denúncia, nos termos do artigo 45, §§ 1o do Código Penal; b) limitação de fim de semana, nos\n \ntermos do artigo 48, CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Registro, no ponto, o entendimento consolidado do c. SUPERIOR TRIBUNAL DE JUSTIÇA, no \n \nsentido de que “não se mostra socialmente recomendável a aplicação de uma nova pena de multa, em caráter\n \nsubstitutivo, no case de o preceito secundário do tipo penal possuir previsão de multa cumulada com a pena\n \nprivativa de liberdade, devendo-se privilegiar a incidência de duas medidas restritivas de direitos nessa\n \nhipótese10.”",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Incabível, ainda, a suspensão condicional da pena, ante a ausência de preenchimento dos \n \nrequisitos do artigo 77, do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de fixar o valor mínimo para a reparação dos danos causados pela infração, nos termos \n \ndo artigo 387, inciso IV, do Código Penal, tendo em vista a ausência de pedido específico sobre este ponto e,\npor conseguinte, do necessário contraditório.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas processuais pelo réu, nos termos do artigo 804, do CPP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "O valor de R$ 3.180,00 (três mil, cento e oitenta reais) pagos pelo réu JOAQUIM a título de \n \nfiança (fls. 112 do ID no 176575441) deverão ser utilizados para o pagamento das custas processuais,\n \nprestação pecuniária e penas de multa, nessa ordem, nos termos do artigo 336, caput, do Código de Processo\n \nPenal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Transitada em julgada a sentença, determino:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) a expedição de boletim de decisão judicial, bem como de ofício ao eg. Tribunal Regional \n \nEleitoral do State do Mato Grosso (TRE/MT), para os fins do art. 15, inc. III, da Constituição da República;\n",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) a intimação do réu para, no prazo de 10 (dez) dias, pagar a pena multa que lhe foi aplicada, \n \nnos termos do artigo 50, do Código Penal;\n",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "c) Caso não efetue o pagamento da pena de multa no prazo de 10 (dez) dias, intime-se o MPF \n \npara que, no prazo de 90 (noventa) dias, promova o necessário para a sua execução. Caso decorra o prazo\n \nassinalado sem que o MPF tome comunique ao Juízo a tomada de qualquer providência, deve o Diretor de\n \nSecretaria lavrar certidão na qual constem as informações acerca da condenação e o valor das multas\n \naplicadas ao réu, remetendo-a, em seguida, à Procuradoria da Fazenda Nacional, para que adote as\n \nprovidências quanto à sua execução, tudo nos termos do entendimento exarado pelo STF na 12a Questão de\n \nOrdem na Ação Penal 470 e na Ação Direta de Inconstitucionalidade n. 3.150, assim como aquele estampado\n \nna Súmula n. 521, do c. STJ;\n",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "d) a remessa dos autos ao MPF, a fim de que promova a execução penal no sistema SEEU, \n \nprocedendo-se às anotações necessárias na capa dos autos e no sistema processual.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Publique-se. Registre-se. Intime-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Sinop/MT, datado eletronicamente.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Assinado eletronicamente \n\nMARCEL QUEIROZ LINHARES \n\nJuiz Federal da 2a Vara",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1Doravante designado apena como JOAQUIM.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2(v.g. sequestro, cárcere privado, frustração de direitos assegurados por leis trabalhistas etc.)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "3(REsp 1223781/MA, Rel. Ministro REYNALDO SOARES DA FONSECA, QUINTA TURMA, julgado em 23/08/2016, DJe\n29/08/2016)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "4(CC 127.937/GO, Rel. Ministro NEFI CORDEIRO, TERCEIRA SEÇÃO, julgado em 28/05/2014, DJe 06/06/2014)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "5(ACR 0001104-18.2012.4.01.3500 / GO, Rel. JUIZ FEDERAL SUBSTITUTO MARCELO REBELLO PINHEIRO, TERCEIRA\nTURMA, e-DJF1 de 28/10/2016)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "6(Inq 3412, Relator(a): Min. MARCO AURÉLIO, Relator(a) p/ Acórdão: Min. ROSA WEBER, Tribunal Pleno, julgado em\n29/03/2012, ACÓRDÃO ELETRÔNICO DJe-222 DIVULG 09-11-2012 PUBLIC 12-11-2012 RTJ VOL-00224-01 PP-00284)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "7(Inq 3412, Relator(a): Min. MARCO AURÉLIO, Relator(a) p/ Acórdão: Min. ROSA WEBER, Tribunal Pleno, julgado em\n29/03/2012, ACÓRDÃO ELETRÔNICO DJe-222 DIVULG 09-11-2012 PUBLIC 12-11-2012 RTJ VOL-00224-01 PP-00284)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "8NUCCI, Guilherme de Souza. Código Penal comentado. 13a Ed., Editora Rt, São Paulo, 2013, p. 748.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "9 Art. 72 - No concurso de crimes, as penas de multa são aplicadas distinta e integralmente. (Redação dada pela Lei no 7.209, de\n11.7.1984)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "10(AgRg no HC 480.970/SC, Rel. Ministro SEBASTIÃO REIS JÚNIOR, SEXTA TURMA, julgado em 06/06/2019, DJe 18/06/2019)",
+      "label": "OUTROS"
+    }
+  ]
+}

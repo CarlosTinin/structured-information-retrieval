@@ -1,0 +1,256 @@
+{
+  "index": 24,
+  "doc_id": 24,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 32,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Balsas-MA \nVara Federal Cível e Criminal da SSJ de Balsas-MA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA \n TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1006118-52.2020.4.01.3704 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO: JOSE BARBOSA TRAJANO \nREPRESENTANTES POLO PASSIVO: YURI LEANDRO FERREIRA BARROS - MA11977,\nJOSE RODRIGUES OLIVEIRA NETO - MA8712-A e PAULO DE TARSO FONSECA FILHO -\nMA3038",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "RELATÓRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O Ministério Público Federal, por intermédio do órgão subscritor da denúncia de \nID 388875873 - Pag. 1-3, apresentou peça acusatória, na data de 30/11/2020, em face de José\nBarbosa Trajano, já qualificado nos autos, imputando-lhe a prática do crime de Redução a\ncondição análoga à de escravo (art. 149, caput, do CP), em concurso formal (art. 70, do CP), ao\nalmenos contra três trabalhadores.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Nos termos da denúncia, ofertada em 30/11/2020, o denunciado, na Rodovia MA \n140, km 29 – Lugar Pé de Pequi (7 km após o Povoado Salobo), zona rural de Balsas/MA,\nmantinha os trabalhadores Ernandes Conceição de Sousa, Francisco Mário Gomes da Silva e\nJandre Pereira da Silva, até novembro de 2019, submetendo-os a jornada excessiva, com\ncondições degradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Narra que as condições de trabalho impostas aos trabalhadores eram precárias, tais \ntais como: a) a ausência de registro dos trabalhadores; b) ausência de alojamentos adequados, visto\nque “os trabalhadores pernoitavam em uma estrutura improvisada no meio de uma limpa de\nfloresta, constituída por troncos de madeira, cobertura com lonas plásticas”; c) ausência de\nbanheiros sanitários, de modo que os trabalhadores faziam “suas necessidade fisiológicas no\nmeio da mata, no entorno da estrutura improvisada onde pernoitavam”; d) “ausência de local\nadequado para armazenamento e preparo de alimentos, bem como para tomada de refeições”.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em decisão proferida em 11/12/2020 (ID 398654438 - Pag. 1-2), a denúncia foi \nrecebida.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Regularmente citado (ID 405997383 - Pag. 1), o réu apresentou resposta à \nacusação (ID 435569358 - Pag. 1-18), alegando, em síntese, que: a) não haveria justa causa\npara a presente ação, notadamente porque baseada apenas na coleta de material fotográfico,\nbem como de suposição dos servidores encarregados da fiscalização; b) a conduta\nsupostamente praticada seria atípica, uma vez que as provas não refletem uma situação\nequiparável à escravidão, sobretudo porque os depoimentos das vítimas não demonstram\nnenhuma situação contrárias as liberdades individuais, além do que, os próprios trabalhadores\ndisseram que o réu “nunca deixou faltar comida; que o Trajano fornecia arroz, feijão, carne e\ntemperos para cozinhar; que o Trajano levava água ela da para os trabalhadores beber; que esse\ndefeito o Trajano não tem” ; c) não ocorreu nenhuma submissão dos trabalhadores ou trabalho\nforçados e que, a despeito da jornada de trabalho está em desacordo com a legislação\ntrabalhista vigente, não existia jornada exaustiva e degradante; d) as instalações permitia aos\ntrabalhadores realizarem as suas refeições - fornecidas pelo réu - e descansarem; e) os\ntrabalhadores recebiam contraprestação pelo trabalho realizado; f) não haveria limitação de\nlocomoção, visto que o local de trabalho ficaria a poucos KM da zona urbana de Balsas ; g) não\nhouve apreensão de documentos pessoais dos trabalhadores; h) o caso dos autos, dever-se-ia \naplicar o princípio da intervenção mínima, seja porque as instalações de trabalho poderiam ser\nmelhoradas, seja porque as questões trabalhistas foram devidamente regularizadas; i) não houve\nviolação aos direitos humanos. Ao final, requereu a sua absolvição sumária.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A absolvição sumária foi rejeitada (ID 494930885 - Pag. 1-4).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Designada audiência, em primeira assentada, não tendo sido intimada(s) a(s) \nvítimas, houve redesignação do ato, comprometendo-se a defesa a providenciar o\ncomparecimento das testemunhas ali presentes.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em decisão de ID 689551998 - Pag. 1-2 foi indeferido o pleito contido em ID \n649854484 para nova tentativa intimação judicial das testemunhas Tiago da Silva, Daniel Silva e\nGenivaldo Barbosa, em virtude da manifestação genérica do réu, de modo que ficou mantida a\nredesignação de audiência de instrução e julgamento para o dia 23/8/2021, ficando ainda\nrepisado que o réu deveria providenciar o comparecimento das testemunhas Juraci Alves de\nJesus, Rosivaldo Dos Santos e Rones Da Silva Costa, facultando-see à defesa também\napresentar, em audiência, as testemunhas Tiago Da Silva Carvalho, Daniel Silva Dos Santos e\nGenivaldo Barbosa Da Costa, tudo sob pena de preclusão.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Durante a instrução processual, por meio virtual, conforme ata e arquivos de vídeo \nde IDs 704357472, 714996003, 715081460, 715093455, 715096991, 715093517, 715113968,\n715113972, 715113995, 715131482, 715131500, 715131518, 715157953, 715176449, \n715176470, 715191949, 715191979, 715192014, 715192045 e 715216966, foi ouvida a vítima\nFRANCISCO MARIO GOMES DA SILVA, a testemunha da acusação IVANO RODRIGUES\nSAMPAIO e MARCO AURÉLIO CASTELO BRANCO, a testemunha da defesa JURACI ALVES\nDE JESUS e DANIEL SILVA DOS SANTOS. Em seguida, a defesa desistiu da oitiva das\ntestemunhas ROSIVALDO DOS SANTOS E RONES DA SILVA COSTA, o que foi devidamente\nhomologado pelo Juízo. Posteriormente, procedeu-se ao interrogatório do réu, oportunidade em\nque foi devidamente qualificado e cientificado do teor da acusação.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Encerrada a instrução, não houve produção de novas provas, com fundamento no \nart. 402 do CPP.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O Ministério Público Federal apresentou alegações finais orais, em audiência, que \nrequereu a condenação do acusado nos termos da denúncia. Por sua vez, também a defesa\nofereceu razões finais orais, fazendo o pedido de absolvição.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "FUNDAMENTAÇÃO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "De início, tomando por base formalmente o disposto no art. 28-A, § 2o, II, não se \ntrata de caso apto à propositura de acordo de não persecução penal, não tendo o Ministério\nPúblico apresentado proposta nesse sentido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Inexistindo questões preliminares e/ou prejudiciais pendentes de análise, passo, \nentão, ao julgamento do mérito da causa propriamente dito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Imputa-se ao réu a prática do crime de submissão de outrem à condição análoga à \nde escravo tipificado no art. 149, do CP, nos seguintes termos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Reduzir alguém a condição análoga à de escravo, quer submetendo-o a \ntrabalhos forçados ou a jornada exaustiva, quer sujeitando-o a condições \ndegradantes de trabalho, quer restringindo, por qualquer meio, sua locomoção \nem razão de dívida contraída com o empregador ou preposto:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à \nviolência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, o tipo previsto no art. 149 do Código Penal descreve condutas \nalternativas que isoladamente caracterizariam o trabalho escravo (tipo misto alternativo). São\nelas: 1) a submissão a trabalhos forçados ou à jornada exaustiva; 2) a sujeição a condições\ndegradantes de trabalho; e 3) a restrição, por qualquer meio, da locomoção do trabalhador em\nrazão de dívida contraída com o empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, demonstrada a degradação da relação trabalhista e a afronta à dignidade \ndo trabalhador estará configurado o crime em comento, de modo que não se exige para sua\ntipificação estar presente concomitantemente a segregação da liberdade de locomoção, uma vez\nque basta a comprovação de \"submissão a trabalhos forçados, a jornada excessiva ou a\ncondições degradantes\". Nesse sentido, invoco entendimento adotado pelo STJ na\nementa abaixo transcrita:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "RECURSO ESPECIAL. REDUÇÃO À CONDIÇÃO ANÁLOGA À DE ESCRAVO. \nCONDENAÇÃO EM 1o GRAU. AFASTAMENTO PELO TRIBUNAL DE \nORIGEM PORQUE NÃO CONFIGURADA RESTRIÇÃO À LIBERDADE DOS \nTRABALHADORES OU RETENÇÃO POR VIGILÂNCIA OU MEDIANTE \nAPOSSAMENTO DE DOCUMENTOS PESSOAIS. CRIME DE AÇÃO \nMÚLTIPLA E CONTEÚDO VARIADO. SUBMISSÃO A CONDIÇÕES DE \nTRABALHO DEGRADANTES. DELITO CONFIGURADO. CONDENAÇÃO \nRESTABELECIDA. RECURSO PROVIDO. 1. Nos termos da jurisprudência \ndesta Corte, o delito de submissão à condição análoga à de escravo se \nconfigura independentemente de restrição à liberdade dos trabalhadores ou \nretenção no local de trabalho por vigilância ou apossamento de seus \ndocumentos, como crime de ação múltipla e conteúdo variado, bastando, a teor \ndo art. 149 do CP, a demonstração de submissão a trabalhos forçados, a \njornadas exaustivas ou a condições degradantes. Precedentes. 2. Devidamente \nfundamentada a condenação pela prática do referido delito em razão das \ncondições degradantes de trabalho e de habitação a que as vítimas eram \nsubmetidas, consubstanciadas no não fornecimento de água potável, no não \noferecimento, aos trabalhadores, de serviços de privada por meio de fossas \nadequadas ou outro processo similar, de habitação adequada, sendo-lhes \nfornecido alojamento em barracos cobertos de palha e lona, sustentados por \nfrágeis caibros de madeira branca, no meio da mata, sem qualquer proteção \nlateral, com exposição a riscos, não há falar em absolvição. 3. Recurso especial \nprovido para restabelecer a sentença condenatória, determinando que o \nTribunal de origem prossiga no exame do recurso de apelação defensivo. \nRECURSO ESPECIAL No 1.843.150 - PA 2019/0306530-1. Relator Ministro \nNefi Cordeiro, - DJe: 02/06/2020.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, o crime de redução de trabalhadores a condições análogas a de escravo \nse configura mediante a sujeição do trabalhador a condições degradantes, não se exigindo\nnecessariamente a privação da liberdade. A violação do direito ao trabalho digno impacta a\ncapacidade da vítima de realizar escolhas segundo a sua livre determinação de modo que, se a\nviolação aos direitos do trabalho é intensa e persistente, atingindo níveis gritantes, por meio da\nsubmissão a trabalhos forçados, jornadas exaustivas ou condições degradantes, é possível, em\ntese, o enquadramento no crime do art. 149 do Código Penal.Nesse passo, parte da doutrina\nentende para a caracterização do “trabalho escravo”, mediante submissão a condições\ndegradantes, o consentimento da vítima deve ser obtido de forma viciada, mediante coação ou\nerro.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, a materialidade da conduta, mediante a presença de condições \ndegradantes, ficou bem demonstrada com os documentos coligidos aos autos, notadamente:\nrelatório de fiscalização (ID 388875880 - Pag. 1- 15); b) fotografias do local onde ficavam os\ntrabalhadores (ID 388875880 - Pag. 14-15); c) autos de infrações (ID 388883848 - Pág. 1-15,\n388883878 - Pag. 1-16, 388883889 - Pag. 1-5); d) termo de declaração da vítima Francisco Mário\nGomes da Silva (ID 388883848 - Pag. 4; e) termo de declaração da vítima Ernandes Conceição\nde Sousa (ID 388883848 - Pag. 5); f) termo de declaração da vítima Jandre Pereira da Silva (ID\n388883848 - Pag. 6).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse aspecto, também a prova oral colhida em juízo (mídias que acompanham a \nata de audiência), em especial as testemunhas da acusação corroboraram a presença de\nalojamentos precários, ausências de instalações sanitárias, ausência de local para guardar e\npreparar os alimentos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Contextualizo que a vítima ouvida em juízo, Francisco Mário Gomes da Silva, pouco \ncontribuiu com a elucidação dos fatos, porque afirmou trabalhar, em verdade, principalmente\ntransportando lenhas, mesmo não tendo habilitação para dirigir veículos de carga. Assim,\nafirmou, de modo diferente ao contido nos autos de infração, que não costumava dormir no local.\nAdmitiu, porém, que o dormitório dos trabalhadores no local era um \"barraco de lona\". Também\nafirmou que prestava seu serviços mediante diárias, não tendo havido atrasos de pagamento das\ndiárias por parte de Sr. Trajano. Asseverou que o trabalho desenvolvido no local era de abertura\nda vegetação para posterior plantio de lavoura ou atividade pecuária (não sabendo precisar qual),\nsendo que o dono das terras doava a lenha proveniente dada da madeira ao Sr. Trajano. Embora\na vítima tenha prestado depoimento mediante a retida do réu à sala virtual de audiências, ainda\nassim, foi possível denotar receio ou amizade e contradição com fatos antes afirmados perante\nautoridades fiscalizatórias.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse ponto, destaco a própria dificuldade do próprio juízo em intimar as vítimas \npara comparecimento ao ato instrutório.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De outra parte, invoco o forte depoimento da primeira testemunha da acusação \nouvida em juízo, IVANO RODRIGUES SAMPAIO, ocupante do cargo de auditor fiscal do\ntrabalho, lembrou-se de detalhes da ação fiscal, tendo minudenciado que foram encontrados, no\nmomento da ação fiscal, os trabalhadores Sr. Jandré (\"Piauí\") e Francisco Mário, sendo que, na\noportunidade, os trabalhadores afirmaram que pernoitavam no local, utilizando em redes em\nbarracos; que preparavam suas próprias comidas, com carne não refrigerada; havia água mal\narmazenada; que não havia qualquer instalação sanitária, usando os trabalhadores \"o meio do\nmato\" para suas excreções. Também detalhou tal testemunha que os trabalhadores admitiram\nque o contratante/dono da madeira era \"Sr. Zé Trajano\", tendo ainda tal testemunha se recordado\nque o caminhão para transporte da lenha estava em péssimas condições, tendo sido o veículo\ninterditado de trafegar. A testemunha foi categórica em afirmar que as condições de trabalho\neram degradantes, sem qualquer margem de dúvida (diferente de outros casos cinzentos), tudo\nna forma da Portaria 139/2018, em razão de, no mínimo, três indicadores: ausência de\ninstalações sanitárias, ausência de alojamento, ausência de local adequado para\narmazenamento dos alimentos (ficando em caixas); ausência de água potável, ausência de EPI, \ntudo isso constatado no local.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A sobredita testemunha afirmou, ainda, que os fornos para produção de carvão \neram bem próximos dos locais onde os trabalhadores dormiam, tendo ainda esclarecido que Sr.\nFrancisco Mário é o que há menos tempo trabalhava no local, mas, mesmo assim, naquela noite,\nhavia ali pernoitado. Nesse contexto, a testemunha de acusação detalhou que os outros dois\ntrabalhadores não eram de Balsas e sempre dormiam no local, sendo que um deles\n(provavelmente Sr. Ernandes) não estava na localidade no momento da ação fiscal, mas foi\napresentado pelo Sr. Zé Trajano ao Posto da PRF em Balsas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De modo similar à primeira testemunha de defesa (JURACI ALVES DE JESUS), a \nsegunda testemunha de defesa, DANIEL SILVA DOS SANTOS, prestou depoimento em juízo,\nasseverando que Sr. José Trajano sempre atuou no ramo de retirada de madeiras em diversas\npropriedades, tais como na localidade \"Pé de Pequi\", contratando, para tanto, trabalhadores, mas\n fornecendo alimentos e águase ao trabalhadores, também pagando \"em dia\" os valores\ncontratados. Também afirmou a segunda testemunha que costumava ser disponibilizado\ntransporte aos trabalhadores juntamente com Sr. José Trajano, em vários locais onde a\ntestemunha trabalhou, estando a localidade \"Pé de Pequi\" a aproximadamente 25 km do\nperímetro urbano de Balsas. Quando questionado se detinha conhecimento sobre o dono da\npropriedade fiscalizada em questão (e que contratou Sr. José Trajano para a retirada de\nmadeira), a testemunha nada soube informar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No ponto, confiro proeminência aos depoimentos da testemunhas da acusação, aqui \nilustrados com base na oitiva da primeira testemunha (Ivano), em detrimento de alegações\ngenéricas das testemunhas da defesa (inclusive reportando-se, geralmente, a outros locais de\ntrabalho, e não propriamente ao local fiscalizado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Deveras, não restam dúvidas de que, ao menos dois trabalhadores encontrados no \nlocal da fiscalização eram submetidos as mais indignas condições de trabalho: não existiam\ninstalações sanitárias, de modo que as necessidades fisiológicas eram realizadas no mato,\nficando os trabalhadores expostos em sua intimidade e sujeitos a riscos de ataques de animais\npeçonhentos presentes na região; dormiam no alojamento totalmente precário, construídos por\ntronco de madeira e coberto por lonas de plástico; não tinham local para guardar e preparar os\nalimentos, bem como para a realização das refeições.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por seu turno, a autoria é incontestável, com suporte em toda a prova \ndocumental/testemunhal. Friso que a testemunha da acusação destacou que os trabalhadores\nencontrados no momento da fiscalização foram uníssonos em afirmar que haviam sido\ncontratados pelo réu, tendo este até mesmo apresentado à autoridade o terceiro trabalhador\nresgatado pelos auditores fiscais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em juízo, em seu interrogatório, quanto aos fatos denunciados, embora não tenha \nhavido confissão, o réu informou que o trabalho objeto de fiscalização já estava se encerrando\nquando ocorreu a ação fiscal, inclusive detalhando que havia apenas dois fornos de barro no\nlocal, bem como asseverou que assumiu o serviço já oriundo de terceiros, sem detalhar ou ter\nconhecimento de quem seria o proprietário das terras. Detalhou que ele mesmo levou as lonas\nde outra fazenda para instalar os trabalhadores Ernandez e \"Piauí\" no local, porque os dois não\ndetinham local/residência para pernoitarem na zona urbana, mas, no fim de semana, tais\ntrabalhadores ficavam na cidade, retornando ao trabalho no início da semana, transportados pelo\npróprio denunciado. Também informou o réu que, muitas vezes, ele também se alimentava no\nmesmo local com os trabalhadores, não vendo gravidade na situação, detalhando ainda que\nsempre foi \"amigo\" das pessoas contratadas por ele.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não havendo a confissão do réu, o dolo fica demonstrado pelo conhecer e querer \ndel denunciado da situação objetiva descrita pelo tipo, independentemente da consciência da\nantijuridicidade. O acusado tinha conhecimento real das condições de trabalho, providenciando\nlonas como alojamento, deixando de providenciar instalações sanitárias etc, havendo uma\natitude de adesão a isso, conduzindo à certeza do animus da prática criminosa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Vale ressaltar que, embora não tenha ficado demonstrada a existência de jornada \nexaustiva (também mencionada na denúncia), ficaram bem delineadas as condições\ndegradantes, tratando-se, como dito anteriormente, de tipo misto alternativo.No mais, por mais\nque as vítimas possam ter anuído com as condições indignas de trabalho, fizeram isso de forma\ntotalmente amparada em sua hipossuficiência e não em condições de normalidade, merecendo a\nproteção do direito penal. Eventual amizade baseada em circunstâncias com visíveis ameaças à\ndignidade da pessoa humana também se mostra viciada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A par das provas produzidas em juízo e também com base em depoimento da \nprimeira testemunha da acusação, ficou, em verdade, demonstrada a certeza quanto à\nexistência de duas vítimas, que realmente pernoitavam no local e ali trabalhavam de modo não\neventual e perdurando no tempo. Havendo dúvida sobre a real condição da terceira vítima\napontada na denúncia,o benefício da dúvida deve favorecer o acusado. Com isso, fica\nreconhecido o concurso formal homogêneo, porquanto, mediante única conduta, o acusado\nprejudicou duas vítimas, atingindo dois bens jurídicos distintos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, presentes os elementos objetivos (descritivos e normativos) e o \nelemento subjetivo do crime acima descrito, impõe-se a condenação do réu José Barbosa\nTrajano nas penas do art. 149 c/c art. 70 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DISPOSITIVO/CONCLUSÃO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Diante do exposto,julgo parcialmente procedente a pretensão punitiva estatal, \npara condenar José Barbosa Trajano e submetê-lo às sanções do art. 149 c/c art. 70 (por duas\nvezes), todos do Código Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo, então, à individualização da Pena e Disposições Finais",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção aos comandos dos artigos 59 e 68 do Código Penal,passo à \ndosimetria/individualização da pena.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, observo que o réu agiu com culpabilidade normal à espécie. Os \nantecedentes são favoráveis, uma vez que não há registro nos autos de prática delituosa\nanteriores a serem consideradas. A conduta social do sentenciado não foi apurada a ponto de\nautorizar a exasperação da pena-base. Inexistem informações comprovadas nos autos acerca da\npersonalidade do agente. Os motivos para a prática delituosa não fogem do normal ao tipo. As\ncircunstâncias e consequências são comuns à espécie. Não há que se falar em comportamento\ndas vítimas no caso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a pena-base no mínimo legal de 2(dois) ano de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstância agravantes ou atenuantes,ficando a pena provisória em \n2(dois) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, inexiste causa de diminuição da pena, mas há de aumento, em razão do \nconcurso formal (duas vítimas), motivo pelo qual exaspero a pena provisória em 1/6, fixando\na pena definitiva em 2(dois) anos e 4 meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em consonância com o art. 72 do CPC, arbitro a multa em 20 (vinte) dias-multa. \nConsiderando as condições econômicas do acusado, aferidas a partir de seu interrogatório\njudicial (com renda mensal líquida de cerca de R$ 3.000/4.000 mil reais) fixo o valor do dia-multa\nem meio salário mínimo em vigor na época dos fatos criminosos, atualizado desde então.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que dispõe o § 2o, “c”, do art. 33 do Código Penal, estabeleço, como \nregime inicial de cumprimento da pena, o aberto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por conseguinte, preenchidos integralmente os requisitos do art. 44, do CP, o réu \nfaz jus à substituição da pena privativa de liberdade por pena restritiva de direito. Assim, a teor do\ndispõe o art. 44, § 2o, promovo a substituição da pena restritiva de liberdade do réu por 2(duas)\nrestritivas de direito, quais sejam: a) prestação pecuniária, no valor de 10(dez) salários-\nmínimos, com forma de pagamento e destinação a serem determinadas na audiência\nadmonitórias; b) prestação de serviços a comunidade perante entidade a ser indicada em\naudiência admonitória.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de fixar o valor a título de reparação dos danos, porque o condenado adimpliu \nas verbas trabalhistas devidas às vítimas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Determino o pagamento das custas processuais pelo réu (art. 804 do CPP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado final, a Secretaria deverá:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) proceder ao lançamento nominal no rol dos culpados;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) oficiar ao Instituto de Identificação e Estatística, para os fins do art. 809 do CPP; \nc) oficiar ao Tribunal Regional Eleitoral com jurisdição sobre o domicílio do réu para \nque sejam suspensos seus direitos políticos durante o tempo de cumprimento da pena, na forma\ndo art. 15, III, da CRFB.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "e) inclua-se o feito em pauta de audiência admonitória.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Sentença registrada eletronicamente. Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Balsas, data abaixo.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ana Cláudia Neves Machado \n\nJuíza Federal Substituta, no exercício da titularidade \n\n(assinado eletronicamente)",
+      "label": "OUTROS"
+    }
+  ]
+}

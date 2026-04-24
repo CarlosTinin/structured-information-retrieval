@@ -1,0 +1,484 @@
+{
+  "index": 17,
+  "doc_id": 17,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 59,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSeção Judiciária do Distrito Federal \n12a Vara Federal Criminal da SJDF",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1008255-41.2023.4.01.3400",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO:HUMBERTO LANNA LYRA e outros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: ALEXANDRE DE MELO CARVALHO - DF35428, MARIA LUIZA ALVES\nRUFINO - DF68561, MATHEUS BORGES SAMPAIO - DF68946, PEDRO HENRIQUE ALVES DE ASSIS BROTAS -\nDF69984, Rafael Dristig Lyra - DF50484 e MAX VANUTH DE MACEDO MAIA - DF58644",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Cuida-se de ação penal instaurada em desfavor de HUMBERTO LANNA LYRA e de\nMANUEL MESSIAS FERREIRA DA SILVA em razão da suposta prática do crime de redução à\ncondição análoga à de escravo, conduta tipificada no art. 149 do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Para tanto, a denúncia narrou, em síntese (id 1770045553):\nEm período incerto no ano de 2022, na Chácara Santa Luzia, em Sobradinho/DF, \nHUMBERTO LANNA LYRA e MANUEL MESSIAS FERREIRA DA SILVA, de forma \nlivre e consciente, reduziram a condição análoga à de escravo sete trabalhadores \n(ANTÔNIO ALEX SOUSA ESTEVAM, CRISTIANO PINTO DOS SANTOS, DANILO \nPEREIRA O. DA SILVA, FERNANDO BARROSO LIMA, JOSÉ LIMA DE OLIVEIRA, \nLAIRTON DE ARAÚJO GONÇALVES, MANOEL DE JESUS S. PINHEIRO), \nsubmetendo-os a jornada exaustiva e a condições degradantes de trabalho, \npraticando, assim, o delito previsto no art. 149 do CP.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 28/08/2023 (id 1777233579).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Regularmente citados, os réus ofertaram respostas à acusação por intermédio de suas\ndefesas constituídas (id’s 732747512 e 1847436650).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Não tendo sido absolvidos sumariamente (id 1854260174), foi determinada a instrução\ndo feito.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Realizada audiência de instrução, em que foram inquiridas as vítimas/testemunhas \nAntônio Alex Sousa Estevam (Plataforma “TEAMS”), João Gabriel Dadalt, Erikson de Andrade\nSilva e Marcelo Gonçalves Campos (presencial) (ata no id. 2056152689 e vídeos no id.\n2056396691).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em nova audiência, foi inquirida a vítima Lairton de Araújo Gonçalves (Plataforma \n“TEAMS”) (ata no id. 2128482206 e vídeo no id. 2128506896).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Por fim, nova audiência, na qual realizado o interrogatório dos réus (ata no id. \n2141448563 e vídeos no id. 2141492964).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Apresentadas alegações finais escritas pelo MPF e pelos réus (ids. 2142340363, \n2143657207 e 2144122370).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relato necessário.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "FUNDAMENTO E DECIDO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Presentes as condições da ação, bem como os pressupostos de constituição e \ndesenvolvimento válido e regular do processo, aprecio o mérito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A denúncia imputou aos acusados a prática do crime de redução à condição análoga à \nde escravo, previsto no artigo 149, do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De acordo com a acusação, os réus teriam reduzido 07 (sete) trabalhadores à \ncondição análoga à de escravos, submetendo-os a condições degradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A materialidade dos fatos está comprovada pelos elementos informativos colhidos \ndurante as investigações e confirmados pelas provas produzidas em juízo (art. 155 do CPP), em\nespecial: 1) Termo de depoimento de MARCELO GONÇALVES CAMPOS (ID 1474479877, págs.\n02/05); 2) Termo de depoimento de JOÃO GABRIEL DADALT (ID 1474479877, págs. 06/07); 3)\nTermo de depoimento de ERIKSON DE ANDRADE SILVA (ID 1474479877, págs. 08/09); 4)\nTermo de depoimento de DANILO PEREIRA OLIVEIRA DA SILVA (ID 1474479877, págs. 11/13);\n5) Termo de depoimento de CRISTIANO PINTO DOS SANTOS (ID 1474479877, págs. 14/16); 6)\nTermo de apresentação e apreensão n. 4578700/2022 (ID 1474479877, pág. 17); 7) Termo de\napreensão n. 4578838/2022 (ID 1474479877, págs. 18/19); 8) Termo de apreensão n.\n4579193/2022 (ID 1474479877, págs. 20/21); 9) Termo de apreensão n. 4579778/2022 (ID\n1474479877, pág. 22); 10) Documentos acostados no ID 1474479888, págs. 02/35); 23)\nDocumentos acostados nos ID 1474479891, págs. 01/07); 24) Contrato de arrendamento de\nimóvel rural para fins de exploração agrícola (ID 1474479891, págs. 09/13); 25) Laudo pericial n.\n1.112/2022-SETEC/SF/PF/DF (ID 1474479891, págs. 66/74); 26) Informação de Polícia Judiciária\nn. 4738588/2022 (ID 1474510351, págs. 07/12); 27) Termo de Interdição n. 4.045.503-3 (ID\n1474510351, págs. 14/15); 28) Termo de Ajuste de Conduta (ID 1474510351, págs. 16/26); 29)\nRelatório n. 2274793/2023 (ID 1651077452, págs. 79/96); 30) RELATÓRIO DE FISCALIZAÇÃO\nCHÁCARA 05 MANUEL MESSIAS FERREIRA DA SILVA HORTIFRUTI CNPJ: 33.630.627/0001-\n85 PERÍODO 06/12/2022 a 27/12/2022 (id. 1799988159).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "1. Quanto ao réu MANUEL MESSIAS FERREIRA DA SILVA",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Está comprovada a autoria, tendo em vista a confirmação, por MANUEL, quando da \nfiscalização e nos autos do inquérito policial, de que havia realizado tratativas com FRANCISCO\npara arregimentar trabalhadores no estado do Ceará, com a finalidade de trabalhar na lavoura em\nSobradinho/DF, na Chácara Santa Luzia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Confirmou, ainda, o custo de R$ 500,00 (quinhentos\nreais) por trabalhador a título de transporte, os quais posteriormente pagariam para MANUEL\nMESSIAS FERREIRA DA SILVA por esta despesa, mediante desconto nos salários (id.\n1799988159 - Pág. 17).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É incontroverso, ainda, que a atividade de cultivo de hortaliças, na qual foram \nidentificadas as condições precárias de trabalho, era desenvolvida por MANUEL, que arrendava a\nárea rural junto a HUMBERTO (id. 1799988159 - Pág. 52/55).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Prevê o Código Penal:\nArt. 149. – Reduzir alguém a condição análoga à de escravo, quer submetendo-\no a trabalhos forçados ou a jornadas exaustivas, quer sujeitando-o a condição \ndegradante de trabalho, quer restringindo, por qualquer meio, sua locomoção \nem razão de dívida contraída com o empregador ou preposto:\n\nPena - reclusão, de dois a oito anos, e multa, além da pena correspondente à \nviolência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Leciona José Paulo Baltazar Junior:\n“Atualmente, a redução à condição análoga à de escravo, na forma básica, será \ncriminosa quando consistir em uma das quatro figuras abaixo:\na) submissão a trabalhos forçados;\nb) submissão a jornada exaustiva;\nc) sujeição a condições degradantes de trabalho;\nd) restrição da liberdade de locomoção, em razão de dívida contraída com o \nempregador.\n(...)\nTrabalhos forçados serão aqueles realizados sem pagamento, em troca de pagamento \nirrisório ou apenas da alimentação e mediante coação física ou moral (Campos: 247; \nMelo: 13) (...).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A jornada exaustiva é aquela que, para além de meramente superar os limites legais, \nnão deixa ao trabalhador tempo razoável para o descanso, lazer, convívio com os \nfamiliares, prática religiosa e aprimoramento pessoal. Será exaustiva, por exemplo, a \njornada de trabalho de 16 a 20 horas, sem descansos semanais (...). Não será \nsuficiente para caracterizar a jornada exaustiva o mero fato de que tenha sido \nsuperado o limite de horário para horas extraordinárias ou a demanda por horas \nextraordinárias sem pagamento. (...)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Arrolo, a seguir, circunstâncias que poderão, conforme o caso concreto, levar à \nconclusão pela submissão a condições degradantes de trabalho:\na) alojamento inadequado, com barracos de lona (Feliciano: 86, Melo: 15);\nb) convivência promíscua entre h0mens, mulheres e crianças (Feliciano: 86) sem \nrelação familiar, em total falta de privacidade (Barelli; Vilela: 18);\nc) falta de equipamentos de proteção individual ou coletiva (Feliciano: 87; Melo: 15);\nd) falta de assistência médica (Feliciano: 87: Melo: 15);\ne) falta de registro do trabalhador (Feliciano: 87; melo: 15).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Foi reconhecido o crime nos casos assim descritos:\na) falta de instalações sanitárias adequadas (Barelli; Vilela: 8; Feliciano: 86; Melo: 15), \ncomo no caso em que somente um banheiro, que sofria insatisfatória limpeza apenas \nde oito em oito dias, era compartilhado por 24 trabalhadores (TRF3, AC \n000588540020044036109, Ramza, 5a T, u., 27.6.11);\nb) falta de água potável e alimentação suficiente e adequada, bem como de refeitório \nou cozinha adequados (Feliciano: 86), como no caso em que os trabalhadores levavam \na própria alimentação para a lavoura quando saíam cedo pela manhã, tendo que se \nalimentar depois de cerca de 3 horas, pois a comida azedava, nda mais recebendo ao \nlongo do dia (TRF3, AC 000588540020044036109, Ramza, 5a T, u., 27.6.11);\nc) ‘trabalhadores submetidos a condições de trabalho degradantes, num cenário \nhumilhante de trabalho, indigno de um humano livre, havendo não apenas desrespeito \na normas de proteção do trabalho, mas desprezo a condições mínimas de saúde, \nsegurança, higiene, respeito e alimentação, além de exercerem trabalho em servidão \npor conta de dívidas ali contraídas, pois se verifica que eram vendidos aos \ntrabalhadores insumos básicos, como arroz e feijão e equipamentos de proteção \nindividual’ (TRF1, AC 200739010006180, Tourinho, 3a T, u., 17.12.12);\nd) ‘não fornecimento de EPI, alojamentos insalubres, ausência de água potável, \ncondições indignas para higiene e alimentação, bem como ausência de treinamento \npara utilização de motosserras’ (STJ, AgRg HC 486268, Néfi, 6a T, T., 28.3.19) ”.[1]",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cabe registrar que “o crime de redução a condition análoga à de escravo pode ocorrer \nindependentemente da restrição à liberdade de locomoção do trabalhador, uma vez que esta é\napenas uma das formas de cometimento do delito, mas não é a única. O referido tipo penal prevê\noutras condutas que podem ofender o bem juridicamente tutelado, isto é, a liberdade de o\nindivíduo ir, vir e se autodeterminar, dentre elas submeter o sujeito passivo do delito a condições\ndegradantes de trabalho. Precedentes do STJ e STF” (AgRg no AREsp n. 1.467.766/PR, relator\nMinistro Reynaldo Soares da Fonseca, Quinta Turma, julgado em 27/8/2019, DJe de 10/9/2019).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De acordo com a fiscalização realizada e apurações na fase de investigação, as \nprincipais constatações no caso foram as seguintes (id. 1474510351, p. 09/12):\n“a) No alojamento, onde encontravam-se alojados 03 (três) trabalhadores, que estavam \ndistribuídos em cômodos da construção, em camas improvisadas, com colchões em \npéssimo estado e sem fornecimento de roupas de cama, sem armário para guarda de \npertences dos trabalhadores;\nb) Não havia filtro para purificação e filtragem da água, cuja fonte era proveniente de \num poço artesiano, localizado atrás da casa, onde inclusive há um chiqueiro próximo. A \nágua era transferida do poço por uma mangueira até a caixa d’água, que abastecia o \nlocal. A água utilizada servia para todas as atividades: consumo humano, banho, \ncozinha, tendo sido apresentado um suposto laudo de análise da água, mas que se \nmostrou inconclusivo, não havendo qualquer menção à potabilidade da água. Peritos \nFederais foram acionados, cuja perícia foi realizada no local;\nc) Não havia mesas e nem cadeiras para as refeições, tendo apenas uma estrutura \nsimilar a uma mesa para apoiar as panelas e produzir a comida, que era preparada por \numa cozinheira. A residência se encontrava em precário estado de conservação e \nlimpeza, com paredes sujas e piso enlameado, além de problemas no telhado e forte \nodor desagradável no ambiente, pois o único banheiro existente na residência \nencontrava-se em péssimas condições de higiene e conservação, inviabilizando o seu \nuso, conforme declarações prestadas pelos trabalhadores e a cozinheira, ELIZABETH \nLOPES DA SILVA (vulgo BETE), CPF 009.643.541-01, que declarou preferir \"usar o \nmato\" para fazer suas necessidades fisiológicas.\nd) Na inspeção da frente de trabalho, verificou-se que nenhum trabalhador havia feito \nexame admissional, estando todos na informalidade, cujos empregados estavam \nexpostos a intempéries, tais como chuva e sol intensos; animais peçonhentos, como \ncobras e escorpiões. Não houve por parte do empregador, o fornecimento de EPI \n(Equipamento de Proteção Individual) tais como botina acompanhada de perneira, \ncapa de chuva, luvas, chapéu ou boné, protetor solar, máscaras e roupas protetoras \npara o uso de agrotóxicos, além de produtos de primeiros-socorros, sendo o único EPI \nfornecido a botina de plástico.\ne) Como não havia no local de trabalho nenhum banheiro químico ou de alvenaria, \nsomado ao não funcionamento do vaso sanitário interno, sem descarga e entupido, os \ntrabalhadores faziam suas necessidades fisiológicas no mato, conforme dito por eles \nmesmos.\nf) Além da constatação de que os trabalhadores estavam todos informais e, portanto, \nvulneráveis do ponto de vista previdenciário, caso sofressem algum adoecimento ou \nacidente de trabalho, havia manuseio de agrotóxicos sem qualquer proteção, com uso \nde aspersor, conhecimento como bomba de dedetização, sendo que nenhum dos \ntrabalhadores tinha o devido registro trabalhista no E-Social, equivalente à antiga \nCarteira de Trabalho (CTPS).\ng) Relativamente à jornada de trabalho, verificou-se que o labor se iniciava às 06h30 \nda manhã, estendendo-se até às 19:00/19:30 da noite, com intervalo apenas para o \nalmoço, de cerca de 1 hora e meia, sendo que, com relação às folgas, foi declarado \npelos trabalhadores a ocorrência de apenas duas folgas por mês, sendo comum \ntrabalhar aos domingos e feriados. h) No tocante à FRANCISCO VASCONCELOS \nQUEIROZ, motorista do micro-ônibus, foi constatado que ele fazia transporte de \ntrabalhadores do estado do Ceará para o Distrito Federal, ao custo de R$ 500,00 \n(quinhentos reais) por trabalhador, os quais posteriormente ressarciriam MANUEL por \nesta despesa, mediante desconto nos salários. No dia da fiscalização, FRANCISCO \nestava transportando 03 (três) trabalhadores em seu veículo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Como já adiantado, configura o crime de redução a condição análoga à de escravo a \nconduta de submeter o trabalhador a jornada de trabalho exaustiva.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Foi apurado pela fiscalização que a jornada diária de trabalho era superior a oito horas \ndiárias, sem descanso semanal (apenas em domingos alternados), havendo trabalho, portanto,\ndurante treze dias ininterruptos (id. 1799988159 - Pág. 22/23).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O fato foi confirmado pela prova oral, destacando-se que Antônio Alex Sousa Estevam \nafirmou que a jornada de trabalho tinha início entre 6h e 6h20, havia uma pausa por volta de 12h\npara o almoço e que o encerramento da jornada diária ocorria entre 18h e 18:30h.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Confirmou, ainda, que as folgas ocorriam apenas a cada quinze dias, aos domingos (ata no id. 2056152689 e\nvídeos no id. 2056396691).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Devidamente caracterizada e comprovada, portanto, a figura de submissão de \ntrabalhadores a jornada de trabalho exaustiva.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, dentre todas as irregularidades constadas, são mais graves e não se \nconfundem com meras irregularidades ou descumprimento da legislação trabalhista e de normas\nde segurança do trabalho, qualificando-se, assim, como condições degradantes:\na) Fornecimento de água imprópria para o consumo humano “conforme os Relatórios \nde ensaio n.o 46245 (amostra do poço tubular) e n.o 46245 (amostra da caixa d’água \nda sede) elaborados pelo Laboratório Central da Companhia de Saneamento \nAmbiental do Distrito Federal – CAESB, constantes nos anexos deste Laudo Pericial” \n(id. 1474479891 - Pág. 72).\nb) Não fornecimento de equipamentos de proteção individual aos trabalhadores, sendo \nque aos trabalhadores incumbia, também, o manuseio e aplicação desprotegida de \nagrotóxicos (id. 1799988159 - Pág. 36 e 38/42);\nc) Alojamento em condições precárias, destacando-se: “A situação dos dormitórios, \nprincipalmente na casa localizada aos fundos da chácara, era muito degradante e \ncausava repulsa nas pessoas que o adentravam.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim com todo o alojamento, as \ncondições dos dormitórios eram insalubres. Não havia iluminação e ventilação \nsuficientes e, em alguns cômodos, havia frestas entre a parede e a cobertura que \ncomprometiam a vedação. Não havia recipientes para coleta de lixo no interior desses \ndormitórios. Alguns trabalhadores penduravam sacolas pelas paredes para fazer as \nvezes de lixeira. Esses fatos favoreciam a falta de asseio e o surgimento e proliferação \nde insetos e de animais transmissores de doenças. Em todo o ambiente predominava a \nsujeira. Os colchões disponibilizados pelo empregador estavam sujos e desgastados. \nAlguns apresentavam umidade, mofo, manchas amarronzadas. Devido à falta de \nfornecimento de roupas de camas, alguns trabalhadores dormiam diretamente sobre os \ncolchões sujos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": " (...) As condições precárias dos alojamentos, conforme aponta o relato \nacima, contribuía para que os trabalhadores do estabelecimento estivessem expostos \na uma série de riscos de acidentes ou adoecimento no trabalho, mormente em razão \nda falta de limpeza e higienização, que expõe esses trabalhadores ao risco de \ncontaminação através de micro-organismos patogênicos. Além disso, essas condições \ninadequadas, além de serem desconfortáveis e de não possibilitarem o devido \ndescanso e a devida recuperação física após um dia de intensa jornada de trabalho, \npodem redundar em acidentes envolvendo ataque de animais, choque elétrico, \nincêndio, dentre outros” (id. 1799988159 - Pág. 29/30 e 34);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "d) Falta de higiene e ausência de instalação sanitária: “No alojamento, localizado aos \nfundos da chácara, foi disponibilizada uma instalação sanitária cujas paredes não eram \ntotalmente cobertas por material impermeável e lavável (havia azulejos cobrindo \nsomente metade da parede). A bacia sanitária não possuía tampa e a caixa de \ndescarga estava desconectada dessa bacia. As condições dessa instalação sanitárias \ndenotavam a falta de manutenção e de limpeza. Ali também havia muito mofo nas \nparedes e as condições de higiene também eram precárias. (...) Por meio das vistorias \nnos ambientes de trabalho, constatou-se que o empregador não disponibilizava \nqualquer tipo de instalações sanitárias, fixas ou móveis, nas frentes de trabalho. Desse \nmodo, para suprir suas necessidades fisiológicas, os trabalhadores tinham como \nalternativas: caminhar até os respectivos alojamentos ou satisfazer essas \nnecessidades no ambiente (no ‘mato’)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(id. 1799988159 - Pág. 28 e 35);\ne) Ausência de assistência à saúde: “O empregador não possibilitava aos \ntrabalhadores, a seu serviço, o direito de acesso aos órgãos de saúde para prevenção \ne profilaxia de doenças endêmicas e/ou para aplicação de vacina antitetânica ou \noutras. Os trabalhadores presentes no estabelecimento eram oriundos de outros \nestados, principalmente do Ceará, trabalhavam. Eram mantidos alojados no local, mas \nnão tinham acesso ao sistema de saúde, tampouco, possuíam recursos suficientes \npara o custeio do transporte até as unidades de saúde públicas. Alguns trabalhadores, \ninclusive, afirmaram que não tomaram as vacinas contra a Covid-19” (id. 1799988159 - \nPág. 44);\nf) Ausência de local adequado para preparo de alimentos e para as refeições: “O \nempregador não disponibilizou locais para refeição. Em consequência, os \ntrabalhadores faziam suas refeições em locais improvisados, geralmente, sentados no \nchão da área, nos dormitórios ou em qualquer outro local que lhes propiciasse um \npouco mais de conforto. Ressalte-se que os locais para refeição devem dispor, \nminimamente, de mesas e cadeiras em quantidade suficiente para todos os \ntrabalhadores, bem como instalação adequada para garantir proteção contra \nintempéries e assegurar as condições básicas de higiene. Para agravar, os fundos da \nedificação – onde estavam situados os quartos do alojamento, onde funcionava a \ncozinha para preparo das refeições e onde os trabalhadores consumiam suas refeições \n– também funcionava um chiqueiro com porcos em engorda. O chiqueiro estava repleto \nde excrementos misturados ao barro e a outras sujeiras fétidas” (id. 1799988159 - Pág. \n24/25",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As condições degradantes apuradas pela fiscalização foram confirmadas pela prova \noral produzida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em primeiro lugar, pelo teor da inquirição das testemunhas João Gabriel Dadalt, \nErikson de Andrade Silva e Marcelo Gonçalves Campos (ata no id. 2056152689 e vídeos no id.\n2056396691).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, ainda sobre a prova oral, merece destaque o teor do depoimento da vítima \nAntônio Alex Sousa Estevam, que afirmou que: Tinham acesso a banheiro, não era muito limpo,\nquando a faxineira estava lá, limpava. Era um terreno grande, quando precisava ir ao banheiro, ia\nno mato mesmo. Podia fazer as necessidades fisiológicas no banheiro, que era longe, e que iriam\nreclamar quando voltassem e se demorassem. Sobre equipamento de proteção, foi oferecida\nsomente a bota. Batia veneno, essas coisas, batia. Não tinha equipamento de proteção para\nmexer com veneno, somente a bota e a roupa do corpo. Trabalhavam no sol, quando chovia,\ncontinuavam (ata no id. 2056152689 e vídeos no id. 2056396691).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A prova produzida, portanto, não deixa dúvida quanto à submissão de trabalhadores a \njornada exaustiva e a condições degradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E além da tipicidade objetiva, também a tipicidade subjetiva encontra-se demonstrada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo o Código Penal, o crime é doloso quando o agente quis o resultado ou \nassumiu o risco de produzi-lo (art. 18, I).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O dolo, “elemento essencial da ação final, compõe o tipo subjetivo. Pela sua definição, \nconstata-se que o dolo é constituído por dois elementos: um cognitivo, que é o conhecimento ou\nconsciência do fato constitutivo da ação típica; e um volitivo, que é a vontade de realizá-la. O\nprimeiro elemento, o conhecimento (representação), é pressuposto do segundo, a vontade, que\nnão pode existir sem aquele. (...) Sintetizando, em termos bem esquemáticos, dolo é a vontade\nde realizar o tipo objetivo, orientada pelo conhecimento de suas elementares no caso concreto”.[2]",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cabe registrar que “a prova do dolo (também chamado de dolo genérico) e dos \nelementos subjetivos do tipo (conhecidos como dolo específico) são aferidas pela via do\nconhecimento dedutivo, a partir do exame de todas as circunstâncias já devidamente provadas e\nutilizando-se como critério de referência as regras da experiência comum do que ordinariamente\nacontecem”.[3]",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No presente caso, conforme já adiantado, não há dúvidas de que MANOEL era o \nresponsável pela atividade econômica de cultivo de hortaliças, na qual foram identificadas as\ncondições degradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A área era arrendada, por MANOEL, junto a HUMBERTO (id. 1799988159 - Pág. \n52/55).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, restou demonstrado que MANUEL dirigia diretamente os trabalhos, dando \nordens, fiscalizando o trabalho dos trabalhadores e cobrando deles o resultado, sendo o\nresponsável, também, pela contratação e pagamento da remuneração acordada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Era MANOEL, ainda, quem estabelecia as tratativas com FRANCISCO para o \ntransporte de trabalhadores para o local do trabalho, mediante pagamento de R$ 500,00 por\ntrabalhador, valor este que seria posteriormente descontado da remuneração a ser paga.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A presença constante de MANOEL no local em que praticadas as condutas - inclusive \ncom o reconhecimento, pelo próprio réu, de que almoçava no mesmo local e se alimentava da\nmesma comida fornecida (id. 2143657207, p. 03) – não deixa dúvida de que tinha pleno\nconhecimento da jornada exaustiva e das condições degradantes que impunha aos\ntrabalhadores, agindo, assim, com vontade de realizar o tipo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, a conduta do Réu não se encontra acobertada por qualquer causa excludente \nde ilicitude ou de culpabilidade, sendo plenamente imputável na data dos fatos, com plena\nconsciência da ilicitude de seus atos e sendo-lhe exigível conduta diversa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No presente caso, foi alcançado o standard probatório necessário à condenação.\nCom efeito, o conceito de standard probatório corresponde ao nível de exigência \nprobatória para que um fato possa ser considerado comprovado em um processo judicial.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme ressalta Rômulo Almeida:\n“A dúvida apta a impedir que se alcance o BARD é aquela decorrente da persistência \nde uma ou de mais hipóteses alternativas razoáveis e fundadas em elementos de \nconvicção quanto à inocência do réu, ou, em uma hipótese, plausível e apoiada \nminimamente nos elementos probatórios disponíveis, que permita explicar os mesmos \nfatos que resultam provados, mas que é compatível com a inocência do acusado”.[4]",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No processo penal, no qual está em jogo a liberdade do indivíduo, o standard \nprobatório a ser alcançado é o da prova além de toda dúvida razoável, conforme já reconhecido\npelo STF:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "EMENTA DIREITO PENAL. AÇÃO PENAL DE COMPETÊNCIA ORIGINÁRIA. \nOPERAÇÃO SANGUESSUGA. FRAUDE EM LICITAÇÃO. CRIME DO ART. 90 DA LEI \n8.666/1993. CORRUPÇÃO PASSIVA. QUADRILHA. DEPUTADO FEDERAL. FALTA \nDE PROVA HÁBIL. ABSOLVIÇÃO. 1. A presunção de inocência, princípio cardeal \nno processo criminal, é tanto uma regra de prova como um escudo contra a \npunição prematura. Como regra de prova, a melhor formulação é o “standard” \nanglo-saxônico - a responsabilidade criminal há de ser provada acima de \nqualquer dúvida razoável -, consagrado no art. 66, item 3, do Estatuto de Roma \ndo Tribunal Penal Internacional. 2. À falta de prova suficiente da participação do \nacusado, Deputado Federal, nos crimes licitatórios praticados com verbas decorrentes \nde emendas parlamentares de sua autoria, bem como do recebimento de vantagem \nindevida em decorrência das emendas parlamentares e, ainda, de associação a grupo \ndedicado à prática de fraudes e peculatos na aquisição de ambulâncias com recursos \nfederais, impõe-se a absolvição. 3. Ação penal julgada improcedente. \n(AP 521, Relator(a): ROSA WEBER, Primeira Turma, julgado em 02-12-2014, \nACÓRDÃO ELETRÔNICO DJe-025 DIVULG 05-02-2015 PUBLIC 06-02-2015)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As provas produzidas nestes autos demonstram, acima de qualquer dúvida razoável, a \nresponsabilidade de MANOEL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Acerca disposto no art. 70 do Código Penal (concurso formal), de acordo com a \nacusação, os réus teriam reduzido 07 (sete) trabalhadores à condição análoga à de escravos,\nsubmetendo-os a condições degradantes de trabalho: “Em período incerto no ano de 2022, na\nChácara Santa Luzia, em Sobradinho/DF, HUMBERTO LANNA LYRA e MANUEL MESSIAS\nFERREIRA DA SILVA, de forma livre e consciente, reduziram a condição análoga à de escravo\nsete trabalhadores (ANTÔNIO ALEX SOUSA ESTEVAM, CRISTIANO PINTO DOS SANTOS,\nDANILO PEREIRA O. DA SILVA, FERNANDO BARROSO LIMA, JOSÉ LIMA DE OLIVEIRA,\nLAIRTON DE ARAÚJO GONÇALVES, MANOEL DE JESUS S. PINHEIRO), submetendo-os a\njornada exaustiva e a condições degradantes de trabalho, praticando, assim, o delito previsto no\nart. 149 do CP” (id. 1770045553, p. 04/05).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Resta demonstrado que foram vítimas das jornadas exaustivas e das condições \ndegradantes os seguintes trabalhadores, resgatados quando da realização da fiscalização:\nANTÔNIO ALEX SOUSA ESTEVAM, CPF 089.828.183-08 (id. 1799988159 - Pág. 20 e 56/58);\nCRISTIANO PINTO DOS SANTOS (id. 1799988159 - Pág. 20 e 59/60); DANILO PEREIRA O. DA\nSILVA, CPF 627.886.643-97 (id. 1799988159 - Pág. 20 e 61/62); FERNANDO BARROSO LIMA,\nCPF: 160.352.857-16 (id. 1799988159 - Pág. 20 e 65/66); MANOEL DE JESUS S. PINHEIRO,\nCPF 090.809.813-89 (id. 1799988159 - Pág. 20 e 70/71).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não podem ser considerados para fins de concurso formal, entretanto, os \ntrabalhadores que estavam chegando à área arrendada por MANOEL no momento da\nfiscalização, uma vez que, quanto aos mesmos, o delito não chegou a se consumar (não foram\nsubmetidos a jornadas exaustivas e a condições degradantes), quais sejam: JOSÉ LIMA DE\nOLIVEIRA, CPF 077.990.403-60 (id. 1799988159 - Pág. 21 e 67); LAIRTON DE ARAÚJO\nGONÇALVES, RG 2019096398-5 (id. 1799988159 – Pág 21 e 68/69);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessa forma, nos termos da fundamentação referente à dosimetria, a pena deve ser \naumentada em 1/3 (art. 70, CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2. Quanto ao réu HUMBERTO LANNA LYRA",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Narra a denúncia:\n“Consta do inquérito que a equipe responsável pela fiscalização chegou ao local \nChácara Santa Luzia, na zona rural de Sobradinho/DF, por volta das 9h da manhã do \ndia do flagrante e, antes mesmo de iniciar o trabalho de fiscalização, enquanto era \nrealizada a verificação de segurança, aproximou-se da entrada da chácara um veículo \nmicro-onibus, marca Mercedes-Benz, modelo SPRINTER, placas OVO0A51-DF, cor \nbranca, conduzido por pessoa que se identificou como FRANCISCO VASCONCELOS \nQUEIROZ, acompanhado de seu filho, transportando 3 (três) trabalhadores oriundos \ndo Estado do Ceará para o Distrito Federal, para laborar, especificamente, na chácara \nSanta Luzia, de propriedade de HUMBERTO LANNA LYRA e que ainda antes de \npassar à inspeção, foram formalizados Termos de Declarações de FRANCISCO \nVASCONCELOS QUEIROZ, motorista do micro- ônibus e de MANUEL MESSIAS \nFERREIRA DA SILVA , sendo que este último confirmou que havia realizado tratativas \ncom FRANCISCO para arregimentar os trabalhadores no Estado do Ceará, para \ntrabalhar na lavoura em Sobradinho/DF, na chácara Santa Luzia. Além de arregimentar \nos trabalhadores no Ceará, FRANCISCO transportou-os de um Estado para outro, ao \ncusto de R$ 500,00 (quinhentos reais) por trabalhador, os quais posteriormente \nressarciriam MANUEL por esta despesa, mediante desconto nos salários. (...) Assim, a \nautoria e a materialidade delitivas encontram-se devidamente comprovadas pelos \nelementos constante no Inquérito Policial em epígrafe. Uma vez que, HUMBERTO, \nproprietário da chácara Santa Luzia, ajustou-se com MANUEL para praticarem o \ncrime em comento, tendo este último ficado encarregado da contratação d1as \nvítimas” (id. 1770045553, p. 04/07, sem grifos no original).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Ainda de acordo com o MPF, nas alegações finais:\nHUMBERTO LANNA LYRA, que é o proprietário da Chácara Santa Luzia, sustentou \nem Juízo que sua condição era apenas de parte em contrato de arrendamento rural \ncom o réu MANUEL MESSIAS FERREIRA DA SILVA, motivo pelo qual não tinha \nciência das condições impostas aos trabalhadores (ID 2141494010). No entanto, \nreferida argumentação é frágil porquanto está cabalmente comprovado que \nHUMBERTO frequentava a Chácara Santa Luzia e tinha conhecimento de todos os \nfatos ocorridos na localidade. Nesse sentido, cumpre assinalar que no dia da \nfiscalização, a equipe flagrou HUMBERTO na área, fato que denota seu total \nconhecimento sobre as atividades que eram realizadas no lugar e as condições \ndegradantes pelas quais os trabalhadores resgatados estavam expostos, notadamente \npor ser proprietário dos bens imóveis utilizados pelos trabalhadores (alojamento), o que \nfoi confirmado em seu depoimento em Juízo. Além disso, como se sabe, com o \narrendamento HUMBERTO tinha proveito econômico do empreendimento que era \n gerido por MANUEL, de modo que evidentemente tinha interesse direto na \nmanutenção da situação, já que era beneficiário dos valores firmados no contrato. (...)\nDesta forma evidencia-se claramente os elementos que caracterizam a redução de um \nser humano a condição análoga à de escravo dos trabalhadores contratados pelos \nréus. Enquanto MANUEL MESSIAS FERREIRA DA SILVA foi o responsável por aliciar \ne contratar os trabalhadores a fim de mantê-los sob sua administração, HUMBERTO \nLANNA LYRA, o proprietário da Chácara Santa Luzia, tinha total ciência dos \nfatos, principalmente por conta do interesse e proveito econômico que \ndesfrutava da relação contratual de arrendamento com MANUEL” (id. 2142340363, \np. 13 e 17).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A acusação em face de HUMBERTO é embasada, portanto, em sua qualidade de \nproprietário da Chácara Santa Luzia, e em suposto prévio ajuste com MANUEL para aliciamento\ne contratação dos trabalhadores, tendo HUMBERTO total ciência dos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A prova produzida nos autos, entretanto, não confirma a versão acusatória.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em primeiro lugar, é incontroverso que HUMBERTO, apesar de proprietário da \nChácara Santa Luzia, arrendava a área rural em que era desenvolvido o cultivo de hortaliças, na\nqual foram constatadas as condições degradantes de trabalho (id. 1799988159 - Pág. 52/55).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não há qualquer prova de prévio ajuste entre HUMBERTO e MANUEL para \naliciamento e contratação e de trabalhadores, tendo FRANCISCO deixado claro que as tratativas,\ninclusive quanto ao pagamento do transporte, eram feitos unicamente com MANOEL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, conforme mencionado pelo próprio MPF em suas alegações finais, em juízo, \na testemunha Marcelo Gonçalves Campos, auditor do trabalho responsável pela operação de\nfiscalização, afirmou:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Disse, ainda, que o acusado HUMBERTO LANNA LYRA se apresentou como \nproprietário da área, que estava presente também o acusado MANUEL MESSIAS \nFERREIRA DA SILVA, e que foram colhidos os depoimentos de todos os trabalhadores \nque estavam envolvidos (00:08:34).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre a presença do acusado HUMBERTO na \npropriedade, o auditor disse que tanto o acusado MANUEL, quanto os trabalhadores, \ndeclararam que o acusado HUMBERTO LANNA LYRA estava de segunda-feira a \nquinta-feira (às vezes, na sexta-feira) na Chácara Santa Luzia (00:09:12).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre o \narrendamento, declarou que o acusado MANUEL disse que inicialmente havia um \ncontrato formal com HUMBERTO, mas que após vencido, acertaram “de boca”, \ninformal (00:09:59); que nos dias que se seguiram ao flagrante, o acusado \nHUMBERTO apresentou um contrato de arrendamento com MANUEL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Questionado se \no acusado MANUEL possuiria autonomia frente o segmento de hortaliças (00:10:40), o \nauditor respondeu que, em um primeiro momento, MANUEL se apresentou uma \npessoa com incapacidade econômica, inclusive afirmando que não teria condições de \narcar com encargos trabalhistas, mesmo declarando ter firmado um contrato de \narrendamento; nos dias seguintes, no entanto, o acusado MANUEL teria pedido para \nreformular o primeiro depoimento no sentido oposto, de que teria capacidade \neconômica para arcar com os encargos trabalhistas, inclusive que teria uma empresa \nque comercializava os produtos produzidos na chácara Santa Luzia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...) Questionado \nse poderia declinar os motivos pelos quais o acusado HUMBERTO foi preso em \nflagrante (00:20:26), o auditor respondeu que HUMBERTO era dono da propriedade, \nestava no local da fiscalização, e que houve um entendimento das autoridades \npresentes de que ele - juntamente com MANUEL - estaria incluído no rol de atores \nresponsáveis por aquela situação, já que, por ser dono, devia vigilância ao que ocorria \nnaquele espaço.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A presença de HUMBERTO na Chácara Santa Luzia, sem a prova de seu \nenvolvimento com a contratação dos trabalhadores resgatados e com a atividade econômica\n \ndesenvolvida, não é suficiente para a demonstração da autoria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, durante o inquérito policial, os trabalhadores resgatados DANILO PEREIRA \nOLIVEIRA DA SILVA e CRISTIANO PINTO DOS SANTOS foram claros ao afirmar que\nHUMBERTO não interferia nas atividades dos trabalhadores da lavoura de hortaliças (id. \n1474479877, p. 12 e 15).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, não há prova do proveito econômico de HUMBERTO, uma vez que o \npagamento pelo arrendamento da parcela de sua propriedade rural a MANOEL não estava\natrelado à produção deste.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E ainda que se considerasse demonstrada a autoria, não há comprovação do dolo de \nHUMBERTO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A própria fiscalização apurou que “o Senhor Humberto Lanna Lyra é proprietário da \nChácara 5, na Zona Rural de Sobradinho I. Na propriedade, foi constatada a existência de\nalgumas atividades econômicas, sendo elas: a) cultivo de banana, atividade empreendida\ndiretamente pelo proprietário, o Senhor Humberto Lanna Lyra; b) marcenaria, empreendida pela\nempresa Minas Parq Play Grounds Ltda, CNPJ 15.596.078/0001-98 e c) cultivo de hortaliças,\nsendo esta a atividade empreendida pela empregador e objeto da ação fiscal em tela” (id.\n1799988159 - Pág. 10).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A prova produzida demonstrou que HUMBERTO não participava da atividade referente \n ao cultivo de hortaliças, de forma que não há prova, portanto, de que tinha conhecimento das\ncondições degradantes de trabalho a que estavam submetidas as vítumas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Provavelmente, agiu com culpa ao permitir que, dentro de sua propriedade (mas em \nárea arrendada e em cuja atividade não exercia influência), fossem praticadas as condutas\nfiscalizadas e apuradas neste feito, mas o tipo penal do art. 149, do CP, exige a presença de\ndolo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DISPOSITIVO",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Em face do exposto, JULGO PARCIALMENTE PROCEDENTE A PRETENSÃO \nPUNITIVA ESTATAL para:\na) com fundamento no artigo 386, incisos V, do Código de Processo Penal, absolver \nHUMBERTO LANNA LYRA da imputação da prática do crime tipificado no art. 149, do Código\nPenal, ante a inexistência de provas de ter o réu concorrido para a infração penal;\nb) condenar o réu MANUEL MESSIAS FERREIRA DA SILVA pela prática do delito \ntipificado no artigo 149 do Código Penal, por cinco vezes, na forma do artigo 70, do CP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo à dosimetria da pena, nos termos do art. 5o, XLVI, da CF/88 e dos arts. 59 e 68 \ndo Código Penal.\nA pena cominada ao delito é de reclusão de 2 (dois) a 8 (oito) anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade do réu, entendida como o grau de intensidade do dolo ou da culpa, no \ncaso concreto, é normal à espécie.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não registra maus antecedentes (Súmulas 241 e 444/STJ).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há nada a respeito da conduta social e da personalidade do agente que possa ser \nutilizado em seu desfavor.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos do crime devem ser valorados negativamente, tendo em vista que foi \npraticado com a finalidade de lucro, mediante a exploração do trabalho das vítimas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias do crime também devem ser valoradas negativamente, uma vez que \nredundaram na completa ausência de proteção estatal, formal e previdenciária ao trabalho das\nvítimas (sem registro do vínculo trabalhista e previdenciário).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "E as consequências do crime devem ser valoradas negativamente, tendo em vista a \nexposição da vida das vítimas a risco, considerando-se, principalmente, dentre tantas outras\ncircunstâncias, o fornecimento de água imprópria para consumo humano e a exposição\ndesprotegida a agrotóxicos, causando, portanto, danos à saúde e integridade física das vítimas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento da vítima é, no caso, um indiferente penal, tendo em vista a \nimpossibilidade de influenciar na conduta perpetrada pelo agente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando as circunstâncias judiciais acima, a pena deve ser majorada em dois \n anos e três meses.[5]",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a pena-base em 04 anos e 03 meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias atenuantes ou agravantes a serem consideradas, sendo a pena \nintermediária igual à pena-base.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes causas especiais de aumento ou diminuição da pena, de forma que a pena \ndefinitiva deve ser fixada em 04 anos e 03 meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento aos comandos dos artigos 49 e 59 do Código Penal, e pelas razões \nprecedentemente expostas, fixo a pena de multa definitivamente em 141 dias-multa,\nconsiderando a necessidade de se observar a proporcionalidade entre a quantidade de dias-multa\ne a pena privativa de liberdade aplicada.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando os arts. 49 e 60 do CP e a afirmação do próprio Réu em seu \ninterrogatório de que sua renda mensal varia entre R$ 2.000,000 e R$ 3.000,00, fixo o valor do\ndia-multa em 1/20 do salário mínimo vigente em 2022 (tempo em que praticada a conduta),\nincidindo a devida correção monetária (art. 49, §§ 1o e 2o, do CP).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante do concurso formal, na forma do artigo 70 do Código Penal, primeira parte, \nmaioro a pena em 1/3, por se tratarem de cinco infrações penais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Torno, portanto, a reprimenda definitiva em 05 (cinco) anos e 08 (oito) meses de \nreclusão, a serem cumpridos em regime inicialmente semi-aberto, na forma do art. 33, §2o,\nalínea “b”, do Código Penal,",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Consoante dispõe o artigo 72 do Código Penal, as penas de multa devem ser cobradas \ndistintas e integralmente em caso de concurso de crimes, razão pela qual, somadas, as penas\nde multa pela prática dos delitos tipificados no artigo 149 do Código Penal, em concurso\nformal (cinco crimes), alcançam o montante 705 (setecentos e cinco) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando a pena definitiva aplicada, não estão preenchidos os requisitos objetivos \ne subjetivos previstos no art. 44 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de fixar o valor mínimo de reparação de danos (art. 387, IV, do CPP) em razão \nda ausência de elementos suficientes e/ou de pedido expresso do Ministério Público Federal\nnesse sentido.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas devidas pelo réu MANUEL MESSIAS FERREIRA DA SILVA (Lei n. 9.289, de \n04.07.96, art. 6o).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado desta sentença, expeçam-se às comunicações cabíveis, \nbem como as respectivas guias definitivas para execução das penas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Brasília/DF.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "MARCELO GENTIL MONTEIRO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal Substituto da 12a Vara Federal – SJ/DF",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[1] BALTAZAR JÚNIOR, José Paulo. Crimes Federais. 13 ed. rev. atual. e ampl., São Paulo: Ed.\nJus Podivm, p. 57/59.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[2] Bitencourt, Cezar Roberto, Tratado de direito penal: parte geral 1, 20. ed. rev., ampl. e atual.,\nSão Paulo: Saraiva, 2014, p. 356.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[3] Oliveira , Eugênio Pacelli de, Curso de processo penal, 18. ed. rev. ampl. atual. de acordo com\nas leis n°s 12.830, 12.850 e 12.878, todas de 2013 – São Paulo: Atlas, 2014, p. 335.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[4] ALMEIDA, Rômulo. A motivação fático-probatória da sentença penal: uma proposta\nracionalista. Londrina : Thoth, 2024, p. 327",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[5] De acordo com o entendimento da doutrina e da jurisprudência que admite como critério válido\npara individualização da pena-base a majoração da fração em 1/8 (um oitavo), por cada\ncircunstância judicial valorada como negative, sobre o intervalo da pena abstrata.",
+      "label": "OUTROS"
+    }
+  ]
+}

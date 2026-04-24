@@ -1,0 +1,564 @@
+{
+  "index": 19,
+  "doc_id": 19,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 57,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Santarém-PA \n1a Vara Federal Cível e Criminal da SSJ de Santarém-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0000408-90.2019.4.01.3902",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO:EUDEMBERTO SAMPAIO DE SOUZA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: WALTER DE ALMEIDA ARAUJO - AP1259",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1 RELATÓRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Cuida-se de ação penal ajuizada em face de Eudemberto Sampaio de Souza \npela suposta prática do crime de redução à condição análoga de escravo e frustração de\ndireito assegurado por lei trabalhista, previstos, respectivamente, no art. 149 e art. 203,\nambos do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a inicial que o réu, entre os anos de 2014 a 25/10/2016, de forma \nconsciente e livre, manteve 7 (sete) trabalhadores em acampamento montado na Vicinal\ndo Macapuxi, município de Uruará/PA, trabalhando em extração de madeiras em florestas\nnativas.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Durante fiscalização do Ministério do Trabalho em Emprego, os auditores se\ndepararam com trabalhadores nas funções de cozinheira, tratorista, ajudante de tratorista,\noperador de motosserra, ajudante de tratorista, operador de pá carregadeira e gerente.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Na ocasião, os fiscais encontraram um acampamento improvisado com lona \nplástica, sem instalação sanitária, sem local adequado para preparo e consumo de\nrefeições, ausência de estruturas para acondicionamento de alimentos, sem fornecimento\nde EPIs, sem acesso à água potável.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Além das condições operacionais da atividades, a\ninicial narra a prática de violação de direitos trabalhistas como desrespeito a jornada de\ntrabalho e descanso semanal.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Na inicial, o MPF pede o reconhecimento do concurso material de crimes (art. \n69 do Código Penal).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Juntou cópia do Procedimento Investigatório Criminal – PIC \n1.00.000.005274/2017-96.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 03/05/2019 [id. 414437492 – Pág. 72].",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em resposta à acusação, a defesa pede, genericamente, a absolvição do réu \n[id. Num. 924671733].",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na decisão id. 1144416757, o juízo afastou as hipóteses de absolvição \nsumária e determinou a instrução processual.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em audiência, foram ouvidas duas\ntestemunhas comuns e realizado o interrogatório do réu.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF, em alegações finais orais, pede a condenação nos termos da inicial \n[id. Num. 2005950651].",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Alegações finais da defesa no id. 2014004669, pede absolvição\npor ausência de dolo.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Vieram os autos conclusos.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Relatados.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Passo a decisão.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2 FUNDAMENTAÇÃO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.1 Redução à condição análoga à de escravo (art. 149 do Código Penal)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Estabelece o art. 149 do Código Penal:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Redução a condição análoga à de escravo",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos \nforçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, \nquer restringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o \nempregador ou preposto: (Redação dada pela Lei no 10.803, de 11.12.2003)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à violência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A Lei 10.803/2003 enumera, de forma exaustiva, os comportamentos que \nconfiguram o delito que, descritos a seguir, correspondem a descrição na denúncia\nexaminada:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "1 - submeter a vítima a trabalhos forçados (caput);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2 - submetê-la a jornada exaustiva (caput);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3 - sujeitá-la a condições degradantes de trabalho (caput);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "4 - restringir, por qualquer meio, sua locomoção em razão de dívida contraída \ncom o empregador ou o preposto (caput);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "5 - cercear o uso de qualquer meio de transporte por parte do trabalhador,\ncom o fim de retê-lo no local de trabalho (§ 1o, I);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "6 - manter vigilância ostensiva no local de trabalho ou se apoderar de \ndocumentos ou objetos pessoais do trabalhador, com o fim de retê-lo no local \nde trabalho (§ 1o, II).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O tipo penal analisado prevê conduta de tipo misto alternativo, ou de \nconteúdo variado, que atinge a consumação com a tão só prática de um dos núcleos\ndescritos, de modo que, a contrario sensu, a prática de mais de um verbo nuclear não\ncaracteriza novo crime, podendo ser valorado com maior censura o que afeta a dosagem\nde penal final.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A natureza do tipo penal não exige para a consumação do delito a efetiva \nrestrição de liberdade dos trabalhados em condição degradante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Trata-se apenas de uma\nfigura equiparada que também consuma o crime descrito no artigo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação a esse\naspecto, em razão da afirmação constante nos documentos, e nos depoimentos\ntestemunhais, de que não havia efetivamente restrição da liberdade com cerceamento\nmediante vigilância constante de um terceiro, entendo que o elemento da liberdade,\nesses casos, exige análise mais ampla.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Eis que embora não houvesse vigilância\nostensiva, os trabalhadores realizavam as atividades em local extremamente ermo, sem\nmeio de transporte adequado para saída ou fuga, pois embora houvesse notícia da\nexistência de uma moto no local, se tratavam de sete trabalhadores que, em uma\neventualidade, não conseguiriam evadir-se.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não obstante, entende o Superior Tribunal de Justiça que o art. 149 tutela a \nliberdade individual dos trabalhadores, mas também a sua dignidade humana.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Uma vez\nviolado um dos bens jurídicos, está consumado o crime em questão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Da mesma forma\ntem entendido os Tribunais Regionais Federais conforme julgados colhidos a seguir:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "RECURSO ORDINÁRIO EM HABEAS CORPUS. REDUÇÃO A CONDIÇÃO ANÁLOGA À \nDE ESCRAVO, FRUSTRAÇÃO DE DIREITO PREVISTO EM LEI TRABALHISTA, E \nALICIAMENTO DE TRABALHADORES (ARTIGOS 149, CAPUT, 203, CAPUT, § 1o, INCISO \nI E § 2o, ARTIGO 207, §§ 1o E 2o, TODOS DO CÓDIGO PENAL). ALEGADA ABSORÇÃO \nDOS DELITOS PREVISTOS NOS ARTIGOS 203 E 207 PELO ILÍCITO DISPOSTO NO \nARTIGO 149 DO ESTATUTO REPRESSIVO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "NECESSIDADE DE REVOLVIMENTO DE\nMATÉRIA FÁTICO-PROBATÓRIA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para se verificar se a frustração de direitos assegurados \npor lei trabalhista e o aliciamento de trabalhadores de um local para o outro do território \nnacional teriam ou não se esgotado no crime tipificado no artigo 149 do Código Penal, seria \nindispensável averiguar o contexto em que as infrações foram cometidas, providência que é \nvedada na via eleita, pois demanda o revolvimento de matéria fático-probatória.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "AVENTADA\nINCOMPETÊNCIA DA JUSTIÇA FEDERAL PARA PROCESSAR E JULGAR O CRIME DE \nREDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO. VIOLAÇÃO À ORGANIZAÇÃO DO \nTRABALHO. IMPOSSIBILIDADE DE SUBMISSÃO DO FEITO À JUSTIÇA ESTADUAL. 1.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com o advento da Lei 10.803/2003, que alterou o tipo previsto do artigo 149 da Lei Penal, \npassou-se a entender que o bem jurídico por ele tutelado deixou de ser apenas a \nliberdade individual, passando a abranger também a organização do trabalho, motivo \npelo qual a competência para processá-lo e julgá-lo é da Justiça Federal. (RHC n. \n41.003/PI, relator Ministro Jorge Mussi, Quinta Turma, julgado em 10/12/2013, DJe de \n3/2/2014.)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DIREITO PENAL E PROCESSO PENAL. INÉPCIA DA INICIAL. INEXISTÊNCIA. MÉRITO. \nREDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO. ARTIGO 149 DO CP. \nATIPICIDADE. IN DUBIO PRO REO. ABSOLVIÇÃO. FRUSTRAÇÃO DE DIREITO \nASSEGURADO POR LEI TRABALHISTA. ARTIGO 203 DO CP. AUTORIA, \nMATERIALIDADE E DOLO COMPROVADOS. FRAUDE. MANUTENÇÃO DA \nCONDENAÇÃO. PRECEDENTES.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Necessária a demonstração, de plano, da ausência de \njusta causa para o inquérito ou para a ação penal, consubstanciada na inexistência de \nelementos indiciários capazes de demonstrar a autoria e a materialidade do delito, a \natipicidade da conduta e a presença de alguma causa excludente da punibilidade, ou, ainda, \nnos casos de inépcia da denúncia; Possui aptidão a denúncia que contém a exposição do \nfato criminoso, com todas as suas circunstâncias, nos termos do art. 41 do Código de \nProcesso Penal, trazendo os elementos de convicção acerca da materialidade e indícios da \nautoria do delito, a denominada justa causa penal, inexistindo por conseguinte qualquer \nnulidade no seu recebimento e no processamento da ação criminal; A redução à condição \nanaloga à de escravo, na forma básica, será criminosa quando consistir em uma das quatro \nmodalidades abaixo: a) submissão a trabalhos forçados; b) submissão a jornada exaustiva; \nc) sujeição a condições degradantes de trabalho; d) restrição da liberdade de locomoção, \nem razão de dívida contraída com o empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O tipo é misto alternativo, ou de conteúdo variado, configurando-se o crime mediante qualquer das modalidades acima, não se\nexigindo, necessariamente, a privação da liberdade;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não é qualquer violação dos direitos\ntrabalhistas que configura trabalho escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Apenas se incrimina a conduta que acarrete a \"redução a condição análoga à de escravo\", o que pressupõe total menoscabo à dignidade\nda pessoa humana na relação de trabalho, naqueles casos em que este é prestado sem\nmínimas condições de higiene, saúde e segurança;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não comprovadas as condições\ndegradantes de trabalho, não há falar na incidência do tipo penal do art. 149 do Código\nPenal;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Existindo dúvidas razoáveis\nsobre ser ou não típica a conduta perpetrada pelos réus, impõe-se a sua absolvição\ncom base no princípio do in dubio pro reo;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O delito do art. 203 do\nCódigo Penal exige para a sua caracterização que a frustração do direito assegurado pela\nlegislação do trabalho ocorra mediante fraude ou violência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A fraude, em sua acepção\njurídica, é o engodo, embuste, artifício, artimanha para induzir ou manter em erro outrem e,\nno caso em análise, frustrar o direito assegurado pela legislação trabalhista; Na hipótese, a\nfraude restou evidenciada mediante a utilização de expediente dissimulado (contrato de\nparceria rural) para disfarçadamente tolher direitos dos trabalhadores; O argumento de que\num contrato de \"parceria rural\" seria mais vantajoso ao trabalhador não abona a real\nintenção do réu, qual seja dissimular as relações empregatícias que mantinha com os\ntrabalhadores de sua lavoura de tomate. (TRF4, ACR 5005189-87.2013.4.04.7009, SÉTIMA\nTURMA, Relatora CLÁUDIA CRISTINA CRISTOFANI, juntado aos autos em 07/02/2018)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Eis que a configuração de trabalho escravo não resgata a figura passada do \nescravo acorrentado, sujeito a castigos físicos e aprisionamento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos tempos atuais,\nutiliza-se o termo “escravidão moderna” para se referir ao trabalho análogo àquelas\ncondições.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É nesse sentido, inclusive, a\ninterpretação dada pelo Supremo Tribunal Federal, conforme julgado colhido a seguir:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. REDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO. ESCRAVIDÃO MODERNA. \nDESNECESSIDADE DE COAÇÃO DIRETA CONTRA A LIBERDADE DE IR E VIR. \nDENÚNCIA RECEBIDA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para configuração do crime do art. 149 do Código penal, não é \nnecessário que se prove a coação física da liberdade de ir e vir ou mesmo o cerceamento \nda liberdade de locomoção, bastando a submissão da vítima \"a trabalhos forçados ou a \njornada exaustiva\" ou \"a condições degradantes de trabalho\", condutas alternativas \nprevistas no tipo penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A \"escravidão moderna\" é mais sutil do que a do século XIX e o \ncerceamento da liberdade pode decorrer de diversos constrangimentos econômicos e não \nnecessariamente físicos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Priva-se alguém de sua liberdade e de sua dignidade tratando-o \ncomo coisa e não como pessoa humana, o que pode ser feito não só mediante coação, mas \ntambém pela violação intensa e persistente de seus direitos básicos, inclusive do direito ao \ntrabalho digno.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A violação do direito ao trabalho digno impacta a capacidade da vítima de \nrealizar escolhas segundo a sua livre determinação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso também significa \"reduzir alguém a\ncondição análoga à de escravo\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não é qualquer violação dos direitos trabalhistas que \nconfigura trabalho escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Se a violação aos direitos do trabalho é intensa e persistente, se \nAtinge níveis gritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas \nexaustivas ou a condições degradantes de trabalho, é possível, em tese, o enquadramento \nno crime do art. 149 do Código penal, pois os trabalhadores estão recebendo o \ntratamento análogo ao de escravos, sendo privados de sua liberdade e de sua dignidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Denúncia recebida pela presença dos requisitos legais.\" (Inq 3.412, Tribunal Pleno, Relator \nMin. Marco Aurélio, Relatora p/ acórdão Min.a Rosa Weber, j. 29/03/2012) (sem grifo no \noriginal)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outrossim, ainda acerca dos aspectos gerais do tipo penal atribuído na inicial,\no trabalho em condições análogas a de escravo tem o potencial de lesar diferentes bens\njurídicos, já que ofende tanto a organização do trabalho, como a liberdade individual da\nvítima e a dignidade da pessoa humana, esta como fundamento da República (art.1o, III,\nda CF88).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, não é somente a liberdade que está sujeita a ofensa apta a consumar\no delito imputado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Especificamente no que se trata de sujeição da vítima a condições \ndegradantes de trabalho, conduta descrita na inicial, destaca-se que o conceito de \ncondições degradantes caracteriza situação de aviltamento da condição humana do\ntrabalhador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O trabalhador é encarado como objeto e não como sujeito de direitos, em\ntotal desprezo a sua intimidade, higiene, segurança ou saúde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Guilherme de Souza NUCCI (in Código Penal Comentado. São Paulo: RT,\n2012, p. 736), destaca que:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Condições degradantes de trabalho: degradação significa rebaixamento, indignidade ou \naviltamento de algo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No sentido do texto, é preciso que o trabalhador seja submetido a um \ncenário humilhante de trabalho, mais compatível a um escravo do que a um ser humano \nlivre e digno.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo, apesar de se tratar de tipo aberto, dependente, pois, da interpretação do \njuiz, o bom senso está a indicar o caminho a ser percorrido, inclusive se valendo o \nmagistrado da legislação trabalhista, que preserva as condições mínimas apropriadas do \ntrabalho humano.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Embora isoladamente algumas situações pudessem caracterizar tão somente \na violação de direitos trabalhistas, o contexto em que foram encontrados os trabalhadores\nconfigura condições de trabalho degradantes, portanto graves o suficiente a ponto de\nviolar não só a organização do trabalho, mas direitos mais básicos e indisponíveis dos\ntrabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso concreto, a materialidade está sedimentada em processo \nadministrativo robusto instruído em ação conjunta do Ministério do Trabalho, Ministério\nPúblico do Trabalho e Defensoria Pública, que concluiu pela existência de violações\ngraves e expressivas à dignidade humana dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dentre a documentação produzida, destaca-se especialmente o Relatório de \nFiscalização da Divisão de Fiscalização para Erradicação do Trabalho Escravo, do\nMinistério do Trabalho, em que há a narrativa da síntese da operação, a identificação dos\ntrabalhadores resgatados e os resultados da operação que sucederam a lavratura de\nautos de infração e ação fiscal [id. Num. 414437484 – Pág. 22].",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Importante destacar que a testemunha José Weyner Nunes Marcelino, auditor \nfiscal do trabalho, integrante da equipe de trabalho na fiscalização local, em sua oitiva\ndestacou que a situação flagrada era sobremaneira grave resultando no resgate de\ntrabalhadores, pois verificou-se o extremo descumprimento das condições mínimas de\ncondições de habitação dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tal afirmação é corroborada pela testemunha\nAllan de Miranda Bruno, Procurador do Trabalho, presente também no local e no dia dos\nfatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os testemunhos se alinham ao quadro descrito no relatório de fiscalização\nresultante e reforçam que a violação de direito ora analisada é de intensidade extrema\nsuficiente a consumar o crime de redução de trabalhadores a condição análoga à de\nescravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, com relação ao bem jurídico tutelado pelo tipo penal do art. 149, \nrepito que a liberdade é um dos bens imateriais protegidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além dela, a dignidade\nhumana, na mesma intensidade, é albergada pela tipificação da conduta.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, restou\ncomprovada a violação do mínimo exigível para manutenção das condições dos\ntrabalhadores, submetidos a condições alvitantes, conforme descrito alhures.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto a alegação da defesa de que o MPF não lançou mão do expediente \nda produção antecipada de provas, tal fato não tem aptidão para desconstituir as demais\nprovas produzidas tanto no âmbito administrativo quanto no Judiciário.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mesmo porque a\ndinâmica dos fatos – com a oitiva dos trabalhadores no momento da descoberta,\napresentação espontânea do réu para esclarecimentos, adoção de medidas\ncompensatórias dos danos trabalhistas dos empregados – demonstram que a ciência\nimediata do réu acerca dos fatos, lhe assegurou a possibilidade de adotar medidas\nde produção de prova.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Finalmente, as condições de violação dos direitos são\nobjetivamente apreciáveis, razão pela qual o relatório de fiscalização, contendo fotos e\nrelatos, e os depoimentos testemunhais, são suficiente a configurar a materialidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria, por sua vez, também está indubitavelmente demonstrada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A equipe\nde fiscalização tratou de identificar o empregador responsável pelos trabalhadores e\nidentificou o réu, Eudemberto Sampaio de Souza, como o responsável pelas condições\nde trabalho daquelas pessoas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ressaltou que houve afirmação nesse sentido pelo réu\nfrente as autoridades de fiscalização no local, o que viabilizou a confecção de autos de\ninfração e adoção dos procedimento para a rescisão regular dos contratos de trabalho,\ncom pagamentos de todas as verbas próprias, e, ainda, o assinatura de um termo de\najuste de condutas do réu com a Defensoria Pública da União.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, devo ressaltar, para fins de consideração de dosimetria, que as \ntestemunhas foram uníssonas em afirmar a colaboração constante do réu que, após a\natuação do grupo de fiscalização, tratou da retirada do local, realizou o pagamento de\ntodas as verbas rescisórias e firmou termo de ajustamento de conduta com a DPU, além\nde ter comparecido tempestivamente quando notificado para tanto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pelo exposto, há provas suficientes para atribuir ao denunciado o \ncometimento da ação descrita no tipo penal que lhe é imputado, havendo ofensa ao bem\njurídico tutelado, qual seja, a dignidade humana dos trabalhadores submetidos a\ncondições tais análogas à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2 Frustração de direito assegurado por lei trabalhista – art. 203, Código Penal",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O delito do art. 203 do Código Penal tem a seguinte descrição típica:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 203 - Frustrar, mediante fraude ou violência, direito assegurado pela legislação do \ntrabalho:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - detenção de um ano a dois anos, e multa, além da pena correspondente à violência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O crime é classificado como norma penal em branco, pois exige a \ncomplementação da legislação trabalhista violada, de prática comum e material exigindo,\npois, a produção de resultado naturalístico.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A descrição objetiva do tipo tem como elementos normativos a fraude e a \nviolência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É dizer, a consumação do tipo exige a configuração da fraude – engodo, ardil –\nou violência, na modalidade vis corporalis (pois utiliza o temor violência e não grave\nameaça), de modo que a frustração de direito assegurado por lei trabalhista não se\nintegra com o simples inadimplemento de obrigação imposta ao empregador pela\nlegislação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É imperioso, por imposição típica, que o efeito material resulte do emprego de\nalgum mecanismo ardil ou de violência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Infere-se da jurisprudência dos tribunais regionais que tal delito é \ncorriqueiramente praticado mediante fraude nas hipóteses em que, por exemplo, o sujeito\nativo paga salário inferior ao mínimo legal, mas faz seus empregados assinarem recibo de\nvalor igual ao mínimo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Há casos de violação das regras de higiene e saúde do\ntrabalhador, mas, para todos eles, é imprescindível a prática mediante fraude ou violência\nfísica, por exigência típica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso concreto, quando da análise do crime do art. 149 do Código Penal se \nreconheceu a violação, também, de direitos assegurados pela legislação trabalhista, em\nníveis tais aptos a configurar o crime de redução do trabalhador à condição análoga a de\nescravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto ao crime do art. 203 do Código Penal, contudo, além de não haver\ndescrição concreta na denúncia do uso de meio fraudulento ou violento para tanto, a\ninstrução processual tampouco demonstrou essa prática.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para essa figura típica, portanto, entendo ausentes elementos necessários de \nmaterialidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3 DISPOSITIVO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "De todo o exposto, JULGO PARCIALMENTE PROCEDENTE a denúncia \npara CONDENAR o réu EUDEMBERTO SAMPAIO DE SOUZA nas penas do crime do\nart. 149 do Código Penal, por sete vezes, em concurso material de crimes (art. 69, CP),\ncuja dosimetria passo a dosar, atento ao critério trifásico do art. 68, CP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Analisando as circunstâncias judiciais do artigo 59 do Código Penal, nenhuma \nmerece especial relevo.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade foi normal à espécie.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O réu não registra\nantecedentes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há elementos para se aferir a sua conduta social, nem sua\npersonalidade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos integram o injusto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias e consequências do\ndelito não ultrapassam o habitual para delitos dessa natureza.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há se falar em\ncomportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desse modo, sopesadas as circunstâncias do artigo 59 do Código Penal, fixo-\n-lhe a pena-base em seu mínimo legal, qual seja 02 (dois) anos de reclusão e 10 (dez)\ndias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausente circunstância agravante.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Embora presente a circunstância atenuante \ngenérica do art. 66 do Código Penal, em razão da colaboração do réu durante a\nfiscalização dos órgãos pertinentes e pagamento das verbas rescisórias dos\ntrabalhadores resgatados, por impedimento da súmula 231 do Superior Tribunal de\nJustiça, com a fixação da pena base no mínimo legal, deixo de aplicar a redução desta\nfase.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase da dosimetria, ausentes causas de aumento ou de \ndiminuição.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ao final do critério trifásico fixo a pena em 2 (dois) anos de reclusão e 10 \n(dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Fixada a pena, entendo presentes os requisitos do art. 71 do Código Penal, \nque prevê o instituto do crime continuado, pois os trabalhadores resgatados foram\nsubmetidos às mesmas condições de restrição de direitos em tempo e lugar e violação da\ndignidade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nesses termos, aplico a exasperação à pena\nfixada ao final do critério trifásico, na ordem de 2/3, em razão da prática em desfavor de sete trabalhadores, resultando na\npena definitiva de 03 (três) anos, 03 (três meses) e 29 (vinte e nove) dias de reclusão\ne 16 (dezesseis) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O valor da pena-multa será devido à razão de 1/30 (um trigésimo) do valor do \nsalário mínimo vigente ao tempo dos fatos (ano de 2016).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Fixo o regime aberto para cumprimento da pena (art. 33, CP) e, não estando \npresentes os requisitos do art. 312 do CPP, concedo ao acusado o direito de recorrer em\nliberdade.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "No entanto, verificando a pena aplicada e que o réu preenche os requisitos \nlegais do art. 44, CP, notadamente o fato de que as circunstancias judiciais são\nintegralmente favoráveis, substituo a pena privativa de liberdade ora aplicada por duas\nrestritivas de direito quais sejam prestação de serviços à comunidade ou a entidades\npúblicas e pagamento de prestação pecuniária em favor de entidade estatal, a serem\ndefinidas quando da audiência admonitória pelo juízo da execução.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Fica o condenado ciente de que o descumprimento injustificado das sanções \nimpostas ocasionará a conversão das penas restritivas de direitos em pena privativa de\nliberdade (Art. 44, §4o, CP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas pelo réu.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Transitada em julgado a presente sentença:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) PROMOVA-SE a regular extração das peças necessárias para correta \nExecução Penal, com expedição de guia definitiva de execução remetendo-as \npara o Juízo Execução Criminal competente; ou se for o caso, designe-se \naudiência admonitória.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) LANCE-SE o nome do réu no rol dos culpados;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "c) PROCEDA-SE ao cálculo dos valores das penas de multa, se houver, e \ndas custas processuais;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "d) FAÇAM-SE as comunicações de praxe (principalmente para os fins do \nart.15, inc.III, da CF).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Cumpra-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Santarém/PA.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal da 1a Região",
+      "label": "OUTROS"
+    }
+  ]
+}

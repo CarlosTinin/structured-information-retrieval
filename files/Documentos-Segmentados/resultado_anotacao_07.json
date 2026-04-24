@@ -1,0 +1,1056 @@
+{
+  "index": 7,
+  "doc_id": 7,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 29,
+  "dados": [
+    {
+      "sentenca": "JUSTIÇA FEDERAL2a Vara Federal Criminal da Seção Judiciária da Bahia",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ação Penal 1018501-42.2022.4.01.3300",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal FÁBIO MOREIRA RAMIRO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Autor MINISTÉRIO PÚBLICO FEDERAL (PROCURADORIA)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ré(u/s) EDINEA OLIVEIRA JAQUEIRA DA CRUZ, FRANCISCO BATISTA DA CRUZ",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "S E N T E N Ç A",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O MINISTÉRIO PÚBLICO FEDERAL denunciou EDNÉIA OLIVEIRA JAQUEIRA DA CRUZ e FRANCISCO BATISTA DA CRUZ, pela prática do delito previsto no art.149, caput, do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "De acordo com o MPF, de maneira livre, consciente e voluntária, os acusados na condição de empregadores domésticos, reduziram a vítima Elisabete Dias Araújo à condição análoga à de escrava, sujeitando-a a condições degradantes de trabalho por cerca de 40 (quarenta) anos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Consta da denúncia que a partir de verificação in loco na residência dos denunciados, os auditores do Ministério do Trabalho identificaram diversas infrações às leis trabalhistas praticadas pelos denunciados, a exemplo do não reconhecimento da relação de trabalho; ausência de assinatura de CTPS da empregada; não pagamento de salário, décimo terceiro e horas extraordinárias trabalhadas; ausência de concessão de férias e folga semanal; comprometimento do direito fundamental de ir e vir da trabalhadora; imposição de jornada extraordinária acima do limite legal ou incompatível com a capacidade psicofisiológica da empregada; e imposição de trabalho em condições degradantes.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Sustenta o órgão ministerial que, em que pese a alegação dos denunciados de que a vítima era integrante da família, a condição de Elisabete Dias Araújo como empregada doméstica teria restado comprovada, uma vez que presentes todos os elementos caracterizadores desta relação, quais sejam: os serviços eram prestados de forma contínua, subordinada, onerosa e pessoal, com finalidade não lucrativa aos denunciados e sua família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 06.04.2022 (ID 1005829763).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citados, os denunciados apresentaram resposta à acusação (ID 1265821785).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Entretanto, porquanto não vislumbrada nenhuma das hipóteses autorizadoras de absolvição sumária, determinou-se o prosseguimento do feito (ID 1437298746).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "No curso da instrução, foram ouvidas as testemunhas arroladas na denúncia e pela defesa, bem como a ré EDINEA OLIVEIRA JAQUEIRA DA CRUZ foi qualificada e interrogada.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O acusado FRANCISCO BATISTA DA CRUZ, por sua vez, deixou de ser interrogado face aos problemas de saúde, embora estivesse presente na audiência(ID 1723632991).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os depoimentos e os interrogatórios, gravados em sistema audiovisual, encontram-se no arquivo de vídeo ID 1730592089.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Instadas as partes, em audiência, quanto ao que determina o art. 402 do Código de Processo Penal, nada foi requerido (ID 1723632991)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa dos denunciados, invertendo a ordem de apresentação das alegações finais, apresentou memoriais escritos antes do órgão ministerial, oportunidade na qual alegou que: (I) os auditores fiscais do trabalho não teriam presenciado nenhum fato que caracterizasse o delito imputado na denúncia; (II) os próprios depoimentos dos auditores fiscais do trabalho prestados em audiência comprovariam a existência de uma relação de carinho e cuidado entre os moradores da casa; (III) a relação entre os denunciados e Elisabete seria uma relação jurídico paterno filial, decorrente do vínculo socioafetivo, não se recomendando a sua extinção sob pena do comprometimento da integridade/saúde física e psíquica dos pais já idosos e debilitados; (IV) o processo trabalhista no qual se buscava o reconhecimento da relação empregatícia não reconheceu o suposto vínculo laboral entre as partes, razão pela qual não se poderia reconhecer a existência do delito de redução à condição análoga à de escravo; (V) ainda existiria vínculo afetivo entre Elisabeth e os demais membros da família; (VI) Elisabete sempre conviveu de modo igualitário com os demais filhos da família, contando com plano de saúde, vivência no mesmo ambiente e viagens junto com os demais membros do seio familiar; (VII) Elizabete tinha plena liberdade de locomoção e que, acaso sofresse qualquer espécie de maus tratos na sua vida cotidiana poderia facilmente denunciar ou fugir em busca de socorro (ID 1733904564)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em alegações finais, o MPF pede a condenação dos acusados nos termos da denúncia, uma vez que teriam sido provadas tanto a materialidade quanto a autoria delitiva (ID 1740093049).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tendo em vista que os acusados apresentaram alegações finais primeiro do que o órgão ministerial, este juízo proferiu despacho, intimando a defesa para, caso tivesse interesse, ratificasse ou complementasse as alegações finais anteriormente apresentadas (ID 1793691150)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Intimada, a defesa ratificou as alegações finais anteriormente apresentadas (ID 1816837149).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. Cumpre decidir.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "DA PRELIMINAR DE AUSÊNCIA DE RECONHECIMENTO DE RELAÇÃO EMPREGATÍCIA EM PROCESSO TRABALHISTA Preliminarmente, sustentam os acusados que o processo trabalhista no qual se buscava o reconhecimento da relação empregatícia não reconheceu o suposto vínculo laboral entre as partes, razão pela qual não se poderia reconhecer a existência do delito de redução à condição análoga à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não merece prosperar a referida preliminar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Primeiro, porque se trata deduas instâncias distintas e independentes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, a sentença proferida pela Justiça do Trabalho em nada vincula a decisão a ser tomada por este juízo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não bastasse isso, a supramencionada sentença ainda se encontra em grau de recurso, conforme se verifica ao se analisarem os autos da Ação Civil Pública Cível 0000373-27.2022.5.05.0024",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa mesma esteira é o entendimento do Superior Tribunal de Justiça: RECURSO ESPECIAL. PENAL. REDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO (ART. 149 DO CÓDIGO PENAL). COAÇÃO FÍSICA OU MORAL. SUBMISSÃO A CONDIÇÕES DEGRADANTES DE TRABALHO. ADEQUAÇÃO TÍPICA. PRECEDENTES. INEXISTÊNCIA DE TERMO DE AJUSTAMENTO DE CONDUTA. IRRELEVÂNCIA PARA A TIPIFICAÇÃO DO DELITO. INDEPENDÊNCIA DAS ESFERAS ADMINISTRATIVA, TRABALHISTA E CRIMINAL. ABSOLVIÇÃO CASSADA. RETORNO DOS AUTOS PARA ANÁLISE DAS DEMAIS ALEGAÇÕES SUSCITADAS NA APELAÇÃO DEFENSIVA. RECURSO ESPECIAL PROVIDO. 1. A jurisprudência desta Corte Superior está fixada no sentido de que a submissão dos trabalhadores a situações degradantes de trabalho é suficiente para configurar o delito previsto no art. 149 do Código Penal. 2. O Tribunal de origem, reformando a sentença condenatória, absolveu os Réus por entender que as condições a que estavam submetidos os trabalhadores, conforme verificado pelos auditores fiscais do trabalho e apontado na denúncia, embora precárias, configuravam meros descumprimentos de normas laborais e não se prestavam à configuração do tipo penal insculpido no art. 149, caput, do Estatuto Repressor. 3. Situação concreta, contudo, em que há adequação típica do fato apurado nos autos ao delito previsto no art. 149 do Estatuto Repressor, pois restou incontroverso, tanto na sentença condenatória quanto no acórdão que a reformou, ter havido a submissão das Vítimas a condições degradantes de trabalho, entre outras, jornadas laborais exaustivas; ausência de fornecimento de água e de instalações sanitárias; inexistência de pausas para descanso nas atividades geradoras de sobrecarga muscular estática e dinâmica; e falta de abrigo para proteção contra a incidência da radiação solar, ainda que rústico. 4. O fato de não existir nos autos notícia de realização de Termo de Ajustamento de Conduta não obsta a tipificação do delito, haja vista a independência das esferas administrativa, trabalhista e penal, não constituindo a existência desse Termo, ou o seu descumprimento, elementar do referido tipo penal. 5. Reformado o acórdão absolutório, não é o caso de simplesmente restabelecer a sentença, mas devem os autos retornar à Corte a quo, a fim de que prossiga na análise das demais alegações suscitadas nas razões da apelação defensiva, e que haviam ficado prejudicadas pela absolvição que ora é cassada. 6. Recurso especial conhecido e provido, a fim de assentar a tipicidade do fato quanto ao delito do art. 149 do Código Penal e determinar o retorno dos autos ao Tribunal de origem para que examine, como entender de direito, as demais alegações contidas na apelação dos ora Recorridos. (REsp n. 1.952.180/PE, relatora Ministra Laurita Vaz, Sexta Turma, julgado em 14/12/2021, DJe de 25/2/2022.)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DO MÉRITO A materialidade e a autoria delitivas foram devidamente comprovadas através do Relatório de Fiscalização promovido pelo Ministério do Trabalho e Previdência e pelas provas testemunhais produzidas em juízo (IDs991750653, 1730592089).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Consoante relatado, imputa-se aos denunciados o crime de redução a condição análoga à de escravo, que consiste em “reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o empregador ou preposto”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme se verifica pela leitura do caput do art.149 do Código Penal, o delito imputado aos acusados consiste em um crime de ação múltipla ou plurinuclear, ou seja, para que reste configurado o crime, bastará que os acusados incorram apenas e tão somente em um dos verbos previstos no tipo penal em abstrato.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em razão disso, passo a analisar cada uma das hipóteses de ocorrência da conduta prevista no art.149, CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à submissão a trabalhos forçados ou a jornada exaustiva, Michael Procopio Avelar leciona que tais condutas consistem em: Obrigar a vítima a alguma atividade laborativa, mediante emprego de violência, grave ameaça ou fraude. A vítima não possui liberdade de escolha quanto a não executar ou não interromper a atividade. Jornada exaustiva é aquela que chega aos limites físicos do indivíduo, correspondendo a uma carga horária de trabalho acima do suportável pelo ser humano, fora dos parâmetros da saúde do trabalho (Manual de Direito Penal: volume único parte geral e parte especial. 3a Edição. São Paulo: Editora Juspodivim, 2024).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, as mencionadas modalidades delitivas ficaram evidenciadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Primeiro, porque restou provado que a vítima Elisabeth era a responsável por todas as tarefas da casa, que consistiam na limpeza da residência, dos banheiros, na arrumação dos cômodos, lavagem e passar de roupas, além dos atendimentos aos pedidos da família e preparação das refeições.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse mesmo sentido foram as suas declarações prestadas durante a audiência: Eu fazia tudo na casa, lavava, passava, cozinhava, arrumava, tudo que se faz numa casa. (ID 1556017354, 1 h 18 m da gravação).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ato contínuo, ao ser questionada se estas tarefas sempre foram de incumbência da vítima, respondeu que “sim, sempre” (ID 1556017354, 1 h 18 m da gravação).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É justamente por conta disso que se verifica que não merece prosperar a alegação da defesa de que Elisabeth sempre conviveu de modo igualitário com os demais filhos da família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme relatado pela própria vítima aos servidores da Superintendência Regional do Trabalho durante a fiscalização in loco, \"nenhum outro membro da família faz serviços como limpar o banheiro da casa, que ela é a responsável por fazer as três refeições do dia e cuidar da limpeza do lar” (ID 991750653, p.11).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Some-se a isso, ainda, que a vítima Elisabeth também era a responsável por cuidar de \"Francisquinho\", leia-se Francisco Neto, neto de D. Edineia e Seu Francisco.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ou seja, além de ser responsável pela limpeza e organização do apartamento onde a família vivia, Elisabeth também exercia a função de babá do neto dos acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não bastasse isso, durante a audiência, Elisabeth também foi questionada sobre se os demais irmãos da família estudaram.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em resposta, a vítima respondeu: “estudaram” (ID 1556017354, 1 h 19 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, conforme também relatado pela própria vítima durante a assentada, ela não foi convidada a estudar, bem como não sabe o motivo pelos quais não obteve tal oportunidade (ID 1556017354, 1 h 19 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante desse contexto, não convence a alegação da acusada EDINEA OLIVEIRA JAQUEIRA DA CRUZ, ao afirmar em audiência que a vítima Elisabeth não deu continuidade aos estudos porque ela “não quis mais” (ID 1730592089, 32 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Incumbia aos acusados garantirem a permanência de Elisabeth no âmbito escolar, visto que uma criança não possui qualquer discernimento para tomar tal decisão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nâo por outra razão, o Código Penal já estabelecia o crime de abandono intelectual (art. 246), quando os pais deixam de prover a educação formal dos filhos, e o art. 55, I, do Estatuto da Criança e do Adolescente prevê expressamente que incumbe à família matricular seus filhos ou pupilos na rede regular de ensino, garantindo-lhes o acesso e a permanência na escola.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não bastasse isso, a situação se torna ainda mais grave quando se rememora que, em que pese a acusada EDINEA exercer a profissão de professora e dar aulas particulares a diversas crianças, a acusada nunca se prestou a dar quaisquer aulas a vítima Elisabeth, a quem cabia, apenas e tão somente, ajudar a dar almoço e banho nas crianças que a acusada EDINEIA lecionava aulas particulares (ID 1730592089, 1 h 29 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mas não é só.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As alegações defensivas relativas à inexistência de submissão da vítima a trabalhos forçados passam a ostentar ares de absurdo quando se atenta para uma pergunta feita a Elisabeth quando de seu depoimento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Elisabeth foi questionada sobre a possibilidade de, caso um dia, ao acordar na casa onde residia com a família, não quisesse realizar as tarefas domésticas que lhe eram incumbidas, e, em vez disso, decidisse passar o dia lendo um livro, se isto seria possível.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Elisabeth imediatamente chora, demora alguns segundos para responder e afirma: “não” (ID 1730592089,1 h 24 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O choro de Elisabeth não deixa pairar nenhuma dúvida de que a sua dignidade humana foi reduzida a condição de coisa desprovida de direitos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O choro de Elisabeth não apenas denota, como também comprova a tomada de consciência da vítima ao perceber que nos últimos 40 (quarenta) anos foram-lhe tolhidos os direitos mais básicos que deveriam ser garantidos a um ser humano, em especial no seu âmbito familiar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não por outra razão, a vítima afirmou que tinha vontade de voltar a estudar, mas não possuía qualquer vontade de voltar a morar com os acusados (ID 1730592089, 1 h 30 m).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante do panorama fático processual acima delineado, verifica-se que foge a qualquer esfera de razoabilidade sustentar que não restaria comprovada a submissão da vítima a trabalhos forçados, configurando, por via de consequência, a conduta dos acusados ao tipo previsto no art.149, CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afinal, durante mais de 40 (quarenta) anos, a vítima Elisabeth foi obrigada, mediante o emprego de fraude, praticada de forma sub-reptícia, a trabalhar de modo forçado para os acusados, sob o argumento de que estes a consideravam como se fosse uma filha.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Justamente por isso que também não merece prosperar o argumento defensivo de que inexistiria qualquer espécie de redução de trabalho análogo à de escravo, ante a existência de relação de afeto da vítima Elisabeth com os demais membros da família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, não há, seja no direito positivo, na doutrina ou na jurisprudência, sequer uma linha escrita que afirme que a existência de vínculo familiar é causa excludente de tipicidade, ilicitude ou culpabilidade do crime de redução de trabalho análogo à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aceitar tal hipótese como possível conduziria à absurda possibilidade de livrar centenas de acusados de trabalho análogo à de escravo da persecução penal, bastando, para tanto, alegar a suposta existência de vínculo familiar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, é óbvio que existe uma relação de afeto entre Elisabeth e os acusados, afinal, eles eram as únicas pessoas com as quais a vítima conviveu durante toda a sua vida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ocorre que parecem não se recordar os acusados de que a referida relação de afeto teve como pano de fundo a sucessiva destruição de todos os outros laços afetivos, sociais, laborais, amorosos e acadêmicos que poderiam ser desenvolvidos por Elisabeth ao longo da sua vida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afinal, conforme relatado em audiência, a vítima Elisabeth, além de não ter dado continuidade aos seus estudos, também não desenvolveu outras amizades ao longo da sua vida, bem como nunca vivenciou um relacionamento amoroso.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A razão para a ocorrência de tais fatos se torna óbvia quando se verifica que, destruindo todas as possibilidades de Elisabeth se desenvolver como pessoa no mundo, restar-lhe-ia, apenas e tão somente, estar junto das únicas pessoas com as quais conviveu desde os seus primeiros anos de vida, ou seja, os acusados e os demais membros da família, mantendo-a junto ao ambiente de subserviência e submissão no qual estava inserida de forma fraudulenta e sub-reptícia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso não é apenas cruel.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso é desumano.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afinal, a vítima jamais teve a possibilidade de vivenciar experiências fundamentais para o adequado desenvolvimento humano, desde a infância até a idade adulta.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Consequentemente, foi retirada de Elisabeth a possibilidade de compreender, através do adequado acesso ao ensino, que a sua história de vida não estava predestinada a servir as necessidades da casa onde vivia, bem como aos desejos cotidianos dos acusados e de seus familiares.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, não é preciso qualquer esforço para verificar que o modus operandi delineado nos autos se acopla com perfeição ao conceito de escravidão moderna, já discutido pelo Supremo Tribunal Federal no bojo do Inquérito 3.412, oportunidade na qual a Ministra Relatora Rosa Weber asseverou que:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A escravidão moderna é mais sutil do que a do século XIX e o cerceamento da liberdade pode decorrer de diversos constrangimentos econômicos e não necessariamente físicos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Priva-se alguém de sua liberdade e de sua dignidade tratando-o como coisa e não como pessoa humana, o que pode ser feito não só mediante coação, mas também pela violação intensa e persistente de seus direitos básicos, inclusive do direito ao trabalho digno.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A violação do direito ao trabalho digno impacta a capacidade da vítima de realizar escolhas segundo a sua livre determinação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso também significa reduzir alguém a condição análoga à de escravo (Inquérito 3.412, DJe de 12/11/2012).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, a violação à dignidade e ao trabalho ficam comprovados quando se rememora que a todas as possibilidades de a vítima adquirir independência social, econômica e intelectual foram sucessivamente tolhidas ao longo das últimas quatro décadas, através da ausência de acesso ao ensino e ao desenvolvimento de outras relações sociais que foram cerceados pelos acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, tendo em vista o longínquo lapso temporal que perdurou o delito ora imputado, também faz-se imperioso analisar se as sucessivas condutas dos acusados para com a vítima Elisabeth deram causa ao resultado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para tanto, as condutas dos acusados serão analisadas sob o prisma não apenas de uma, mas de duas teorias que versam sobre o nexo causal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A primeira, a teoria da equivalência das condições, adotada no art.13 do Código Penal, segundo o qual, considera-se causa a ação ou omissão sem a qual o resultado não teria ocorrido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia, em face das inúmeras criticas da moderna doutrina à supramencionada teoria poder levar, ao fim e ao cabo, a um regressus ad infinitum, impõe-se, também, essa análise sob a ótica da teoria da imputação objetiva.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo a teoria da imputação objetiva, para imputar um resultado a um agente, é necessário verificar se a conduta praticada pelo indivíduo produziu um risco não permitido, risco este que deve ter sido verificado no resultado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo, dois são os requisitos para a imputação do resultado ao agente: a) produção de um risco não permitido pelo direito; b) que este risco seja produzido no resultado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à identificação do risco, ela deverá ocorrer por meio do juízo da prognose póstuma objetiva, que consiste na identificação, pelo julgador, depois de a conduta já ter sido praticada e ter sido possível analisar se o risco veio ou não a se concretizar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além da criação do risco, é necessário também verificar se o risco é proibido pelo direito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para tanto, Luis Greco (Um panorama da teoria da imputação objetiva. 3a ed. São Paulo: Editora Revista dos Tribunais, 2013. p 19-23). propõe dois fundamentos: o primeiro consiste em um nucleio de liberdade de cada cidadão, considerando haver uma esfera de liberdade não alcançada pelo Estado; o segundo consiste na ponderação entre o interesse de proteger bens jurídicos e o interesse geral de liberdade, a intensidade do risco criado, se as medidas de cuidado ou de prevenção são eficientes e idôneas e se havia uma medida alternativa para ser adotada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à realização do risco no resultado, é necessário verificar se aquele risco foi o responsável pelo resultado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, todos os requisitos necessários para concluir se as condutas dos acusados deram causa ao resultado típico foram devidamente preenchidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No tocante à produção de um risco não permitido pelo direito, ele se configura na medida em que os acusados retiraram o acesso ao ensino da vítima Elisabeth, conduta absolutamente contrária à norma, consoante os preceitos legais acima referidos - art. 246, do CP e art. 55, I, do Estatuto da Criança e do Adolescente, que prevê expressamente que incumbe à família matricular seus filhos ou pupilos na rede regular de ensino, garantindo-lhes o acesso e a permanência na escola.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Forçoso concluir, portanto, que retirar o acesso de um(a) filho(a) ao ensino não se encontra respaldado pelo núcleo de liberdade individual de cada cidadão, ante o mandamento expressamente previsto no Estatuto da Criança e do Adolescente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse mesmo contexto, também não havia outros bens jurídicos postos em xeque, mas apenas tão somente uma obrigação por parte dos acusados de garantir o acesso da vítima Elisabeth ao ensino.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que toca à realização do risco no resultado, restou comprovada quando se verifica que, ao retirar o acesso de Elisabeth ao ensino, também foram-lhe retiradas as possibilidades de adquirir conhecimento crítico, de capacitar-se para ter um ensino formal que lhe garantisse o exercício de atividade profissional, e por via de consequência, garantir sua independência financeira e social, o que conforme visto, não apenas não aconteceu, mas também foi fator determinante para acarretar na situação de subserviência e submissão que a vítima foi posta nos últimos 40 (quarenta) anos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, tanto sob o prisma da teoria da equivalência das condições e da teoria da imputação objetiva, as sucessivas condutas dos acusados devem ser consideradas como causas determinantes para a produção do resultado típico.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Justamente por conta dessas mesmas razões acima declinadas é que verifico que o dolo dos acusados em praticar a conduta típica também está devidamente delineado na acusação e nas provas produzidas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tendo em vista que a análise do elemento subjetivo consiste em um dos temas mais complexos do direito material, faz-se necessário expor pormenizadamente algumas considerações doutrinárias sobre o tema.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme leciona Juarez Cirino dos Santos, o dolo consiste “na vontade consciente de realizar o tipo objetivo de um crime, também definível como saber e querer em relação às circunstâncias de fato do tipo penal” (Direito Penal: Parte Geral. 7a Edição. Florianópolis: Editora Empório do Direito, 2017).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, também assevera o autor que o dolo é composto pelo elemento intelectual e pelo elemento volitivo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo o autor, o elemento intelectual consiste no conhecimento atual das circunstancias de fato do tipo objetivo, como representação ou percepção real da ação típica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O conhecimento atual das circunstâncias de fato do tipo objetivo deve abranger os elementos presentes (a vítima, a coisa, o documento) e futuros (o curso causal e o resultado do tipo objetivo).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para a delimitação do objeto de conhecimento, e portanto, de alcance do dolo, o autor afirma que são necessários alguns esclarecimentos a) os elementos descritivos do tipo legal (homem, coisa etc), existentes como realidades concretas perceptíveis pelos sentidos, devem ser representados na forma de sua existência natural; b) os elementos normativos do tipo legal (coisa alheia, documento etc), existentes como conceitos jurídicos empregados pelo legislador, devem ser representados conforme seu significado comum, segundo uma valoração paralela ao nível do leigo – e não no sentido da definição jurídica respectiva, porque, então, somente juristas seriam capazes de dolo”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também segundo Cirino, o elemento volitivo consiste na vontade – informada pelo conhecimento atual – de realizar o tipo objetivo de um crime.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A vontade, definida como o querer realizar o tipo deverá apresentar duas características para constituir o elemento do dolo: a) a vontade deverá ser incondicionada, como decisão de ação já definida; b) a vontade deve ser capaz de influenciar o acontecimento real, permitindo definir o resultado típico como obra do autor, e não como mera esperança ou desejo dele.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Essa vontade, segundo Cirino, pode ainda ser concebida como a “projeção de energia psíquica dirigida à lesão de bens jurídicos protegidos no tipo penal.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por uma exigência lógica, lecionam Eduardo Viana e Adriano Teixeira que “a análise do elemento cognitivo (correspondente à representação) precede a análise do elemento volitivo (correspondente ao “estar de acordo com”).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E isso porque somente se pode estar de acordo quando há representação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Noutros termos: é o conhecimento que condiciona a vontade e não o inverso, afinal, somente posso querer aquilo que conheço” (A imputação dolosa no caso do “racha em Berlim” comentários à decisão do Tribunal de Berlim, de 27 de fevereiro de 2017 - (535 KS) 251 JS 52/16 (8/16)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Forçoso concluir, portanto, que é indispensável que o agente, antes de tudo, possua conhecimento sobre a realidade, apresentando, por consequência, o elemento volitivo, isto porque o sujeito somente pode exteriorizar sua vontade livre se ele souber exatamente a realidade na qual está inserido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, não é preciso qualquer esforço para concluir que os acusados possuíam plena consciência que, retirando o acesso da vítima Elisabeth a direitos básicos, como o acesso à educação e ao convívio social, acarretariam um contexto ideal para colocá-la numa situação de subserviência e submissão, configurando-se, assim, o elemento intelectual do dolo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De igual modo, o elemento volitivo também resta comprovado quando se verifica que todas as decisões que deram causa ao acontecimento típico partiram dos acusados, de maneira que o resultado típico foi obra única e exclusivamente dos autores, que durante mais de 40 (quarenta) anos, mantiveram-se de acordo com a continuidade da conduta ora imputada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em outras palavras, não há como negar o dolo nas condutas comissivas ou omissivas dos réus, na medida em que ele não se verifica em apenas uma ação específica, como no ato de desmatricular a vítima da escola.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em verdade, o dolo dos acusados resta comprovado quando se analisa que a vontade de praticar a conduta prevista no art.149, CP perdurou durante mais de 04 (quatro) décadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dito de modo mais claro: todas as vezes em que Elisabeth punha o café na mesa dos acusados, durante os últimos 40 anos, renovava-se o dolo em mantê-la sob condição análoga a de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todas as vezes em que Elisabeth saia de casa para fazer compras e tinha vigilância ostensiva sob seu horário de saída e de chegada, renovava-se o dolo dos acusados em mantê-la sob condição análoga a de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todas as vezes em que o direito de Elisabeth desenvolver suas relações sociais era tolhido, renovava-se o dolo de mantê-la sob condição análoga a de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É dizer: o dolo neste caso é resultado de uma sucessão de atos, que perduraram durante décadas, que visaram, ao fim e ao cabo, mantê-la em posição de submissão e de subserviência perante os desejos cotidianos dos acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Justamente por isso que também se verifica que o vínculo afetivo entre os acusados e a vítima Elisabeth não atenua a censurabilidade do comportamento daqueles.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pelo contrário, apenas a agrava.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme leciona Michael Procópio Avelar, a culpabilidade pode ser compreendida como “o juízo de censura e reprovação, que tem como base a decisão livre do agente pela prática do delito, quando havia outra opção exigível ao sujeito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Só se reprova a conduta do indivíduo que tinha capacidade de compreensão do caráter ilícito de fato e de determinar-se de acordo com esse entendimento e que, além disso, tinha potencial capacidade de compreender que aquela conduta específica violaria alguma norma penal incriminadora” (Manual de Direito Penal: volume único parte geral e parte especial. 3a Edição. São Paulo: Editora Juspodivim, 2024).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Some-se a isso, ainda, o fato de que a teoria limitada da culpabilidade, adotada pelo Código Penal, exige apenas e tão somente que a consciência da ilicitude seja potencial.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, conforme leciona Procopio \"não é necessário que o sujeito efetivamente saiba, no momento da sua atuação, que atua de forma antijurídica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Basta a potencial consciência, isto é, que se demonstre que ele possuía condições de saber que sua conduta era contrária ao que determinam as leis\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso sob apreciação, a capacidade dos acusados de compreenderem que a conduta ora imputada violaria alguma norma penal incriminadora resta comprovada quando se rememora que a acusada EDINEA OLIVEIRA JAQUEIRA DA CRUZ exercia a profissão de professora e FRANCISCO BATISTA DA CRUZ trabalhava como chefe de manutenção no Instituto Social da Bahia (ISBA), tradicional instituição de ensino desta capital.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, não estamos a tratar de dois indivíduos sem qualquer instrução educacional, que não tinham o potencial de compreender o caráter ilícito de suas condutas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pelo contrário, os dois acusados exerciam atividades laborais diretamente relacionadas à educação formal, ao ensino e, registre-se, em ambiente escolar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se pode tolerar nem normalizar uma situação como essa, muito menos admitir que em pleno século XXI os acusados não tivessem a consciência de que, ao retirarem de Elisabeth o acesso ao ensino, não estimularem a criação de novos laços sociais e afetivos pela vítima e a submeterem a diuturnos trabalhos domésticos não remunerados durante mais de 40 (quarenta) anos, não estariam incorrendo no delito de redução à condição análoga à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E nem se acene para afirmar que, à época em que a vítima Elisabeth foi entregue a família dos acusados, a entrega de crianças que viviam em um contexto de vulnerabilidade social para serem criadas por famílias mais abastadas era uma prática comum, o que escusaria ou atenuaria a culpabilidade dos réus.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A análise da culpabilidade, conforme já repetidas vezes colocado, perpassa um juízo normativo, isto é, é baseado nas normas jurídicas vigentes, e não em valores puramente éticos ou morais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, o juízo de censura tem como base a livre decisão pela prática do delito, quando havia outra opção exigível ao agente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "In casu, conforme já exposto, sobejam elementos de informação e provas que atestam a capacidade dos acusados de compreenderem o caráter ilícito de suas respectivas condutas, sobretudo quando se relembra - e isso não é nada irrelevante - que o delito perdurou durante mais de 40 (quarenta) anos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, a marcha da história somente comprova que quando o direito e a moral se imbricam, não raras as vezes, os famigerados costumes sociais são utilizados para legitimar práticas de violência contra grupos minoritários, tal qual a repugnante tese da legítima defesa da honra, recentemente declarada inconstitucional pelo Supremo Tribunal Federal no bojo da ADPF 779 e que ao longo da história legitimou milhares de feminicídios neste país.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, em um contexto de supremacia dos direitos fundamentais (e as vítimas também são titulares de direitos!), supostos costumes sociais não podem mais ser utilizados como escudo para legitimar a prática de condutas ilícitas, sobretudo quando possuem o potencial de violar bens jurídicos da mais alta envergadura, como a liberdade, o acesso à educação e a dignidade da pessoa humana.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso em apreço, todos os elementos de convicção produzidos desde a fase pré-processual, junto com as provas colhidas em juízo, cuidaram de comprovar, de maneira inconteste, que a última coisa que aconteceu a Elisabeth ao ser entregue aos acusados, foi que estes cuidaram de garantir-lhe o seu pleno desenvolvimento humano.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pelo contrário, apenas restou comprovado que o acesso a direitos básicos como o direito à educação e ao livre desenvolvimento humano não foram apenas negligenciados e tolhidos, mas também, por livre e espontânea vontade, os acusados se aproveitaram da ausência de consciência crítica da vítima para submetê-la a uma posição de subserviência no ambiente familiar ao qual foi inserida durante mais de quatro décadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Justamente por conta desse mesmo contexto no qual a vítima está inserida que a jornada exaustiva de trabalho também é de clara constatação..",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme leciona Michael Procopio Avelar, a jornada exaustiva de trabalho pode ser compreendida como aquela que chega aos limites físicos do indivíduo, correspondendo a uma carga horária de trabalho acima do suportável pelo ser humano, fora dos parâmetros da saúde do trabalho (op. cit).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A vítima Elisabete Dias Araújo trabalhava com jornada que ultrapassava, e muito!, o tempo de 08 horas diárias, porquanto lhe competia: (I) servir o café da manhã; (II) limpar a casa; (III) lavar; (IV) passar; (V) cuidar dos alunos particulares da acusada EDINEA e; (III) cuidar do neto dos acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isto tudo, relembre-se, sem nunca ter gozado férias ou repouso semanal ao longo de mais de 40 (quarenta) anos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tais constatações são confirmadas pela leitura do relatório formulado pela Superintendência Regional do Trabalho e Emprego na Bahia, que asseverou que (ID 991750653, pgs.17/19): A fiscalização constatou que Bete trabalhava com jornada exaustiva já que, diariamente, trabalhava muito mais do que 8 horas, ultrapassando bastante o limite de 44h semanais estabelecido para os trabalhadores, além de nunca ter gozado de férias.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme depoimento, Bete fazia todas as tarefas da casa (limpeza de casa e banheiros, arrumação, lavagem e passagem de roupas, além de atendimento de pedidos da família).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como se trata de vínculo de mais de 44 anos, o horário de trabalho mudou de acordo com a necessidade da família, sendo que recentemente, segundo relato de Bete, seu descanso iniciava próximo às nove horas da noite, quando gostava de assistir à novela.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Bete nunca teve jornada definida e durante todo o tempo serviu café da manhã, almoço e jantar, trabalhando durante todo o dia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se pode perder de vista, ainda, que, como bem ressaltou a auditora fiscal do trabalho Eliana Duran, em audiência, a jornada exaustiva resta configurada não apenas pelo número de horas de trabalho em si, mas também “pela supressão de diversos outros direitos relativos à jornada de trabalho que limite de alguma forma o seu convívio social ou familiar, o que foi constatado pela fiscalização” (ID 1556017354, 12 m da gravação)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, não é preciso qualquer esforço para constatar que, diante de uma jornada laboral com tantos afazeres, retirou-se por completo a possibilidade da vítima Elisabeth desenvolver laços com pessoas de fora do âmbito familiar, bem como outros vínculos afetivos e sociais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange a sujeição da vítima a condições degradantes de trabalho, o art. 7o, inciso III, da IN 139, define tais condições como: Qualquer forma de negação da dignidade humana pela violação de direito fundamental do trabalhador, notadamente os dispostos nas normas de proteção do trabalho e de segurança, higiene e saúde no trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda de acordo com a Instrução Normativa, um dos indicadores de condição degradante de trabalho é o estabelecimento de sistemas remuneratórios que, por adotarem valores irrisórios pelo tempo de trabalho, resultem no pagamento de salário base inferior ao mínimo legal, bem como o alojamento ou moradia sem condições básicas de segurança, vedação, higiene, privacidade ou conforto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, o relatório formulado pela Superintendência Regional do Trabalho e Emprego na Bahia constatou que Elisabeth sequer possuía um espaço próprio e reservado para o seu descanso noturno, sendo obrigada a dividir o mesmo quarto que dormia com outros membros da família, inclusive a neta da denunciada e o namorado dela (ID 991750653, p.19)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Some-se a isso, ainda, o fato de que Elisabeth também informou durante a fiscalização in loco que, além de dividir o quarto onde dorme com Ingrid e Francisco Neto, recentemente, o namorado de Ingrid passou a morar também na casa e a dormir neste mesmo quarto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, conforme informado por Ingrid, quando o outro tio da família desocupar o apartamento debaixo, ela (Ingrid) deve se mudar para lá com o namorado (ID 991750653, p.11)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, é de suma importância salientar que a preterição de Elisabeth em relação aos demais membros da família fica comprovada de forma patente, quando se verifica que Ingrid e o seu respectivo companheiro terão direito a se mudar para outro apartamento do mesmo edifício onde a família mora, enquanto Elisabeth continuará dividindo o mesmo quarto com a criança que figura como neta dos acusados, sem qualquer direito à privacidade, mesmo já sendo uma mulher adulta com mais de 50 (cinquenta) anos de idade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tudo isso não apenas reforça, mas sobretudo, comprova, que o papel de Elisabeth naquele contexto familiar se baseava apenas e tão somente em satisfazer as necessidades da família, onde a vítima era colocada sucessivamente em uma posição de subserviência e preterição em relação aos demais membros do seio familiar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, o fato da família ostentar condição de classe média baixa, conforme informado pela defesa em suas alegações finais, não possui o condão de escusar os acusados de promover um ambiente adequado para o descanso da vítima Elisabeth.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afinal, beira a crueldade sujeitar um indivíduo a realizar trabalhos domésticos durante mais de 40 (quarenta) anos, não lhe pagar qualquer espécie de remuneração pelo serviço prestado, retirar-lhe o acesso à educação e sequer garantir-lhe um espaço reservado para os seus momentos de descanso.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, diante do panorama fático processual acima delineado, também se verifica que não merece prosperar a alegação defensiva no sentido de que a relação entre os Denunciados e Elisabete seria uma relação paterno-filial.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afinal, conforme relatado pela própria vítima Elisabeth em audiência, ela não soube responder se a casa onde residia poderia ser considerada sua ou como apenas a casa dos acusados (ID 1556017354, 1 h 26 m)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Verifica-se, portanto, que não é preciso qualquer esforço para concluir que, em que pese a existência de vínculo afetivo entre a Elisabeth e os denunciados, tal relação estava umbilicalmente ligada a um contexto de subserviência e submissão, situação que destoa – e muito – do cenário que deve prevalecer no âmbito familiar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De igual modo, também não merece prosperar a alegação defensiva no sentido de que, Elizabete teria plena liberdade de locomoção, não havendo que se falar em manutenção ostensiva no local de trabalho, pois não era sequer necessária a utilização de qualquer meio ostensivo ou coercitivo para a manutenção de Elisabeth no âmbito onde exercia suas atividades laborais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, antes de tudo, cumpre salientar que a desnecessidade de qualquer meio ostensivo para cercear a liberdade da vítima e, por via de consequência, caracterizar o trabalho análogo ao de escravo, não é um parâmetro utilizado de forma abstrata ou arbitrária por parte deste juízo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pelo contrário.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como é de amplo conhecimento, o Estado brasileiro já foi condenado em diversas oportunidades pela Corte Interamericana de Direitos Humanos, dentre essas violações, pelo crime de trabalho escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cite-se como exemplo a condenação do Brasil no caso “Fazenda Brasil Verde VS Brasil”, oportunidade na qual o Estado brasileiro foi condenado pela prática do supramencionado delito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "quando a Corte Interamericana de Direitos Humanos asseverou que, a partir do desenvolvimento do conceito de escravidão no Direito Internacional e da proibição estabelecida no artigo 6 da Convenção Americana sobre Direitos Humanos, tal conceito evoluiu e já não se limita à propriedade sobre a pessoa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, para que reste caracterizado o delito de trabalho escravo, devem ser avaliados os seguintes elementos: a) restrição ou controle da autonomia individual; b) perda ou restrição da liberdade de movimento de uma pessoa; c) obtenção de um benefício por parte do perpetrador; d) ausência de consentimento ou de livre arbítrio da vítima, ou sua impossibilidade ou irrelevância devido à ameaça de uso da violência ou outras formas de coerção, o medo de violência, fraude ou falsas promessas; e) uso de violência física ou psicológica; f) posição de vulnerabilidade da vítima; g) exploração (CORTE INTERAMERICANA DE DIREITOS HUMANOS.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Caso Trabalhadores da Fazenda Brasil Verde Vs. Brasil. Sentença de 20 de outubro de 2016. Disponível em file:///G:/Artigo/Sentenca_Fazenda_Brasil_Verde.pdf.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Acesso em 06.04.2024).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso sob julgamento, todos os requisitos elencados pela Corte Interamericana de Direitos Humanos ficaram comprovados, e de modo inconteste.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A restrição ou controle da autonomia individual está perfeitamente delineada, a partir das evidências de que Elisabeth não sabia ler, escrever e tampouco recebia qualquer espécie de salário pelo trabalho prestado na residência dos acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Forçoso concluir, portanto, que a vítima estava inserida involuntariamente em um contexto de restrição e controle da autonomia individual, na medida em que não tinha nenhuma alternativa para evadir-se do ambiente no qual estava colocada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Consequentemente, a perda ou restrição da liberdade de movimento da vítima também está configurada, ante a impossibilidade de Elisabeth evadir-se do ambiente de trabalho análogo á de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Já a obtenção de um benefício por parte do perpetrador ficou caracterizada ante as vantagens obtidas pelos acusados como decorrência direta dos serviços domésticos prestados por Elisabeth ao longo de mais de 40 (quarenta) anos sem nenhuma contraprestação pecuniária.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A ausência de consentimento ou de livre arbítrio da vítima mostra-se evidenciada pelas declarações prestadas por ela em audiência, a exemplo de quando afirmou que não tinha a alternativa de não realizar as tarefas domésticas da casa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O uso de violência psicológica também se prova pela leitura do Relatório da Superintendência Regional do Trabalho, que atestou que “Edinea não a deixava sair, não diz o motivo de não permitir” (ID 991750653, p.12)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A posição de vulnerabilidade da vítima está configurada de modo inconteste diante da constatação do seu analfabetismo, da ausência de contraprestação pecuniária e da total inexistência de outras relações sociais que poderiam, porventura, ser utilizadas como alternativas para evadir-se do ambiente no qual foi involuntariamente inserida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A exploração também ficou comprovada ante a jornada exaustiva de trabalho desenvolvida pela vítima, que cumulava, além das funções relativas ao cuidado da casa, a função de também cuidar do neto dos acusados e dos alunos das aulas particulares prestadas pela acusada EDINEA OLIVEIRA JAQUEIRA DA CRUZ.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Feitas essas considerações, força concluir que, mesmo sem a existência de qualquer barreira física (como correntes ou muros), Elisabeth estava completamente impossibilitada de evadir-se do ambiente no qual foi inserida, na medida em que lhe foram retiradas todas as possibilidades de adquirir a sua independência educacional e financeira, sob o pretexto de que a vítima gostava de auxiliar nos serviços domésticos e que todos a consideravam como “se fosse da família”, o que na verdade, não passava de uma grande armadilha para mantê-la vinculada ao ambiente de subserviência e servidão ao qual foi involuntariamente inserida desde à infância.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Prova maior disso não há do que quando se verifica que Elisabeth desenvolveu extrema dependência emocional e financeira da família, em razão de não conhecer absolutamente mais ninguém fora do contexto familiar, conforme se verifica pela leitura do Relatório da Superintendência Regional do Trabalho:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Bete não saía para passear sem a família, só saía sozinha da casa para comprar pão ou algum mantimento nas proximidades, mas não podia demorar pois, se não, D. Edinea reclamava.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo informações prestadas em seu depoimento, Bete nunca saiu sozinha, nem domingo, nem feriado, nem nunca tirou férias, só saía com a família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Disse que Edinea não a deixava sair, não diz o motivo de não permitir (ID 991750653, p.12).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Some-se a isso, ainda, que, nenhuma das testemunhas arroladas pela defesa cuidou de apontar uma situação sequer onde Elisabeth teria sido vista nas proximidades da região onde residia com os acusados realizando tarefas que não estivessem relacionadas com os afazeres do lar, o que não apenas denota, mas sobretudo comprova, a ausência de liberdade de locomoção da vítima ante a sua total dependência emocional, financeira e social para com os acusados (ID 1730592089).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, sobreleva notar que o discurso, tão presente nos autos, de que Elisabeth era considerada “como se fosse da família”, se mostra há séculos enraizado na cultura brasileira.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em um período não tão distante da História nacional, mais especificamente antes da abolição da escravatura, com a Lei n. 3353, de 13 de maio de 1888, a famosa Lei Áurea, era comum que as famílias mais abastadas ostentassem em suas casas as figuras das “mucamas”, compostas por jovens escravas que ajudavam as sinhás nos serviços caseiros e que também acompanhavam a dona da casa em passeios, podendo ser, ainda, ama de leite dos filhos da família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Após a extinção da escravatura, ante a inexistência de qualquer direito que garantisse um mínimo existencial em relação àqueles que outrora sequer eram sujeitos de direitos, não se tornou incomum que jovens de origem humilde fossem criados por famílias abastadas em troca destes “auxiliarem nos serviços domésticos”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O resultado dessa cultura de subserviência foi a criação da expressão de que esses sujeitos eram “como se fossem da família”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia, esses sujeitos que eram considerados como se fossem das famílias, não raras vezes, tinham acesso à educação e a outros direitos básicos muito aquém dos demais membros consanguíneos do seio familiar, tal qual a vítima desta ação penal, Elisabeth.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em verdade, foi justamente por conta dessas situações pretéritas, mas extremamente similares à de Elisabeth, que a doutrina constitucional passou por sucessivos avanços, até chegar ao atual estágio do neoconstitucionalismo, corrente que se baseia na incorporação explícita em seus textos de valores, especialmente aqueles associados à promoção da dignidade da pessoa humana e dos direitos fundamentais, que passaram a transitar por todos os setores da vida política e social do Estado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Prova maior disso não há do que os mandamentos constitucionais explicitados no art. 3o, II, III da CF/88, que preveem expressamente que constituem objetivos fundamentais da República Federativa do Brasil “construir uma sociedade livre, justa e solidária” e “promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, também foi incumbido ao Poder Judiciário, quando constatada uma lesão a direito de terceiro, promover a justa e equânime resposta ao direito violado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante da comprovação inequívoca do delito imputado aos acusados, este Juízo não poderá olvidar-se em encerrar o presente comando sentencial sem deixar de dirigir-se à vítima, Elizabeth, e dizer-lhe que tome para si sua liberdade inalienável e intangível por sinhás ou por casas grandes ou pequenas, porque essa liberdade é somente sua, e são seus, apenas seus, os sonhos que insistem em florescer a despeito de uma longa vida de tolhimentos e de frustrações do exercício do direito de ser pessoa humana.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, CONDENO os acusados EDNÉIA OLIVEIRA JAQUEIRA DA CRUZ e FRANCISCO BATISTA DA CRUZ, pela prática do delito previsto no art. 149, caput, do Código Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Atento aos comandos dos artigos 59 e 68 do Código Penal, passo a dosar as penas aplicadas aos réus, individualmente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "EDNÉIA OLIVEIRA JAQUEIRA DA CRUZ Inicialmente, para a fixação da pena-base, cabe analisar as circunstâncias judiciais do art. 59 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade – compreendida como o grau de censura ou juízo de reprovação social que o crime e o autor do fato merecem – não merece ser majorada para não incorrer em bis in idem em relação as circunstâncias e as consequências do delito.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há antecedentes aptos a ensejar uma dosagem adversa da pena.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações a respeito da conduta social e da personalidade da ré, que, assim, não podem ser computadas como circunstâncias judiciais favoráveis ou desfavoráveis.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O motivo não foi declinado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No que tange às circunstâncias em que o crime foi praticado, elas merecem especial reprovação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Primeiro porque, quando se analisa o lugar do crime, o tempo de sua duração, a atitude assumida pela acusada e o modus operandi delitivo empregado, todos esses elementos demandam uma maior censurabilidade da conduta.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com efeito, o crime foi cometido dentro do seio familiar, local este que deveria ser considerado o principal exemplo de acolhimento e proteção a um indivíduo.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No caso dos autos, o ambiente familiar foi utilizado como mero pretexto para Elisabeth ser posta em posição de subserviência e servidão à acusada ao longo de toda a sua vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Tal fato se torna ainda mais grave quando se relembra que Elisabeth foi entregue ainda criança à acusada para que ela garantisse o adequado desenvolvimento humano da vítima, o que não aconteceu, conforme restou exaustivamente comprovado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Forçoso concluir, portanto, que a acusada se utilizou da condição de vulnerabilidade da qual Elisabeth adveio, para impor-lhe, de forma sub-reptícia, a realização das tarefas domésticas na residência onde a vítima viveu durante mais de 40 (quarenta) anos, razão pela qual as circunstâncias em que o delito praticado devem ser especial e negativamente valoradas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências do crime também se afiguram como demasiadamente gravosas, merecendo especial reprovação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Afinal, os efeitos deletérios da conduta da acusada se apresentam como incalculáveis para a vítima, a exemplo da ausência do acesso à educação, a outras relações sociais e afetivas que marcaram a vida de Elisabeth.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nesse contexto, não é preciso nenhum esforço para concluir que Elisabeth não vivenciou uma série de experiências fundamentais para o adequado desenvolvimento humano.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Elisabeth não desfrutou adequadamente da infância, não compartilhou de experiências essenciais para o desenvolvimento da maturidade e tampouco teve a oportunidade de optar pelos caminhos que desejava seguir ao longo da sua vida, razão pela qual os prejuízos do delito à vítima se afiguram como incalculáveis.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Elisabeth também não teve a oportunidade de vivenciar um grande amor em sua vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Perdeu sua mocidade trancafiada em um apartamento, cozinhando, passando e lavando, enquanto todos os seus irmãos tomaram seus respectivos rumos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há como dimensionar a perda de quase meio século de existência vividos quase que inteiramente dentro de um apartamento, convivendo apenas com os mesmos indivíduos, sem nunca ter experimentado verdadeiramente o sabor da liberdade e a beleza da vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em verdade, não há pena corpórea, tampouco prestação pecuniária, que repare integralmente mais da metade de uma vida dedicada única e exclusivamente a servir aos desejos cotidianos daqueles que prometeram lhe proporcionar uma criação digna.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, por conta das razões acima expostas, verifica-se que a referida circunstância judicial deve ser especialmente majorada.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há o que ser valorado sobre o comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando, portanto, que duas das circunstâncias judiciais do art. 59 do CP são desfavoráveis à acusada, fixo a pena-base no mínimo legal em 3 (três) anos e 05 (cinco) meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico estar presente a circunstância agravante prevista no art.61, inciso II, alínea f do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Neste ponto, cumpre salientar que, conforme é amplamente aceito na doutrina, a presente circunstância agravante aplica-se aos casos de de abuso cometidos entre membros da própria família e também aos empregadores e empregados.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão disso, majoro a pena em 1/6 e fixo-a em 4 (quatro) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstância atenuante que mereça exame.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há causas de aumento ou de diminuição a serem analisadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sendo assim, fixo a pena definitivamente em 04 (quatro) anos de reclusão e 97 (noventa e sete) dias-multa, cada um no equivalente a 1/30 (um trigésimo) do salário-mínimo vigente ao tempo do fato delituoso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em consonância com o disposto no art. 33, § 2o, alínea “c”, do CP, aliado à existência de circunstâncias judiciais favoráveis, a ré deverá cumprir a pena privativa de liberdade em regime aberto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Entretanto, uma vez que se encontram preenchidos os requisitos do art. 44, inc. I, do CP, substituo a pena privativa de liberdade por duas restritivas de direitos (art. 44, § 2o, do CP), quais sejam: a) prestação de serviço à comunidade ou a entidades públicas à razão de 1 (uma) hora por dia ou 7 (sete) horas por semana, pelo tempo que durar a condenação (art. 46, § 3o, do CP) e a ser especificada, quanto a seu local de execução, pela CEAPA; e b) prestação pecuniária, no valor de 2 (dois) salários-mínimos, em proveito de entidade assistencial a ser especificada pela CEAPA.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "FRANCISCO BATISTA DA CRUZ Inicialmente, para a fixação da pena-base, cabe analisar as circunstâncias judiciais do art. 59 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade – compreendida como o grau de censura ou juízo de reprovação social que o crime e o autor do fato merecem – não merece ser majorada para não incorrer em bis in idem em relação as circunstâncias e as consequências do delito.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há antecedentes aptos a ensejar uma dosagem adversa da pena.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações a respeito da conduta social e da personalidade do réu, que, assim, não podem ser computadas como circunstâncias judiciais favoráveis ou desfavoráveis.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O motivo não foi declinado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No que tange às circunstâncias em que o crime foi praticado, elas merecem especial reprovação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Primeiro porque, quando se analisa o lugar do crime, o tempo de sua duração, a atitude assumida pela acusada e o modus operandi delitivo empregado, todos esses elementos demandam uma maior censurabilidade da conduta.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com efeito, o crime foi cometido dentro do seio familiar, local este que deveria ser considerado o principal exemplo de acolhimento e proteção a um indivíduo.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No caso dos autos, o ambiente familiar foi utilizado como mero pretexto para Elisabeth ser posta em posição de subserviência e servidão à acusada ao longo de toda a sua vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Tal fato se torna ainda mais grave quando se relembra que Elisabeth foi entregue ainda criança à acusada para que ela garantisse o adequado desenvolvimento humano da vítima, o que não aconteceu, conforme restou exaustivamente comprovado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Forçoso concluir, portanto, que a acusada se utilizou da condição de vulnerabilidade da qual Elisabeth adveio, para impor-lhe, de forma sub-reptícia, a realização das tarefas domésticas na residência onde a vítima viveu durante mais de 40 (quarenta) anos, razão pela qual as circunstâncias em que o delito praticado devem ser especial e negativamente valoradas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências do crime também se afiguram como demasiadamente gravosas, merecendo especial reprovação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Afinal, os efeitos deletérios da conduta da acusada se apresentam como incalculáveis para a vítima, a exemplo da ausência do acesso à educação, a outras relações sociais e afetivas que marcaram a vida de Elisabeth.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nesse contexto, não é preciso nenhum esforço para concluir que Elisabeth não vivenciou uma série de experiências fundamentais para o adequado desenvolvimento humano.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Elisabeth não desfrutou adequadamente da infância, não compartilhou de experiências essenciais para o desenvolvimento da maturidade e tampouco teve a oportunidade de optar pelos caminhos que desejava seguir ao longo da sua vida, razão pela qual os prejuízos do delito à vítima se afiguram como incalculáveis.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Elisabeth também não teve a oportunidade de vivenciar um grande amor em sua vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Perdeu sua mocidade trancafiada em um apartamento, cozinhando, passando e lavando, enquanto todos os seus irmãos tomaram seus respectivos rumos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há como dimensionar a perda de quase meio século de existência vividos quase que inteiramente dentro de um apartamento, convivendo apenas com os mesmos indivíduos, sem nunca ter experimentado verdadeiramente o sabor da liberdade e a beleza da vida.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em verdade, não há pena corpórea, tampouco prestação pecuniária, que repare integralmente mais da metade de uma vida dedicada única e exclusivamente a servir aos desejos cotidianos daqueles que prometeram lhe proporcionar uma criação digna.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, por conta das razões acima expostas, verifica-se que a referida circunstância judicial deve ser especialmente majorada.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há o que ser valorado sobre o comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando, portanto, que duas das circunstâncias judiciais do art. 59 do CP é desfavorável ao acusado, fixo a pena-base no mínimo legal em 3 (três) anos e 05 (cinco) meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico estar presente a circunstância agravante prevista no art.61, inciso II, alínea f, do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Neste ponto, cumpre salientar que, conforme é amplamente aceito na doutrina, a presente circunstância agravante aplica-se aos casos de de abuso cometidos entre membros da própria família e também aos empregadores e empregados.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão disso, majoro a pena em 1/6 e fixo-a em 4 (quatro) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstância atenuante que mereça exame.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há causas de aumento ou de diminuição a serem analisadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sendo assim, fixo a pena definitivamente em 04 (quatro) anos de reclusão e 97 (noventa e sete) dias-multa, cada um no equivalente a 1/30 (um trigésimo) do salário-mínimo vigente ao tempo do fato delituoso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em consonância com o disposto no art. 33, § 2o, alínea “c”, do CP, aliado à existência de circunstâncias judiciais favoráveis, o réu deverá cumprir a pena privativa de liberdade em regime aberto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Entretanto, uma vez que se encontram preenchidos os requisitos do art. 44, inc. I, do CP, substituo a pena privativa de liberdade por duas restritivas de direitos (art. 44, § 2o, do CP), quais sejam: a) prestação de serviço à comunidade ou a entidades públicas à razão de 1 (uma) hora por dia ou 7 (sete) horas por semana, pelo tempo que durar a condenação (art. 46, § 3o, do CP) e a ser especificada, quanto a seu local de execução, pela CEAPA; e b) prestação pecuniária, no valor de 2 (dois) salários-mínimos, em proveito de entidade assistencial a ser especificada pela CEAPA.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "DA PERDA DO IMÓVEL DESTINADO À EXPLORAÇÃO DE TRABALHO ANÁLOGO À DE ESCRAVO Conforme se verifica pela leitura do art. 243 da Consstituição, as propriedades rurais e urbanas de qualquer região do País onde forem localizadas culturas ilegais de plantas psicotrópicas ou a exploração de trabalho escravo na forma da lei serão expropriadas e destinadas à reforma agrária e a programas de habitação popular, sem qualquer indenização ao proprietário e sem prejuízo de outras sanções previstas em lei.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "No caso dos autos, verifica-se que o crime de redução a condição análoga à de escravo ocorreu no imóvel onde a vítima Elisabeth residia com os sentenciados, localizad a Rua Miguel Lemos, 129, Federação, Salvador/BA, CEP 40.230-650 (ID 991750653, p.04).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Desse modo, tendo em vista o mandamento constitucional que ostenta força de efeito da condenação, decreto a perda e consequente expropriação do imóvel localizado na Rua Miguel Lemos, 129, Federação, Salvador/BA, CEP 40.230-650, para que seja destinado a programa de habitação popular após o trânsito em julgado da presente sentença penal condenatória.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "DISPOSIÇÕES FINAIS Havendo o trânsito em julgado, lance-se o nome dos réus no “Livro Rol dos Culpados”; comunique-se a Justiça Eleitoral, para que proceda conforme o art. 15, inc. III, da Constituição Federal; e recolham-se os valores relativos à pena pecuniária, nos termos do art. 50 do CP e 686 do CPP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Concedo aos acusados o direito de recorrerem em liberdade, haja vista a substituição da pena privativa de liberdade que lhes foi aplicada, e o fato de que não se encontra presente, in casu, qualquer das hipóteses que autorizam a prisão provisória.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Determino que a secretaria deste Juízo encaminhe cópia da presente sentença para perícia contábil para que o expert determine o montante devido pelos culpados, tendo em vista as sucessivas alterações das moedas correntes que vigeram durante o período em que a vítima foi submetida ao delito ora sentenciado.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Condeno os réus ao pagamento das custas processuais devidas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Com fundamento no art. 201, §2o, do CPP, encaminhe-se pessoalmente cópia da presente sentença à vítima.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Neste ponto, tendo em vista a notícia de que a vítima não sabe ler, deverá o oficial de Justiça ler de maneira adequada, didática e compatível o presente comando sentencial para a vítima ante o seu desconhecimento da linguagem jurídica.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Encaminhe-se cópia da presente sentença para a Superintendência Regional do Trabalho e Emprego na Bahia.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Publique-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Salvador, BA, data registrada no sistema.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "FÁBIO MOREIRA RAMIRO JUIZ FEDERAL TITULAR",
+      "label": "OUTROS"
+    }
+  ]
+}

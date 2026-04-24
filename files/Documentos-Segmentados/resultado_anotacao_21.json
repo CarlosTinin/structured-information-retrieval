@@ -1,0 +1,139 @@
+{
+  "index": 20,
+  "doc_id": 20,
+  "total_sentencas": 33,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSeção Judiciária da Bahia \n17a Vara Federal Criminal da SJBA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1062849-48.2022.4.01.3300 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:AGRIPINO MARTINS CARVALHO e outros \nREPRESENTANTES POLO PASSIVO: LUCIA MARIA PALMEIRA FERREIRA AROUCA - BA6612",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I - RELATÓRIO \n\nO Ministério Público Federal ofertou denúncia contra AGRIPINO MARTINS CARVALHO, filho de \nAgripino Carvalho e Ilma Rosalia Martins Carvalho, nascido em 28/10/1977, CPF no 920.373.485-68, RG\n721441220, SSP-BA, CNH no 02217750810, residente na Rua Dez de Janeiro, no 12, bairro Pernambués, CEP\n41110-030, Salvador/BA e AGRIPINO CARVALHO, nascido em 20/10/1944, CPF no 027.042.005-30, CNH no\n02593782991, RG 86379208, SSP-BA, residente na Rua João Vieira Lopes, 68, Valéria, CEP 41301620,\nSalvador/BA, imputando-lhes a prática do crime previsto no artigo 149 do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Segundo a peça inicial acusatória, no dia 02/08/2022, o Ministério Público do Trabalho nesta \ncapital recebeu a informação de que havia dois trabalhadores na unidade policial da PRF em Simões Filho\nrelatando que estavam sem dinheiro para voltar para casa após serem expulsos de uma fazenda. A informação\nfoi de que os trabalhadores estavam submetidos a condições degradantes nesse trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A equipe de fiscalização dirigiu-se até o local. Na fazenda, guiada pela vítima Anelito Santos \nReges, encontrou AGRIPINO MARTINS CARVALHO, proprietário, e Etevam Ferreira de Jesus, trabalhador e\nconstatou que AGRIPINO MARTINS CARVALHO e AGRIPINO CARVALHO reduziam trabalhadores à\ncondição análoga a de escravo, sujeitando-os a condições degradantes de trabalho e jornadas exaustivas.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 15.11.2022. (Id. 1395178260)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Regularmente citados e intimados, os acusados AGRIPINO MARTINS CARVALHO e \nAGRIPINO CARVALHO apresentaram resposta à acusação (Id. 1542292358). Não arguiram preliminar nem\nprefacial de mérito. Reservaram-se para discutir o mérito da acusação em sede de alegações finais. Não\narrolaram testemunhas.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Audiência de instrução realizada em 14.11.2023, momento em que foram colhidos os \ndepoimentos das testemunhas presentes e o interrogatório dos denunciados, na forma do art. 186 do CPP e\nart. 5o, LXIII, da CF/88, conforme arquivo audiovisual em separado, juntado aos autos.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em alegações finais, o Ministério Público Federal requereu o acolhimento da pretensão \nacusatória (Id. 1991532650).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa, por sua vez, requereu sua absolvição, ou aplicação de medidas cautelares, e o direito \nde apelar em liberdade (Id. 2086073647).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. Decido.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "II - FUNDAMENTAÇÃO \n\nDA MATERIALIDADE E AUTORIA DELITIVAS \n\nAs provas constantes nos autos, produzidas pela Superintendência Regional do Trabalho e \nEmprego na Bahia (Id. 1334060788), na fase de inquérito policial e durante a instrução perante este juízo (Id.\n1813527187 e 1940660185) apontam suficientes elementos de materialidade e autoria do crime objeto da\ndenúncia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A fiscalização realizada demonstrou que AGRIPINO MARTINS CARVALHO e AGRIPINO \nCARVALHO praticaram o tipo penal elencado no art. 149 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A IN 2/2021, art. 24, III, do Ministério do Trabalho e Previdência, conceitua condição degradante \nde trabalho como qualquer forma de negar dignidade humana, por meio de violação de direitos fundamentais\ndo trabalhador, notadamente os dispostos nas normas de proteção do trabalho e de segurança, higiene e\ntrabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os fatos narrados na investigação convergem com os indicadores de sujeição de trabalho sob \ncondições degradantes, tais como: não disponibilização de água potável, ausência de condições higiênicas ou\nem quantidade insuficiente para o trabalhador no local de trabalho ou alojamento; ausência de recipiente para\narmazenamento adequado de água, instalações sanitárias que não asseguravam higiene, inexistência de local\napropriado para preparo de alimentos, entre outros aspectos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Os empregados Shirlei Barros Santana e Anelito Santos Reges e o ex-empregado Ailton Luiz \nRocha, foram ouvidos pela equipe de fiscalização SRT BA, e confirmaram tais alegações.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Shirlei chegou ao local para morar e trabalhar com seu marido, tendo relatado que:\n\n“a casa que morava era de bloco, rebocada, com rachaduras, sem tranca na porta, e apenas \numa lâmpada; que o banheiro possuía uma rachadura que dava para ver a pista, pisos \nquebrados, sem descarga no vaso e a água é de poço; que por ter a rachadura, para tomar \nbanho, o seu companheiro ficava vigiando, pois quem estava do outro lado poderia ver: que a \ncasa possui dois banheiros; que o outro banheiro era usado por Edevan e Barbudo; que esse \nbanheiro não possuía água nem chuveiro; que Barbudo utilizava a parte externa para fazer as \nnecessidades, pois não tinha água; que o vaso que havia estava com muitas crostas e Barbudo \ntrocou por outro que encontrou na fazenda; que a água fornecida era do poço; que fervia a \nágua para beber; que não havia fogão na fazenda; que usava o fogo a lenha; que a casa não tinha \nnada, somente o fogão a lenha, os pallets e um colchão bem fino de acampamento; que esse \ncolchão foi dado por Barbudo, pois teve pena deles; que enquanto não tinha colchão dormiam \nem cima do pallet puro; que Barbudo dorme na rede; que Edevan dorme em uma cama tipo \nhospital, a qual era de uma casal que morou na fazenda anteriormente; que ao chegarem na \nfazendo o empregador não deu nenhum valor para a depoente e seu marido; que como o \nmarido contou que não deram a cestas básicas, a depoente já levou um pouco de comida para \nprevenir; que quando acabou essa comida que levou, o empregador vendeu a eles uma peça de \nbacon que tinha passado 01 ano da validade, conforme viu na embalagem; que pagaram \nR$50,00 pela peça de bacon; que por medo de perder o emprego aceitaram qualquer coisa; que \ncomeram o bacon vencido após esquentarem no fogão a lenha; que a roupa de cama foi a \ndepoente que levou; que a depoente levou sabonete para a fazenda... que seu companheiro \ninformou que iria conversar com o empregador, pois do jeito que estava não teria como ficar; \nque pediu para seu companheiro para aguentar um pouco mais pois tinha a casa para \nreformar...” (Id. 1334060788, fls. 9-12).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Além disso, sobre a jornada exaustiva e irregularidades nos pagamentos, relatou que:\n\n“neste período que trabalhou lá o esposo da depoente somente recebeu R$220,00; que seu \nmarido trabalhava inclusive dia de domingo... que o empregador vende a eles banha (R$10,00),\ncalabresa (R$25,00), bacon (R$50,00) e dois pacotes de café (R$20,00); que todos esses \nprodutos eram vencidos; que esses valores não eram anotados; que esses valores já foram \ndescontados; que algumas vezes o esposo pegou os ovos de pato e ganso para comer \nescondido; que esses ovos ficavam na chocadeira e o empregador proibia de pegar ... que \ntambém descontou do marido (R$50,00) por uma panela usada que estava utilizando para \ncozinhar no fogão a lenha; que o esposo da declarante começava a trabalhar às 05:00 da \nmanhã; que às vezes terminava o trabalho às 17:00; que o esposo tinha que fazer rondas na \nfazenda; que a ronda era feita todos os dias às 23:00 e 01:00; que essa ronda era feita com o \nuso da lanterna; que a depoente disse para o esposo que não era mais para fazer essa ronda, \npois era arriscado; que a depoente ou Barbudo o acompanhavam; que essas rondas também \neram aos domingos; que como o empregador passava muitas atividades, o esposo da depoente \nnunca conseguia terminar o serviço, tendo que trabalhar no descanso; que o empregador não \npagava o valor extra e informava que só receberia se terminasse de fazer todos os serviços , o \nque não conseguia por serem muitas tarefas”.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Já Ailton Luiz Santos Rocha, que também trabalhou na Fazenda Limeira aduziu que as \ncondições degradantes de trabalho eram de responsabilidade não apenas de AGRIPINO MARTINS\nCARVALHO, mas também de seu pai AGRIPINO CARVALHO. Nesse sentido complementa:\n\n“trabalhou por um mês; que não dá para trabalhar mais que um mês, que é muita humilhação; \nque diziam que tinha uma casa, mas aquilo não era uma casa; que era horrível, que na primeira \nsemana foi só; que nessa primeira noite dormia em um móvel (uma espécie de bicama) tipo \nsofá, sem colchão; que descia para roçar; que quando dava problema na bomba tinha que \nmergulhar no lago para mexer na bomba; que não davam água; que mandavam beber do lago, \nmas o depoente se recusava pois não confiava na água e bebia água que Simone levava; que \nos animais bebiam água desse lago; que o alojamento tinha um banheiro sem piso e o vaso não \ntinha descarga, tinha que jogar água com um balde; que enchia o balde com água do tubo que \nservia de chuveiro; que a água era fria; que não tinha geladeira; que sua esposa cozinhava no \nforno a lenha; que era o depoente que preparava a lenha ao redor de blocos no chão, colocando \numa grelha em cima dos blocos para cozinhar; (...); que Agripino pai o chamava de filho da puta; \nque teve um dia que morreu uma porca grandona e Agripino pai queria que o depoente \nquebrasse 8 um murinho de bloco; que nessa hora estava roçando com foice e ele gritou “você \nestá aqui para trabalhar”, xingou de filho da puta e o mandou embora porque o depoente se \nrecusou a fazer a outra função de derrubar o muro; que arrumou suas coisas e foi andando, com \num peso retado; com sua esposa e filha; que da sua fazenda até a pista dá mais ou menos meia \nhora” (id 1334060788, fls. 63/64).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O relato dos trabalhadores de que trabalhavam de domingo a domingo, sem descanso regular, \nrondas noturnas e exigência de cumprimento de atividades que demandam tempo maior que a jornada\nconvencional, caracteriza claro excesso de horas trabalhadas sobrepondo aos trabalhadores à exaustão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação a AGRIPINO CARVALHO, genitor de AGRIPINO MARTINS CARVALHO, quando \nouvido pela fiscalização, afirmou ser proprietário da Fazenda Limeira e que comparecia ao local durante quatro\nou cinco dias por semana, e em determinadas semanas, todos os dias. Relatou que Anelito trabalhou na\nfazenda e dormia no local juntamente com Shirlei, sua esposa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, observa-se o preenchimento do tipo penal do art. 149 do CP. Ademais, cumpre \nsalientar que tal crime pode ocorrer independentemente da restrição à liberdade de locomoção dos\ntrabalhadores, uma vez que essa prática constitui apenas uma das formas de cometimento. No referido tipo há\nprevisão de condutas como ofensa a autodeterminação do individuo e sujeição a condições indignas de\ntrabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Consoante a isso, no próprio tipo penal o elenco das condutas alternativas previstas de forma \nisolada subsume-se ao crime de redução análoga à de escravo, tratando-se portanto de crime\nplurissubsistente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em conclusão, a responsabilidade criminal de AGRIPINO MARTINS CARVALHO e AGRIPINO \nCARVALHO se torna evidente a partir da confirmação da propriedade e gestão da Fazenda Limeira. Somado a\nisso, frise-se que os dois denunciados foram mencionados nos relatos transcritos na denúncia como\nresponsáveis por condutas que caracterizam a imposição de jornada excessiva de trabalho e ofensas aos\nempregados, além de serem responsáveis pelas instalações da fazenda e pelas demais condições\ndegradantes de trabalho, incluindo moradia, higiene e saúde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, ambos os réus foram responsáveis pela contratação e pelas condições impostas às \nvítimas. Conforme se constatou a partir do depoimento de Ailton Luiz Santos Rocha, Antônio Carlos da\nConceição de Araújo e Sérgio de Jesus Machado, os denunciados eram os proprietários da fazenda e\ncuidavam da administração dos funcionários.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa senda, AGRIPINO CARVALHO, e AGRIPINO MARTINS CARVALHO, com dolo, de \nforma livre e consciente e voluntária praticaram o tipo penal descrito no art. 149, do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "III - DISPOSITIVO \n\nAnte o exposto, julgo PROCEDENTE o pedido para condenar os acusados AGRIPINO \nMARTINS CARVALHO e AGRIPINO CARVALHO às penas do art. 149, caput, do Código Penal Brasileiro.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "IV - DOSIMETRIA \n\nPasso a dosar-lhes a pena. \n\nAGRIPINO MARTINS CARVALHO \n\na) a culpabilidade é normal à espécie, nada tendo a valorar; \n\nb) quanto aos antecedentes, o denunciado não possui antecedentes criminais. \n\nc) não existem nos autos elementos suficientes à aferição da conduta pessoal e \npersonalidade dos agentes, portanto deixo de valorá-la;\n\nd) não há evidências, nos autos, que desabonem os motivos que ensejaram o cometimento do \ndelito;\n\ne) as circunstâncias do crime se encontram relatadas nos autos, nada tendo a se valorar;\n\nf) as consequências do delito são normais à espécie, nada tendo a se valorar com fator extra \npenal;\n\ng) o comportamento da vítima não contribuiu para o evento criminoso. \n\nCom lastro nas circunstâncias judiciais analisadas fixo a pena-base no mínimo legal em 02 \n(dois) anos de reclusão e 10 dias-multa, no valor de 1/30 do salário mínimo vigente à época dos fatos,\ndevidamente corrigidos. \n\nSem atenuantes. Sem agravantes. \n\nNão há causas de diminuição de pena. Há causa de aumento de pena, consistente na regra de \ncrime continuado, haja vista a pluralidade de vítimas (Ailton Luiz Santos Rocha, Shirlei Barros Santana e\nAnelito Santos Reges), razão pela qual majoro em um 1/5 a pena aplicada (súmula 659 do STJ), razão pela\nqual torno definitiva a pena de 2 (dois) anos, 03 (três) meses e 29 (vinte e nove) dias de reclusão, e 12\n(doze) dias-multa, no valor de 1/30 do salário mínimo vigente à época dos fatos, com a devida correção para\no delito em análise. \n\nAdemais, faz jus aos requisitos do art. 44, incisos I a III do CP, com redação dada pela Lei no \n9.714 de 25 de novembro de, de modo que SUBSTITUO somente a pena privativa de liberdade aplicada por\nduas penas restritivas de direitos, consistentes em prestação de serviço à comunidade ou a entidades públicas,\nconforme suas aptidões, por prazo idêntico ao da pena privativa de liberdade, a ser disciplinada quando da\nexecução do julgado (artigo 44, § 2o, do CPB) e prestação pecuniária, ora arbitrada em 03 (três) salários\nmínimos. Tal importância deverá ser paga a entidade pública ou privada com destinação social, na forma a ser\ndisciplinada na fase de execução (art. 44, § 2o, in fine, do CP). \n\nCaso se faça necessária, a execução da pena privativa de liberdade, com base na pena de \nreclusão, fixo o regime aberto para início do cumprimento da pena, com fundamento no art. 33, § 2o, “c” e §3o,\ndo Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "AGRIPINO CARVALHO \n\n\na) a culpabilidade é normal à espécie, nada tendo a valorar; \n\nb) quanto aos antecedentes, o denunciado não possui antecedentes criminais. \n\nc) não existem nos autos elementos suficientes à aferição da conduta pessoal e \npersonalidade dos agentes, portanto deixo de valorá-la;\n\nd) não há evidências, nos autos, que desabonem os motivos que ensejaram o cometimento do \ndelito;\n\ne) as circunstâncias do crime se encontram relatadas nos autos, nada tendo a se valorar;\n\nf) as consequências do delito são normais à espécie, nada tendo a se valorar com fator extra \npenal;\n\ng) o comportamento da vítima não contribuiu para o evento criminoso. \n\nCom lastro nas circunstâncias judiciais analisadas fixo a pena-base no mínimo legal em 02 \n(dois) anos de reclusão e 10 dias-multa, no valor de 1/30 do salário mínimo vigente à época dos fatos,\ndevidamente corrigidos. \n\nSem atenuantes. Sem agravantes. \n\nNão há causas de diminuição de pena. Há causa de aumento de pena, consistente na regra de \ncrime continuado, haja vista a pluralidade de vítimas (Ailton Luiz Santos Rocha, Shirlei Barros Santana e\nAnelito Santos Reges), razão pela qual majoro em um 1/5 a pena aplicada (súmula 659 do STJ), razão pela\nqual torno definitiva a pena de 2 (dois) anos, 03 (três) meses e 29 (vinte e nove) dias de reclusão, e 12\n(doze) dias-multa, no valor de 1/30 do salário mínimo vigente à época dos fatos, com a devida correção para\no delito em análise. \n\nAdemais, faz jus aos requisitos do art. 44, incisos I a III do CP, com redação dada pela Lei no \n9.714 de 25 de novembro de, de modo que SUBSTITUO somente a pena privativa de liberdade aplicada por\nduas penas restritivas de direitos, consistentes em prestação de serviço à comunidade ou a entidades públicas,\nconforme suas aptidões, por prazo idêntico ao da pena privativa de liberdade, a ser disciplinada quando da\nexecução do julgado (artigo 44, § 2o, do CPB) e prestação pecuniária, ora arbitrada em 03 (três) salários\nmínimos. Tal importância deverá ser paga a entidade pública ou privada com destinação social, na forma a ser\ndisciplinada na fase de execução (art. 44, § 2o, in fine, do CP). \n\nCaso se faça necessária, a execução da pena privativa de liberdade, com base na pena de \nreclusão, fixo o regime aberto para início do cumprimento da pena, com fundamento no art. 33, § 2o, “c” e §3o,\ndo Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "V - DISPOSIÇÕES COMUNS \n\nAusentes os requisitos da prisão preventiva, os réus poderão recorrer em liberdade, uma vez \nque assim permaneceram durante toda a instrução. \n\nCom o trânsito em julgado desta sentença, em seus exatos termos: \n\na) cadastre-se o processo no Sistema Eletrônico de Execução Unificado – SEEU para \n\ntramitação da execução penal; \n\nb) lancem-se os nomes dos apenados no rol dos culpados; \n\nc) comunique-se à Justiça Eleitoral a suspensão dos direitos políticos dos apenados; \n\nd) cobre-se a pena de multa; \n\ne) designe-se data/hora para realização da audiência admonitória. \n\nIntimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Salvador, (data da assinatura digital). \n\n. \n\nAILTON SCHRAMM DE ROCHA \n\nJUIZ FEDERAL DA 17a VARA \n\nESPECIALIZADA CRIMINAL",
+      "label": "OUTROS"
+    }
+  ]
+}

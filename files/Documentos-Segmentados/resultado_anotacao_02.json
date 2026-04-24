@@ -1,0 +1,360 @@
+{
+  "index": 1,
+  "doc_id": 1,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 42,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Altamira-PA \nVara Federal Cível e Criminal da SSJ de Altamira-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0000563-90.2019.4.01.3903 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:DIRCEU DA LUZ e outros \nREPRESENTANTES POLO PASSIVO: INGRYD OLIVEIRA COUTO - PA14834-B e IULLE OLIVEIRA DOS SANTOS - \nPA28537",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1-RELATÓRIO",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF denunciou DIRCEU DA LUZ como incurso, por duas vezes e em concurso \nformal, na forma do artigo 70 do Código Penal, nos artigos 149, caput, 297, § 4o, todos do\nCódigo Penal, e EDIVAL DA LUZ como incurso, por cinco vezes, nos delitos do artigo 149 e 297,\n§ 4o, na forma do artigo 69, todos do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a denúncia que, entre 17/4/2017 e 15/5/2019, no Sítio Castanhal, situado no \nTravessão Dois e Meio, no Município de Medicilândia/PA, DIRCEU DA LUZ teria reduzido dois\ntrabalhadores à condição análoga à de escravo, por submetê-los a condições degradantes de\ntrabalho. Neste mesmo período, no sítio Carlos Böecker, situado no Travessão Dois e Meio, no\nMunicípio de Medicilândia/PA, EDIVAL DA LUZ teria reduzido cinco trabalhadores à condição\nanáloga à de escravo, por submetê-los a condições degradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 20 de agosto de 2019 (ID 227640350, p. 5-6).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Certificada pela oficiala de justiça a não localização do sr. DIRCEU DA LUZ (ID \n781568966).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citado o acusado EDIVAL DA LUZ (ID 954261180), juntou procuração (ID \n944860685) e apresentou resposta à acusação, alegando que houve contrato de empreitada e a\nnão configuração do crime, considerando ter havido contrato de empreitada, seja por ausência de\nrestrição à locomoção, seja por ausência de condições degradantes de trabalho a ponto de\nconfiguração de ilícito penal (ID 953489684).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Foi, então, citado o acusado DIRCEU DA LUZ (ID 1286081769), que juntou \nprocuração (ID 1295521765) e apresentou resposta à acusação, aduzindo que não se configurou\no delito, não tendo ocorrido restrição ao direito de locomoção e por não ter sido provado que a\nágua era imprópria para consumo humano (ID 1295521786).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF manifestou-se contrariamente à absolvição sumária (ID 1376467765).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Foi, então, confirmado o recebimento da denúncia e designada audiência de \ninstrução de julgamento (ID 1496711352).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Então, antes de realizada a instrução de julgamento, o MPF pediu a juntada de \nnovos documentos, oriundos Divisão de Fiscalização para Erradicação do Trabalho em\nCondições Análogas à de Escravo, a que não teria tido acesso anteriormente (ID 1721689471).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Realizada audiência de instrução de julgamento, foram ouvidas testemunhas e, em \ncontinuação, ouvidas as testemunhas restantes e interrogados os réus.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em suas alegações finais orais, o MPF disse que, para o crime do artigo 149 do CP, \nnão se exige a relação de emprego, mas apenas de trabalho. Não se exige relação de emprego,\nde modo que a discussão de existência ou não de empreitada não desconstitui o delito narrado.\nDisse que as provas indicam a ocorrência do crime do artigo 149 do CP e entende que o outro\ncrime indicado, do artigo 297, deve ser absorvido pelo artigo 149 do CP. Quanto ao crime de\ncondição análoga à de escravo, pugna pela condenação nos termos da denúncia. De fato, não\nhouve restrição de liberdade. Ocorre que o dispositivo prevê escravidão contemporânea, de\nmodo que não se exige restrição de liberdade, com cadeado na porteira, vigilância ostensiva. É\npossível a configuração mesmo sem restrição de liberdade ou vigilância armada, configurando-se\no crime se houver condições degradantes, aqueles que não são apenas ruins, mas violadoras da\ndignidade da pessoa humana, visando-se a evitar a objetificação das pessoas, como se fossem\nmeros recursos para consecução das atividades econômicas. Consta do relatório feito pela\nequipe de diligência, de ID 227623941, a partir da página 8, que não houve acatamento integral\nde tudo o que os empregados disseram, houve uma ponderação. Encontraram inconsistências\nquanto aos períodos e, desse modo, consideraram um período menor, ID 227623944, conforme\npágina 5. As fotos e o relatório demonstram onde moraram, o barraco de lona. Ainda que se\npossa alegar que não havia água tratada no Município, mas não se pode usar do igarapé sem\nnenhum tratamento. No entanto, não se trata apenas da água, mas um conjunto de fatores. O\nrelatório aponta que 3 dos trabalhadores estavam apenas há 3 dias, mas os outros estavam há\nanos na propriedade. No entanto, mesmo esses 3 teriam se mudado em definitivo, para morarem\nno local, razão pela qual se deve considerar consumado do delito, ainda que por curto período\nquanto aos 3. O que consta do relatório e não foi desconstituído pelas testemunhas é que alguns\ntrabalhadores ficaram lá por anos. Não há provas que possam desconstituir esse fato e o\ndepoimento do auditor fiscal do trabalho foi realizado em juízo e, ao acompanhar diligências, o\nMPF não tem notado abusos. Pelo relatado, seria possível a prisão em flagrante e, em deferência\nà situação familiar, ao que parece, não foi feito. As diligências foram realizadas na presença de\nmembro da DPU, de modo que não entende haver coação quanto às declarações feitas e à\nassinatura do termo de ajuste de conduta. Sobre os elementos juntados posteriormente pelo\nauditor fiscal do trabalho, confirmam o seu depoimento e, dada a rotineira atividade de\nfiscalização, há de se ponderar não ser possível se recordar de todos os fatos. As demais fotos\nda diligência demonstram uma situação degradante e, pelo que consta nos autos, não se pode\nconcluir ter sido uma emboscada ou armadilha a prejudicar os acusados. Também não é possível\nextrair dos autos uma combinação entre trabalhadores e servidores públicos. O aparato de\nsegurança é proporcional, dada a possibilidade de pessoas violentas, o que não foi o caso dos\nréus, serem fiscalizados. Apesar da alegação de empreitada, foi reconhecido o vínculo de\nemprego pelo termo de ajuste de conduta. Pede a condenação pelo delito do artigo 149, na forma\ndo artigo 70 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os réus em alegações finais por meio de memorial (ID 1766193085), aduziram em \nsíntese: que não restou provado o crime de redução à condição análoga de escravo; que ficou\nprovado que os trabalhadores eram empreiteiros; prescrição dos crimes descritos nos art. 203,\n149 e 297, § 4o, do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fundamento e decido.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2-FUNDAMENTAÇÃO",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DA PRESCRIÇÃO DA PRETENSÃO PUNITIVA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso, considerando as penas máximas em abstrato previstas nos delitos \nimputados, ou seja, art. 149, pena de 8 anos, e 297, § 4o, pena de 6 anos, não ocorreu prescrição\nda pretensão punitiva, uma vez que a denúncia foi recebida em 20.08.2019. Por conseguinte,\nnão superou o lapso temporal previsto no art. 109, III, do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, não foi imputado aos réus o delito descrito no art. 203,CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, rejeito a presente prejudicial de prescrição.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DO CRIME DO ART. 149, CP em relação aos trabalhadores resgatados",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O tipo penal do artigo 149 é traz a conduta de reduzir alguém a condição análoga a \nde escravo, elencando, exaustivamente, as formas de se realizar esse núcleo do tipo. Assim, o\ndelito resta configurado se constatada qualquer uma das seguintes circunstâncias: i) submissão\nde alguém a trabalhos forçados ou a jornada exaustiva; ii) sujeição de alguém a condições\ndegradantes de trabalho; iii) restrição à locomoção de alguém em razão de dívida contraída com\no empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fixadas essas premissas, observo que a materialidade delitiva do crime do artigo \n149 do Código Penal restou devidamente comprovada nos autos, pelos elementos probatórios a\nseguir descritos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Narra a inicial acusatória que o acusado DIRCEU DA LUZ teria, entre 17/4/2017 e \n15/5/2019, no Sítio Castanhal, no Travessão Dois e Meio, no Município de Medicilândia/PA, de\nforma livre e consciente, reduzido 2 trabalhadores à condição análoga à de escravo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Narra, ainda, que o acusado EDIVAL DA LUZ teria, entre 17/4/2017 e 15/5/2019, no \nSítio Carlos Böecker, no Travessão Dois e Meio, no Município de Medicilândia/PA, de forma livre\ne consciente, reduzido 5 trabalhadores à condição análoga à de escravo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Além disso, os dois denunciados, de maneira dolosa, teriam omitido da CTPS dos \nempregados a remuneração e a vigência do contrato de prestação de serviços, incorrendo no\ncrime previsto no artigo 297, § 4o, do CP.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A versão acusatória é de que, entre os dias 14 a 18 de abril de 2017, o Grupo \nEspecial Interinstitucional de Fiscalização Móvel (GEIFM) teria realizado diligências no Município\nde Medicilândia/PA, ocasião em que inspecionaram o Sítio Castanhal e Sítio Carlos Böecker, que\npertenceriam, respectivamente, a DIRCEU DA LAZ e a EDIVAL DA LUZ.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "No Sítio Castanhal, de responsabilidade de DIRCEU DA LUZ, teriam sido \nresgatados os trabalhadores, Luiz Carlos Barros Ferraz e Ogleido Feliz de Oliveira, além de\nterem sido detectadas as seguintes condições degradantes de trabalho: 1) trabalhadores não\npossuíam CTPS anotada;2) ausência de controle da jornada de trabalho;3) ausência de\nrealização de exames médicos admissionais; 4) fornecimento de alimentação precária pelo\nempregador, sendo descontados valores acima dos limites legais dos trabalhadores pela\nalimentação fornecida;5) preparo e acondicionamento dos alimentos de forma inapropriada, hão\nhigiênica;6) ausência de instalações sanitárias. sendo os trabalhadores obrigados a realizar suas\nnecessidades fisiológicas no mato, correndo risco de picadas de animais peçonhentos;?) não\nfornecimento dos equipamentos de proteção individual;8) não fornecimento das ferramentas\nnecessárias para desenvolvimento das atividades, sendo descontados valores a título de\nferramentas quando eram fornecidas;9) ausência de local adequado para moradia, sendo que\nhavia trabalhador morando em construção de madeira, com frestas que permitiam a passagem\nde animas, sem água potável e coberta de lona, em razão de que algumas telhas estavam\nquebradas;10) ausência de local para acondicionamento de alimentação e ausência de local\nadequado para preparo de refeições;11) a água consumida pelos trabalhadores para beber e\npreparar as refeições era retirada de um igarapé no meio do mato;12) o local para banho era no\nmeio do mato em um igarapé;13) não fornecimento de materiais de primeiros socorros;14) \nausência de fornecimento de qualquer meio de transporte para deslocar trabalhador acidentado\nou picado por animais peçonhentos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Já no Sítio Carlos Böecker, de responsabilidade de EDIVAL DA LUZ, teriam sido \nresgatados os trabalhadores, José Maria Rocha Gomes, Isaqueu Oliveira da Silva, Evânio\nCésar Moreira, Ronaldo da Silva Costa e Luiz Carlos Trindade dos Santos, além de terem\nsido detectadas as seguintes condições degradantes de trabalho: 1) ausência de assinatura das\nCTPS, mesmo com a presença dos requisitos do vínculo de emprego;2) ausência de controle da\njornada de trabalho;3) ausência de realização de exames médicos admissionais;4) fornecimento\nde alimentação precária pelo empregador, sendo descontados valores acima dos limites legais\ndos trabalhadores; 5) preparo e acondicionamento dos alimentos de forma inapropriada, não\nhigiênica;6) ausência de instalações sanitárias, nas frentes de trabalho, obrigando os\nempregados a realizarem suas necessidades fisiológicas no mato, correndo risco de picadas de\nanimais peçonhentos;7) instalações sanitárias próximas ao local utilizado como moradia em\ncondições inadequadas;8) não fornecimento dos equipamentos, de proteção individual;9) não\nfornecimento das ferramentas necessárias para desenvolvimento das atividades, sendo\ndescontados valores a título de ferramentas, quando fornecidas;10) ausência de local adequado\npara moradia, havendo trabalhador morando em construção de madeira com frestas que\npermitiam a passagem de animes, sem água potável; 11) presença de barracão de lona utilizado\npor um dos empregados;12) ausência de local para acondicionamento de alimentação e ausência\nde local adequado para preparo de refeições;13) a água consumida pelos trabalhadores não era\npotável, sendo retirada de um riacho e consumida sem tratamento;14) o local utilizado para\nbanho era inadequado;15) não fornecimento de materiais de primeiros socorros;16) ausência de\nfornecimento de qualquer meio de transporte para deslocar trabalhador acidentado ou picados\npor animais peçonhentos; »17) aplicação de agrotóxicos sem orientação e sem equipamentos\napropriados;18) acondicionamento de vacinas de uso veterinário juntamente com a alimentação\ndos trabalhadores numa geladeira em uma das edificações.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Com a inicial, foram juntados termos de ajustamento de conduta firmados pelos \nacusados perante o MPT e a DPU (ID 227584012, p. 13, ID 227584017, ID 227584019, p. 1-7);\natas de audiências realizadas no prédio do MPT, (ID 227584019, p. 8-10, ID 227584030, ID\n227623931, ID 227623941, p. 1-7); Relatório de Atividades da Operação Altamira (Uruará e\nMedicilândia), com registros fotográficos das diligências realizadas (ID 227623941, p. 8-10, ID\n227623944, 227633395 e ID 227640350, p. 1-2).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tais circunstâncias foram ilustradas com imagens da situação precária dos \ntrabalhadores, bem como foram corroboradas pelos depoimentos das testemunhas arroladas\npela acusação, que afirmaram o seguinte em seus depoimentos:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ouvido em juízo, Magno Pimenta Riga, auditor fiscal do trabalho, relatou que \nocupa o cargo há quase 12 anos. Sobre o trabalho no grupo de erradicação móvel ao trabalho\nem condições análogas à de escravo, disse que trabalha há 6 anos, desde 2017, e faz\nfiscalizações mensalmente. Sobre o resgate de trabalhadores, disse que existe uma estatística\nde que o seu grupo especializado o obtém em 30% dos casos. Sobre o mero descumprimento de\nnormas trabalhistas configurar a situação de escravidão contemporânea, a partir da perspectiva\ndo Ministério do Trabalho, disse não confundir irregularidades com a constatação de trabalho\nescravo. Em seu entendimento, irregularidades não configuram trabalho escravo, materializam\ndescumprimento da lei trabalhista, podendo ou não configurar situação de trabalho escravo. São\nos mesmos fatos, com implicações jurídicas distintas. Os mesmos fatos e as mesmas\nirregularidades podem ser valorados de forma diversa de acordo com o dano ao trabalhador. Por\nexemplo, a falta de um armário para o trabalhador não embasaria um resgate, apesar de ser uma\nirregularidade, dada a previsão da legislação trabalhista. Agora, estar em um barraco de lona,\nsem alojamento, pode configurar outra situação, pela falta de condições mínimas de conforto,\nsegurança. Sobre a fiscalização de 2019, nos sítios dos acusados, disse que se lembra dos sítios\ne dos acusados presentes, mas não se recorda do nome das propriedades, pois havia\ntransferência de propriedade do pai para eles e o nome estava sendo alterado. Lembra-se, salvo\nengano, do resgate de 7 trabalhadores, nas duas propriedades. Alguns haviam sido contratados\npor alguns dos irmãos e outros por outro deles, entenderam que havia uma separação da\npropriedade e da gestão do negócio. Sobre existência de banheiro, não se recorda em detalhes.\nLembra-se de que estavam alojados em diferentes locais e as condições eram diferentes, um\ndeles estava em um casebre, em um barrado de madeira, onde não havia banheiro. Outro estava\nem um barrado similar, coberto por lona. Alguns, com certeza, não tinham acesso a banheiro\nnaquele momento. A água fornecida não era potável, havia acesso, mas sem tratamento,\nconforme normas de potabilidade. Não se recorda dos detalhes sobre a alimentação. Sobre a\ndiligência ter sido regular e com oitiva de todas as pessoas, disse que houve regularidade, \ninclusive DPU participou e houve celebração de termo de ajustamento de conduta, com\npagamento das verbas aos trabalhadores. Houve problema na tramitação administrativa dos\nautos e foram reconstituídos, sendo remetidos aos trabalhadores. Sobre a conclusão dos\nauditores do trabalho, entenderam configurada a situação de redução à condição análoga à de\nescravo, devido às condições degradantes. Não havia restrição de liberdade, sem retenção de\ndocumentos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A primeira testemunha de Defesa do sr. Edival, MICHAEL ROCHA DE ALMEIDA, \ndisse que é agricultor. Já esteve na propriedade dos dois acusados, que não residem na\npropriedade. Eles moram na Agrovila, a 15 quilômetros. Nas propriedades do sr. Dirceu e do sr.\nEdival, a porteira não fica trancada e não há cadeado. Sobre contrato de empreitada na região,\ndisse que é o que todos fazem, arrumam trabalhadores, empreitam um “pedação” e funciona\nassim. Entram em acordo, chamam um trabalhador para fazer o serviço. Com essa contratação,\na alimentação fica por conta do trabalhador, que fica responsável por sua própria alimentação.\nEle não precisa cumprir um horário de trabalho, ele que manda, ele trabalha quando quiser e\npara na hora que quer.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A segunda testemunha de Defesa do sr. Edival, EDIVALDO RODRIGUES \nCHAVES, disse que é agricultor. Relatou que conhece a propriedade do sr. Dirceu e a do sr.\nEdival, mora a 15 quilômetros, na Agrovila. Eles não residem na propriedade, residem na\nAgrovila. Sobre a porteira ficar fechada, trancada com cadeado, disse que não, não fica fechada\nsem circulação. Sobre transporte do Travessão para a Agrovila, sempre há carro que faça o\ntransporte. Tem moto também que passa. É agricultar e disse que costumam contratar\ntrabalhadores para serviço de empreitada, é acostumado a fazer. A empreitada é feita com o\ncontratante mostrando o serviço a executar, fala com ele para dizer o preço, a pessoa dá o preço\ne, conforme o combinado, manda fazer. Sobre o contratado por empreitada, ele não cumpre\nhorário, pois ele é como se fosse o dono do serviço, ele que faz o horário dele. O patrão não tem\nnada a ver, pois ele está na empreita. Sobre a alimentação deles, disse que é a primeira coisa\nque fala na contratação, tudo fica por conta dele, do trabalhador, já fala logo, que ele que coma à\nvontade do jeito dele.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O depoente, arrolado como testemunha de defesa do sr. Dirceu, UDISON DOS \nSANTOS ANDRADE, disse que é agricultor. Disse que é amigo próximo do acusado, razão\npela qual foi ouvido como informante. Disse que conhece as propriedades dos acusados, relatou\nque a propriedade fica aberta, com porteira encostada, mas aberta, sem cadeado, nem nada.\nDisse que é vizinho e que o costume da região para contratar serviço na região é por meio de\nempreita, é feita empreitada para o trabalhador fazer o trabalho. Disse que o trabalhador fará o\nserviço no momento e no dia em que ele quiser trabalhar, da maneira como ele quiser. Ele faz no\nmomento em que vai, em que quer ir, não tem obrigação de trabalho. A alimentação pode ser\npedida e ele diz qual tipo ele quer ou ele mesmo leva, ele tem disponibilidade de levar, é livre.\nSobre conhecer os trabalhadores, José Maria, Zaqueu, Evânio, Luiz Carlos, disse que não, vê\ntrabalhando, mas não tem conhecimento direto com os trabalhadores. Vê trabalhando lá.\nRelata que, até onde sabe, eles foram contratados por empreitada. Disse que no Município de\nMedicilândia não há água tratada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O depoente, arrolado como testemunha de defesa do sr. Edival, MARCOS \nPEREIRA DE JESUS DE SOUZA, disse que é filho de Jovelina Pereira de Jesus de Souza e é\nagricultor. Disse que é amigo próximo do acusado, razão pela qual foi ouvido como informante.\nRelatou conhecer a propriedade do sr. Dirceu e do sr. Edival. Disse que a porteira da propriedade\nfica aberta. Sobre ter casa na propriedade, disse que sim, inclusive tem banheiro. Sobre o\ncontrato de empreitada, disse que é mostrado o local do serviço, o que fazer, e então entram em\ncombinação o dolo da propriedade e o empregado, vai da combinação. É por empreita. É por\nconta dos trabalhadores, depende deles, inclusive se cumprem ou não horário. O pagamento é\numa questão de combinação, às vezes pedem um adiantamento para comprar mantimento para\nempreita, mas vai da combinação. A pessoa vai trabalhando e pega a empreita, assim vai. Sobre\nconhecer os trabalhadores encontrados no local, José Maria, Zaqueu, Ronaldo, Luiz Carlos,\ndisse que não. Disse que não há água tratada em Medicilândia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em seu interrogatório, DIRCEU DA LUZ, filho de Izolde Clara da Luz, disse que é \nagricultor, mas já foi funcionário público na Prefeitura de Medicilândia. Sua renda mensal média é\nde 2 ou 3 salários na Prefeitura, e anualmente retira uns R$ 30.000,00 da agricultura. É casado,\ntem uma filha menor de idade. Nunca foi preso nem processado anteriormente. Disse que está\nem Medicilância e os trabalhadores estão usando de má-fé com os proprietários, porque querem\nir lá e depois denunciar, pegar dinheiro fácil e incriminar o proprietário, como ocorreu consigo.\nMandou a chave do rapaz para a sua casa, que tem água encanada, geladeira, TV, tem tudo,\nmas não ficaram na casa. Foi autuado, a casa estava lá e está lá. O MP foi atrás deles, foram\natrás da casa, fotografaram o que bem entenderam, mas não ouviram os proprietários, apenas os\ntrabalhadores. Ele pegou a chave em sua mão e não entrou na chave. Falou para dra. Que a\npessoa tinha a chave, mas ela falou que o problema era dele. Tem água de poço, encanada, a\nrodovia passa a 100 metros, tem livre acesso o dia todo e fim de semana. Eles saíam quando\nqueriam, iam quando queriam. Nem mora lá, mora em Medicilândia e não poderia ir até lá\ndominá-los, mas não cortaram um pé lá. Ficaram lá e não trabalharam. Queria que o Ministério\nfosse lá para mostrar onde ele errou. Isso de serem escravos não tem na região, arrumaram a\ncasa e eles trabalhavam na hora que eles querem e quando querem. Foi autuado e já queriam\nprender, estava com a consciência limpa, pois estava vendo o bem e o maior. Pediram para\ntrabalhar, que estavam passando fome, estavam na rua, levou a pessoa para arrumar a vida dele\ne, quando pensa que não, a pessoa se depara com uma situação dessa. Podem conferir lá na\npropriedade dele, que está do mesmo jeito. Não precisa nem aumentar, nem diminuir. Não tinha\nCTPS assinada, ele nem tinha endereço fixo, chega lá dois dias e já sai. Disse que combinaram a\nempreita do serviço, sempre faz com negociação certa, e que o serviço de alimentação ficou por\nconta deles.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em seu interrogatório, EDIVAL DA LUZ, filho de Izolde Clara da Luz, disse que é \ncasado. Não tem filhos menores. Sua renda mensal é do salário como professor, 4 ou 5 mil. Não\ntrabalha mais com agricultura, ficou desanimado. Nunca foi preso nem processado anteriormente.\nDisse que o MP fez uma covardia muito grande, pois faz com que quem batalhou para ter\nhonestidade e sempre ser honesto com as pessoas, inventa, não chama para dizer onde era a\nresidência. Mostraram coisas que nem eram no seu lote. Disse que houve 3 trabalhadores que\nnão ficaram 3 dias lá, não trabalhou 2 dias. O cara inventa uma história e, pior de tudo, quando\nestá junto com a Dra., parece ser pior do que quem matou alguém. Quando foi jurado, o juiz\ntinha uma educação, achou que ela já era muito mal-educada, qualquer coisa ameaçava. Teve que\npagar 5 mil, perguntou qual a lei e ela falou que era para servir de exemplo para os outros.\nSentiu-se humilhado, enquanto o trabalhador fica pouco, volta e depois junta o período todo. O\nMinistério do Trabalho não acata nada e não deixa dar uma satisfação. Disse que ficou doente\ncom isso. Ficou depressivo e não consegue dormir à noite. Colocaram tudo que não prestava em\ncima dele. Trabalha há 30 anos na escola, concursado, e os próprios alunos o conhecem, sabem\ncomo é ele. Podem depor, falar como ele é. O seu trabalhador tinha saído na sexta, vendeu uma\nmoto para ele na sexta, pegou o dinheiro consigo e depois foram para outro travessão e não\ntinham voltado, foram pegar o cara lá e falaram que o cara estava em escravidão. E a dra. Falou\nque ele tinha que trabalhar oito horas e não entendeu, pois se falava que era trabalho escravo.\nDisse que inventam uma história e ele foi considerado mentiroso. Tem 56 anos e não esperava\npassar por isso, por algo que não fez. Relatou que chegaram em sua casa, no meio de uma vila\nem que morava, chegaram mais de 22 horas e queriam levá-lo à força, sua mãe passando mal e\napontaram uma arma para ele. Sobre os trabalhadores mencionados na denúncia, disse que\nforam contratados por empreita, pediram um valor, já incluída a feira dos trabalhadores, e então\npagava o valor que pediam. Terminava o pedaço e já pagava. Foram contratados para serviço de\nempreita. Sobre terem ficado no lote no período, José Maria, Zaqueu e EVânio, trabalharam por 2\ndias, porque chegaram na quinta à noite, sujos, com cachaça, e foram lavar roupas, no dia\nseguinte e depois já teve domingo e na segunda chegou a fiscalização. Então, trabalhavam por\num dia. O Luiz Carlos nem ficava lá. Eles geralmente fazem o pouco serviço que tem lá e vão\ntrabalhando para os vizinhos, fazendo outros trabalhadores e quando o mato cresce eles voltam.\nSobre o trabalhador chamado Ronaldo, questionado se trabalhou para o seu pai, disse que sim,\nmas a Dra. disse que ele deveria assumir porque era trabalhador do seu pai, que tinha falecido.\nReside no Município de Medicilândia em dezembro de 1983. Disse que não tem água potável em\nMedicilândia, na água em que mora pegam da represa, onde o gado bebe, é essa que vai para a\ncaixa. Sobre o termo de ajuste de conduta, firmado com o MPF, cumpriu corretamente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, não há dúvidas de que os trabalhadores resgatados exerciam suas \natividades em condições degradantes, o que já é suficiente para caracterizar os elementos\ndescritivos do tipo penal, a despeito da falta de provas de restrição da liberdade por dívida. Ainda\nque a restrição da liberdade não tenha sido cabalmente demonstrada nestes autos, vale lembrar\nque o delito, apesar de apresentar uma estrutura nuclear única, é de forma vinculada, ou melhor,\nde formas vinculadas, pois descreve várias condutas que configuram o \"reduzir à condição\nanáloga à de escravo\", sendo a restrição de liberdade uma delas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De igual forma, doutrina e jurisprudência, inclusive o STJ, reconhecem não ser \nnecessária a restrição à liberdade de locomoção para a configuração do delito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à autoria delitiva, os réus afirmaram que contrataram os trabalhadores \nna condição empreiteiros e negou o trabalho em condições degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação ao primeiro aspecto, penso não assistir razão à defesa, uma vez que \nos depoimentos prestados pelos trabalhadores em sede administrativa revelam que existia\nvínculo de subordinação, conforme relatório de fiscalização id. 227584017. Não é necessário que\nhaja vínculo empregatício, podendo-se usar a nomenclatura de empreitada, diarista, boia-fria,\ndesde que, de fato, haja uma vinculação dos indivíduos submetidos à condição degradante, \ncomo se nota de sua morada no local, ainda que, em alguns casos, tenha sido recente quando\nda fiscalização. A intenção de fixar morada demonstra a estabilidade do vínculo, o que é\nsuficiente, ainda que a relação tenha sido, formalmente, indicada como um contrato de\nempreitada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange ao segundo aspecto, igualmente não tem razão a defesa. Como \ndemonstrado anteriormente, restou comprovado que os trabalhadores exerciam suas atividades\nem condições degradantes, as quais apresentam diversos elementos reforçando a situação\nindigna em que encontrados os trabalhadores, como ausência de instalações sanitárias e\nfornecimento de água.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, restou devidamente comprovado que os réus DIRCEU DA LUZ como \nincurso, por duas vezes e em concurso formal, na forma do artigo 70 do Código Penal, nos\nartigos 149, caput, 297, § 4o, todos do Código Penal, e EDIVAL DA LUZ como incurso, por cinco\nvezes, nos delitos do artigo 149 e 297, § 4o, na forma do artigo 69, todos do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DO PEDIDO DE ABSOLVIÇÃO PELO MPF do delito dos Arts. 297, § 4o, CP, em razão da\nabsorção pelo delito do Art. 149, CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O MPF requereu a absorção do delito descrito no art. 297, § 4o, pelo art. 149, do \nCP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesta situação, denota-se que o delito do art. 297, § 4o, do CP constitui meio para \na prática do crime mais grave, e o do art. 149 do CP, pressuposto básico para se falar em\nabsorção de um delito pelo outro.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na hipótese, deve incidir o critério ou princípio da consunção, pois a ausência de \nanotação da CTPS é um meio necessário para o delito de trabalho escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O STJ no AgRg no REsp 1669730 / RJ, fixou a seguinte premissa: O princípio da \nconsunção impõe que uma infração penal constitua, unicamente, ato preparatório, meio\nnecessário ou fase da execução de outro fato descrito por norma mais ampla (crime-fim), de\nmodo que o agente só responderá pelo delito mais grave, ficando o crime-meio será por ele\nabsorvido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessa forma, impõe-se a absolvição dos réus em relação ao delito descrito no art. \n297, § 4o, CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3-DISPOSITIVO",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, JULGO PARCIALMENTE PROCEDENTE a pretensão acusatória \npara:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "1- Condenar DIRCEU DA LUZ como incurso, por duas vezes e em concurso \nformal, na forma do artigo 70 do Código Penal, nos artigos 149, caput, Código Penal, e EDIVAL\nDA LUZ como incurso, por cinco vezes, nos delitos do artigo 149 na forma do artigo 70, todos do\nCódigo Penal;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "2- Absolver os réus dos delitos dos Art. 297, § 4o, com base no art. 386, VII, CPP.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo a dosar as penas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que determina o art. 59 do Código Penal, passo à dosimetria da \npena do réu\nDIRCEU DA LUZ.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao crime do tipificado no art. 149 do CP, a culpabilidade se revela acima \ndo comum, por envolver vários elementos degradantes, nem todos necessários para a\nconfiguração do delito. Não possui registro de maus antecedentes; conduta social \naparentemente dentro da normalidade; a personalidade não pode ser aquilatada pelos\nelementos constantes dos autos; os motivos e circunstâncias e consequências do crime são\ninerentes à espécie; não há falar no caso em comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a sua pena base em 02 (dois) anos e 6 (seis) meses de reclusão e 10 \n(dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e nem atenuantes, porquanto deixo de \nreconhecer atenuante da confissão, visto que o réu não admitiu a prática delitiva e não há que se\nfalar em confissão qualificada, além do mais a pena base ficou no limite, encontrando óbice na\nsúmula 231, STJ.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não existem causas de diminuição ou aumento da pena, portanto fixo em definitiva \na pena em 2 (dois) anos e 6 (seis) meses de reclusão e 10 (dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à multa, considerando a condição econômica do réu, que declarou possuir \nrenda de R$ 30.000,00, fixo cada dia-multa no valor correspondente a 1 (um) salário mínimo \nvigente à época do fato (2019), consoante dispõe o art. 49, § 1o, observado, ainda o disposto no\nart. 60, ambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da súmula 659 do \nSTJ, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2\n(metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de\ninfrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 2 (duas) infrações penais, razão pela qual \nmaioro a pena em 1/6, fixando a pena privativa de liberdade em 2 (dois) anos e 11 (onze) meses\nde reclusão, além do pagamento de multa em 15 (quinze) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Uma vez que a pena supera não supera os 4 anos de reclusão e em face do \ndisposto no art. 44, incisos I e III, e § 2o, segunda parte, c/c o art. 45, § 1o, e art. 46, todos do\nCódigo Penal, e ainda considerando os motivos que levaram à fixação da pena, preenchendo o\nréu os requisitos do art. 44 do CP, não havendo motivo suficiente para deixar de proceder à\nsubstituição, concedo-lhe esse benefício, substituindo a pena privativa de liberdade por duas\nrestritivas de direito:\na) prestação pecuniária, que, tendo em vista o valor do dano, é fixada em R$ \n30.000,00 (trinta mil reais), valor da multa, cabendo ao réu providenciar o depósito na conta do\njuízo, conta judicial 0551.005.86400753-9;\nb) prestação de serviços à comunidade, correspondente a uma hora de tarefa por \ndia de condenação, na forma do artigo 46, § 3o, do CP, em local a ser indicado pelo juízo da\nexecução penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O regime inicial de cumprimento de pena é o aberto, considerando o quantum da \npena aplicada, nos termos do artigo 33, § 2o, alínea c, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sem aplicação do Art. 77, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que determina o art. 59 do Código Penal, passo à dosimetria da \npena do réu\nEDIVAL DA LUZ.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao crime do tipificado no art. 149 do CP, a culpabilidade se revela acima \ndo comum, por envolver vários elementos degradantes, nem todos necessários para a\nconfiguração do delito. Não possui registro de maus antecedentes; conduta social \naparentemente dentro da normalidade; a personalidade não pode ser aquilatada pelos\nelementos constantes dos autos; os motivos e circunstâncias e consequências do crime são\ninerentes à espécie; não há falar no caso em comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a sua pena base em 02 (dois) anos e 6 (seis) meses de reclusão e 10 \n(dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e nem atenuantes, porquanto deixo de \nreconhecer atenuante da confissão, visto que o réu não admitiu a prática delitiva e não há que se\nfalar em confissão qualificada, além disso, a pena base ficou no limite, encontrando óbice na\nsúmula 231, STJ.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não existem causas de diminuição ou aumento da pena, portanto fixo em definitiva \na pena em 2 (dois) anos e 6 (seis) meses de reclusão e 10 (dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à multa, considerando a condição econômica do réu, que declarou possuir \nrenda de R$ 5.000,00, fixo cada dia-multa no valor correspondente a 1/6 (um sexto) salário\nmínimo vigente à época do fato (2019), consoante dispõe o art. 49, § 1o, observado, ainda o\ndisposto no art. 60, ambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da súmula 659 do \nSTJ, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2\n(metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de\ninfrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 5 (cinco) infrações penais, razão pela qual \nmaioro a pena em 1/3, fixando a pena privativa de liberdade em 3 (três) anos e 4 (quatro) meses\nde reclusão e o pagamento de multa em 20 (vinte) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Uma vez que a pena supera não supera os 4 anos de reclusão e em face do \ndisposto no art. 44, incisos I e III, e § 2o, segunda parte, c/c o art. 45, § 1o, e art. 46, todos do\nCódigo Penal, e ainda considerando os motivos que levaram à fixação da pena, preenchendo o\nréu os requisitos do art. 44 do CP, não havendo motivo suficiente para deixar de proceder à\nsubstituição, concedo-lhe esse benefício, substituindo a pena privativa de liberdade por duas\nrestritivas de direito:\na) prestação pecuniária, que, tendo em vista o valor do dano, é fixada em R$ \n10.000,00 (dez mil reais), valor da multa, cabendo ao réu providenciar o depósito na conta do\njuízo, conta judicial 0551.005.86400753-9;\nb) prestação de serviços à comunidade, correspondente a uma hora de tarefa por \ndia de condenação, na forma do artigo 46, § 3o, do CP, em local a ser indicado pelo juízo da\nexecução penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O regime inicial de cumprimento de pena é o aberto, considerando o quantum da \npena aplicada, nos termos do artigo 33, § 2o, alínea c, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sem aplicação do Art. 77, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de fixar o valor mínimo para reparação dos danos, prevista no art. 387, IV, do \nCPP, em razão da ausência de pedido neste sentido por parte do Ministério Público Federal ou\npela União, bem como da ausência de contraditório a respeito.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Do direito de apelar em liberdade",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Considerando que os réus permaneceram em liberdade durante toda a instrução, o \nmontante da pena aplicada e o regime inicial de seu cumprimento, bem como a ausência de\nqualquer circunstância justificadora de sua segregação preventiva, devem permanecer em\nliberdade.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Com fundamento no art. 804 do Código de Processo Penal e no art. 6o da Lei no \n9.289/1996, condeno os réus ao pagamento das custas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado: a) comunique-se à autoridade policial e ao Tribunal \nRegional Eleitoral, para os fins do artigo 15, III, da Constituição Federal; c) oficie-se ao órgão de\nestatística, para os fins do artigo 809 do CPP..",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Promovam-se as diligências necessárias.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Altamira/PA, 20 de setembro de 2023. \n(assinado digitalmente) \nMICHAEL PROCOPIO RIBEIRO ALVES AVELAR \nJUIZ FEDERAL",
+      "label": "OUTROS"
+    }
+  ]
+}

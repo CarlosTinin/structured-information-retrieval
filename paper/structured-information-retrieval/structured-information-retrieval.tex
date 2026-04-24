@@ -174,27 +174,87 @@ Wang et al. (2026) & [03\_09] & ZH/MN/KO & Cross-lingual domain alignment & CLWK
 
 \section{Dataset and Problem Definition}
 \label{sec:data}
-\subsection{Corpus description}
-\begin{itemize}
-    \item Raw corpus size: 2,581 documents.
-    \item Document heterogeneity (senten\c{c}a, ac\'ord\~ao, despacho, ata, etc.).
-\end{itemize}
+\subsection{Data acquisition and corpus description}
+\label{subsec:corpus}
+
+The corpus used in this study was collected from the public consultation portal of the \textit{Processo Judicial Eletr\^onico} (PJe) system maintained by the Federal Regional Court of the 1st Region (TRF1)\footnote{\url{https://pje1g.trf1.jus.br/consultapublica/}}. A purpose-built web scraper, implemented in Python with the Selenium browser-automation library, was used to programmatically retrieve documents associated with criminal proceedings filed under Article~149 of the Brazilian Penal Code (\textit{redu\c{c}\~ao a condi\c{c}\~ao an\'aloga \`a de escravo}). For each process number listed in a pre-compiled spreadsheet, the scraper navigates the PJe search interface, opens the corresponding case page, and downloads every available PDF attachment. The raw PDF files are then converted to plain text via optical character recognition (OCR), producing the textual content that feeds the subsequent pipeline stages.
+
+The resulting raw corpus comprises 2,581 documents drawn from 565 unique criminal proceedings spanning the period 2010--2024, with the bulk of the documents concentrated between 2018 and 2023. The cases originate from federal courts across multiple Brazilian states, including Goi\'as, Par\'a, Mato Grosso, Maranh\~ao, Piau\'i, Bahia, Amap\'a, and the Federal District. Each record is stored with two fields: the source PDF filename (which encodes the process number) and the extracted full text. The first line of each document's text carries a PJe-generated header of the form \texttt{Documento id <N> - <Type>}, which provides the ground-truth document type.
+
+The corpus exhibits substantial heterogeneity. Table~\ref{tab:doc_types} summarises the distribution of the main document types. Procedural dispatches (\textit{despachos}, $n=923$) and interlocutory decisions (\textit{decis\~oes}, $n=659$) together account for more than 61\% of the corpus; administrative records (\textit{atos ordin\'atorios}, $n\approx510$) and hearing minutes (\textit{atas de audi\^encia}, $n=219$) make up most of the remainder. Only 99 documents are judicial sentences (\textit{senten\c{c}as}), distributed across four PJe sub-types (Tipo~D: 69; Tipo~E: 17; Tipo~A: 10; Tipo~C: 3), and 16 are appellate rulings (\textit{ac\'ord\~aos}). This pronounced scarcity of decision-bearing documents---less than 4.5\% of the total---motivates the multi-layer filtering strategy described in Section~\ref{sec:methodology}.
+
+\begin{table}[t]
+\centering
+\caption{Distribution of the main document types in the raw corpus ($N=2{,}581$).}
+\label{tab:doc_types}
+\begin{tabular}{lr}
+\toprule
+\textbf{Document type} & \textbf{Count} \\
+\midrule
+Despacho                        & 923 \\
+Decis\~ao                       & 659 \\
+Ato ordin\'atorio               & 510 \\
+Ata de Audi\^encia              & 219 \\
+Senten\c{c}a (all sub-types)    &  99 \\
+Certid\~ao de Tr\^ansito em Julgado & 81 \\
+Decis\~ao Monocr\'atica Terminativa & 34 \\
+Voto                            &  19 \\
+Ac\'ord\~ao                     &  16 \\
+Certid\~ao de Julgamento        &  18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A preliminary quality inspection revealed pervasive noise introduced by the PJe platform itself: duplicate footer blocks containing page identifiers, electronic-signature attestations, public-consultation URLs, and internal document numbers are repeated throughout the extracted text of nearly every document. These artefacts, if left untreated, would degrade both classification and entity-extraction performance; their systematic removal is therefore addressed in the preprocessing stage (Section~\ref{subsec:stage1_2}).
 \subsection{Task definitions}
-\begin{itemize}
-    \item T1: Document-type filtering.
-    \item T2: Penal-merit classification (classes: condena\c{c}\~ao, absolvi\c{c}\~ao, extinto).
-    \item T3: Decision segmentation.
-    \item T4: Named-entity extraction.
-\end{itemize}
+\label{subsec:tasks}
+
+The framework decomposes the end-to-end information-extraction problem into four sequential tasks, each with a clearly defined input, output, and evaluation criterion.
+
+\paragraph{T1: Document-type filtering.}
+Given the raw heterogeneous corpus ($N=2{,}581$), assign each document to one of seven canonical types and retain only judicial sentences (\textit{senten\c{c}as}). This is a deterministic classification task whose correctness can be verified exhaustively because the ground-truth label is embedded in the PJe header. The expected output is a filtered subset of $n=99$ sentences suitable for merit analysis.
+
+\paragraph{T2: Penal-merit classification.}
+Given a preprocessed sentence text, predict its penal-merit outcome among three mutually exclusive classes: \textit{condena\c{c}\~ao} (conviction, $n=25$), \textit{absolvi\c{c}\~ao} (acquittal, $n=46$), or \textit{extinto} (extinguished criminal liability, $n=18$). Documents whose merit labels fall outside these three categories---such as appellate reviews, partial rulings, or procedurally dismissed cases---are excluded prior to classification. The task is evaluated via stratified $k$-fold cross-validation using weighted F1 as the primary metric (Section~\ref{subsec:stage2}).
+
+\paragraph{T3: Sentence-level segmentation.}
+Given a conviction-class decision ($n=25$), decompose it into individual sentences and assign each sentence a rhetorical-function label drawn from a closed set of six categories: \textsc{relat\'orio} (case summary), \textsc{dos\_fatos} (factual narrative), \textsc{fundamenta\c{c}\~ao} (legal reasoning), \textsc{dosimetria} (penalty calculation), \textsc{dispositivo} (operative ruling), and \textsc{outros} (non-substantive content). The segmentation must be exhaustive---every token in the source document must be covered by exactly one labelled segment---and the output must conform to a predefined JSON schema to enable automated downstream consumption. Evaluation criteria include schema-validity rate, label-distribution plausibility, and expert agreement on a reviewed subset.
+
+\paragraph{T4: Named-entity extraction.}
+Given a segmented and labelled sentence, identify and classify legally relevant named entities using a domain-specific NER model. Target entity types include person names, organizations, locations, dates, monetary values, statutory references, and crime descriptions. The task operates over the segmented output of T3, allowing entity extraction to benefit from the structural context provided by rhetorical labels---for example, party names are expected predominantly in \textsc{relat\'orio} segments, while penalty amounts concentrate in \textsc{dosimetria}. Extracted entities are aggregated into a structured JSON record per document, designed for downstream integration with external databases such as Brazil's \textit{Lista Suja} of employers found responsible for modern-slavery conditions.
 \subsection{Annotation and label governance}
-\begin{itemize}
-    \item Define legal criteria for label assignment (Art. 149 framing).
-    \item Report annotation process and expert validation protocol.
-\end{itemize}
+\label{subsec:annotation}
+
+Label quality is a critical concern throughout the pipeline, given the specialized legal knowledge required to interpret criminal labor-law decisions and the absence of a pre-existing annotated benchmark for this domain. Each task relies on a distinct labelling strategy, reflecting the nature of the label and the feasibility of automated versus expert-driven annotation.
+
+\paragraph{T1 labels (document type).}
+Document-type labels are extracted directly from the PJe system header and therefore require no manual annotation. Because the label is machine-generated by the court's electronic filing system, it functions as a \textit{de facto} ground truth. A random sample of 50 documents was manually inspected to confirm that the extracted type matched the document content; no discrepancies were found.
+
+\paragraph{T2 labels (penal merit).}
+Merit labels (\textit{condena\c{c}\~ao}, \textit{absolvi\c{c}\~ao}, \textit{extinto}) were assigned by a legal-domain expert who read each of the 99 filtered sentences in full. The annotation criterion is whether the decision examines the criminal liability of the defendant under Article~149 of the Brazilian Penal Code and, if so, what the outcome is. Convictions include cases of partial conviction---i.e., when at least one defendant was found guilty on the Article~149 charge, even if co-defendants were acquitted or charges under other statutes were dismissed. The \textit{extinto} class covers cases in which criminal liability was formally extinguished (typically due to statute-of-limitations expiry) before a substantive merit ruling was reached. Documents that did not fit any of the three categories---such as decisions on procedural motions, \textit{embargos de declara\c{c}\~ao}, or interlocutory appeals that had been misclassified as sentences by the PJe header---were removed from the classification dataset, reducing the working set from 99 to 89 documents.
+
+Due to resource constraints, a single annotator performed the merit labelling. To mitigate the risk of systematic bias, a second reviewer (a co-author with legal training) independently classified a stratified subset of 30 documents (approximately one-third of the corpus, sampled proportionally across the three classes). Disagreements were resolved through discussion, and the final labels reflect the consensus outcome. While a full inter-annotator agreement study with multiple independent annotators would strengthen the evidence, the combination of expert annotation with partial double-coding and consensus resolution represents a pragmatic quality-assurance protocol for a low-resource setting.
+
+\paragraph{T3 labels (segmentation).}
+Segmentation labels are produced by a large language model (Gemini~2.5 Flash Lite) operating under a detailed annotation prompt that specifies six rhetorical-function categories and 21~decision rules governing label assignment (see Section~\ref{subsec:stage1_2} and the supplementary material for the full prompt). The prompt was iteratively refined through pilot runs on five documents, with a legal-domain expert reviewing the output at each iteration to identify systematic errors and ambiguous boundary cases. The final prompt version was then applied to the full conviction subset ($n=25$), of which 17~documents were successfully processed and 8~returned parsing errors due to malformed JSON or context-length overflow.
+
+Following LLM annotation, the 17~successfully segmented documents were reviewed by the legal expert, who verified label correctness at the sentence level and flagged cases where the model had assigned an incorrect rhetorical role. This human-in-the-loop validation step serves as a lightweight surrogate for a formal gold standard. We acknowledge that the current protocol does not include a quantitative inter-annotator agreement metric (e.g., Cohen's $\kappa$) for segmentation; establishing such a benchmark with multiple annotators is planned as future work.
+
+\paragraph{T4 labels (NER).}
+Named-entity extraction relies on the pre-trained model \texttt{dominguesm/legal-bert-ner-base-cased-ptbr}, which was trained on a Portuguese legal NER corpus with BIO-tagged entity types. No additional annotation was performed for this stage; evaluation is based on the model's intrinsic predictions over the segmented conviction documents. A formal entity-level evaluation against a manually annotated gold standard is deferred to future work, pending the construction of a schema-validated reference dataset for at least 15--20 documents.
 \subsection{Data governance and ethics}
-\begin{itemize}
-    \item LGPD/privacy handling, anonymization strategy, and legal-compliance statement.
-\end{itemize}
+\label{subsec:ethics}
+
+All documents used in this study are judicial decisions issued by Brazilian federal courts and made publicly available through the PJe electronic consultation portal. Under Brazilian law, criminal proceedings are, as a general rule, public (\textit{princ\'ipio da publicidade}, Article~93, IX of the Federal Constitution), and the decisions analysed here were not subject to judicial secrecy (\textit{segredo de justi\c{c}a}) at the time of collection. The corpus was therefore assembled exclusively from publicly accessible records, and no privileged or restricted-access data was used at any stage.
+
+\paragraph{Privacy and data protection.}
+Although the source documents are public, they contain personal data---including the full names of defendants, victims, witnesses, judges, and attorneys---that falls within the scope of Brazil's General Data Protection Law (Lei Geral de Prote\c{c}\~ao de Dados, LGPD, Law~13.709/2018). The present study processes these data for academic research purposes, which constitutes a legitimate basis under Article~7, IV of the LGPD. No personally identifiable information is disclosed beyond what is already contained in the publicly available court records. The structured outputs produced by the NER stage (T4) do extract person names and organizational identifiers; however, these outputs are stored locally and are not published as part of this paper's supplementary material. Any future public release of the annotated dataset will apply pseudonymization to defendant and victim names, replacing them with anonymized identifiers while preserving the relational structure needed for supply-chain analysis.
+
+\paragraph{Ethical considerations.}
+The research does not involve human subjects in the experimental sense---no interviews, surveys, or behavioural observations were conducted. The annotation tasks (T2 merit labelling and T3 segmentation review) were performed by members of the research team and did not involve external crowd workers or vulnerable populations. The subject matter---criminal convictions for modern slavery under Article~149 of the Brazilian Penal Code---is inherently sensitive, as it involves severe labour exploitation. We note that the framework is designed to support transparency and accountability in supply-chain governance by enabling the systematic extraction of structured information from court records. It is not intended, and should not be used, to make automated legal determinations or to replace judicial decision-making processes.
+
+\paragraph{Institutional oversight.}
+The study was conducted under the academic supervision of the Federal University of Rio Grande do Sul (UFRGS). As the research relies exclusively on publicly available court records and does not involve direct interaction with human participants, formal ethics committee approval (Comit\^e de \'Etica em Pesquisa) was not required under the applicable Brazilian regulations (Resolution~CNS~510/2016, Article~1, sole paragraph, items~III and~V). Nonetheless, the data-handling procedures were designed to comply with LGPD requirements and institutional data-governance policies.
 
 \section{Methodology}
 \label{sec:methodology}
@@ -209,24 +269,54 @@ Figure~\ref{fig:activity_pipeline} presents the end-to-end workflow adopted in t
 \end{figure*}
 
 \subsection{Stage1\_1: Document-type normalization and filtering}
-\begin{itemize}
-    \item Pattern-based extraction of document type from metadata-like spans.
-    \item Final retention of \textit{senten\c{c}a} documents.
-\end{itemize}
+\label{subsec:stage1_1}
+
+As noted in Section~\ref{subsec:corpus}, every document in the PJe system carries a machine-generated header line of the form \texttt{Documento~id~<N>~-~<Type>}. Stage1\_1 exploits this metadata to perform rule-based document-type classification without requiring any trained model. A regular expression extracts the type string from the first line of each document; the extracted label is then mapped to one of seven canonical categories---\textit{Senten\c{c}a}, \textit{Decis\~ao}, \textit{Despacho}, \textit{Ata de Audi\^encia}, \textit{Ato Ordin\'atorio}, \textit{Ac\'ord\~ao}, or \textit{Outro}---via case-insensitive substring matching. This deterministic approach is feasible because the type label is generated by the court system itself and is therefore highly reliable.
+
+After classification, only documents labelled \textit{Senten\c{c}a} are retained for subsequent processing. This single filtering step reduces the corpus from 2,581 to 99 documents---a 96.2\% reduction---thereby removing all procedural dispatches, interlocutory decisions, hearing minutes, and other ancillary records that do not contain merit-level adjudications. Ac\'ord\~aos (appellate rulings, $n=16$) are also excluded at this stage because they typically re-evaluate a prior sentence rather than introduce new factual findings, and their inclusion would risk duplicating information already present in the corresponding first-instance sentence.
 
 \subsection{Stage1\_2: Task-adaptive legal text preprocessing}
-\begin{itemize}
-    \item PJe duplicate-footer removal.
-    \item Aggressive normalization for classification output.
-    \item Conservative normalization for NER/segmentation output.
-\end{itemize}
+\label{subsec:stage1_2}
 
-\subsection{Stage2: Penal-merit classification with Legal-BERT embeddings}
+The 99 sentences retained by Stage1\_1 still contain substantial noise inherited from the PJe platform. Stage1\_2 addresses this through a shared cleaning step followed by two divergent normalization branches, each tailored to a different downstream task.
+
+\paragraph{Shared step: PJe footer removal.}
+Every page of a PJe document is stamped with a set of boilerplate lines: page identifiers (\texttt{Num.~\dots~-~P\'ag.~\dots}), electronic-signature attestations, public-consultation URLs, and internal document-number references. Because these lines are repeated on every page, they can constitute a significant fraction of the extracted text and introduce misleading token frequencies. Six regular expressions, applied sequentially, strip all such footer variants; runs of excessive whitespace are then collapsed.
+
+\paragraph{Classification branch (aggressive normalization).}
+The first output targets the downstream merit classifier (Stage2), which must distinguish between \textit{condena\c{c}\~ao}, \textit{absolvi\c{c}\~ao}, and \textit{extinto} based on semantic content rather than surface cues. Accordingly, this branch removes: (i)~formulaic legal phrases (\textit{e.g.}, ``Vistos, etc.'', ``Passo a decidir'', ``Publique-se, registre-se, intimem-se''); (ii)~structured identifiers such as CNJ case numbers, long digit sequences, and monetary values; (iii)~party names rendered in ALL-CAPS; (iv)~procedural role keywords (\textit{e.g.}, autor, r\'eu, apelante); (v)~dates in both numeric and spelled-out formats; and (vi)~statutory references (article, paragraph, and subsection numbers). Finally, the text is lowercased and Unicode-normalized (NFKC). A safety guard restores the pre-normalization text whenever the aggressive pipeline produces a result shorter than 30~characters.
+
+\paragraph{NER/segmentation branch (conservative normalization).}
+The second output is designed for the segmentation (Stage3) and named-entity recognition (Stage4) tasks, which rely on the very tokens that the classification branch discards---party names, dates, monetary values, legal references, and structural markers. This branch therefore applies only Unicode normalization and whitespace regularization (collapsing horizontal runs and excessive blank lines) while preserving the original casing and all substantive content.
+
+The dual-output design allows each downstream stage to receive text in which irrelevant variation has been reduced without sacrificing the features it needs, a strategy that avoids the common trade-off between classification-oriented cleaning and entity-preserving fidelity.
+
+\subsection{Stage2: Penal-merit classification with BERT embeddings}
+\label{subsec:stage2}
+
+The goal of Stage2 is to classify each sentence into one of three penal-merit categories: \textit{condena\c{c}\~ao} (conviction, $n=25$), \textit{absolvi\c{c}\~ao} (acquittal, $n=46$), or \textit{extinto} (extinguished liability, $n=18$). After discarding documents with labels outside these three classes and those with fewer than 10~characters of normalized text, the working set comprises 89~documents---a low-resource setting that constrains the choice of modelling strategy.
+
+\paragraph{Embedding generation.}
+Rather than fine-tuning a transformer end-to-end---an approach we tested but discarded due to high variance on this sample size---we adopt a feature-extraction strategy in which a pre-trained BERT encoder produces a fixed-dimensional sentence embedding for each document, and a classical supervised classifier is trained on top. Three encoder backbones are compared:
+\begin{enumerate}
+    \item \texttt{dominguesm/legal-bert-base-cased-ptbr}, a Portuguese legal-domain BERT;
+    \item \texttt{neuralmind/bert-base-portuguese-cased} (BERTimbau base), a general-purpose Portuguese BERT; and
+    \item \texttt{neuralmind/bert-large-portuguese-cased} (BERTimbau large), the corresponding large variant.
+\end{enumerate}
+All encoders are loaded via the \texttt{SentenceTransformer} library. For each cross-validation fold, the encoder maps every document in the training and test partitions to a dense vector; a \texttt{StandardScaler} is then fitted on the training embeddings and applied to both sets before classification.
+
+\paragraph{Classifiers.}
+Four classifiers are evaluated on the scaled embeddings:
 \begin{itemize}
-    \item Encoders avaliados: \texttt{dominguesm/legal-bert-base-cased-ptbr}, \texttt{neuralmind/bert-base-portuguese-cased} e \texttt{neuralmind/bert-large-portuguese-cased}.
-    \item Classifiers: Logistic Regression, linear SVM, Random Forest, XGBoost.
-    \item Stratified $k$-fold protocol and weighted metrics.
+    \item Logistic Regression (\texttt{max\_iter}$=1000$, \texttt{class\_weight}$=$\texttt{balanced});
+    \item Linear SVM (\texttt{class\_weight}$=$\texttt{balanced});
+    \item Random Forest ($150$ estimators, \texttt{max\_depth}$=6$, \texttt{class\_weight}$=$\texttt{balanced}); and
+    \item XGBoost ($150$ estimators, \texttt{max\_depth}$=4$, \texttt{learning\_rate}$=0.1$).
 \end{itemize}
+Class-weight balancing is applied wherever supported to mitigate the effect of the skewed label distribution.
+
+\paragraph{Evaluation protocol.}
+All classifiers are evaluated under stratified $k$-fold cross-validation with $k=3$ (automatically reduced if the minority class has fewer samples than $k$), \texttt{shuffle}$=$\texttt{True}, and a fixed random seed ($42$). Per-fold metrics include accuracy, weighted precision, weighted recall, and weighted F1; aggregate performance is reported as the mean and standard deviation of the weighted F1 across folds. In addition, predictions from all folds are pooled to produce a single classification report with per-class scores and a confusion matrix, enabling a more granular view of class-level behaviour.
 
 \subsection{Stage3: LLM-assisted segmentation of conviction decisions}
 \begin{itemize}
