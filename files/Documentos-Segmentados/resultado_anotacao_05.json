@@ -1,0 +1,692 @@
+{
+  "index": 4,
+  "doc_id": 4,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 61,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSeção Judiciária de Roraima \n4a Vara Federal Criminal da SJRR",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1003083-51.2020.4.01.4200",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO: MARIA DO PERPETUO SOCORRO CRUZ DE SOUZA e outros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO “D” (RESOLUÇÃO CJF 535/2006)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1. RELATÓRIO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Trata-se de ação penal intentada pelo Ministério Público Federal \nimputando a MARIA DO PERPETUO SOCORRO CRUZ DE SOUZA, AUGUSTO\nCESAR CASTRO RODRIGUES e a CESAR PHELLIPPE DE SOUZA RODRIGUES a\nprática do delito tipificado no art. 149, caput, do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a denúncia:\n\n“Em data não perfeitamente apurada, porém até 20 de fevereiro de 2018, \nno interior da Fazenda Nova Estrela, localizada na RR-207, Município de \nBonfim/RR, os denunciados MARIA DO PERPETUO SOCORRO CRUZ \nDE SOUZA, AUGUSTO CESAR CASTRO RODRIGUES e CESAR \nPHELLIPPE DE SOUZA RODRIGUES, de maneira livre e consciente, \nreduziram 03 (três) trabalhadores à condição análoga à de escravo, \nsubmetendo-os a jornada exaustiva e sujeitando-os a condições \ndegradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "[…]",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A investigação teve início após ato fiscalizatório realizado na sede da \nFazenda ‘Nova Estrela’, promovida pela Equipe da Coordenação do Grupo \nEspecial de Fiscalização Móvel do Trabalho Escravo, do Ministério da \nEconomia, e Policiais Civis, tendo sido constatado que os trabalhadores \nYonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita \nSorangel Figueira Rodriguez estavam sendo submetidos a condições \ndegradantes de trabalho e a jornada exaustiva (fls. 68/83).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Conforme elementos amealhados pela fiscalização, as vítimas, durante o \nperíodo em que trabalhavam na ‘Fazenda Nova Estrela’, eram submetidas \na condições de trabalho análogas às de escravo, tais como cerceamento \nde ir e vir, jornada de trabalho laboral excessiva, sem descanso \nremunerado, e ausência de quitação de salários.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em entrevista pessoal, as vítimas Yonathan e Kelvin confirmaram que \nexerciam atividades relacionadas especialmente à criação de animais e \nque a vítima Yannizita era responsável principalmente por providenciar a \nrefeição dos trabalhadores e zelar pelo alojamento e residência dos \ndenunciados.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "As vítimas relataram, ainda, que moravam e trabalhavam ali, e que só era \npossível chegar e sair da fazenda se fossem levados pelo empregador, \numa vez que o local era de difícil acesso e não havia transporte disponível, \nalém de não existir comunicação por telefone.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Quanto à remuneração, as vítimas explicaram que recebiam R$ 400,00 \n(quatrocentos reais) referente a uma jornada aproximada de 14 horas \ndiárias, sem descanso semanal, sendo que os valores ficavam retidos e \nnão eram quitados nos períodos devidos. Nesse sentido, a vítima \nYonathan informou que solicitou que deixasse o trabalho e recebesse os \nvalores salariais devidos, obtendo como resposta de AUGUSTO CESAR \nCASTRO RODRIGUES que havia mais serviço a ser feito.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Do mesmo modo, é possível extrair dos depoimentos que as vítimas \nrecebiam ordens dos três denunciados MARIA DO PERPETUO \nSOCORRO CRUZ DE SOUZA, AUGUSTO CESAR CASTRO \nRODRIGUES e CESAR PHELLIPPE DE SOUZA RODRIGUES (fls. \n114/118 e 137/141).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Ademais, as vítimas Kelvin José Castillo Figueira e Yonathan Rafael \nCastillo Moreno afirmaram que o denunciado CÉSAR AUGUSTO CASTRO \nRODRIGUES era agressivo com os trabalhadores, xingando-os de forma \nrecorrente. Além disso, informaram que eram descontadas despesas como \nalimentação, roupas, material de higiene pessoal e luz, sendo que o \ncontrole desses gastos mensais era feito de forma unilateral pelo \nempregador, de modo que os trabalhadores não sabiam efetivamente o \nmontante que seria descontado (fls. 115/118).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A Equipe da Coordenação do Grupo Especial de Fiscalização Móvel do \nTrabalho Escravo do Ministério da Economia e Policiais Civis do Estado de \nRoraima, durante a fiscalização, constataram que os denunciados \ndesrespeitaram normas de proteção ao trabalho e convenções \ninternacionais ratificadas pelo Brasil, tais como pagamento de salários \n 4\n \natrasados ou não pagamento; não registro de horas extras; salário em \nvalor inferior ao salário- mínimo; jornada de trabalho excessiva, sem hora \npara encerrar e de domingo a domingo; ausência de fornecimento de \nEquipamentos de Proteção Individual – EPI; ausência de registro da \nrelação empregatícia.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Ao final, foram lavrados os Autos de Infração acostados às fls. \n143/205.”(ID 438654365 - grifei)",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 30/03/2021 (ID 492729953).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os acusados apresentaram resposta à acusação (ID 1440973860).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O Juízo entendeu não ser o caso de absolvição sumária e designou \naudiência de instrução (ID 1522866373).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Foi homologado o pedido de desistência de oitiva ofendidos (ID \n1738053081).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Conforme atas de audiência (ID 1698514959, ID 1791117546), foram \nouvidas as testemunhas THAIS SILVA DE CASTILHO, OTAVIO MORAIS FLOR e\nEUDENIS ALVES COIMBRA; e foram realizados os interrogatórios dos acusados.Encerrada a instrução probatória, as alegações finais foram convertidas em\nmemoriais.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Apresentaram memoriais o Ministério Público Federal (ID 1814661161) e \nos acusados (ID 1885958657).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. DECIDO.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "2. FUNDAMENTAÇÃO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "2.A) PRELIMINARES",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não tendo sido suscitadas questões preliminares, passa-se à análise de \nmérito do feito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.B) MÉRITO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "O art. 149, caput, do Código Penal incrimina a conduta de reduzir alguém \nà condição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a\njornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer\nrestringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o\nempregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Incorre nas mesmas penas quem cerceia o uso de qualquer meio de \ntransporte por parte do trabalhador, com o fim de retê-lo no local de trabalho; mantém \nvigilância ostensiva no local de trabalho ou se apodera de documentos ou objetos\npessoais do trabalhador, com o fim de retê-lo no local de trabalho (art. 149, § 1o, CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda, a pena é aumentada de metade, se o crime é cometido contra \ncriança ou adolescente; ou por motivo de preconceito de raça, cor, etnia, religião ou\norigem (art. 149, § 2o, CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso em apreço, ao valorar as provas produzidas no feito, verifico \nrestarem comprovadas a materialidade delitiva e a autoria do crime previsto no art.\n149, caput, do Código Penal, aproximadamente de 28/01/2015 a 20/02/2018, por \nMARIA DO PERPÉTUO SOCORRO CRUZ DE SOUZA, AUGUSTO CÉSAR CASTRO\nRODRIGUES e CÉSAR PHELLIPPE DE SOUZA RODRIGUES, sobretudo em razão\ndas seguintes provas:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(i) relatório de fiscalização pertinente ao período de 20/02/2018 a \n1o/06/2018, relativo à Fazenda Nova Estrela, cuja atividade principal é a criação\nde bovinos para corte, localizada na RR 207, região Serra da Lua, Bonfim/RR (ID\n420980357, p. 11/27).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme o relatório em questão, foram identificados os empregadores \nAUGUSTO CÉSAR CASTRO RODRIGUES, MARIA DO PERPÉTUO SOCORRO\nCRUZ DE SOUZA e CÉSAR PHELLIPPE DE SOUZA RODRIGUES (ID 420980357, p.\n14).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A respeito da distância da Fazenda, o relatório consignou que foram \npercorridos 126 (cento e vinte e seis) quilômetros até a porteira da Fazenda na RR\n207, tendo como ponto de partida a Ponte dos Macuxis, em Boa Vista/RR (ID\n420980357, p. 17).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre a ação fiscalizatória, destacou-se que foram encontrados, quando \nda realização de diligência na Fazenda Nova Estrela em virtude de investigação\ncriminal, três trabalhadores possivelmente reduzidos à condição análoga à de escravo\n– YONATHAN RAFAEL CASTILLO MORENO, KELVIN JOSÉ CASTILHO FIGUERA e\nYANNITZA SORANGEL FIGUERA RODRIGUEZ. Por tal motivo, representantes da\nPolícia Civil local contataram o representante do setor de fiscalização trabalhista, a fim\nque fosse feita uma ação conjunta no local ainda no mesmo dia (20/02/2018).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na ocasião, YONATHAN RAFAEL CASTILLO MORENO e KELVIN JOSÉ \nCASTILHO FIGUERA relataram trabalhar em atividades concernentes à criação de\ngalinha, cavalo, porco, carneiro e gado (ID 420989360, p. 17/21). A seu turno, ainda\nconforme o relatório em comento, YANNITZA SORANGEL FIGUERA RODRIGUEZ\nteria sido contratada para cozinhar para os trabalhadores, cuidar do alojamento e, \ntambém, da residência do empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo o Auditor-Fiscal do Trabalho signatário do aludido relatório, \nfinalizadas as entrevistas e a tomada de depoimentos, a inspeção trabalhista concluiu\nque os três trabalhadores em questão - YONATHAN RAFAEL CASTILLO MORENO, \nKELVIN JOSÉ CASTILHO FIGUERA e YANNITZA SORANGEL FIGUERA\nRODRIGUEZ – estavam submetidos à condição análoga à de escravo, na modalidade \ntrabalho forçado. Isso porque foi contatada a presença dos seguintes indicadores:\n\n“1.6 Existência de trabalhador restrito ao local de trabalho ou de \nalojamento, quando tal local situar-se em área isolada ou de difícil acesso, \nnão atendida regularmente por transporte público ou particular, ou em \nrazão de barreiras como desconhecimento de idioma, ou de usos e \ncostumes, de ausência de documentos pessoais, de situação de \nvulnerabilidade social ou de não pagamento de remuneração’; ‘1.10 \nEstabelecimento de sistemas remuneratórios que, por adotarem valores \nirrisórios pelo tempo de trabalho ou por unidade de produção, ou por \ntransferirem ilegalmente os ônus e riscos da atividade econômica para o \ntrabalhador, resultem no pagamento de salário base inferior ao mínimo \nlegal ou remuneração aquém da pactuada’; ‘1.13 Pagamento de salários \nfora do prazo legal de forma não eventual’, e ‘1.14 Retenção parcial ou \ntotal do salário.” (ID 420980357 , p. 19 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda segundo o relatório, foi constatado que a Fazenda Nova Estrela se \nencontra em local isolado, que não é servido por transporte público. Ademais, a saída\ndos trabalhadores de lá somente era possível a partir do uso de transporte fornecido\npelos empregadores e, além disso, no local de trabalho, não havia disponível nenhum\nveículo automotor que pudesse ser utilizado pelos trabalhadores para se deslocarem\nao município de Boa Vista/RR em caso de necessidade. Para os fiscais, ficou claro\nque os trabalhadores se encontravam retidos no local de trabalho em razão das\ncircunstâncias relatadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, chama a atenção a menção ao fato de que “No dia da \ninspeção no local de trabalho, em 20/02/2018, a moto que se encontrava no local foi\ninclusive transportada pela Polícia Civil na caçamba da viatura policial, pois os\ntrabalhadores desconheciam onde estaria a chave da motocicleta” (ID 420980357, p.\n19), fato esse repisado em juízo pelas testemunhas ouvidas neste feito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também os empregadores, extrajudicialmente, “confirmaram em \ndeclarações que somente seria possível se chegar a (sic) fazenda se os trabalhadores\nfossem levados pelo empregador e que a fazenda realmente é de difícil acesso” (ID\n420980357, p. 19, ID 420991352, p. 03/04).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De acordo com as declarações prestadas pelos empregadores na época \nda fiscalização, foi reconhecida a contratação de YONATHAN RAFAEL CASTILLO\nMORENO e de KELVIN JOSÉ CASTILLO FIGUEIRA, tendo sido ajustado que os\npagamentos seriam feitos por diárias, no valor de R$ 50,00 (cinqüenta reais). Na\nocasião, foi citada a existência de recibos pertinentes a tais pagamentos (ID\n420989360, p. 25/ID 420991352, p. 01/02).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto à trabalhadora YANNIZITA SORANGEL FIGUEIRA RODRIGUEZ, \na empregadora MARIA DO PERPETUO SOCORRO CRUZ DE SOUZA informou que o\npagamento seria de um salário mínimo mensal se o resultado fosse satisfatório (ID\n420991352, p. 03/04); versão diferente da apresentada à autoridade policial (ID\n263862389, p. 43/44).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sentido oposto ao declarado pelos empregadores, YONATHAN \nRAFAEL CASTILLO MORENO e KELVIN JOSÉ CASTILLO FIGUEIRA teriam dito que\no combinado com os réus seria o recebimento de R$ 400,00 (quatrocentos reais) por\nmês, por cerca de dez horas diárias de trabalho, todos os dias da semana, sem\ndescanso remunerado (ID 420980357, p. 20).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os fiscais verificaram, outrossim, que os salários pagos pelos réus não \n 6\n \neram pagos mensalmente. Os salários somente eram pagos quando os empregadores\nautorizavam a saída dos trabalhadores a fim de que retornassem à Venezuela para\nvisitar sua família e levar alimentos. Também se compreendeu que o retorno dos\ntrabalhados à fazenda ocorria para que conseguissem obter o restante dos\npagamentos devidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A fiscalização trabalhista indicou que os empregadores não forneciam \nrecibos de pagamento de salários e, além disso, realizavam descontos relativos à\nalimentação e energia elétrica consumida pelos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(ii) agenda com anotações – apreendida pelo Ministério do Trabalho \nno endereço estrada RR 207, região da Serra da Lua, na zona rural de Bonfim/RR\n(ID 420989360, p. 23) - referentes a gastos de trabalhadores com comida, itens de\nhigiene pessoal, roupas, remédios, energia elétrica (ID 420980357, p. 33/40, ID\n420989360, p. 01/07), a corroborar as conclusões da fiscalização e depoimentos\ndas testemunhas no sentido de que os trabalhadores tinham tais itens\ndescontados de seus respectivos salários;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(iii) os depoimentos prestados extrajudicialmente, ao Ministério do \nTrabalho, e 20/02/2018, pelas vítimas YANNIZITA SORANGEL FIGUEIRA\nRODRIGUEZ, KELVIN JOSÉ CASTILLO FIGUEIRA e YONATHAN RAFAEL\nCASTILLO MORENO, respectivamente:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "YANNIZITA SORANGEL FIGUEIRA RODRIGUEZ \n\n“[...] que começou a trabalhar na fazenda Nova Estrela em 08/02/2018, que \no filho do Senhor César Augusto, Felipe, a convidou pra trabalhar; que \nquem a levou para a fazenda foi o Senhor César Augusto e sua esposa em \nsua caminhonete; que é tia de Kelvin Castillo que já havia trabalhado na \nFazenda para o Senhor César Augusto; que o Senhor César Augusto, \ndono da fazenda, a contratou sem dizer quanto ela ia ganhar, que ele \napenas informou que ela seria contratada por um salário maior; que suas \n 8\n \natividades consistiam em limpar a casa do patrão, o refeitório e alojamento, \nfazer as refeições dos trabalhadores, cuidar das galinhas e manter a área \nem volta da sede limpa, que na fazenda a atividade principal é a criação de \nanimais (gado, porcos, cavalos e galinhas); que laborava todos os dias da \nsemana; que a jornada começava as 05:00 até as 20:00h; que recebia \nordens não só do Senhor César Augusto, de sua esposa, Maria do \nSocorro, e também do filho do patrão de nome Felipe; que tanto o Senhor \nCésar Augusto como Felipe se revezavam na gerência da fazenda, que \nnão possui CTPS, mas possui pedido de solicitação [...] de refúgio; que o \nSenhor César Augusto nunca lhe pediu a CTPS para anotação; [...] que a \nsede da fazenda fica longe da porteira principal; que na estrada de terra \nque leva à fazenda não passa transporte público; que para sair da fazenda \nsó [...] com autorização do Senhor César e com seu auxílio; que na \nfazenda não há telefone ou sinal de celular, ficando assim os trabalhadores \nvivendo isolados no local; que sabe por seu sobrinho que o salário não é \npago mensalmente; e que o Senhor César Augusto os quitava somente \nquando o mesmo permite que o trabalhador regressasse a Venezuela; que \nna fazenda há muito trabalho e um empregado executa tarefas \nequivalentes a dois trabalhadores.” (ID 420989360, p. 17 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "KELVIN JOSÉ CASTILLO FIGUEIRA \n\n“[...] que começou a trabalhar na fazenda Nova Estrela em 23/03/2016, que \nnesta época tinha 17 anos [...] que quando começou a trabalhar no local \nhavia mais um empregado de origem inglesa chamado Malcon; [...] que o \nSenhor César Augusto, dono da fazenda, o contratou por um salário \nmensal de R$ 400,00 (quatrocentos reais); que a atividade que \ndesempenhou nesse período era a de construção de cerca e cuidado com \n 9\n \na criação de animais (galinha, cavalo, vaca, porco, carneiro e gado); [...] \nque laborava todos os dias da semana para manter a criação de animais \nde 05:00 até as 19:00h, que recebia ordens não só do Senhor César \nAugusto mas também de seu filho de nome Felipe, que tanto o Senhor \nCésar Augusto como Felipe se revezavam na gerência da fazenda [...] que \no Senhor César Augusto nunca lhe pediu a CTPS para anotação; [...] que \npor diversas vezes solicitou ao Senhor César que o levasse até Boa \nVista/RR para poder requer o refúgio e tirar sua CTPS; que o Senhor \nCésar nunca o levou a Boa Vista/RR alegando que não era necessário; \nque a Fazenda Nova Estrela fica a 120 km de Boa Vista/RR e que a sede \nda fazenda fica muito longe da porteira principal mas não sabe informar o \nquanto; que na estrada de terra que leva à fazenda não passa transporte \npúblico; que para sair da fazenda só [...] com autorização do Senhor César \n e com o transporte do patrão; que na fazenda não há telefone ou sinal de \ncelular, ficando assim os trabalhadores vivendo isolados no local; que os \nsalários mensais eram acumulados mensalmente; que o Senhor César \nAugusto os quitava somente quando o mesmo permitia que regressasse a \n(sic) Venezuela; que regressou a (sic) Venezuela para levar auxílio \nfinanceiro para sua família (esposa e filho) que lá permaneceu; que queria \nque o ‘patrão’ lhe pagasse mensalmente, como acordado; que acredita \nque esta forma de periodicidade de pagamento de salário em períodos maiores \nque um mês era uma forma do patrão mantê-lo trabalhando no local pois \nnão ia embora com a esperança de que fosse quitado todos os direitos a \nle devidos; que do salário acordado ainda era descontado a alimentação, \nroupas, material de higiene pessoal e luz; que o controle dos gastos \nmensais com alimentação, roupas, material de higiene pessoal e luz é feito \npelo ‘patrão’, que não tem ideia do que ele desconta mensalmente do seu \nsalário; que não há prestação de contas e que o patrão não dá recibo do \nque foi pago como salário; que após meses de trabalho, em 20/01/2017, \nregressou a Venezuela levando R$ 2.800,00 [...]; que este valor foi pago \ncomo acerto referente a este tempo de serviço; que permaneceu na \nVenezuela e regressou à fazenda em 26 de maio de 2017 pois não tinha \noutra opção de emprego e porque o Senhor César Augusto ainda devia \n dinhero a ele; que laborou por até 08/12/2017 quando regressou a (sic) \nVenezuela levando R$ 1.000,00 [...]; que este valor, segundo o Senhor \nCésar Augusto é referente ao pagamento de seus salários durante o \nperíodo trabalhado de maior de 2017 a dezembro de 2017; que \npermaneceu na Venezuela e mais uma vez regressou em 08 fevereiro de \n2018, juntamente com sua tia que hoje também trabalha no local; que \nregressou pois o Senhor César Augusto ainda lhe deve e não tem outra \nopção de trabalho; que quando regressou o Senhor César Augusto foi \n 10\n \ntaxativo ao dizer que não lhe ia mais pagar; que em outubro de 2017 não \nreabasteceram a despensa; que só tinha para comer feijão, farinha e ovo; \nque o patrão não permite que os empregados matem animais para comer; \nque hoje a alimentação foi regularizada; que o Senhor César Augusto \nsempre promete que vai aumentar o salário; que o Senhor César Augusto \né sempre muito agressivo com os trabalhadores; que recorrentemente \nxinga os empregados gritando que ‘você é um down’, os chama de ‘filho da \nputa’ e ‘leproso’ quando não gosta da execução do serviço; que o único \nequipamento de proteção individual fornecido pelo Senhor César Augusto \nforam dois pares de bota usadas; que o par de bota dura cerca de 03 \nmeses; que hoje não possui bota para trabalhar.”(ID 420989360, p. 18/19 - \ngriffei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "YONATHAN RAFAEL CASTILLO MORENO \n\n“[...] que começou a trabalhar na Fazenda Nova Estrela em 28/01/2015, \nque nesta época tinha 16 anos; que um senhor que vende porco na feira o \nindicou para trabalhar na fazenda do Senhor César Augusto; [...] que o \nSenhor César Augusto, dono da fazenda, o contratou por um salário \nmensal de R$ 400,00 (quatrocentos reais); que a atividade que \ndesempenhou nesse período era a de construção de cerca e cuidado com \n 11\n \na criação de animais; [...] que laborava todos os dias da semana para \nmanter a criação de animais de 05:00 até as 19:00h, que recebia ordens \nnão só do Senhor César mas também de seu filho de nome Felipe; que \ntanto o Senhor César Augusto como Felipe se revezavam na gerência da \nfazenda [...] que o Senhor César Augusto nunca lhe pediu a CTPS para \nanotação; [...] que por diversas vezes solicitou ao Senhor César Augusto \nque o levasse até Boa Vista/RR para poder requerer o refúgio e tirar sua \nCTPS; que o Senhor César Augusto nunca o levou a Boa Vista alegando \nque não era necessário; que a Fazenda Nova Estrela fica a 120 km de Boa \nVista/RR e que a sede da fazenda fica a seis quilômetros da porteira \nprincipal; que na estrada de terra que leva à fazenda não passa transporte \npúblico; que para sair da fazenda só pode [...] com autorização do Senhor \nCésar e com seu auxílio; que na fazenda não há telefone ou sinal de \ncelular, ficando assim os trabalhadores vivendo isolados no local; que os \nsalários mensais eram acumulados mensalmente; e que o Senhor César \nAugusto os quitava somente quando o mesmo permitia que regressasse a \nVenezuela levar auxílio financeiro para a sua família (mãe, pai, vó, tia, \nprimo, sobrinho) que lá permaneceu; que do salário acordado ainda era \ndescontado a alimentação, roupas, material de higiene pessoal e luz; que o \ncontrole dos gastos mensais com alimentação, roupas, material de higiene \npessoal e luz é feito pelo ‘patrão’, que não tem idéia do que ele desconta \nmensalmente de seu salário; que não há prestação de contas e que o \npatrão não dá recibo do que foi pago como salário; que após 11 meses de \ntrabalho, em 15/12/2015, regressou a (sic) Venezuela levando R$ 2.300,00 \n[...]; que este valor foi pago como acerto referente a este tempo de serviço; \nque permaneceu na Venezuela e regressou à fazenda em março de 2016 \npois não tinha outra opção e porque ainda o Senhor César ainda devia \n dinhero a ele; que laborou por até 20/07/2017 quando regressou a (sic) \nVenezuela levando R$ 4.000,00 (quatro mil reais); que este valor, segundo \no Senhor César é referente ao pagamento de seus salários durante o \nperíodo trabalhado de janeiro de 2015 a julho de 2017; que passou um \nmês na Venezuela e mais uma vez regressou em 08 setembro de 2017, \ntanto por falta de emprego e porque ainda o Senhor César Augusto lhe \n 12\n \ndevida mais 04 meses de trabalho; que quando regressou o Senhor César \nAugusto foi taxativo ao dizer que não lhe ia mais pagar, que desde seu \nregresso até o presente momento não recebeu nenhum salário do ‘patrão’; \nque em outubro de 2017 não reabasteceram a despensa; que só tinha \npara comer feijão e ovo; que o patrão não permite que os empregados \nmatem animais para comer; hoje a alimentação foi regularizada; que o \nSenhor César Augusto é sempre muito agressivo com os trabalhadores; \nque recorrentemente xinga os empregados gritando que ‘não sabe \ntrabalhar porra!’, os chama de ‘filho da puta’ e ‘leproso’ quando não gosta \nda execução do serviço; que o único equipamento de proteção individual \nfornecido pelo Senhor César augusto foram três pares de bota; que o par \ndura cerca de 06 meses; que hoje usa bota que ele mesmo adquiriu \nporque o par de botas fornecido está com a sola quebrada.”(ID 420989360, \np. 20/21 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Posteriormente, registra-se que os trabalhadores YONATHAN RAFAEL \nCASTILLO MORENO (ID 420991352, p. 15/16), KELVIN JOSÉ CASTILLO FIGUEIRA\n(ID 420991352, p. 17) e YANNIZITA SORANGEL FIGUEIRA RODRIGUEZ (ID\n420991352, p. 18/19) foram ouvidos novamente pelo Ministério do Trabalho. Na\noportunidade, consignaram entender bem o idioma português e mantiveram\nsubstancialmente as versões inicialmente apresentadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Durante a segunda oitiva, YONATHAN RAFAEL CASTILLO MORENO \nrelatou, em adição, “que durante esse período sempre pediu ao empregador\nAUGUSTO CÉSAR CASTRO RODRIGUES para deixar o trabalho, porém o mesmo\nsolicitava que o declarante ficasse na fazenda, pois havia mais trabalho a ser feito” (ID\n420991352, p. 15) e que “quando retornou à fazenda e cobrou os valores que ainda\nnão haviam sido pagos, recebeu a resposta por parte do empregador AUGUSTO\nCÉSAR e da senhora MARIA DO PERPÉTUO SOCORRO CRUZ E SOUZA de que\nnão iria receber os valores porque o amigo do DECLARANTE, CRISTIAN [...] tinha\nsido acusado pelos empregadores de ter furtado sabonete e cachaça da casa dos\npatrões” (ID 420991352, p. 15).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Antes da segunda oitiva, importante apontar a descrição de ameaças \nsofridas por YANNIZITA SORANGEL FIGUEIRA RODRIGUEZ, a fim de entrassem em\nacordo. Tais ameaças, conforme a declarante, foram transmitidas pelo advogado que\nAcompanhava a ré MARIA DO PERPÉTUO SOCORRO CRUZ DE SOUZA (ID\n420991352, p. 18/19).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(iv) depoimentos prestados, em juízo, pelas testemunhas THAÍS \nSILVA DE CASTILHO, OTÁVIO MORAIS FLOR e EUDENIS ALVES COIMBRA (ID\n1705966956).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha THAIS SILVA DE CASTILHO informou trabalhar como \nauditora fiscal do trabalho; se recordar da fiscalização tratada nestes autos; disse que\nessa fiscalização foi feita a pedido da Polícia Civil; estiveram na sede da Fazenda a\npedido da Polícia Civil, que estava investigando outro acontecimento ali e eles\nrelataram que esses trabalhadores estavam ali sem a carteira assinada, recebiam\nmenos que um salário mínimo; estavam trabalhando em jornadas que não são as\nlegais; tinha a questão dos trabalhadores, eles sempre estarem sendo mantidos ali, \n 13\n \npelo empregador, porque estes o deviam valor; então, ainda que eles fossem\nliberados, por exemplo, para saírem para a Venezuela, eles voltavam porque o\nempregador sempre estava devendo a eles salário, parte do salário; e, realmente, o\nlocal era isolado, a gente constatou que depois da porteira você ainda tinha que andar\nalguns quilômetros “né”, até chegar à sede da Fazenda e isso dificultava então e\nimpossibilitava a saída deles dali, até porque da porteira para a rua é a rodovia e aí\ntambém por lá não tem nada, não passa nada; os três eram venezuelanos; os dois\nmeninos ainda tinham começado a trabalhar, segundo relatos, antes dos 18 anos;\nportanto, nas piores formas de trabalho infantil; todos, na época da fiscalização, eram\nmaiores de idade, mas como eles relataram que começaram a trabalhar em um\nperíodo anterior à fiscalização, então a gente constatou que realmente eles\ntrabalharam ali antes da idade permitida pela lei; não se recorda de cabeça a quem\npertencia essa fazenda, mas acha que era desse senhor César; e sobre quem havia\ncontratado [os trabalhadores], a testemunha não vai recordar também; tem que\nrecapitular, ver tudo direitinho como é que aconteceu; quando a gente foi até o local, \nnão havia nenhum responsável pela fazenda ali; por outra circunstância, o responsável\nestava preso e no dia e hora marcado para receber esses empregadores na\nSuperintendência, a testemunha não participou dessa reunião; não se recorda do valor\nexato que as vítimas recebiam mensalmente, mas sabe que era menos que um salário\nmínimo à época; e tinha a questão que os empregados não recebiam nem o valor total\nque era acordado com eles e isso fazia com que eles permanecessem no local na\nesperança de receber o valor devido pelo empregador; como o local era de difícil\nacesso, eles [Yonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e\nYannizita Sorangel Figueira Rodriguez] acabavam ficando por ali mesmo; eles\ndependiam do empregador para sair do local; então, além das jornadas de 14 horas,\nos descansos semanais também não eram observados; lembra [de declaração dos\ntrabalhadores no sentido de que o empregador Augusto César era agressivo]; lembra\nque os trabalhadores temiam o empregador na lida diária; não gostavam de confrontar\no empregador... na questão de receber os salários, tudo mais; [resposta ao\nquestionamento referente a Yonathan, que teria solicitado os valores devidos para\ndeixar o trabalho e poder voltar para a casa, ao que obteve como resposta de\nAUGUSTO CESAR CASTRO RODRIGUES que havia mais serviço a ser feito] sim, \nisso que eles relatavam; que eles permaneciam ali porque o empregador sempre devia\na eles uma quantia; era uma forma de mantê-los ali também; quando chegou à sede\nda fazenda havia somente os trabalhadores; a questão não é estar acorrentado; a\nquestão é a dificuldade de sair porque não tinha pessoa que pudesse os levar para\nfora dali, a não ser que a pessoa fosse exaustivamente andando; eles [Yonathan\nRafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel Figueira\nRodriguez] estavam sozinhos; havia a distância impedindo a saída; [para chegar à\nfazenda] é um caminho longo, com poucos pontos de apoio, em que você possa parar\ne pedir ajuda e tudo mais; é um lugar ermo; mas com um carro tracionado, tranquilo;\nnão consegue identificar assim [fazendas vizinhas]; tinha tido aquele acontecimento\naquele dia “né” e a pessoa parece que tinha sido presa lá “né” [o proprietário da\nfazenda teria sido preso]; não sabe se os proprietários da fazenda moravam ou\npassavam lá de tempos em tempos; acredita que não moravam não; a testemunha\nAcompanhou a Polícia Civil, foi no veículo deles; foi no mesmo dia em que ocorreu a\n 14\n \nprisão por outra situação; não teve nenhum tradutor nessa conversa com as vítimas; a\ngente falando devagar, pausadamente, a gente consegue entender tranquilamente;\nnão se recorda de cavalo na fazenda, mas se lembra que tinha um veículo cuja chave\nficava com o empregador, então eles não tinham acesso; um quadriciclo, uma moto, \nnão se lembra o que era, era alguma coisa de rodas, não era carro; eles [Yonathan\nRafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel Figueira\nRodriguez] que relatam que as chaves ficavam com o empregador; a gente encontrou\nalimentos; tinha também o local de dormir, um alojamento; a gente é auditor fiscal do\ntrabalho, então, numa entrevista, se a gente configura que ali estão presentes os\nelementos de uma relação de emprego, então se trata de uma relação de emprego\n“né”; até porque era uma atividade ligada ao próprio andamento usual da fazenda, que\né cuidar da criação, de animais e tudo mais; então não cabe aí um contrato de\nempreitada, não há um serviço certo a ser realizado, é um serviço contínuo, em uma\nrelação de emprego porque os elementos que configuram a relação de emprego\nestavam presentes; os elementos que configuram a relação de emprego a gente\nconsegue através da entrevista, a gente consegue através da inspeção ali no local de\ntrabalho, vê qual atividade ali que ele exerce e com documentos, que não foram\napresentados pelos empregadores (neste caso) (ID 1705966956, 01’57”/20’20”).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sentido semelhante, a testemunha OTÁVIO MORAIS FLOR informou \ntrabalhar como auditor fiscal do trabalho; afirmou que quando recebeu a intimação\nteve que recorrer aos sistemas para se lembrar do que se tratava; já está distante no\ntempo, então além daquilo que está no relatório, não tem mais lembrança, mais\ndetalhes; a nossa conclusão, no caso, foi de que tinha o trabalho análogo ao de\nescravo, mas que o elemento ali era o trabalho forçado; a gente não constatou a\njornada exaustiva e em condições degradantes no caso; eram os venezuelanos\n[Yonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel\nFigueira Rodriguez] que estavam lá; não foi a testemunha que esteve no primeiro\n 15\n \nmomento na fazenda; atuou posteriormente e a sua tarefa foi, por exemplo, de fazer\noitiva tanto do empregador, o qual se encontrava detido, da empregadora, esposa\ndele, crê que união estável; o empregador era AUGUSTO CESAR CASTRO\nRODRIGUES; não sabe se AUGUSTO CESAR CASTRO RODRIGUES e MARIA DO\nPERPETUO SOCORRO CRUZ DE SOUZA estavam na hora na fazenda na\nfiscalização; quem estava lá na hora da fiscalização era a auditora THAIS; compôs a\nequipe de auditoria posteriormente; não foi à fazenda; condição degradante de\ntrabalho não foi constatada pela fiscalização a partir desse relatório de fiscalização; no\ndia 19/03/2018, foi à cadeia para fazer a oitiva de AUGUSTO CESAR CASTRO\nRODRIGUES; também fez a oitiva da senhora MARIA DO PERPETUO SOCORRO\nCRUZ DE SOUZA; esteve no momento em que foi aguardado para que tomassem as\nprovidências que eles são notificados em relação aos direitos trabalhistas; fez uma\nnova oitiva dos três trabalhadores venezuelanos; foi constatada a submissão deles às\ncondições de trabalho análogo às de escravo, no que se refere a trabalho forçado;\nprimeiro de tudo, o nosso relatório também aponta isso, um suposto tráfico de\npessoas; retirar esses trabalhadores de Boa Vista e levá-los à fazenda, se valendo de\ncondições que depois seriam configuradas como de trabalho análogo à condição de\nescravidão; havia uma coação a esses trabalhadores no sentido de mantê-los ali\ntrabalhando e, mais do que isso, falar que era preciso continuar trabalhando mesmo\nnas condições em que eles diziam que “olha, quero sair”, “preciso sair para regularizar\nminha documentação de refugiado, para retirar a minha CTPS” e o empregador, \nsegundo eles afirmam, não deixava que eles saíssem; então tem essa coação de você\nprender o trabalhador dentro do trabalho; e, também, uma situação que no primeiro\nmomento se tem uma aceitação para o trabalho, no segundo momento, não tem mais,\nque é a vontade deles de saírem do local e não terem as condições; eles falam que \nestavam sujeitos ao arbítrio do empregador para poder sair de lá; então, eram\ntrabalhadores em vulnerabilidade; crê que ainda existe esse decreto acerca da\nvulnerabilidade dos venezuelanos, por conta do processo que ocorreu no país de\norigem deles; tem as dificuldades ali de locomoção; os próprios empregadores, nas\noitivas, falam que é de difícil acesso, tem uma distância considerável para ser\npercorrida para sair dali; eles não tinham meios de transporte que ficava no local para\nque eles pudessem sair; tinha a questão da falta de comunicação com o mundo\nexterno, por celular; eles recebiam 400 reais mensais; e a uma empregada, a\nYannizita, sequer houve tratativa quanto a valores para ela; esses valores não eram\npagos em dia; eram postergados até o momento em que o empregador permitisse que\neles saíssem do local para retornarem à Venezuela; então havia adiamento de meses\nde trabalho e quando era pago, se pago, era pago ainda a menor, com descontos, que\ndaria um total menor do que o mínimo; quanto à questão da jornada de trabalho, a\ngente sempre escuta os dois lados; tem sim esse caso dos trabalhadores dizendo que\ntrabalhavam ininterruptamente, sem descanso semanal remunerado, sem o próprio\ndescanso durante todo o período em que eles laboraram; e tem um segundo momento\nquando nós ouvimos novamente esses trabalhadores, os dois, Kelvin e Yonathan,\nafirmaram que, nos intervalos para refeições, o empregador dizia para eles almoçarem\nrápido, ligeiro, ligeiro, que não durava mais que 15 minutos esses intervalos para\nrefeições, segundo eles; sim [foi relatado violência verbal que eles teriam sofrido], há\nnos termos de declaração, expressamente, chamados de “down”, de “filho da puta” e o\noutro xingamento que eles relatam... “leproso”; constatamos as condições de trabalho\n 16\n \nanálogo à de escravo, na esfera administrativa; essa primeira verificação física a\nTHAIS quem fez; não se recorda se os trabalhadores falaram que os empregadores\nresidiam na fazenda; tem lá nos depoimentos quanto a isso e acha que o próprio\nempregador disse que não vai dizer onde ele mora; acha que tem em algum momento\nalguém dizendo que eles morariam lá [na fazenda] sim; é um pouco contraditório, \nporque tem alguns momentos que também aparece que eles ficavam mais de meses\nsem ir até o local; eles [Yonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira\ne Yannizita Sorangel Figueira Rodriguez] disseram para a gente que entendiam\nportuguês e, inclusive, está nos depoimentos deles, na primeira parte; não existia\ntransporte na fazenda, segundo o relato dos trabalhadores; o relatório diz que no dia\nda fiscalização in loco havia uma moto, que não se sabia onde estava a chave e essa\nmoto foi levada na carroceria da viatura da Polícia Civil; não adianta uma moto sem\nchave; a contratação deles está especificada no relatório e em todos os autos de\ninfração em relação a isso; tem relatos de que em um momento desse vínculo deles\nfaltou comida porque, para os trabalhadores rurais, há uma exigência de que eles\nrecebam alimentação sadia e farta; em um momento, os trabalhadores relatam que\nhavia somente feijão e ovo e farinha, não se recorda; em outros momentos não, que\ntinha mais alimentação, mas que era fornecida; já outros itens, como vestuário,\nmaterial de higiene, eles [trabalhadores] falam que inclusive era descontado dos\nparcos valores recebidos por eles; inclusive, há um relato de um trabalhador que diz o\ncaso de outro [trabalhador] anterior que teria supostamente furtado uma cachaça e um\nsabonete e teria sido espancado por um capataz ali da fazenda; pelos relatos, à\népoca, não [não pegava sinal de telefone]; o difícil acesso leva em conta uma série de\nfatores, se têm transporte público que passa com frequência, o transporte privado\ntambém, as dificuldades que as pessoas têm com a língua, com os costumes locais, \ntudo isso isola uma pessoa em uma região; o difícil acesso seria para todos, claro; não\nestava lá, não sabe se além deles [dos trabalhadores], havia alguma outra pessoa no\nlocal (ID 1705966956, 21’04”/46’20”).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha EUDENIS ALVES COIMBRA asseverou trabalhar como \nagente de polícia civil; nessa época, estava lotado no Departamento de Operações\nEspeciais; estava encabeçando uma investigação referente a um homicídio ocorrido\nnesse tempo aí, acha que outubro de 2017, salvo engano; representamos por busca e\napreensões do pessoal dessa família, que era o senhor Augusto e dois filhos dele;\numa equipe foi destacada para fazer busca na Fazenda Estrela, no Bonfim; o pessoal\nda fazenda retornou e disse que lá ficavam uns venezuelanos; não se recorda se\nmontou uma equipe e foi lá no mesmo dia, à tarde, para verificar essa situação, até\nporque a gente teve a informação de que uma motocicleta utilizada no crime estaria\nguardada lá, escondida; não se recorda se foi no mesmo dia ou no outro; foi com uma\nequipe e foi um pessoal do Ministério do Trabalho; inclusive a testemunha só se\nlembra de uma fiscal, não sabe se foi um ou se foram dois; chegaram à fazenda e\nverificaram que realmente tinham esses venezuelanos lá; salvo engano, uma mulher e\ndois homens; apreenderam a motocicleta e os fiscais fizeram o trabalho deles lá, \ninterrogaram as pessoas que estavam lá; lembra bem que ficou bem claro que eles\n 17\n \ndiziam que trabalhavam ali só por comida; que não tinha salário; que não podiam sair\nda fazenda para vir até a cidade; que não podiam manter contato com parentes; era\n 18\n \nalguma coisa assim; os réus tinham uma casa na cidade; o acesso [à Fazenda] era\ndistante e não tão bom; a estrada era de barro, cheia de buraco; sim, entrou na casa\nlá; tinha cama lá; tinha tudo organizado; eles sempre estavam lá; dava para perceber\nque eles [os réus] não residiam lá, mas de vez em quando estavam por lá; sim [no dia\nda fiscalização estavam só os venezuelanos lá], não tinha ninguém da casa lá; é o que\na testemunha os escutou falando para os fiscais [escutou os venezuelanos falando\npara os fiscais que estavam impedidos de sair de lá]; só sabe o que eles [os\nvenezuelanos] falaram no dia, que não poderiam sair, que ele não os autoriza a sair;\neles não estavam lá amarrados; é, [os venezuelanos disseram que eram impedidos]\nde se deslocarem, de visitar parente em Boa Vista, que não davam (...) para eles,\nessas coisas assim; tinha comida lá para eles; só se recorda de uma fiscal, que era\numa mulher; não se recorda de tradutor oficial; não se recorda se foi a equipe que foi\nlá anteriormente fazer as buscas e comentou com o delegado e acionou os fiscais\n[sobre as condições dos trabalhadores na Fazenda]; a motocicleta estava guardada lá\nno quarto; não se recorda de ter outro transporte por lá; eles falaram que não tinham\ncarteira assinada; não se recorda quem era que ele dizia que era o empregador; eles\n[Yonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel\nFigueira Rodriguez] citavam muito o patrão deles “César”; não falou da mulher [MARIA\nDO PERPETUO SOCORRO CRUZ DE SOUZA] não; não se recorda de ele [o\nvenezuelano] ter falado de CESAR PHELLIPPE DE SOUZA RODRIGUES; acha que\neles [Yonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita\nSorangel Figueira Rodriguez] tinham pouco tempo no Brasil; dava para perceber que a\nfiscal entendia o que eles falavam e os fazia entender o que ela falava também; não se\nrecorda se lá pega sinal de telefone (ID 1705966956, 48’20”/1h02).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em seus interrogatórios, os réus apresentaram versão que contradiz o que\nrestou demonstrado pelas provas acima referidas, havendo, inclusive, contradição ao\nque por eles foi relatado extrajudicialmente e contradição entre as versões\napresentadas pelos réus.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse cenário, imperioso fazer referência às principais passagens \nrelativas às declarações prestadas pelos acusados em juízo e fora dele.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em juízo, a ré MARIA DO PERPETUO SOCORRO CRUZ DE SOUZA \nafirmou que a acusação não é verdadeira; isso nunca existiu; é temente a Deus e\njamais vai fazer uma coisa errada; a interrogada ficava mais na cidade, na sua\nchácara; as únicas coisas que a interrogada sabia era que seu marido vinha para a\ncidade e a gente os pagava [referindo-se aos trabalhadores da Fazenda] e a\ninterrogada fazia os recibos; não tinha conhecimento [de que as pessoas apontadas\ncomo vítimas na denúncia trabalhavam na fazenda]; teve três AVCs; não ia à fazenda\nfrenquentemente; ia, às vezes, uma vez no mês; quando era preciso; foi lá na fazenda\nem 2018; só os dois rapazes estavam lá [trabalhando]; essa moça não morava lá não;\nYonathan e Kelvin não trabalhavam na criação de animais; eles faziam cerca; até\nporque esse pessoal não sabia nada; esse pessoal quando vem da Venezuela não\nsabe fazer absolutamente nada; lá tem dois tratores; o seu marido e seu filho os\nensinaram a mexer no trator, a dirigir, a operar, a fazer tudo; tem uma moto lá, os\nensinou a dirigir essa moto; o seu filho os ensinou a selar cavalo, a andar a cavalo, \ntudo isso; o pouquinho que eles sabem quem ensinou foi o marido e o seu filho;\nninguém consegue trabalhar 14 horas por dia; eles recebiam pelo trabalho [em\ndinheiro]; eles tinham livre acesso a entrar e sair a qualquer hora; jamais alguém vai\nprender ninguém; atribui a acusação a um advogado que queria ficar nessa fazenda, \nque essa fazenda nós já pegamos hipotecada; e a interrogada pagou uma as\nhipotecas quando ela foi a leilão; a interrogada mais seu filho mais velho vendeu um\ngado; não tinha tempo certo, às vezes a interrogada ia à fazenda de mês em mês, \npassava dois meses, três meses; ia com mais frequência no final do ano; quando ia\npara a fazenda ficava um dia, dois, três dias, porque mora em uma chácara grande e\nnão pode deixar o imóvel sozinho muito tempo, porque já roubaram lá três vezes; foi\nsó uma vez no Ministério do Trabalho; não [não se lembra de o Ministério do trabalho\nchamá-la novamente para assinar a carteira dos trabalhadores]; esse pessoal não tem\ndocumento; eles vinham para o Brasil ilegalmente; uma vez viu o César pedindo que\nse eles quisessem ficar por aqui, que tirassem a carteira deles de identidade e CPF;\npaga um valor em virtude de processo na Justiça do Trabalho, perfazendo um total de\n40 mil reais; não era a interrogada que dava as ordens de trabalho na fazenda, até\nporque não entende nada de fazenda; era o César que dava; o PHELLIPPE tinha um\ncargo lá na fazenda; o PHELLIPPE não dava ordens lá na fazenda (ID 1794072688, \n50m5s/1h06m10s).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Extrajudicialmente, a acusada disse: \n\nQUE foi cientificada dos seus direitos constitucionais, entre os quais o de \nque não é obrigada a oferecer prova contra si mesma e o de permanecer \n 19\n \nem silêncio; QUE atualmente é a proprietária de fato da FAZENDA NOVA \nESTRELA localizada na Região da Serra da Lua, município do BONFIM no \nEstado de Roraima; QUE é assentada pelo INCRA na referida \npropriedade; QUE no dia da FISCALIZAÇÃO do GRUPO ESPECIAL DE \nFISCALIZAÇÃO MOVEL - GEFM a declarante não se encontrava na \npropriedade; QUE na época da fiscalização os responsáveis pela \nFAZENDA NOVA ESTRELA e pelos trabalhadores encontrados em \n 20\n \nsituação análoga a de escravo era a declarante e seu esposo AUGUSTO \nCESAR CASTRO RODRIGUES; QUE atualmente seu esposo cumpre \nprisão preventiva na Cadeia Pública de Roraima; QUE no dia da \nfiscalização três venezuelanos trabalhavam para a declarante e seu \nesposo na FAZENDA NOVA ESTRELA; QUE Jhonatas já trabalhava na \nfazenda há cinco meses; QUE KELVIN já estava trabalhando na fazenda \n 21\n \nhá um mês e dezessete dias; QUE a terceira era uma Senhora, tia de \nKELVIN, a qual trabalhava na fazenda há quatorze dias; QUE em relação \naos fatos em apuração destaca que seus funcionários não estavam \nsujeitos a trabalhos forçados, e que não existia qualquer controle ou \nvigilância ostensiva em relação aos mesmos; QUE tratava todos seus \nfuncionários como filhos; QUE a FAZENDA NOVA ESTRELA não é de \n 22\n \ndifícil de acesso; QUE o local recebe inclusive correspondência da \nCompanhia de Luz de Roraima; QUE no local existia uma motocicleta a \nqual ficava à disposição de seus empregados; QUE seus não possuíam \nhabilitação; QUE seus funcionários tinham a liberdade de ir e vir; QUE \nseus funcionários tinham um modo de trabalho por temporada; QUE nesse \ntipo de trabalho esses estrangeiros objetivam obter uma certa quantia \nremuneratória, e tão logo estejam satisfeitos, retornam ao país de origem; \nQUE os três funcionários recebia R$ 500,00 cada um, valor pago \nmensalmente; QUE a declarante destaca que além do salário seus \nfuncionários recebiam os seguintes benefícios: assistência médica, \ndentista, alimentação, medicamento, roupas e calçados, hospedagem e \neventualmente dinheiro para custear outras despesas, a exemplo de \ncigarros, perfumes, etc; QUE deseja destacar que todos esses benefícios \nsomados ultrapassam mensalmente o valor do salário mínimo por pessoa \nprevisto em lei; QUE jamais atrasou os salários de seus funcionários, mas \n 23\n \ndeseja esclarecer que em muitas ocasiões os próprios funcionários pediam \npara que a declarante guardasse o valor da remuneração deles com a \nmesma, para que somente lhe fossem entregue quando do retorno ao seu \npaís de origem; QUE nunca foi processada ou presa anteriormente; QUE \ndeseja acrescentar que nunca recebeu qualquer reclamação por parte de \nseus funcionários em relação às condições de trabalho; QUE na verdade \ntodos seus funcionários lhe são gratos pelos aprendizados obtidos junto à \ndeclarante e seus familiares. (ID 263862389, p. 43/44 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "QUE mantém união estável com AUGUSTO CÉSAR CASTRO \nRODRIGUES, e também reside na fazenda Nova Estrela, localizada no \nmunicípio de Bonfim/RR, na região Serra da Lua, na RR 207; QUE \nreferida fazenda é de difícil acesso; QUE serviço público de ônibus passa a \ncerca de 8km de distância da fazenda; QUE atualmente é desempenhada \na atividade de pecuária na fazenda com cria e recria de gado, com \naproximadamente 600 [...] cabeças de gado; [...] QUE anteriormente à \n 24\n \npresente situação, o trabalho efetuado na fazenda era exercido através de \nempreita com os trabalhadores realizando tarefas de cuidado de galinhas, \nporcos, carneiros, limpeza de quintal, conhecido como “circar”, roçar grama \ndo jardim; QUE não havia nos trabalhos de empreita os serviços de \nconserto de cerca, nem cuidados com o gado por parte de outros \ntrabalhadores a não ser pelo grupo familiar da DECLARANTE; QUE os \nserviços construção de barracão eram feitos por um pedreiro conhecido \ncomo SABÁ; QUE o trabalho principal era realizado pela família, composto \npelo senhor AUGUSTO CÉSAR, CÉSAR FELIPE RODRIGUES e a própria \nDECLARANTE; [...] QUE questionada se conheceu YANNITZA \nSORANGEL FIGUERA RODRIGUES, YONATHAN RAFAEL CASTILLO \nMORENO e KELVIN JOSE CASTILLO FIGUERA, respondeu que sim; [...] \nQUE referidos trabalhadores exerciam as atividades citadas anteriormente, \nquais sejam, tarefas de cuidado de galinhas, porcos, carneiros, limpeza de \nquintal, conhecido como “circar”, roçar grama do jardim; QUE YANNITZA é \ntia de KELVIN, e foi através deste que conheceu os demais; [...] QUE seu \nfilho FELIPE entrou em contato com KELVIN e apresentou o trabalho que \npossuía na fazenda, que seria de empreita; QUE não sabe qual \npagamento foi combinado com KELVIN; QUE não se recorda ao certo \nquando KELVIN iniciou os trabalhos na fazenda; [...] QUE após algum \ntempo YONATHAN procurou trabalho, apresentado por KELVIN; QUE pós \n 25\n \nisso, YANNITZA apareceu na casa da DECLARANTE na cidade e solicitou \najuda, pois havia sido dispensada de lanchonete; QUE a declarante \nresolveu fazer um contrato de experiência, verbal, com YANNITZA, para a \nmesma preparar a alimentação dos rapazes (KELVIN e YONATHAN) e da \nprópria DECLARANTE; QUE não combinou nenhum valor com YANNITZA, \nmas pagaria o valor de salário mínimo se o resultado fosse satisfatório; \nQUE YANNITZA trabalhou por dez dias na fazenda; QUE os pagamentos \neram feitos tanto pela DECLARANTE, quanto por AUGUSTO CÉSAR e \nFELIPE; QUE pagava pelas empreitas quando estas terminavam; QUE as \nempreitas duravam de um a dois dias; QUE perguntava aos trabalhadores \nquando eles gostariam de receber o dinheiro, e efetuava os pagamentos \ndiante recibo, mas nem sempre; QUE os trabalhadores saíam de lá com \nbom dinheiro; QUE os valores pagos chegaram a ser de R$ 3.500,00 [...], \nmas não se recorda a qual trabalhador; QUE não realizava nenhum tipo de \ndesconto nos pagamentos efetuados; QUE em referência à criação de \nporcos da fazenda, sob orientação de AUGUSTO CÉSAR quanto aos \ncuidados que tinham que ser realizados, os trabalhadores eram agraciados \ncom valores a mais, como extras ou até mesmo em bens como sandálias e \nbolachas; QUE possui comprovantes de pagamentos realizados; QUE \nestava esperando o trâmite da regularização da documentação dos \nrapazes para providenciar a assinatura de suas CTPS; QUE conhece os \n 26\n \ntrabalhadores há cerca de 08 [...] meses; QUE enquanto um trabalhador \nficaria na fazenda por cerca de um mês, o outro ia para a Venezuela; QUE \nos trabalhadores informavam quando gostariam de receber o dinheiro para \nir à Venezuela; QUE os valores a serem pagos poderiam se acumular de \num mês a um mês e dez dias; QUE mantinha carro por 24h na fazenda \ndisponível para que os trabalhadores deixarem o local; [...] os \ntrabalhadores foram levados da fazenda em 20/02/2018 [...] QUE desde \n 27\n \nentão não manteve contato com os trabalhadores, nem eles a procuraram; \nQUE acredita que ainda há valores a serem pagos, porém, não sabe \nquanto, pois é AUGUSTO CÉSAR que faz anotações dos valores a serem \npagos; [...] QUE no dia 20/02/2018, segundo relatou YONATHAN ao (sic) \nfilha da declarante, o senhor RICHARDSON AUGUSTO SOUZA \nRODRIGUES, mesmo (YONATHAN) foi espancado pelos policiais de \nmanhã, os quais atiram para cima, amedrontando os trabalhadores da \n 28\n \nfazenda. (ID 420991352, p. 03/04 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por sua vez, AUGUSTO CESAR CASTRO RODRIGUES contou em juízo \nque é pecuarista; está preso em decorrência de acusação por homicídio; a acusação\n[destes autos] não é verdadeira; eles [Yonathan e Kelvin] apareceram lá para pedir\nemprego e deu apenas a empreitada de uma cerca para eles; aí eles trouxeram essa\nsenhora [Yannizita Sorangel Figueira Rodriguez], que o interrogado nem conhecia; ela\nestava com uns três dias lá; quando o interrogado foi preso; o interrogado nem sabia\nque ela estava lá; essa senhora era a tia de um deles, para cozinhar para eles; eles\ntinham quarto deles, tinham casa, tinha tudo lá, nós não temos esse negócio de\ndestrato não; eles trabalhavam lá na diária e empreitada; tinham liberdade para sair \nquando quisessem da fazenda; lá passa rota escolar, tem água, luz, telefone, tinha\ntrator, tinha tudo lá; foi na época em que foi preso, eles estavam começando a querer\nfazer o serviço ainda lá; o policiais que foram lá foram para o prender; e a senhora do\nMinistério do Trabalho é a mulher do delegado; a sua esposa nem na fazenda ia;\nquem mais tomava de conta era o interrogado; e o CESAR PHELLIPPE era apenas o\nseu ajudante, o seu vaqueiro, seu filho; pagava os trabalhadores por empreitada ou\ndiária; não assinou a carteira deles; eles não passavam muito tempo; pediu\ndocumentos dos trabalhadores para fazer um contrato, mas eles disseram que não\n 29\n \ntinham documentos; lá eles tinham tudo para trabalhar com a gente, tinham\nferramentas, tinham toda a liberdade; todo o dinheiro da empreitada eles recebiam; \nquem transferia o dinheiro para a Venezuela era uma parenta deles que morava aqui, \nchamada Clara; isso aí o interrogado não tinha conhecimento; eles levavam e\ndepositavam esse dinheiro lá; não descontava [sabonete, itens de higiene, coisas para\no dia a dia]; a empreitada para eles era com café, almoço, que eles não tinham nem\nroupa; não se recorda de uma caderneta encontrada lá; lá passa rota escolar, ônibus;\ntinham outras formas de sair lá; tem uma estrada na frente da fazenda; a motocicleta\nera utilizada pelos trabalhadores; os trabalhadores não só trabalhavam para o\ninterrogado, mas moravam na sua fazenda; eles comiam junto com a gente; eles\n 30\n \nusavam tudo lá, tinha sabonete, sabão em pó; quando eles terminavam o serviço, o\n 31\n \ninterrogado pagava, eles iam embora e depois voltavam de novo pedindo trabalho;\nnão era só o interrogado que dava serviço a eles; naquela vila também eles\ntrabalhavam; tinha até confiança nesses homens, tanto que deixava a casa aberta\ncom eles; CÉSAR PHELLIPPE e sua esposa não davam ordens (ID 1794072688, \n33m20s/49m52s).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sede extrajudicial, o acusado AUGUSTO CÉSAR CASTRO \nRODRIGUES pontuou:\n\nQUE foi cientificado dos seus direitos constitucionais, entre os quais o de \nque não é obrigado a oferecer prova contra si mesmo e o de permanecer \nem silêncio; QUE a Fazenda Nova Estrela está sob a responsabilidade de \n 32\n \nfato há onze anos do declarante e sua esposa (MARIA DO PERPÉTUO \nSOCORRO CRUZ DE SOUZA); QUE citada propriedade é oriunda do \nProjeto SUDAM que tinha como propósito o desenvolvimento da pecuária; \nQUE na data da fiscalização (20.02.2018) o declarante não estava na \n 33\n \nfazenda, tendo em vista que nessa data foi preso preventivamente, \njuntamente com seus dois filhos (CESAR PHELIPE DE SOUZA \nRODRIGUES e ANDERSON DE SOUZA RODRIGUES) sob a acusação \ndo homicídio da pessoa de DOUGLAS VASCONCELOS; QUE em relação \naos fatos em apuração no presente inquérito policial esclareceu que a sua \n 34\n \nFAZENDA possuía três pessoas contratadas, nacionais da VENEZUELA; \nQUE se chamavam JONATAS, KELVIS e DIANINE; QUE DIANINE era tia \nde KELVIS; QUE JONATAS trabalhava na época da fiscalização há \naproximadamente cinco meses; QUE KELVIS já estava na fazenda há um \n 35\n \nmês aproximadamente; QUE DIANINE foi contratada a pedido de KELVIS, \npara cozinhar para os trabalhadores, e naquela época já estava há uns \nquinze dias na fazenda; QUE o empregador de JONATAS, KELVIS e \nDIANINE era o declarante e sua esposa não tinha qualquer participação na \n 36\n \ngestão do contrato de trabalho dos venezuelanos; QUE o declarante \ndeseja acrescentar que esses trabalhadores ficavam normalmente \ntemporadas de trabalhos e depois retornavam para a Venezuela; QUE não \nexistia um contrato formal de trabalho, apenas recibo de pagamento; QUE \ninsistentemente pedia dos trabalhadores seus documentos para que fosse \nfeita a anotação na carteira de trabalho, mas os trabalhadores nunca \nprovidenciaram tais documentos; QUE tais funcionários não eram \ncontratados para um trabalho específico, e no dia a dia eram demandados \npara o exercício de qualquer atividade, a exemplo: limpar o curral dos bois, \n 37\n \njuntar as fezes do gado, capinar o terreno, molhar as plantas e outras \ncoisas mais; QUE na ausência do declarante o se filho CÉSAR PHELIPE \nDE SOUZA RODRIGUES ficava responsável pela Fazenda Nova Estrela, \ninclusive demandando os funcionários; QUE os funcionários não tinham \num salário fixo; QUE recebiam conforme as atividades que realizavam, de \nmodo que tinha funcionário que conseguia ao final do mês receber mais \n 38\n \ndo que um salário mínimo legal; QUE por outro lado, outros não eram tão \n 39\n \ndemandados, e acabavam recebendo menos do que um salário mínimo; \nQUE no entanto, a declarante fornecia algumas vantagens aos \n 40\n \ntrabalhadores, vantagens estas não pecuniárias (salário in natura); QUE os \n 41\n \ntrabalhadores gozavam de hospedagem, alimentação, remédios, médico, \ndentista e etc; QUE não fazia qualquer retenção dos salários dos seus \nempregados, na verdade o que ocorria era uma espécie de controle, no \nqual os próprios funcionários solicitavam que os valores a receber ficassem \nsob a guarda do declarante, para que somente fosse “sacados” quando do \n 42\n \nretorno para seu país de origem; QUE essa prática era exigida pelos \npróprios funcionários, eis que na fazenda não tinha onde gastar seus \n 43\n \nsalários; QUE os trabalhadores não ficavam sem poder se locomover da \nsua fazenda para a cidade, visto que ficava na fazenda alguns meios de \ntransporte à disposição deles, a exemplo de uma motocicleta (YAMAHA \nCROSS 150CC); QUE além da motocicleta, tais trabalhadores poderiam \n 44\n \npegar \"caronas\" na estrada ou ainda pegar a ônibus que fazia rota pela \nregião a cada quinze dias; QUE em alguns casos os trabalhadores se \n 45\n \ndeslocavam até a cidade (Boa Vista), passando em media 10 a 15 dias; \nQUE nesses deslocamentos os trabalhadores lhe pediam e eram \ndevidamente fornecidos valores adiantados, em media de R$ 200,00 a R$ \n300,00, para fazer frente as despesas na cidade; QUE deseja acrescentar \nque tudo o que esses trabalhadores sabem na área de pecuária foi \n 46\n \nensinado pelo declarante e sua família; QUE depois que o declarante foi \npreso o declarante tomou conhecimento de que JONATAS, KELVIS e \nDIANINE entraram com reclamatória trabalhista cobrando valores \nrescisórios do declarante; QUE o declarante contratou advogado para \n 47\n \nacompanhar tais ações judiciais; QUE jamais vendeu qualquer coisa para \nos trabalhadores, tudo era dado pelo declarante; QUE a jornada de \n 48\n \ntrabalho de seus empregados era em regra de 07h até as 17h, com pausa \nde 2 horas para a almoço. (ID 263862389, p. 45/46 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "QUE é pecuarista há cerca de 20 anos; QUE trabalha em fazenda de \nnome Diamante Verde na região do Bonfim/RR, de propriedade de seu \nfilho DICK FANEI; QUE quanto à fazenda Nova Estrela, está em referida \n 49\n \nfazenda há 10 anos, mas não possui o título de propriedade da mesma; \nQUE na fazenda Nova Estrela desempenha a atividade econômica de cria \n 50\n \ne recria de gado marca mestiça, com cerca de 400 (quatrocentas) cabeças \nde gado; QUE desempenha as atividades na fazenda juntamente com sua \n 51\n \nfamília, que seria CESAR FELIPE DE SOUZA RODRIGUES, seu filho; \nQUE mora em referida fazenda juntamente com CÉSAR FELIPE; QUE \n 52\n \ntambém faz uso de trabalho de outras pessoas através do serviço de \nempreita, como para os serviços de remendar cerca, construir barracão, \nalvenaria em geral, vacinação de gado; QUE conhece trabalhadores como \n 53\n \n“SABÁ”, que trabalha como pedreiro, vaqueiro e emendador de cerca para \no DECLARANTE; QUE também encontra outras pessoas pela vila São \nFrancisco na região do Bonfim, das quais não recorda o nome e que \n 54\n \ntrabalham na propriedade por cerca de uma semana, inclusive para o \nserviço de lidar com o gado; QUE SABÁ também leva ajudante, que o \nDECLARANTE desconhece o nome, para trabalhar na propriedade como \n 55\n \najudante de pedreiro; QUE SABÁ teria construído barracão para guarda de \nsal, serra e outras coisas de fazenda; [...] QUE o trabalho de construção de \n 56\n \ncerca é feito pelo DECLARANTE, e que paga somente para o remendo de \ncerca; QUE paga um ou dois rapazes que passam pela fazenda para \n 57\n \nremendar cerca; QUE a última vez que teve de realizar tal serviço de \nremenda de cerca foi há três anos; QUE não se recorda o nome de quem \nfez o trabalho de remendo de cerca; [...] QUE já contratou trabalhadores \n 58\n \nestrangeiros para trabalhar na fazenda Nova Estrela para fazerem \nempreitada; QUE tal empreitada se trata de juntar esterco, juntar gado, \najudar a descarregar tijolos e madeira, que o DECLARANTE chama de \nserviço braçal; QUE conhece os trabalhadores estrangeiros NEGO \nJONATAN e MINHOCA, que trabalharam para o DECLARANTE, porém, \nnão conhece seus nomes; QUE referidos estrangeiros trabalharam nesse \n 59\n \nano de 2018 para descarregar tijolos e eram diaristas; QUE combinou o \npagamento de R$ 50,00 [...] por diária de trabalho desses estrangeiros; \nQUE achou referidos trabalhadores, NEGO JONATAN e MINHOCA, na Av \n 60\n \nGeneral Ataís de Teve no município de Boa Vista/RR; QUE o serviço de \ndescarregamento durava cerca de três dias e os mesmos eram pagos ao \nfinal de tal período; QUE o próprio DECLARANTE levava os trabalhadores \nem caminhão F-400 para a fazenda e ao final do serviço os trazia de volta; \nQUE os trabalhadores ficavam alojados em quartos na fazenda; QUE nos \nquartos existe piso, janela, ventilador, cama com rede; [...] QUE não \nrealizou desconto de transporte ou de alimentação fornecida aos \n 61\n \ntrabalhadores; QUE forneceu bota de borracha e de couro e luva para os \n 62\n \ntrabalhadores realizarem suas tarefas; [...] QUE perguntado se conhece \nYANNITZA SORANGEL FIGUERA RODRIGUES, YONATHAN RAFAEL \nCASTILLO e KELVIN JOSE CASTILLO FIGUERA, respondeu que apenas \nconhece JONATAN e MINHOCA e não sabe se os nomes deles são esses \n; QUE perguntado o que referidas pessoas faziam na fazenda do \nDECLARANTE, respondeu que os mesmos realizavam limpeza na \n 63\n \npropriedade; QUE há muitos dias já trabalhava com referidas pessoas e \nquando foi voltar para buscá-los, foi impedido, pois foi preso numa terça- \nfeira; QUE sua esposa informou que à tarde os trabalhadores já não \nestavam lá; QUE levou referidos trabalhadores à fazenda no domingo \n 64\n \nanterior para ajuntarem esterco; QUE somente é possível se chegar à \nfazenda se os trabalhadores foram levados pelo DECLARANTE; QUE \nYANITZA teria ido há dez dias para fazer comida para os rapazes; QUE \nneste momento afirma que JONATAN trabalhou com JABUTI na fazenda; \nQUE não sabe dizer há quanto tempo JONATAN trabalhou no local com \n 65\n \nJABUTI; QUE não se recorda quanto deu de dinheiro aos trabalhadores, \nmas possui muitos recibos; QUE os recibos estão na casa do \nDECLARANTE; QUE a casa a que se refere é uma chácara, que não \nrevela o endereço [...]; QUE pagou por último por volta de R$ 2.000,00 a \nSABÁ em dezembro; QUE não se recorda quanto pagou a JONATAN, \n 66\n \nMINHOCA e JABUTI, mas possui os recibos; QUE nunca assinou carteira \nde trabalho de trabalhadores, pois os trabalhos eram de empreita; [...] QUE \nnão sabe quanto deve aos últimos trabalhadores do local, pois não sabe \nquanto tempo eles ficaram lá; QUE além de ajuntarem esterco, os \n 67\n \ntrabalhadores descarregavam materiais de construção; QUE informado \nsobre os valores declarados por YONATAN e KELVIN como pagos pelo \nDECLARANTE, quais sejam R$ 6.300 e R$ 3.800,00, respectivamente, \nafirma que deve ter os recibos desses pagamentos; QUE há acesso por \ncarro perto da fazenda e que os trabalhadores tinham liberdade para sair \ndo local; QUE nunca reteve valores dos trabalhadores, a não ser neste \n 68\n \nmomento em que se encontra preso; [...] QUE os trabalhadores JONATAN \ne MINHOCA ficaram na fazenda enquanto o DECLARANTE vinha à cidade \n 69\n \ncomprar ração; [...] QUE os policiais trouxeram os rapazes que estavam \nem sua fazenda após baterem neles; QUE deixaram a fazenda \nabandonada; QUE o advogado MOACIR informou que os policiais civis \nbateram nos seus funcionários e deixaram abandonada a fazenda porque \ntrouxeram eles todos; QUE quebraram portão e portas. (ID 420989360, \np. 25/ID 420991352, p. 01/02 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A seu turno, CÉSAR PHELLIPPE DE SOUZA RODRIGUES afirmou, em \njuízo, que trabalhava com o pai na fazenda, ajudando o pai e a mãe; não [a acusação\nnão é verdadeira]; esses rapazes chegaram à fazenda atrás de emprego; nós\nestávamos fazendo uma cerca lá; nós (...) eles para ajudar nós, que estava só o\ninterrogado e seu pai fazendo uma cerca e como lá a área é muito grande estava\nmuito pesado para a gente; eles chegaram para ajudar a gente a fazer essa cerca; \n 70\n \nnunca foram trabalhadores (...); como ficava ruim para a gente, que era muito longe, aí\neles falaram (...) esse Kelvin para ficar na cozinha cozinhando para a gente; nunca\ntrabalharam em condição de escravo; de dois em dois meses nós matávamos uma\nrês, repartíamos uma banda para eles ficarem comendo e outra banda para a gente; o\nalojamento de lá era banheiro forrado, na cerâmica; sempre ficava uma moto à\ndisposição deles; o interrogado trabalhava junto com eles; a chave [da moto] ficava\ncom eles; a nossa casa ficava aberta; o que nós comíamos eles comiam; essa tia\ndeles foi cozinhar para eles mesmos; esses trabalhadores apareceram na nossa\nchácara atrás de emprego; já trabalhou muita gente com a gente na fazenda e nunca\nbotaram “nós” como trabalho escravo nem nada; foram os próprios agentes que\ninstruíram eles a fazer isso com a gente; não pagavam salário para eles [eles\ntrabalhavam por empreitada]; até porque eles não passavam mais de três meses; \nacabou o serviço e eles retornavam para a Venezuela; e quando eles voltavam, nós\nrenovávamos; a cerca que nós fazíamos era no valor de dez mil reais, cinco mil reais, \na depender dos quilômetros de cerca; a gente nunca descontou negócio de comida, \nroupa, luz; não [eles não trabalhavam 14h por dia]; a gente começava às 08h, \nterminava às 11h, ia almoçar, retornava às 14h; quando eram 16h, nós retornávamos; \nnão é tão difícil acesso, passa ônibus de quinze em quinze dias, carro escolar, \ncaminhonete; quando eles falavam que queriam retornar, que já tinham acabado, \n 71\n \nretornar para a Venezuela, para levar alimentação para os familiares deles, o pai\npegava e os deixava na rodoviária e eles retornavam para a Venezuela; ninguém\nnunca proibiu; tratava-os que nem seus irmãos; do mesmo jeito que eles trabalhavam\no interrogado trabalhava; pagava para eles quando terminavam tudo e o pai os\ntrazia para Boa Vista, até a rodoviária, para irem à Venezuela; sua mãe nem na Fazenda\nia direito; [pelo modo como trabalhavam] nunca assinaram a carteira deles; o pai pediu\n[os documentos para assinar a carteira], mas como nós não ficaríamos com eles\ntrabalhando todo mês, ano, realmente nós não pedimos mais; ficaram só por\nempreitada mesmo; não se recorda de ter sido ouvido pelos fiscais não; prestou\ndeposimento só na Polícia Federal; até aniversário desse Kelvin o interrogado\nfazia; eles tinham cada um seu quarto; não descontavam nada deles; nós dávamos de tudo;\neles [os trabalhadores] ficavam com essa chave [da moto] até mesmo para quando\nestivessem precisando de alguma coisa, irem à Vila São Francisco; da Fazenda para a\nVila dá uns 40 a 50 quilômetros; até mesmo a coisa mais fácil do mundo é ligar uma\nmoto direto; o seu pai era quem acertava tudo com eles [a questão do pagamento dos\ntrabalhadores]; o interrogado apenas o ajudava na fazenda; não dava ordem aos\nfuncionários; recebia ordem do seu pai e iam fazer o que seu pai mandava; se fosse\ntrabalho escravo, eles não retornavam [à fazenda] nunca; eles trabalhavam direitinho;\nfoi pago tudo para eles; no dia da busca e apreensão só estavam os trabalhadores na\nfazenda; não pegava telefone na Fazenda na época, nem na Vila São Francisco\npegava telefone (ID 1794072688, 1h02s/30m58s)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ao autoridade policial, o acusado CÉSAR PHELLIPPE DE SOUZA \nRODRIGUES relatou:\n\nQUE foi cientificado dos seus direitos constitucionais, entre os quais o de \nque não é obrigado a oferecer prova contra si mesmo e o de permanecer \nem silêncio; QUE o pai do declarante é o responsável pela FAZENDA \nNOVA ESTRELA; QUE a mãe do declarante não tem gestão na condução \nda fazenda citada; QUE na FAZENDA NOVA ESTRELA o declarante fazia \na função de gerente, e suas atividades consistiam em comprar e vender \ngado, porco, estrume, e ajudava seu pai nas demais funções da fazenda, \natuando como um braço direito; QUE os trabalhadores contratados da \n 72\n \nfazenda eram JONATAS, KELVIS e DIANINE; QUE não era feito contrato \nde trabalho com os mesmos; QUE sempre solicitavam dos trabalhadores \nque apresentassem seus documentos para fazer a devida anotação da \ncarteira, mas os mesmos nunca providenciaram tal documentação; QUE \nos trabalhadores recebiam ordens do declarante, seu irmão ANDERSON e \nDICK FARNE DE SOUZA RODRIGUES, sua mãe e seu pai; QUE os \n 73\n \ntrabalhadores recebiam a valor de R$ 500 por mês; QUE embora pagasse \no valor abaixo do valor do salário mínimo, tais trabalhadores tinham \nbenefícios que seriam: roupas, escovas de dente, remédios, hospedagem \ne alimentação; QUE até datas comemorativas dos trabalhadores eram \npatrocinadas pela família do declarante; QUE o declarante trazia tais \n 74\n \ntrabalhadores para a cidade; QUE tratava como se fossem da família; QUE \nos trabalhadores possuíam uma motocicleta para deslocamento na \nfazenda, no entanto, não podiam se deslocar com a moto até a cidade \nporque não possuíam habilitação; QUE os rapazes sabiam pilotar a moto; \nQUE na região da fazenda os trabalhadores poderiam se deslocar através \nde caronas dos vizinhos, além de transporte quinzenal que passava na BR \n207 (Comunidade JACAMIN); QUE os trabalhadores recebiam sem atraso \nseus salários; QUE normalmente quando recebiam seus pagamentos, \nimediatamente já solicitavam ao declarante e seus familiares que fosse \nfeita transferência do referido valor para os familiares que estavam na \nVenezuela; QUE em muitos casos os trabalhadores pediam para que os \nvalores a receber ficassem sob a guarda dos patrões, para fim de acumular \ntais créditos e receber apenas posteriormente; QUE as instalações para \nmoradia dos trabalhadores eram as melhores da região e isso incluía: \nventiladores, água encanada, som, televisão, freezer (02), geladeira, cama, \nrede, com banheiro na cerâmica, com privada de porcelana, tanque para \nlavar roupas; QUE tem conhecimento de que os três trabalhadores \najuizaram reclamatória trabalhista na Justiça do Trabalho assim que \nocorreu a fiscalização na fazenda; QUE não sabe dizer motivo que levou \ntais trabalhadores a ingressarem na justiça, mas acredita que deve ter sido \ninfluência de alguém, eis que as condições de trabalho eram muito boas; \nQUE declarante atualmente encontra-se preso preventivamente há um \nano, nove meses e cinco dias, sob a acusação de homicídio; QUE a \n 75\n \nfazenda está atualmente sob os cuidados da sua genitora; QUE na época \nda fiscalização existiam aproximadamente 700 cabeças de gado; QUE o \nfaturamento da fazenda anual girava em torno de R$ 100.000,00; QUE \ndeseja acrescentar que os trabalhadores, em algumas ocasiões, \n 76\n \ndeslocavam-se até a cidade e sempre que precisavam de algum \"vale\" \n(adiantamento de salário), recebiam do declarante e sua família valores \npara custear suas despesas na cidade; QUE tais valores eram na ordem \nde R$ 50,00 a R$ 100,00. (ID 263862389, p. 47/48 - grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto às teses defensivas (ID 1885958657), em verdade, os elementos \nprobatórios colhidos no feito apontam para o sentido oposto ao que a defesa indica.Nesse viés, restou clara a impossibilidade de os trabalhadores de saírem da Fazenda\nNova Estrela porque não existiam meios de transporte adequados postos à disposição\npara tanto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se pose afirmar ser “tão clara a ausência de trabalho degradante que \nmesmo quando as supostas vítimas saíam da fazendo (sic), posteriormente acabavam\nretornando” (ID 1885958657, p. 07). O fato de trabalhadores retornarem ao local de\ntrabalho após levarem itens de primeira necessidade às suas respectivas\nfamílias apenas é capaz de apontar a situação de extrema vulnerabilidade em que se\nencontravam.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A respeito da elementar “condições degradantes de trabalho”, Nucci \nensina “degradação significa rebaixamento, indignidade ou aviltamento de algo. No\n 77\n \nsentido do texto, é preciso que o trabalhador seja submetido a um cenário humilhante\nde trabalho, mais compatível a um escravo do que a um ser humano livre e digno.Logo, apesar de se tratar de tipo aberto, dependente, pois, da interpretação do juiz, o\nbono senso está a indicar o caminho a ser percorrido” (Nucci, Guilherme de Souza. \nCódigo penal comentado. 21. ed. Rio de Janeiro: Forense, 2021, p. 764).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A partir das considerações acima, mostra-se incorreta a compreensão da \ndefesa de que “revela-se imprescindível, especialmente por se tratar de delito doloso, \nque o trabalho seja imposto em um contexto de total desrespeito à dignidade do\ntrabalhador, evidenciando a intenção do empregador de suprimir-lhes os direitos\nhumanos. Diante desse contexto, não se pode legitimamente afirmar que as condições\nde trabalho, de moradia e de salubridade a que estavam sujeitos os trabalhadores\ntenham lesionado as suas dignidades de modo a reclamar a intervenção do Direito\nPenal, que, como se sabe, é a ultima ratio” (ID 1885958657, p. 07).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como se depreende do conceito acima, condições degradantes de \ntrabalho não se restringem a aspectos relacionados às condições de moradia, de\nsalubridade e de trabalho no sentido de esforço despendido para satisfazer as\nnecessidades do empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, atinge a dignidade das vítimas Yonathan Rafael Castillo Moreno, \nKelvin José Castillo Figueira e Yannizita Sorangel Figueira Rodriguez o contexto\nlaboral a que submetidas, sem garantia de pagamento periódico de remuneração legal\nmínima e com a liberdade de ir e vir prejudicadas em virtude da distância do local de\ntrabalho de centros urbanos, ausência de transporte regular e periódico, assim como\nfalta de meios de comunicação para que pudessem sair de lá.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para se mensurar a gravidade da situação, basta pensar na situação de \nque as vítimas sequer tinham condições de sair do local de trabalho mesmo que\nocorresse alguma situação de urgência, pois os empregadores não estavam sempre\nna fazenda e as vítimas não tinham acesso a telefone ou meio de transporte à\ndisposição deles.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mais uma vez, ao contrário do que sustenta a defesa, a testemunha \nauditor fiscal do trabalho OTÁVIO MORAIS FLOR abordou expressamente a\nconfiguração de trabalho análogo à condição de escravidão. Em seu depoimento, \n 78\n \nexplicou que, ao retirar esses trabalhadores de Boa Vista/RR e levá-los à fazenda, se\nvalendo de condições que depois seriam configuradas como de trabalho análogo à\ncondição de escravidão; havia uma coação a esses trabalhadores no sentido de \nmantê-los ali trabalhando e, mais do que isso, falar que era preciso continuar\ntrabalhando mesmo nas condições em que eles diziam que “olha, quero sair”. A\ntestemunha disse, ainda, que os próprios empregadores, nas oitivas, falam que é de\ndifícil acesso, tem uma distância considerável para ser percorrida para sair dali [mais\nprecisamente cento e vinte e seis quilômetros até a porteira da Fazenda na RR 207,\ntendo como ponto de partida a Ponte dos Macuxis, em Boa Vista/RR]; eles não tinham\nmeios de transporte que ficava no local para que eles pudessem sair; tinha a questão\nda falta de comunicação com o mundo externo, por celular; eles recebiam 400 reais\n 79\n \nmensais; e a uma empregada, a Yannizita, sequer houve tratativa quanto a valores\npara ela; esses valores não eram pagos em dia; eram postergados até o momento em\nque o empregador permitisse que eles saíssem do local para retornarem à Venezuela;\nentão havia adiamento de meses de trabalho e quando era pago, se pago, era pago\nainda a menor, com descontos, que daria um total menor do que o mínimo;\nconstatamos as condições de trabalho análogo à de escravo, na esfera administrativa;\no relatório diz que no dia da fiscalização in loco havia uma moto, que não se sabia\nonde estava a chave e essa moto foi levada na carroceria da viatura da Polícia Civil; \nnão adianta uma moto sem chave; tem relatos de que em um momento desse vínculo\ndeles faltou comida porque, para os trabalhadores rurais, há uma exigência de que\neles recebam alimentação sadia e farta; o difícil acesso leva em conta uma série de\nfatores, se têm transporte público que passa com frequência, o transporte privado\ntambém, as dificuldades que as pessoas têm com a língua, com os costumes locais, \ntudo isso isola uma pessoa em uma região (ID 1705966956, 21’04”/46’20”).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Noutro vértice, importa esclarecer que o art. 149 do Código Penal traz \ncondutas alternativas, bastando a prática de qualquer dessas condutas para a\nsubsunção ao tipo penal incriminador em questão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, tratando-se de tipo penal misto alternativo, é de se rechaçar \na tese defensiva de que “para tipificação do delito é necessária, além da exposição às\ncondições degradantes de trabalho, o cerceamento da liberdade pelo empregador” (ID\n1885958657, p. 07).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As provas de materialidade e autoria delitivas encontram-se detalhadas \nacima.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ficou caracterizada a redução de Yonathan Rafael Castillo Moreno, Kelvin \nJosé Castillo Figueira e Yannizita Sorangel Figueira Rodriguez à condição análoga à\nde escravo tanto pela submissão dos trabalhadores a trabalhos forçados como pela\nsujeição deles a condição degradante de trabalho, conforme apontam os depoimentos\ndas testemunhas THAIS SILVA DE CASTILHO (ID 1705966956, 01’57”/20’20”),\nOTÁVIO MORAIS FLOR (ID 1705966956, 21’04”/46’20”), EUDENIS ALVES COIMBRA\n(ID 1705966956, 48’20”/1h02), além do conteúdo da agenda apreendida (ID\n420980357, p. 33/40, ID 420989360, p. 01/07) e relatório de fiscalização de ID\n420980357, p. 11/27.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outrossim, incabível a pretendida exclusão da apreciação do fato \ncriminoso da seara penal. Não é dado ao julgador inovar na ordem jurídica de forma\nprimária, a fim de impor que a situação verificada possa \"ser solucionada pelo Direito\ndo Trabalho, com a rescisão do contrato por justa causa do empregador\" (ID\n1885958657, p. 13).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por todo o exposto, a partir do conjunto probatório formado, conclui-se que \nos acusados, aproximadamente de 28/01/2015 a 20/02/2018, submeteram Yonathan\nRafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel Figueira\nRodriguez a condições de trabalho análogas às de escravo, em virtude do\ncerceamento do uso de qualquer meio de transporte por parte dos trabalhadores, que\nficavam retidos em seu local de trabalho, sem possibilidade de ir e vir, em local de\ndifícil acesso, sem acesso a telefone; ausência de descanso remunerado e de\npagamento regular dos salários das vítimas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Especificamente quanto à remuneração das vítimas, vale recordar que a \nAção de fiscalização do Ministério do Trabalho, os depoimentos das testemunhas e\nrelatos extrajudiciais das vítimas deixam claro que, além do recebimento de\nremuneração mensal inferior ao mínimo legal, os valores ainda ficavam retidos pelos\nempregadores e sobre eles ainda incidiam descontos relativos ao uso pelos\ntrabalhadores, por exemplo, de produtos de higiene pessoal, roupas, remédios,\nenergia elétrica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também restou demonstrada a relação trabalhista entre as vítimas - \nYonathan Rafael Castillo Moreno, Kelvin José Castillo Figueira e Yannizita Sorangel\nFigueira Rodriguez - e todos os três réus, já que eram irregularmente remuneradas\npelo tempo e esforço despendidos em atividades laborais habituais desenvolvidas na\nFazenda da família e recebiam ordens de todos os acusados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também é digno de nota a alegada agressividade recorrente com que o \nréu AUGUSTO CÉSAR CASTRO RODRIGUES tratava Yonathan Rafael Castillo\nMoreno e Kelvin José Castillo Figueira, quando o trabalho por alguma razão não saía\na contento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por todo o exposto, infere-se que os acusados MARIA DO PERPÉTUO \nSOCORRO CRUZ DE SOUZA, AUGUSTO CÉSAR CASTRO RODRIGUES e \nCÉSAR PHELLIPPE DE SOUZA RODRIGUES incorreram nas tenazes do art. 149, \ncaput, do Código Penal, em concurso formal (art. 70, CP), pois os acusados, mediante\nconduta permanente, reduziram três venezuelanos à condição análoga à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3. DISPOSITIVO",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Ante o exposto, JULGO PROCEDENTE o pedido formulado na denúncia \npara o fim de CONDENAR os réus MARIA DO PERPÉTUO SOCORRO CRUZ DE\nSOUZA, AUGUSTO CÉSAR CASTRO RODRIGUES e CÉSAR PHELLIPPE DE\nSOUZA RODRIGUES, pela prática do crime previsto no art. 149, caput, do Código\nPenal, em concurso formal (art. 70, CP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo à dosimetria da pena, na forma dos arts. 68 (pena privativa de \nliberdade - critério trifásico) e 49 do Código Penal (pena de multa - critério bifásico).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Para a determinação do aumento da pena decorrente do reconhecimento \nde circunstâncias judiciais negativas na primeira fase da fixação da pena privativa de\nliberdade (pena-base), dada a cominação da pena em abstrato por meio de intervalo\n(por exemplo: pena de 06 a 20 anos para o crime de homicídio simples – art. 121 do\nCódigo Penal), tenho por necessário, em respeito a essa própria opção legislativa (art.\n5o, XXXIX, da Constituição Federal), que a pena fixada possa ser mantida no mínimo\nlegal, que ela possa ficar dentro do intervalo ou que ela possa alcançar o prazo\nmáximo estabelecido.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Além disso, também reputo relevante que, em observância ao princípio da \nsegurança jurídica (art. 5o, caput, da Constituição Federal), haja um mínimo de\nprevisibilidade em relação aos critérios a serem adotados para majoração da pena, \nfato que aumenta a possibilidade sempre desejada pelo sistema de justiça de que\npessoas em situações semelhantes recebam tratamento semelhante (art. 5o, caput, da\nConstituição Federal) e que, em densificação do princípio republicano (art. 1o da\nConstituição Federal), também permite melhor escrutínio da decisão (art. 93, IX, da\nConstituição Federal).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante da configuração do sistema em vigor, a possibilidade de se \n 80\n \nalcançar a pena máxima estabelecida no intervalo legal deve se dar, em princípio, \nquando todas as circunstâncias judiciais elencadas no art. 59 do Código Penal\n(culpabilidade, antecedentes, conduta social, personalidade, motivos, circunstâncias, \nconsequências do crime e comportamento da vítima) forem negativas. Como apenas\nsete das oito circunstâncias judiciais têm o condão de exasperar a pena-base, já que\neventual valoração do comportamento da vítima ocorre somente em benefício do réu, \na pena máxima somente poderia ser alcançada se estivessem presentes\nsimultaneamente essas sete circunstâncias. É por isso que cada circunstância judicial\nnegativa deve aumentar a pena base em 1/7 do intervalo cominado (mantendo-se o\nexemplo do crime de homicídio simples: 1/7 de 14 anos, o intervalo entre a pena\nmínima de 06 e a máxima de 20 anos).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ressalto que não se está a lançar mão de critério matemático fixo para \nfixação da pena. Trata-se, antes, do estabelecimento de um parâmetro objetivo que\nAtua como ponto de partida a orientar o procedimento desencadeado pelo\nreconhecimento de circunstância judicial negativa. Com isso, em situações\nexcepcionais, os princípios da individualização da pena (art. 5o, XLVI, da Constituição\nFederal) e da proporcionalidade (art. 5o, LIV, da Constituição Federal) recomendam\nque, de forma motivada (art. 93, IX, da Constituição Federal), sejam promovidos\najustes no parâmetro inicial, com possibilidade de variação dessa fração de 1/7.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Para cálculo da pena de multa (critério bifásico - art. 49 do Código Penal), \nque deve variar entre 10 e 360 dias-multa (primeira fase - art. 49, caput, do Código\nPenal), sendo o valor do dia-multa fixado entre um trigésimo do maior salário mínimo\nmensal vigente ao tempo do fato e 5 vezes esse salário (segunda fase - art. 49, § 1o,\ndo Código Penal), é recomendável que seja observada certa proporcionalidade (art.\n5o, LIV, da Constituição Federal) em relação à pena privativa de liberdade. Com base\nnisso, caso seja fixada a maior pena privativa de liberdade prevista na legislação, deve\nser fixada pena de multa em seu valor máximo de 360 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Como a pena máxima em abstrato admitida pelo Código Penal é de 30 \n 81\n \nanos (arts. 121, § 2o, 157, § 3o, e 159, § 3o), a pena de 360 dias-multa somente\npoderia incidir em caso de pena privativa de liberdade de 30 anos. A razão de 360 por\n30 resulta em 12, sendo este, portanto, o número adequado de dias-multa para cada\nano completo de pena privativa de liberdade (1 ano, 12 dias-multa; 2 anos, 24 dias-\nmulta... 30 anos, 360 dias-multa). Em sendo a pena privativa de liberdade fixada em\nmenos de um ano, a multa deve ser fixada no mínimo legal de 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sentenciada MARIA DO PERPÉTUO SOCORRO CRUZ DE SOUZA",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A reprovabilidade social/juízo de reprovação mostra-se acentuada à \nespécie delitiva. Se reduzir alguém à condição análoga à de escravo em si já é de todo\nreprovável, gera ainda mais repulsa social aquele efetivado em face de venezuelanos\nem busca de refúgio no país vizinho, em deslocamento em razão de grave crise social\ne econômica por que passa seu país de origem. Logo, valoro tal circunstância\nnegativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Inexistem registros quanto aos antecedentes criminais ou notícia de \ncondenação com trânsito em julgado por outro crime, devendo ser considerada\nprimária, o que autoriza afirmar que não há elementos nos autos que levem a crer ser\nportadora de maus antecedentes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há elementos nos autos que permitam aferir seu comportamento no \nambiente familiar, profissional ou social, de modo que deixo de valorar sua conduta\nsocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Carecem os autos de informações acerca da personalidade da agente, \nrazão pela qual deixo de valorá-la.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O porquê do comportamento criminoso, isto é, os motivos da ação \ndelituosa não se destacam negativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias e consequências são normais à espécie.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nenhum registro há que se fazer quanto ao comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, com base em tais vetores, fixo a pena-base em 02 (dois) \n 82\n \nanos, 10 (dez) meses e 8 (oito) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase de aplicação da pena, encontram-se ausentes \nagravantes e atenuantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desse modo, resta mantida a pena intermediária em 02 (dois) anos, 10 \n(dez) meses e 8 (oito) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira etapa do critério trifásico, não verifico causas de diminuição, \ncontudo verifico a presença da causa de aumento prevista no art. 70 do Código Penal, \nja que a agente, mediante conduta permanente, reduziu três venezuelanos à condição\n 83\n \nanáloga à de escravo, pelo que majoro a pena em 1/5 (um quinto), por entender\n 84\n \nsuficiente e adequado à retribuição delitiva, não tendo os crimes maiores\nconsequências práticas negativas. Assim, torno definitiva a pena de 03 (três) anos e\n05 (cinco) meses e 03 (três) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante da pena privativa de liberdade de 02 (dois) anos, 10 (dez) meses e \n8 (oito), fixo a pena de multa em 24 dias-multa para cada um dos três delitos, que, \nsomadas (art. 72 do Código Penal), gera o total de 72 dias-multa, sendo o dia-multa\nno valor de 1/30 (um trigésimo) do salário-mínimo vigente à época do fato criminoso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao regime de cumprimento da pena, o Código Penal estabelece \nque a condenada não reincidente cuja pena seja igual ou inferior a 4 (quatro) anos, \npoderá, desde o início, cumpri-la em regime aberto (art. 33, do CP), o que demonstra\nser suficiente para a prevenção e reprovação do crime praticado no caso em tela.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Substituição da pena privativa de liberdade por restritiva de direito",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando que os crimes foram cometidos sem violência ou grave \nameaça à pessoa e que a acusada não é reincidente em crime doloso, substituo as\npenas privativas de liberdade por duas penas restritivas de direito, nos seguintes\ntermos:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) pagar uma prestação pecuniária no valor de 10 (dez) salários-mínimos \nem favor entidade pública ou privada com destinação social, a serem pagos em 30\n(trinta) dias ou em até 24 (vinte e quatro) parcelas iguais, mensais e sucessivas, após\no trânsito em julgado da sentença, nos termos do §1o do art. 45 do Código Penal, \ndevendo a apenada efetuar o recolhimento do valor correspondente mediante guia de\ndepósito na Caixa Econômica Federal, em conta vinculada a este juízo e apresentar à\nSecretaria, desta 4a Vara Federal, o respectivo comprovante, após o que, com a\ntotalização dos valores, caberá à Secretaria proceder à transferência à entidade\nbeneficiada;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) prestar serviços à instituição a ser definida pelo juízo da execução, \nrealizada à razão de 1 (uma) hora de tarefa por dia de condenação, de modo a não\nprejudicar a jornada normal de trabalho, pelo tempo integral a que foi condenada, \npodendo ser cumprido em menor tempo, nunca inferior à metade, devendo, ainda, a\ninstituição informar, mensalmente, acerca do efetivo cumprimento da pena, nos termos\ndo art. 46 do Código Penal e do art. 150 da Lei de Execução Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sentenciado AUGUSTO CÉSAR CASTRO RODRIGUES",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A reprovabilidade social/juízo de reprovação mostra-se acentuada à \nespécie delitiva. Se reduzir alguém à condição análoga à de escravo em si já é de todo\nreprovável, gera ainda mais repulsa social aquele efetivado em face de venezuelanos\nem busca de refúgio no país vizinho, em deslocamento em razão de grave crise social\ne econômica por que passa seu país de origem. Logo, valoro tal circunstância\nnegativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Inexistem registros quanto aos antecedentes criminais ou notícia de \n 85\n \ncondenação com trânsito em julgado por outro crime, devendo ser considerado\nprimário, o que autoriza afirmar que não há elementos nos autos que levem a crer ser\nportador de maus antecedentes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há elementos nos autos que permitam aferir seu comportamento no \nambiente familiar, profissional ou social, de modo que deixo de valorar sua conduta\nsocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Carecem os autos de informações acerca da personalidade do agente, \nrazão pela qual deixo de valorá-la.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O porquê do comportamento criminoso, isto é, os motivos da ação \ndelituosa não se destacam negativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias e consequências são normais à espécie.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nenhum registro há que se fazer quanto ao comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, com base em tais vetores, fixo a pena-base em 02 (dois) \n 86\n \nanos, 10 (dez) meses e 8 (oito) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase de aplicação da pena, encontram-se ausentes \nagravantes e atenuantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desse modo, resta mantida a pena intermediária em 02 (dois) anos, 10 \n(dez) meses e 8 (oito) dias de reclusão. de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira etapa do critério trifásico, não verifico causas de diminuição, \ncontudo verifico a presença da causa de aumento prevista no art. 70 do Código Penal, \nja que o agente, mediante conduta permanente, reduziu três venezuelanos à condição\n 87\n \nanáloga à de escravo, pelo que majoro a pena em 1/5 (um quinto), por entender\nsuficiente e adequado à retribuição delitiva, não tendo os crimes maiores\nconsequências práticas negativas. Assim, torno definitiva a pena de 03 (três) anos e\n05 (cinco) meses e 03 (três) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante da pena privativa de liberdade de 02 (dois) anos, 10 (dez) meses e \n8 (oito), fixo a pena de multa em 24 dias-multa para cada um dos três delitos, que, \nsomadas (art. 72 do Código Penal), gera o total de 72 dias-multa, sendo o dia-multa\nno valor de 1/30 (um trigésimo) do salário-mínimo vigente à época do fato criminoso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao regime de cumprimento da pena, o Código Penal estabelece \nque o condenado não reincidente cuja pena seja igual ou inferior a 4 (quatro) anos, \npoderá, desde o início, cumpri-la em regime aberto (art. 33, do CP), o que demonstra\nser suficiente para a prevenção e reprovação do crime praticado no caso em tela.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Substituição da pena privativa de liberdade por restritiva de direito",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando que os crimes foram cometidos sem violência ou grave \nameaça à pessoa e que o acusado não é reincidente em crime doloso, substituo as\npenas privativas de liberdade por duas penas restritivas de direito, nos seguintes\ntermos:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) pagar uma prestação pecuniária no valor de 10 (dez) salários-mínimos \nem favor entidade pública ou privada com destinação social, a serem pagos em 30\n(trinta) dias ou em até 24 (vinte e quatro) parcelas iguais, mensais e sucessivas, após\no trânsito em julgado da sentença, nos termos do §1o do art. 45 do Código Penal, \ndevendo o apenado efetuar o recolhimento do valor correspondente mediante guia de\ndepósito na Caixa Econômica Federal, em conta vinculada a este juízo e apresentar à\nSecretaria, desta 4a Vara Federal, o respectivo comprovante, após o que, com a\ntotalização dos valores, caberá à Secretaria proceder à transferência à entidade\nbeneficiada;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) prestar serviços à instituição a ser definida pelo juízo da execução, \nrealizada à razão de 1 (uma) hora de tarefa por dia de condenação, de modo a não\nprejudicar a jornada normal de trabalho, pelo tempo integral a que foi condenado, \npodendo ser cumprido em menor tempo, nunca inferior à metade, devendo, ainda, a\ninstituição informar, mensalmente, acerca do efetivo cumprimento da pena, nos termos\ndo art. 46 do Código Penal e do art. 150 da Lei de Execução Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sentenciado CÉSAR PHELLIPPE DE SOUZA RODRIGUES",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A reprovabilidade social/juízo de reprovação mostra-se acentuada à \nespécie delitiva. Se reduzir alguém à condição análoga à de escravo em si já é de todo\nreprovável, gera ainda mais repulsa social aquele efetivado em face de venezuelanos\nem busca de refúgio no país vizinho, em deslocamento em razão de grave crise social\ne econômica por que passa seu país de origem. Logo, valoro tal circunstância\nnegativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Inexistem registros quanto aos antecedentes criminais ou notícia de \ncondenação com trânsito em julgado por outro crime, devendo ser considerado\nprimário, o que autoriza afirmar que não há elementos nos autos que levem a crer ser\nportador de maus antecedentes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há elementos nos autos que permitam aferir seu comportamento no \nambiente familiar, profissional ou social, de modo que deixo de valorar sua conduta\nsocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Carecem os autos de informações acerca da personalidade do agente, \nrazão pela qual deixo de valorá-la.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O porquê do comportamento criminoso, isto é, os motivos da ação \ndelituosa não se destacam negativamente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias e consequências são normais à espécie.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nenhum registro há que se fazer quanto ao comportamento da vítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, com base em tais vetores, fixo a pena-base em 02 (dois) \n 88\n \nanos, 10 (dez) meses e 8 (oito) de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase de aplicação da pena, encontram-se ausentes \nagravantes e atenuantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desse modo, resta mantida a pena intermediária em 02 (dois) anos, 10 \n(dez) meses e 8 (oito) de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira etapa do critério trifásico, não verifico causas de diminuição, \ncontudo verifico a presença da causa de aumento prevista no art. 70 do Código Penal, \nja que o agente, mediante conduta permanente, reduziu três venezuelanos à condição\n 89\n \nanáloga à de escravo, pelo que majoro a pena em 1/5 (um quinto), por entender\n 90\n \nsuficiente e adequado à retribuição delitiva, não tendo os crimse maiores\nconsequências práticas negativas. Assim, torno definitiva a pena de 03 (três) anos e\n05 (cinco) meses e 03 (três) dias de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante da pena privativa de liberdade de 02 (dois) anos, 10 (dez) meses e \n8 (oito), fixo a pena de multa em 24 dias-multa para cada um dos três delitos, que, \nsomadas (art. 72 do Código Penal), gera o total de 72 dias-multa, sendo o dia-multa\nno valor de 1/30 (um trigésimo) do salário-mínimo vigente à época do fato criminoso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao regime de cumprimento da pena, o Código Penal estabelece \nque o condenado não reincidente cuja pena seja igual ou inferior a 4 (quatro) anos, \npoderá, desde o início, cumpri-la em regime aberto (art. 33, do CP), o que demonstra\nser suficiente para a prevenção e reprovação do crime praticado no caso em tela.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Substituição da pena privativa de liberdade por restritiva de direito",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando que os crimes foram cometidos sem violência ou grave \nameaça à pessoa e que o acusado não é reincidente em crime doloso, substituo as\npenas privativas de liberdade por duas penas restritivas de direito, nos seguintes\ntermos:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) pagar uma prestação pecuniária no valor de 10 (dez) salários-mínimos \nem favor entidade pública ou privada com destinação social, a serem pagos em 30\n(trinta) dias ou em até 24 (vinte e quatro) parcelas iguais, mensais e sucessivas, após\no trânsito em julgado da sentença, nos termos do §1o do art. 45 do Código Penal, \ndevendo o apenado efetuar o recolhimento do valor correspondente mediante guia de\ndepósito na Caixa Econômica Federal, em conta vinculada a este juízo e apresentar à\nSecretaria, desta 4a Vara Federal, o respectivo comprovante, após o que, com a\ntotalização dos valores, caberá à Secretaria proceder à transferência à entidade\nbeneficiada;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) prestar serviços à instituição a ser definida pelo juízo da execução, \nrealizada à razão de 1 (uma) hora de tarefa por dia de condenação, de modo a não\nprejudicar a jornada normal de trabalho, pelo tempo integral a que foi condenado, \npodendo ser cumprido em menor tempo, nunca inferior à metade, devendo, ainda, a\ninstituição informar, mensalmente, acerca do efetivo cumprimento da pena, nos termos\ndo art. 46 do Código Penal e do art. 150 da Lei de Execução Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Condeno os acusados ao pagamento das custas processuais, em \nconformidade ao disposto no artigo 804 do Código de Processo Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ficam os apenados cientes de que o descumprimento injustificado das \nsanções impostas ocasionará a conversão das penas restritivas de direitos em pena\nprivativa de liberdade (art. 44, § 4°, do CP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Nos termos do art. 387, IV do CPP, havendo danos materiais causados \npela infração e pedido do Ministério Público Federal por condenação nesse sentido, \nFIXO o valor mínimo para reparação de danos equivalente a R$ 76.689,91, a ser\noportunamente atualizado monetariamente (ID 420991352, p. 11/14).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Deixo de estabelecer valor corresponde ao dano extrapatrimonial, \nconsiderando que o MPF não indicou o valor pretendido na denúncia (ID 438654365), \nsendo certo que a jurisprudência pátria caminha no sentido de “a fixação de valor\nindenizatório mínimo por danos morais, nos termos do art. 387, IV, do CPP, exige que\nhaja pedido expresso da acusação ou da parte ofendida, com a indicação do valor\npretendido, nos termos do art. 3o do CPP c/c o art. 292, V, do CPC/2015” (STJ, 3a\nSeção, REsp 1.986.672-SC, Rel. Min. Ribeiro Dantas, julgado em 08/11/2023, info 16, \nedição extraordinária).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Indefiro o pedido para expropriação do imóvel, dada a ausência de \nregulamentação legal para o art. 243 da Constituição Federal no que se refere a\nimóveis em que constatado trabalho escravo (ver:\n<https://www12.senado.leg.br/noticias/materias/2023/04/12/avanca-expropriacao-de-\nimovel-onde-houver-trabalho-escravo>) e dada a necessidade de procedimento\njudicial específico para a adoção de tal medida (ver, nesse sentido: art. 6o da Lei n.\n8.257/1991).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ausentes os requisitos para a decretação de prisão preventiva dos \nacusados, CONCEDO o direito aos réus de apelarem em liberdade (art. 387, § 1o, \nCPP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Havendo interposição tempestiva de recurso, intime-se a parte contrária \npara apresentação das contrarrazões. Após, proceda-se à remessa dos autos ao E.\nTribunal Regional Federal da 1a região, com as homenagens de estilo.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Mantida esta decisão, após o trânsito em julgado, determino a \nrealização das seguintes providências:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "1. Adicione a Secretaria a condição de culpado nas informações \ncriminais dos condenados, lançando os nomes dos sentenciados no rol de\nculpados;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "2. Inclua-se o nome dos condenados no Cadastro Nacional de \nCondenados por ato de Improbidade Administrativa e por ato que implique\nInelegibilidade - CNCIAI (art. 1o, I, “e”, LC 64/1990 c/c art. 1o, II, “a”, PROVIMENTO\nCNJ 29/2013);",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "3. INFORME-SE esta condenação através da ferramenta eletrônica \n\"SISCONTA ELEITORAL”, destinada aos registros de ocorrências de\ninelegibilidade ocasionadas por decisões proferidas no âmbito da Justiça\nFederal da 1a Região (CIRCULAR PRESI 10340868);",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "4. COMUNIQUE-SE o conteúdo desta sentença condenatória ao \n 91\n \negrégio Tribunal Regional Eleitoral de Roraima, pelo sistema eletrônico\ndisponibilizado para tanto, para os fins do disposto no art. 15, III, da\nConstituição Federal;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "5. Registre-se no SINIC/SR/DPF;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Cumpridas as diligências suprarreferidas, após certificado o trânsito em \njulgado, ADOTEM-SE as providências previstas no art. 2o da PORTARIA CONJUNTA\nPRESI/COGER - 9418775 no que tange ao início da execução perante o Sistema\nEletrônico de Execução Unificado – SEEU.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Sentença registrada eletronicamente.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "INTIMEM-SE, sucessivamente, o Ministério Público Federal, a defesa \ntécnica e o acusado, pessoalmente.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "CUMPRA-SE.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Boa Vista/RR, data da assinatura eletrônica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "RODRIGO MELLO\nJuiz Federal Substituto",
+      "label": "OUTROS"
+    }
+  ]
+}

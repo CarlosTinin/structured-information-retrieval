@@ -1,0 +1,248 @@
+{
+  "index": 10,
+  "doc_id": 10,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 26,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Santarém-PA \n2a Vara Federal Cível e Criminal da SSJ de Santarém-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1004869-54.2020.4.01.3902 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:ELISMAR RIBEIRO DE CASTRO \nREPRESENTANTES POLO PASSIVO: LEONARDO ALMEIDA SIDONIO - PA15179-B",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Trata-se de ação penal pública proposta pelo MPF em face de ELISMAR \nRIBEIRO DE CASTRO, como incurso no artigo 149 do Código Penal, em concurso\nmaterial (artigo 69 do Código Penal), por reduzir 08 trabalhadores à condição de trabalho\nescravo na Fazenda Alto Paraíso, submetendo-os a jornada de trabalho exaustiva e\ndegradante, de julho a setembro de 2019, em Uruará/PA.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida pelo Juízo Federal no dia 13/07/2020 (Id. \nN°264596868).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O réu, devidamente citado, apresentou Resposta à Acusação através da DPU \n(Id. n°674324014).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em decisão de Id. N°679835968, o juízo afastou as hipóteses de Absolvição \nSumária do réu, bem como designou data da audiência de instrução e julgamento.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em seguida, foi realizada audiência de instrução e julgamento, oportunidade \nem que foram inquiridas as testemunhas de defesa e acusação, além de realizado o\ninterrogatório do réu, tudo por sistema de videoconferência, conforme Ata de Audiência\n(Id. 2047732684).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na fase do art. 402, nada foi requerido pelas partes.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Após, em sede de alegações finais, o MINISTÉRIO PÚBLICO FEDERAL \npugnou pela condenação do imputado nos termos da denúncia. Já a defesa, também em\nrazões finais, aduziu não estar provado o crime de trabalho escravo.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em seguida, o feito veio concluso para sentença.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "DECIDO.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Não há nulidades a serem supridas ou preliminares a serem enfrentadas. \nAssim, passo ao exame do mérito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos termos do art. 149, do CP, o crime de redução à condição análoga a de \nescravo, para a sua configuração, exige o seguinte:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada exaustiva, quer \nsujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, sua locomoção em razão de dívida contraída \ncom o empregador ou preposto: (Redação dada pela Lei no 10.803, de 11.12.2003) \n\n Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à violência. (Redação dada pela Lei \nno 10.803, de 11.12.2003)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, o delito em apreciação pode ser cometido por uma das seguintes \nmodalidade, a saber, submetendo a pessoa a trabalhos forçados ou jornada exaustiva; ou\nsujeitando-a a condições degradantes de trabalho; ou, ainda, restringindo sua locomoção,\npor meio de dívida contraída com o agente ou outra modalidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante disso, a tipicidade do delito do art. 149 não exige, necessariamente, o \ncerceamento da liberdade da vítima, sendo esta, apenas, uma das modalidades de\ncometimento. Na verdade, atualmente, a chamada “escravidão moderna” tem vez, na\nmaioria das vezes, com a subjugação da vítima à situação aquém da dignidade humana\nmínima, em uma relação de trabalho. Em suma, o cerceamento da liberdade é apenas\numas das modalidades criminosas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PROCESSUAL PENAL E PENAL. REDUÇÃO À CONDIÇÃO ANÁLOGA À DE ESCRAVO. \nPRELIMINAR DE CERCEAMENTO DE DIREITO DE DEFESA AFASTADA. EXTINÇAO DA \nPUNIBILIDADE QUANTO A UM RÉU. CONDIÇÕES DEGRADANTES DE TRABALHO. \nMATERIALIDADE E AUTORIA COMPROVADAS QUANTO AO SEGUNDO ACUSADO. DOSIMETRIA \nMANTIDA. 1. Trata-se de apelações interpostas pelos Réus contra a sentença que julgou procedente a \npretensão punitiva estatal, para condená-los pela prática da conduta prevista no art. 149, caput, do \nCódigo Penal. Ambos os Acusados foram condenados a 2 anos de reclusão e 10 dias-multa, sendo a \npena restritiva de liberdade substituída por duas restritivas de direito. 2. DA APELAÇÃO DE O.Z. DA \nPRELIMINAR DE CERCEAMENTO DO DIREITO DE DEFESA - ALEGAÇÃO DE FALHAS NAS \n\n\nGRAVAÇÕES DAS AUDIÊNCIAS. Não se verifica cerceamento do direito de defesa, eis que a \naudiência foi gravada por equipamento de videoconferência, tendo a mídia sido acostada aos autos, \nnão havendo qualquer defeito na gravação, inclusive naquela em que consta o depoimento do corréu \nL.T., conforme se confere no ID 166811579 (vídeo1 004). Prefacial rejeitada. 3. DA EXTINÇÃO DA \nPUNIBILIDADE PELA PRESCRIÇÃO. MAIOR DE 70 ANOS NA DATA DA SENTENÇA. A pena foi \nfixada definitivamente em 02 (dois) anos de reclusão. Depois de transitada em julgado a sentença \ncondenatória para a acusação, a prescrição regula-se pela pena aplicada, conforme art. 110, caput, do \nCódigo Penal, cujos prazos são previstos no art. 109 do CP. Na hipótese, tem-se o prazo prescricional \nde 04 (quatro) anos (art. 109, V, do CP). Contudo, da análise dos autos, verifica-se que o corréu, \nnascido em 20/02/1943 (fl. 3 – ID 166811563), era maior de 70 (setenta) anos na data da sentença \n(16/12/2019 – fls. 212/221 - ID 166811564). O prazo prescricional deve ser reduzido pela metade (art. \n115 do CP), ou seja, 02 (dois) anos. Declarada extinta a punibilidade do acusado O.Z., devido à \nprescrição da pretensão punitiva estatal pela pena in concreto, na modalidade superveniente, nos \ntermos dos arts. 107, IV; 109, V, c/c arts. 110, caput, e 115, todos do Código Penal. 4. DA APELAÇÃO \nDE L.T. O Supremo Tribunal Federal, no exame de admissão de denúncia por crime análogo (Inq \n3412/AL), decidiu que, para configuração do crime do art. 149 do Código Penal, não é necessário \nque se prove o cerceamento da liberdade de locomoção, bastando a submissão da vítima, ou a \ntrabalhos forçados ou a jornada exaustiva; ou a condições degradantes de trabalho, condutas \nalternativas previstas no tipo penal. 5. Os elementos probatórios obtidos durante a instrução \nprocessual demonstram a responsabilidade penal do corréu L.T., na qualidade de gestor (\"gato\") da \nFazenda Rio Vermelho, ao submeter os trabalhadores rurais às condições degradantes de labor, \nreduzindo-os à condição análoga à de escravos, nos termos da dicção do artigo 149 do Código Penal. \n6. Quanto à dosimetria, a sentença fixou a pena-base em 2 (dois) anos de reclusão e 10 (dez) dias- \nmulta, ante a ausência de circunstâncias judiciais desfavoráveis. Na segunda fase, o juiz sentenciante \nnão aplicou qualquer atenuante ou agravante e, na terceira fase, não aplicou causa de aumento ou \ndiminuição de pena, tornando definitiva a pena mínima de dois anos. Presentes os requisitos previstos \nno art. 44 do CP, a pena privativa de liberdade foi substituída por duas penas restritivas de direito, a \nsaber, prestação de serviços à comunidade e prestação pecuniária no valor de 10 salários mínimos. 7. \nNão obstante a margem de discricionariedade de que dispõe o magistrado para a fixação da pena, os \ncritérios levados em conta para sua fixação foram corretamente valorados, inexistindo motivo ou \ncircunstância justificadora de qualquer reparo ou ressalva no ponto. Não há como diminuir a quantidade \nde dias-multa aplicada, eis que já está cominada no mínimo legal, de acordo com o art. 49, do CP. Do \nmesmo modo, o valor de cada dia-multa estabelecido em 1/12 do salário mínimo vigente à época condiz \ncom a capacidade financeira do Réu de quitação da penalidade, levando em consideração o valor do \nseu salário. 8. Apelação de O.Z. provida, para decretar a extinção da sua punibilidade, em razão da \nprescrição. Apelação de L.T. desprovida. (ACR 0000812-28.2016.4.01.4103, DESEMBARGADOR \nFEDERAL WILSON ALVES DE SOUZA, TRF1 - TERCEIRA TURMA, PJe 13/07/2023) GRIFO MEU",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso em apreço, a denúncia apresentada pelo MPF se fez acompanhar de \nPIC, em cujo seio foi acostado o Relatório de Fiscalização do Grupo Especial de\nFiscalização Móvel da Secretaria do Trabalho (fls. 66 e seguintes do ID 262814980),\no\nqual traz elementos de prova da situação degradante dos 8 trabalhadores resgatados em\nsituação análogo à escravidão, quando da atividade fiscalizatória nas terras de\npropriedade do acusado, a FAZENDA ALTO PARAÍSO, em Uruará/PA.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Neste tanto, cabe mencionar que, conforme Termo de Declaração do \ntrabalhador Miguel Rocha de Araújo, também, resgatado, que consta no referido relatório\nde fiscalização (fls. 128, ID 262814980), ele atuou como arregimentador (“gato”), para o\nacusado ELISMAR, com o fim de arregimentar trabalhadores, para realizar o “roço do\nmato”, tendo se iniciado o trabalho no dia 09/07/2019, contando, inclusive, com o trabalho\ndas outras 7 pessoas resgatadas, as demais vítimas. Aduziu, também, que o trabalho\nseria pago por ele, a depender das ordens do acusado.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A vítima Miguel (“o gato”), no referido depoimento, além disso, sustentou que \nos trabalhadores, com exceção de um deles, dormiam em um barraco de lona\nimprovisado, dentro da fazenda. Narrou, ainda, que, não havia banheiro para o uso deles,\ntendo que realizar suas básicas necessidades “no mato”. Disse, ainda, ao ser\nquestionado pelos fiscais do trabalho, que a água utilizada, notadamente para beber e\npreparar os alimentos, era a proveniente de um “poço artesiano” improvisado. No mais, \nsustentou que, além disso, a carne consumida por eles, a qual ficava exposta às\nintempéries, por falta de local para a conservação, era vendida pelo próprio acusado\nELISMAR.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em juízo, a vítima MIGUEL ouvida (ID 2047732684), malgrado tenha alterado \nparte de seu relato, no que tange ao fornecimento da água, como se fosse fornecida em\ngalões pelo “patrão”, no resto, confirmou todo o relato fornecido aos fiscais do trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A testemunha ANDRÉ LUIZ, um dos auditores do trabalho responsável pela \nfiscalização, também ouvido em juízo, confirmou que, de fato, os 8 trabalhadores\nresgatados estavam em evidente situação degradante, pois trabalhavam em local ermo,\nhá mais de 40 km da cidade, sem banheiro, dormindo em barraco improvisado com lona\nem terra batida, bebiam água de um poço, sem a mínima condição de potabilidade,\ncomendo a comida que ficava, durante tempo considerável, exposta no tempo, sem a\nmínima conservação.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "No mais, o referido auditor narrou que o trabalho das pessoas resgatadas \ndurava dias nessa condição, sendo exemplo mais evidente da degradação prolongada\ndas condições a situação do trabalhador HUATILA PEREIRA DA SILVA, o qual ficou de\n13/07/2019 até 07/09/2019, direto, na fazenda.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Nessa linha, cabe ressaltar que, o único trabalhador resgatado, NILSON \nGOMES RODRIGUES, que não vivia nos barracos de lona improvisados, nos termos\nacima especificados, morava em um cômodo ao lado da sede, da seguinte maneira, nos\ntermos do relatório:",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "(...)também não continha condições básicas de segurança, higiene e conforto. Conquanto \ntivesse as paredes de madeira, o piso de cimento queimado e a cobertura de telhas de \nfibrocimento, tal área de vivência também era utilizada pelo empregador como depósito de \nutensílios e produtos da Fazenda, situação que obrigava o trabalhador a dormir em meio a \nferramentas (como motosserra e bombas utilizadas na aplicação de produtos), sacos de \nsuplementos para o gado (como sal mineral), tonéis de ração para os animais da Fazenda \n(como grãos de milho inteiros e triturados), produtos químicos de uso nos animais (como \nlarvicida e vermífugo para bovinos), entre outras coisas. Do lado de fora, porém rente à \nparede dos fundos deste quarto, havia um espaço onde tinham sido empilhados cerca de \nquarenta sacos de sal mineral para o gado. Na lateral esquerda, o local de pernoite do \ntrabalhador fazia fronteira com um galinheiro. Porcos circulavam livremente por todo o \nentorno.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A citada vítima, como se infere do trecho do relatório colacionado, era \nmantida em cômodo destituído da mínima dignidade, rivalizando espaço com a\nalimentação e produtos veterinários destinados aos animais, pode-se dizer que era\nsubjulgado “tal qual um animal”, submetido, assim, pelo autor dos fatos delitivos, em\nsituação de degradação evidente. Tal fato pode ser confirmado pelo depoimento do\nauditor fiscal do trabalho ANDRÉ LUIS, ouvido em juízo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "No mais, cabe ressaltar que, sem embargo da configuração do tipo penal do \ncrime do art. 149, do CP, em desfavor das vítimas EVERTON DA SILVA ARAÚJO,\nHUATILA PEREIRA DA SILVA, JOSÉ CARLOS RAMOS DE SOUZA, JOSÉ DOS\nSANTOS, JOSÉ RIBAMAR LIMA, JOSIEL DO NASCIMENTO PANTOJA, MIGUEL\nROCHA DE ARAÚJO e NILSON GOMES RODRIGUES, porquanto, todos eles, foram\nsubmetidos, nos termos acima especificados, a condições degradantes de trabalho; em\ndetrimento da vítima JOSÉ RIBAMAR, também restou configurado o crime por\nconta de restrição de sua locomoção em razão de dívida contraída com o réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, como se infere dos termos do relatório de fiscalização já citado, \nno caso da vítima JOSÉ RIBAMAR, que laboraria como operador de motosserra, o\npróprio réu ELISMAR fê-lo adquirir uma motosserra, a ser registrada em nome do próprio\ntrabalhador (para evitar a fiscalização ambiental em desfavor do patrão), para que o\nvalor fosse descontado, paulatinamente, da remuneração que teria que receber. Tal fato\nfoi confirmado não somente pelo auditor fiscal do trabalho ANDRÉ LUIS, bem como pela\nvítima MIGUEL, que atuou como gato, ambas ouvidas em juízo (ID 2047732684).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em suma, com tal situação, em evidência, a vítima JOSÉ RIBAMAR estaria \nvinculada ao réu até que, por meio da prática do trabalho degradante nos termos já\nexpostos, pudesse arcar com o valor do equipamento necessário para o próprio trabalho,\no que, como se sabe, ante o princípio da alteridade do Direito do Trabalho, a\nresponsabilidade pelo fornecimento é do empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também nesse tanto o crime restou configurado, agora na modalidade de \nservidão por dívidas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cabe ressaltar, por fim, que, o próprio acusado, em seu interrogatório, e sua \ndefesa, em alegações finais, não negam que foi ele o responsável pela contratação dos\ntrabalhadores; que o trabalho foi prestado em seu favor e em suas terras; que as\ncondições eram aquelas mesmas; que a carne era vendida por ele aos trabalhadores; que\nele fez com que a vítima JOSÉ RIBAMAR adquirisse a motosserra para depois descontar\nde sua remuneração. Em suma, ele não nega esse fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mas, mesmo afirmando tais fatos, aduz que não teria obrigado os \ntrabalhadores a tal situação; que, no interior do Pará, as “coisas se dão assim mesmo”;\nque não teria havido relação de emprego, mas mera empreitada por intermédio do “gato”\nMIGUEL.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Porém, tais afirmações não afastam ou justificam a conduta delitiva, \nporquanto, como dito acima, o crime do art. 149, do CP, não se confunde com a antiga\nescravidão que imperou no Brasil por muito tempo, em que a força e a violência eram\nelementos de submissão. Na verdade, a “moderna escravidão” dar-se-á, nos ditames da\nlei penal, dentre outras formas, com a exploração extrema do trabalho do outro, \nmalferindo de morte a dignidade humana do mais necessitado, submetendo-o a\ncondições quase subumanas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, estando presentes, na espécie, a materialidade e autoria delitiva, bem \ncomo não havendo fatores que afastem a ilicitude ou isentem o réu de pena, impera a sua\ncondenação ao crime do art. 149, do CP, por 8 vezes (8 vítimas).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "ANTE O EXPOSTO, com arrimo no art. 387, do CPP, JULGO \nPROCEDENTE o pedido que consta na denúncia, para CONDENAR o réu ELISMAR\nRIBEIRO DE CASTRO, já devidamente qualificado nos autos, às penas do crime do\nart. 149, do CP, por 8 vezes.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo à dosimetria da pena, nos termos do art. 68, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Analisando as circunstâncias do art. 59, do CP, nenhuma delas merece \nespecial relevo. Diante disso, fixo a pena-base em 2 (dois) anos de reclusão e 10 (dez)\ndias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não estão presentes atenuantes de pena. Contudo, presente a agravante do \nart. 61, I, “h”, já que o crime foi cometido em detrimento das vítimas JOSÉ RIBAMAR e\nNILSON GOMES, ambas com mais de 60 anos de idade na data dos fatos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante disso, fixo a pena intermediária em 2 anos e 4 meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não havendo causa de aumento ou de diminuição de pena, fixo a pena, na \nterceira fase de aplicação, em 2 anos e 4 meses de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao número de crimes, incide, na espécie, o concurso formal \npróprio de crimes, do art. 70, primeira parte, do CP, já que, mesmo sendo vitimadas 8\npessoas, os crimes foram todos cometidos no mesmo contexto fática, a saber, atividade\nde derrubada de árvores na fazenda do réu, durante os meses de julho e setembro de\n2019.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Diante disso, tendo em conta do número de vítimas, a pena aplicada de 2 \nanos e 4 meses deve ser majorada na metade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim sendo, a pena final fica em 3 anos e 6 meses de reclusão. Como a \npena de multa deve acompanhar, na proporção, a pena de prisão, a pena de multa ficará\nem 204 (duzentos e quatro) dias-multa. Não havendo elementos quanto às\ncondições econômicas do réu, fixo cada dia-multa em 1/30 do salário-mínimo\nvigente ao tempo do fato (2019).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Fixo o regime aberto para o cumprimento de pena (art. 33, do CP). Não \nestando presentes os pressupostos do art. 312, concedo ao réu o direito de recorrer\nem liberdade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Tendo em conta o patamar de pena aplicado, bem como o preenchimento \ndos pressupostos do art. 44, do CP, substituto a pena privativa de liberdade pelas\nseguintes penas restritivas de direito:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) Prestação de serviço à comunidade em favor de entidades públicas ou de \nassistência social, pelo número de horas correspondente aos dias de condenação,\ndevendo a entidade ser definida pelo juízo da execução.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) Prestação pecuniária no valor de 25 salários-mínimos, devendo ser aferido \no valor do salário-mínimo ao tempo do pagamento, nos termos a serem fixados pelo juízo\nda execução.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Fica o condenado ciente de que o descumprimento injustificado das penas \nrestritivas de direitos impostas importará na reconversão em pena privativa de liberdade.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Deixo de fixar valor mínimo indenizatória, ante a falta de elementos para tal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas pelo condenado.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "TRANSITADA EM JULGADA ESTA SENTENÇA:",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "a) Expeça-se a guia de execução penal, inserindo-a no sistema de execução \nunificada (SEEU).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) Proceda-se ao cálculo dos valores da multa penal e das custas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "c) Façam-se as comunicações de praxe (principalmente para os fins do art. \n15, III, CF).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Santarém, data da assinatura eletrônica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Felipe Gontijo Lopes \n\nJuiz Federal Substituto",
+      "label": "OUTROS"
+    }
+  ]
+}

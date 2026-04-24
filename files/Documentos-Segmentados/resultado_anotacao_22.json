@@ -1,0 +1,272 @@
+{
+  "index": 23,
+  "doc_id": 23,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 40,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSeção Judiciária do Piauí \n1a Vara Federal Criminal da SJPI",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0014876-56.2019.4.01.4000 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:FRANCISCO QUARESMA DE SOUSA \nREPRESENTANTES POLO PASSIVO: PATRICIA CRISTINA RODRIGUES CARDOSO - PI6596, DALTON\nRODRIGUES CLARK - PI1007 e PRISCILLA MARIA PINTO CLARK - PI4814",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Trata-se de ação penal proposta pelo Ministério Público Federal contra \nFRANCISCO QUARESMA DE SOUSA, atribuindo-lhe a conduta tipificada no artigo 149, \ncaput, do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Qualificação do acusado: \n\nFrancisco Quaresma de Sousa, brasileiro, lavrador, nascido em 19/05/1966, \nfilho de Francisco Quaresma de Sousa e Clarinda Quaresma de Sousa, residente na rua\nTenório de Carvalho, 684, Esperantina/PI.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em síntese, assevera que os agentes de fiscalização do MTE Auditores- \nFiscais do Trabalho integrantes do Grupo Especial de Fiscalização Rural (GEFIR) do\nMinistério do Trabalho e Emprego (MTE) no Piauí, durante levantamentos físicos\nempreendidos na Fazenda Poção, Município de Batalha/PI, no dia 26/10/2018,\nverificaram a presença de 06 (seis) trabalhadores que estavam laborando na extração do\npó da palha de carnaúba e constataram as seguintes irregularidades: i) todos os\ntrabalhadores envolvidos na atividade encontravam-se sem registro em livro, ficha ou\nsistema eletrônico competente; ii) encontravam-se ainda sem as carteiras de trabalho\nanotadas, bem assim não foram submetidos a exames médicos admissionais; iii) os\ntrabalhadores dormiam ao relento, em redes armadas entre a cerca da propriedade e a\ncarroceria do caminhão; iv) as refeições eram preparadas no chão, sem a obediência de\nqualquer padrão de higiene, e tomadas de maneira improvisada, sem qualquer cuidado\ncom a saúde dos trabalhadores; v) as necessidades fisiológicas eram realizadas de\nmaneira improvisada, no mato ao redor do local onde estavam alojados, sem condições\nbásicas de higiene; vi) não eram mantidos no local materiais destinados a prestação de\nprimeiros socorros; vii) não eram fornecidos aos trabalhadores os Equipamentos de\nProteção Individual, adequados aos riscos da atividade; viii) risco de acidente durante a\noperação na referida máquina, que era desprovida de itens de segurança básica; ix) o\ncaminhão que transportava a máquina e os trabalhadores era conduzido por um deles, o\nqual não possuía carteira de habilitação; e x) a água destinada ao consumo dos\ntrabalhadores era armazenada em recipientes vazios de produtos químicos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Denúncia fundamentada na Notícia de Fato n. 1.27.000.000213/2019-51, \ninstaurada a partir do Relatório de fiscalização do Grupo Especial de Fiscalização Rural\ndo Ministério do Trabalho (Id. 562241355, págs. 12/62).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 13/05/2019 (Id. 562241355, págs. 73/74).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O acusado foi citado (Id. 562241355, pág. 95), juntou procuração (pág. 109) e \napresentou resposta aduzindo que: i) não agiu com a intenção de subjugar nenhum\ntrabalhador à condição análoga à de escravo e a conduta apontada se deu em razão da\nfalta de conhecimento e condições financeiras do acusado, que buscou imediatamente\nregularizar a situação trabalhista dos empregados; ii) os trabalhadores não tiveram sua\nliberdade de ir e vir cerceada e estavam laborando de livre e espontânea vontade; iii) não\nhavia trabalho forçado nem jornada exaustiva; iv) a mera deficiência na infraestrutura de\nalojamentos em frentes de trabalho no meio rural pode dar margem à responsabilidade\nnas esferas trabalhista e cível, mas não tem relevância criminal. Requereu que sejam\nouvidos como testemunhas os trabalhadores ouvidos durante a fiscalização e os que se\nencontram prestando serviço atualmente (Id. 562241355, págs. 110/114).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Peticionou aditando sua resposta à acusação para alegar que “tanto ele como \nos trabalhadores que se encontravam no dia da fiscalização sofreram coação e pressão\ndos fiscais do trabalho, e, que, no auto de infração os fiscais omitiram fatos e\ninformações, como também colocaram o que bem entenderam de forma distorcida e\ninverídica”. Afirmou que os trabalhadores bebiam água de garrafas pets, tinham horário\nde almoço e descanso, e não é humilhante fazer comida em fogareiros e panelas velhas\n(Id. 562241355, págs. 116/117).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Proferida decisão determinando o prosseguimento do feito (Id. 562241355, \npágs. 119/121).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os autos foram digitalizados e migrados para o PJe.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Sobreveio resposta à acusação assinada pelo advogado Murilo Marcones \nAlves Veloso (Id. 931030673), acompanhada de procuração outorgada pelo acusado (Id. \n931048692).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Petição atravessada pela defesa alegando que o acusado não é proprietário \nda fazenda Poção, nem se encontrava no local. Afirma que a pessoa de Otaviano de\nCarvalho Amorim estava presente, era o responsável pelos trabalhadores e arrendatário\ndas terras. Requer a inclusão de Otaviano de Carvalho Amorim no pólo passivo, devendo\ntambém ser chamado à lide o dono da propriedade. Caso assim não entenda o juízo, \nrequer a oitiva de Otaviano Amorim como testemunha. Ao final, pede também a\nsubstituição de suas testemunhas (Id. 932254687).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ministério Público Federal manifestou-se pela oitiva de Otaviano de Carvalho \nAmorim como testemunha (Id. 936617169).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Indeferido o pedido de inclusão de Otaviano de Carvalho Amorim no pólo \npassivo, assim como de sua oitiva como testemunha. Na mesma ocasião, deferiu-se o\npedido de substituição das testemunhas de defesa (ata de audiência – Id. 941053689).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa desistiu da oitiva de uma testemunha por si arrolada, assim como da \noitiva dos trabalhadores vítimas/ofendidos (ata de audiência – Id. 1060480769)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Durante a instrução foram ouvidas duas testemunhas arroladas pela \nacusação (Rosemberguer de Almeida Cronemberger – Id. 941705649; Robson Waldeck\nSilva – Id. 1060750272) e três testemunhas arroladas pela defesa (Antônio Carlos – Id. \n1060750273; Sebastião Pontos Pereira – Id. 1060750274; e Maria de Fátima Pereira de\nSousa (Id. 1060750275), assim como foi interrogado o réu (Id. 1060750277).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Alegações finais do Ministério Público Federal pela condenação do acusado, \nnos termos da qualificação jurídica feita na denúncia (Id. 1069726261).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De sua vez, a defesa alegou que os trabalhadores não estavam submetidos a \ncondições degradantes de trabalho: não comiam em latas, não bebiam água suja, havia\nsuporte sanitário na casa de apoio, as redes eram usadas para repouso intrajornada, e\nafirma que fazer comida no carvão e beber água de garrafas pet é costume social de\nquem mora na zona rural. Afirma que os trabalhadores estavam em regime de\nparceria/cooperativa com o acusado e assume que houve violação aos direitos\ntrabalhistas, mas não a caracterização de um crime. Além disso, questiona a autoria\ndelitiva e afirma que Otaviano Amorim estava no local da fiscalização e era o encarregado\ne arrendatário das terras, dono do maquinário e responsável pelos trabalhadores no\nmomento da fiscalização (Id. 932498162).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É o relatório.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "FUNDAMENTO E DECIDO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De início, determino o desentranhamento da resposta protocolada pelo \nadvogado Murilo Marcones Alves Veloso (Id 931030673), tendo em conta que a resposta\nà acusação já havia sido apresentada e já havia sido determinado o prosseguimento do\nfeito, restando evidente a preclusão lógica para o ato.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conforme relatado, trata-se de ação penal proposta pelo Ministério Público \nFederal imputando-se ao acusado a prática de ação criminosa prevista no art. 149, do\nCódigo Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como é cediço, a apreciação da pretensão punitiva do Estado deve centrar- \nse, fundamentalmente, na verificação da ocorrência do delito, bem como na determinação\nde sua autoria, com vistas à aplicação das penalidades adequadas ao fato.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que se refere à verificação da ocorrência da infração penal, seguindo-se a \n“teoria do crime”, o primeiro aspecto a ser examinado deve ser a existência de um fato\ntípico, qual seja, de um comportamento humano dominado ou dominável pela vontade, \ncausador de lesão a um bem jurídico tutelado pela lei penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na espécie, a conduta delituosa sob persecução teria consistido, em \nessência, na suposta atuação do acusado no sentido de submeter seis trabalhadores a\ncondições degradantes de trabalho, na Fazenda Poção, em Batalha/PI.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Nestas condições, o tipo – a norma penal incriminadora – encontra-se \ndelineada no art. 149, do Código Penal, nos seguintes termos: “Art. 149. Reduzir alguém\na condição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada\nexaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por\nqualquer meio, sua locomoção em razão de dívida contraída com o empregador ou\npreposto: Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à\nviolência”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É de conhecimento comum que, não somente no âmbito da história brasileira, \nmas de forma praticamente global, a exploração do homem pelo homem é fato\ncorriqueiro, variando apenas nível/grau, no tempo e no espaço. Diante das reiteradas\nconstatações pela fiscalização do trabalho de condições laborais consideradas indignas, o\nartigo 149 do CPB sofreu alteração e, com a nova redação dada pela Lei 10.803/2003, \ntornou-se mais claro e preciso o que constituiria o conceito de \"condição análoga à de\nescravo\", especificando-se que tal condição estará caracterizada quando a vítima for\nsubmetida a trabalhos forçados, jornada exaustiva, condições degradantes de trabalho, \nou tenha restringido, por qualquer meio, sua locomoção em razão de dívida contraída\ncom o empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assentou-se, então, de modo pacífico na jurisprudência pátria que \"Para \nconfiguração do crime do art. 149 do Código Penal, não é necessário que se prove a\ncoação física da liberdade de ir e vir ou mesmo o cerceamento da liberdade de\nlocomoção, bastando a submissão da vítima ‘a trabalhos forçados ou a jornada exaustiva’\nou ‘a condições degradantes de trabalho’, condutas alternativas previstas no tipo penal. A\n‘escravidão moderna’ é mais sutil do que a do século XIX e o cerceamento da liberdade\npode decorrer de diversos constrangimentos econômicos e não necessariamente físicos. \nPriva-se alguém de sua liberdade e de sua dignidade tratando-o como coisa e não como\nPessoa humana, o que pode ser feito não só mediante coação, mas também pela\nviolação intensa e persistente de seus direitos básicos, inclusive do direito ao trabalho\ndigno\" (STF, Inq 3412, rel. Min. MARCO AURÉLIO, rel. p/ Acórdão Min. ROSA WEBER, \nTribunal Pleno, DJe 12-11-2012, transcrito no seio da ACR 0001094-90.2012.4.01.3817 / \nMG, Rel. DESEMBARGADOR FEDERAL MÁRIO CÉSAR RIBEIRO, TERCEIRA TURMA, \ne-DJF1 de 09/09/2016).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto à caracterização do que venha a ser “condições degradantes de \ntrabalho”, colhe-se pronunciamento do C. Superior Tribunal de Justiça – STJ, que bem\nresume o tema, nos seguintes termos: “A revaloração das premissas fáticas adotadas\npelo próprio acórdão impugnado imputa o cenário desumano e degradante de trabalho e\na conduta abusiva por parte do recorrente (alojamentos precários, ausência de\ninstalações sanitárias; não fornecimento de equipamento de proteção individual; falta de\nlocal adequado para refeições; falta de água potável, etc.), descrevendo situação apta ao\nenquadramento no crime do art. 149 do Código Penal.” (AgRg no REsp 1443133/TO, Rel. \nMinistro REYNALDO SOARES DA FONSECA, QUINTA TURMA, julgado em 23/02/2016, \nDJe 29/02/2016).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante desta perspectiva, cumpre reconhecer que as provas carreadas aos \nautos são adequadas e suficientes para demonstrar a materialidade do delito capitulado\nno art. 149, do CP e denunciado pelo MPF na presente demanda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, constata-se que a denúncia foi instruída com cópia do relatório de \nfiscalização rural contendo registro fotográfico de diversos momentos do procedimento\n(Id. 562241355, págs. 12/29); cópias dos termos de rescisão de contrato de trabalho e\ndos termos de quitação (Id. 562241355, págs. 31/42); cópias dos formulários de\nrequerimento do seguro-desemprego do trabalhador resgatado (Id. 562241355, págs. \n43/48); cópia do auto de infração à legislação trabalhista (Id. cópias dos autos de infração\nà legislação trabalhista, págs. 49/52); cópia do termo de interdição da atividade (Id. \n562241355, págs. 53/56); cópia do termo de declarações firmado pelos trabalhadores (Id. \n562241355, págs. 61/62).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo o Relatório de Fiscalização, durante o procedimento na Fazenda \nPoção, zona rural do Município de Batalha/PI, no dia 26/10/2018, os Auditores-Fiscais do\nTrabalho constataram a existência de 06 (seis) pessoas que supostamente estariam\nsujeitas a condições degradantes de trabalho. Os trabalhadores estavam laborando na\nextração do pó da palha da carnaúba e encontravam-se sem registro em livro, ficha ou\nsistema eletrônico, sem as carteiras de trabalho anotadas e sem terem sido submetidos a\nexames médicos admissionais; dormiam nos próprios locais de trabalho, ao relento, em\nredes armadas entre a cerca da propriedade e a carroceria do caminhão; preparavam\nsuas refeições no chão, ao relento, em fogareiros feitos com pedras, sem a obediência de\nqualquer padrão de higiene, e tomadas de maneira improvisada, sem o mínimo de\nconforto exigido; faziam suas necessidades fisiológicas no mato, ao redor do local onde\nestavam alojados; laboravam sem equipamentos de proteção individual e bebiam água\narmazenada em recipientes vazios de produtos químicos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O registro fotográfico e o Termo de Declarações assinado pelos \ntrabalhadores corroboram as constatações descritas no relatório.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As fotografias exibem, de fato, trabalhadores laborando na extração do pó da \npalha da carnaúba sem equipamentos de proteção individual, a preparação da\nalimentação em fogareiro improvisado com pedras, ao relento, e o armazenamento de\nágua em recipientes vazios de produtos químicos, além de retratarem o momento da\ntomada de declarações dos trabalhadores pelos fiscais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto ao Termo de Declarações assinado pelos trabalhadores, cumpre \ntranscrever os seguintes trechos: “que só receberam do Sr. Francisco Quaresma, como\nEquipamentos de Proteção, somente luvas de pano; que nenhum deles tem carteira\nassinada; que não fizeram exames médicos; que no local não tem materiais de primeiros\nsocorros; que no período que trabalham nas fazendas batendo palha na máquina dormem\nem redes armadas entre a cerca da propriedade e a carroceria do caminhão; que eles\nmesmos fazem as refeições no chão, usando fogareiros feitos de pedra; que fazem as\nnecessidades no mato; (...) que era o segundo dia que trabalhavam na Fazenda Poção; \nque, como de costume, também dormiam no mato e faziam as refeições ao relento (...)”.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Os agentes de fiscalização confirmaram o conteúdo do relatório durante \ndepoimento prestado em juízo (Id. 941705649 e 1060750272).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Durante seu interrogatório, o réu afirmou que havia laborado o dia inteiro com \nos próprios trabalhadores e os fiscais chegaram por volta de 18h, quando já estava\nescurecendo e ele já tinha saído. Disse que os fiscais fizeram uma montagem, uma\narmação, e que não deixaram que ele falasse com os seus trabalhadores. Após conversar\ncom seu advogado e perquirido novamente pelo juiz, afirmou que os fiscais juntaram as\nPessoas e tiraram as fotos quando ele não estava lá. Entretanto, tal alegação, além de\nnão gozar de um mínimo de verossimilhança (vez que não encontra respaldo em qualquer\noutra prova ou mesmo em fato ou circunstância narrado nos autos), tem sua\nplausibilidade severamente afetada ante a constatação de que o acusado não adotou\nqualquer providência em face os agentes; ao reverso, compareceu ao Sindicato dos\nTrabalhadores Rurais e assinou os termos de rescisão. Além disso, o Auditor-Fiscal\nRobson Waldeck afirmou em juízo que estava em fiscalização na região e recebeu uma\ndenúncia informal de um trabalhador que não quis se identificar. Ao chegar à fazenda, \nencontrou seis trabalhadores que fizeram várias reclamações e demonstraram\ninconformismo quanto às condições de trabalho, notadamente as condições de\nalimentação e a falta de equipamentos de proteção individual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito do tema – questão probatória – o E. TRF1, examinando situação \nde toda assemelhada, pronunciou nos seguintes termos: “Materialidade e autoria delitivas\ndemonstradas. O arcabouço probatório inserto nos autos, mormente fotografias dos locais\nde trabalho, Relatório da Equipe de Fiscalização Móvel do Ministério do Trabalho, além\ndos depoimentos do Apelado e dos Auditores Fiscais do Trabalho foram ratificados\ndurante a instrução processual, e confirmam as condições aviltantes em que viviam os\ntrabalhadores da Fazenda, comprovando grave atentado à dignidade humana.” E\nacrescentou: “Os fatos relatados pelos Auditores do Trabalho merecem particular\ncredibilidade, tendo em vista que constatados in loco, mediante flagrante das condições\nde trabalho na Fazenda e amparados em declarações dos trabalhadores ali encontrados, \ncolhidas na mesma ocasião. Auditores do Trabalho são servidores públicos dotados de\nconhecimentos técnicos e jurídicos pertinentes à averiguação das condições de\nsegurança, saúde, higiene do trabalho e atendimento das demais obrigações ditadas pela\nlegislação trabalhista, de modo que as conclusões emanadas dos fatos evidenciados\ndurante a fiscalização refletem de forma relevante a realidade sobre condições de\ntrabalho encontradas”. (ACR 0001094-90.2012.4.01.3817 / MG, Rel. DESEMBARGADOR\nFEDERAL MÁRIO CÉSAR RIBEIRO, TERCEIRA TURMA, e-DJF1 de 09/09/2016).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Comporta destacar que os trabalhadores vítimas afirmaram que estavam \ntrabalhando na Fazenda Poção há dois dias, mas “trabalhavam batendo palha de\ncarnaúba em uma máquina de propriedade do Sr. Francisco Quaresma; que este ano\nbatem as palhas tiradas nas fazendas da região desde agosto”. A testemunha Robson\nWaldeck disse que Francisco Quaresma era conhecido na região com a atividade de\nextrair o pó da palha da carnaúba e que ele trabalha em várias fazendas da região, de\nforma itinerante. Assim, resta configurada o caráter persistente da situação degradante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessas condições, não resta dúvida de que a documentação trazida com a \ninicial, confirmada pela instrução oral, consubstancia conjunto probatório robusto e\ncoerente apto a demonstrar que os seis trabalhadores identificados (Evamário José \nSipriana, Cláudio Cirino dos Santos, Joelson de Carvalho Gonçalves, Mateus Cardoso\nLima, Francisco das Chagas Lopes e Antônio Raimundo de Sousa) foram expostos a\ncondições degradantes de trabalho (ausência de instalações sanitárias; falta água potável\ne de local adequado ao preparo e ao consumo das refeições), que possuem intensidade\nsuficiente para caracterizar o delito capitulado no art. 149, caput, do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria, de igual modo, é evidente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conquanto a defesa alegue que os trabalhadores laboravam em regime de \nparceria com o acusado e que Otaviano Amorim era o arrendatário das terras e\nresponsável pela exploração, a prova documental (contrato de doação da extração do pó\nda palha de carnaúba e o contrato de locação de equipamentos – Id. 562241355, págs. \n57/60) revela que Francisco Quaresma de Sousa alugou a máquina para Otaviano, porém\nele (o acusado) é que utilizaria a máquina para bater a palha da carnaúba, sendo dele\ntambém a responsabilidade pela mão de obra, como indicam os itens 1.1 e 3.1 do\ncontrato de locação de equipamento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A prova documental foi corroborada em juízo pelo depoimento da testemunha \nRobson Waldeck, que afirmou que Otaviano Amorim não estava no local da extração do\npó da palha da carnaúba. As testemunhas indicadas pela defesa confirmaram que o\nacusado tem uma máquina de extração do pó da palha da carnaúba e que trabalha há\nmuitos anos com essa atividade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto ao elemento subjetivo da conduta, a informação prestada por Robson \nWaldeck no sentido de que “na verdade essa questão da extração de mão de obra, da\nextração de palha de carnaúba, a gente já vem batendo há um tempo. A gente já fez\ndiversos resgates de trabalhadores...a gente vinha batendo há uns cinco ou seis\nanos...Ministério Público do Trabalho e Ministério do Trabalho. Nessa época, a gente\ninclusive já iniciou uma convenção coletiva estabelecendo as condições do trabalho e\ntudo mais. Isso aí é uma prática secular, essa questão aí e a gente já vem mudando há\ntempos essa questão das condições de trabalho, batendo nessa tecla e vem conseguindo\nbastante vitória. Muitos trabalhadores, muitos empregadores já tem consciência, a maioria\njá tem consciência, registra os trabalhadores e já dá as condições mínimas de trabalho, \nentendeu? Mas o que a gente encontrou era diferente do que a gente encontrava na\nregião...pessoal já vinha regularizando a situação, a gente encontrou uma situação\ndiferente do que foi encontrado ...o trabalho foi considerado degradante (19’20’’ a 20’21)\nevidencia que as circunstâncias de tempo e lugar permitiam ao acusado ter conhecimento\nsobre a irregularidade das condições em que seus trabalhadores estavam laborando e\nque ele agiu no intuito deliberado de submetê-los a condições degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mais, sob a perspectiva do tipo total de injusto ou tipicidade conglobante, \ntem-se que, analisando detidamente todos os elementos constantes dos autos, não se\nvislumbra qualquer circunstância capaz de ser caracterizada como excludente da ilicitude\nou da culpabilidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dentro desse contexto, demonstrada a materialidade e a autoria do fato, bem \ncomo a caracterização de todos os elementos do tipo penal que o contempla, o\nAcolhimento da denúncia é medida que se impõe.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com tais considerações, impõe-se JULGAR PROCEDENTE o pedido inicial \npara condenar FRANCISCO QUARESMA DE SOUSA como incurso no art. 149, caput, do\nCódigo Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo à DOSIMETRIA DA PENA (CPB, arts. 59 e 68):",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, analisando as circunstâncias judiciais (CP, art. 59), a \nculpabilidade do réu é adequada ao tipo, uma vez não agiu com dolo que ultrapasse os\nlimites da norma legal; não registra antecedentes diante da ausência de informações\nquanto a anteriores condenações definitivas (Id. 1409167253 e 1410768764); poucos\nelementos foram coletados a respeito da conduta social e da personalidade do agente, \nrazão pela qual deixo de valorá-las; motivo, consequências e circunstâncias do crime\nnormais à espécie, nada tendo a se valorar; as vítimas em nenhum momento colaboraram\ncom a prática do delito, razão pela qual nada se tem a valorar.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Dessa forma, para o delito do art. 149, do CP, fixo a pena base no mínimo \nlegal em 02 (dois) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes circunstâncias atenuantes e agravantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Constato a presença de causa para aumento de pena, considerando que num \nmesmo contexto factual foram mantidos em condições análogas à de escravos 6 (seis) \nPessoas, sendo cada uma delas vítima do crime, caracterizando, portanto, concurso\nformal, conforme disciplina o artigo 70 do CP (Precedente: TRF 3a Região, PRIMEIRA\nTURMA, ACR 0005614-82.1999.4.03.6181, Rel. DESEMBARGADOR FEDERAL\nJOHONSOM DI SALVO, julgado em 02/09/2003, DJU DATA:02/10/2003).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Portanto, pelo concurso formal de crimes (6 infrações), aumento a pena em \n1/6 (um sexto), resultando a pena em 02 (dois) anos e 04 (quatro) meses de reclusão, \nque torno definitiva ante a inexistência de outras circunstâncias a considerar.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando as mesmas circunstâncias, fixo a pena de multa em 30 \n(trinta) dias-multa, cujo valor unitário, em razão da situação econômica do sentenciado, \narbitro em 1/30 (um trigésimo) salário mínimo, vigente à época do fato, a ser paga em até\n10 (dez) dias a contar do trânsito em julgado desta sentença.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O regime para cumprimento da pena privativa de liberdade anteriormente \nfixado é o aberto, tendo em vista a análise das circunstâncias judiciais acima procedida e\na teor do disposto no artigo 33, caput, primeira parte, e §§ 2o, alínea c, e 3o, do Código\nPenal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento nos arts. 44 e 46 do Código Penal, CONVERTO a pena \nprivativa de liberdade aplicada em restritivas de direito, quais sejam: prestação de\nserviços à comunidade ou entidade pública pelo prazo de 850 (oitocentos e cinquenta) \nhoras e pagamento de prestação pecuniária no valor equivalente a um terço do salário\nmínimo vigente.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As formas e locais de cumprimento das penas restritivas acima fixadas serão \nestabelecidas em audiência admonitória, a ser oportunamente designada pelo Juiz da\nexecução, em conformidade com as aptidões e condições financeiras do condenado, \ndevendo-se observar, quanto à duração, o disposto no art. 46, §§ 3o e 4o, e no art. 55, \nambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As penas restritivas de direitos serão convertidas em privativas de \nliberdade se ocorrer o descumprimento injustificado das condições impostas (CP, \nart. 44, p. 4o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com o trânsito em julgado desta sentença:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) providencie-se as anotações e comunicações de interesse estatístico; \n\nb) registre-se a suspensão dos direitos políticos (art. 15, inciso III da \nConstituição da República de 1988).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas pelo condenado.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Publique-se. Registre-se. Intimem-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Teresina, datado e assinado eletronicamente. \n\n\n\nFrancisco Hélio Camelo Ferreira \n\nJuiz Federal",
+      "label": "OUTROS"
+    }
+  ]
+}

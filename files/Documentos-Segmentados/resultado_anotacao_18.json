@@ -1,0 +1,284 @@
+{
+  "index": 18,
+  "doc_id": 18,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 32,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Altamira-PA \nVara Federal Cível e Criminal da SSJ de Altamira-PA \n\n\n\n\nSENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1001195-65.2020.4.01.3903",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO: JOSE CARLOS CAETANO e outros \nREPRESENTANTES POLO PASSIVO: FRANCINEIDE AMARAL OLIVEIRA - PA011115",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I – RELATÓRIO",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF denunciou JOSÉ CARLOS CAETANO e LAECIO PORTELA DE OLIVEIRA, \nem razão da prática do crime previsto no art. 149, caput, por três vezes, uma delas combinado\ncom a majorante descrita no inciso I do § 2o, do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Segundo o MPF, os denunciados entre abril de 2018 e 02 de maio de 2018, no \ninterior da fazenda “Anhanguera II, no município de Brasil Novo/PA, reduziram pelo menos 03\n(três) trabalhadores, Bruno Rogério Andrade da Silva, Edinaldo Alves Barbosa e Jonatas Serafim\nda Silva (este com 16 anos à época dos fatos), à condição análoga à de escravo, por submetê-\nlos à condições degradante de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 04/05/2021 (Id. 512539939).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os denunciados apresentaram resposta à acusação (Id. 702348960).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF manifestou-se contrariamente à absolvição sumária (Id. 897402053).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O recebimento da denúncia foi ratificado e designada audiência de instrução e \njulgamento (Id. 1202318759).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Realizada a audiência de instrução e julgamento (Id. 1531791874/1538734386).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Houve alegações finais pelo MPF em audiência, que pugnou pela condenação dos réus.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa apresentou alegações finais em memoriais no Id. 1545042379, requerendo \na rejeição tardia da denúncia por ausência de justa causa ou absolvição dos réus.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. Sentencio.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "II – FUNDAMENTAÇÃO",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Inicialmente, ressalto que a preliminar de ausência de justa causa para o \nexercício da ação penal já foi analisada quando da decisão que ratificou recebimento da\ndenúncia. Matéria superada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DO CRIME DO ART. 149, CP em relação aos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O tipo penal do artigo 149 é de ação múltipla, de modo que o delito resta \nconfigurado se constatada qualquer uma das seguintes circunstâncias: i) submissão de alguém a\ntrabalhos forçados ou a jornada exaustiva; ii) sujeição de alguém a condições degradantes de\ntrabalho; iii) restrição à locomoção de alguém em razão de dívida contraída com o empregador\nou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, qualquer situação prevista no tipo penal já é suficiente para configurar o \ncrime não sendo necessário ter outras formas de coerção, conforme precedente já consolidado\npelo Superior Tribunal de Justiça (STJ) no Agravo Regimental no Agravo em Recurso Especial\n1.443.133- TO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mesmo sentido os seguintes precedentes:\n\nAGRAVO REGIMENTAL NO AGRAVO EM RECURSO ESPECIAL. CRIME DO \nART. 149 DO CÓDIGO PENAL. RESTRIÇÃO À LIBERDADE DO TRABALHADOR NÃO É\nCONDIÇÃO ÚNICA DE SUBSUNÇÃO TÍPICA. TRATAMENTO SUBUMANO AO\nTRABALHADOR. CONDIÇÕES DEGRADANTES DE TRABALHO. FATO TÍPICO. SÚMULA N.\n568/STJ. AGRAVO NÃO PROVIDO. 1. O artigo 149 do Código Penal dispõe que configura crime\na conduta de \"reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos\nforçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer\nrestringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o empregador\nou preposto\". 2. O crime de redução a condição análoga à de escravo pode ocorrer\nindependentemente da restrição à liberdade de locomoção do trabalhador, uma vez que\nesta é apenas uma das formas de cometimento do delito, mas não é a única. O referido\ntipo penal prevê outras condutas que podem ofender o bem juridicamente tutelado, isto é,\na liberdade de o indivíduo ir, vir e se autodeterminar, dentre elas submeter o sujeito\npassivo do delito a condições degradantes de trabalho. Precedentes do STJ e STF. [...] 4.\nAgravo regimental não provido. (AgRg no AREsp 1467766/PR, Rel. Ministro REYNALDO\nSOARES DA FONSECA, QUINTA TURMA, julgado em 27/08/2019, DJe 10/09/2019.)\n\nAGRAVO REGIMENTAL EM RECURSO ORDINÁRIO EM HABEAS CORPUS. \nREITERAÇÃO DE RECURSO JÁ ANALISADO POR ESTA CORTE. PEDIDO DE EXTENSÃO DE\nORDEM CONCEDIDA A CORRÉU PELO COLEGIADO DE ORIGEM. AUSÊNCIA DE\nSIMILITUDE FÁTICA-PROCESSUAL ENTRE OS DENUNCIADOS. REQUISITOS DO ART. 580\nDO CPP NÃO ATENDIDOS. AGRAVO DESPROVIDO. [...] 3. No art. 149 do Código Penal são\nprevistas condutas alternativas que, isoladamente, subsumem-se ao crime de redução a\ncondição análoga à de escravo, tratando-se, portanto, de crime plurissubsistente. Assim,\n\n\ntendo sido atribuído ao réu o verbo \"sujeitar alguém a condições degradantes de\ntrabalho\", o simples fato de não ter sido descrito cerceamento do direito de locomoção\ndos trabalhares explorados não denota a ausência de tipicidade das condutas descritas na\npeça acusatória. 4. Agravo regimental desprovido. (AgRg no RHC 85.875/PI, Rel. Ministro\nRIBEIRO DANTAS, QUINTA TURMA, julgado em 24/04/2018, DJe 02/05/2018.)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fixadas essas premissas, observo que a materialidade delitiva do crime do art. 149 \ndo Código Penal restou devidamente comprovada nos autos, em razão das condições\ndegradantes de trabalho e de habitação que as vítimas foram submetidas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A informação de Polícia Judiciária No 001/2018 – NO/PF/ATM/PA (Id.392260848 – \npág. 171/176), produzida pela equipe composta de agentes da Polícia Federal que estiveram em\ndiligência nas Fazendas Anhanguera I e II, relata a situação do local de trabalho, dentre os quais\ndestaco: I) que a casa não possuía água encanada, nem caixa d’água, apenas um poço\nartesiano próximo da casa; que o poço fica aberto e exposto ao tempo, portanto a água não é\nlimpa e ainda possuía alguns sapos nadando; que a água desse poço é utilizado para beber,\npreparar alimentos e tomar banho; que o banheiro da casa encontra-se na varanda, do lado de\nfora, e não possui lâmpada, chuveiro e nem mesmo porta; ii) que na casa possuía alguns\nmantimentos como arroz, café e óleo; iii) que até o local da casa que serve de alojamento para\nos trabalhadores não foi verificada nenhum tipo de restrição à passagem de qualquer pessoa.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Tais circunstâncias foram ilustradas com as imagens precárias do local e ratificadas \npelos depoimentos das testemunhas arroladas pela acusação:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Testemunha – Carolina Cordeiro Alves – que se deslocaram até o local para \nverificarem qual era as condições de trabalho; que lembra que era uma casa com\ninstalações bem precárias; que não tinha rede de esgoto; água, tinha um poço que estava\naté sujo; que tinha uma parte com banheiro aberto bem sujo; tinha algumas redes no local.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Testemunha – Rafael Celestino Lima Barros – que havia um local que fica o \ngerente da fazenda e um segundo local onde os trabalhadores ficavam; que o local onde\nos trabalhadores ficavam era bem ruim, bem insalubre; que a casa era de madeira; que o\nque mais impressionou foi o poço sem condições de uma pessoa utilizar, com sapo, água\ndoja; que tinha um banheiro precário; que a propriedade fica uns 30 km do centro da\ncidade Brasil Novo; que não houve qualquer tipo de resistência à fiscalização; que acredita\nque os trabalhadores não estavam sendo forçado a ficarem no local, mas as condições de\ntrabalho eram bem ruins.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Portanto, não há dúvidas de que os trabalhadores exerciam suas atividades em \ncondições degradantes, o que já é suficiente para caracterizar os elementos descritivos do tipo\npenal, considerando tratar-se de tipo alternativo misto",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que tange à autoria delitiva, os réus JOSÉ CARLOS CAETANO e LAECIO \nPORTELA DE OLIVEIRA negaram que tenham contratados os trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia, o réu LAECIO PORTELA DE OLIVEIRA, gerente das fazendas de \npropriedade do réu JOSE CARLOS CAETANO, em depoimento prestado em sede administrativa\nafirmou que os denunciantes, Bruno, Jonatas e Serafim, “QUE os três trabalharam na fazenda\nAnhanguera II, distante algo em torno de 10km da fazenda que ele mora; QUE os três\ntrabalharam lá por apenas alguns dias passando veneno nas \"pragas\" da pastagem; QUE não\n\nsabe o motivo que eles foram embora; QUE eles sumiram e nunca mais apareceram nem para\ncobrar algo devido; QUE na época um sujeito conhecido apenas como CiSSO pegou uma\nempreitada na propriedade pelo valor de R$ 3.300,00, além de carne de uma novilha, para\npassar veneno nas \"pragas\" da pastagem, e por ser muito serviço, CISSO resolveu levar os três\ndenunciantes para ajudá-lo e se comprometeu a pagá-los algo em torno de R$ 100,00 por dia\npara cada um; QUE não sabe o paradeiro e nem onde encontrar CISSO, pois o mesmo finalizou\na empreitada em torno de um mês, recebeu todo o pagamento e foi embora.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessa forma, a autoria do crime restou comprovada, visto que os acusados são os \nresponsáveis pelas fazendas e tinham o controle sobre as condições de trabalho exercido nos\nlocais, notadamente, por meio do gerente que visitava o local de trabalho (Fazenda Anhanguera\nII) 3 dias na semana (segunda-feira, quarta-feira e na sexta-feira ou sábado), conforme afirmado\npelo réu e proprietário das fazendas, JOSÉ CARLOS CAETANO, em seu interrogatório.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, os réus afirmaram que contrataram serviço de empreitada para \"bater \nveneno no pasto\", tinham conhecimento das condições de trabalho do local.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Lado outro, a tese defensiva de que o réu José Carlos Caetano estava em \ntratamento em Goiânia não afasta a autoria delitiva, umas vez que os fatos ocorreram entre abril\ne maio/2018 e o documento médico (Id.702368455) informa que o acusado esteve em\ntratamento oftalmológico no período de 02/05/2028 a 10/05/2018. Outrossim, os depoimentos\ncolhidos revelam que os réus sempre souberam das condições degradantes do alojamento na\nFazenda Anhanguera II .",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, era de total conhecimento dos réus que os trabalhadores da fazenda eram \nprivados de condições mínimas de higiene, não fornecendo nem mesmo água potável no local de\ntrabalho, frustrando direitos básicos de saúde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Imperioso frisar que as especificidades locais, geográficas e os hábitos simples do \ntrabalhador do interior do Estado do Pará não são elementos capazes de alterar ou densificar o\nconceito de trabalho degradante, tampouco fomentar a exploração de mão-de-obra desses\ntrabalhadores rurais. Admitir o raciocínio inverso seria proteger com menos intensidade a\ndignidade dos trabalhadores mais vulneráveis, que atuam na zona rural e em locais menos\ndesenvolvidos do país.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, restou devidamente comprovado que os réus JOSÉ CARLOS CAETANO e \nLAECIO PORTELA DE OLIVEIRA como incursos no art. 149, caput, do Código Penal, por\ntrês vezes e em concurso formal, na forma do art. 70 do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "III – DISPOSITIVO",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, ACOLHO A DENÚNCIA para:\n\n1- Condenar JOSÉ CARLOS CAETANO como incurso, por três vezes e em \nconcurso formal, na forma do art. 70 do Código Penal, no art. 149, caput, Código Penal, e \nLAECIO PORTELA DE OLIVEIRA como incurso, por três vezes, nos delitos do artigo 149 na\nforma do artigo 70, todos do Código Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo a dosar as penas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que determina o art. 59 do Código Penal, passo à dosimetria da \npena do réu JOSÉ CARLOS CAETANO.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao crime do tipificado no art. 149 do CP, a culpabilidade se revela normal \nao tipo penal. Não possui registro de maus antecedentes. Conduta social aparentemente\ndentro da normalidade. A personalidade não pode ser aquilatada pelos elementos constantes\ndos autos. Os motivos são inerentes ao tipo. As circunstâncias são desfavoráveis\nconsiderando que a água é um (se não o maior) dos bens mais preciosos da terra, pois sem ela\nnão há espécie alguma de vida. Tales de Mileto já disse: a água é o princípio de todas as coisas.\nNo presente caso, o réu, deliberadamente, impediu as vítimas de terem potável para beber. A\nconsequências do crime são inerentes à espécie. não há falar no caso em comportamento da\nvítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a sua pena base em 2 (dois) anos e 3 (três) meses de reclusão e 11 \n(onze) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e presente uma atenuante em razão da \nsenilidade (art. 65, I, do Código Penal). Todavia, considerando o óbice encontrando na súmula\n231 do STJ, fixo a pena intermediária em 2 (dois) anos e 10 (dez) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Há incidência da causa de aumento de pena, em razão de uma das vítimas (Jonatas \nSerafim da Silva) ser adolescente a época do crime, na forma do inciso I do § 2o, do art. 149, do\nCódigo Penal, a pena deverá ser aumentada de metade, portanto fixo em definitiva a pena em \n3 (três) anos de reclusão e 15 (quinze) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à multa, considerando a condição econômica do réu, que declarou possuir \nrenda superior a R$ 5.000,00, bem como a prova do patrimônio juntados aos autos, fixo cada dia-\nmulta no valor correspondente a 01 (um) salário-mínimo vigente à época do fato (2018),\nconsoante dispõe o art. 49, § 1o, observado, ainda o disposto no art. 60, ambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da súmula 659 do \nSTJ, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2\n(metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de\ninfrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 3 (três) infrações penais, razão pela qual majoro \na pena em 1/5, fixando a pena de liberdade em 3 (três) anos, 7 (sete) meses e 6 (seis) dias de\nreclusão e o pagamento de multa em 18 (dezoito) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Uma vez que a pena não supera os 4 anos de reclusão e em face do disposto no \nart. 44, incisos I e III, e § 2o, segunda parte, c/c o art. 45, § 1o, e art. 46, todos do Código Penal, e\nainda considerando os motivos que levaram à fixação da pena, preenchendo o réu os requisitos\ndo art. 44 do CP, não havendo motivo suficiente para deixar de proceder à substituição, concedo-\nlhe esse benefício, substituindo a pena privativa de liberdade por duas restritivas de direito:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) prestação pecuniária, que, tendo em vista o valor do dano, é fixada em R$ \n25.000,00 (vinte e cinco mil reais), valor da multa, cabendo ao réu providenciar o depósito na\nconta do juízo, conta judicial 0551.005.86400753-9;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) prestação de serviços à comunidade, correspondente a uma hora de tarefa por \n\ndia de condenação, na forma do artigo 46, § 3o, do CP, em local a ser indicado pelo juízo da\nexecução penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O regime inicial de cumprimento de pena é o aberto, considerando o quantum da \npena aplicada, nos termos do artigo 33, § 2o, alínea c, do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Sem aplicação do art. 77 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que determina o art. 59 do Código Penal, passo à dosimetria da \npena do réu LAECIO PORTELA DE OLIVEIRA.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao crime do tipificado no art. 149 do CP, a culpabilidade se revela normal \nao tipo penal. Não possui registro de maus antecedentes. Conduta social aparentemente\ndentro da normalidade. A personalidade não pode ser aquilatada pelos elementos constantes\ndos autos. Os motivos são inerentes ao tipo. As circunstâncias são desfavoráveis\nconsiderando que a água é um (se não o maior) dos bens mais preciosos da terra, pois sem ela\nnão há espécie alguma de vida. Tales de Mileto já disse: a água é o princípio de todas as coisas.\nNo presente caso, o réu, deliberadamente, impediu as vítimas de terem potável para beber. A\nconsequências do crime são inerentes à espécie. não há falar no caso em comportamento da\nvítima.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Assim, fixo a sua pena base em 2 (dois) anos e 3 (três) meses de reclusão e 11 \n(onze) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há circunstâncias agravantes e atenuantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Há incidência da causa de aumento de pena, em razão de uma das vítimas (Jonatas \nSerafim da Silva) ser adolescente a época do crime, na forma do inciso I do § 2o do art. 149 do\nCódigo Penal, a pena deverá ser aumentada de metade, portanto fixo em definitiva a pena em \n3 (três) anos e 4 (quatro) meses e 15 (quinze) dias de reclusão e 17 (dezessete) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto à multa, considerando a condição econômica do réu, que declarou possuir \nrenda de R$ 2.500,00, fixo cada dia-multa no valor correspondente a 1/6 (um sexto) salário-\nmínimo vigente à época do fato (2018) consoante dispõe o art. 49, § 1o, observado, ainda o\ndisposto no art. 60, ambos do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em razão do reconhecimento do concurso formal, e nos termos da súmula 659 do \nSTJ, para o aumento da pena pelo concurso formal dentre o intervalo de 1/6 (um sexto) a 1/2\n(metade), previsto no art. 70 do Código Penal, deve-se adotar o critério da quantidade de\ninfrações praticadas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na espécie, trata-se de um total de 3 (três) infrações penais, razão pela qual majoro \na pena em 1/5, fixando a pena de liberdade em 4 (quatro) anos e 18 (dezoito) dias de\nreclusão e o pagamento de multa em 20 (vinte) dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O regime inicial de cumprimento da pena deverá ser o semiaberto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a regra do art. 44 do CP, considerando a pena aplicada.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de conceder a suspensão condicional da pena em razão do montante da \npena aplicado (art. 77, caput, do Código Penal).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Do direito de apelar em liberdade",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Considerando que os réus permaneceram em liberdade durante toda a instrução, o \nmontante da pena aplicada e o regime inicial de seu cumprimento, bem como a ausência de\nqualqualquer circunstância justificadora de sua segregação preventiva, devem permanecer em\nliberdade.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Com fundamento no art. 804 do Código de Processo Penal e no art. 6o da Lei no \n9.289/1996, condeno os réus ao pagamento das custas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado: a) comunique-se à autoridade policial e ao Tribunal \nRegional Eleitoral, para os fins do artigo 15, III, da Constituição Federal; c) oficie-se ao órgão de\nestatística, para os fins do artigo 809 do CPP..",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Promovam-se as diligências necessárias.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Intimem-se.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Altamira/PA, da assinatura eletrônica. \n\nHenrique Jorge Dantas da Cruz \n\nJuiz Federal Substituto \n\n(início da jurisdição em 27/10/2023 - Ato Presi 1823/2023).",
+      "label": "OUTROS"
+    }
+  ]
+}

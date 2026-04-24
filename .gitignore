@@ -2,3 +2,5 @@
 __pycache__
 .env
 texput.log
+stage3_*
+files/datasets/*.numbers

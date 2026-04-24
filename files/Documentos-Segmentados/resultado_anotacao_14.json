@@ -1,0 +1,504 @@
+{
+  "index": 14,
+  "doc_id": 14,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 49,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Bom Jesus da Lapa-BA \nVara Federal Cível e Criminal da SSJ de Bom Jesus da Lapa-BA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0002240-13.2018.4.01.3315",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO:PAULO GABRIEL NOVAIS MIRANDA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: PAULO RODRIGO BATISTA SILVA - BA44096",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I - RELATÓRIO",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF ofertou denúncia em face de PAULO GABRIEL NOVAIS MIRANDA, devidamente \nqualificado nos autos em epígrafe, pela prática do crime de redução de trabalhadores a condição análoga à de\nescravo, capitulado no art. 149 do Código Penal, por oito vezes, na forma do art. 70 da mesma Lei.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a denúncia que, entre novembro de 2010 e 26 de abril de 2011, em carvoaria instalada na \nFazenda Porto, situada na zona rural do município de Bom Jesus da Lapa/BA, o acusado, com vontade livre e\nconsciente, reduziu os trabalhadores Antônio Nunes de Oliveira Filho, Zezito Miranda, José Caetano Dourado e\nterceiros não identificados (Fechading, Nego, Valdeci, Jonas, Chico Lia e outros) a condição análoga à de\nescravo, sujeitando-os a condições degradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Ainda segundo a inicial acusatória, em ação conjunta ambiental coordenada pelo Ministério \nPúblico do Estado da Bahia, em 26.04.2011, Auditores Fiscais do Ministério do Trabalho e Emprego (MTE)\nresgataram o trabalhador Antônio Nunes, que achava-se exercendo funções de carvoeiro na propriedade do\nréu, sob condições degradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Naquele momento relatou Antônio Nunes que outros\ntrabalhadores passaram pelo local, nas mesmas condições; pormenorizou as circunstâncias da situação\nflagranteada; e afirmou que o sistema “era cativo”.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Descreve, ainda, a denúncia que foram encontrados, a cerca de 100m dos fornos, os barracos \nde plástico onde dormiam os trabalhadores, sem proteção contra as intempéries, em péssimas condições de\nhigiene e de alimentação.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Sem instalações sanitárias, as necessidades fisiológicas eram feitas no mato, os\nbanhos eram coletivos e não havia água potável para consumo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em um típico sistema de barracão ou truck system, o percebimento dos salários era \ncondicionado ao pagamento das dívidas por mantimentos.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O custo dos mantimentos comprometia a maioria do\nsaldo devido ao trabalhador.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A inicial veio instruída com fotografias e procedimento investigativo (IPL n° 0330/2013-4 — \nDPF/VDC/BA).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 06.06.2018, por meio da decisão de p. 273-274 ao id 337860937.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citado sobre os termos da ação (p. 17, id 337600350), o réu apresentou, à p. 11 de id \n337600350, instrumento de mandato.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em resposta à acusação, às p. 18-26 de evento 337600350, aventou, em sua defesa, a \nausência de materialidade do delito, porquanto não havia cerceamento da liberdade dos trabalhadores, que\npodiam ir e vir quando quisessem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Arguiu inépcia da denúncia, sob o fundamento de que deixara de descrever\nos fatos de forma individualizada, não mencionando qual seria a suposta conduta criminosa praticada pelo\ndenunciado; além de ausência de interesse de agir, porque virtualmente prescrita a pretensão punitiva.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com a resposta à acusação, juntou rol de testemunhas (p.27), jurisprudência do TRF1 (p. 29-32) e relatório médico\nsobre seu estado de saúde (p. 33).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A decisão de p. 41-42 (id 337600350), de 14.06.2019, manteve a imputação, pois verificado que \no réu não demonstrou quaisquer das situações de rejeição da denúncia previstas no art. 397 do CPP.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Audiência de instrução foi realizada em 08.12.2019, na qual foram ouvidas as testemunhas de \nacusação EDVALDO SANTOS DA ROCHA e ZEZITO MIRANDA; bem como de defesa PATRÍCIO LUIZ DE\nALMEIDA e EDILSON AFONSO DE OLIVEIRA.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "ZEZITO MIRANDA foi ouvido apenas como informante, por\nafirmar ter interesse na causa.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Por fim, interrogou-se o réu PAULO GABRIEL NOVAIS MIRANDA.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Mídias colacionadas aos eventos 337221861, 337221866, 337221871, 337196919, 337230350 \ne 337230378.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Às p. 116-127 (id 337600350), memoriais do MPF, nos quais argumentou que foram produzidas \nprovas suficientes a sustentar a condenação do acusado pelo crime imputado na denúncia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sustentou a\nimportância probatória do laudo de fiscalização e os detalhes reportados no instante do flagrante pelos\ntrabalhadores resgatados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A defesa, por sua vez, às p. 131-144 (id 337600350), arguiu novamente preliminar de \nprescrição virtual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mérito, reafirmou a ausência de materialidade delitiva, haja vista não haver provas da\ncompleta sujeição dos trabalhadores à labor em condições precárias e intensas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Argumentou que não havia\nrestrição da liberdade, jornada exaustiva ou trabalho forçado; que o réu é pessoa humilde, trabalhador rural e\nsemianalfabeto, sem instrução para lidar com a situação trabalhista de seus funcionários.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pugnou, no mérito, pela absolvição do acusado por ausência de provas quanto a prática de qualquer delito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "II – FUNDAMENTAÇÃO",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "II-1 – Da prescrição virtual",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Trata-se de suposto delito de redução a condição análoga à de escravo imputado ao \ndenunciado, cuja ocorrência data de 26.04.2011.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pois bem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A denominada prescrição virtual, ou em perspectiva, contemplada pela doutrina como \num instituto incorporado ao direito pátrio por força de princípios constitucionais, teria o condão de ensejar a\nextinção do processo penal justamente pela ausência de interesse de agir.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Entretanto, é inconteste que a Lei 12.234/2010 pôs fim à possibilidade de configuração da \nprescrição retroativa para período anterior ao recebimento da denúncia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa esteira, prejudicada qualquer\ncompreensão de incidência da chamada prescrição virtual para os crimes cometidos após a vigência da norma,\nocorrida em 05.05.2010.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esse, aliás, tem sido o caminho trilhado pela própria doutrina, notadamente Guilherme de Souza \nNucci:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessarte, cometido o crime em 26.04.2011, não há o que sequer cogitar quanto a prescrição \nvirtual por expressa vedação legal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "II-2 – Do mérito",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A denúncia imputa ao acusado a conduta de submeter trabalhadores a condições degradantes \nde labor, o que estaria subsumida ao tipo penal descrito no art. 149 do Código Penal, in verbis:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos \nforçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por\nqualquer meio, sua locomoção em razão de dívida contraída com o empregador ou preposto: (Redação dada pela Lei no 10.803, de 11.12.2003)\nPena - reclusão, de dois a oito anos, e multa, além da pena correspondente à violência. (Redação dada pela Lei no 10.803, de 11.12.2003)\n§ 1o Nas mesmas penas incorre quem: (Incluído pela Lei no 10.803, de 11.12.2003)\nI – cerceia o uso de qualquer meio de transporte por parte do trabalhador, com o fim de retê-\nlo no local de trabalho; (Incluído pela Lei no 10.803, de 11.12.2003)\nII – mantém vigilância ostensiva no local de trabalho ou se apodera de documentos ou\nobjetos pessoais do trabalhador, com o fim de retê-lo no local de trabalho. (Incluído pela Lei \nno 10.803, de 11.12.2003)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De acordo com Cleber Masson2, o tipo penal em referência enumera condutas alternativas e \nnão cumulativas, de sorte que, se o agente praticar mais de um ato contra a mesma vítima, responderá por um\núnico delito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mais, trata-se de tipo comum; de forma vinculada; permanente; material; de dano;\nunissubjetivo, unilateral ou de concurso eventual (admite concursos de pessoas); comissivo, mas\nexcepcionalmente omissivo impróprio ou comissivo por omissão e plurissubsistente (composto por diversos\natos).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Vale anotar que o tipo penal em questão objetiva tutelar, em primeiro plano, a liberdade do \nindivíduo, com foco principal, em sua dimensão laboral.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Penaliza-se, assim, a conduta do agente que busca\nsujeitar o ser humano a trabalho degradante, em situação similar à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Luciano Ferreira Dornelas3 define trabalho degradante como sendo aquele em que ocorre a “ \n‘coisificação’ da pessoa, tornando-a um objeto e negociando-a como mercadoria barata, negando-lhe os mais\nelementares direitos à segurança, à saúde no trabalho, o direito ao descanso e, por consequente, ao convívio\nsocial.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda, na visão de Cleber Masson:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "as condições degradantes de trabalho são as que caracterizam um ambiente humilhante de \ntrabalho para um ser humano livre e digno de respeito [...].",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Um bom parâmetro para \nidentificar se as condições de trabalho são degradantes ou não repousa nas disposições \ntrabalhistas, pois asseguram as condições mínimas para o trabalho humano.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa trilha, relevante ressaltar que a restrição do direito de ir e vir cuida-se de apenas uma das \ndimensões objetivadas pelo legislador penal no âmbito de proibição normativa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O Superior Tribunal de Justiça\nfixou entendimento segundo o qual o crime em testilha configura-se mesmo que não haja restrição da liberdade\ndo trabalhador, visto que essa é apenas uma das formas da consecução dessa figura típica:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. CRIME DE REDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO. ART. 149 DO \nCÓDIGO PENAL. RESTRIÇÃO À LIBERDADE DO TRABALHADOR NÃO É CONDIÇÃO \nÚNICA DE SUBSUNÇÃO TÍPICA. TRATAMENTO SUBUMANO AO TRABALHADOR. \nCONDIÇÕES DEGRADANTES DE TRABALHO. REVALORAÇÃO DA PROVA. FATO \nTÍPICO.\n1. O artigo 149 do Código Penal dispõe que configura crime a conduta de \"reduzir alguém a \ncondição análoga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada \nexaustiva, quer sujeitando-o a condições degradantes de trabalho, quer restringindo, por \nqualquer meio, sua locomoção em razão de dívida contraída com o empregador ou \npreposto\".\n2. O crime de redução a condição análoga à de escravo pode ocorrer \nindependentemente da restrição à liberdade de locomoção do trabalhador, uma vez \nque esta é apenas uma das formas de cometimento do delito, mas não é a única.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O \nreferido tipo penal prevê outras condutas que podem ofender o bem juridicamente tutelado, \nisto é, a liberdade de o indivíduo ir, vir e se autodeterminar, dentre elas submeter o sujeito \npassivo do delito a condições degradantes de trabalho. Precedentes do STJ e STF.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3. A revaloração das premissas fáticas adotadas pelo próprio acórdão impugnado \nimputa o cenário desumano e degradante de trabalho e a conduta abusiva por parte do \nrecorrente (alojamentos precários, ausência de instalações sanitárias; não \nfornecimento de equipamento de proteção individual; falta de local adequado para \nrefeições; falta de água potável, etc.), descrevendo situação apta ao enquadramento \nno crime do art. 149 do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "4. Agravo regimental não provido. (AgRg no REsp 1443133/TO, Rel. Ministro REYNALDO \nSOARES DA FONSECA, QUINTA TURMA, julgado em 23/02/2016, DJe 29/02/2016) (grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim sendo, os fatos devem ser minuciosamente analisados, objetivando a apuração \nconcludente da presença de alguma das formas de exploração ilegal e abusiva da disponibilidade da força de\ntrabalho, como modo de assegurar dignidade humana e fazer respeitar o valor trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Partindo-se dessa definição doutrinária e jurisprudencial e examinando os autos, concluo que o \ntrabalhador Antônio Nunes, no período de novembro de 2010 a abril de 2011, foi submetido a condições\ndegradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A materialidade delitiva, a meu ver, ficou evidenciada pelo relatório de fiscalização trabalhista, \nsubmetido em Juízo ao contraditório, firmado pelo Auditor Fiscal do Trabalho Edvaldo Santos da Rocha (id \n337860937, p. 110-133), bem como pelo depoimento do referido profissional.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Abro um parêntese aqui.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por certo, este Juízo é conhecedor das dificuldades ínsitas ao trabalho \ncampesino, haja vista que a maciça maioria das audiências realizadas nesta Vara Federal trata da análise\nlaborativa de pessoas simples, vinculadas ao trabalho no campo, tais como os trabalhadores nominados rurais,\nsegurados especiais, para efeitos da relação jurídica correspondente junto ao Regime Geral de Previdência\nSocial.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A rigor, o trabalho no campo implica exaustão física, extenuante, dentre outras condições próprias, com\njornadas em horários muitas vezes distintos do trabalho urbano.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É evidente, de conseguinte, que não se espera que o empregador rural, nessa seara, adote as \nmesmas condições de trabalho oferecidas ao urbano, até porque a natureza das atividades é absolutamente\ndistinta, ainda mais quando se trata de trabalho desenvolvido em uma carvoaria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Muito embora isso, ambas as\ncategorias requerem cumprimento de certas regras impostas pela legislação trabalhista e constitucionais de\ndignidade, em vista da valorização social do trabalho insculpida como critério norteador de uma sociedade livre\njusta e solidária, num Estado Democrático de Direito (art. 3o da CRFB/88).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ao incriminar a conduta, a República Federativa do Brasil deu cumprimento à obrigação \nassumida em razão da Convenção 29 da OIT, de 29.05.1956, ratificada em 25.04.1957 e promulgada pelo\nDecreto no 41.721/57, cujo art. 1o assim dispõe: “Todos os Membros da Organização Internacional do Trabalho\nque ratificam a presente convenção se obrigam a suprimir o emprego do trabalho forçado ou obrigatório sob\ntodas as suas formas no mais curto prazo possível”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Insta salientar, em acréscimo, que a nova redação dada ao tipo pela Lei 10.803/03 não se \nreferiu à divisão entre condutas praticadas anteriormente à sua entrada em vigor, havendo, por evidente,\ncontinuidade normativo-típica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, a conduta em si seguiu como sendo objeto de proteção penal, defluindo\napenas a explicitação quanto às formas da redução a condição análoga à de escravo.4",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A alteração legislativa especificou nuances para o tipo penal situações, antes genéricas, em \nrelação à redação originária, causa apontada pela doutrina como motivo para o baixo grau de efetividade da\nregra.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Destarte, o tipo cuja normatividade residia aberta passou a ostentar forma vinculada alternativa, \nsofrendo, contudo, a crítica de ter o legislador estabelecido uma figura típica excessivamente fechada, ao\npasso em que se poderia preconizar outra forma mais flexível visando a possibilidade de interpretação\nanalógica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Anoto, nesse caminho que, para averiguação do trabalho em condições degradantes, não se \nleva em consideração a atividade desenvolvida ou ambiente físico propriamente dito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Caso contrário, ninguém\npoderia executar determinados trabalhos, como, por exemplo, o corte de cana, a coleta de lixo, a extração de\nminérios, a roçada de pasto, o trabalho em usinas de compostagem, em olarias ou em carvoarias, haja vista\nque o ambiente em que as atividades são desenvolvidas muitas vezes é insalubre e hostil a qualquer\ntrabalhador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De outro norte, malgrado o trabalho seja executado em ambientes hostis, a legislação impõe \nque direitos mínimos sejam atendidos pelos empregadores, a fim de equalizarem o esforço físico intenso\ndispendido pelo empregado, com o descanso e reposição.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Destarte, garante-se com esse objetivo, a um só turno, o desenvolvimento pleno da atividade \nempresarial, ofertando-se riqueza e produtividade, e leva-se em conta a proteção do núcleo intangível da\ndignidade dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Isso quer dizer que, na hipótese do trabalhado exercido em carvoarias, o\ntrabalhador estaria com sua dignidade assegurada acaso lhe fossem fornecidos os EPI’s adequados, banheiros\npara as necessidades fisiológicas, locais minimamente próprios à realização das refeições, jornada laboral não\nextenuante, enfim, exigências que, no meu sentir, ressoam como basilares para qualquer ambiente laboral,\nsem contar, evidentemente, com as demais garantias e direitos de todo trabalhador (salário, FGTS, seguro-\ndesemprego etc.).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Adentrando diretamente no caso dos autos, visualizo, pelas imagens registradas pela equipe de \nfiscalização, não pairar qualquer dúvida de que as condições materiais fornecidas pelo réu fixaram-se muito\naquém do mínimo exigido pela ordem jurídica vigente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste ponto, volto a consignar que se perquire nestes autos a viabilidade de serem \nconsideradas degradantes as condições à que os trabalhadores eram submetidos, não tendo nenhuma\nrelevância aventar-se aqui se os trabalhadores eram submetidos à vigilância extrema, se eram ameaçados, se\ncontraiam dívidas, etc..",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A rigor, a figura típica narrada na denúncia e à qual se busca imputar ao réu cinge-se à\napuração da conduta de submissão, pelo empregador em relação aos respectivos empregados, à condições\nlaborais degradantes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nessa ótica, o relatório de fiscalização (p. 110-133 de id 337860937) evidencia que os \ntrabalhadores residiam em barracos de chão batido, praticamente a céu aberto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A vítima encontrava-se em\nprecaríssimas condições, expostas às circunstâncias mais periculosas da fauna local, desprovida de sanitários\npara as necessidades fisiológicas e ambiente adequado à preparação dos alimentos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Veja-se que ANTÔNIO NUNES, conhecido como “Totó”, restava, na ocasião do flagrante, \nsubmetido à condições degradantes, pois dormia em barraca de lona, sem acesso à água potável, sanitários ou\nlocal adequado para, ao menos, preparar suas refeições.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em meio a área de mata, sujeito a insetos, outros\nanimais de maior perigo e às intempéries.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aliás, destaco que os meses de novembro a abril são conhecidos\ncomo meses chuvosos nesta região, daí podendo se imaginar o calvário a que os trabalhadores ali alojados\nestavam submetidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As fotografias acostadas aos autos, integrantes do relatório de fiscalização e reproduzidas na \ninicial, revelam um local improvisado, provavelmente montado pelos próprios trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sequer instalaram-\nse banheiros químicos, nos quais os trabalhadores pudessem fazer suas necessidades fisiológicas, tendo, ao\nrevés, que se dirigir ao mato, próximo ao acampamento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A água de poço era armazenada em tonéis de\nagrotóxico (p.130, id 337860937), circunstância notoriamente grave à saúde de quem quer que a consumisse.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não havia local para banho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, além da restrição ao adequado atendimento das \nnecessidades fisiológicas, também teriam que se higienizar, desprovidos de qualquer privacidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De outro turno, a alimentação indica a clara presença do chamado “truck system”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os produtos \nalimentares eram vendidos pelo réu e descontados da remuneração dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na ocasião do\nflagrante, narrou o trabalhador ANTÔNIO NUNES:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "que cada trabalhador faz sua compra, que o trabalhador chega aqui e cada um dizia o que \nqueria de compra e passava a lista para o declarante e que o declarante passava para o \nPaulo, que trazia tudo e ficava anotado no caderno dele deste tamanho (o declarante fez um \ngesto) e no dia do acerto todas as contas eram abatidas (p. 117-118, id 337860937)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No cômodo levantado nas proximidades da carvoaria, foram encontrados os alimentos \narmazenados (p. 132, id 337860937).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Frise-se que a verificação do “truck system” sequer fora objeto de refutação pela defesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Destaco, como prova documental emprestada apresentada pela acusação, o conteúdo da \nsentença trabalhista proferida nos autos da ação civil pública no 0000873.70.2013.5.05.0651.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em âmbito\ntrabalhista, houve a condenação pelo “truck system”, bem como pelas demais irregularidades encontradas, de\nJoelma Andrade Rocha, esposa do réu, em nome de quem está registrada a propriedade da Fazenda Porto, ao\npagamento das verbas trabalhistas, decorrentes das ações abusivas contra a vítima, bem como em danos\nmorais coletivos, decorrentes das ações narradas na acusação (p. 31-34, id 337860937).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em Juízo, o réu PAULO GABRIEL NOVAIS MIRANDA buscou se justificar dizendo que é \nproprietário da Fazenda Porto há 19 anos; que obteve a licença do IBAMA e INEMA para carvoaria e pretendia\num manejo sustentável para explorar a mata; que fez o projeto com o intuito de obter uma renda; que não teve\nqualquer problema com o IBAMA; que sempre trabalhou com agropecuária e agricultura; que pagava\ncorretamente todos os trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quanto às condições degradantes encontradas na carvoaria, aduziu que construiu um \nalojamento simples com beliches para os carbonizadores ficarem, mas Antônio Nunes pediu para fazer um\nbarraco perto dos fornos pra cuidar do carvão; que, sem malícia, concordou com ele; que, diferentemente do\nque afirma Antônio Nunes, não havia outros trabalhadores; que os demais foram dispensados pelo acusado; que os trabalhadores ganhavam por produção, que recebiam mais de salário-mínimo; que Antônio Nunes bebia\nmuito; que o acusado havia avisado a Antônio Nunes que seria dispensado das funções de carbonizador por\nconta disso; que Zezito é seu primo e o ajudava na propriedade, colocava água para o gado, consertava cerca\ne lhe pagava salário-mínimo; que a carvoaria foi construída com o produto da venda de um gado e de suas\neconomias; que ficou sem nada; que até hoje paga parcelamento na RFB; que com a ajuda da família\nconseguiu fazer um acordo para não perder a Fazenda; que estava em casa quando chegaram à sua porta o\nchamando, com um comboio de mais de vinte carros, com a equipe \"Cerrado\" armada, afirmando que pegaram\num arsenal na propriedade dele, como motosserra, que era legalizada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia, não obstante o argumento de que Antônio Nunes utilizou da fiscalização para se vingar \npela demissão, ou mesmo de que havia um alojamento digno disponível, as evidências documentadas trilham\ncaminho diverso.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As fotografias retratam barracos de lona e uma precária construção em meio a carvoaria (p. \n129, id 337860937).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não há um único elemento probatório que leve a crer na existência de tal alojamento\ncondigno, com beliches, colchões e banheiro, tal qual narra o réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No relatório de fiscalização há menção sobre um “casebre rude feito de bloco e sem reboco”, à \np. 116 de id 337860937:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Olhávamos inquisitivamente quando gritos nos levaram ao outro lado da carvoaria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fomos e chegamos num casebre rude feito de bloco e sem\nreboco.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O feijão estava no\nfogo e o café estava quente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os trabalhadores que ali\nestavam, ao ver chegar uma comitiva\nde policiais da força especial fortemente armada, ganharam o mato. (grifei)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As testemunhas de defesa nada souberam falar quanto a existência dessa alternativa fornecida \npelo acusado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aliás, tanto EDILSON AFONÇO DE OLIVEIRA quanto PATRICIO LUIZ DE ALMEIDA afirmaram\nnão ter conhecido a carvoaria, motivo pelo qual não souberam nada acrescentar sobre o ambiente encontrado\npela fiscalização, nos idos de abril de 2011.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Já a testemunha de acusação EDVALDO SANTOS DA ROCHA, Auditor Fiscal do Trabalho que \natuou na fiscalização, questionada a respeito de tal ambiente, respondeu que existia, além do barraco de lona,\num cômodo quadrado sem reboco onde ficavam os alimentos; que não era algo utilizado pelos trabalhadores; que esse quadrado ficava próximo aos fornos e que por esse motivo seria impossível ali ficar quando acesos os\nfornos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sendo assim, incerta a existência de tal alojamento em condições apropriadas fornecidas \npelo empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda em sua defesa, o acusado disse ser vítima de uma injustiça, que a pior coisa que fez da \nvida dele foi a carvoaria; que durou menos de um ano; que depois disso teve depressão e dois surtos\npsicóticos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Afirmou que Antônio Nunes estava dando prejuízo, por causa da bebida, e por isso teria sido\ndispensado; que não chegaram a brigar; que se tratavam bem; que conhecia a irmã de Antônio; que Antônio o\nbuscou pedindo emprego; que acredita que a dispensa de Antônio fez com que ele fizesse as declarações\nnoticiadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Justificou que não registrou o pessoal porque ficava muito caro; que eles queriam trabalhar por \nprodução; que eles ganhavam mais que o salário-mínimo; que havia três motoqueiros (sic) que trabalhavam\ncom o motosserra, dois ajudantes para juntar a lenha, dois trabalhadores no trator e dois carbonizadores,\nincluindo Seu Totó (Antônio Nunes).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Segundo consta dos autos, havia outros trabalhadores, que empreenderam fuga ao chegar do \ncomboio da fiscalização.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Apenas dois trabalhadores foram, de imediato, ouvidos: ANTÔNIO NUNES e ZEZITO\nMIRANDA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Um terceiro, de nome JOSÉ CAETANO DOURADO, foi encontrado, posteriormente, em condições\nsub-humanas, morando em uma casa de taipa, sem energia elétrica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aparentemente doente, vivendo sozinho e\ncom sinais de problemas mentais e físicos, não conseguiu responder às perguntas dos investigadores (p. 266-\n269, id 337860937).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em Juízo, no entanto, ZEZITO afirmou ter interesse em defender seu primo, o acusado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em\nrazão disso, foi ouvido apenas como informante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Disse que trabalhava dando água para o gado no bebedouro; que não trabalhou na carvoaria; que não se recorda da fiscalização ambiental; que havia uma casinha (sic) onde os trabalhadores ficavam, mas que não tem muito conhecimento a respeito porque não trabalhava na carvoaria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A vítima Antônio Nunes, por sua vez, não foi mais encontrada.",
+      "label": "FUNDAMENTACAO"
+    }
+  ]
+}

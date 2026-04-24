@@ -1,0 +1,1196 @@
+{
+  "index": 16,
+  "doc_id": 16,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 297,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Redenção-PA \nVara Federal Cível e Criminal da SSJ de Redenção-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 0000001-41.2020.4.01.3905",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "POLO PASSIVO:JOAO LUIZ QUAGLIATO NETO e outros",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: JOEL CARVALHO LOBATO - PA11777-A, ADRIANA\nCUNHA FREIRE DE CARVALHO - PA28096-B e ANTONIO AURELIO PALMEIRA PACHECO -\nPA016535",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1. Relatório",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O Ministério Público Federal - MPF ajuizou ação penal em desfavor de João Luiz \nQuagliato Neto e Antônio Jorge Vieira (vulgo \"Toninho\"), devidamente qualificados na peça\nacusatória, imputando-lhes a prática dos crimes previstos no art. 149, caput, na forma do art. 70\n(por 85 vezes), art. 207, §§ 1o e 2o, na forma do art. 70 (por 85 vezes), e art. 203, §1o, I e II,\nna forma do art. 70 (por 85 vezes), em concurso material (art. 69), todos do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a denúncia, em síntese, que os acusados teriam submetido 85 (oitenta e \ncinco) trabalhadores a condições análogas à de escravidão na Fazenda Brasil Verde, localizada\nno Município de Sapucaia/PA, sem receber os seus pagamentos, com restrição da liberdade de\nlocomoção e submetidos a constante vigilância armada, além de retenção da CTPS, que não\nhavia sido assinada, e frustração de direitos trabalhistas, conforme constatado, em 15 de março\nde 2000, pela equipe móvel do Ministério do Trabalho e Emprego – MTE.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Indica a inicial acusatória que os acusados, ao lado do \"gato\" “MELADINHO”, teriam \nforam os responsáveis pela arregimentação e aliciamento de todos os trabalhadores, levando-os\ndo Piauí até o Município de Sapucaia/PA, uma vez que, conforme relato das próprias\nvítimas, foram arregimentadas em Barras/PI e Porto/PI, tendo sido transportadas de ônibus até a\ncidade de Santa Inês/MA, seguindo de trem até Marabá/PA, e posteriormente em carro de boi da\ncidade de Marabá até a fazenda.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Relata que a fiscalização do MTE foi motivada pela notitia criminis apresentada, em \n07 de março de 2000, na Polícia Federal (DPF/Marabá – Pará), pelos trabalhadores José\nFrancisco Furtado de Souza (\"Zé Pitanga\") e Antônio Francisco da Silva, ambos menores de 18\nanos, à época, que fugiram da fazenda e relataram a prática do trabalho em condições análogas\nà de escravo e a ocorrência de violência praticada contra empregados da Fazenda Brasil Verde,\ntendo sido elaborado pelo MTE relatório circunstanciado e lavrado Auto de Infração no 00338441.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 27/01/2020 (fls. 11/14 do id 309765857).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citados, os acusados apresentaram resposta à acusação, em petição conjunta, \nsuscitando, em sede de preliminares, nulidade por cerceamento de defesa, sob o fundamento de\nque faltavam alguns documentos no processo digital, ausência de justa causa para\nprosseguimento da ação, e, no mérito, sustentaram a ausência de provas de que tenham\npraticado qualquer crime, pugnando pela produção de provas e arrolando testemunhas (id\n610241892).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Ante a alegação de ausência nos autos virtuais de documentos citados no processo \nfísico, foi determinado que a Secretaria providenciasse a juntada dos documentos mencionados\npela defesa, assim como o prazo para resposta à acusação foi reaberto (id 837615552), tendo os\nréus, intimados da reabertura do prazo, em síntese, ratificado a defesa apresentada\nanteriormente (id 892714093).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em decisão de id 914924740, foram rejeitadas as preliminares suscitadas pelos \nréus e mantido o recebimento da denúncia, sendo determinado o prosseguimento do feito e\ndeferida a produção de prova testemunhal da acusação e da defesa, tendo sido deprecada a\noitiva das testemunhas e vítimas residentes fora da sede do município de Redenção e designada\naudiência para a data de 10/05/2022, às 14h00min, para oitiva das demais testemunhas e\nvítimas.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Expedidas cartas precatórias para oitiva das testemunhas e vítimas, conforme \nconsta dos id’s 919343179 a 922126656.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Apresentado recurso em sentido estrito, com pedido de reconsideração formulado \npelos acusados no id 930400238, contra a decisão de id 914924740, sendo recebido o referido\nrecurso e determinado a intimação do MPF para contrarrazões (id 952229669). Intimado, o MPF\napresentou contrarrazões por meio do id 964276150.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em decisão de id 965872653, foi mantida a decisão recorrida pelos seus próprios \nfundamentos e determinado o processamento do recurso apresentado pelos réus, o qual foi\nencaminhado ao TRF da 1a Região por instrumento, com fundamento no art. 563, III do CPP.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Iniciada a audiência de instrução, foram ouvidas as vítimas Francisco das Chagas \nCosta Rabelo, José Leandro da Silva, Marcos Antônio Lima, Pedro Fernandes da Silva e José de\nRibamar Souza (ata em id 1099883792 e arquivos de vídeo anexos).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em continuidade, foram ouvidas a vítima José Francisco Furtado Souza e a \ntestemunha de acusação Charles Ribeiro de Castro (ata em id 1207157293 e arquivos de vídeo\nanexos).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em seguida, foram inquiridos Ruy Bonfim de Albuquerque (testemunha de \nacusação), João Elias da Silva Nascimento, Francisco Henrique da Silva Abreu e Nilson Palhares\nFernandes (testemunhas de defesa), além de realizado o interrogatório dos réus, sendo, ao final,\nna ausência de requerimento de diligências, aberto prazo para as partes apresentarem memoriais\nescritos no prazo de 5 (cinco) dias (ata em id 1424647785 e arquivos de vídeo anexos).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O MPF apresentou alegações finais, tendo, em síntese, defendido a ausência de \nprescrição no caso sob análise. No mérito, pugnou pela condenação dos réus pelos crimes\nprevistos no art. 149, caput, na forma do art. 70 (por oitenta e cinco vezes), art. 207, §1o e 2o, na\nforma do art. 70 (por oitenta e cinco vezes) e art. 203, §1o, I e II, na forma do art. 70 (por oitenta e\ncinco vezes), em concurso material (art. 69), todos do Código Penal (id 1435467254).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os réus João Luiz Quagliato Neto e Antonio Jorge Vieira, por meio de petição \nconjunta, apresentaram alegações finais (id 1463589368), tendo alegado, em sede de preliminar:\nocorrência da prescrição sob o fundamento da não aplicação das normas internacionais e\nirretroatividade da lei penal que alterou o art. 149 do CP e violação ao princípio da segurança\njurídica; nulidade em razão da violação da incomunicabilidade das testemunhas; nulidade do\ndepoimento da testemunha de acusação Ruy Bonfim de Albuquerque.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "No mérito, os réus alegaram ausência de materialidade e autoria, bem como \ninconsistências da denúncia, inexistência de provas do crime previsto no art. 207 do CP,\ninexistência de impedimento para entrada e saída da propriedade, inexistência de armas e\nsegurança armada dentro da fazenda, tendo aduzido ainda que sempre foi ofertado aos\ntrabalhadores da fazenda ferramentas para o trabalho, habitação adequada, alimento e\nequipamentos de proteção individual, além de inconsistência das alegações de “Zé Pitanga” e\nRuy Bonfim.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Mencionaram, ainda, a existência de informações inverídicas do relatório de viagem, \nexistência de trabalhadores que laboraram em anos anteriores na fazenda, inconsistências no\nrelato da fuga de Antônio Francisco e José Francisco, influência da Comissão Pastoral da Terra –\nCPT/Marabá no Caso Brasil Verde, a necessidade de desclassificação para concurso formal (art.\n70, caput, 1a parte, do CP), tendo, ao final, requerido o reconhecimento das preliminares\napresentadas e, no mérito, a absolvição dos réus sob o fundamento de ausência de provas.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório do essencial.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "2. Fundamentação",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1 Das questões prévias apresentadas pelos réus em suas alegações finais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De início, as alegações de nulidade não merecem acolhimento. Isso porque, durante \na inquirição de Ruy Bonfim de Albuquerque, ainda no seu início, quando questionado pela defesa\ndos réus se estava fazendo a leitura de algum material e tendo confirmado que estava\nconsultando um resumo elaborado por ele, foi, na ocasião, advertido pelo magistrado para que\nprestasse o depoimento sem consulta a qualquer tipo de material, transcorrendo o restante da\noitiva sem consulta a apontamentos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outrossim, diferentemente do alegado pela defesa, a testemunha não trouxe o seu \ndepoimento por escrito, mas tão somente - e por breve período de tempo, ou seja, até ser\nquestionada pela defesa e advertida por este juízo - fez breve consulta a apontamentos (aos\nquais chamou de resumo), o que, como é cediço, não é vedado pelo nosso diploma processual\npenal, consoante consta expressamente do parágrafo único do art. 204 do CPP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por conseguinte, o fato de ter consultado seus apontamentos no início de sua \ninquirição não é suficiente para tornar nulo o depoimento prestado, ainda mais quando realizado\nem sua maior parte sem qualquer consulta a material, não tendo, inclusive, a defesa apontado,\nna ocasião, qualquer vício nesse sentido, não sendo demonstrado ainda prejuízo à defesa dos\nréus (art. 563 CPP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Da mesma forma, a alegação de nulidade em razão de suposta violação da \nincomunicabilidade das testemunhas citadas não encontra fundamento/prova suficiente nos autos\n(telas “printadas” e colacionadas), sendo certo que as testemunhas recebem o link da audiência,\nacessam o link, aguardam logadas no lobby e são admitidas na sala audiência virtual\nno momento de suas inquirições (Microsoft Teams), mediante controle da Secretaria do Juízo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito, a sistematização indicada consta como padrão nas decisões criminais \nda Vara, o que pode ser verificado inclusive na decisão que determinou o início da audiência de\ninstrução no presente feito (id 914924740):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...) \n\nSem prejuízo, designo audiência de instrução e julgamento para o dia \n10/05/2022, às 14h00min, a qual será realizada por meio do aplicativo Microsoft \nTeams, ocasião em que será encaminhado um link às partes via e-mail, devendo \nser acessado o sistema pelo link para ingressar na sala virtual de audiência e \naguardar a admissão pelo Juízo. \n\nIntimem-se, assim, as partes para trazerem aos autos, no prazo de 5 (cinco) dias,\ntelefone e e-mail dos defensores, réus, vítimas e testemunha(s) residente(s) fora \ndesta cidade, a fim de viabilizar a oitiva por meio do aplicativo Microsoft Teams. \n\nAdvirta-se que será facultado às partes, ofendidos e testemunhas o seu \ncomparecimento à sala de audiências desta Subseção Judiciária para participação \ndo ato por meio virtual\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, não há que se falar em violação da incomunicabilidade das \ntestemunhas, uma vez que, como bem sabe a defesa dos réus, em audiências dessa natureza,\nrealizadas por meio do aplicativo Microsoft Teams, as testemunhas não ficam habilitadas a ver\nnem a ouvir o teor dos depoimentos prestados pelas demais testemunhas, não tendo sido,\ninclusive, apresentada qualquer impugnação nesse sentido durante as longas e diversas\naudiência realizadas, tampouco restou comprovado prejuízo para a defesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, em relação à alegada irretroatividade da lei penal que alterou o caput \ndo art. 149 do CP, evidente que não se trata de novatio legis incriminadora, mas tão somente de\nlei que promoveu a alteração no núcleo do tipo e que, segundo a doutrina, tornou o tipo penal -\nque antes era de execução livre – em crime de execução vinculada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De qualquer forma, os fatos objeto da denúncia apresentada pelo MPF já estavam \nprevistos como crime no Código Penal, não havendo violação ao princípio da reserva legal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido é o entendimento do Tribunal Regional Federal da 1a Região:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“HABEAS CORPUS. RECEBIMENTO DE DENÚNCIA FUNDADA EM RELATÓRIO \nADMINISTRATIVO PARA FINS PENAIS NÃO ASSINADO PELA AUTORIDADE \nCOMPETENTE. CRIME DE REDUÇÃO À CONDIÇÃO ANÁLOGA À DE \nESCRAVO. COMPETÊNCIA DA JUSTIÇA FEDERAL. FRUSTRAÇÃO DE \nDIREITOS TRABALHISTAS. ALICIAMENTO DE TRABALHADORES. CRIMES \nCONTRA A ORGANIZAÇÃO DO TRABALHO. INFRAÇÃO PENAL CONTRA \nINTRESSE E CONTRA SERVIÇO DA UNIÃO. VIOLAÇÃO AO PRIMADO DA \nGARANTIA DA DIGNIDADE DA PESSOA HUMANA. LESÃO À PREVIDÊNCIA \nSOCIAL. MANIFESTO INTERESSE DA UNIÃO. COMPETÊNCIA DA JUSTIÇA \nFEDERAL. RECEBIMENTO DA DENÚNCIA. INDÍCIOS SUFICIENTES DE \nAUTORIA E MATERIALIDADE.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...) \n\n4. Não há afronta ao princípio da reserva legal porque o ilícito tipificado no \nartigo 149 do Código Penal é preexistente à Lei 10.803/2003, ou seja, esta lei \nnão criou nova conduta incriminadora, mas apenas conferiu nova redação ao \ndispositivo que já repudiava criminalmente a prática de redução de \ntrabalhadores a condição análoga à de escravos, sendo a figura típica \ncontemporânea à data dos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...)”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(HC 2004.01.00.037367-3/MT, Relator Des. Federal Hilton Queiroz, 4a Turma, pub. \nDJ de 2502/2005, p. 20) (sem o grifo no original)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“PROCESSO PENAL. HABEAS CORPUS. REDUÇÃO A CONDIÇÃO ANÁLOGA À \nDE ESCRAVO. CAUSA DE AUMENTO. PRESCRIÇÃO.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "1. O tipo objetivo - sujeitar alguém à vontade do agente, escravizar a pessoa \nhumana - descrito na antiga redação do art. 149 do Código Penal depois da Lei \n10.803, de 11.12.2003, continuou o mesmo. A nova Lei 10.803, de 11.12. \n2003, \napenas explicitou as hipóteses em que se configuram a condição análoga à de \nescravo, como a submissão a trabalhos forçados, a jornada exaustiva, o trabalho \nem condições degradantes, a restrição da locomoção, em razão de dívida com o \nempregador ou preposto. A nova lei sim acrescentou formas qualificadas, punindo o \ncrime com o aumento da pena em metade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...)”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(HC 2007.01.00.013313-4/PA, Relator Des. Federal Tourinho Neto, 3a Turma, pub. \nDJ de 15/06/2007, p. 23) (sem o grifo no original)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, o melhor entendimento é o de que a nova redação do caput do art. 149 \ndo Código Penal apenas explicitou os elementos e as circunstâncias consagrados pela\njurisprudência nacional como inerentes ao conteúdo normativo do tipo penal em questão,\nconforme ementa a seguir transcrita:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL E PROCESSUAL PENAL. ARTS. 149 E 333 DO CÓDIGO PENAL. \nREDUÇÃO À CONDIÇÃO ANÁLOGA À DE ESCRAVO E CORRUPÇÃO ATIVA. \nPROVA DIRETA ÚNICA. INSUFICIÊNCIA DE PROVAS PARA A CONDENAÇÃO \nDO RÉU, PELO DELITO DE CORRUPÇÃO ATIVA. APLICAÇÃO DO PRINCÍPIO IN \nDUBIO PRO REO. ART. 149 DO CÓDIGO PENAL. REDUÇÃO À CONDIÇÃO \nANÁLOGA À DE ESCRAVO. NOVA REDAÇÃO DA LEI 10.803/2003. CONDUTA \nPREEXISTENTE. SUJEIÇÃO DE EMPREGADOS A CONDIÇÕES DEGRADANTES DE \nTRABALHO. INEXISTÊNCIA DE NOVATIO LEGIS IN PEJUS, NO \nPARTICULAR. MATERIALIDADE E AUTORIA DELITIVAS PROVADAS. \nAPELAÇÕES PROVIDAS.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "[...]",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "IV - O Juízo a quo, na sentença, examinou detidamente a prova dos autos, concluiu \nque há provas de que os empregados do réu eram submetidos a condições \nde degradantes de trabalho, mas absolveu-o, por entender que o art. 149 do Código \nPenal, com a redação da Lei 10.803, de 11/12/2003 - que explicitou os vários modos \npelos quais o delito pode ser praticado, entre eles a sujeição de trabalhadores a \ncondições degradantes de trabalho -, não poderia ser aplicado retroativamente, a \nfato ocorrido, in casu, em 2001.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "V - De acordo com a jurisprudência pátria, o conceito de condição análoga à \nde escravo, à época dos fatos, em 2001, não se restringia exclusivamente às \ncondutas que limitassem a liberdade de locomoção da vítima, mas já abarcava \nas condutas que foram apenas explicitadas, posteriormente, na nova redação, \ndada ao art. 149 do Código Penal, pela Lei 10.803/2003, não se configurando, \nportanto, no caso, indevida aplicação retroativa da mencionada Lei a fatos \n \nanteriores à sua vigência, eis que, no que tange às modalidades hoje \n \ndescritas, taxativamente, no tipo penal, não se trata de lei nova, prejudicial ao \n \nagente (novatio legis in pejus), mas apenas de norma legal que explicitou o \n \nentendimento, consolidado na jurisprudência, acerca de tal conceito, o qual \n \npossuía como parâmetro analógico não somente a ideia de escravidão, \n \ngravada na história do Brasil (caracterizada, no essencial, pelo sequestro e \n \ncárcere privado da vítima, em face de uma relação de trabalho), mas também \n \nas condições ideais de trabalho, amplamente estabelecidas na legislação \n \ntrabalhista (Decreto-Lei 5.452/43) e extensiva ao meio rural, notadamente com \n \na promulgação, em 1973, da Lei 5.889 - ainda em vigor -, que revogou a Lei \n \n4.214/63 e o Decreto-Lei 761/69.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "VI - A aplicação mais gravosa do art. 149 do Código Penal somente poderia ser \nconsiderada no que concerne à forma qualificada do delito - prevista no § 2o \ndo art. 149 do Código Penal -, bem como à fixação cumulativa de pena de \nmulta e daquela relativa à violência, que foram as efetivas inovações, \ninseridas no mencionado tipo penal, pela Lei 10.803/2003. (ACR \n00006085720064013901, Desembargadora Federal Assusete Magalhães, TRF1 - \nTerceira Turma, e-DJF1 Data: 27/04/2012 Página: 1023). (sem o grifo no original)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Finalmente, a alegação de ocorrência da prescrição, sob o fundamento da não \naplicação das normas internacionais e irretroatividade da lei penal, bem como em relação à\nsuposta ausência de segurança jurídica, sob o argumento de que o TRF da 1a Região teria\nreconhecido a prescrição dos mesmos crimes imputados aos réus, não deve ser acolhida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em primeiro lugar, a Corte Interamericana de Direitos Humanos, por meio \nde sentença proferida no “Caso Fazenda Brasil Verde vs Brasil”, declarou a responsabilidade do\nEstado brasileiro por violar o direito a não submissão à escravidão e ao tráfico de pessoas (em\ntransgressão ao artigo 6.1 do Pacto de San José da Costa Rica) e impôs a obrigação de\ninvestigar, processar e eventualmente sancionar as graves violações de direitos humanos\n(persecução penal dos fatos) ocorridas na Fazenda Brasil Verde, constando no item 9 das\nDisposições contidas nos Pontos Resolutivos da Sentença:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"9. O Estado deve reiniciar, com a devida diligência, as investigações e/ou \nprocessos penais que correspondam pelos fatos constatados em março de 2000 no \npresente caso para, em um prazo razoável, identificar, processar e, como for o caso, \nsancionar aos responsáveis, de conformidade com o estabelecido nos parágrafos \n444 a 446 da presente Sentença. Como for o caso, o Estado deve restabelecer (ou \nreconstruir) o processo penal 2001.39.01.000270-0, iniciado em 2001, ante a 2a \nVara da Justiça Federal de Marabá, Estado de Pará, de conformidade com o \nestabelecido nos parágrafos 444 a 446 da presente Sentença\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Também, a questão da prescrição dos fatos objeto do presente feito já foi apreciada \ntanto por este juízo quanto pelo TRF da 1a Região, não tendo sido reconhecida sua ocorrência\nem nenhuma das ocasiões, consoante decisão proferida em id 914924740, cujo excerto se\ntranscreve abaixo:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) \n\nQuanto às outras duas preliminares suscitadas pela defesa, observa-se que \npossuem, em suma, o mesmo fundamento base, qual seja, a suposta ocorrência de \nprescrição da pretensão punitiva estatal, fundamento esse que, conforme consta da \ndecisão que recebeu a denúncia, foi enfrentado pelo Egrégio TRF da 1a Região, o \nqual, por meio de decisão proferida, por maioria, nos autos do HC no 1023279- \n03.2018.4.01.0000, entendeu pela não ocorrência da prescrição dos delitos \ninvestigados no PIC no 1.23.005.000177/2017-62, que subsidia a peça acusatória \napresentada nos presentes autos. \n\nNão fosse suficiente, quanto à alegada ocorrência de prescrição dos delitos \nconstantes da denúncia, deve ser destacado que os mesmos fundamentos \nlevantados pelos réus na resposta à acusação apresentada foram objeto de \nnovo habeas corpus pela defesa dos acusados, especificamente contra o ato de \nrecebimento da denúncia nos presentes autos, entretanto, o remédio \nconstitucional não foi conhecido pelo E. TRF da 1a Região por entender que se \n \ntratava de mera repetição dos argumentos já enfrentados anteriormente no HC no \n1023279-03.2018.4.01.0000 (HC 1010432-95.2020.4.01.0000, JUIZ FEDERAL \nSAULO JOSÉ CASALI BAHIA, TRF1 - QUARTA TURMA, PJe 07/10/2020). \n\nDesse modo, tendo em vista que já decidida em instância superior a questão da \nprescrição suscitada nestes autos, conforme julgados supra mencionados, e não se \nverificando modificação fática ou jurídica que justifique a mudança de \nposicionamento, a este Juízo cabe tão somente determinar o prosseguimento do \nfeito, dado que, relativamente à tese sustentada pela defesa de prescrição dos \n \ndelitos contidos na peça acusatória, já existe entendimento firmado no âmbito do \nTRF da 1a Região.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por relevante, acerca do tema, colaciona-se trecho do voto vencedor do e. Juiz \nFederal SAULO CASALI BAHIA, Relator Convocado nos autos do HABEAS CORPUS CRIMINAL\n(307) n. 1023279-03.2018.4.01.0000:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\n\n(..) \n\nDa prescrição. Segundo a impetração: \n\nConsiderando que a pena máxima em abstrato do delito de reduzir alguém a \ncondição análoga à de escravo é de 8 anos (art. 149, Código Penal), a prescrição \ndos alegados fatos ocorridos em março de 2000 se deu em março de 2012 (art. 109, \nIII, Código Penal). Todos os outros delitos possivelmente atribuíveis à mesma \n \nsituação (vide art. 197 e 207, Código Penal) apresentam penas menores e, portanto, \n \ntambém já prescreveram.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“Em que pesem os dados prescricionais, o Ministério Público Federal requereu, em \n30 de junho de 2017, a instauração de um Procedimento Investigatório Criminal \npara investigar os fatos ocorridos em março de 2000. O MPF, então, decidiu não \nrestaurar o inquérito policial desaparecido, e sim iniciar um novo, tendo em vista o \n“grande lapso temporal desde a última notícia que se tem do procedimento”. \n\nO Estado brasileiro teve 17 anos para investigar os fatos supostamente ocorridos \nem 2000, e não o fez. Se, por um lado, eles não tiveram a possibilidade de provar \nsua inocência por longos anos de incerteza até a ocorrência da prescrição, hoje \nsofrem investigação absurda por fatos já prescritos. \n\nO Supremo Tribunal Federal, inclusive, já consolidou o entendimento de que a \n \nalegada “imprescritibilidade” determinada por cortes estrangeiras em nada afeta o \nordenamento jurídico interno, o qual permanece considerando imprescritíveis \n \nsomente os delitos que assim são tratados pela Constituição Federal. \n\n(...) eventual execução teria findado ainda no ano 2000. \n\nA Súmula 524 do STF estabelece que uma vez arquivado o inquérito policial por \n \ndespacho do juiz ou a requerimento do promotor de justiça, não pode a ação penal \nser iniciada sem novas provas. \n\nA prescrição é um verdadeiro princípio do Código Penal Brasileiro, o qual, porém, \npossui caráter de materialidade constitucional. Tanto é assim que os crimes \n \nimprescritíveis no nosso ordenamento surgem como exceções no nosso sistema \npenal e possuem assento constitucional – é o caso do racismo (CF, art. 5o, XLII) e \nda atuação de grupos armados contra a ordem constitucional e o Estado \nDemocrático (CF, art. 5o, XLIV). \n\nSobre o tema, cabe aduzir que a proibição de escravidão é prevista na Convenção \nAmericana de Direitos Humanos (CADH), adotada pelo Brasil desde 1992, e esta \n \nregra não pode ser suspensa nem mesmo em caso de guerra, de perigo público, ou \nde outra emergência que ameace a independência ou segurança do Estado Parte \n(art. 27). O Brasil se comprometeu a combater este ilícito, como se vê também \nna Convenção OIT n. 105 (Convenção Relativa a Abolição do Trabalho Forçado), \nadotada em 25 de junho de 1957, e que teve entrada em vigor em 17 de janeiro de \n1959, sendo que o Estado brasileiro ratificou a Convenção em 18 de junho de 1965. \nA partir do primeiro tratado universal sobre a eliminação da escravidão (Convenção \nsobre a Escravatura, adotada em Genebra, em 25 de setembro de 1926), vários \ntratados internacionais têm reiterado a proibição da escravidão, a qual é \nconsiderada uma norma imperativa do Direito Internacional (jus cogens), e implica \nobrigações erga omnes de acordo com a Corte Internacional de Justiça. É inegável \no status jurídico internacional da proibição da escravidão. Além disso, tanto o Brasil \ncomo a maioria dos estados da região são parte da Convenção sobre a Escravatura \nde 1926 e da Convenção Suplementar sobre a Abolição da Escravatura de 1956. \n\nNos casos de escravidão, a prescrição da ação penal é inadmissível e inaplicável, \npois esta não se aplica quando se trata de violações muito graves aos direitos \nhumanos, nos termos do Direito Internacional. A jurisprudência constante e uniforme \nda Corte Internacional de Justiça e da CIDH, como referido pelo MPF, assim o \nestabeleceu (vide Caso Albán Cornejo y otros. Vs. Ecuador. Mérito, Reparações e \nCustas. Sentença de 22 de novembro de 2007. Série C No. 171. Par. 111. Ver \ntambém, CIDH. Relatório da CIDH, par. 221). Na sentença contra o Brasil, assim se \nmanifestou a CIDH: \n\n412. La Corte ya ha señalado que la prescripción en materia penal determina la \nextinción de la pretensión punitiva por el transcurso del tiempo, y generalmente, \n \nlimita el poder punitivo del Estado para perseguir la conducta ilícita y sancionar a \n \nsus autores. Esta es una garantía que debe ser observada debidamente por el \n \njuzgador para todo imputado de un delito. Sin perjuicio de lo anterior, la prescripción \n\nde la acción penal es inadmisible cuando así lo dispone el derecho internacional. En \n\neste caso la esclavitud es considerada un delito de derecho internacional cuya \n \nprohibición tiene estatus de jus cogens (supra párr. 249). Asimismo, la Corte ha \n \nindicado que no es admisible la invocación de figuras procesales como la \n \nprescripción, para evadir la obligación de investigar y sancionar estos delitos[1] \n\n. Para que el Estado satisfaga el deber de garantizar adecuadamente diversos \n \nderechos protegidos en la Convención, entre ellos el derecho de acceso a la justicia, \n \nes necesario que cumpla su deber de investigar, juzgar y, en su caso, sancionar y \n \nreparar por estos hechos. Para alcanzar ese fin el Estado debe observar el debido \n \nproceso y garantizar, entre otros, el principio de plazo razonable, los recursos \n \nefectivos y el cumplimiento de la sentencia. \n\n413. La Corte ya ha establecido que: i) la esclavitud y sus formas análogas \nconstituyen un delito de derecho internacional, ii) cuya prohibición por el derecho \ninternacional es una norma de jus cogens (supra párr. 249). Por lo tanto, la Corte \n \nconsidera que la prescripción de los delitos de sometimiento a la condición de \n \nesclavo y sus formas análogas es incompatible con la obligación del Estado \nbrasileño de adaptar su normativa interna de acuerdo a los estándares \ninternacionales. En el presente caso la aplicación de la prescripción constituyó un \n \nobstáculo para la investigación de los hechos, la determinación y sanción de los \n\nresponsables y la reparación de las víctimas, a pesar del carácter de delito de \nderecho internacional que representaban los hechos denunciados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tradução às fls. 49/50 (doc 2953004):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "412. A Corte já indicou que a prescrição em matéria penal determina a extinção da \npretensão punitiva em virtude do transcurso do tempo e, geralmente, limita o poder \npunitivo do Estado para perseguir a conduta ilícita e sancionar seus autores. Esta é \n \numa garantia que deve ser devidamente observada pelo julgador para todo acusado \nde um delito. Sem prejuízo do anterior, a prescrição da ação penal é inadmissível \nquando assim o dispõe o Direito Internacional. Neste caso, a escravidão é \nconsiderada um delito de Direito Internacional, cuja proibição tem status de jus \ncogens (par. 249 supra). Além disso, a Corte indicou que não é admissível a \n \ninvocação de figuras processuais como a prescrição, para evadir a obrigação de \ninvestigar e punir estes delitos. Para que o Estado satisfaça o dever de garantir \n \nadequadamente diversos direitos protegidos na Convenção, entre eles o direito de \nacesso à justiça, é necessário que cumpra seu dever de investigar, julgar e, se for o \ncaso, punir estes fatos e reparar os danos causados. Para alcançar esse fim, o \nEstado deve observar o devido processo e garantir, entre outros, o princípio de \nprazo razoável, os recursos efetivos e o cumprimento da sentença.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "413. A Corte já estabeleceu que: i) a escravidão e suas formas análogas constituem \num delito de Direito Internacional, ii) cuja proibição pelo Direito Internacional é uma \nnorma de jus cogens (par. 249 supra). Portanto, a Corte considera que a prescrição \ndos delitos de submissão à condição de escravo e suas formas análogas é \nincompatível com a obrigação do Estado brasileiro de adaptar sua normativa interna \nde acordo aos padrões internacionais. No presente caso a aplicação da prescrição \nconstituiu um obstáculo para a investigação dos fatos, para a determinação e \npunição dos responsáveis e para a reparação das vítimas, apesar do caráter de \ndelito de Direito Internacional que os fatos denunciados representavam.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por seu turno, a norma invocada para fundamentar a ocorrência da prescrição é de \níndole legal (DL 2.848/40, Código Penal – art. 109, III), e desde o julgamento do RE \n466.343/SP pelo Supremo Tribunal Federal (j. 03.12.2008 - vide também, julgado na \nmesma data, o RE 349.703/RS), as normas internacionais sobre direitos humanos \npossuem, no caso de não observância do rito previsto no par. 3o do art. 5o da CF \n(hipótese que conferiria status constitucional à norma), a hierarquia supralegal. O \njulgamento se referiu aos tratados internacionais, normas de natureza obrigatória, \nmas o raciocínio deve ser empregado em relação aos princípios gerais de direito \ninternacional e aos costumes internacionais, quando ostentem a mesma natureza \ncogente (jus cogens).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desta forma, no caso de violação a normas internacionais relativas a direitos \nhumanos, as normas prescricionais, por serem, no caso, de índole \ninfraconstitucional e legal, não podem merecer qualquer aplicação por parte do \noperador jurídico brasileiro. Reconhecer a ocorrência da prescrição significaria \nafastar normas internacionais já internalizadas e vigentes no ordenamento \nbrasileiro, possuidoras de hierarquia superior, o que não pode ocorrer.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tal entendimento, adotado pelo STF, já resultou na edição da Súmula Vinculante \n25, no sentido de que “é ilícita a prisão civil de depositário infiel, qualquer que seja a \nmodalidade de depósito”, sendo o precedente representativo explícito no sentido de \nque:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...) diante do inequívoco caráter especial dos tratados internacionais que cuidam da \nproteção dos direitos humanos, não é difícil entender que a sua internalização no \nordenamento jurídico, por meio do procedimento de ratificação previsto na \nCF88, tem o condão de paralisar a eficácia jurídica de toda e qualquer disciplina \nnormativa infraconstitucional com ela conflitante. Nesse sentido, é possível concluir \nque, diante da supremacia da CF88 sobre os atos normativos internacionais, a \nprevisão constitucional da prisão civil do depositário infiel (art. 5o, LXVII) não foi \nrevogada (...), mas deixou de ter aplicabilidade diante do efeito paralisante desses \ntratados em relação à legislação infraconstitucional que disciplina a \nmatéria (...). Tendo em vista o caráter supralegal desses diplomas normativos \ninternacionais, a legislação infraconstitucional posterior que com eles seja \nconflitante também tem sua eficácia paralisada. (...) Enfim, desde a adesão do \nBrasil, no ano de 1992, ao PIDCP (art. 11) e à CADH — Pacto de São José da \nCosta Rica (art. 7o, 7), não há base legal para aplicação da parte final do \nart. 5o, LXVII, da CF/1988, ou seja, para a prisão civil do depositário infiel. ( \nRE 466.343, voto do rel. min. Cezar Peluso, P, j. 3-12-2008, DJE 104 de 5-6-2009, \nTema 60.)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A matéria em julgamento neste habeas corpus envolve a temática da \n(in)admissibilidade da prisão civil do depositário infiel no ordenamento jurídico \nbrasileiro no período posterior ao ingresso do Pacto de São José da Costa Rica no \ndireito nacional. 2. Há o caráter especial do PIDCP (art. 11) e da CADH — Pacto \nde São José da Costa Rica (art. 7o, 7), ratificados, sem reserva, pelo Brasil, no ano de \n1992. A esses diplomas internacionais sobre direitos humanos é reservado o lugar \nespecífico no ordenamento jurídico, estando abaixo da CF/1988, porém acima da \nlegislação interna. O status normativo supralegal dos tratados internacionais de \ndireitos humanos subscritos pelo Brasil torna inaplicável a legislação \ninfraconstitucional com ele conflitante, seja ela anterior ou posterior ao ato de \nratificação. 3. Na atualidade a única hipótese de prisão civil, no Direito brasileiro, é a \ndo devedor de alimentos. O art. 5o, § 2o, da Carta Magna expressamente \nestabeleceu que os direitos e garantias expressos no caput do mesmo dispositivo \nnão excluem outros decorrentes do regime dos princípios por ela adotados, ou dos \ntratados internacionais em que a República Federativa do Brasil seja parte. O Pacto \nde São José da Costa Rica, entendido como um tratado internacional em matéria de \ndireitos humanos, expressamente, só admite, no seu bojo, a possibilidade de prisão \ncivil do devedor de alimentos e, consequentemente, não admite mais a possibilidade \nde prisão civil do depositário infiel. 4. Habeas corpus concedido. (HC 95.967, rel. \nmin. Ellen Gracie, 2a T, j. 11-11-2008, DJE 227 de 28-11-2008.).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A supralegalidade vem sendo reafirmada em sede de controle concentrado \noponível erga omnes também através do instrumento de ações diretas de \ninconstitucionalidade:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esse caráter supralegal do tratado devidamente ratificado e internalizado na ordem \njurídica brasileira - porém não submetido ao processo legislativo estipulado pelo \nart. 5o, § 3o, da CF/1988 - foi reafirmado pela edição da Súmula Vinculante 25, \nsegundo a qual “é ilícita a prisão civil de depositário infiel, qualquer que seja a \nmodalidade do depósito”. Tal verbete sumular consolidou o entendimento \ndeste Tribunal de que o art. 7o, item 7, da CADH teria ingressado no sistema jurídico \nnacional com status supralegal, inferior à CF/1988, mas superior à legislação \ninterna, a qual não mais produziria qualquer efeito naquilo que conflitasse com a sua \ndisposição de vedar a prisão civil do depositário infiel. Tratados e convenções \ninternacionais com conteúdo de direitos humanos, uma vez ratificados e \ninternalizados, ao mesmo passo em que criam diretamente direitos para os \nindivíduos, operam a supressão de efeitos de outros atos estatais \ninfraconstitucionais que se contrapõem à sua plena efetivação. (ADI \n5.240, voto do rel. min. Luiz Fux, P, j. 20-8-2015, DJE 18 de 1o-2-2016.).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não há como se acolher o argumento de que a Constituição limitou os casos de \nimprescritibilidade aos crimes que indicou (racismo - art. 5o, XLII, e de atuação de \ngrupos armados contra a ordem constitucional e o Estado Democrático - art. 5o, \nXLIV), pois tanto há a abertura constitucional para outras normas de direitos \nfundamentais oriundas da esfera internacional (art. 5o, § 2o: Os direitos e garantias \nexpressos nesta Constituição não excluem outros decorrentes do regime e dos \nprincípios por ela adotados, ou dos tratados internacionais em que a República \nFederativa do Brasil seja parte) - caso da imprescritibilidade dos crimes contra \ndireitos humanos, quanto não deve haver a interpretação de que a \nimprescritibilidade prejudique direitos fundamentais e deva ser interpretada \nrestritivamente, na medida em que a mesma é neutra em relação aos direitos \nindividuais (já que a inocorrência da prescrição tanto limita direitos fundamentais \nquanto os assegura, ao garantir a prevenção e a repressão a delitos).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por isto mesmo, no Recurso Extraordinário 460.971/RS, o STF já decidiu \nexpressamente que “a Constituição Federal se limita, no art. 5o, XLII e XLIV, a \nexcluir os crimes que enumera da incidência material das regras de prescrição, sem \nproibir, em tese, que a legislação ordinária criasse outras hipóteses”. E, no caso, \ntem-se a criação da imprescritibilidade por normas de hierarquia supralegal, e sem \nqualquer ofensa à Constituição Federal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dispositivo. Por todo o exposto, ausente a possibilidade de acolhimento das teses \nde incompetência da CIDH para o julgamento do feito; de violação ao contraditório, \nà ampla defesa e à presunção de inocência; bem como de ocorrência da prescrição \ndos delitos investigados, denego a ordem.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "É o voto.\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não apenas, o TRF da 1a Região, confirmando o entendimento anteriormente \ncitado, em recente decisão proferida em caso semelhante, dando provimento ao recurso do MPF,\nreconheceu a imprescritibilidade do crime tipificado no art. 149 do CP, reformando a decisão\nprolatada pelo juízo de primeiro grau, que havia extinguido o processo em razão da prescrição da\npretensão punitiva, e determinou o retorno dos autos ao juízo de origem para prosseguimento da\nação penal, consoante se infere da ementa abaixo:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL. PROCESSUAL PENAL. RECURSO EM SENTIDO ESTRITO. REDUÇÃO A \nCONDIÇÃO ANÁLOGA À DE ESCRAVO E HOMICÍDIO QUALIFICADO TENTADO. \nIMPRESCRITIBILIDADE. TRATADOS INTERNACIONAIS E DIREITOS \nCONSTUMEIROS COGENTES. GRAVES VIOLAÇÕES A DIREITOS HUMANOS. \nPRECEDENTES DA TURMA E DO STF. DECISÃO QUE EXTINGUIU A \nPUNIBILIDADE PELA PRESENÇA DA PRESCRIÇÃO REFORMADA. RECURSO \nPROVIDO. [...] Nessa linha de raciocínio o Plenário do Supremo Tribunal Federal já \nse manifestou no sentido de que o bem jurídico tutelado pelo art. 149 do Código \nPenal vai além da liberdade individual, já que a prática da conduta em questão \nacaba por vilipendiar outros bens jurídicos protegidos constitucionalmente como a \ndignidade da pessoa humana (RE 459510, Relator(a): CEZAR PELUSO, Relator(a) \np/ Acórdão: DIAS TOFFOLI, Tribunal Pleno, julgado em 26/11/2015; RE 541627, \nRelator(a): ELLEN GRACIE, Segunda Turma, julgado em 14/10/2008). 8. É de \ndestarcar, por fim, que a imprescritibilidade de crimes desta natureza foi também \nreconhecida nesta instância recursal, no âmbito do RSE 0000280- \n45.1997.4.01.3901, Relator DESEMBARGADOR FEDERAL NÉVITON GUEDES, \nTRF1 - QUARTA TURMA, e-DJF1 15/06/2021. 9. No caso destes autos, alega-se na \ndenúncia que José Pereira Ferreira, então com 17 anos, na companhia de um amigo \nconhecido como \"Paraná\", na qualidade de trabalhadores rurais, conseguiram \n \nempregar-se na fazenda Espírito Santo, no município de Xinguara no Estado do \nPará. Na fazenda, foram recebidos pelo empreiteiro e ora recorrente Francisco \nAlencar. No entanto, a oportunidade que lhes foi oferecida não era exatamente de \n \nemprego. O sistema vigente naquela propriedade rural era de trabalhos forçados e \nde privação de liberdade. Vigiados por homens armados, as vítimas eram obrigadas \na trabalhar em jornadas excessivas, sob condições desumanas. 10. [...] 11. Como o \ncaso dos autos veicula hipóteses de crimes de homicídio tentado e redução a \ncondição análoga à de escravidão (arts. 121, c/c 14, I e 149 do Código), com graves \nviolações a direitos humanos não há como reconhecer a ocorrência da prescrição \nda pretensão punitiva, como entendeu o juízo de origem. 12. Recurso em sentido \nestrito a que se dá provimento para que seja reformada a decisão que declarou a \nextinção da punibilidade dos réus Augusto Pereira Alves, José Gomes de Melo e \nCarlos \"de tal\" (fls. 793/800), determinando o retorno dos autos ao juízo de origem a \nfim de que se dê o regular prosseguimento à presente ação penal. (RSE 0005216- \n83.2015.4.01.3901, JUIZ FEDERAL ÉRICO RODRIGO FREITAS PINHEIRO \n(CONV.), TRF1 - QUARTA TURMA, e-DJF1 10/08/2022 PAG.). (sem grifos no \noriginal).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em suma, o entendimento atual do TRF da 1a Região, em consonância com os \njulgados citados, vem se firmando no sentido de reconhecer a imprescritibilidade do crime de\nreduzir alguém a condição análoga à de escravo no contexto de grave violação a direitos\nhumanos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo, ausente a ocorrência de prescrição dos fatos imputados, deve ser rejeitada a \nquestão aduzida.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2 Do mérito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Preambularmente, deve ser destacado que, consoante consta da denúncia, a \npresente ação penal teve início a partir de procedimento investigatório criminal, instaurado no\nâmbito da Procuradoria da República do Município de Redenção, após o Parquet ter sido\ninformado que o Brasil fora notificado (em 15 de dezembro de 2016) acerca da sentença proferia\npela Corte Interamericana de Direitos Humanos no “Caso Fazenda Brasil Verde vs Brasil”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De fato, a Corte Interamericana de Direitos Humanos, por meio da sentença \nmencionada, declarou a responsabilidade do Estado brasileiro por violar o direito a não\nsubmissão à escravidão e ao tráfico de pessoas (em transgressão ao artigo 6.1 do Pacto de San\nJosé da Costa Rica) e impôs a obrigação de investigar, processar e eventualmente sancionar as\ngraves violações de direitos humanos (persecução penal dos fatos) ocorridas na Fazenda Brasil\nVerde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cumpre ressaltar que os fatos objeto do presente processo foram objeto de \ninquérito policial instaurado no ano de 2001 e que tramitou inicialmente perante a 2a Vara da\nJustiça Federal de Marabá, sendo posteriormente declinado ao juízo da Comarca de\nXinguara/PA, ocasião em que o processo teria desaparecido sem que fosse restaurado, tendo a\nCorte Interamericana de Direitos Humanos determinado a reconstituição do processo, o que\nensejou a instauração do procedimento que acompanha a peça de acusação constante dos\nautos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, é preciso indicar que o tempo transcorrido desde a data dos fatos \nmilita em desfavor da produção da prova, observando-se no transcurso da instrução processual\nque muitas vítimas e testemunhas não puderam ser encontradas ou ouvidas em juízo, sendo o\ndepoimento de algumas colhido tão somente em sede administrativa, seja perante fiscais do\nMinistério do Trabalho e Emprego – MTE, seja perante o Ministério Público Federal por ocasião\nda instauração do procedimento investigatório que subsidia a presente ação penal, o que\nimpossibilita a completa ratificação probatória judicial, mas não inviabiliza o julgamento de acordo\ncom o livre convencimento motivado e respeito ao contraditório e ampla defesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, deve ser esclarecido que a opção pela utilização de audiências por \nmeio virtual, embora deva ser reconhecido que várias foram as dificuldades enfrentadas durante\na instrução do feito, foi a possível para cumprir a obrigação de processar os fatos em\ntempo razoável, especialmente quando considerada a realidade enfrentada pela\nJustiça no interior do país para a gestão do acervo processual, cumprimento de cartas\nprecatórias e disponibilidade de pauta para audiências.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Explicitada a importante questão relativa à origem do processo, bem como, de modo \nbreve, indicadas as razões do extenso lapso temporal decorrido desde a data dos fatos, assim\ncomo as dificuldades para o processamento do feito, passa-se a análise dos crimes imputados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2.1 - Do crime de redução a condição análoga à de escravo (art. 149, caput, \ndo CP)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O art. 149 do CP, que trata do crime de redução a condição análoga à de escravo, \nem sua redação atual, descreve as condutas do fato típico como: “reduzir alguém a condição\nanáloga à de escravo, quer submetendo-o a trabalhos forçados ou a jornada exaustiva, quer\nsujeitando-o a condições degradantes de trabalho, quer restringindo, por qualquer meio, sua\nlocomoção em razão de dívida contraída com o empregador ou preposto.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sua redação original, anterior à alteração promovida pela Lei no 10.803/2003, e \nvigente à época dos fatos, o art. 149 do CP descrevia o referido tipo penal apenas: “Art. 149.\nReduzir alguém à condição análoga à de escravo. Pena – reclusão, de 2 (dois) a 8 (oito) anos”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Tratava-se, pois, segundo a doutrina, de um tipo penal aberto ou \"em branco\", dado \nque não possuía uma descrição completa da conduta proibida pela lei, fazendo-se necessária, à\népoca, a complementação do tipo penal pelo intérprete da norma com o uso da analogia.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, leciona GUILHERME DE SOUZA NUCCI que “antes da modificação \nintroduzida pela Lei 10.803. a previsão do art. 149 era apenas a seguinte: ‘reduzir alguém a\ncondição análoga à de escravo’, o que exigia a utilização, nem sempre recomendável, da\nanalogia – embora nesse caso fosse opção do próprio legislador.” (Código Penal Comentado,\nEditora RT, 9a ed., p. 689)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre a modificação legislativa, elucidativo é o trecho a seguir do voto do e. \nDesembargador Federal Ney Bello, com data de publicação em 31/03/2017, proferido nos autos\nno 0001093-58.2005.4.01.4300 - APELAÇÃO CRIMINAL N. 2005.43.00.001093-1/TO (Disponível\nem:\nhttps://arquivo.trf1.jus.br/PesquisaMenuArquivo.asp?p1=200543000010931&pA=2005430000109\n31&pN=10935820054014300):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"(...) \n\nNo século XXI, o trabalho escravo se diferencia daquele praticado no passado. A \nmodernidade trouxe consigo uma crescente difusão de conhecimento e, \nconsequentemente, a desconstrução de paradigmas que antes reinavam soberanos, \ntanto no senso comum como no meio acadêmico. Há, sem dúvida, um sentimento \n \ngeneralizado de repulsa aos acontecimentos de outrora, em que os senhores de \n \nengenho, os grilhões e os feitores eram parte do retrato. \n\nO que acontece agora é de maior sutileza, como percebeu sabiamente o legislador \n \nao dispor no art. 149 do CP. Não podemos nos atrelar, quando falamos em \n \ncondições “análogas à escravidão”, somente àquela imagem da escravidão \n \n“clássica”, que já foi pouco – se não completamente - erradicada. É preciso \n \nentender que os tempos são outros, assim como os meios para efetivação da \n \nconduta criminosa em questão. Hoje, o senhor de engenho é o fazendeiro; o feitor é \n \no “gato” e o chicote se transformou nas condições precárias de trabalho, nas \n \nhumilhações, na tortura psicológica e física, dentre outros aspectos, que sofrem os \n \ntrabalhadores diariamente. \n\nA redação original do art. 149 do Código Penal dispunha: “Reduzir alguém a \ncondição análoga à de escravo”. Tratava-se de um tipo penal em “branco” e era \nnecessário o uso da analogia para casos dessa natureza, cabendo ao intérprete ou \n \nao julgador buscar o conceito do que seria, de fato, reduzir alguém a condição \n \nanáloga à de escravo ou se, de fato, o indivíduo estava sujeito ao mesmo \n \ntratamento dado aos escravos. \n\nNão havia nenhuma especificação no tipo penal e, por conseguinte, entendiam \n \nalguns magistrados que ficava tipificada a conduta quando alguém não só era \n \nsubmetido a tratamento desumano ou degradante, mas, mais do que isso, era \n \ntratado como se, de fato, escravo fosse. Havia completa submissão do indivíduo ao \n \nseu senhor, sendo aquele coisificado dada a completa anulação de sua liberdade \n \nindividual. Necessário era que ocorresse o assenzalamento, que fosse o ser \n \nhumano acorrentado, mantido em cárcere, chicoteado, como “escravo da velha \n \nRoma”. Assim, só seria reduzido a condição análoga à de escravo aquele que fosse \n \ntratado como na época da escravatura. \n\nEntretanto, esse não é o melhor entendimento acerca do assunto. Em 28 de junho \n\nde 1930, em Genebra, na 14a sessão da Conferência Geral da Organização \n\nInternacional do Trabalho, foi editada a Convenção número 29, que traz, em seu \n\nartigo primeiro, o compromisso que todos os países signatários da Organização, e \n\nque ratificaram a aludida Convenção, devem trabalhar para suprimir o trabalho \n\nforçado ou obrigatório, sob todas as suas formas, no mais breve espaço de tempo. \n\nA Convenção número 29, em seu artigo 2o, conceitua trabalho forçado ou \n\nobrigatório como aquele exigido de um indivíduo sob ameaça de qualquer castigo e \n\npara o qual ele não se tenha oferecido de livre vontade. \n\nJosé Cláudio Monteiro de Brito Filho (in Trabalho com redução do homem a \n\ncondição análoga à de escravo e dignidade da pessoa humana. Disponível em: \nwww.pgt.mpt.gov.br/publicacoes/escravo/dignidade-trabalhoescravo.pdf. Acesso \nem: 26/08/2014), esclarece que a característica do conceito acima descrito é a \nliberdade. Neste caso, retira-se do trabalhador a decisão de aceitar ou não o \n\ntrabalho, ou o trabalho é inicialmente aceito pelo trabalhador e, após, torna-se \n\nforçado, fato esse que é muito comum no Brasil. \n\nNão somente o trabalho forçado é reprovável, como também não é aceita a \nimposição de jornada exaustiva, que esgota física e mentalmente o trabalhador por \n\nnão haver o descanso necessário entre as jornadas. \n\nDa mesma forma, condições degradantes e desumanas de trabalho, que ofendem o \n\nmínimo exigido e necessário à vida digna, passaram a ser conduta expressamente \n \nreprovada e combatida no cenário internacional. Entre condições degradantes \n \npodem-se citar aquelas em que há falta de condições mínimas para o trabalho, para \n \na moradia, higiene e alimentação. \n\nO que se observa do cenário brasileiro é que, muito comum na zona rural, os \n \nempregadores impõem aos empregados a compra de cesta básica de alimentação \n \ndentro do próprio estabelecimento, por preços superiores àqueles utilizados no \n \nmercado, de modo que o empregado torne-se refém de sua dívida e trabalhe \n \nsomente para quitá-la. Com o passar do tempo, com o crescimento da dívida pelo \n \nbaixo salário e alto preço dos produtos dos quais necessita, fica impossibilitado de \n \nexercer seu direito de ir e vir. \n\nO que se tem, portanto, desde a redação original, é que a expressão “condição \n\nanáloga à de escravo” não visa a uma situação jurídica; refere-se a um estado \n\nde fato em que a pessoa perde a própria personalidade e é tratada como \n\nsimples coisa, privada de direitos fundamentais mínimos. A liberdade humana \n \nfica integralmente anulada, diante da submissão da pessoa a um senhor, \n \nreduzida à condição de coisa. \n\nTodavia, a configuração do tipo não exigia, desde a sua redação original, que \n\na vítima permanecesse enclausurada. O domínio configurador do delito não \n \nera apenas físico, corporal, mas também psíquico, moral. \n\nDessa forma, a Lei 10.803/2003 não criou nova conduta incriminadora, mas \n\napenas conferiu nova redação ao dispositivo que já repudiava criminalmente a \n \nprática de redução de trabalhadores a condição análoga à de escravos.\" (sem \no grifo no original)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em síntese, a nova redação do caput do art. 149 do Código Penal, dada pela Lei no \n10.803/2003, apenas explicitou os elementos e as circunstâncias consagrados pela\njurisprudência nacional como inerentes ao conteúdo normativo do tipo penal em questão (ACR\n00006085720064013901, Desembargadora Federal Assusete Magalhães, TRF1 - Terceira\nTurma, e-DJF1 Data: 27/04/2012 Página: 1023).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Atualmente, considera-se que o delito em comento tem por finalidade precípua a \ndefesa da dignidade do trabalhador, e não apenas sua liberdade individual, sendo certo que a\ncitada figura penal criminaliza a redução a condição análoga à de escravo, estabelecendo,\nalternativamente, as condutas básicas de: a) submissão a trabalhos forçados; b) submissão à\njornada exaustiva; c) sujeição a condições degradantes de trabalho; d) restrição de liberdade de\nlocomoção, em razão de dívida contraída com o empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A submissão a trabalhos forçados consiste na imposição do exercício do labor, sem \no devido pagamento de contraprestação e mediante a ameaça à integridade física do trabalhador\nou de sua família.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por sua vez, a submissão de jornada exaustiva é aquela em que, além de superar o \nlimite legal, impossibilita o trabalhador de gozar tempo de descanso.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Já a servidão por dívida ocorre nos casos em que o empregador cria mecanismos \npara obrigar o trabalhador a adquirir produtos de valores extorsivos, por meio de descontos em\nseus vencimentos, o que acaba por gerar o seu endividamento, bem como sua vinculação ao\ntrabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outrossim, a submissão a condições degradantes, elemento normativo do tipo, \nconsiste no frontal desrespeito às garantias fundamentais do trabalhador, tais como alimentação,\nmoradia, higiene, saúde e proteção contra acidentes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre condições degradantes de trabalho, em comentários ao delito do art. 149 do \nCódigo Penal, Guilherme de Souza Nucci, no seu Código Penal Comentado, leciona: \"Condições\ndegradantes de trabalho: Degradação significa rebaixamento, indignidade ou aviltamento de algo.\nNo sentido do texto, é preciso que o trabalhador seja submetido a um cenário humilhante de\ntrabalho, mais compatível a um escravo do que um ser humano livre e digno. Logo, apesar de se\ntratar de tipo aberto, dependente, pois, da interpretação do juiz, o bom senso está a indicar o\ncaminho a ser percorrido, inclusive se valendo o magistrado da legislação trabalhista, que\npreserva as condições mínimas apropriadas do trabalho humano.\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em adição, José Claudio Monteiro de Brito Filho refere, ao definir trabalho em \ncondições degradantes, que \"é aquele em que há a falta de garantias mínimas de saúde e\nsegurança, além da falta de condições mínimas de trabalho, de moradia, higiene, respeito e\nalimentação. Tudo devendo ser garantido - o que deve ser esclarecido, embora pareça claro - em\nconjunto; ou seja, e em contrário, a falta de um desses elementos impõe o reconhecimento do\ntrabalho em condições degradantes. (...). Assim, se o trabalhador presta serviços exposto à falta\nde segurança e com riscos à sua saúde, temos o trabalho em condições degradantes. Se as\ncondições de trabalho mais básicas são negadas ao trabalhador, como o direito de trabalhar em\njornada razoável e que proteja sua saúde, garanta-lhe descanso e permita o convívio social, há\ntrabalho em condições degradantes. Se, para prestar o trabalho, o trabalhador tem limitações na\nsua alimentação, na sua higiene, e na sua moradia, caracteriza-se o trabalho em condições\ndegradantes. Se o trabalhador não recebe o devido respeito que merece como ser humano,\nsendo, por exemplo, assediado moral ou sexualmente, existe trabalho em condições\ndegradantes.\" (http://pgt.mpt.gov.br/publicacoes/escravo/dignidade-trabalhoescravo.pdf).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, deve ser destacado que a configuração do art. 149 do CP independe \nda coação física ou da restrição ao direito de ir e vir da vítima, restando, ainda, as condutas\nalternativas de submissão a trabalhos forçados ou jornadas exaustivas ou a condições\ndegradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido é o entendimento do STF, consoante julgado abaixo ementado:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "EMENTA PENAL. REDUÇÃO A CONDIÇÃO ANÁLOGA A DE ESCRAVO. \nESCRAVIDÃO MODERNA . DESNECESSIDADE DE COAÇÃO DIRETA CONTRA A \nLIBERDADE DE IR E VIR.DENÚNCIA RECEBIDA. Para configuração do crime do \nart. 149 do Código Penal, não é necessário que se prove a coação física da \nliberdade de ir e vir ou mesmo o cerceamento da liberdade de locomoção, bastando \na submissão da vítima “a trabalhos forçados ou a jornada exaustiva” ou “a condições \n \ndegradantes de trabalho”, condutas alternativas previstas no tipo penal. A \n“escravidão moderna” é mais sutil do que a do século XIX e o cerceamento da \nliberdade pode decorrer de diversos constrangimentos econômicos e não \nnecessariamente físicos. Priva-se alguém de sua liberdade e de sua dignidade \n \ntratando-o como coisa e não como pessoa humana, o que pode ser feito não só \nmediante coação, mas também pela violação intensa e persistente de seus direitos \n \nbásicos, inclusive do direito ao trabalho digno. A violação do direito ao trabalho \n \ndigno impacta a capacidade da vítima de realizar escolhas segundo a sua livre \n \ndeterminação. Isso também significa “reduzir alguém a condição análoga à de \n \nescravo”. Não é qualquer violação dos direitos trabalhistas que configura trabalho \n \nescravo. Se a violação aos direitos do trabalho é intensa e persistente, se atinge \n \nníveis gritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas \n \nexaustivas ou a condições degradantes de trabalho, é possível, em tese, o \n \nenquadramento no crime do art. 149 do Código Penal, pois os trabalhadores estão \n \nrecebendo o tratamento análogo ao de escravos, sendo privados de sua liberdade e \n \nde sua dignidade. Denúncia recebida pela presença dos requisitos legais. (STF, Inq \n3412, Rel. Min. Marco Aurélio. Rel. p/ Acórdão:Min. Rosa Weber, Pleno, DJe-222 \n09/11/2012).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo, é possível extrair do julgado que o bem jurídico protegido pelo art. 149 do \nCódigo é também a dignidade da pessoa humana, conforme trecho a seguir: \"Priva-se alguém de\nsua liberdade e de sua dignidade tratando-o como coisa e não como pessoa humana, o que pode\n \nser feito não só mediante coação, mas também pela violação intensa e persistente de seus\n \ndireitos básicos, inclusive do direito ao trabalho digno. A violação do direito ao trabalho digno\n \nimpacta a capacidade da vítima de realizar escolhas segundo a sua livre\n \ndeterminação\" (Inq \n3412, Rel. Min. Marco Aurélio. Rel. p/ Acórdão:Min. Rosa Weber, Pleno, DJe-222 \n09/11/2012).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Posteriormente, voltou a se manifestar o Plenário do STF, asseverando que “O bem \njurídico objeto de tutela pelo art. 149 do Código Penal vai além da liberdade individual, já que a\nprática da conduta em questão acaba por vilipendiar outros bens jurídicos protegidos\nconstitucionalmente como a dignidade da pessoa humana, os direitos trabalhistas e\nprevidenciários, indistintamente considerados” (RE 459510, Rel. Min. CEZAR PELUSO, Rel. p/\nAcórdão: Min. DIAS TOFFOLI, Tribunal Pleno, julgado em 26.11.2015).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso dos autos, o órgão ministerial imputou aos acusados a prática do delito \nprevisto no art. 149 do CP, consistente na submissão de 85 (oitenta e cinco) trabalhadores a\ncondições análogas à de escravidão na Fazenda Brasil Verde, localizada no Município de\nSapucaia/PA, sem receber os seus pagamentos, com restrição da liberdade de locomoção e\nsubmetidos a constante vigilância armada, além de retenção da CTPS, que não havia sido\nassinada, e frustração de direitos trabalhistas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para tanto, narrou em sua peça acusatória que os trabalhadores estavam alojados \nem barraco improvisado que não apresentava mínimas condições de habitabilidade, aglomerados\nem redes, e que a água por eles utilizada para fins de higiene pessoal e consumo era coletada de\num córrego próximo ao alojamento, sendo também utilizada pelos animais, imprópria, portanto,\npara o uso, tendo sido mencionado, ainda, que os trabalhadores tinham que fazer suas\nnecessidades fisiológicas ao relento, haja vista que inexistiam instalações sanitárias adequadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Indicou, no que diz respeito às condições de trabalho, saúde e segurança, ter sido \nobservado que as vítimas laboravam sem os Equipamentos de Proteção Individual - EPI\nindispensáveis à execução segura das atividades, uma vez que o empregador não\ndisponibilizava gratuitamente luvas, botas e etc. Aliás, quando fornecidos, tais itens eram\ndescontados do pagamento devido aos trabalhadores por ocasião do acerto, assim como os\npróprios instrumentos de trabalho (a exemplo de foices).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Relatou que, na Fazenda Brasil Verde, havia a chamada servidão por dívida, uma \nvez que os empregados, nessas circunstâncias, se viam compelidos a continuar trabalhando\nindeterminadamente por conta dos vínculos edificados em decorrência das dívidas auferidas\ngracas ao sistema de remuneração por \"acerto\" imposto pelo empregador, tendo ressaltado que,\nconforme consta do relatório do MTE, o saldo de acerto de contas variava entre R$ 15,00 a R$\n20,00, e que tal expediente fazia com que os trabalhadores desempenhassem suas atividades\ncontinuamente endividados e, assim, acabavam por se vincular ao trabalho em razão dessas\ndívidas, impossibilitados que estavam, por tal razão, de deixarem a fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Descreveu ainda que, além da restrição de locomoção dos trabalhadores em razão \ndas dívidas, havia, no caso, restrição física da liberdade de locomoção, haja vista que, conforme\nrelatos das vítimas, existia constante vigilância armada na fazenda, seja já nos portões do imóvel\nrural, seja por meio de capangas armadas, que, ao lado do réu \"TONINHO\", não permitiam que\nos trabalhadores deixassem o local de trabalho, valendo-se de ameaça e de violência física.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ao final, em memoriais, o Parquet ressaltou (id 1435467254):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"Em suma, as provas produzidas demonstram que os trabalhadores eram \nsubmetidos a condições degradantes, tratados como coisa, em flagrante violação da \ndignidade da pessoa humana. Por todo o ora relatado, indubitável é a configuração \nda materialidade/autoria delitivas relativamente ao crime insculpido no art. 149, \ncaput, Código Penal.\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pois bem. A materialidade delitiva restou comprovada pelo \nPIC no 1.23.005.000177/2017-62, em especial o relatório de fiscalização do Ministério do\nTrabalho e Emprego (fls. 20/27 do id 309753377), o auto de infração no 003380441 (fl. 18 do id\n309753377), os formulários para verificação física (fls. 10/51 do id 309753381 e fls. 01/41 do\nid 309753383), e a ACP em id's 309753377, 309753381 e 309753383, relatando as condições a\nque os trabalhadores da Fazenda Brasil Verde estavam submetidos, bem como por meio dos\ndepoimentos prestados pelas vítimas e testemunhas na via administrativa e em sede judicial,\nconsoante se passa a expor.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em primeiro lugar, o auto no 003380441 (fl. 18 do id 309753377), lavrado em \n15/03/2000, registrou a infração de \"MANTER EMPREGADO TRABALHANDO SOB\nCONDIÇÕES CONTRÁRIAS ÀS DISPOSIÇÕES DE PROTEÇÃO AO TRABALHO, ÀS\nCONVENÇÕES COLETIVAS E ÀS DECISÕES DAS AUTORIDADE COMPETENTES\", além de\nconter histórico da fiscalização.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, o relatório de fiscalização do Ministério do Trabalho e Emprego (fls. 20/27 \ndo id 309753377) e fotografias (fls. 28/31 e 43/52 do id 309753377), a despeito da baixa\nqualidade das imagens após a digitalização dos autos, demonstram a ausência de instalações\n \nadequadas e condição de trabalho digno para as pessoas resgatadas, em especial: que os\n \ntrabalhadores dormiam em redes, em alojamentos com estrutura em madeira, sem energia\n \nelétrica, sem camas e armários, contendo banheiro sem cobertura e que não havia pessoal com\n \ntreinamento ou qualificação para atendimento de primeiros socorros.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Corroborando as condições indicadas pela fiscalização, em juízo, uma das vítimas \ndeclarou que o local onde dormiam “era feito de madeira, ficava no meio do nada ... que dormiam\ntudo junto feito um bicho e não tinham privacidade de nada” (Marcos Antônio Lima, ata em id\n1099883792 e mídias juntadas por meio da certidão de Id 1130164259).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Essa mesma vítima, durante a instrução processual, declarou, em relação às \ncondições de higiene do local onde ficavam, que não havia banheiro e que suas necessidades\nfisiológicas eram feitas no mato, sendo por ele relatado ainda que, nessa época, acabou\ncontraindo uma doença que lhe “comeu as carnes do dedo do pé”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Relato semelhante foi feito em juízo pela vítima Francisco das Chagas Costa Rabelo \n(ata em id 1099883792 e mídias juntadas por meio da certidão de id 1130164259), declarando\nque ficavam em um barraco coberto, mas que era aberto por baixo e que lá era muito frio, tendo\nindicado também que as necessidades fisiológicas dos trabalhadores eram realizadas no mato.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda sobre as condições enfrentadas, a vítima José Leandro da Silva declarou que \n“dormiam num barraco fora da sede ... que o lugar onde dormiam era longe de onde trabalhavam\ne que tinha dia que caminhavam muito e tinha dia que caminhavam pouco” (ata em id\n1099883792 e mídias juntadas por meio da certidão de Id 1130164259).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse ponto, importa destacar que a situação dos trabalhadores na Fazenda Brasil \nVerde não era idêntica para todos, havendo um grupo de trabalhadores que gozavam de\ncondições de moradia e higiene diferentes (trabalhadores fixos). Entretanto, o grupo relativo aos\ntrabalhadores resgatados na ação fiscalizatória realizada pelo MTE não gozava de condições\nmínimas exigidas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, inclusive, foi o depoimento da testemunha de defesa Francisco \nHenrique da Silva Abreu (ata em id 1424647785 e mídias juntadas por meio da certidão de Id\n1425780776), à época auditor fiscal do MTE, o qual, em sua inquirição judicial, declarou que o\nrelatório final reflete tudo o que foi realizado na operação, tendo acrescentado ainda que nesses\ncasos há uma diferença entre os trabalhadores fixos, que possuem boas condições de trabalho,\nmoradia, água e tudo, e os trabalhadores do roço, da juquira, os quais geralmente ficam em\ncabanas, casas de palha e bebem água de córrego.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No que diz respeito à água fornecida aos trabalhadores da Fazenda Brasil Verde, \nobserva-se do relatório do MTE, registrado como condição agravante, que a água possuía “\nrazoáveis condições de consumo, porém armazenada em recipientes inadequados, além de ser\nconsumida em copos coletivos”. Como os fiscais do MTE não especificaram o que exatamente\nqueriam dizer com razoável condição de consumo, o trabalhador Pedro Fernandes da Silva (ata\nem id 1099883792 e mídias juntadas por meio da certidão de Id 1130164259) trouxe a\ndeclaração de “que ficavam em um alojamento, que a água não era boa e que a água eles\n'panhavam' onde o gado bebia”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Igualmente, sobre a água fornecida pela Fazenda Brasil Verde aos trabalhadores \npara o consumo durante a atividade laboral, foi relatado pelo trabalhador Francisco Ferreira da\nSilva Filho, por ocasião de sua entrevista realizada pelo Auditor Fiscal do MTE na data dos fatos,\nque “a empresa fornece tambor de água de 20 litros, sendo a água coletada do córrego a\ncaminho do retiro Alvorada”, conforme consta do formulário para verificação física (fl. 46 do id\n309753381), o que foi corroborado em juízo pela vítima Pedro Fernandes, conforme mencionado\nacima.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação à comida fornecida aos trabalhadores, extrai-se, conforme consta do \nrelatório do MTE, que era repetitiva, além de ser feita em área descampada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A respeito da alimentação que lhes era fornecida, os trabalhadores ouvidos em juízo \ndeclararam que: “o almoço era bastante arroz branco com abóbora” (Francisco das Chagas, ata\nem id 1099883792 e mídia anexa); “que tinha dia que comiam ovo com arroz branco, feijão e\nmandioca, e que a comida vinha da Fazenda Brasil Verde” (José Leandro, ata em id \n1099883792 e mídia anexa); “que comiam mais arroz branco com mandioca” (Marcos Antônio,\nata em id 1099883792 e mídia anexa); “a comida era abóbora, arroz branco, e uns peixinhos que\nconseguiam pegar” (Francisco das Chagas, ata em id 1099883792 e mídia anexa).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Fato é que, com base nos depoimentos das vítimas e demais elementos dos autos, \na alimentação fornecida aos trabalhadores da Fazenda Brasil Verde, além de repetitiva,\nera insuficiente, sobretudo se considerado o trabalho de roço (juquira) que eles desempenhavam,\ndevendo ser ressaltado que os trabalhadores mencionaram em juízo que gozavam de apenas 30\n(trinta) minutos para o almoço e que faziam essa refeição dentro do mato (a exemplo das\ndeclarações prestadas por Marco Antônio, ata em id 1099883792 e mídia anexa).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outra questão observada é que, além do reduzidíssimo tempo que dispunham para \nalmoçar, os trabalhadores da Fazenda Brasil Verde também eram submetidos a jornadas\nexaustivas de trabalho, segundo relato das vítimas, dado que deviam acordar bem cedo (alguns\ncitaram entre 03:00 a 4:00 da manhã), com retorno para o barracão somente às 18:00, conforme\nconsta do relatório do MTE e dos formulários para verificação física que o acompanham, o que foi\nratificado em juízo pelos trabalhadores Pedro Fernandes (a distância entre o alojamento era\ngrande; que tinham de acordar às 4:00 da manhã para estar no serviço; que começava a\ntrabalhar seis horas da manhã - transcrição não literal), Francisco das Chagas (“a gente foi somar\nna nossa mente, nós tava trabalhando das seis às seis ganhando 0,75 centavos por dia na época\n”) e Marco Antonio (“que começavam trabalhar seis horas da manhã e iam até seis horas da\ntarde, no escuro”).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além das situações anteriores, evidenciou-se a servidão por dívidas, na medida em \nque o trabalhador era constrangido a permanecer no local de trabalho em face das dívidas\ncontraídas, notadamente com adiantamento para transporte da cidade de origem até a fazenda\ne alimentação, dívidas que normalmente se sobrepõem ao valor do salário do empregado,\nproduzindo, assim, um círculo vicioso, prendendo-o ao local até que as quite, integralmente, com\no empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, a prática acima descrita foi relatada nos depoimentos prestados \npelos trabalhadores da Fazenda Brasil Verde, dos quais citam-se os seguintes:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "I) fase administrativa: \n\na) João Diogo Pereira Filho: relatou que veio trabalhar na fazenda contratado pelo \n“gato” “Meladinho”; que saiu de sua cidade por ônibus fretado pelo “gato”; que o \nfrete deve ser descontado dos salários (id 309753381 - Pág. 21); \n\nb) Paulo Pereira dos Santos: relatou o mesmo que o trabalhador anterior e \nacrescentou que os mantimentos seriam descontados do salário, bem como o \nexame médico (id 309753381 - Pág. 23); \n\nc) Firmino da Silva: relatou que \"o transporte seria descontado, e foi lhe dito que só \npodia sair após o pagamento deste transporte.\" (id 309753383 - Pág. 31).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "II) fase judicial: \n\na) José Leandro da Silva: “que pagavam pela comida” (id 1099883792); \n\nb) Marco Antônio Lima: “tudo lá era pago, que até uma folha de papel era pago” e \nque “pagava pelo que era fornecido; que o alimento também era pago”(id \n1099883792); \n\nc) Pedro Fernandes da Silva: “que usavam bota e chapéu, mas que esses \nequipamentos eram descontados” (id 1099883792); \n\nd) José Ribamar Souza: “compravam as ferramentas e que a comida também era \ndescontada deles” (id 1099883792); \n\ne) José Francisco Furtado de Souza (\"Zé Pitanga\"): “lá pagavam tudo, da ferramenta \nde trabalhar pra cima, eles pagavam tudo”. (ata em id 1207157293 e \nmídias juntadas por meio da certidão de id 1220390792).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação a tal questão, deve ser salientado que, no geral, os trabalhadores \nencontrados na Fazenda Brasil Verde afirmaram que não recebiam salário, e que somente\nreceberam pagamento por ocasião da chegada do MTE e da Polícia Federal naquela fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, em que pese não tenha sido confirmado em juízo a afirmação constante \nda denúncia de que o saldo de acerto de contas dos trabalhadores variava entre R$15,00 a\nR$20,00, os depoimentos prestados pelas vítimas foram no sentido de que pagavam pelas\nferramentas de trabalho, EPI’s e alimentação recebida, bem como que não estavam recebendo\nsalários pelos serviços prestados na Fazenda Brasil Verde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Enfatiza-se ainda que, ao contrário do que pretende fazer crer a defesa dos réus, \ntodos os trabalhadores da Fazenda Brasil Verde abordados pela fiscalização realizada pelo\nMinistério do Trabalho com auxílio da Polícia Federal, decidiram ir embora da fazenda, conforme\nconsta no relatório elaborado pelo MTE e foi corroborado por meio da prova produzida em juízo,\no que reforça a evidência da situação degradante e indigna a que eram submetidos os\ntrabalhadores da Fazenda Brasil Verde na data dos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, não merece acolhida a alegação da defesa de que o fato de não \nconstar todas as irregularidades no Livro de Inspeção do Trabalho comprovam a inexistência das\ncondições já anteriormente indicadas, devendo ser ressaltado que o auditor fiscal Francisco\nHenrique da Silva Abreu esclareceu que não era, no caso, responsável pela fiscalização\ndas questões relativas a contratos de trabalho, sendo sua área restrita à engenharia (especialista\nem segurança), tendo indicado ainda que poderia lavrar uns 10 (dez) autos de infração, dada a\nquantidade de irregularidades somente nas questões de saúde (controle de saúde ocupacional),\nmas lavrou apenas 01 (um), relacionado ao programa de saúde, indicando que não era cumprida\na obrigação de realizar exames admissionais, periódicos e demissionais (id 1425931764). Ainda,\nfoi suficientemente justificada pela testemunha as fases da fiscalização, inclusive quanto ao\n \nmomento posterior do relatório (elaborado quando retorna à base), bem como esclarecido que os\n \ntrabalhadores que tinham a CTPS assinadas eram os fixos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Lado outro, com relação a alegação de que os trabalhadores estavam com sua \nliberdade restringida, é preciso realçar que tal situação não demanda a existência de grilhões ou\nde vigilância armada para sua configuração.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na hipótese dos autos, embora não tenham sido encontradas armas de fogo no \nlocal dos fatos e a negativa dos réus acerca da sua existência na Fazenda Brasil Verde, há\ndepoimentos colhidos em juízo no sentido de que os trabalhadores eram submetidos a vigilância\narmada pelos capatazes da fazenda, os quais andavam armados com “pistola e rifle” (José\nFrancisco Furtado de Souza - \"Zé Pitanga\" - ata em Id 1207157293 e mídias juntadas por meio\nda certidão de id 1220390792), que eram “vigiados 24 (vinte e quatro) horas” (Francisco das\nChagas - ata em id 1099883792 e mídias juntadas por meio da certidão de Id 1130164259) e que\n“não tinha como sair e que os que tentaram sair apanharam bastante” (Francisco das Chagas -\nmesmo id anteriormente citado).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Impõe-se realçar que há nos autos relato de ameaça narrada pelo trabalhador José \nFrancisco Furtado de Souza (\"Zé Pitanga\"), mencionando que havia um capataz (do bigodão)\nque o ameaçou dizendo que lhe daria 15 (quinze) tiros na cabeça.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se pode olvidar que o caso da Fazenda Brasil Verde, conforme consta do \nrelatório do MTE, somente teve início após 2 (dois) trabalhadores terem conseguido fugir do local\ndos fatos, caminhando um trecho pela mata, e em seguida teriam conseguido pegar carona em\num caminhão até a cidade de Marabá/PA, onde foram conduzidos à Delegacia de Polícia\nFederal, ocasião em que foram acionados os órgãos responsáveis e deflagrada a operação que\nredundou na presente ação penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito, em declarações prestadas, o trabalhador José Francisco Furtado de \nSouza (\"Zé Pitanga\") relatou que resolveu fugir depois de ter sido levado para sede da fazenda e\nser agredido juntamente com seu amigo “Chico Véi” com “pancada na cara” e coronhada na\nperna, que teve arma apontada para sua cabeça e para seu pescoço, além de ameaças de\nmorte, em razão de não ter ido trabalhar porque estava com dor de dente, violência essa\nsupostamente praticada pelo gerente da fazenda “Toninho” e outros funcionários.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação a tal fuga, urge destacar que as contradições apontadas pela defesa \nnas declarações dos ofendidos não afastam a gravidade do fato relatado, não tendo a defesa\ncomprovado a tese de que os referidos trabalhadores saíram por conta própria em razão da não\ncontratação (não foram aceitos no exame médico admissional).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não é só, deve ser relembrado que, apesar da existência das contradições \nregistradas, não há hierarquia entre as provas, cabendo ao julgador, de acordo com o sistema da\npersuasão racional (art. 155, caput, do CPP), valorar as provas e formar seu convencimento,\nponderando o que considera verdadeiro nos autos, inclusive dentro de um mesmo depoimento,\nhavendo a limitação de não poder fundamentar a decisão exclusivamente nos elementos\ninformativos colhidos na investigação, ressalvadas as provas cautelares, não repetíveis e\nantecipadas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Enfim, ainda que os relatos de cerceamento da liberdade de ir e vir promovida por \ncapatazes armados da fazenda Fazenda Brasil Verde não tenham sido corroborados pela\napreensão de armas de fogo na data dos fatos, os depoimentos das vítimas não podem passar\ndespercebidos, sendo forçoso reconhecer que os trabalhadores resgatados na Fazenda Brasil\nVerde não gozavam de plena liberdade de locomoção, em evidente contrariedade à alegação da\ndefesa dos réus em suas manifestações nos autos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aliás, mesmo que eventualmente se desprezasse as declarações dos ofendidos \nrelacionados à liberdade de locomoção, a realidade do local em que foram encontrados os\nreferidos trabalhadores permite concluir que estavam de fato privados de sua liberdade, se não\npor vigilância armada, mas por serem em sua maioria analfabetos, vindos de outro estado (Piauí),\nestarem sem seus documentos, sem recurso financeiro para deslocamento, isolados da família,\nalém de terem contraído dívidas com a viagem para o local, aquisição de instrumento de\nproteção e alimentação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não se pode desconsiderar, ainda, como destacado pelo MPF, as dimensões da \nFazenda Brasil Verde, que possui 8.544 hectares, além da informação constante dos autos de\nque a frente de trabalhado onde estavam os trabalhadores resgatados era distante da sede da\n \nfazenda, o que enfraquece a tese da defesa de que os trabalhadores poderiam ir embora a\n \nqualquer hora, caso quisessem, em razão da sede daquela fazenda estar próxima da rodovia BR\n155.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Da mesma forma, a alegação da defesa de que sempre existiu ponto de ônibus nas \nproximidades da rodovia para que os funcionários pudessem se ausentar ou regressar não\nencontra amparo nas declarações das vítimas e inquirições das testemunhas (ressalvada a\ninquirição do funcionário do escritório da fazenda), tampouco no relatório produzido pelos fiscais\ndos MTE, constando na própria peça de defesa que as imagens se referem ao ano de 2012\n(alegações finais).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, o conjunto de tais circunstâncias, como indicado pelo MPF, \nrepresenta \"a existência de óbices humanos, geográficos, financeiros e informacionais, para o\nlivre trânsito das vítimas\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por oportuno, ao contrário do alegado pela defesa, o fato do mesmo trabalhador já \nter laborado outras vezes na Fazenda Brasil Verde não comprova que as condições de trabalho\nera condizentes com a dignidade da pessoa humana, mas sim a extrema vulnerabilidade social\ne econômica dos indivíduos. Transferir para o trabalhador a valoração da existência ou não de\ncondições degradantes e tentar excluir a responsabilidade do empregador ou preposto pelo\nsimples fato de haver \"consentimento\" em exercer tais atividades, ainda mais em casos como o\npresente, não encontra amparo na legislação, doutrina e jurisprudência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentir, a lição de Luiz Regis Prado (Tratado de Direito Penal Brasileiro, v. 4, \np. 360): “O consentimento do ofendido é irrelevante. Não há a exclusão do delito se o próprio\nsujeito passivo concorda com a inteira supressão de sua liberdade pessoal, já que isso importaria\nem anulação da personalidade. Somente seria cabível a exclusão da ilicitude da conduta se fosse\no sujeito passivo o único titular do bem jurídico protegido e se pudesse livremente dele dispor. E\nisso não ocorre no delito em exame, já que o Direito não confere preferência à liberdade de\natuação da vontade ante o desvalor da ação e do resultado da lesão ao bem jurídico. O estado\nde liberdade integra a personalidade do ser humano e a ordem jurídica não admite sua completa\nalienação”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Acrescente-se que a sentença da Corte Interamericana de Direito Humanos (CASO \nTRABALHADORES DA FAZENDA BRASIL VERDE VS. BRASIL) apresenta, no item A.5\nAntecedentes, relevantes pontos acerca de eventos anteriormente apurados aos fatos do\n \npresente processo, dentre os quais (id 309765860 - Pág. 33/39):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "a) que a fazenda recebeu visita e/ou fiscalização: em 20 de fevereiro de 1989; 2 de \n \nagosto de 1993; 29 de novembro de 1996; 23, 28 e 29 de abril de 1997;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "b) que na última vistoria acima descrita, o relatório da visita de fiscalização do \nMinistério do Trabalho concluiu que: i) os trabalhadores se encontravam alojados em\nbarracões cobertos de plástico e palha nos quais havia uma “total falta de higiene”; ii)\nvários trabalhadores eram portadores de doenças de pele, não recebiam atenção médica e\na água que ingeriam não era apta para o consumo humano; iii) todos os trabalhadores\nhaviam sofrido ameaças, inclusive com armas de fogo, e iv) declararam não poder sair\nda Fazenda. Além disso, comprovou a prática de esconder trabalhadores quando se\nrealizam as fiscalizações. No momento da fiscalização foram encontradas 81 pessoas.\n“Aproximadamente 45” dessas 81 pessoas não possuíam carteiras de trabalho (CTPS) e\ntiveram esse documento emitido naquele momento;",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "c) que, em consequência do relatório do Ministério do Trabalho, em 30 de junho de \n1997, o Ministério Público Federal apresentou denúncia contra: a) Raimundo Alves da Rocha,\ngato ou empregador de trabalhadores rurais, pelos delitos previstos nos artigos 149 (trabalho\nescravo), 197.1 (atentado contra a liberdade do trabalho) e 207 (aliciamento de trabalhadores) do\nCódigo Penal; b) Antônio Alves Vieira, gerente da Fazenda Brasil Verde, pelos delitos previstos\nnos artigos 149 e 197.1 do Código Penal e c) João Luiz Quagliato Neto, proprietário da Fazenda\nBrasil Verde, pelo delito previsto no artigo 203 (frustrar direitos trabalhistas) do Código Penal,\ntendo o Juiz condutor do feito autorizado a suspensão condicional do processo em relação ao\núltimo e, posteriormente, em 10/07/2008, declarada extinta a punibilidade em relação a\nRaimundo Alves da Rocha e Antônio Alves Vieira, em razão da prescrição.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para ilustrar o quadro fático constatado pelo Parquet, merece transcrição a seguinte \nparte da denúncia apresentada em 30/06/1997 (id 309765850 fls. 24/27):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"No período de 21 a 30 de abril do corrente ano, a Fazenda 'Brasil Verde', situada \nno município de Sapucaia/PA, foi fiscalizada por agentes do ministério do Trabalho, \nconforme relatório anexo, enviado a esta Procuradoria da República, face a \nconstatação da prática de crimes de redução à condição análoga a de escravo, de \naliciamento e trabalhadores, de atentado contra a liberdade do trabalho e de \nfrustração de direito assegurado por lei trabalhista, perpetrados na aludida Fazenda. \n\nA Fazenda 'Brasil Verde' costuma contratar trabalhadores rurais, 'peões', para o \ncorte da juquira mediante o aliciamento dos mesmos, como os 32 (trinta e dois) \ntrabalhadores convidados no hotel Pires, situado no município de Xinguara, por \nmeio de um empreiteiro, in casu, o denunciado RAIMUNDO ALVES DA ROCHA, \n \nentre 24 de março a 14 de abril do presente ano, para o corte da juquira na \n\nFazenda, situada no município de Sapucaia, ou seja, para trabalharem em outra \n \nlocalidade, em troca de salário. Parte deste é adiantado antes mesmo de chegarem \n\nao local de trabalho, conforme notas fiscais de fls. 21/25. \n\nAo chegarem na Fazenda, os trabalhadores são alojados em barracões cobertos de \n \nplástico e palha, sem proteção lateral, conforme fotos de fls. 04/05. A água ingerida \n \npelos trabalhadores é utilizada para preparo de rancho não é própria para o \n \nconsumo humano, pois serve de local de banho de bebedouro para animais da \n \nFazenda (fotos fls. 06/07). A alimentação, como a carne exposta a insetos e \n \nintempéries (foto de fls. 08), é fornecida pelo denunciado RAIMUNDO ALVES sob o \n \nsistema de barracão e pelo Armazém Paulista, intermediado pela Fazenda através \n \ndo gerente, segundo denunciado, ANTÔNIO ALVES VIEIRA. \n\nVários trabalhadores, durante a referida fiscalização, declararam estarem \n \nproibidos de saírem da Fazenda enquanto houver débito sob pena de ameaça \n \nde morte feita pelos dois primeiros denunciados, o empreiteiro e o gerente da \n \nFazenda (fls. 12/20). \n\nOcorre que, ao adquirirem os alimentos a preços exorbitantes, conforme a relação \n\nde débito de fls. 47/50, e por já iniciarem o trabalho com débito proveniente do hotel \n\nPires, o irrisório salário que receberiam nunca seria suficiente para pagarem suas \n \ndívidas. Enquanto isso, o proprietário da Fazenda lucra ao dispor de trabalhadores \n \nque não recebem qualquer salário pelo serviço prestado e sob a justificativa do \n \ndébito, são proibidos de saírem da fazenda com as ameças de morte com \n \nrevólver feitas pelos denunciados RAIMUNDO ALVES DA ROCHA E ANTÔNIO \n\nALVES VIEIRA, conforme constam dos depoimentos prestados pelos trabalhadores \n\nde fls. 12/20. \n\nO único caminho de saída da Fazenda à PA/150 é limítrofe das prédios do escritório \ne da casa do gerente, que não permite a saída dos trabalhadores. No entanto. 12 \n(doze) trabalhadores conseguiram fugir a noite cruzando o pasto e a juquira da \nFazenda. \n\nAcrescente-se aos fatos, a apreensão pela fiscalização de um podido de aviso \nprévio assinado por um trabalhador sem o preenchimento da data do aviso (fls. \n45/46), bem como, diversas notas promissórias em branco apenas com as \nassinaturas dos trabalhadores (fls 26/44). \n\nA fiscalização expediu 45 (quarenta e cinco) CTPS aos trabalhadores, sendo \nlavrado os autos de infração de fls. 51/57 e 63, cujo autuado é o proprietário da \nFazenda, terceiro denunciado, JOÃO LUIZ QUAGLIATO NETO. Em dezembro de \n1996, foram constatadas as mesmas irregularidades pela fiscalização, assim \ncomo, em 1989, já haviam notícias de crimes contra a organização do trabalho \ne de redução à condição análoga à de escravo.\" (sem o grifo no original)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse quadro, não há evidência de que as instalações da Fazenda Brasil Verde \nera dignas para os trabalhadores resgatados na época dos fatos, inclusive nas frentes de\ntrabalho, ainda mais em períodos anteriores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aliás, o que se extrai das questões apontadas no item acima é um histórico \nde violação do direito ao trabalho digno, em sentido diametralmente oposto ao alegado pela\ndefesa de que a fazenda oferecia excelentes condições de estrutura e habitação para os\ntrabalhadores e sempre dispôs de treinamento para os colaboradores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não fosse suficiente, o réu João Luiz Quagliato, por meio do seu irmão e preposto \nRoque Quagliato, em audiência realizada perante a Vara do Trabalho de Conceição do Araguaia,\nnos autos do processo VT-CA-619/2000, na data de 20/07/2000, firmou conciliação nas seguintes\nbases: “a reclamada se compromete, doravante, a não admitir e nem permitir o trabalho de\n \nempregados em regime de escravidão, sob pena de multa (...) fornecimento de moradia,\n \ninstalação sanitária, água potável, alojamentos condignos ao ser humano...” (fl. 50 do id\n \n309753383), sendo o acordo firmado perante a Justiça Especializada alguns poucos meses após\na deflagrada a operação realizada na Fazenda Brasil Verde e tendo por base os mesmos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Destarte, restou comprovada a materialidade do crime imputado (art. 149 do CP),\nnão tendo a defesa apresentado elementos de prova suficientes para afastar tal conclusão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não obstante, quanto à suposta menoridade de 2 (dois) dos trabalhadores da \nFazenda Brasil Verde, o próprio José Francisco (\"Zé Pitanga\"), um dos supostos menores,\ndeclarou em juízo que tinha trinta e poucos anos quando chegou na Fazenda Brasil Verde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, o MPF sequer pediu a condenação dos réus com a inclusão da aludida \ncausa de aumento da pena ao tipo penal descrito no caput do art. 149 do CP, devendo ser\nressaltado que o §2o do art. 149 do CP somente foi incluído no ano de 2003, ou seja, após a data\ndos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria delitiva de João Luiz Quagliato Neto foi demonstrada de modo claro \nnos autos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na espécie, além de proprietário da Fazenda Brasil Verde, o que foi fartamente \ncomprovado pelas provas produzidas nos autos, fato é que tinha total conhecimento da realidade\nde trabalho daqueles que laboravam em sua fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, em seu interrogatório judicial, indicou o réu que tinha conhecimento \ndos custos da fazenda, comparecia com regularidade na localidade, bem como verificava o\nregistro e o pagamento dos funcionários.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, embora o réu não residisse no estado Pará na data dos fatos, a prova oral \nproduzida, tanto pelos trabalhadores quanto pelo corréu Antônio Jorge Vieira, demonstra que\nJoão Luiz Quagliato Neto comparecia à Fazenda Brasil Verde a cada dois ou três meses, visitava\na sede e demais áreas da fazenda, ou seja, acompanhava de perto e pessoalmente o trabalho de\nseus funcionários.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito, o corréu declarou que João Luiz (\"Luizito\") era o patrão e comparecia \nna fazenda a cada trinta ou no máximo 60 dias, denotando-se que estava ciente de tudo que\nocorria em sua fazenda, permitindo a ausência de trabalho em condições dignas em sua\npropriedade rural, além de aproveitar da mão de obra de forma ilícita.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Da mesma forma, a autoria delitiva de Antônio Jorge Vieira foi plenamente \ndemonstrada nos autos, não havendo dúvidas de que era o gerente da Fazenda Brasil Verde e\nresponsável pela contratação dos trabalhadores, além da fiscalização dos trabalhos por eles\nefetuados, o que era realizado com o auxílio de outros funcionários da fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aliás, o próprio réu indicou, em seu interrogatório judicial, que era ele quem tomava \nconta da Fazenda Brasil Verde, além de ser o fiscal do pessoal e da fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em adição, além deste ter confessado ser a pessoa responsável pela fazenda, \nembora não reconheça as condições degradantes e demais limitações, seu nome foi citado por\ndiversos trabalhadores da Fazenda Brasil Verde como sendo o responsável pela gerência da\nfazenda, tanto na fase investigativa quanto na fase judicial, sendo inclusive seu nome\nmencionado no suposto episódio de violência praticada contra os trabalhadores José Francisco\n(\"Zé Pitanga\") e Antônio Francisco, agressão essa, conforme mencionada alhures, com possível\nuso de arma de fogo e perpetrada pelo acusado e outros funcionários da referida fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De modo igual, a conduta dolosa dos réus resta, de acordo como os elementos de \nprova produzidos, suficientemente evidenciada, consistindo em submeter os trabalhadores a\ncondições análogas à de escravo, com a finalidade de aproveitar da mão de obra de forma ilegal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por oportuno, não houve comprovação de qualquer fato que indicasse exclusão de \nilicitude ou culpabilidade. Diante disso, o fato é típico, ilícito e culpável.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, demonstrada a materialidade e autoria do crime de redução a condição \n \nanáloga à de escravo (art. 149 do Código Penal), a condenação dos réus João Luiz\n \nQuagliato Neto e Antônio Jorge Vieira é medida que se impõe.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, deve incidir ao caso a regra prevista no art. 70 do Código Penal (concurso \nformal), considerando que foram 85 (oitenta e cinco) trabalhadores encontrados em situação\n \nanáloga à de escravo, conduta essa praticada mediante uma só ação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2.2 - Da frustração dos direitos assegurados pela lei trabalhista (art. 203, §1o, \nI e II do CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A conduta acima é definida no Código Penal da seguinte forma: \n\n“Art. 203 - Frustrar, mediante fraude ou violência, direito assegurado pela legislação \ndo trabalho: \n\nPena - detenção de um ano a dois anos, e multa, além da pena correspondente à \nviolência. (Redação dada pela Lei no 9.777, de 29.12.1998) \n\n§ 1o Na mesma pena incorre quem: (Incluído pela Lei no 9.777, de 1998) \n\nI - obriga ou coage alguém a usar mercadorias de determinado estabelecimento, \npara impossibilitar o desligamento do serviço em virtude de dívida; (Incluído pela \nLei no 9.777, de 1998) \n\nII - impede alguém de se desligar de serviços de qualquer natureza, mediante \ncoação ou por meio da retenção de seus documentos pessoais ou contratuais. \n(Incluído pela Lei no 9.777, de 1998)”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A configuração do crime em comento exige dolo por parte do agente, consistente \n \nem frustrar direitos assegurados pela lei trabalhista, através de violência ou fraude, ou, ainda, por\n \nmeio do ato de obrigar ou coagir o trabalhador a usar mercadorias de determinado\n \nestabelecimento para impossibilitar o desligamento do serviço em virtude de dívida, restando\n \nconfigurado também quando da prática da retenção de documentos pessoais ou contratuais.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso, a peça acusatória imputa aos réus a pratica do delito previsto no art. \n203, § 1o, I e II.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ocorre que o delito de frustração de direitos assegurados por lei trabalhista, tal \ncomo narrada pelo MPF, encerra relação de subsidiariedade em relação ao crime do art. 149 do\nCódigo Penal, sendo inviável condenar de forma autônoma os réus pelas duas condutas dentro\ndesse mesmo contexto fático.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, foi o entendimento da Quarta Turma do e. TRF da 1a Região, que, \n \nao julgar caso semelhante, reconheceu a subsidiariedade do delito previsto no art. 203, e §§ do\n \nCP, rejeitando o recurso interposto pelo MPF e mantendo a condenação de um acusado apenas\n \npelo crime do art. 149 do CP:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "PENAL E PROCESSO PENAL. REDUÇÃO À CONDIÇÃO ANÁLOGA À DE \nESCRAVO. ARTIGO 149, CAPUT, DO CP. MATERIALIDADE E AUTORIA. \nDEMONSTRAÇÃO. DOSIMETRIA. PENA-BASE. APECTOS INERENTES AO TIPO. \nREDUÇÃO. REDIMENSIONAMENTO. NOVO REGIME PRISIONAL. APELAÇÃO \nDA DEFESA PARCIALMENTE PROVIDA 1. Apelações criminais interpostas pelo \nMinistério Público Federal e pelo réu contra sentença que julgou parcialmente \nprocedente a pretensão punitiva estatal para condenar o réu-apelante como incurso \nnas penas do art. 149, caput, c/c art. 70, ambos do Código Penal, a 4 (quatro) anos \ne 1 (um) mês de reclusão e (quarenta) dias-multa pelo crime de redução à condição \n \nanáloga à de escravo. 2. O acusado foi denunciado pelo Ministério Público Federal \ncom incurso nos artigos 149, caput, 203 e 297, § 4o, na forma do art. 69, caput, c/c \nart. 29, todos do CP, por haver, de forma livre e consciente, mantido 17 (dezessete) \n \ntrabalhadores rurais laborando em condições análogas à de escravo, conforme \n \nRelatório de Fiscalização emitido pelo Grupo Especial de Fiscalização Móvel, \nvinculado à Secretaria de Inspeção do Trabalho, do Ministério do Trabalho e \nEmprego, que, em parceria com o Ministério Público do Trabalho e a Polícia \nFederal, diligenciaram na Fazenda Terra Roxa, em Marabá/PA, entre os dias \n01/09/2009 a 11/09/2009, averiguando a materialidade delitiva que culminou na \n \nreferida denúncia. 3. Narrou a acusação que havia 17 empregados \"sem registro e \nsem CTPS assinada; sem recebimento de salário; laborando sem equipamento de \nproteção individual; alojados em barracos de madeiras e de lonas cobertos de palha \ncom proteção lateral precária e piso de terra batida; sem instalações sanitárias, fato \nque levava os obreiros a fazerem suas necessidades fisiológicas no mato, ao relento \nsem qualquer privacidade, bem como consumindo água sem a devida comprovação \nda potabilidade\". Além disso, narrou que os trabalhadores eram obrigados a adquirir \n \nprodutos diversos para desconto quando do eventual pagamento da remuneração. \n4. O Juízo de primeiro grau entendeu caracterizado o delito tipificado no art. 149, \n \ncaput, do Código Penal, em concurso formal, por haver 17 empregados submetidos \na condição análoga à de escravo. Entretanto, não reconheceu a prática do tipo \n \nprevisto no art. 203 do CP, por ser este subsidiário em relação ao tipo do art. 149, e \n \nabsolveu o réu quanto ao art. 297, §4o, do CP, por ausência de provas nos autos. 5. \n\nA materialidade e autoria restaram demonstradas pelo relatório de fiscalização \nacostado aos autos e pelos depoimentos das testemunhas de acusação e vítimas \nque relataram as indignas condições de trabalho a que eram submetidos os \n \ntrabalhadores: não havia instalações sanitárias; não havia água tratada para beber; \n \ndormiam em alojamentos precários; não havia equipamentos de proteção individual. \nAlém disso, os trabalhadores tinham seu direito de ir e vir cerceado em razão de \n \ndívidas contraídas com o empregador, uma vez que eram descontados de seus \n \nsalários todos os valores relativos à alimentação e ferramentas de trabalho. 6. Não \n\ntem razão a defesa, ao sustentar que as condições verificadas pelo Ministério do \n\nTrabalho, por meio do Grupo Especial de Fiscalização Móvel, não tipificaria o crime \nddo art. 149, caput, do CP, e que se constituiria apenas em infrações de natureza \n \nadministrativa. A inspeção in locu permitiu que os fiscais detectassem uma série de \n\nirregularidades, concluindo assim pela existência de condições degradantes e \n \ncerceadoras da liberdade de locomoção dos trabalhadores. 7. Em recentes julgados, \n\nambas as Turmas deste Tribunal afastaram a necessidade da prova da coação \nfísica para a configuração do delito tipificado pelo art. 149 do Código Penal. \nBastando que verifique a submissão da vítima a serviços forçados ou jornada \n \nexaustiva, ou ainda a condições de degradantes ou que limitem a sua liberdade. \nCondutas, portanto, alternativas. (Precedentes da Turma). 8. Não é verdade que os \n \ntrabalhadores laboravam de \"livre e espontânea vontade\". Havia restrição de \n \nliberdade através de um artifício fraudulento, criado pelo empregador, consistente no \n \nendividamento e na falsa crença de que apenas com sua total quitação seria \n \npossível rescindir aquele vínculo trabalhista. 9. Correta a conclusão da sentença, \n\ndeve ser mantida a condenação do acusado pelo cometimento do crime do art. 149 \nddo CP. 17. Apelação do Ministério Público Federal a que se nega provimento. \n18. Apelação do réu a que se dá parcial provimento para reduzir a pena definitiva, de 4 \n(quatro) anos e 1 (um) mês de reclusão e (quarenta) dias-multa, para 03 (três) anos \n\nde reclusão e 15 (quinze) dias-multa, no valor unitário de 1/30 (um trinta avos) do \nsalário mínimo vigente ao tempo dos fatos, no regime aberto, substituída a pena \nprivativa de liberdade por duas penas restritivas de direito. (ACR 0008345- \n72.2010.4.01.3901, DESEMBARGADOR FEDERAL NÉVITON GUEDES, TRF1 - \nQUARTA TURMA, e-DJF1 17/10/2018 PAG.).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por consequência, no quadro fático dos autos, resta evidenciada a relação \nconsuntiva, na medida em que a frustração dos direitos assegurados pela lei trabalhista (art. 203,\n§1o, I e II do CP) é absorvida pelo crime de redução a condição análoga à de escravo, de modo\nque, em razão do princípio da subsidiariedade, devem os réus responder apenas pelo delito\ntipificado no art. 149 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2.3 - Aliciamento de trabalhadores de um local para outro do território \nnacional (art. 207, § 1o e §2o, do CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O Código Penal traz a seguinte definição para o crime em questão: \n\n“Art. 207 - Aliciar trabalhadores, com o fim de levá-los de uma para outra localidade \nd do território nacional: \n\nPena - detenção de um a três anos, e multa. (Redação dada pela Lei no 9.777, de \n29.12.1998) \n\n§ 1o Incorre na mesma pena quem recrutar trabalhadores fora da localidade de \nexecução do trabalho, dentro do território nacional, mediante fraude ou cobrança de \nqualquer quantia do trabalhador, ou, ainda, não assegurar condições do seu retorno \nao local de origem. (Incluído pela Lei no 9.777, de 1998) \n\n§ 2o A pena é aumentada de um sexto a um terço se a vítima é menor de dezoito \nanos, idosa, gestante, indígena ou portadora de deficiência física ou mental. \n(Incluído pela Lei no 9.777, de 1998)”,",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para Guilherme de Souza Nucci (Código Penal Comentado, 10a ed. rev. atual e \n \nampl., p. 889): \"aliciar (...) significa angariar por meio de atrativos ou seduzir. A ideia central é a\n \nmesma do artigo antecedente, embora neste caso os trabalhadores não devam seguir para o\n \nexterior e sim para outra região do território nacional\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E, segundo ensina Cezar Roberto Bitencourt (Tratado de Direito Penal, Parte \nEspecial 3, Ed. Saraiva, 8a edição, vol.3, p. 446), \"a lei pune o êxodo aliciado, não o espontâneo, \n \numa vez que este é assegurado pela Constituição (direito de ir, vir e ficar); procura preservar \n \nessas pessoas em seus locais de origem, visando o equilíbrio da geografia humana, e impedir o \n \ndesajuste social e econômico que o êxodo das zonas mais desfavorecidas produziria\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação o caso do §1o do artigo 207 do CP, clássica é a lição Mirabete (Manual \nde Direito Penal, Parte Especial, Ed. Atlas, 21a edição, vol. II, p. 395) no sentido de que:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"Não se exige para a caracterização do ilícito o aliciamento, a sedução, o \nconvencimento, mas o recrutamento, podendo a iniciativa partir do próprio \ntrabalhador. O primeiro meio ilícito inscrito na lei é a fraude: o agente ilude, engana \na vítima, fazendo promessas que não serão cumpridas, enganando-a quanto às \ncondições de trabalho, à remuneração, ao local de prestação de serviços, aos \nbenefícios etc. Também pode ser cometido o crime quando o agente recruta o \n \ntrabalhador, cobrando qualquer quantia deste, pouco importando que sejam \n \ncumpridas as promessas feitas. O objetivo do dispositivo é evitar que o trabalhador \n \nseja explorado economicamente para a obtenção de colocação trabalhista. Por fim, \n \nincrimina a lei também o recrutamento de trabalhador sem que se assegurem \n \ncondições de seu retorno ao local de origem. Findo o prazo do contrato de trabalho, \n \nou qualquer momento quando for ele por tempo indeterminado, tem o trabalhador o \n \ndireito de exigir do empregador que lhe forneça as condições indispensáveis de seu \n \nretorno; se não for atendido, configura-se o ilícito penal\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No caso, o MPF, em sua inicial acusatória, narrou, em síntese, que os acusados, ao \nlado do gato “Meladinho”, foram os responsáveis pela arregimentação e aliciamento dos\ntrabalhadores, levando-os do interior do Piauí até o Município de Sapucaia/PA, segundo relato\ndas próprias vítimas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com base nas provas dos autos, resta, de fato, comprovada a materialidade e \nautoria do delito imputado, especialmente com fulcro no relatório de fiscalização do Ministério do\nTrabalho e Emprego (fls. 20/27 do id 309753377), formulários para verificação física (fls. 10/51 do\nid 309753381 e fls. 01/41 do id 309753383) e declarações das vitimas prestadas junto ao MPF e\ndurante o processo judicial.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, o relatório do MTE aponta que os trabalhadores foram recrutados no \nEstado do Piauí, através da figura do \"gato\" conhecido como “Meladinho”, sendo transportados\nem ônibus fretado até a cidade de Açailândia/MA, em seguida de trem até Marabá/PA, e\nposteriormente de ônibus fretado até a Fazenda Brasil Verde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Importa destacar, desde logo, que o relatório do MTE registra: \"Buscamos \ninformações no escritório a respeito do “gato meladinho” e do gerente “toninho” e formos\ninformados que ambos tinham residência na fazenda. Efetuamos a procura, contudo, evadiram-\nse do local.” (fl. 24 do id 309753377).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, durante a fiscalização, muitos foram os relatos das vítimas no sentido de \nque o \"gato\" \"Meladinho\" teria feito o recrutamento, inclusive indicando-o como empregador no\ncampo do formulário do MTE, a exemplo de Edirceu Lima de Brito (id 309753381 - Pág.\n29), Francisco Antônio Oliveira Barbosa (id 309753381 - Pág. 35) e Gonçalo Firmino de Souza\n(id 309753381 - Pág. 36).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Outro não é o teor do depoimento dos trabalhadores rurais ouvidos em juízo: \n\na) “foi contratado por uma rapaz que trabalhava na Fazenda Brasil Verde chamado \n‘Meladinho’, que arrumou um ônibus e eles foram” (José Leandro, id 1099883792 e mídia anexa);\n\nb) “que apareceu um rapaz chamando para trabalhar na Fazenda Brasil Verde, \ncolocando propaganda e anunciando em carro de som; que a pessoa se chamava “Meladinho”;\nque a viagem durou cerca de 2 dias” (Marcos Antônio, id 1099883792 e mídia anexa);\n\nc) “foi levado à fazenda pela pessoa de “Meladinho” (José de Ribamar, id \n1099883792 e mídia anexa).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não só, os elementos de prova evidenciam que o recrutamento se deu mediante \nfraude consistente na promessa realizada aos trabalhadores de que teriam salário e condições\ndignas de trabalho, o que evidentemente não existiu, sendo mencionado por Francisco das\nChagas que “na época foi falado que era para ser um salário, mas isso não foi pago” (ata de id\n1099883792 e mídia anexa), e por Pedro Fernandes, o qual relatou ter sido prometido um bocado\nde coisas, que lá iria ser bom e que o acerto seria por mês, mas que eles não recebiam (ata de id\n1099883792 e mídia anexa).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Desse modo, as provas são robustas para comprovar o aliciamento dos \ntrabalhadores no interior do Estado do Piauí para trabalharem na Fazenda Brasil Verde, com\nrecrutamento do \"gato\" \"Meladinho\", sob a falsa promessa de boas condições de trabalho e\nsalário justo, não sendo crível a tese levantada pela defesa de que tais trabalhadores, em sua\nmaioria analfabetos e sem recursos financeiros, foram sozinhos até a fazenda procurar emprego.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por relevante, assim como destacado anteriormente em relação ao crime do art. 149 \ndo CP e registrado na sentença da Corte Interamericana de Direito Humanos (CASO\nTRABALHADORES DA FAZENDA BRASIL VERDE VS. BRASIL), o histórico das fiscalizações\nefetivadas, assim como os demais elementos colhidos no referido processo, aponta para uma\nutilização sistemática da forma ilícita de recrutamento de trabalhadores de municípios distantes,\npor parte dos responsáveis pela Fazenda Brasil Verde, para exploração da mão de obra, sendo\ndesnecessário a repetição do que já indicado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em adição, cita-se o seguinte trecho das alegações finais do MPF:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"Ressalte-se, que do contraste do caso em apreço com os termos da sentença da \nCorte Interamericana de Direitos Humanos denota-se que desde o ano de 1989 o \nmodus operandi dos réus é o mesmo, vejamos: \n\n\"Trabalhei na fazenda 30 dias, aqui o [gato] me garantiu muitas coisas e eu levei \ntodos os mantimentos para o trabalho e chegando lá ele me jogou numa lama, \nroçando juquira, 108 morando num barraco cheio de água, minha esposa operada, \nminhas crianças adoeceram, era o maior sofrimento. Precisei comprar dois vidros de \n \nremédios e me cobraram Cz$ 3.000,00. Quando fui sair da fazenda, fui acertar a \n\nconta, ainda fiquei devendo Cz$ 21.500 e aí precisei vender 1 rede, 1 colcha, 2 \nmachados, 2 panelas, pratos, 2 colheres [...] e ainda fiquei devendo Cz$ 16.800 e \n \nsaí devendo. Grifo nosso.(Relato de ADAILTON MARTINS DOS REIS, vítima, ano \nde 1989, fl, 32, sentença CIDH)\". \n\n\"Em 10 de março de 1997, José da Costa Oliveira prestou declarações perante o \nDepartamento de Polícia Federal do Pará, quando relatou ter escapado da \nFazenda Brasil Verde. Sobre o particular, manifestou que o \"gato\" Raimundo o \n \ncontratou para trabalhar na fazenda e que, ao chegar aí, já devia dinheiro por \ntodos. Os gastos de hospedagem e pelos utensílios de trabalho fornecidos pelo \n\"gato.\" Agregou que os trabalhadores eram ameaçados de morte se denunciassem \no gato\" ou o fazendeiro, ou se tentassem fugir e que era prática comum esconder os \n \ntrabalhadores quando o Ministério do Trabalho realizava fiscalizações. Grifo nosso \n(Relato de José da Costa Oliveira, vítima, ano de 1997, fl, 25, sentença CIDH).\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com efeito, restou devidamente comprovada nos autos que a pessoa de \n“Meladinho” recrutou, mediante fraude, os trabalhadores para laborar na Fazenda Brasil Verde,\nestando a seu serviço, e, portanto, dos réus, tal qual narrado pela acusação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito, o \"gato\" “Meladinho”, muito embora não tenha sido identificada nos \nautos, foi visto na Fazenda Brasil Verde pela vítima Antônio Francisco da Silva no dia em que\nteria sido agredido, conforme consta em depoimento colhido na fase investigativa pelo MPF (id’s\n309874378 a 309843931), o que, em conjunto com as demais provas, demonstra que a\nreferida pessoa, por vezes, se fazia presente na Fazenda Brasil Verde.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não apenas, reitere-se que o relatório do MTE registra: \"Buscamos informações no \n \nescritório a respeito do “gato meladinho” e do gerente “toninho” e formos informados que ambos\n \ntinham residência na fazenda. Efetuamos a procura, contudo, evadiram-se do local.” (fl. 24 do id\n \n309753377).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Do que se observa, é possível extrair, de um lado, a execução do recrutamento e \ntransporte dos trabalhadores feita pelo \"gato\" \"Meladinho\" e possivelmente pelo outro \"gato\"\nmencionado (\"Tonhão\"), ambos não identificados de forma suficiente para subsidiar a acusação, \ne, do outro, em conluio, os beneficiários diretos da mão de obra, ou seja, os acusados Antonio\nJorge Vieira, gerente responsável por receber na Fazenda Brasil Verde os trabalhadores\nrecrutados, contratá-los e fiscalizar os serviços por eles prestados, e João Luiz Quagliato Neto\n, proprietário da Fazenda Brasil Verde, detentor de controle sobre o que ocorria no local de\ntrabalho, inclusive contratação de trabalhadores, e responsável pelo financiamento do\nrecrutamento.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Destarte, os elementos de convicção são suficientes para demonstrar a \nresponsabilidade criminal dos dois réus (João Luiz Quagliato Neto e Antonio Jorge Vieira), dado\nque, por intermédio do \"gato\" \"Meladinho\", mediante fraude, recrutaram 85 (oitenta e cinco)\ntrabalhadores provenientes do interior do estado do Piauí, em sua maioria do município de\nBarras/PI, para a prestação de serviços na Fazenda Brasil Verde, localizada no município de\nSapucaia/PA, em condições não dignas de trabalho e em desrespeito à legislação trabalhista,\ncondutas praticas com consciência e vontade dirigidas para atingir a finalidade ilícita.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse caminhar, provada a existência do fato típico descrito no art. 207, §1o, do \nCódigo Penal, bem como sua autoria, impõe-se a condenação pela prática da conduta imputada\naos réus.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em relação à causa de aumento descrita no §2o do art. 207, observa-se que a \nmenoridade da vítima José Francisco (\"Zé Pitanga\") não restou comprovada nos autos, devendo\nser destacado, conforme já mencionado alhures, que o próprio, tido como um dos supostos\nmenores, declarou em juízo que tinha trinta e poucos anos quando chegou na Fazenda Brasil\nVerde, inclusive apresentando seu documento em audiência, ocasião em que restou comprovada\nsua maioridade na data dos fatos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Já em relação a vítima Antônio Francisco da Silva, é possível extrair dos autos sua \nmenoridade à época dos fatos, inclusive tendo a própria defesa alegado que não o contratou em\nrazão de tal questão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Igualmente, os elementos de prova evidenciam a vítima José Francisco (\"Zé \nPitanga\") como pessoa com deficiência física, tendo também a defesa alegado que não o\ncontratou por essa razão.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, deve incidir ao caso a disposição contida no §2o do art. 207, assim como a \nregra do concurso formal de crimes (art. 70 do Código Penal).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3 – Dispositivo.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Ante o exposto, afasto as preliminares alegadas e, no mérito, JULGO \nPARCIALMENTE PROCEDENTE a pretensão punitiva estatal para condenar os réus João Luiz\nQuagliato Neto e Antônio Jorge Vieira como incursos nas penas do artigo 149 do Código Penal\n(redução a condição análoga à de escravo) e artigo 207,§1o e §2o do Código Penal (aliciamento\nde trabalhadores de um local para outro do território nacional).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "3. 1. Dosimetria da Pena",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.1. Em relação ao réu João Luiz Quagliato Neto",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.1.1. Crime previsto no art. 149 do CP",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O tipo penal do art. 149 do CP, na redação vigente à época do fato, anterior à Lei \n10.803, de 11/12/2003 e mais favorável ao réu, cominava pena de 02 (dois) a 08 (oito) anos de\nreclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fulcro no que dispõe o art. 68, do CP, e levando-se em consideração as \ncircunstâncias judiciais previstas no artigo 59, verifico que não existem maiores elementos nos\nautos para se aferir a personalidade e a conduta social do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico que o acusado não registra antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas em nada influenciou a prática delitiva.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos, apesar de reprováveis, são inerentes à própria estrutura do tipo penal, \nnão tendo sido destacado nenhum fator que destoasse da própria previsão legal já estimada na\npena fixada em abstrato.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já a culpabilidade extrapolou aquela inerente à gravidade do próprio crime \npraticado, devendo ser considerado maior o juízo de reprovabilidade da conduta, dado que o\n \ndelito foi perpetrado contra trabalhadores rurais extremamente vulneráveis, carentes de políticas\n \npúblicas ou sociais de amparo, proteção e orientação, longe de casa, da família e amigos, \n \nportanto, totalmente à mercê da exploração.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias específicas do crime, no caso em exame, consistentes na \n \natuação do réu, extrapolaram o que é de ordinário para a configuração da conduta típica. Isso\n \nporque o crime foi praticado contra vítimas de pouca instrução, em sua maioria analfabetos, no\n \nexercício de trabalho que exigia elevada capacidade física e mental",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O mesmo se diga das consequências do crime, pois extremamente grave o fato \n \nde terem sido resgatadas 85 (oitenta e cinco) pessoas submetidas a condições análogas à de\n \nescravo, produzindo inestimável prejuízo àqueles trabalhadores específicos, não só\n \nfinanceiramente, mas principalmente por afrontar um dos valores mais caros ao ser humano, é\n \ndizer, a sua própria dignidade e a sensação de (poder) pertencer à uma sociedade de iguais,\n \nindependente da classe social ou do seu poder aquisitivo. Aqui, cabe esclarecer que está sendo\n \nvalorada como desfavorável a quantidade de vítimas que excede ao número de 06 (seis), dentro\n \ndo grupo de 85 (oitenta e cinco), ou seja, 79 (setenta e nove) pessoas resgatadas, dado que os\n \nprimeiros serão considerados em outra fase da dosimetria, de acordo com a regra do concurso\n \nformal, conforme a seguir, não ocasionando tal sistematização em bis in idem (RE 1.279.023).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Destarte, considerando a culpabilidade, as circunstâncias específicas do crime e \n \nconsequências do crime, recomendam a fixação da pena base no patamar acima do mínimo legal\n \nestabelecido.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desta forma, fixo a pena-base em 04 (quatro) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Presente a circunstância atenuante do art. 65, I do CP, eis que o réu é maior de 70 \n \nanos, razão pela qual fixo a pena provisória em 3 (três) anos e 4 (quatro) meses. Ausentes\n \ncircunstâncias agravantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes causas de diminuição. Presente a causa de aumento decorrente da \n \naplicação do concurso formal previsto no art. 70 do CP. Com efeito, foram 85 (oitenta e cinco)\n \ntrabalhadores encontrados em situação análoga à de escravo, conduta essa praticada mediante\n \numa só ação. Assim, considerando o número de 06 (seis) trabalhadores sujeitos da\n \nação delituosa do acusado (o restante foi utilizado na primeira fase), bem como a jurisprudência\n \ndo STJ acerca da exasperação no concurso formal, deve a pena ser aumentada em 1⁄2 (metade),\n \ntotalizando a pena de 5 (cinco) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Outrossim, deixo de fixar pena de multa, haja vista que a referida pena somente foi \n \nintroduzida, em relação ao tipo penal em exame, com a Lei no 10.803/2003, datada de\n \n11/12/2003, sendo, portanto, inaplicável ao caso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.1.2. Crime previsto no art. 207, §1o e §2o do CP",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A pena cominada para o delito do art. 207, caput, §1o e §2o, do Código Penal está \n \ncompreendida entre 1 e 3 anos de detenção, e multa, além da causa de aumento de 1/6 (sexto) a\n \n1/3 (um terço), se houve aliciamento de trabalhador/vítima menor de 18 anos ou com deficiência\n \nfísica ou mental.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fulcro no que dispõe o art. 68, do CP, e levando-se em consideração as \n \ncircunstâncias judiciais previstas no artigo 59, verifico que não existem maiores elementos nos\n \nautos para se aferir a personalidade e a conduta social do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico que o acusado não registra antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas em nada influenciou a prática delitiva.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos, apesar de reprováveis, são inerentes à própria estrutura do tipo penal, \n \nnão tendo sido destacado nenhum fator que destoasse da própria previsão legal já estimada na\n \npena fixada em abstrato.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já culpabilidade extrapolou aquela inerente ao próprio crime praticado. Com efeito, \n \nconstato que a culpabilidade ou reprovabilidade da conduta é grave, considerando ter sido o\n \ncrime praticado contra trabalhadores rurais extremamente vulneráveis e carentes de políticas\n \npúblicas ou sociais de amparo, proteção e orientação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias específicas do crime, no caso em exame, consistentes na \n \natuação do réu, extrapolaram o que é de ordinário para a configuração da conduta típica, eis que\n \npraticado o crime contra trabalhadores rurais em sua maioria analfabetos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências do crime também são graves, dado que praticado contra um \n \ngrupo muito grande de pessoas, a saber 85 (oitenta e cinco) trabalhadores rurais. Aqui, cabe\n \nesclarecer, que está sendo valorada a quantidade de trabalhadores que excedem ao número de\n \n06 (seis), dentro do grupo de 85 (oitenta e cinco), ou seja, 79 (setenta e nove) trabalhadores\n \nrecrutados, dado que os primeiros serão considerados em outra fase da dosimetria, de acordo\n \ncom a regra do concurso formal, conforme a seguir, não ocasionando tal sistematização em bis in\n \nidem (RE 1.279.023).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Destarte, a culpabilidade, as circunstâncias específicas e as consequências do \n \ncrime, recomendam a fixação da pena base no patamar acima do mínimo legal estabelecido,\n \nrazão pela qual fixo a pena-base em 1 (um) ano e 6 (seis) meses de detenção.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Presente a circunstância atenuante do art. 65, I do CP, eis que o réu é maior de 70 \n \nanos, razão pela qual fixo a pena provisória em 1 (um) ano e 3 (três) meses. Ausentes\n \ncircunstâncias agravantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes causas de diminuição. Presente a causa de aumento prevista no §2o do \n \nart. 207 do CP, em razão do crime ter sido praticado contra vítima menor de 18 anos e também\n \ncontra vítima com deficiência física, consoante fundamentação acima exposta. Diante da causa\n \nde aumento, elevo a pena em 1/3. Assim, fixo a pena definitiva em 1 (um) ano e 8 (oito)\n \nmeses.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No caso, deve ser aplicada a regra do concurso formal previsto no art. 70 do CP. \n \nCom efeito, foram recrutados e levados para a Fazenda Brasil Verde no Estado do Pará um total\n \nde 85 (oitenta e cinco) trabalhadores, oriundos do Estado do Piauí, conduta essa praticada\n \nmediante uma só ação. Assim, considerando o número de 06 (seis) trabalhadores sujeitos da\n \nação delituosa do acusado (o restante foi utilizado na primeira fase), bem como a jurisprudência\n \ndo STJ acerca da exasperação no concurso formal, deve a pena ser aumentada em 1⁄2 (metade), \n \ntotalizando a pena definitiva em 2 (dois) anos e 6 (seis) meses de detenção.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Transpondo para a pena de multa os critérios de individualização da pena já \n \nanalisados, a fixação deve guardar proporcionalidade com a pena definitiva privativa de\n \nliberdade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na pena privativa de liberdade, a reprovabilidade fixada pelo legislador situa-se \n \nentre a pena mínima de 01 ano e a máxima de 03 anos, tendo-se a variação de 24 meses. Na\n \npena de multa, entre os limites mínimo e máximo de reprovabilidade (10 dias-multa a 360 dias-\n \nmulta), tem-se a variação de 350 dias-multa. A quantidade de dias-multa deve observar, portanto, \n \na mesma proporção de distanciamento entre os limites mínimo e máximo de reprovabilidade, \n \ncorrespondendo, destarte, à razão de 14,58 dias-multa por mês de pena privativa de liberdade, \n \nconsiderando-se a divisão de 350 por 24.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Logo, na aplicação proporcional da pena de multa, impõe-se seja multiplicada a \n \nvariação encontrada (14,58) pelo valor da pena definitiva, apenas no que exaspera a pena\n \nmínima cominada para o delito, que é de 01 ano. Assim, multiplicando-se 14,58 por 18 (número\n \nde meses que excede a pena mínima) tem-se o total de 262,44 dias-multa, que somado ao\n \npatamar mínimo da pena de multa (10 dias-multa) alcança o total 272 dias-multa (desprezando- \nse a fração).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No arbitramento do valor de cada dia, deve ser considerada a condição econômica \n \ndo acusado, nos termos do art. 49 do CP. No caso dos autos, restou comprovado que o réu é\n \ngrande produtor rural detentor de diversas fazendas em vários Estados do Brasil. Por essa razão, \n \nfixo o dia-multa no valor de 5 (cinco) salários mínimos vigente à data dos fatos, valor\n \ndevidamente corrigido desde esta data.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.1.3. Do concurso material",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No presente caso, aplica-se a regra disciplinada no art. 69 do Código Penal, \n \nsegundo a qual ao agente que, mediante mais de uma ação ou omissão, pratica dois ou mais\n \ncrimes, idênticos ou não, aplicam-se cumulativamente as penas privativas de liberdade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Dessa forma, fica o réu João Luiz Quagliato Neto definitivamente condenado à \n \npena de 05 (cinco) anos de reclusão, pela prática do crime previsto no art. 149 do Código\n \nPenal, e 02 (dois) anos e 06 (seis) meses de detenção e multa de 272 dias-multa, à razão de\n \n5 (cinco) salários-mínimos para cada dia-multa, pela prática do crime previsto no art. 207,§1o e\n §2o do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.2 - Em relação ao réu Antônio Jorge Vieira",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.2.1. Crime previsto no art. 149 do CP",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O tipo penal do art. 149 do CP, na redação vigente à época do fato, anterior à Lei \n10.803, de 11/12/2003 e mais favorável ao réu, cominava pena de 02 (dois) a 08 (oito) anos de\nreclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fulcro no que dispõe o art. 68, do CP, e levando-se em consideração as \ncircunstâncias judiciais previstas no artigo 59, verifico que não existem maiores elementos nos\nautos para se aferir a personalidade e a conduta social do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico que o acusado não registra antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas em nada influenciou a prática delitiva.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos, apesar de reprováveis, são inerentes à própria estrutura do tipo penal, \nnão tendo sido destacado nenhum fator que destoasse da própria previsão legal já estimada na\npena fixada em abstrato.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade extrapolou aquela inerente à gravidade do próprio crime praticado, \ndevendo ser considerado maior o juízo de reprovabilidade da conduta, dado que o delito foi\nperpetrado contra trabalhadores rurais extremamente vulneráveis, carentes de políticas públicas\nou sociais de amparo, proteção e orientação, longe de casa, da família e amigos, portanto,\ntotalmente à mercê da exploração.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias específicas do crime, no caso em exame, consistentes na \n \natuação do réu, extrapolaram o que é de ordinário para a configuração da conduta típica. Isso\n \nporque o crime foi praticado contra vítimas de pouca instrução, em sua maioria analfabetos, no\n \nexercício de trabalho que exigia elevada capacidade física e mental.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Valoro desfavorável o vetor das consequências do crime, pois extremamente \n \ngrave o fato de terem sido resgatadas 85 (oitenta e cinco) pessoas submetidas a condições\n \nanálogas à de escravo, produzindo inestimável prejuízo àqueles trabalhadores específicos, não\n \nsó financeiramente, mas principalmente por afrontar um dos valores mais caros ao ser humano, é\n \ndizer, a sua própria dignidade e a sensação de (poder) pertencer à uma sociedade de iguais,\n \nindependente da classe social ou do seu poder aquisitivo. Aqui, cabe esclarecer que está sendo\n \nvalorada como desfavorável a quantidade de vítimas que excede ao número de 06 (seis), dentro\n \ndo grupo de 85 (oitenta e cinco), ou seja, 79 (setenta e nove) pessoas resgatadas, dado que os\n \nprimeiros serão considerados em outra fase da dosimetria, de acordo com a regra do concurso\n \nformal, conforme a seguir, não ocasionando tal sistematização em bis in idem (RE 1.279.023).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Destarte, considerando a culpabilidade, as circunstâncias específicas do crime e \n \nconsequências do crime, recomendam a fixação da pena base no patamar acima do mínimo legal\n \nestabelecido.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Dessa forma, fixo a pena-base em 04 (quatro) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Presente a circunstância atenuante do art. 65, I do CP, eis que o réu é maior de 70 \n \nanos, razão pela qual fixo a pena provisória em 3 (três) anos e 4 (quatro) meses. Ausentes\n \ncircunstâncias agravantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes causas de diminuição. Presente a causa de aumento decorrente da \n \naplicação do concurso formal previsto no art. 70 do CP. Com efeito, foram 85 (oitenta e cinco)\n \ntrabalhadores encontrados em situação análoga a de escravo, conduta essa praticada mediante\n \numa só ação. Assim, considerando o número de 06 (seis) trabalhadores sujeitos da ação\n \ndelituosa do acusado (o restante foi utilizado na primeira fase), bem como a jurisprudência\n \ndo STJ acerca da exasperação no concurso formal, deve a pena ser aumentada em 1⁄2 (metade),\n \ntotalizando a pena de 5 (cinco) anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Outrossim, deixo de fixar pena de multa, haja vista que a referida pena somente foi \n \nintroduzida, em relação ao tipo penal em exame, com a Lei no 10.803/2003, datada de\n \n11/12/2003, sendo, portanto, inaplicável ao caso.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.2.2. Crime previsto no art. 207, §1o e §2o do CP",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A pena cominada para o delito do art. 207, caput, §1o e §2o, do Código Penal está \n \ncompreendida entre 1 e 3 anos de detenção, e multa, além da causa de aumento de 1/6 (sexto)\na 1/3 (um terço), se houve aliciamento de trabalhador/vítima menor de 18 anos ou com\ndeficiência física ou mental.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fulcro no que dispõe o art. 68, do CP, e levando-se em consideração as \n \ncircunstâncias judiciais previstas no artigo 59, verifico que não existem maiores elementos nos\n \nautos para se aferir a personalidade e a conduta social do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Verifico que o acusado não registra antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas em nada influenciou a prática delitiva.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos, apesar de reprováveis, são inerentes à própria estrutura do tipo penal, \n \nnão tendo sido destacado nenhum fator que destoasse da própria previsão legal já estimada na\n \npena fixada em abstrato.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "A culpabilidade extrapolou aquela inerente à gravidade do próprio crime praticado. \n \nCom efeito, constato que a culpabilidade ou reprovabilidade da conduta é grave, considerando ter\n \nsido o crime praticado contra trabalhadores rurais extremamente vulneráveis e carentes de\n \npolíticas públicas ou sociais de amparo, proteção e orientação.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As circunstâncias específicas do crime, no caso em exame, consistentes na \n \natuação do réu, extrapolaram o que é de ordinário para a configuração da conduta típica, dado\n \nque praticado o crime contra trabalhadores rurais em sua maioria analfabetos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências do crime também são graves, eis que praticado contra um \n \ngrupo muito grande de pessoas, a saber 85 (oitenta e cinco) trabalhadores rurais. Aqui, cabe\n \nesclarecer, que está sendo valorada a quantidade de trabalhadores que excedem ao número de\n \n06 (seis), dentro do grupo de 85 (oitenta e cinco), ou seja, 79 (setenta e nove) trabalhadores\n \nrecrutados, dado que os primeiros serão considerados em outra fase da dosimetria, de acordo\n \ncom a regra do concurso formal, conforme a seguir, não ocasionando tal sistematização em bis in\n \nidem (RE 1.279.023).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Destarte, a culpabilidade, as circunstâncias específicas e as consequências do \n \ncrime, recomendam a fixação da pena base no patamar acima do mínimo legal estabelecido,\n \nrazão pela qual fixo a pena-base em 1 (um) ano e 6 (seis) meses de detenção.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Presente a circunstância atenuante do art. 65, I do CP, posto que o réu é maior de \n \n70 anos, razão pela qual fixo a pena provisória em 1 (um) ano e 3 (três) meses. Ausentes\n \ncircunstâncias agravantes.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ausentes causas de diminuição. Presente a causa de aumento prevista no §2o do \n \nart. 207 do CP em razão de o crime ter sido praticado contra vítima menor de 18 anos e também\n \ncontra vítima com deficiência física, consoante ampla fundamentação acima exposta. Diante da\n \ncausa de aumento, elevo a pena em 1/3. Assim, fixo a pena definitiva em 1 (um) ano e 8 (oito)\n \nmeses.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No caso, deve ser aplicada a regra do concurso formal previsto no art. 70 do CP. \n \nCom efeito, foram recrutados e levados para a Fazenda Brasil Verde no Estado do Pará um total\n \nde 85 (oitenta e cinco) trabalhadores, oriundos do Estado do Piauí, conduta essa praticada\n \nmediante uma só ação. Assim, considerando o número de 06 (seis) trabalhadores sujeitos da\n \nação delituosa do acusado (o restante foi utilizado na primeira fase), bem como a jurisprudência\n \ndo STJ acerca da exasperação no concurso formal, deve a pena ser aumentada em 1⁄2\n \n(metade), totalizando a pena definitiva em 2 (dois) anos e 6 (seis) meses de detenção.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Transpondo para a pena de multa os critérios de individualização da pena já \n \nanalisados, a fixação deve guardar proporcionalidade com a pena definitiva privativa de\n \nliberdade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na pena privativa de liberdade, a reprovabilidade fixada pelo legislador situa-se \n \nentre a pena mínima de 01 ano e a máxima de 03 anos, tendo-se a variação de 24 meses. Na\n \npena de multa, entre os limites mínimo e máximo de reprovabilidade (10 dias-multa a 360 dias-\n \nmulta), tem-se a variação de 350 dias-multa. A quantidade de dias-multa deve observar, portanto, \n \na mesma proporção de distanciamento entre os limites mínimo e máximo de reprovabilidade, \n \ncorrespondendo, destarte, à razão de 14,58 dias-multa por mês de pena privativa de liberdade, \n \nconsiderando-se a divisão de 350 por 24.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Logo, na aplicação proporcional da pena de multa, impõe-se seja multiplicada a \n \nvariação encontrada (14,58) pelo valor da pena definitiva, apenas no que exaspera a pena\n \nmínima cominada para o delito, que é de 01 ano. Assim, multiplicando-se 14,58 por 18 (número\n \nde meses que excede a pena mínima) tem-se o total de 262,44 dias-multa, que somado ao\n \npatamar mínimo da pena de multa (10 dias-multa) alcança o total de 272 dias-multa\n(desprezando-se a fração).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No arbitramento do valor de cada dia, deve ser considerada a condição econômica \n \ndo acusado, nos termos do art. 49 do CP. No caso dos autos, não constam informações sobre a\n \nsituação econômica do réu. Por essa razão, fixo o dia-multa no valor de 1/30 (um trinta avos) do\n \nvalor do salário mínimo vigente à data dos fatos, valor devidamente corrigido desde esta data.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.1.2.3. Do concurso material",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No presente caso, aplica-se a regra disciplinada no art. 69 do Código Penal, \n \nsegundo a qual ao agente que, mediante mais de uma ação ou omissão, pratica dois ou mais\n \ncrimes, idênticos ou não, aplicam-se cumulativamente as penas privativas de liberdade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Desta forma, fica o réu Antônio Jorge Vieira definitivamente condenado à pena de \n \n05 (cinco) anos de reclusão, pela prática do crime previsto no art. 149 do Código Penal, e \n \n02 (dois) anos e 06 (seis) meses de detenção e multa de 272 dias-multa, à razão de 1/30 (um\n \ntrigésimo) do salário-mínimo para cada dia-multa, pela prática do crime previsto no art. 207,§1o\ne §2o do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.2 – Regime Inicial de Cumprimento de Pena",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no artigo 33, § 2o, b, do Código Penal, fixo o regime semiaberto \n \npara o início de cumprimento da pena privativa de liberdade de reclusão e, com base no artigo\n \n33, § 2o, c, do Código Penal, estabeleço o regime aberto para o início do cumprimento da pena\n \nprivativa de liberdade de detenção, devendo ser cumprida primeiramente a pena de reclusão (art. \n \n69, parte final, CP c/c art. 76 do CP).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.3 – Substituição da Pena",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em função do que dispõe o art. 44, I, do Código Penal, inviável a substituição da \n \npena em decorrência desta ter sido estipulada em patamar superior a quatro (04) anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.4 – Do recurso em liberdade",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nos termos do art. 387, § 1o, do CPP, os condenados deverão aguardar em \n \nliberdade o trânsito em julgado da sentença, haja vista não ter surgido qualquer fato a justificar a\n \nsegregação cautelar ou para a imposição de medidas cautelares diversas da prisão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.5 – Do valor mínimo para reparação",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Inaplicável ao caso a fixação de valor mínimo para reparação dos danos causados \n \npelo delito (CPP art. 387, IV, com redação dada pela Lei no 11.719, de 22.06.2008).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "3.6 – Considerações Finais",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Custas pelos condenados, nos termos do art. 804 do CPP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Transitada em julgado, procedam-se às comunicações de estilo e insira-se no \n \nsistema INFODIP (Sistema de Informações sobre Direitos Políticos) a suspensão dos direitos\n \npolíticos dos réus, na forma do art. 15, inc. III da CF.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Publique-se. Registre-se. Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Redenção/PA, data da assinatura eletrônica.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "(assinado eletronicamente)\n\nHALLISSON COSTA GLÓRIA\nJuiz Federal Substituto",
+      "label": "OUTROS"
+    }
+  ]
+}

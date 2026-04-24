@@ -1,0 +1,568 @@
+{
+  "index": 21,
+  "doc_id": 21,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 66,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSeção Judiciária de Goiás \n11a Vara Federal Criminal da SJGO \n\namc",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"D\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1035770-47.2020.4.01.3500",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "CLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "POLO ATIVO: Ministério Público Federal (Procuradoria)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "POLO PASSIVO:RONALDO MORAIS DE OLIVEIRA",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "REPRESENTANTES POLO PASSIVO: EPAMINONDAS ALMEIDA LEITE JUNIOR - GO35922",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "I - RELATÓRIO",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em 30/10/2019, o Ministério Público Federal apresentou denúncia contra \nRONALDO MORAIS DE OLIVEIRA pela prática dos crimes descritos no art. 149, caput e\n§ 2o, inciso I, e no art. 297, § 4o (por duas vezes), na forma do art. 69, todos do Código\nPenal (id. 355641479, p.p. 3/8, id. 355641447).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Narra a denúncia, em síntese, que RONALDO MORAIS, na Fazenda Bom \nJesus (ou Mata Velha), localizada entre as cidades de Piranhas/GO e Arenópolis/GO, \nreduziu Vantuir Honório da Silva (no período compreendido entre anos de 2008 e janeiro\nde 2018), Marilene Barbosa e Wellyton Henrique Barbosa Ramos (entre fevereiro de 2017\ne janeiro de 2018) a condições análogas à de escravo, submetendo-os a jornada\nexaustiva, bem como sujeitando-os a condições degradantes de trabalho e, por fim,\nrestringindo a locomoção destes mediante grave ameaça e em razão de dívida contraída.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Nas mesmas circunstâncias de tempo e local acima indicadas, RONALDO \nMORAIS falsificou, em parte, documento público, ao omitir, na Carteira de Trabalho e\nPrevidência Social, a remuneração e a vigência do contrato de trabalho dos trabalhadores\nreduzidos à condições análogas à de escravo.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 03/04/2020 (id. 355641481, p.p. 13/14, id. \n355641491).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Devidamente citado (id. 1044187256, p. 22) e deixando transcorrer o prazo in \nalbis, a resposta à acusação foi apresentada por advogado dativo nomeado pelo juízo (id. \n1122198276). Dr. THIAGO VASCONCELOS VIEIRA, OAB/GO 39.970, com honorários já\nfixados e requisitados (id. 1362374295).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Foi afastada a absolvição sumária (id. 1129107284).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A ata da audiência de instrução e julgamento, realizada em 18/10/2022, \nregistrou as seguintes ocorrências: (a) homologação da desistência do MPF da oitiva das\ntestemunhas ausentes: WELLYNTON HENRIQUE BARBOSA RAMOS, HELENIS VIEIRA\nDA SILVA NOGUEIRA e EURÍPEDES BARSANUFO DA SILVA NETO; (b) as\ntestemunhas DENIS FLÁVIA ROSA DE JESUS, MARILENE BARBOSA, VANTUIR\nHONÓRIO DA SILVA, NILTON CARLOS ROSA e SANTECLAIR DA SILVA NETO foram\ncompromissadas, não contraditadas e advertidas das penas cominadas ao falso\ntestemunho.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na fase do art. 402 do CPP nada foi requerido.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "O Ministério Público Federal, em sede de alegações finais, requereu a \ncondenação do acusado às penas dos crimes descritos no art. 149, caput e § 2o, inciso I,\ne no art. 297, § 4o (por duas vezes), na forma do art. 69, todos do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa, em suas alegações finais, aduz: (a) ausência de privação à \nliberdade de autodeterminação, assistência prestada aos trabalhadores, ausência de\ncoação física ou moral às supostas vítimas, ausência de trabalho forçado vez que Vantuir\ne Marilene poderiam decidir espontaneamente pela aceitação do trabalho ou pela sua\npermanência no trabalho, fornecimento de alimentação e pagamento conforme o\ncombinado entre o empregador e o empregado, portanto, ausentes as características das\ncondições análogas à escravidão; (b) que a suposta vítima Wellynton não trabalhava no\nlocal; (c) ausência de dolo, pois o acusado não tinha a intenção de manter as vítimas\nreduzidas às condições análogas a escravidão; (d) inexistência de qualquer prova\nmaterial do crime de falsificação de documento público (art. 297, § 4o, do Código Penal).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Requer a defesa a absolvição do réu, subsidiariamente, acaso condenado, a \nfixação da pena no mínimo legal e a substituição da pena corporal por penas restritivas de\ndireito.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "II - FUNDAMENTAÇÃO",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na ausência de preliminares, adentro ao exame do mérito.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A existência do crime de redução à condição análoga à escravidão \npressupões relação de trabalho/produção.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A relação de trabalho de Vantuir e Marilene se revela induvidosa, nas provas \ncolhidas na fase administrativa, em harmonia com o depoimento das vítimas e o\ninterrogatório do réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "RONALDO MORAIS confirma que Vantuir trabalhava na carvoaria, com a \natribuição de colocar a lenha nos fornos e retirar o carvão. Que Vantuir trabalhou\npara ele por uns cinco anos, porém de forma intermitente, vez ou outra trabalhou\npara outras pessoas. Que Vantuir não tinha carteira assinada, que recebia por\ntarefa, - por fornada de carvão. Revela o acusado que a relação de trabalho com\nVantuir foi reconhecida na Justiça do Trabalho. De outro lado Vantuir afirma ter\ntrabalhado para Ronaldo por 15 anos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Embora não existam elementos para precisar o período de trabalho, é certo \nque existiu uma longa relação de trabalho reconhecida pela Justiça do Trabalho, com\natenção para alto valor da indenização paga pelo acusado, segundo ele de\nR$500,000,00, o que indica claramente um relação de trabalho de muitos anos, conforme\ndescrito na denúncia de 2008 e janeiro de 2018.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Marilene, companheira de Vantuir, também trabalhou para RONALDO \nMORAIS por curto período. Morou na carvoaria entre fevereiro de 2017 e janeiro de 2018.\nTanto Marilene quanto RONALDO confirmam que Marilene não trabalhava na carvoaria\nquando chegou, depois de um tempo (aproximadamente 06 meses) começou a trabalhar\nenchendo sacos de carvão. Também são unânimes em afirmar que Marilene recebia por\ntarefa, sem carteira assinada. Marilene afirma que recebia o combinado, sem descontos\ncom alimentação. Marilene diz que também puxava lenha de forma esporádica. Vantuir\nconfirma que Marilene trabalhava na carvoaria e também a testemunha PM Santeclair da\nSilva Neto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação à Wellyton Henrique Barbosa Ramos, menor à época dos fatos, \nRONALDO MORAIS nega que a criança tenha trabalhado. Marilene diz que Wellyton\najudava a ensacar o carvão. Vantuir diz que o menino não trabalhava, ele tentava ajudar,\nmas não dava conta, ele não tinha condições de fazer nada. O menino era doente,\nproblemático, segundo ele. A Conselheira Tutelar endossa as declarações de Vantuir,\nmanifestando a impressão de que o menino parecia ter alguma deficiência, não sabendo\nse cognitiva ou de informação/conhecimento. RONALDO também confirma que a criança\ntinha \"problemas\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As provas constantes dos autos não induzem a um grau de certeza, a ponto \nde não existir nenhuma dúvida de que o menor Wellyton Henrique de fato trabalhava na\ncarvoaria. Embora estejam presentes indícios na fase administrativa, estes não foram\nconfirmados na fase judicial. O depoimento de Wellyton Henrique foi dispensado pelo\nMPF na audiência de instrução. Os demais depoimentos são contraditórios. Apenas a\nmãe da criança afirma que a criança ajudava no trabalho. Os demais depoimentos\ncolhidos na fase judicial não confirmam a situação de trabalho/produção da criança de\nforma estável e constante.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em vista disso, embora presentes nos elementos de informação indícios \nmínimos de materialidade do crime que teria Wellyton Henrique como vítima, - o que\nensejou o recebimento da denúncia -, o fato é que durante a instrução o Ministério Público\nFederal não conseguiu robustecer o arcabouço probatório a fim de espancar qualquer\ndúvida com relação à materialidade do crime de escravidão moderna com relação ao\nmenor Wellyton Henrique. A fragilidade probatória é evidente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não existindo certeza de que o menor trabalhava na carvoaria, de forma \nregular, estável e constante, não há que se falar em submissão à condição análoga à\nescravidão com relação ao menor, visto que o crime pressupõe uma relação de\ntrabalho/produção.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Este o cenário, é certo que não foram produzidas provas que embasem a \ncondenação, impondo-se a absolvição do acusado, com relação ao crime que teria como\nvítima Wellyton Henrique.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Todavia não existe dúvida da existência da relação de trabalho ente o \nacusado e as vítimas Vantuir e Marilene.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, o acusado RONALDO MORAIS DE OLIVEIRA foi denunciado como \nincurso nas penas do art. 149, caput e § 2o, inciso I, e no art. 297, § 4o (por duas vezes),\nna forma do art. 69, todos do Código Penal. Em vista da absolvição do crime com relação\nao menor, os crimes que restam analisar são os descritos no art. 149, caput, e no art. \n297, § 4o (por duas vezes), na forma do art. 69, todos do Código Penal. os\nquais possuem o seguinte conteúdo normativo:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer submetendo-o a \ntrabalhos forçados ou a jornada exaustiva, quer sujeitando-o a condições \ndegradantes de trabalho, quer restringindo, por qualquer meio, sua locomoção em \nrazão de dívida contraída com o empregador ou preposto:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à \nviolência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 297 - Falsificar, no todo ou em parte, documento público, ou alterar documento \npúblico verdadeiro:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a seis anos, e multa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "§ 4o Nas mesmas penas incorre quem omite, nos documentos mencionados no § 3o, \nnome do segurado e seus dados pessoais, a remuneração, a vigência do contrato de \ntrabalho ou de prestação de serviços.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 69 - Quando o agente, mediante mais de uma ação ou omissão, pratica dois ou \nmais crimes, idênticos ou não, aplicam-se cumulativamente as penas privativas de \nliberdade em que haja incorrido. No caso de aplicação cumulativa de penas de \nreclusão e de detenção, executa-se primeiro aquela.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A materialidade dos crimes está demonstrada nos seguintes elementos de \nprova: (a) notícia veiculada no portal de notícias \"maisgoiás\" -\nhttps://www.maisgoias.com.br (id. 355641479, p.p. 34/38); (b) relatório do Conselho\nTutelar (id. 355641479, p. 54); (c) notícias veiculadas em portais locais (355641479, p.p. \n82/91); (d) RAI N. 5288432 (id. 355641479, p.p. 106/125); (e) TERMOS DE\nDEPOIMENTO das vítimas Marilene Barbosa (id. 355641479, p.p. 126/130), Wellynton \nHenrique Barbosa Ramos (355641479. p.p. 134/136) e Vantuir Honoris da Silva\n(id. 355641479, p.p. 142/146); (f) TERMO DE DECLARAÇÕES de Vilmar Honorato de\nLima (id. 355641479, p.p. 148/150); (g) TERMOS DE DEPOIMENTO dos Policiais\nMilitares Eurípedes Barsanulfo da Silva Neto (id. 355641479, p.p. 180/182), Nilton Carlos\nRosa (id. 355641479, p.p. 186/188), Santeclair da Silva Neto (id. 355641479, p.p. \n192/194), Elves Vieira Célia (id. 355641479, p.p. 198/202) e Manoel Mendes de Morais\n(id. 355641479, p.p. 206/210); (h) Depoimentos colhidos em juízo de Nilton Carlos Rosa\ne Santeclair da Silva Neto no id. 1372720790), Marilene Barbosa e Vantuir Honoris da\nSilva no id. 1372720791, e Denis Flávia Rosa de Jesus no id. 1372720792; (i) \ninterrogatório do acusado (id. 1372720792).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Portanto, à luz dos documentos juntados ao processo, reconheço a \nexistência da materialidade dos crimes de redução a condição análoga à de escravo \n(art. 149, CP) e de falsificação de documento público (art. 297, §4o, CP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A autoria dos crimes também é evidenciada nos elementos de prova \ncolhidos na fase pré-processual, confirmados em juízo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O acusado, em audiência, afirma que era o único responsável pela carvoaria, \ntal afirmação é corroborada nos depoimentos de Vantuir e Marilene. Diante disso, o que \n o ocorria na carvoaria era de exclusiva responsabilidade do réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A relação de trabalho de Vantuir e Marilene se revela induvidosa, nas provas \ncolhidas na fase administrativa, em harmonia com o depoimento das vítimas e o\ninterrogatório do réu.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, passo a analisar as condições a que os trabalhadores Vantuir e \nMarilene estavam submetidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As provas constantes dos autos demonstram que Vantuir e Marilene estavam \nsubmetidos a condições degradantes de trabalho, com clara afronta aos direitos\nfundamentais dos trabalhadores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os depoimentos colhidos na fase administrativa e processual são uníssonos \n ao descrever as condições precárias de habitação e higiene de Vantuir, Marilene e do\nmenor Wellington.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como descrito pelo PM Santeclair da Silva Neto, eles habitavam em uma \npequena \"choça, coberta de plástico preto e algumas folhas de palmeira, a cama era tipo\num estaleiro, os lençóis pareciam mais baixeiro que roupa de cama, isso sem contar as\nvestimentas\"(...) encontraram um senhor todo sujo de carvão, de forma que era\nimpossível verificar qual era a cor da pele da pessoa. Perguntaram ao senhor quem era o\nproprietário, que respondeu que o patrão dele não estava e que fazia vários dias que ele\n(o patrão) não aparecia. Encontraram uma senhora (provavelmente esposa) em \"trajes de\nmendigo\"(...) Vantuir estava vestido só de calção, a senhora dele estava vestida só com\ntrapo, a criança estava toda suja com roupas imundas. Quando eles chegaram na\ncarvoaria a criança não estava trabalhando, naquele momento, mas a sujeira da roupa da\ncriança era de carvão (...). Questionados pelo PM eles responderam que faziam as\nnecessidades fisiológicas no mato, não tinha banheiro.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Denis Flávia Rosa de Jesus, - conselheira tutelar à época dos fatos -, afirma \nque as condições de moradia eram \"bem calamidade mesmo\", moravam em um\nranchinho de palha, sem nenhuma condição de higiene, só mesmo um teto, sem lateral.\n\"Eles (escola/comunidade) forneceram roupas e material escolar para a criança porque a\nfamília não tinha condições de comprar\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "São as mesmas as informações prestadas por Marilene: \"ela que preparava a \ncomida, não tinha fogão, ela preparava a comida na fornalha a lenha, não tinha cozinha,\nera do lado de fora, ao tempo. A casa era um barraco de plástico. Não tinha banheiro.\nTinham que fazer necessidade no mato\"(...) Não tinha cama, dormiam em cima de uma\ncama de pau roliço com uns pedaços de espuma por cima\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Idênticas às informações prestadas por Vantuir de que moravam em um \nbarraco de plástico, não tinha cozinha, banheiro, ou divisão de cômodos. O menino\ndormia com eles, em uma cama de troncos com espuma por cima. Para fazer as\nnecessidades era no meio do mato.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O acusado RONALDO MORAIS também confirma as condições de moradia \n ao afirmar que não tinha construção de tijolo para moradia, era rancho parecido com\naqueles de invasão, que é a prática em caso de carvoaria morar nestes ranchos porque é\nmoradia provisória.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "À propósito da justificativa da defesa pessoal do acusado, de que \"é prática \nem carvoaria morar nestes ranchos, por ser moradia provisória\", importante notar que\nVantuir diz que trabalhou para o acusado por 15 anos, RONALDO MORAIS confirma\nque Vantuir trabalhou na carvoaria por 5 anos. Portanto, não existe a situação de\nprovisoriedade, a moradia totalmente inadequada era permanente e foi utilizada por longo\nperíodo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Observo também que não era um trabalho itinerante que não permitisse a \nconstrução de moradia digna. A carvoaria funcionava de forma estável na fazendo do pai\ndo acusado, a toda evidência, por longos anos. Não existindo justificativa razoável para\na precariedade do abrigo e as condições de higiene praticamente inexistentes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Está devidamente comprovado nos autos que os trabalhadores não contavam \n com serviços de privada por meio de fossas ou similares, banheiro para banho, cozinha,\nou abrigo adequado. O alojamento era precário em barraco coberto de palha e lona, sem\nqualquer proteção lateral, expondo os trabalhadores às intempéries e a riscos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ficou também demonstrado que os trabalhadores eram expostos aos riscos \n inerentes à atividade laboral de carvoaria sem qualquer equipamento de proteção\nindividual. Rememore-se o depoimento do PM Santeclair que encontrou, quando da\ndeflagração da operação, Vantuir trabalhando só de calção e Marilene em andrajos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Este juízo não desconhece que alguns trabalhos acabam por expor o \ntrabalhador a agentes danosos. Todavia o fornecimento de IPI por parte do empregador\ndemonstra a intenção de minorar o risco. Lado outro, o não fornecimento de qualquer\nequipamento de proteção em atividade que lida com agentes perigosos e insalubres,\ncomo fogo, fumaça, pó de carvão, machados, motosserras, tratores, entre outros,\ndemonstra total menoscabo à segurança dos trabalhadores. Menoscabo este que se alia\nàs condições indignas de saúde e higiene, já demonstradas, destacando-se um quadro\ninequívoco de absoluto desprezo à dignidade da pessoa humana na relação de trabalho.\nSendo assim, não há como afastar o dolo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A ausência de condições mínimas de saúde, higiene e segurança são \nsuficientes para demonstrar o dolo e caracterizar o crime de redução a condição análoga\nà de escravo, que é o que se verifica claramente nos autos. As testemunhas que\npresenciaram as condições a que os trabalhadores estavam submetidos as descreveram\ncomo chocantes, conforme se extrai dos depoimentos das testemunhas Nilton\nCarlos, Santeclair da Silva e Denis Flávia, que estão em harmonia com os depoimentos\ndas vítimas e com os demais elementos de informação colhidos na fase pré-processual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A apreciação e valoração da situação pelas testemunhas, pessoas e \nautoridades da mesma comunidade ou de comunidades próximas, são importantes para\nembasar a interpretação subjetiva do juízo dos valores daquela comunidade para\numa situação normal, e o que foge do normal, configurando-se como situação abusiva e\nextraordinária dentro do contexto geográfico, econômico e social daquela região.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse contexto, as testemunhas que depuseram em juízo (em harmonia com \nos depoimentos colhidos na fase administrativa) traduzem em expressões muito fortes a\nimpressão de degradação das condições de dignidade humana a que os trabalhadores\nforam submetidos. Não existe dúvida de que a situação em que os trabalhadores viviam\neram de afastamento intolerável das condições de dignidade da pessoa humana, isso\nlocalizado no contexto geográfico, econômico e social da região onde o crime foi\ncometido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mesmo considerando as condições adversas que trabalhadores brasileiros \nenfrentam nas zonas rurais, a situação presente se afigura como extraordinária, pois não\nse trata de simples situação adversa comum em trabalho na zona rural, mas sim de\nsituação extrema e persistente de afronta à dignidade humana, pela submissão dos\ntrabalhadores a condições que violam o direito ao trabalho digno.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Mas não é só isso, a par das condições degradantes de trabalho o MPF \ncomprovou que não era respeitada a limitação legal da jornada de trabalho. Os\ntrabalhadores por ganhar por \"produção\", não tinham limitação de jornada diária de\ntrabalho, folgas semanais ou férias. Nas palavras de Vantuir, a função dele era cortar\nlenha, ajudar a puxar lenha, às vezes, colocar lenha no forno e tirar o carvão do forno. E\nle tinha que fazer um forno por dia, dava 6 fornos por semana. No domingo era dia de\nensacar o carvão. Trabalhava de domingo a domingo. Sem folga.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "E tem mais: o fornecimento de alimentação deficiente em qualidade e \nquantidade, a restrição da liberdade dos empregados de comprar a própria alimentação,\nja que o pagamento não era constante nem suficiente, e não havia acesso a meio de\ntransporte; o desconto do valor da alimentação no pagamento de Vantuir restando um\nvalor irrisório, - \"o dinheiro era pouco, a alimentação era pouca também\"-; os gêneros\nalimentícios que se resumiam a arroz feijão e macarrão; a ausência da carne - \" só\ncomiam carne quando sobrava de festa que eles faziam na fazenda\"-; a falta de\nassistência à saúde no caso do aborto espontâneo de Marilene; a falta de condições dos\npais de prover (roupas e material escolar) para a criança frequentar a escola, o que é\nindicativo do grau de miserabilidade a que os trabalhadores estavam submetidos; o\nfornecimento de cesta básica para a família por pessoas da cidade, que também indica o\ngrau de miserabilidade; a atitude do patrão de se apropriar das cestas básicas doadas; a\natitude do patrão de dizer que se a criança quisesse comer carne tinha que trabalhar;\nameaças veladas de Ronaldo de que iria levar a criança.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As situações descritas pelos trabalhadores em juízo, em boa parte \n confirmadas pelos elementos de informação da fase pré-processual e também em \ndepoimentos na fase judicial, formam uma colcha de retalhos na qual se vislumbra um\npanorama inequívoco de desrespeito aos direitos fundamentais da pessoa humana na\nrelação de trabalho. Tornando as condições de vida e sobrevivência humilhantes para um\nser humano livre e sujeito de direitos, assemelhando-se à condição de uma pessoa\nescravizada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não prospera a tese da defesa técnica de que só existe o crime de redução \n a condição análoga à de escravo quando existe privação à liberdade\nde autodeterminação mediante coação física ou moral às supostas vítimas, e que, no\ncaso, não houve coação, vez que Vantuir e Marilene poderiam decidir espontaneamente\npela aceitação do trabalho ou pela sua permanência no trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A violência e/ou coação explícita não é condição essencial para caracterizar o \ncrime, visto que da própria cominação da pena se extrai que a pena correspondente à\nviolência é independente. Muito menos a restrição da liberdade é condição indispensável\npara caracterizar o crime.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para configurar o crime de redução à condição análoga à de escravo basta a \ncomprovação de que o agente praticou apenas uma entre as situações contidas no tipo\npenal do artigo 149: (a) submissão fora do comum a trabalhos forçados ou a jornadas\nexaustivas; (b) sujeição a condições degradantes de trabalho; (c) restrição de locomoção\nem razão de dívida contraída com o empregador ou preposto.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A conjunção coordenada alternativa \"quer\", que separa as frases que \ndescrevem as condições que caracterizam o crime, não abre espaço para intepretação\ndiversa de que existe alternância entre estas condições. Interpreta-se, obrigatoriamente,\nque qualquer das condições satisfaz. A escolha do legislador por esta estrutura específica\nda língua portuguesa objetiva transmitir a ideia de alternância entre as condições e não o\nsomatório delas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A defesa técnica afirma que o casal escolheu permanecer no trabalho da \nfazenda de forma livre e consciente, pois extraiam do trabalho suas condições de\nvida, que existia uma relação de trabalho harmônica e respeitosa. Mas o que se\ndepreende dos depoimentos é que os trabalhadores não tinham outra opção, não se\nafigurava a eles qualquer alternativa de moradia ou meio de subsistência se eles\nabandonassem o trabalho na fazenda.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nas palavras de Marilene: \"pensavam em sair dali, mas não tinham recursos \npara arrumar uma casa para viver\". No depoimento de Vantuir: \"não saia da situação\nporque ele não tinha para onde ir. Falava em sair do serviço para o Ronaldo, o Ronaldo\nsempre dizia que ia melhorar para ele e pagar mais e depois não cumpria. A única vez\nque o Ronaldo o ameaçou foi quando ele falou que iria levar o caso para a polícia e o\nRonaldo disse que pagaria uns “noiado” para matá-lo\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda com relação à restrição de liberdade de locomoção e de determinação, \nobserva-se que ela não era ampla. Vantuir não podia dispor do seu salário para a compra\nde gêneros alimentícios, que eram comprados pelo patrão com valores descontados do\nseu pagamento. Ademais, Vantuir não recebia pagamentos mensais, os pagamentos\neram realizados a cada 3 ou 4 meses.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não existe qualquer confirmação da afirmação da defesa pessoal que os \npagamentos eram esporádicos a pedido do próprio Vantuir, que não queria receber\npagamento mensal para não gastar com coisas desnecessárias. Menos ainda de que\nquando era feito o pagamento, Vantuir recebia muito dinheiro.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ao contrário disso, Marilene testemunha que Vantuir recebia entre 300 a 400 \nreais da cada três ou quatro meses, e o próprio Vantuir afirma que \"ele (Ronaldo) pagava\n35 por forno. Depois que a mulher e o menino chegou o Ronaldo reduziu o valor, passou\na pagar 25 por forno (...) \"ele (Ronaldo) não pagava o valor todo que ele\n(Vantuir) ganhava, ele (Ronaldo) enrolava, dava uns 500 reais a cada 3/4 meses, e\ndepois ficava por isso mesmo\".",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os empregados também não tinham meio de transporte à disposição para se \ndeslocarem da carvoaria (na fazenda) para a cidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Este cenário não remete a uma situação de ampla liberdade de locomoção e \nautodeterminação, mas sim de privação constante e meios econômicos e materiais que\nimplicam em cerceamento de liberdade de locomoção e autodeterminação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por pertinente, colaciono a decisão proferida pelo STF em caso análogo de \nescravidão moderna, sem a presença de meios de coação direta contra a liberdade de ir e\nvir:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "EMENTA PENAL. REDUÇÃO A CONDIÇÃO ANÁLOGA A DE ESCRAVO. ESCRAVIDÃO \nMODERNA. DESNECESSIDADE DE COAÇÃO DIRETA CONTRA A LIBERDADE DE IR E \nVIR. DENÚNCIA RECEBIDA. Para configuração do crime do art. 149 do Código Penal, não \né necessário que se prove a coação física da liberdade de ir e vir ou mesmo o cerceamento \nda liberdade de locomoção, bastando a submissão da vítima “a trabalhos forçados ou a \njornada exaustiva” ou “a condições degradantes de trabalho”, condutas alternativas \nprevistas no tipo penal. A “escravidão moderna” é mais sutil do que a do século XIX e o \ncerceamento da liberdade pode decorrer de diversos constrangimentos econômicos e não \nnecessariamente físicos. Priva-se alguém de sua liberdade e de sua dignidade tratando-o \ncomo coisa e não como pessoa humana, o que pode ser feito não só mediante coação, mas \ntambém pela violação intensa e persistente de seus direitos básicos, inclusive do direito ao \ntrabalho digno. A violação do direito ao trabalho digno impacta a capacidade da vítima de \nrealizar escolhas segundo a sua livre determinação. Isso também significa “reduzir alguém a \ncondição análoga à de escravo”. Não é qualquer violação dos direitos trabalhistas que \nconfigura trabalho escravo. Se a violação aos direitos do trabalho é intensa e persistente, se \natinge níveis gritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas \nexaustivas ou a condições degradantes de trabalho, é possível, em tese, o enquadramento \nno crime do art. 149 do Código Penal, pois os trabalhadores estão recebendo o tratamento \n",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "análogo ao de escravos, sendo privados de sua liberdade e de sua dignidade. Denúncia \nrecebida pela presença dos requisitos legais.\n(Inq 3412, Relator(a): MARCO AURÉLIO, Relator(a) p/ Acórdão: ROSA WEBER, Tribunal \nPleno, julgado em 29-03-2012, ACÓRDÃO ELETRÔNICO DJe-222 DIVULG 09-11-2012 \nPUBLIC 12-11-2012 RTJ VOL-00224-01 PP-00284)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Assim, diante das provas dos autos, forçoso reconhecer que o acusado \nRONALDO MORAIS DE OLIVEIRA, de forma livre e consciente, reduziu Vantuir\nHonório da Silva (por tempo indeterminado, entre os limites de 05 a 15 anos, com termo\nfinal em janeiro de 2018) e Marilene Barbosa (por período aproximad0 de 6 meses, com\ntermo final em janeiro de 2018) a condições análogas à de escravo, submetendo-os a\njornada exaustiva, bem como sujeitando-os a condições degradantes de trabalho, a\nconfigurar o crime descrito no art. 149 do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A materialidade e autoria do crime descrito no artigo 297, § 4o do Código \nPenal também se revelam induvidosas, constando dos mesmos elementos de\nprova alinhavados a fim de demonstrar o crime descrito no art. 149, CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não havia registro do contrato de trabalho no documento público \ncorrespondente. Houve omissão total e absoluta de qualquer registro da relação de\ntrabalho na Carteira de Trabalho e Previdência Social dos empregados, com\nreflexo perante a previdência social.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os depoimentos dos trabalhadores é que o trabalho era informal e por tarefa, \nestas afirmações são harmônicas com as informações colhidas no interrogatório do réu. \nNão havia qualquer registro da atividade laboral dos trabalhadores. Reafirma a situação a\ndeclaração do réu de ter enfrentado processo trabalhista, em que reconheceu a relação\nde trabalho e pagou indenização à Vantuir.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "\"Prevalece no STJ que a simples omissão de anotação de contrato na CTPS \n já preenche o tipo penal descrito no § 4o do art. 297 do Código Penal. \nContudo, é imprescindível que a conduta preencha não apenas a tipicidade \nformal, mas antes e principalmente a tipicidade material. Indispensável, \nportanto, a demonstração do dolo de falso e da efetiva possibilidade de \nvulneração à fé pública.(...) A melhor interpretação a ser dada ao art. 297, § \n4o, do Código Penal, deveria passar necessariamente pela efetiva inserção \nde dados na Carteira de Trabalho, com a omissão de informação \njuridicamente relevante, demonstrando-se, da mesma forma, o dolo do \nagente em falsear a verdade, configurando efetiva hipótese de falsidade \nideológica, o que a tutela penal visa coibir.\" REsp 1.252.635/SP, relator \nMinistro Marco Aurélio Bellizze, 5a turma, julgado em 24/4/14, DJe de 2/5/14.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não é pertinente a alegação da defesa técnica que não pode haver \ncondenação com relação ao crime descrito no art. 297 ante inexistência de qualquer\nprova material do crime de falsificação de documento público. É suficiente a prova colhida\nem juízo da omissão do registro, explicitada no depoimento das vítimas e, especialmente,\nna confissão do réu, cuja força probatória é reforçada pelos demais elementos de prova\ndos autos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Diante do material probatório, inevitável admitir que o acusado RONALDO \nMORAS DE OLIVEIRA, de forma livre e consciente, omitiu nas Carteiras de Trabalho e\nPrevidência Social dos empregados Vantuir e Marilene, o \"nome do segurado e seus\ndados pessoais, a remuneração, a vigência do contrato de trabalho ou de prestação de\nserviços\", configurando o crime descrito no art. 297, §4o, do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DO CONCURSO FORMAL HOMOGÉNEO IMPRÓPRIO (ART. 70), DO \nCONCURSO MATERIAL (ART. 69) E DAS CIRCUNSTÂNCIAS",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O acusado, submeteu duas vítimas a jornada exaustiva, bem as sujeitou a \ncondições degradantes de trabalho, ou seja, em um conjunto de condutas unificadas,\nsubjugou 02 vítimas, atingindo 02 bens jurídicos distintos, a liberdade pessoal e a\ndignidade de cada trabalhador (Vantuir e Marilene), reduzindo-os à condição análoga a de\nescravos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O agente autuou com desígnios autônomos, almejando dolosamente a \nprodução de todos os resultados. Assim, aplica-se a regra do art. 70 CP, in fine,\ncumulando as penas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nos dois crimes de falso, o acusado mediante condutas distintas, omitiu os \nregistros obrigatórios nas CTPS de dois empregados, Vantuir e Marilene. Reconhecida a\nautonomia dos delitos, aplicam-se cumulativamente as penas privativas de liberdade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os crimes de falso e os crimes de escravidão, são igualmente autônomos, \nportanto, somam-se as penas privativas de liberdade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O MPF não comprovou circunstâncias judiciais que extrapolem o tipo penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por fim, aplica-se a atenuante de confissão, mesmo a confissão sendo \nparcial, do art. 65, \"d\", CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "III - DISPOSITIVO",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Posto isso, julgo parcialmente procedente a denúncia ofertada pelo MPF \npara:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) absolver RONALDO MORAIS DE OLIVEIRA do crime descrito no art. \n149, § 2o, I, com relação à vítima WELLYNTON HENRIQUE BARBOSA RAMOS, com\nfundamento no art. 386, VII, do CPP;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) condenar RONALDO MORAIS DE OLIVEIRA pelos crimes descritos no \n art. 149, caput, do Código Penal, por duas vezes em concurso formal homogêneo\nimpróprio (art. 70, CP), com relação às vítimas Vantuir e Marilene, e no art. 297, §\n4o, do Código Penal, por duas vezes em concurso material (art. 69, CP).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo a dosar a pena, atento ao sistema trifásico de dosimetria, previsto no \nart. 68 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "DOIS CRIMES DE REDUÇÃO A CONDIÇÃO ANÁLOGA À DE ESCRAVO, \nCOMETIDO POR TEMPO INDETERMINADO, ENTRE OS LIMITES DE 05 A 15 ANOS,\nCOM TERMO FINAL EM JANEIRO DE 2018, TENDO COMO VÍTIMA VANTUIR\nHONÓRIO DA SILVA, E NO PERÍODO APROXIMADO DE 06 MESES, COM TERMO\nFINAL EM JANEIRO DE 2018, COM RELAÇÃO À VÍTIMA MARILENE BARBOSA \n(ART. 149, CAPUT, DO CÓDIGO PENAL)",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer submetendo-o a trabalhos \nforçados ou a jornada exaustiva, quer sujeitando-o a condições degradantes de trabalho, \nquer restringindo, por qualquer meio, sua locomoção em razão de dívida contraída com o \nempregador ou preposto:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a oito anos, e multa, além da pena correspondente à \nviolência.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Primeiro crime - vítima Vantuir Honório da Silva",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, examino as circunstâncias judiciais (art. 59 do Código \nPenal). A culpabilidade é normal. O réu não é reincidente. Não há elementos para valorar\na conduta social, a personalidade do condenado e o comportamento da vítima. Os\nmotivos, circunstâncias e consequências do crime são comuns. Fixo a pena-base em 2\n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, não há agravante a ser considerada. Presente a atenuante \nde confissão (art. 65, III, d, CP), não aplicável vez que a pena base foi estabelecida no\nmínimo legal (Súmula 231-STJ).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase, sem majorantes ou minorantes. Torno definitiva a pena de 2 \n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deverá ser considerado como valor do dia-multa, o correspondente a 1/10 \n(um décimo) do salário mínimo vigente à época dos fatos, uma vez que, no seu\ninterrogatório, o réu declarou que afere uma renda aproximada de 6 a 7 mil reais por\nmês.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Segundo crime - vítima Marilene Barbosa",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, examino as circunstâncias judiciais (art. 59 do Código \nPenal). A culpabilidade é normal. O réu não é reincidente. Não há elementos para valorar\na conduta social, a personalidade do condenado e o comportamento da vítima. Os\nmotivos, circunstâncias e consequências do crime são comuns. Fixo a pena-base em 2\n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, não há agravante a ser considerada. Presente a atenuante \nde confissão (art. 65, III, d, CP), não aplicável vez que a pena base foi estabelecida no\nmínimo legal (Súmula 231-STJ).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase, sem majorantes ou minorantes. Tono definitiva a pena de 2 \n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deverá ser considerado como valor do dia-multa, o correspondente a 1/10 \n(um décimo) do salário mínimo vigente à época dos fatos, uma vez que, no seu\ninterrogatório, o réu declarou que afere uma renda aproximada de 6 a 7 mil reais por\nmês.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "DOIS CRIMES DE FALSIFICAÇÃO DE DOCUMENTO PÚBLICO POR \nOMISSÃO DE REGISTRO NA CTPS (ART. 297, §4o, CP)",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Art. 297 - Falsificar, no todo ou em parte, documento público, ou alterar documento \npúblico verdadeiro:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pena - reclusão, de dois a seis anos, e multa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "§ 4o Nas mesmas penas incorre quem omite, nos documentos mencionados no § 3o, nome \ndo segurado e seus dados pessoais, a remuneração, a vigência do contrato de trabalho ou \nde prestação de serviços.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Primeiro crime - omissão de registro Vantuir Honório da Silva",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, examino as circunstâncias judiciais (art. 59 do Código \nPenal). A culpabilidade é normal. O réu não é reincidente. Não há elementos para valorar\na conduta social, a personalidade do condenado e o comportamento da vítima. Os\nmotivos, circunstâncias e consequências do crime são comuns. Fixo a pena-base em 2\n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, não há agravante a ser considerada. Presente a \natenuante de confissão (art. 65, III, d, CP), não aplicável vez que a pena base foi\nestabelecida no mínimo legal (Súmula 231-STJ).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase, sem majorantes ou minorantes. Torno definitiva a pena em \n02 (dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deverá ser considerado como valor do dia-multa, o correspondente a 1/10 \n(um décimo) do salário mínimo vigente à época dos fatos, uma vez que, no seu\ninterrogatório, o réu declarou que afere uma renda aproximada de 6 a 7 mil reais por\nmês.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Segundo crime - omissão de registro de Marilene Barbosa",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na primeira fase, examino as circunstâncias judiciais (art. 59 do Código \nPenal). A culpabilidade é normal. O réu não é reincidente. Não há elementos para valorar\na conduta social, a personalidade do condenado e o comportamento da vítima. Os\nmotivos, circunstâncias e consequências do crime são comuns. Fixo a pena-base em 2\n(dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, não há agravante a se considerar. Presente a \natenuante de confissão (art. 65, III, d, CP), não aplicável vez que a pena base foi\nestabelecida no mínimo legal (Súmula 231-STJ).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase, sem majorantes ou minorantes. Torno definitiva a pena em \n02 (dois) anos de reclusão e 10 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deverá ser considerado como valor do dia-multa, o correspondente a 1/10 \n(um décimo) do salário mínimo vigente à época dos fatos, uma vez que, no seu\ninterrogatório, o réu declarou que afere uma renda aproximada de 6 a 7 mil reais por\nmês.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "CONCURSO FORMAL HETEROGÊNEO IMPRÓPRIO (ART. 70) E \nCONCURSO MATERIAL (art. 69 do CP)",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Art. 70 - Quando o agente, mediante uma só ação ou omissão, pratica dois ou mais \ncrimes, idênticos ou não, aplica-se-lhe a mais grave das penas cabíveis ou, se iguais, \nsomente uma delas, mas aumentada, em qualquer caso, de um sexto até metade. As \npenas aplicam-se, entretanto, cumulativamente, se a ação ou omissão é dolosa e os \ncrimes concorrentes resultam de desígnios autônomos, consoante o disposto no \nartigo anterior.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 69 - Quando o agente, mediante mais de uma ação ou omissão, pratica dois ou \nmais crimes, idênticos ou não, aplicam-se cumulativamente as penas privativas de \nliberdade em que haja incorrido. No caso de aplicação cumulativa de penas de \nreclusão e de detenção, executa-se primeiro aquela.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Considerando que o réu, mediante uma ação praticou dois crimes de \nescravidão moderna, de forma dolosa e com desígnios autônomos, caracterizando\nconcurso formal heterogêneo impróprio, e mediante mais de uma ação praticou dois\ncrimes de falso, autônomos também com relação aos crimes de escravidão moderna,\ncaracterizando concurso material, aplicam-se cumulativamente todas as penas em que\nhaja incorrido.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Somando-se as penas, o montante totaliza 08 (oito) anos de reclusão e \n40 dias multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Fixo o regime semi-aberto para o início do cumprimento da pena (art. 33, \n§ 2o, \"b\", do CP).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Considerando o quantum da pena corporal, é inviável a substituição da pena \nprivativa de liberdade por restritiva de direitos (CP, art. 44, inciso I).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Condeno o acusado ao pagamento das custas processuais.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Concedo ao réu o direito de recorrer em liberdade, porquanto \npermaneceu nessa condição ao longo de toda a instrução, inexistindo fato novo\nque justifique a custódia neste momento.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Transitada em julgado:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) comunique-se ao Tribunal Regional Eleitoral e inclua-se essa \ninformação no SINIC – Sistema Nacional de Informações Criminais;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) expeça-se a guia de recolhimento, encaminhando-a a uma das Varas \nde Execução Penal da Comarca de Goiânia-GO, que deverá intimar o réu para dar\ninício ao cumprimento da pena (art. 23, Res. CNJ no 417/2021).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Goiânia-GO, data e assinatura eletrônicas.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Juiz Federal PAULO AUGUSTO MOREIRA LIMA",
+      "label": "OUTROS"
+    }
+  ]
+}

@@ -1,0 +1,1056 @@
+{
+  "index": 8,
+  "doc_id": 8,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 43,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Tucuruí-PA \nVara Federal Cível e Criminal da SSJ de Tucuruí-PA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"A\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1003228-16.2020.4.01.3907 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) \nPOLO PASSIVO:ROGERIO ALMEIDA DA CUNHA e outros \nREPRESENTANTES POLO PASSIVO: CADSON LOPES SILVA - PA022203",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "1. RELATÓRIO\n\nTrata-se de denúncia formulada pelo Ministério Público Federal em face de \nDomingos Sousa dos Santos, Rogério Almeida da Cunha, Edilson de Souza França; Joicilene\ndos Santos Costa e Rafael Brito Sousa, como incursos nas penas dos crimes previstos nos art.\n149, com a majorante do § 2o, inciso I, e artigo 288, ambos do Código Penal em concurso com o\ndelito do art. 1o, inciso II, com a majorante do inciso II do § 4o, tudo da Lei n. 9.455/97.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "De acordo com a peça acusatória, entre 1997 e 2022, os réus reduziram diversas \npessoas a condição análoga à de escravo, inclusive crianças e adolescentes, submetendo-as a\ntrabalhos forçados, jornada exaustiva e condições degradantes de trabalho no estabelecimento\n\"Mesa de Bar\" (Tucuruí/PA) e na Comunidade São Lucas (Baião/PA).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Nesse mesmo contexto fático-temporal, na Comunidade São Lucas (Baião/PA), os \nréus submetiam diversas pessoas sob sua guarda, poder e autoridade, inclusive crianças e\nadolescentes, a intenso sofrimento físico e mental, como forma de aplicar castigo pessoal e\nmedida de caráter preventivo, valendo-se do emprego de violência e grave ameaça (art. 1o, II, §\n4o, II, Lei n. 9.455/97), bem como associaram-se para o fim específico de cometer crimes\ndiversos, dentre eles os de submeter trabalhadores a condição análoga à de escravo e de tortura\n(art. 288, CP).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 18/07/2022 (id 1216091771 - Pág. 2).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em 19/07/2022 foi realizada audiência para oitiva cautelar das testemunhas de \nacusação: Ahlamah Alves da Silva, Hellen do Socorro Holanda Alves, Yeon Gibo Alves da Silva,\nAry Ramos Correa, Raymison Jaspe Costa Correa, Roberto Sandro Patricio Americo, Anderson\nCorrea da Costa e Aderson Silva da Conceição (id. 1221662775)",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Citados, os réus apresentaram respostas às acusações, Domingos (id 1313814285),\nEdilson (id 1313867792), Joicilene (id 1313897775), Rafael (id 1313925247) e Rogério (id\n1313925268).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A decisão id. 227435879 - Pág. 77 afastou as preliminares e rejeitou os pedidos de \nabsolvição sumária.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na fase de instrução probatória, em audiência realizada no dia 13/10/2022 (id \n1355459766 - Pág. 1), foram ouvidas as testemunhas de acusação Vanusa Vidal Zenha e\nRhetysina de Oliveira Barbosa e as testemunhas de defesa Luis Antônio Araújo Lima; Ana\nRoberta de Oliveira Araújo; Joaquim Pereira da Mata; Jarnayra Conceição da Mata. Na\noportunidade, Diego Peixoto Bandeira foi ouvido na condição de informante.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Ato seguinte, em audiência realizada dia 14/10/2022, foram ouvidas como \ntestemunhas de defesa Ane Caroline da Costa Santos e Ailton do Nascimento Cruz e como\ninformantes Lucas Costa de Souza; Gleciane da Silva Cunha e Anny Gyrrel Peixoto Lima.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "No dia 17/10/2022 foram ouvidas as testemunhas de defesa Bárbara Fernandes \nLima; Marciane Pereira dos Santos; Eli Olan Pinheiro Silva; Wilson Silva Junior; Carlos Alberto\nPereira da Silva Junior; Dulcineia Machado Cantão; Max Orlando Ramos Veiga; Jeová José\nSantos da Conceição; Aline Ferreira Pedra; Ehloeh Thammim Costa Correa (a última na condição\nde informante).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Os réus foram interrogados na audiência realizada dia 10/11/2022 (id. 1390287272 -\nPág. 1), oportunidade em que a defesa requereu a revogação das prisões preventivas, mantidas\npela decisão id. 1391367814.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na fase do art. 402 do CPP, a defesa apresentou os requerimentos de id. \n1398163251, indeferidos na decisão id. 1400965789.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Alegações finais pelo Ministério Público Federal no id. 1413969748 e pela defesa \nnos ids. 1500999863, 1501336349, 1501336357, 1501336358 e 1501336356.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Vieram-me os autos conclusos para sentença.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "É o relatório. Decido.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "2. FUNDAMENTAÇÃO\n\nPara melhor organização da sentença e compreensão dos fatos, os crimes \nimputados aos denunciados serão apreciados isoladamente.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.1. CONTEXTUALIZAÇÃO FÁTICO-TEMPORAL\n\nOs fatos apontados na presente ação penal são de elevada complexidade e \nocorreram no interior da “Comunidade São Lucas”. Esta comunidade foi criada no ano de 1997,\nquando o seu então líder Ailson, pastor de uma igreja evangélica em Belém/PA, reuniu pessoas\ncom a finalidade de fundar uma comunidade na zona rural do município de Baião/PA. Nesta\ncomunidade todos teriam direitos iguais e contribuiriam para o benefício comum\n(https://lucasminhacomunidade.blogspot.com/).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia aponta que, com o passar dos anos, o então líder e seus associados, \nincluindo os denunciados, passaram a explorar do trabalho de membros da comunidade,\ninclusive crianças e adolescentes, até o ponto de reduzi-los à condição análoga a de escravidão.\nPara tanto, valiam-se de elementos religiosos para coagir as vítimas a cumprir suas ordens e\nsatisfazer suas vontades, sob pena de punições físicas e morais.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "No ano de 2015, os dirigentes da comunidade passaram a administrar um bar no \nMunicípio de Tucuruí/PA denominado “Nossa Mesa de Bar”, onde atualmente diversos membros\nda comunidade trabalham de modo contínuo ou intermitente, além de desenvolverem outras\natividades.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O trabalho análogo ao de escravo ocorria tanto no estabelecimento \"Mesa de Bar\" \n(Tucuruí/PA) quanto na Comunidade São Lucas (Baião/PA), havendo trânsito dos mesmos\ntrabalhadores entre os dois locais.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia aponta ainda que os réus praticavam tortura contra os integrantes da \ncomunidade, incluindo menores, que infringiam as regras de subordinação. Com o óbito do líder\ne fundador da comunidade, Ailson, em 29/12/2021, os réus, que já faziam parte da cúpula da\ncomunidade, teriam assumido de vez a liderança local.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O conjunto das provas, embora seja complexo, aponta para o cometimento dos \ndelitos indicados na acusação, conforme passo a demonstrar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.2. DO CRIME PREVISTO NO ART. 149 DO CP\n\nDispõe o teor do art. 149 do Código Penal (Decreto-Lei no 2.848/1940), com a \nredação alterada pela Lei n. 10.803/03:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer \nsubmetendo-o a trabalhos forçados ou a jornada exaustiva, quer \nsujeitando-o a condições degradantes de trabalho, quer restringindo, \npor qualquer meio, sua locomoção em razão de dívida contraída com o \nempregador ou preposto: \n\nPena - reclusão, de dois a oito anos, e multa, além da pena \ncorrespondente à violência. \n\n§ 1o Nas mesmas penas incorre quem: \n\n\nI – cerceia o uso de qualquer meio de transporte por parte do \ntrabalhador, com o fim de retê-lo no local de trabalho; \n\nII – mantém vigilância ostensiva no local de trabalho ou se apodera de \ndocumentos ou objetos pessoais do trabalhador, com o fim de retê-lo \nno local de trabalho. \n\n§ 2o A pena é aumentada de metade, se o crime é cometido:\n\nI – contra criança ou adolescente;\n\nII – por motivo de preconceito de raça, cor, etnia, religião ou origem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A alteração promovida pela Lei 10.803/03, ao indicar o que pode ser considerado \ncomo situação análoga à de escravo, não se limitou a apontar o cerceamento da liberdade como\núnico elemento normativo típico único. A submissão do indivíduo a trabalhos forçados, jornada\nexaustiva ou condições degradantes de trabalho, em caráter alternativo, igualmente configuram a\nprática delitiva.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A nova lei também passou a prever duas hipóteses de causas especiais de aumento \nde pena, direcionadas a punir com maior vigor eventos em que o delito fosse cometido contra\ncriança ou adolescente ou fosse praticado por motivo de preconceito de raça, cor, etnia, religião\nou origem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Neste particular, promoveu a ampliação da sanção, já que, quanto às condutas \ntipificadas no caput e nos incisos do §1o, manteve os patamares de pena privativa de liberdade,\nporém, positivou a possibilidade de legítimo agravamento da reprimenda em razão do\nreconhecimento de desígnios específicos que consubstanciassem violência de maior\nreprovabilidade em detrimento do obreiro, especificamente esclarecidos no §2o.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Logo, aplicando-se a inteligência da súmula 711 do STF, que admite a aplicação da \nlei penal mais grave ao crime continuado ou ao crime permanente, se a sua vigência é anterior à\ncessação da continuidade ou da permanência, percebe-se que as alterações introduzidas no art.\n149 do CP pela Lei n. 10.803/2003 alcançam o objeto desta ação penal, porquanto os supostos\nfatos narrados na denúncia remetem ao período entre 1997 e 2022.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "a) Materialidade \n\nConforme apontado, a redução a condição análoga à de escravo é um crime de \nação múltipla ou conteúdo variado, considerando-o praticado se quaisquer dos verbos nucleares\nestiverem presentes, ainda que isoladamente. Considera-se caracterizado o crime, quer seja pela\nsubmissão a trabalhos forçados; quer seja pela existência de jornada exaustiva; pela sujeição a\ncondições degradantes de trabalho; ou ainda pela restrição de sua liberdade em razão de dívida\ncontraída.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre \"reduzir a condição análoga à de escravo\", leciona Bitencourt: \"Reduzir \nsignifica sujeitar uma pessoa a outra, em condição semelhante à de escravo, isto é, a condição\ndeprimente e indigna. Consiste em submeter alguém a um estado de servidão, de submissão\nabsoluta, semelhante, comparável à de escravo. É, em termos bem esquemáticos, a submissão\ntotal de alguém ao domínio do sujeito ativo, que o reduz à condição de coisa.\" (BITENCOURT,\nCezar Roberto. Tratado de Direito Penal. São Paulo: Saraiva, 2010, p. 427).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No presente caso, a acusação imputa aos réus a submissão das vítimas ao trabalho \ndegradante, forçado e a jornadas exaustivas. A materialidade foi robustamente comprovada.\nVejamos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Entre 18/5/2022 e 2/7/2022, durante uma ação fiscal realizada pelo Grupo Especial \nde Fiscalização Móvel -GEFM, foi constatado que 55 trabalhadores, incluindo crianças e\nadolescentes, foram submetidos a condições similares à de escravidão, envolvendo trabalho\nforçado, condições degradantes e jornadas exaustivas (conforme o relatório de fiscalização com\nid no 1215049271). Outras 12 vítimas foram identificadas, mas não faziam mais parte da\ncomunidade. Portanto, foram identificadas nominalmente um total de 67 vítimas (id.\n1215049271).",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Segundo a análise técnica dos auditores do trabalho, todas as pessoas encontradas \nem atividade no bar e nos serviços considerados como acessórios ou de apoio apresentavam os\nelementos fático-jurídicos da relação de emprego. Ademais, os denunciados exerciam o poder\ndiretivo sobre os trabalhos desenvolvidos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre a natureza empresarial da atividade, esclarece-se que a Comunidade Lucas \nfuncionava como uma organização econômica, com interesses definidos e sob o controle de\nlíderes que exerciam notório comando nas atividades dos demais membros, não havendo\nqualquer característica de associativismo, cooperativismo, trabalho voluntário ou serviço religioso.\nA natureza empresarial ficou clara para toda a equipe que realizou a inspeção (id. 1215049271 -Pág. 10).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A investigação demonstrou que os réus exerciam dominação física, psicológica e \neconômica sobre as vítimas, valendo-se de violência, ameaça e severa doutrinação ideológica\ndos membros da comunidade, com a utilização de viés religioso, fazendo-os acreditar que a\ncessão gratuita da sua força de trabalho, dos seus bens e dos seus direitos era uma forma de\nvivência fraterna e de se alcançar algum privilégio espiritual.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os primeiros trabalhadores foram atraídos pelo anseio de criar uma comunidade \nfundada na cooperação, solidariedade e divisão igualitária dos bens auferidos e produzidos. O\ntrabalho sem remuneração era, inclusive, institucionalizado, nos termos da ata de constituição da\nComunidade Lucas, de 27/05/2015: “toda renda será revestida para que residem na Comunidade\nLucas (...) os próprios moradores (...) caberá a tarefa de trabalhar e desenvolvê-lo e nenhum dos\nmoradores fará retirada de algum valor para si, sendo que será retirado somente para calçados,\nalimentação, uniforme e remédios dos que trabalham no bar e restaurante e a renda bruta será\nrevestida nos que moram e residem na Comunidade Lucas” (id. 1016472765 - Pág. 24).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Contudo, os depoimentos prestados, os objetos e os documentos apreendidos (id. \n1215049271 - Pág. 1 e ss.) indicam que se desenvolveu uma conjuntura de forte submissão dos\nmembros, ficando a cargo dos líderes da comunidade a utilização, em proveito próprio, da mão\nde obra e dos benefícios sociais/previdenciários destinados à maioria dos seus membros, bem\ncomo o gozo de melhores condições de vida, alimentação e moradia, além da decisão sobre\naplicação de punições, tais como castigos físicos, psicológicos, expulsão dos membros etc.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Consta do relatório (id 1215049271 - Pág. 25): \n\n\n“Os membros da Comunidade, de modo geral, também mostravam respeito \naos líderes em decorrência do temor de punição em caso de insubordinação; \nhistórias de castigos e repreensões cruéis contra aqueles que não seguiam \nas regras impostas puderam ser apuradas em depoimentos de trabalhadores \nque já haviam deixado o local. Entre os objetos apreendidos, foram \nencotradas inscrições em cadernos que mostraram a existência de um \ntribunal próprio onde os insubordinados eram julgados e sentenciados \npelos líderes - tais sentenças incluíam, por exemplo, obrigação de \nsilêncio duradouro e outras punições, como a raspagem da cabeça de \nmulheres e de crianças. Além disso, instrumentos para castigos físicos, \ncomo bastões com a inscrição “Disciplina” e espadas de madeira, \ntambém foram objeto de apreensão pela Polícia Federal”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre o bastão com a inscrição “Disciplina”, a colheita probatória demonstrou que \nera utilizado para aplicar punições aos membros da comunidade que descumprissem as ordens\nestabelecidas pelos líderes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A defesa dos réus, acerca deste bastão, afirmou que (id no 1500999863): \n\n\n“a régua de madeira escrito “disciplina” é utilizado por um cadeirante que vive \nna comunidade Lucas, que se chama Antônio Araújo Lima, que confirmou em \naudiência de maneira inequívoca, sem ser contestado, para que utilizava este \ninstrumento, informando que como é cadeirante, utilizava-se da régua, para \npegar objetos que ficavam mais alto, em prateleiras.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Essa versão dos fatos, apesar de corroborada pela testemunha Antônio Araújo Lima \nem seu depoimento, não é digna de fé. O bastão de disciplinamento não foi encontrado em poder\nde Antônio Araújo Lima, tendo sido apreendido em residência distinta do seu endereço (Avenida\nMagalhães Barata, no 21, Bairro Jardim Colorado, na cidade de Tucuruí).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Abaixo segue foto do bastão de madeira (id no 1211089268 -.fls. 67-70 e id no \n1211089267 - fl. 6):",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Sobre a natureza empresarial das atividades econômicas desempenhadas, a \nauditora fiscal do trabalho, Vanusa Vidal Zenha, ouvida em juízo como testemunha, declarou:\n\n(...) tecnicamente ficou muito claro que funcionava como uma organização \nempresarial, era uma empresa que tem objetivos definidos, interesses \ndefinidos e controle de determinadas pessoas (....). Segundo depoimento de \ntodas as testemunhas que a gente ouviu, a alimentação que era escassa, era \ncomo uma forma de pagamento, quem não desagradasse os líderes teria \nalimentação, em que pese fosse escassa, quem não fizesse isso ficaria com \nfome. Além disso fazia os castigos físicos e a atuação psicológica. A \ngente viu poucos ligados ainda pela questão religiosa, a gente entendeu \nque a maioria na verdade hoje (...), as pessoas são muito mais presas \npor medo do que por questão religiosa (...). na comunidade, as mulheres \nque eu entrevistei, por exemplo, ficavam de cabeça baixa e não respondiam \nabsolutamente nada, você via o medo e o pavor nos olhos delas de \nresponder qualquer coisa. No bar, segundo as testemunhas, o tempo para \ndescanso era muito curto (...). É consenso de que ninguém recebia os \nbenefícios assistenciais do governo, todo valor é entregue nas mãos \ndos líderes. Na minha percepção, obviamente a operação vazou. Quando a \ngente chegou, as crianças estavam arrumadas como se fosse para uma \nfesta, as mulheres todas de batom, não tinha um adolescente, não tinha um \nadolescente. As pessoas estavam muito treinadas, as mulheres não falavam \n(...) teve uma senhora que eu ouvi, que ela conversou comigo o tempo inteiro \nde cabeça baixa, ela não me respondia nem balançava a cabeça, eu só via o \ntemor na expressão do corpo dela.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Necessário ainda salientar a utilização de armas de fogo na comunidade, que para \nalém das atividades próprias de caça e proteção das pessoas lá residentes, integravam o\ncontexto de opressão que sofriam as vítimas, coagidas pelos réus. Transcrevo abaixo trecho do\nRelatório de Análise da Polícia Judiciária:\n\n\"Considerando que quando da chegada da equipe foi observado que \numa pessoa (provavelmente do sexo masculino) \"correu\" em direção a \nmata, a equipe adentrou alguns metros em uma trilha. No retorno \ndesta trilha foi encontrado escondido próximo a uma árvore uma \narma de fogo (espingarda de cartucho), alguns arpões de caça e \nduas espadas de metal. Destaca-se que no primeiro dia das buscas \nestes objetos não foram encontrados e algumas das pessoas que \nresidiam no local informaram que não existiam armas. Aliás, mesmo \ndepois da apreensão alguns informaram que nunca tinha visto aquela \narma lá, e outros disseram que era normal ter arma de caça na \nlocalidade, mas que nunca viram aquela arma na localidade \n(desconversaram)\" (id. 1211089268).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A intimidação exercida pelos réus foi relatada por ex-integrantes da comunidade, \ncomo relata Aderson Silva da Conceição:\n\n“(...) que saiu mais ou menos há 07 ou 08 anos; (...) que conseguiu \nfugir da Comunidade depois que começou a trabalhar fora da \nComunidade (...); que, por trabalhar no bar, conheceu pessoas e \nsolicitou ajuda de uma dessas pessoas para que providenciasse um \ncarro para o depoente pudesse fugir (...); que ainda passou 03 dias em \nTucuruí escondido; que tinha medo de os líderes resgatarem o \ndepoente de volta (...) (Wanderclei de Oliveira Costa – id. \n1354767747);\n\n(...) Nesse período que eu saí de lá, eu tive que sair fugido de lá. O \nAilson, com esse conselho que tem lá – Rogério, Domingos, estava \nlá o Rafael, eles me colocaram na roda e disseram pra mim dar \numa palavra pra eles. Eu tinha que escolher ou minha família ou eles. \nSaí de lá não falei nada abaixei minha cabeça (...) quando foi à noite, \nque era para ir pro bar, eu tive que inventar uma doença, de lá peguei \nas minhas coisas e fui embora”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(Aderson Silva da Conceição – id. 1233135791: 10min42)",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "Perante o Ministério Público do Estado do Pará, Edilene Lopes de Araújo prestou \ndepoimento em que apresentou as seguintes informações:\n\n“Que conheceu a comunidade Lucas através do seu marido, que \ntrabalhava no Mesa de bar e foi morar na mesa de bar com ele porque \no marido não podia sair da comunidade. Que quando entrou para a \ncomunidade, em 2015, foi destacada para trabalhar na cozinha do \nMesa de bar. Que depois de 5 meses foi enviada para morar na \nzona rural da comunidade por determinação dos líderes por ter se \nnegado a trocar de marido. Que após 3 meses da ida da depoente \npara a cidade, afim de trabalhar no mês e de bar, o marido Ari também \nfoi para ficar com ela; porém sem autorização do conselho. Que na \nmesma semana o marido foi obrigado a retornar para a área rural, \nenquanto a depoente foi obrigada a permanecer no Mesa de bar”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Condições degradantes são aquelas extremamente precárias, que não propiciam \nsatisfação das necessidades mínimas de existência, imprescindíveis à vida com dignidade e\ntratamento do ser humano como pessoa livre, e não como coisa. A condição degradante há de\nser aquela que notadamente reduza o trabalhador à condição análoga à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As provas reunidas demonstram o trabalho em condições degradantes, confirmando \nas seguintes, dentre outras:\n\na) alojamentos não possuíam condições adequadas de segurança, vedação,\nhigiene, privacidade e conforto; \n\nb) os alojamentos não possuíam cômodos suficientes para acomodar todos os \ntrabalhadores;\n\nc) os réus deixaram de implementar ações de segurança e saúde que visassem à \nprevenção de acidentes e doenças decorrentes do trabalho em todas as unidades \nde produção;\n\nd) as refeições eram preparadas em fogão a lenha, contudo, o ambiente onde \nestava instalado não possuía paredes e o piso era de terra batida, situações que \nfacilitavam a entrada de animais e de poeiras e intempéries, podendo contaminar os \nalimentos;\n\ne) insuficiência quantitativa e qualitativa de alimentos (id. 1215049271 - Pág. 1).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A atuação fiscalizatória do Estado revelou a existência de grande esquema \norganizado pelos réus, que reduziram diversas pessoas a condições de trabalho análogas à de\nescravo. O contexto de intimidação a que submetidos os trabalhadores, as precárias condições\nde trabalho, a ausência de recebimento de salários e de controle de jornadas, diante do conjunto\nprobatório coligido, comprovam a prática do crime previsto no art. 149 do CP.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "b) Autoria \n\nA despeito de os réus negarem o exercício de qualquer liderança, a instrução \nprobatória comprovou que os réus eram responsáveis pelo gerenciamento das atividades\ndesenvolvidas nos empreendimentos Nossa Mesa de Bar e da movelaria existente na\nComunidade São Lucas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Nesse sentido, a testemunha Vanusa Vidal Zenha declarou em audiência:\n\n“A gente entendeu que funcionava como uma empresa, em que o Rogério \nseria o presidente e abaixo dele três deles eram responsáveis pela área \nrural, que eram Domingos, Joicilene e José Francisco, e outros quatro \neram responsáveis pela área urbana, que seriam o bar, a mercearia, que \nseriam Edilson, Rafael, Ailton e Maria da Conceição. E uma nona pessoa \nque seria Janayra, que é responsável pela parte administrativa (...). apesar de \nestarem divididos em duas áreas, o Domingos, abaixo do Rogerio, tem uma \nposição de destaque. No depoimento de absolutamente todas as \ntestemunhas que ouvimos, a subordinação era em relação a essas \npessoas, eram quem distribuíam as tarefas (...) a jornada nem era \nfiscalizada porque não podia ficar parado, tinha que trabalhar todo o \ntempo”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O papel de liderança do réu Domingos Sousa dos Santos remonta aos primeiros momentos da \ncomunidade, pois era pessoa de confiança do fundador da comunidade, Ailson. Consta dos diversos\ndepoimentos prestados e do relatório da investigação realizada, que no estabelecimento Nossa Mesa de Bar, o\ncaixa em dinheiro era controlado pelo falecido Ailson e que toda a movimentação financeira era repassada a\nDomingos, o qual permanecia na maior parte do tempo na sede da organização na zona rural de Baião (id.\n1354749780 - Pág. 1/1215049271 - Pág. 17):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“Que abaixo de Ailson quem mandava era o Domingos; que conheceu \nRogério quando este chegou na comunidade, não lembrando a época, \nmas já haviam construído as casas da comunidade” (depoimento \nprestado o Bruce Douglas de Oliveira Costa, no Ministério do \ntrabalho, id. 1354749793 - Pág. 3).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O réu Rogério Almeida da Cunha foi apontado como verdadeiro “empregador” dos integrantes \nda comunidade, usufruindo de bens angariados mediante exploração das vítimas, a exemplo de uma casa\nconhecida como “mansão”, onde foi possível verificar a existência de piscina, banheira de hidromassagem,\narmário contendo garrafas de bebidas como uísques, vinhos e espumantes, além de alguns veículos na\ngaragem, como Pajero Sport 4x4, placa hxa0569; Kia Cerato sx3 1.6atnb, placa odz-9890; Hp Galloper t.cxllwb,\nplaca cog9302; lr freelander 5dr 25l, placa fqg-1818 (id. 1215049271 - pág. 22/23).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os réus Edilson de Souza França e Rafael Brito Sousa exerciam a supervisão dos \ntrabalhadores que ajudavam na construção dos móveis, bem como exerciam a função de segurança e gerência\ndo bar, o que demonstra a integração das atividades.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A ré Joicilene dos Santos Costa comandava o trabalho das mulheres e crianças internamente \nna comunidade, conforme se observa do seguinte depoimento:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“Que suas tarefas eram determinadas pela Joicilene. que o filho mais \nvelho da depoente, Gabriel, aos 5 anos de idade, foi obrigado pela \nJoicilene a trabalhar carregando lenha e limpando o quintal retirando \nfezes dos porcos. que por conta do aumento do movimento do \nrestaurante mesa de bar, a depoente foi designada para trabalhar no bar \nexecutando diversas tarefas, assando espetinho, executando a limpeza \ngeral e servindo as mesas (...). Que abaixo do Wilson havia um conselho \nformado por domingos, Rogério, Joicilene, Aiude, Jesaias e Bruce (...). Que, \nao que se sabe, Rafael e Edilson somente passaram a fazer parte da cúpula \nda comunidade após o falecimento de Ailson. (depoimento prestado por \nEdilene Lopes de Araújo no Ministério do Trabalho, id. 1354749780 - Pág. 1);\n\nQue naquele trabalho havia dois adultos que ficavam junto, a Joice e a Ivete; \nque as duas adultas ficavam apenas para acompanhar o trabalho da \ndepoente e demais meninas que cuidavam das crianças e se envolviam \nativamente apenas para corrigir o comportamento das crianças; batendo nas \ncrianças com umas ripas grossas; que as ripas eram feitas pelos homens \nlíderes; que já aconteceu da depoente se surrada aos 7 anos de idade; o que \nmarcou a depoente; que se recorda de ser levado ao banheiro da casa do \nlíder e lá apanhou com a tal ripa de madeira de Roberta, Joyce, Domingos e \nAilson” (depoimento prestado por Hisla Siany Costa de Oliveira no Ministério \ndotrabalho, id. 1354749794 - Pág. 3).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, o fato de os réus terem acesso a bens em condições melhores que os \ndemais integrantes da comunidade, a exemplo de uma residência maior, acesso a uma ilha fluvial\npara lazer, melhor alimentação, entre outras, corroboram as alegações de que os réus eram os\nlíderes e mantinham o funcionamento estratificado da comunidade em benefício próprio.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "c) Teses da defesa \n\nA atuante defesa dos denunciados, em suas alegações, sustentou que não \nexistiriam provas acerca da ação criminosa, bem como que o trabalho exercido na Comunidade\nSão Lucas era prestado de modo voluntário pelos próprios moradores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não obstante os argumentos esposados, as alegações não encontram amparo no \nacervo probatório constante dos autos, especialmente na prova testemunhal. Os depoimentos\ndas testemunhas de defesa não foram hábeis a rechaçar as condições de labor forçado\nconstatadas pelos auditores do trabalho e apontado pelas vítimas ouvidas em juízo e durante a\ndiligência empreendida pelos auditores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A robustez do conjunto probatório encartado atribui especial relevo à coerência e \nfidelidade dos depoimentos prestados pelas vítimas e ex-integrantes da comunidade,\nespecialmente porque estão em plena harmonia com os demais elementos de prova cotejados\naos autos, assegurando, por fim, a inequívoca constatação da prática delitiva e a sua autoria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As versões trazidas pelas testemunhas de defesa não possuem verossimilhança \ndiante do contexto fático encontrado na Comunidade São Lucas. Ademais, ressalta-se que a\ncredibilidade dos depoimentos fica comprometida diante da verificação de que as pessoas da\ncomunidade demonstram relação de subserviência e adoração subordinação das vítimas aos\nréus, pois ainda participam da comunidade, e a aparente padronização dos discursos, percebida\nainda no âmbito da fiscalização realizada:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) Após alguns minutos de conversa, um dos moradores questionou se \npoderia chamar o advogado da comunidade, que rapidamente compareceu \nao local da diligência. Enquanto o advogado chegava, um dos moradores \nchegou junto ao que falava e o mandou calar-se, pois no seu ponto de \nvista este estaria falando demais” (informação policial no 008/2022, id. \n1016472765 - Pág. 6).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) O que se percebeu foi a presença de discursos iguais, ou seja, que \ntodas as pessoas respondiam basicamente da mesma forma a \nperguntas simples. Quando se aprofundava em algum tipo de pergunta, as \npessoas desconversavam”. (ID 1211089267 - fl. 5 de relatório do Delegado \nde Polícia Federal Ezequias Martins).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) Que exerce o cargo de Secretário de Assistência do Município desde \njaneiro de 2021; QUE realizaram a vista em meados do mês de junho/julho \napós a recomendação do Ministério Público; (...) QUE foi detectado um \nadolescente que estava isolado e muito triste; Que tentaram pegar a \ndeclaração do adolescente, mas era impedido pelos próprios moradores da \nComunidade; Que não deixavam tirar fotos dos documentos; (...) Que as \n \nmulheres durante as entrevistas estavam sempre sendo vigiadas por \numa senhora; (...) a equipe chegou a solicitar a cópia das certidões de \nnascimento das crianças, mas os residentes negavam com a justificativa de \nnão ter o documento ou que estava com a mãe/pai que não estavam no \n \nmomento da visita (...)” (Marcos Antônio Barros Pino – id. 1354749783).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) (Perguntado sobre orientações sobre o que dizer para as fiscalizações) \nSe o pessoal chegasse e perguntasse “o que que nós passava” (...) Se \npassava fome, nós dizia que não; se batia, nós dizia que não. Ensinava a ter \nsó uma palavra. “Ah, você ganham brinquedo? Sim. Vocês ganham roupa? \nSim” (...) Aquela falsidade lá. (Perguntado se eram ensinados a ludibriar a \nfiscalização) Sim, senhor. (...) foi Icmbio, Ibama, outros órgãos (...) uma vez, \ntambém, que a polícia foi lá dentro também (...) reuniu todo mundo (...) \nsempre a mesma história, sempre tinha que concordar com eles, falar \nque “não”, que sempre era bem de vida, que brincávamos, estudávamos (...) \ndepois que eles saíam, nós apanhava muito (...)” (Yeon Gibo Alves da Silva – \nid. 1232894770)",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "d) Tipificação \n\nComo se vê, a prova documental e testemunhal, inclusive as declarações dos \ntrabalhadores, vítimas do delito, são indenes no sentido de que os réus submeterem diversos\nintegrantes da Comunidade Lucas a condições análogas à de escravo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Não bastasse, um dos trabalhadores nominalmente identificados pela auditoria do \ntrabalho era menor de idade durante a fiscalização (Pedro Peixoto Lima, nascido em 30/06/2004,\np. 60-71 do id. 1215049271). Portanto, incidiram os réus, livres e conscientemente, na causa de\naumento do artigo 149, § 2o, I, do Código Penal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "e) Concurso formal de crimes \n\nEm casos de redução à condução análoga com pluralidade de vítimas, a \njurisprudência pacífica do Superior Tribunal de Justiça e dos Tribunais Regionais Federais vem\nse assentando com o reconhecimento da ocorrência de concurso formal, com número de\ninfrações proporcional ao número de vítimas para os fins de critério de exasperação pela norma\ndo artigo 70 do Código Penal: \"A existência de mais de uma vítima, no mesmo contexto de fato,\nimplica concurso formal\" (TRF1, AC 200839010003648, Tourinho, j. 26.11.20; STJ, AgRgHC n.\n406479, Rel. Min. Rogério Schietti Cruz, j. 13.03.18).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2. 3. DO CRIME DE TORTURA\n\nA prática do crime de redução à condição análoga à de escravo atrai \na competência da Justiça Federal, uma vez que se trata de crime contra a organização do\ntrabalho (art. 109, inc. VI, da CF/88). A competência desse juízo federal para o processo e\njulgamento do crime de tortura se dá por força da conexão instrumental ou probatória (art. 76, III,\ndo CPP).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Pois bem.\n\nA acusação imputa aos réus o crime de tortura na modalidade castigo. O inciso II, \ndo art. 1o da Lei no 9.455/97, pune a conduta daquele que submete alguém, sob sua guarda,\npoder ou autoridade, com emprego de violência ou grave ameaça, a intenso sofrimento físico ou\nmental, como forma de aplicar castigo pessoal ou medida de caráter preventivo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Essa modalidade delitiva, portanto, exige qualidade especial do agente, existindo \numa prévia relação entre o torturador e a vítima, somente podendo praticá-lo quem tem a guarda,\nvigilância, poder ou autoridade sobre o torturado. Ademais, exige-se a tentativa de impor à vítima\nintenso sofrimento físico ou mental da vítima.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "a) Materialidade \n\nEmbora as vítimas não tenham sido submetidas a exame de corpo de delito, \nconsiderando­-se a dinâmica das relações de poder existente na comunidade, que se perpetuou\npor vários anos, tendo por vezes a violência se revestido de maior relevância psicológica do que\nfísica, as provas oral e documental se sobressaem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As imagens colacionadas no id. 1215049271 - Pág. 26 mostram a existência de \ninstrumentos de castigo físico encontrados na casa dos líderes da comunidade, tais como 12\nespadas de madeira, uma régua com a escrita “Disciplina”, e 02 facões grandes.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ao que consta do conjunto probatório, havia uma espécie de “tribunal” onde os \nintegrantes da comunidade eram julgados e sentenciados pelos réus a sofrerem castigos de\nordem física e/ou psicológica (id. 1211089268 -.fls. 43, e 61; id. 1211089267 - fl. 6; e anexos 11 e\n12 do relatório de fiscalização).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Demonstrando que também eram utilizados métodos de punição psicológica, um \ndos cadernos apreendidos na comunidade, possui anotações de uma pessoa do sexo feminino\nnos seguintes termos: “14 de outubro fui chamada atenção; 24 de outubro fui colocada na\nsentença de não falar; 08 novembro fui chamada atenção de novo”. Logo abaixo, na mesma\npágina, está escrito: “Pastor Ailson falou não é para mim falar nada para ninguém. Falar somente\no necessário com irmão Clei. Conversar alguma coisa somente com o esposo. Ficar em silêncio o\ntempo todo” (id. 1215049271 - Pág. 27 e 1215049285 - Pág. 44).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na informação policial n. 2432773/2022 consta uma conversa realizada em \n01/07/2022 entre a auditora fiscal do trabalho Luciana e uma das crianças moradoras da\ncomunidade, em cujo trecho a criança confirma que era vítima de maus tratos sendo que um dos\ncastigos a ela impostos era ficar amarrada (id. 1235335776):",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“Luciana: Dói o seu (braço)? \n\nLuciana: Pode falar, aqui ó (aponta para o braço da criança) \n\nCriança: Ai!! \n\nLuciana: Dói não dói? Não? Só um pouquinho? Mais ou menos? \n\nIrmã da criança: (Muda de assunto) \n\nLuciana: É... Isso aqui foi onde? (aponta para o braço da criança) \n\nLuciana: Me conta. Não pode? Pode falar “Não pode” \n\nCriança: Quando nasceu... \n\nLuciana: Quando nasceu? \n\nIrmã da criança: Isso aqui chama... uma coisa errada. \n\nLuciana: Ah então não foi não, achei que tinha machucado aqui”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mesmo documento, consta imagem do menor J.C.S com hematomas no braço, \nbem como áudio transcrito pela Polícia Federal dele afirmando que o lugar que mais machuca\nseria nos braços, indo ao encontro de todos os depoimentos colhidos que versam sobre torturas\ne castigos sofridos pelas crianças dentro da Comunidade Lucas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Vê-se que, apesar da preparação dos membros da comunidade, da dissimulação da \nrealidade quando do recebimento de autoridades públicas no local e da padronização das\nrespostas dadas aos questionamentos, a criminosa realidade não pôde ser encoberta.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em juízo, a testemunha Hellem do Socorro Holanda Alves, ex-integrante da \ncomunidade, declarou que eram aplicados castigos físicos; que chegou a receber “sentença” que\nlhe obrigava a permanecer, pelo período de 2 a 3 meses, em posição corporal de cabeça baixa,\nsob ameaça de agressões físicas. Ainda, confirmou que as crianças eram agredidas, os meninos\ntinham cabeças raspadas; ficavam longos períodos sem se alimentar como forma de punição, e\nalguns chegaram a ser retirados do poder familiar dos pais e entregues a outros integrantes da\ncomunidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Yeon Gibo Alves da Silva, nascido na comunidade, corroborando seu depoimento \nprestado em sede policial (id. 1211089264) narrou que começou trabalhar na infância; que as\ncrianças apanhavam em posição de flexão, com estaca de madeira, diante das outras pessoas\nda comunidade; que as meninas eram escolhidas ainda na infância e destinadas\ncompulsoriamente ao casamento com os homens indicados pelos réus; que viu duas menores ter\na cabeça raspada como forma de castigo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Anderson Correa da Costa alegou que chegou na comunidade aos 14 anos de \nidade (1998) e saiu no ano de 2019, afirmou em audiência que inicialmente pescava e pegava\nmadeira. Após, passou a trabalhar no Nossa Mesa de Bar sem receber salário; que as vezes\ntrabalhava até a exaustão; que já foi punido com o castigo de um dia sem alimentação; que já\npresenciou menores sendo agredidos fisicamente; que chegou a ver uma menor com a cabeça\nraspada; que havia punição para quem consumisse as frutas disponíveis nas plantações, pois\ndeviam ser destinadas à cozinha comunitária (depoimento coerente com as alegações prestadas\nem sede policial- id. 1211089264).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No mesmo sentido, a auditora fiscal do trabalho Vanusa Vidal, relatou o clima de \nmedo e aflição dos integrantes da comunidade na ocasião da fiscalização in loco. Apontou, ainda,\nter avistado um menor com hematomas no braço.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em sede extrajudicial, extraem-se os seguintes depoimentos: \n\n“(...) não chegou a apanhar, mas era ameaçado constantemente e, por isso, \nresolveu fugir; que logo no início da Comunidade escapou de sofrer estrupo; \nque não foi estuprado porque correu; (...) que foi obrigado a casas na \ncomunidade depois que assumiu sua homossexualidade, aos 20 e poucos \nanos (...) que se o depoente não casasse com uma mulher ele não era \nconsiderado digno (...) que os integrantes da Comunidade são capazes de \ndefendê-la por causa da fé, independente de maus tratos (...); (...) existia um \ntribunal paralelo chamado de Conselho para julgar as pessoas; que \nfaziam parte do Conselho os líderes e suas esposas; (...) a penalidade \nera separar os casais, raspar cabeça, não conversar com ninguém; (...) \nque já presenciou o momento em que pessoas da Comunidade foram \nagredidas; (...) que Rhetycina, seu primo, era bastante agredido pelo fato dele \nser homossexual;” (...) (Wanderclei de Oliveira Costa – id. 1354767747).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) JOYCE e IVETE; (...) se envolviam ativamente apenas para “corrigir” o \ncomportamento das crianças, batendo nas crianças com umas ripas \ngrossas; que as ripas eram feitas pelos homens líderes; que já aconteceu \ncom a depoente de ser surrada aos 07 anos de idade, o que marcou a \ndepoente; que se recorda de ser levada para o banheiro da casa do líder e lá \napanhou com a tal ripa de madeira de ROBERTA, JOYCE, DOMINGOS E \nAILSON; (...) tenho ficado só de calcinha; que ficou com as pernas, bunda e \nbraços roxos, levando muito tempo para saírem as marcas; que já assistiu \nessas mesmas pessoas baterem em várias crianças pequenas; que nenhuma \ncriança podia brincar; (...) que já presenciou AILSON E DOMINGOS \nameaçarem o RHETYCINA de morte, com uma arma pelo fato dele ser \nhomossexual; que após a ameaça bateram muito no rapaz com a mesma \nripa; que este fato se deu no refeitório, na frente de todas as demais \ncrianças; que era dito que as surras serviriam de exemplo para os \ndemais; (...) que não podia pegar fruta das árvores e se descumprisse tal \nordem era “carecado”; que já viu vários meninos terem suas cabeças \nraspadas, tais como RHEYTUCINA, RAIMISON E ELI OLAN; que a punição \nera praticada na frente dos demais integrantes da comunidade (...) quando \nsaiu da comunidade ficou com muito medo, que ela acreditava que no mundo \nexterior seria estuprada, espancada e que não conseguiria sobreviver (...)” \n(Hisla Siany Costa de Oliveira - ID 1354749794).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) havia um Conselho para decidir o castigos; que a pessoa castigada \nera colocada numa cadeira e aí era determinada a punição; que a punição \nera severa; que quando o homem era casado, a mulher era tirada dele ou os \npróprios filhos; que a mulher era dada a outro homem; (...) que quando estava \ngrávida de sua última filha teve um “julgamento” da depoente por Rogério, \nJoice, Ailson, Roberta, Domingos, Ivete, Shelk e a fizeram chorar; que \nqueriam jogar a depoente do andar de cima porque a depoente reagiu no \n“tribunal”; que a depoente reagiu porque eles falavam barbaridades sobre a \ndepoente; (...) que no parto de sua última filha teve eclampsia e que os \nlíderes diziam que era estava sendo punida por Deus;” (...) (Adma Correa \nda Costa - ID 1354749792).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“Que Domingos maltratava crianças que choravam nos cultos batendo \ncom um galho de goiabeira e os afundava em um barril com água \ngelada. Que a depoente questionou o Ailson por isso. Que passou a ser \ntorturada com pouca comida. Que, para torturar a depoente, a \nchamavam de traíra e colocavam um peixe chamado traíra no seu prato \n(...) Que a sua filha foi ameaçada de ter a cabeça raspada. Que rasparam \na cabeça do Tiago e do Rhety. Que o Rhety apanhava muito, em especial \ndo Domingos. Que depois teria sido agredido também pelo Rogério. Que \njá foi agredido com chutes por Domingos e Ailson, tendo sido feito de \nbola entre os dois (...)” (Lindalgiza da Silva Castelo - ID 1354749790);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) QUE presenciou o menino de nome AIBE (filho da Camila e Levi) \ntendo o cabelo raspado porque comeu um caju do cajueiro do terreiro \n(...) QUE também presenciou o menino chamado SETE (Eli Olan) sendo \n \nespancado (...) QUE o SETE foi colocado no meio de uma roda em um local \nchamado coreto e surrado por RAFAEL, ROGÉRIO, DOMINGOS e GEDIAS; \nque bateram com socos, chutes e madeira; depois deixaram o menino sem \ncomer por 3 dias; que a mãe de SETE (LENA) assistiu a cena e não pôde \nintervir, apenas chorou; o fato se deu na frente de toda a comunidade (...) \nque o menino era obrigado a permanecer careca por tempo indeterminado \n(...) quando foi enviada para a zona rural da comunidade se deparou com um \ncostume que era chamado de ESTICA, pelo qual as pessoas eram amarradas \npelas pernas e braços, penduradas num caibro de madeira e puxadas, de \nforma que permaneciam numa posição como se estivessem crucificadas; o \nato causava lesões nos pulsos e tornozelos, permanecendo roxo por um bom \ntempo”; (Edilene Lopes de Araújo - ID 1354749780);",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“(...) (Perguntado se as crianças sofriam maus tratos) Sofrem maus tratos \nfísicos, apanham, qualquer coisinha eles apanham. Eles não podem tirar um \ncaju (...) se uma criança tirar um caju daquele ela é torturada e apanha \nporque não é hora de comer o caju. Só é dado uma alimentação ao dia (...) \nAquele pastor Domingos que tá preso castigava muito os meninos. O \nRogério castigava muito os meninos. A Joyce castigava muito os meninos \ntambém. (...) No dia que ela foi presa, a outra menina que ficou no lugar dela \nlá ficou com o sorriso bem aqui dela ser presa, porque fazia poucos dias que \nela tinha castigado o filho dela, deu uma pisa no filho dela que ele ficou \ntodo cagado e botou o moleque pra carregar lenha todo cagado do mato \n \npra lá pra comunidade sem poder ir lá no lago no rio poder se lavar (...)” \n(Roberto Sandro Patricio Americo - ID 1233291270: 06min50, 07min40, \n08min20, 08min45).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No âmbito do Ministério Público do Estado do Pará, o assistente social do município \nde Baião/PA, sr. Marcos Antônio Barros Pino, afirmou:\n\n“Que encontraram grande dificuldade de realizar a atualização do cadastro \núnico e fiscalizarem se as crianças estavam com sinais de maus tratos. que \nfoi detectado um adolescente que estava isolado e muito triste. Que tentaram \npegar a declaração da adolescente, mas era impedido pelos próprios \nmoradores da comunidade. Que não deixaram tirar fotos dos documentos \n(...) que as mulheres durante as entrevistas estavam sempre sendo \nvigiadas por uma senhora” (id. 1354749783 - Pág. 2).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ouvido no Ministério Público do Trabalho, Raymison Jasper relatou que foi \nseparado de seus pais e colocado em uma casa com outras 11 crianças, todos sem pais; e que a\ndoutrina dos líderes era que não podia nutrir sentimentos, que chegou a ficar cerca de 3 anos\nsem contato com seu pai (id. 1215049271 - Pág. 33).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O controle psicológico exercido pelos líderes mediante a fé dos integrantes é \nreforçado pelos diversos trechos dos cadernos apreendidos na comunidade: “demônios não\nentram em ninguém a não ser invocado pela própria pessoa (...) Jaele e Gleice estão em\ncondições de caírem endemoniadas por causa da rebeldia, prática que joga a pessoa no inferno,\niniquidade, teima, arrogância, altivo, prepotente resiste a autoridade” (id. 1215986782 - Pág. 25);\n̈porque será que o demônio tem entrada, aqui, por rebeldia, desobediência, teimosia” (id.\n1215986782 - Pág. 41 )“havia uma sentença sobre o Abenam, mesmo assim há um demônio\naqui (id. 1215049271 - Pág. 36)”; (no tribunal o que vai esta oque eu ensinei para vocês,\nverdadeiros conhecimentos são minhas credenciais diante de Deus sou o único que sei a\nexpressão rei dos reis e senhor dos senhores. Se alia ao mestre Du e ouve as palavras dele se\neu não puder te colocar no céu, ele pode” (id. 1215049271 - Pág. 38).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De acordo com os depoimentos colhidos, inclusive o depoimento da testemunha de \ndefesa Jarnayra, o mestre Du seria o réu Domingos, de forma que se depreende que Ailson\nestava transferindo o poder de mestre para o aludido réu (id. 1215049271 - Pág. 73).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O trecho “tirei direito de pai da Abiude e da irma Cristina de mãe do Adabe” (id. \n1215049271 - Pág. 43) respalda as alegações de que crianças chegaram a ser retiradas dos\ngenitores como forma de manter a doutrina do “desapego” aos pais e “apego” ao mestre ou,\nainda, como forma de punição aos genitores.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Uma espécie de desabafo que demonstra o dever de subserviência dos membros \npode ser encontrada no trecho de um dos cadernos apreendidos na comunidade “peço que o\nsenhor me de sabedoria e entendimento para saber servir a todos os meus irmãos (...) como\nhorta plantar, lavagem das roupas de todos, limpeza da casa grande e limpeza quintal, mas\npreciso confessar” (1215049295 - Pág. 22).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os desconcertantes trechos dos cadernos apreendidos, juntados no relatório de \nfiscalização (id. 1215049271 - Pág. 36/1215049271 - Pág. 43), demonstram que diversos crimes\ntais como exploração sexual e violência contra mulheres, adolescentes e crianças, bem como\ntortura eram justificados com base em uma interpretação deturpada de textos bíblicos cultivada\npelos réus e pelo anterior líder da comunidade, Ailson.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "b) Autoria \n\nOs depoimentos testemunhais colhidos em juízo convergem no sentido de que a \ndireção da comunidade passou a ser exercida primordialmente pelos réus Domingos e Rogério\napós o falecimento de Ailson.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha Hellem do Socorro Holanda Alves afirmou em audiência que a ré \nJoicilene era a responsável pela comunidade internamente; e os líderes máximos seriam os réus\nDomingos, Rogério e Rafael.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha Anderson Correa da Costa afirmou que, no ano de sua saída (2019), \nos líderes da comunidade eram Ailson, Domingos e Rogério, enquanto os réus Edilson, Rafael e\nJoicilene começavam a fazer parte da liderança.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Aderson Silva da Conceição, que atuou na qualidade de presidente da associação \ndos trabalhadores de 1998 a 2021, relatou em juízo o papel de liderança exercido por Domingos,\nRogério e Joicilene, sendo que Rafael e Edilson trabalhavam na segurança.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessa forma, considerando as declarações prestadas pelas vítimas, os relatórios e \nimagens juntados aos autos, a natureza do crime em apreço e as circunstâncias do fato, resta\nevidente que os réus Domingos, Rogério, Rafael e Joicilene praticavam o crime de tortura, sendo\ncerto que esta última infligia sofrimento moral e físico primordialmente nas crianças, adolescentes\ne mulheres residentes na comunidade.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na qualidade de líder, Domingos definia quem deveria receber punições físicas e \noutros castigos e impedia a saída dos demais membros que quisessem sair da comunidade.\nTambém era o destinatário do dinheiro arrecadado no Estabelecimento Nossa Mesa de Bar.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os depoimentos colhidos apontam algumas das vítimas diretas das torturas físicas e \npsicológicas praticadas por Rogério, inclusive enquanto eram crianças e adolescentes: Adma,\nRheytisina (Eliaquim), Lindalgiza, Eli Olan e Aderson.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "De igual modo, foram apontadas torturas físicas e psicológicas praticadas \ndiretamente por Joicilene: Hisla Siany, Adma, Eli Olan, Rheytisina (Eliaquim), Gabriel, Raymison\nJaspe, Yeon Gibo e seus próprios filhos com Ary. Ainda, algumas das vítimas diretas das torturas\nfísicas e psicológicas praticadas por Rafael foram: Rheytisina (Eliaquim), Eli Olan, Yeon Gibo e\nAderson.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Por outro lado, quanto ao acusado Edilson, não há nos autos nenhum elemento \nindubitável de prova que justifique sua condenação no crime de tortura.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "c) Teses da defesa \n\n\nEm seus interrogatórios, os réus negaram as acusações de tortura. Em suas \nalegações, sustentaram que não foi apurada a materialidade do delito diante da ausência de\nrealização de exame de corpo de delito sobre as vítimas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A negativa dos réus não se presta a determinar que a violência não ocorreu, isto \nporque, o depoimento das vítimas em crimes dessa espécie, em que se praticam na\nclandestinidade, é crucial, mormente no caso em questão em que encontra amparo em prova\nrobusta produzida ao longo da instrução criminal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ademais, não se vislumbra a ocorrência de qualquer ilegalidade pela não realização \nde exame de corpo de delito sobre as vítimas ou instrumentos do crime nesta situação\nespecífica.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dispõe o art. 158 do CPP que quando a infração deixar vestígios, será \nindispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão\ndo acusado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A realização do exame pericial sobre os instrumentos utilizados para prática \ncriminosa, porém, somente se faz necessário quando a infração penal deixa vestígios e esses\nv estígios são encontrados. Malgrado os depoimentos prestados em juízo e na fase pré-\nprocesual tenham aludido ao uso de “espadas de madeira” como instrumentos para a prática de\ntortura, a apreensão dos objetos não ocorreu logo após a prática delitiva, não sendo necessário,\nportanto, a realização de exame sobre os bastões de madeira ou mesmo a realização de exame\nde corpo de delito sobre as supostas vítimas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os réus também negaram exercer qualquer liderança na comunidade, sustentando \nque todos tinham livre acesso aos bens e desempenhavam a tarefa que lhes fossem\nconvenientes, sem qualquer tipo de coerção.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esta narrativa, entretanto, carece de plausibilidade diante da convivência mútua e \ncoordenada de considerável número de pessoas, por longo período, inclusive logrando êxito em\nempreendimentos empresariais como bar, restaurante e fábrica de móveis.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os depoimentos das testemunhas arroladas pela acusação são coerentes e \ncorroboram a condição de hostilidade a que eram submetidos os integrantes da comunidade. Por\noutro lado, é possível apontar diversas incoerências nos depoimentos das testemunhas de\ndefesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na audiência de instrução, as testemunhas de defesa afirmaram que Luís Antônio \nAraújo Lima, que é portador de deficiência física e conhecido como \"Toninho\", utilizava a régua\ncom o nome \"Disciplina\" como um suporte. No entanto, a referida régua foi encontrada em uma\ncasa na Comunidade Lucas, em Baião/PA (id. 1215049271 - Pág. 25). A defesa, ao arrolar Luís\nAntônio como testemunha, porém, indicou como seu endereço a Avenida Magalhães Barata, no\n21, Bairro Jardim Colorado, em Tucuruí (id. 1313925247 - Pág. 28). Luís Antônio é cantor no\nMesa de Bar e mora e trabalha em Tucuruí, o que torna improvável que a régua fosse utilizada\npor ele em Baião/PA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Além disso, a versão de que Luís Antônio habitava a casa de madeira mostrada na \nfigura 7 do id. 1211089273 - Pág. 122, que tem acesso por escada, não é plausível, já que ele\nusa cadeira de rodas. Segundo a testemunha Bárbara Fernandes, essa casa é habitada pelo Sr.\nFrancisco, suas esposas e filhos, e não por Luís Antônio (id. 1361204783 - Pág. 1; minuto 14:51).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Anny Gyrrel, arrolada pela defesa e ouvida como informante do Juízo, \nprimeiramente respondeu que “nunca viu” a régua da disciplina, após novamente perguntada\npelo advogado, afirmou que Luis Antônio, “toinho”, usava a régua como suporte na comunidade\n(minuto 14:30; id. 1358768753 - Pág. 1).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha Gleiciane da Silva Cunha, encontrada em atividade na cozinha pela \ninspeção trabalhista, informou que as espadas foram feitas na época da pandemia (00:39 id.\n1358568760 - Pág. 1), porém não soube informar sua utilidade. Por outro lado, confirmou que o\nréu Edilson era chefe da segurança (min.12:30); além de não saber informar nenhuma criança\nque estudou fora da comunidade após o 5o ano letivo.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As testemunhas Ailton e Jarnayra, indo na contramão de todas as demais \ntestemunhas de defesa, informaram que não há atividade de caça na comunidade (id.\n1358590268 - Pág. 1; min. 04:26 e id. 1358452261 - Pág. 1, min.11:10). Após, reiterada a\npergunta pelo Ministério Público Federal, Ailton confirmou a informação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha Lucas, ouvida como informante, relatou que a movelaria não fazia \nmóveis para vender (id. 1358690260 - Pág. 1, min. 08:41). Entretanto, a inspeção achou um\ncatálogo de móveis com modelos de diversos tipos de camas, armários e outros, um mostruário\ncom fotos coloridas dos móveis fabricados no local e seus respectivos preços anotados com\ncaneta, além da anotação CL Movelaria e do nome de Edilson de Souza Franca. Ademais, José\nLuis Araújo Lima informou aos fiscais que os móveis eram feitos sob encomenda (id. 1215049271\n- Pág. 18 e 1215049271 - Pág. 18).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em contrapartida, as mulheres ouvidas na qualidade de testemunhas de defesa que \nconvivem em união estável, confirmaram que seus maridos têm mais de uma esposa; conferindo\nveracidade aos depoimentos acerca dos costumes na comunidade e aos trechos dos cadernos\nencontrados.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Os réus alegaram em defesa escrita que as ripas encontradas “são espadas de \nmadeira utilizadas para treino de artes marciais, esporte, facilmente encontradas em qualquer loja\nde esporte, sendo essas que foram apreendidas impossível de ter sido usadas para agredir\nqualquer pessoa antes da pandemia de covid 19, pois foram fabricadas exatamente no período\nda pandemia por um dos membros da comunidade São Lucas”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O fato de supostamente serem destinadas ao treinamento de artes marciais não \nexclui a possibilidade de também serem utilizadas para o cometimento de agressões, conforme\napontado pela testemunha Yeon Gibo Alves da Silva em audiência “usava para treinamento e, às\nvezes, pra correção (...) eu mesmo já fiquei com as costas tudo avermelhado de tanto apanhar\n(...)”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Algumas testemunhas de defesa afirmam que existiam armas para serem usadas \npara caça. Outras, porém, alegaram que não havia armas, não havendo coerência nas\ninformações. O relatório de id. 1211089268 - Pág. 36 destaca que no primeiro dia das buscas\nnão foram encontradas armas e algumas das pessoas que residiam no local informaram que não\nexistiam armas. Porém, depois da apreensão, alguns integrantes informaram que nunca tinha\nvisto aquela arma na localidade, enquanto outros disseram que era normal ter arma de caça na\ncomunidade, mas que nunca viram aquela arma no local (id. 1211089264 - Pág. 22),\ndemonstrando a fragilidade das alegações das testemunhas de defesa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "d) Tipificação \n\nOs réus Domingos, Rogério, Rafael e Joicilene, de forma livre e consciente, nos \nmunicípios de Baião-PA e Tucuruí/PA submeteram diversas pessoas sob sua guarda, poder e\nautoridade, inclusive crianças e adolescentes, a intenso sofrimento físico e mental, como forma\nde aplicar castigo pessoal e medida de caráter preventivo, valendo-se do emprego de violência e\ngrave ameaça (art. 1o, II, § 4o, II, Lei n. 9.455/97).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "e) Concurso de crimes \n\nDiante da ausência de elementos suficientes para identificar o número exato de \nvítimas, deixo de aplicar a regra do concurso material de crimes, posto que, tratando-se de\ncrimes autônomos, praticados contra vítimas diferentes e modo de execução diversos, é incabível\no concurso formal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "2.4. DO CRIME PREVISTO NO ART. 288 DO CP\n\nO crime de associação criminosa consiste em \"associarem-se 3 (três) ou mais \npessoas, para o fim específico de cometer crimes\" (CP, art. 288, caput). Portanto, são dois os\nelementos que integram o delito: i) a conduta de associarem três ou mais pessoas; ii) para o fim\nespecífico de cometer crimes. Exige-se ainda que a vinculação dos agentes seja sólida quanto à\nestrutura e durável quanto ao tempo, conforme a doutrina majoritária e a jurisprudência pátria.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dos fundamentos até aqui esposados, ficou comprovado que os denunciados se \nassociaram, de forma estável e permanente, com o objetivo específico de cometer diversos e\ngraves crimes, incluindo redução de adultos, crianças e adolescentes a condições análogas às\nde escravo e tortura.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Cada réu detinha sua atribuição na direção da comunidade, atuando em união de \ndesígnios, para a exploração compulsória da força do trabalho alheio e a execução de torturas\nfísicas e psicológicas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "3. DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE, em parte, a pretensão punitiva estatal \ndeduzida na denúncia, para:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) CONDENAR os réus Domingos Sousa dos Santos, Rogério Almeida da \nCunha, Joicilene dos Santos Costa e Rafael Brito Sousa pela prática dos \ncrimes tipificados no artigo 149, §2o, II do CP, artigo 288 do mesmo diploma \nlegal e art. 1o, II, § 4o, II, Lei n. 9.455/97, todos em concurso material (art. 69, do \nCP);",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) CONDENAR o réu Edilson de Souza França pela prática dos crimes \ntipificados no artigo 149 do CP, em concurso material com os delitos do artigo \n288 do mesmo diploma legal, na condição de partícipe;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "c) ABSOLVER o réu Edilson de Souza França pela prática do crime tipificado \nno art. 1o, II, § 4o, II, Lei n. 9.455/97;",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "4. DOSIMETRIA\n\nPasso à dosimetria da pena em conjunto dos crimes, em estrita observância ao \ndisposto no artigo 68, caput, do Código Penal.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Réu DOMINGOS SOUSA DOS SANTOS\n\nAnalisadas as diretrizes do art. 59 do CP, verifico que a culpabilidade do réu é \ngrave, pois a sua conduta desenvolveu-se sob dolo direito e intenso, na medida em que desde os\nprimórdios da comunidade já exercia atribuições de confiança junto ao mestre fundador, Ailson.\nAinda, vários foram os depoimentos que o apontavam como agressor direto, como autoridade\nque definia quem deveria receber punições físicas e outros castigos e impedia a saída dos\ndemais membros que quisessem sair da comunidade. O réu gerenciava a associação criminosa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há \nelementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram \npraticados a fim de angariar ganhos financeiros e satisfazer a lascívia do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Domingos \ntambém transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e\npessoas humildes, além da utilização da religião e da fé como elemento para subjugá-las e\nsubmetê-las seja ao trabalho análogo ao de escravo, seja à tortura psicológica. Ademais, há que\nse considerar o longo período que perdurou a situação criminosa, tendo nascido e crescido várias\ncrianças inseridas na exploração.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências dos crimes excedem qualquer normalidade pois, além de \ncausarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus\ndireitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as\ncontribuições previdenciárias devidas. Demais disso, o trabalho forçado aliado à contínua tortura\ne doutrinação psicológica certamente causaram traumas nas vítimas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as \nconsequências, posto que fora constituída para o cometimento de graves crimes, contra as\nmesmas vítimas, ao longo de muitos anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos \napurados nos autos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias \njudiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um \ndos crimes previsto no art. 149 do Código Penal (pelo menos 55 crimes);",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 2 (dois) anos para o crime previsto no art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento à situação econômica do réu, que exercia o controle financeiro de todos os \nbens e empreendimentos da comunidade, estabeleço no valor integral do salário-mínimo do ano\nde 2022 (data do fato), o valor de cada dia-multa (CP art. 49, § 1o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para \nfacilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149\ndo CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às\nautoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do\nart. 1o, II, § 4o, II, Lei n. 9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art. 149 do \nCP e art. 1o, II, § 4o, II, Lei n. 9.455/97, por se constituir causa de aumento de pena a ser utilizada\nna última fase da dosimetria.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase: \n\nAplico a majorante do inciso I do § 2o do artigo 149, uma vez que crianças foram \nsubmetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela\nmetade. Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4o do artigo 1o da Lei no 9.455/97 em um terço \nfixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que \nforam apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se\na pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art. 149 do CP, aplico a regra disciplinada pelo art. \n70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis) \n \ndias-multa para os crimes previstos no art. 149 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 3 anos de reclusão pelo crime do art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art. 69 do CP), fica \no sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos; 9 (nove) meses e\n20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um\ndeles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e\nsetenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até\nseu efetivo pagamento (CP art. 49, § 2o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no art. 33, caput, e § 2o, alínea “a” c/c art. 69 (parte final), todos do \nCP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em\nregime fechado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Réu ROGÉRIO ALMEIDA DA CUNHA\n\nAnalisadas as diretrizes do art. 59 do CP, verifico que a ré agiu com atitude \nconsciente e premeditada, demonstrando um índice elevado de reprovabilidade na prática dos\ncrimes previstos nos art. 149 do CP, tendo em vista o número de vítimas e o longo período de\nsubjugação, o que merece a devida censura. Ademais, o réu ocupava o segundo lugar na\nhierarquia do comando da comunidade e vários foram os depoimentos que o apontavam como\nagressor direto, nas punições físicas e outros castigos e impedia a saída dos demais membros\nque quisessem sair da comunidade.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há \nelementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram \npraticados a fim de angariar ganhos financeiros e satisfazer a lascívia do réu.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Rogério também \n transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas\nhumildes, além da utilização da religião e da fé como elemento para subjugá-las e submetê-las\nseja ao trabalho análogo ao de escravo, seja à tortura psicológica.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois além de \ncausarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus\ndireitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as\ncontribuições previdenciárias devidas. Demais disso, o trabalho forçado aliado à contínua tortura\ne doutrinação psicológica certamente causaram traumas nas vítimas, que foi possível verificar\ndos depoimentos da testemunha Helen e Yeon, que se emocionaram ao relatar os fatos em juízo.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as \nconsequências, posto que fora constituída para o cometimento de graves crimes, contra as\nmesmas vítimas, ao longo de muitos anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos \napurados nos autos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias \njudiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um \ndos crimes previsto no art. 149 do Código Penal;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 2 (dois) anos para o crime previsto no art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento à situação econômica do réu, que juntamente ao réu Domingos exercia o \ncontrole financeiro de todos os bens da comunidade, estabeleço o 1 salário-mínimo integral do\nano de 2022 (data do fato), como o valor de cada dia-multa (CP art. 49, § 1o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para \nfacilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149\ndo CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às\nautoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do\nart. 1o, II, § 4o, II, Lei n. 9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art. 149 do \nCP e art. 1o, II, § 4o, II, Lei n. 9.455/97, por se constituir causa de aumento de pena a ser utilizada\nna última fase da dosimetria.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase: \n\nAplico a majorante do inciso I do § 2o do artigo 149, uma vez que crianças foram \nsubmetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela\nmetade. Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4o do artigo 1o da Lei no 9.455/97 em um terço \nfixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que \nforam apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se\na pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art. 149 do CP, aplico a regra disciplinada pelo art. \n70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis) \n \ndias-multa para os crimes previstos no art. 149 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 3 anos de reclusão pelo crime do art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art. 69 do CP), fica \no sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos; 9 (nove) meses e\n20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um\ndeles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e\nsetenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até\nseu efetivo pagamento (CP art. 49, § 2o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no art. 33, caput, e § 2o, alínea “a” c/c art. 69 (parte final), todos do \nCP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em\nregime fechado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Ré JOICILENE DOS SANTOS COSTA\n\nA culpabilidade de Joicilene também se mostrou mais acentuada e merece ser \nvalorada negativamente, uma vez que não só gerenciava a associação criminosa juntamente a\nDomingos e Rogério, ainda que em um patamar inferior, como demonstrava extrema crueldade\nno seu modo de agir em relação a crianças e mulheres.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade da ré, tendo em vista que não há \nelementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram \npraticados a fim de angariar ganhos financeiros e levar um estilo de vida superior em detrimento\ndas vítimas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Joicilene também \n transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas\nhumildes, além da utilização de seu papel na cúpula da comunidade para infligir tortura nos\nmenores.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois além de \ncausarem danos patrimoniais aos trabalhadores escravizados, diante do não pagamento de seus\ndireitos trabalhistas, também impuseram prejuízo ao Erário, porquanto não tenham recolhido as\ncontribuições previdenciárias devidas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O crime de associação criminosa também merece valoração negativa quanto as \nconsequências, posto que fora constituída para o cometimento de graves crimes, contra as\nmesmas vítimas, ao longo de muitos anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável, diante dos fatos apurados nos \nautos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias \njudiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um \ndos crimes previsto no art. 149 do Código Penal;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 2 (dois) anos para o crime previsto no art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento à situação econômica da ré, que juntamente ao réu Domingos e Rogério \ndesfrutava dos ganhos financeiros da comunidade, estabeleço o 1 salário-mínimo integral do ano\nde 2022 (data do fato), como o valor de cada dia-multa (CP art. 49, § 1o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para \nfacilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149\ndo CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às\nautoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do\nart. 1o, II, § 4o, II, Lei n. 9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art. 149 do \nCP e art. 1o, II, § 4o, II, Lei n. 9.455/97, por se constituir causa de aumento de pena a ser utilizada\nna última fase da dosimetria.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase: \n\nAplico a majorante do inciso I do § 2o do artigo 149, uma vez que crianças foram \nsubmetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela\nmetade. Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4o do artigo 1o da Lei no 9.455/97 em um terço \nfixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que \nforam apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se\na pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art. 149 do CP, aplico a regra disciplinada pelo art. \n70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis) \n \ndias-multa para os crimes previstos no art. 149 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 3 anos de reclusão pelo crime do art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art. 69 do CP), fica \no sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos; 9 (nove) meses e\n20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada\num deles, o valor anteriormente fixado, o que implica o valor total de R$ 379.200,00 (trezentos e\nsetenta e nove mil e duzentos reais), a ser monetariamente atualizado desde a data do fato até\nseu efetivo pagamento (CP art. 49, § 2o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no art. 33, caput, e § 2o, alínea “a” c/c art. 69 (parte final), todos do \nCP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em\nregime fechado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Réu RAFAEL BRITO SOUSA\n\nAnalisadas as diretrizes do art. 59 do CP, verifico que o réu merece a valoração \nnegativa da culpabilidade, visto que diversas vítimas citam que ele foi responsável por agressões\ne espancamentos, tendo inclusive raspado o cabelo de uma delas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há \nelementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos dos crimes também merecem negativação, uma vez que foram \npraticados a fim de angariar ganhos financeiros e permanecer parte da cúpula da comunidade,\naderindo dolosamente ao intento criminoso de Domingos e Rogério.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos por Rafael também \n transbordam qualquer normalidade, uma vez que houve o envolvimento de menores e pessoas\nhumildes, além da utilização da religião e da fé como elemento para subjugá-las e submetê-las\nseja ao trabalho análogo ao de escravo, seja à tortura psicológica.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois as agressões e \n \nespancamentos evidentemente causaram traumas nas vítimas. O crime de associação criminosa\ntambém merece valoração negativa quanto as consequências, posto que fora constituída para o\ncometimento de graves crimes, contra as mesmas vítimas, ao longo de muitos anos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos \napurados nos autos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias \njudiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 7 (sete) anos de reclusão e 141 (cento e quarenta e um) dias-multa para cada um \ndos crimes previsto no art. 149 do Código Penal;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 7 (sete) anos de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 2 (dois) anos para o crime previsto no art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Tendo em vista que não houve informações acerca da ingerência do réu nos ganhos \nfinanceiros da comunidade, tampouco se possui outros bem e rendas, estabeleço 1/30 do salário-\n \nmínimo do ano de 2022 (data do fato), como o valor de cada dia-multa (CP art. 49, § 1o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, tendo em vista que os crimes de tortura foram praticados para \nfacilitar e assegurar a execução, a ocultação, a impunidade e a vantagem do crime do artigo 149\ndo CP, uma vez que se buscava evitar que as vítimas saíssem da comunidade e relatassem às\nautoridades aquilo pelo que passaram, aplico a agravante do artigo 61, II, “b”, do CP ao crime do\nart. 1o, II, § 4o, II, Lei n. 9.455/97, fixando a pena intermediária em 8 anos e 2 meses de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, aos crimes do art. 149 do \nCP e art. 1o, II, § 4o, II, Lei n. 9.455/97, por se constituir causa de aumento de pena a ser utilizada\nna última fase da dosimetria.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase: \n\nAplico a majorante do inciso I do § 2o do artigo 149, uma vez que crianças foram \nsubmetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela\nmetade. Portanto, fixo a pena definitiva em 10 anos e 6 meses de reclusão e 211 dias multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do inciso II do § 4o do artigo 1o da Lei no 9.455/97 em um terço \nfixando a pena definitiva em 11 anos e 20 dias de reclusão;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que \nforam apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se\na pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art. 149 do CP, aplico a regra disciplinada pelo art. \n70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 15 (quinze) anos e 9 (nove) meses de reclusão e 316 (trezentos e dezesseis) \n \ndias-multa para os crimes previstos no art. 149 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "b) 11 anos e 20 dias de reclusão pelo crime do art. 1o, II, § 4o, II, Lei n. 9.455/97; \n\nc) 3 anos de reclusão pelo crime do art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art. 69 do CP), fica \no sentenciado condenado, definitivamente, a pena de 29 (vinte e nove) anos; 9 (nove) meses e\n20 (vinte) dias de reclusão e 316 (trezentos e dezesseis) dias-multa, mantendo-se, para cada um\ndeles, o valor anteriormente fixado, o que implica o valor total de R$ 12.766,4 (doze mil,\nsetecentos e sessenta e seis reais e quatro centavos), a ser monetariamente atualizado desde a\ndata do fato até seu efetivo pagamento (CP art. 49, § 2o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no art. 33, caput, e § 2o, alínea “a” c/c art. 69 (parte final), todos do \nCP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em\nregime fechado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Réu EDILSON DE SOUZA FRANÇA\n\nAnalisadas as diretrizes do art. 59 do CP, a culpabilidade foi normal aos tipos \npenais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Não há informações positivas ou negativas sobre antecedentes criminais.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar quanto à conduta social.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nada a valorar no que tange à personalidade do réu, tendo em vista que não há \nelementos nos autos a respeito de sua personalidade, como, v.g., laudo psicossocial.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Os motivos foram normais às espécies.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Já com relação às circunstâncias em que praticados os fatos, merece valoração \nnegativa, uma vez que houve o envolvimento de menores e pessoas humildes, além da utilização\nda religião e da fé como elemento para subjugá-las e submetê-las seja ao trabalho análogo ao de\nescravo, seja à tortura psicológica.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "As consequências dos crimes merecem valoração negativa, pois o delito do art. \n149 do código penal foi cometido por longo lapso temporal, contra elevada quantidade de\npessoas.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "O comportamento das vítimas não é desfavorável ao réu, diante dos fatos \napurados nos autos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "À vista destas circunstâncias analisadas individualmente (quatro circunstâncias \njudiciais negativas) é que fixo a pena-base dos delitos da seguinte forma:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 2 (anos) anos e 8 (oito) meses de reclusão e 15 (quinze) dias-multa para cada um \ndos crimes previsto no art. 149 do Código Penal;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "c) 2 (dois) anos para o crime previsto no art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Tendo em vista que não houve informações acerca da ingerência do réu nos ganhos \nfinanceiros da comunidade, tampouco se possui outros bem e rendas, estabeleço 1/30 do salário-\n \nmínimo do ano de 2022 (data do fato), como o valor de cada dia-multa (CP art. 49, § 1o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na segunda fase, aplico a agravante do artigo 61, II, “h”, do CP, ao crime do art. 288 \ndo CP, fixando a pena intermediária em 2 (dois) anos e 4 (quatro) meses de reclusão e 15 dias-\nmulta.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar a agravante do artigo 61, II, “h”, do CP, ao crime do art. 149 do CP, \npor se constituir causa de aumento de pena a ser utilizada na última fase da dosimetria.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Na terceira fase: \n\nAplico a majorante do inciso I do § 2o do artigo 149, uma vez que crianças foram \nsubmetidas a trabalho análogo ao de escravo, devendo a pena intermediária ser aumentada pela\nmetade. Portanto, fixo a pena definitiva em 4 anos e 2 meses de reclusão e 23 dias-multa.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Aplico a majorante do parágrafo único do artigo 288 do CP, tendo em vista que \nforam apreendidas armas de fogo na comunidade indicando seu uso pelos réus, aumentando-se\na pena provisória em metade, fixando a pena definitiva em 3 anos de reclusão.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "No tocante ao crime descrito no art. 149 do CP, aplico a regra disciplinada pelo art. \n70 do Código Penal e, assim, fica o sentenciado condenado as seguintes penas:",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "a) 6 (seis) anos e 3 (três) meses de reclusão e 35 (trinta e cinco) dias-multa para os \ncrimes previstos no art. 149 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "c) 3 anos de reclusão pelo crime do art. 288 do CP;",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Por fim, sendo aplicada a regra do concurso material de crimes (art. 69 do CP), fica \no sentenciado condenado, definitivamente, a pena de 9 (nove) anos; 3 (três) meses de reclusão e\n 35 (trinta e cinco) dias-multa, mantendo-se, para cada um deles, o valor anteriormente fixado, o\nque implica o valor total de R$ 1.414,00 (doze mil, setecentos e sessenta e seis reais e quatro\ncentavos), a ser monetariamente atualizado desde a data do fato até seu efetivo pagamento (CP\nart. 49, § 2o).",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Com fundamento no art. 33, caput, e § 2o, alínea “a” c/c art. 69 (parte final), todos do \nCP, o condenado deverá iniciar o cumprimento da pena privativa de liberdade definitiva em\nregime fechado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "6. DAS PRISÕES PREVENTIVAS E DISPOSIÇÕES FINAIS \n\nConsiderando a gravidade dos fatos, a ingerência dos réus na perpetuação da \nempreitada criminosa, a atuação violenta contra as vítimas e o poder reverencial que os réus\ndetêm sobre os integrantes da Comunidade São Lucas, com respaldo no art. 312 do CPP,\nmantenho a prisão preventiva de todos os réus.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Conquanto a condenada JOICILENE DOS SANTOS COSTA seja genitora de dois \nfilhos com idade inferior a 12 (doze) anos, ficou comprovada a prática do crime de tortura, delito\npraticado mediante emprego de violência e ameaça em detrimento de outras pessoas.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "A gravidade dos delitos em que incorreram os condenados impõe a necessidade de \nque a prisão preventiva seja mantida. Ademais, observa-se que as circunstâncias que ensejaram\no decreto de prisão não se alteraram, motivo pelo qual adoto como razões desta decisão a\nfundamentação esposada nos processos 1002628-24.2022.4.01.3907 e 1002792-\n86.2022.4.01.3907.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Deixo de aplicar a detração prevista no § 2o, do art. 387 do Código de Processo \nPenal, vez que o lapso de prisão já cumprido não se afigura suficiente para modificar o regime\ninicial da pena, cabendo ao juízo da execução realizar tal providência.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Deixo de fixar valor mínimo para reparação dos danos causados pelo delito (CPP \nart. 387, IV, com redação dada pela Lei no 11.719, de 22.06.2008), porque não houve pedido do\n \nMinistério Público Federal neste sentido.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Proceda-se, em relação às armas apreendida, conforme determinado no artigo 25 \ndo Estatuto do Desarmamento.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas devidas pelos sentenciados, ora condenados (Lei no 9.289, de 04.07.96, art. \n6o).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Após o trânsito em julgado: \n\n\n1. Proceda-se ao recolhimento do valor atribuído a título de pena pecuniária, nos \ntermos do art. 686 do CPP; \n\n2. Oficie-se ao Tribunal Regional Eleitoral do Estado do Pará/PA para cumprimento \ndo disposto no art. 15, III, da CF; \n\n3. Oficie-se ao Instituto de Identificação Civil, informando sobre a condenação dos \nRéus; \n\n4. Expeçam-se guias de execução penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Publique-se. Registre-se. Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Tucuruí/PA, data da assinatura. \n\nDiogo da Mota Santos \n\nJuiz Federal Substituto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "TUCURUÍ, 16 de março de 2023.",
+      "label": "OUTROS"
+    }
+  ]
+}

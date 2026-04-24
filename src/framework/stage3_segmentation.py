@@ -50,6 +50,88 @@ def _resolve_api_key(key_name: str) -> str:
     return ""
 
 
+def _repair_truncated_json(text: str) -> str | None:
+    """Attempt to repair JSON truncated by model output limits.
+
+    Finds the last complete object in a ``dados`` array and closes all
+    open brackets/braces so the JSON can be parsed.  Returns *None* when
+    the text does not look like a truncated payload.
+    """
+    # Must contain at least the start of a dados array
+    if '"dados"' not in text and not text.lstrip().startswith("["):
+        return None
+
+    # Find the last complete object boundary: '},\n    {' or '}\n  ]' etc.
+    # We look for the last '}' that is followed by a comma or whitespace
+    # and attempt to close the structure there.
+    last_complete = -1
+    brace_depth = 0
+    bracket_depth = 0
+    in_string = False
+    escape_next = False
+
+    for i, ch in enumerate(text):
+        if escape_next:
+            escape_next = False
+            continue
+        if ch == '\\' and in_string:
+            escape_next = True
+            continue
+        if ch == '"' and not escape_next:
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == '{':
+            brace_depth += 1
+        elif ch == '}':
+            brace_depth -= 1
+            if brace_depth >= 0:
+                last_complete = i
+        elif ch == '[':
+            bracket_depth += 1
+        elif ch == ']':
+            bracket_depth -= 1
+
+    if last_complete <= 0:
+        return None
+
+    # Truncate at last complete brace, then close remaining open structures
+    truncated = text[:last_complete + 1]
+
+    # Recount open brackets/braces after truncation
+    brace_depth = 0
+    bracket_depth = 0
+    in_string = False
+    escape_next = False
+    for ch in truncated:
+        if escape_next:
+            escape_next = False
+            continue
+        if ch == '\\' and in_string:
+            escape_next = True
+            continue
+        if ch == '"' and not escape_next:
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == '{':
+            brace_depth += 1
+        elif ch == '}':
+            brace_depth -= 1
+        elif ch == '[':
+            bracket_depth += 1
+        elif ch == ']':
+            bracket_depth -= 1
+
+    # Close open structures
+    truncated += ']' * bracket_depth
+    truncated += '}' * brace_depth
+
+    return truncated
+
+
 def _extract_json_payload(text: str) -> dict[str, Any]:
     """Extrai JSON válido da resposta do modelo (com ou sem markdown fence)."""
     cleaned = text.strip()
@@ -80,9 +162,11 @@ def _extract_json_payload(text: str) -> dict[str, Any]:
     candidates = [cleaned]
     candidates.append(_repair_common_json_issues(cleaned))
 
+    # NOTE: strict=False allows unescaped control characters (e.g. raw
+    # newlines) inside JSON strings, which Gemini sometimes produces.
     for candidate in candidates:
         try:
-            payload = json.loads(candidate)
+            payload = json.loads(candidate, strict=False)
             return _normalize_payload(payload)
         except json.JSONDecodeError:
             pass
@@ -101,7 +185,7 @@ def _extract_json_payload(text: str) -> dict[str, Any]:
         candidate = block_match.group(1)
         for variant in (candidate, re.sub(r",\s*([\]}])", r"\1", candidate), re.sub(r"}\s*{", "},{", candidate)):
             try:
-                payload = json.loads(variant)
+                payload = json.loads(variant, strict=False)
                 return _normalize_payload(payload)
             except json.JSONDecodeError:
                 continue
@@ -115,13 +199,26 @@ def _extract_json_payload(text: str) -> dict[str, Any]:
             except Exception:
                 continue
 
+    # fallback: attempt to repair truncated JSON by closing open structures
+    truncated = _repair_truncated_json(cleaned)
+    if truncated is not None:
+        for variant in (truncated, _repair_common_json_issues(truncated)):
+            try:
+                payload = json.loads(variant, strict=False)
+                return _normalize_payload(payload)
+            except (json.JSONDecodeError, Exception):
+                continue
+
     raise ValueError("Resposta da LLM não contém JSON válido no formato esperado.")
 
 
 def _response_to_text(response: Any) -> str:
-    direct_text = getattr(response, "text", "")
-    if isinstance(direct_text, str) and direct_text.strip():
-        return direct_text
+    try:
+        direct_text = getattr(response, "text", "")
+        if isinstance(direct_text, str) and direct_text.strip():
+            return direct_text
+    except Exception:
+        pass  # .text accessor may raise on blocked responses
 
     candidates = getattr(response, "candidates", None)
     if candidates:
@@ -209,9 +306,11 @@ def run_stage3_segmentation(
     results: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
 
+    total_records = len(records)
     for idx, row in enumerate(records):
         raw_text = str(row.get(text_column, ""))
         doc_id = row.get(id_column, idx)
+        print(f"[{idx + 1}/{total_records}] Processando doc_id={doc_id}...", flush=True)
 
         if not raw_text.strip():
             errors.append({"index": idx, "doc_id": doc_id, "error": "Texto vazio"})

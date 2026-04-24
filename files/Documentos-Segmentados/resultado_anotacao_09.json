@@ -1,0 +1,344 @@
+{
+  "index": 9,
+  "doc_id": 9,
+  "model_name": "gemini-2.5-flash-lite",
+  "total_sentencas": 25,
+  "dados": [
+    {
+      "sentenca": "PODER JUDICIÁRIO \nJUSTIÇA FEDERAL \nSubseção Judiciária de Imperatriz-MA \n2a Vara Federal Cível e Criminal da SSJ de Imperatriz-MA",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "SENTENÇA TIPO \"A\"",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "PROCESSO: 1002084-43.2020.4.01.3701 \nCLASSE: AÇÃO PENAL - PROCEDIMENTO ORDINÁRIO (283) \nPOLO ATIVO: Ministério Público Federal (Procuradoria) e outros \nPOLO PASSIVO:VALTER LAGUNA FERRARI \nREPRESENTANTES POLO PASSIVO: LUANNA LEITE MORAES - MA17597",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "SENTENÇA \n\nTipo “D”",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "RELATÓRIO \n\nCuida-se de ação penal movida pelo MINISTÉRIO PÚBLICO FEDERAL – \nMPF em desfavor de VALTER LAGUNA FERRARI, acusado da prática do crime\nprevisto no art. 149 do Código Penal.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A denúncia narra o seguinte:",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "“No dia 24/01/2019, Valter Laguna Ferrari, com vontade e consciência, \nadmitiu Abimael da Conceição para trabalhar na Fazenda Maravilha – \nlocalizada na Estrada da Gameleira, zona rural do Município de \nGovernador Edison Lobão/MA – e o reduziu a condição análoga à de \nescravo até 05/04/2019, quando foi resgatado, sujeitando-o a condições \ndegradantes de trabalho.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Em 05/04/2019, uma Equipe de Fiscalização composta por Auditores-\nFiscais do Trabalho, Procuradora e perito do Ministério Público do Trabalho \n\ne agentes da Polícia Rodoviária Federal iniciou fiscalização na Fazenda \nMaravilha, a fim de apurar a veracidade de notícia de fato encaminhada \npelo Conselho Tutelar do Município de Governador Edison Lobão/MA \ninformando que havia um trabalhador, com sua família, em situação de \ntrabalho em condições análogas à de escravo, pela falta de alimentação e \nde água potável e pelo não recebimento de salários.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O trabalhador em questão é Abimael Lima da Conceição, vaqueiro da \nfazenda entre 24/01/2019 e 05/04/2019, período em que foi submetido, \npelo seu empregador Valter Laguna Ferrari, a condições de trabalho que \naviltam a dignidade humana e caracterizam situação de trabalho \ndegradante, conforme constatado pela Equipe de Fiscalização.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "As condições degradantes, que ensejaram, inclusive, o resgate do \ntrabalhador e de sua família, sintetizam-se nas seguintes circunstâncias, \nentre outras:",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "1.1 Privação alimentar: O empregado resgatado não recebeu, durante o \nperíodo em que esteve trabalhando na fazenda, nenhuma quantia a título \nde salário, o que submeteu sua família, composta por ele, sua esposa e \nquatro filhas menores, a uma situação de privação alimentar.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Esse quadro foi constatado pela ínfima quantidade de alimentos \nencontrada na moradia do vaqueiro: arroz, café, açúcar, um pé de frango e \num pequeno peixe.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Abimael Lima da Conceição recebeu apenas a quantia de R$ 400,00 \n(quatrocentos reais) de um senhor de nome Raimundo, que foi até a \nfazenda para pagar por uma madeira ao proprietário Valter Laguna Ferrari.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Valter Laguna Ferrari alega ter enviado algumas quantias ao trabalhador, \nque totalizavam R$ 600,00 (seiscentos reais), e afirma ter gasto R$ 598,89 \n(quinhentos e noventa e oito reais e oitenta e nove centavos) com a \naquisição de alimentos que teriam sido entregues ao empregado. Não \nlembrava, entretanto, quem havia levado esse dinheiro a Abimael Lima da \nConceição e não tinha comprovantes das compras alegadas.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "O empregador também se comprometeu a fornecer alimentação para o \ntrabalhador e sua família, que seria descontada do salário. Apesar de a Lei \n5.889/1973 permitir que faça o desconto, constatou-se que não era \nfornecida alimentação farta e sadia.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Abimael Lima da Conceição informou que recebeu alimentos apenas duas \nvezes: 24/01/2019, quando ingressou na fazenda, e no dia 22/02/2019, \naproximadamente. Nas duas ocasiões, recebeu alimentos em pequena \nquantidade, insuficientes para a sua família.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "1.2 Ausência de água potável: Não havia água potável e fresca para o \nconsumo. A água que abastecia a moradia do trabalhador na fazenda era \noriunda de um poço cacimbão, que estava completamente coberto pela \n\ninundação causada em razão das fortes chuvas caídas na região, \nocasionando a contaminação do poço.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Abimael Lima da Conceição informou que, após as chuvas, sua família \ndeixou de usar a água do poço para consumo direto, utilizando-a apenas \npara asseio corporal e preparo de alimentos, sendo necessário, para tanto, \ncoá-la com um pano e, depois, fervê-la. Para beber, contavam com a ajuda \ndo genitor do trabalhador, que fornecia água limpa à família.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "No local do poço, totalmente encoberto pela água das chuvas, observou-se \na presença de folhas, madeiras e algas superficiais. Além disso, a lagoa \nque se formou ao redor da área do poço também era utilizada por animais \ne o trabalhador informou que uma vaca havia morrido no local há poucos \ndias.",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "Verificou-se, ainda, que a água que chegava à casa do trabalhador \napresentava cor amarelada, não passando por nenhum tipo de tratamento \ne não havendo filtro no local.”",
+      "label": "DOS_FATOS"
+    },
+    {
+      "sentenca": "A denúncia foi recebida em 03/02/2020 (ID 190439861 – págs. \n11/13).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Regularmente citado, o acusado apresentou resposta à acusação (ID \n581290922).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Absolvição sumária considerada incabível (ID 907768091).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na audiência realizada em 11/04/2022 foi ouvida a testemunha RENATA \nSORAYA DANTAS OCÉA (ID 1024370280).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Na audiência realizada em 02/05/2022 foram ouvidas as testemunhas \nIVANO RODRIGUES SAMPAIO, MARISTELA ESCÓRCIO BOTELHO, PAULO\nVINICIUS GOMES COSTA, ALDEMAR LOPES DE SOUSA, ANTONIO COELHO\nFILHO e CARLOS RAYLSON LIMA. Na ocasião, também foi realizado o interrogatório\ndo acusado (ID 1053148286).",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "Em suas alegações finais, o MPF requereu sejam “julgados procedentes \nos pedidos formulados, com a condenação de Valter Laguna Ferrari pela prática do\ncrime previsto no art. 149 do Código Penal.”",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "A defesa do acusado, em suas alegações finais, disse que não foi provada \npela acusação a existência de submissão do trabalhador a condições que permitam o\nenquadramento dos fatos no art. 149 do Código Penal. Por conta disto, requereu a\nabsolvição do réu. Subsidiariamente, requereu a aplicação da pena em seu mínimo\nlegal, com os consectários daí decorrentes.",
+      "label": "RELATORIO"
+    },
+    {
+      "sentenca": "FUNDAMENTAÇÃO \n\nO MPF imputa ao réu a conduta descrita no artigo 149 do Código Penal, \nporque teria ele submetido o Sr. ABIMAEL DA CONCEIÇÃO, no período de\n24/01/2019 a 05/04/2019, a condições degradantes de trabalho.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Sobre o crime de Redução a condição análoga à de escravo, assim dispõe \no Código Penal:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Art. 149. Reduzir alguém a condição análoga à de escravo, quer \nsubmetendo-o a trabalhos forçados ou a jornada exaustiva, quer \nsujeitando-o a condições degradantes de trabalho, quer restringindo, \npor qualquer meio, sua locomoção em razão de dívida contraída com o \nempregador ou preposto: \n\nPena - reclusão, de dois a oito anos, e multa, além da pena \ncorrespondente à violência. \n\n§ 1o Nas mesmas penas incorre quem: \n\nI – cerceia o uso de qualquer meio de transporte por parte do trabalhador, \ncom o fim de retê-lo no local de trabalho; \n\nII – mantém vigilância ostensiva no local de trabalho ou se apodera de \ndocumentos ou objetos pessoais do trabalhador, com o fim de retê-lo no \nlocal de trabalho. \n\n§ 2o A pena é aumentada de metade, se o crime é cometido: \n\nI – contra criança ou adolescente; \n\nII – por motivo de preconceito de raça, cor, etnia, religião ou origem.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Anoto, por oportuno, que a conduta descrita no tipo penal descrito no art. \n149 do Código Penal será criminosa quando consistir em uma das quatro\nmodalidades: a) submissão a trabalhos forçados; b) submissão a jornada exaustiva; c)\nsujeição a condições degradantes de trabalho; d) restrição da liberdade de locomoção,\nem razão de dívida contraída com o empregador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Para a configuração do crime não é necessário que se prove a coação \nfísica da liberdade de ir e vir ou mesmo o cerceamento da liberdade de locomoção,\nbastando a submissão da vítima “a trabalhos forçados ou a jornada exaustiva” ou “a\ncondições degradantes de trabalho”, condutas alternativas previstas no tipo penal (tipo\n\nmisto alternativo ou de conteúdo variado).",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "BALTAZAR JÚNIOR[1] explica que “(...) o delito consiste em reduzir \nalguém à condição análoga à de escravo, ou seja, tratar de modo semelhante a um\nescravo, uma vez que a escravidão, em sentido estrito, no sentido de uma pessoa\npertencer a outra, é abolida em todos os ordenamentos jurídicos contemporâneos. No\nentanto, o direito é dever ser, de modo que a abolição, com a consequente proibição e\nincriminação da escravidão, não significa que, de fato, a prática não ocorra\ncontemporaneamente, ainda que em moldes distintos. Em suma, se não há mais\nescravidão em sentido jurídico, ainda se encontram práticas faticamente\n asemelhadas à escravidão.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A propósito do tema, o STF assentou que “(...) a ‘escravidão moderna’ é \nmais sutil do que a do século XIX e o cerceamento da liberdade pode decorrer de\ndiversos constrangimentos econômicos e não necessariamente físicos. Priva-se\nalguém de sua liberdade e de sua dignidade tratando-o como coisa e não como\npessoa humana, o que pode ser feito não só mediante coação, mas também pela\nviolação intensa e persistente de seus direitos básicos, inclusive do direito ao trabalho\ndigno. (...) Não é qualquer violação dos direitos trabalhistas que configura trabalho\nescravo. Se a violação aos direitos do trabalho é intensa e persistente, se atinge níveis\ngritantes e se os trabalhadores são submetidos a trabalhos forçados, jornadas\nexaustivas ou a condições degradantes de trabalho, é possível, em tese, o\nenquadramento no crime do art. 149 do Código Penal, pois os trabalhadores estão\nrecebendo o tratamento análogo ao de escravos, sendo privados de sua liberdade e\nde sua dignidade (STF, Inq 3412/AL, Rel. Ministro Marco Aurélio, Rel.a p/ Acórdão\nMinistra Rosa Weber, Tribunal Pleno, julgado em 29.03.2012, DJe de 09.11.2012).”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Ainda sobre o tema, BALTAZAR JÚNIOR[2] elenca circunstâncias que \npoderão, conforme o caso concreto, levar à conclusão pela submissão a condições\ndegradantes de trabalho, dentre elas: alojamento inadequado; falta de condições\nsanitárias adequadas; falta de água potável e alimentação suficiente e adequada, bem\ncomo de refeitório e cozinha adequados; falta de equipamentos de proteção individual\nou coletiva; falta de assistência médica; falta de registro do trabalhador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Após análise percuciente do conjunto probatório tenho que o contexto \nfático apresentado denota a existência de materialidade e autoria delitivas, o que\npermite o enquadramento de sua conduta no tipo penal previsto no art. 149 do Código\nPenal.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A equipe de fiscalização do Ministério do Trabalho e Emprego lavrou \nrelatório circunstanciado de vistoria realizada na FAZENDA VL, cujo trecho segue\nabaixo reproduzido:",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "“...constatou-se que o trabalhador foi contratado para a função de vaqueiro \ne ocupava, com sua família, uma moradia rural da fazenda; laborava em \ncondição de total informalidade, visto que o empregador não providenciou \n\na formalização do vínculo de emprego no início da prestação dos serviços, \n\ne nem mesmo após o início da ação fiscal, mesmo tendo se comprometido \nperante a inspeção do trabalho – vide ata da reunião realizada em \n04/09/2019.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O trabalhador chegou na fazenda em 24/01/2019, como dito, para ocupar a \nfunção de vaqueiro. Durante todo esse período, de 24/01 a 05/04, o \ntrabalhador não havia recebido do empregador nenhuma quantia a título de \nsalário, o que lhe submeteu, assim com a sua família – esposa e 04 filhas – \na uma situação de privação alimentar (fome), uma vez que conta apenas \ncom remuneração do seu labor e com R$ 250,00 (duzentos e cinquenta \nreais) que recebe do Programa Bolsa Família para arcar com todas as \ndespesas suas e de sua prole.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Esse quadro de privação alimentar foi constatado pela ínfima quantidade \nde alimentos encontrada na moradia do vaqueiro em uma pequena estante \nde madeira: arroz, açúcar e café. Na geladeira, havia um pé de frango e \num pequeno peixe.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "(...) \n\nOutro fator preocupante constatado no local foi que a água que abastece a \nmoradia do trabalhador é oriunda de um poço cacimbão, que estava \ncompletamente coberto pela inundação causada em razão das fortes \nchuvas caídas na região. As águas pluviais formaram uma lagoa na área \ndo poço, acabando por encobri-lo, causando sua contaminação.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Na verdade, o trabalhador reclamou que mesmo antes da inundação, a \nágua do poço já causava dor de urina. Com as enxurradas, a qualidade da \nágua só piorou, tendo o trabalhador – e sua família – parado de usar a \nágua do poço para consumo direto, utilizando-a apenas para preparo de \nalimentos e asseio corporal. Para beber, contavam com a ajuda do genitor \ndo trabalhador, que levava água limpa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "No local do poço, que estava totalmente encoberto, verificamos a presença \nde folhas, madeiras e algas superficiais; além disso, a lagoa que se formou \nem torno da área do poço não era dotada de qualquer tipo de cerca, sendo \nutilizada por animais: o trabalhador afirmou que havia poucos dias uma \nvaca tinha morrido dentro dessa lagoa.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A água que abastece a moradia do trabalhador é captada desse poço com \no uso de uma bomba submersa e levada por canos até uma caída de 500 \nlitros: de lá, desce também por canos, até a casa. Constatamos, a olho nu, \nque essa água que chega à casa do obreiro, apresenta cor amarelada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Verificamos que a água do poço cacimbão não passava por nenhum tipo \nde tratamento, bem como não havia filtro no local.”",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O relatório deve ser admitido como autêntico e legítimo, pois os registros \nlançados neste documento gozam de fé pública, ainda mais quando acompanhados\nde fotos das instalações do local e de entrevista feita com o trabalhador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É certo que tal presunção de veracidade pode ser infirmada por prova \ninequívoca em sentido contrário. Além do mais, deve o juiz formar sua convicção pela\nlibre apreciação da prova produzida em contraditório judicial, não podendo\nfundamentar sua decisão exclusivamente nos elementos informativos colhidos na\ninvestigação (art. 155, CPP), ressalvadas algumas exceções. No entanto, não há nos\nautos quaisquer elementos de prova capazes de invalidar as conclusões expostas no\nrelatório. Ao contrário, várias testemunhas foram ouvidas neste juízo acerca dos\nfatos e todas confirmaram a existência das condições expostas acima.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "IVANO RODRIGUES SAMPAIO afirmou que fez parte da equipe e esteve \nna FAZENDA VL durante a fiscalização. Segundo ele, as investigações tiveram início\na partir de denúncia do Conselho Tutelar de Imperatriz/MA acerca da existência de\ncrianças (filhas do trabalhador) que residiam no local e que não frequentavam a\nescola. Afirmou que o trabalhador estava no local desde janeiro e confirmou as\ninformações no sentido de que o trabalhador e sua família passavam por situação de\nprivação alimentar e que não lhes era oferecida água potável. Disse, ainda, que: a) o\ntrabalhador contava com a ajuda de terceiros para se alimentar, visto que não\nrecebia salário; b) a água disponibilizada à família do trabalhador era imprópria\npara consumo, uma vez que era proveniente de poço que era inundado pela\nágua das chuvas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "A testemunha MARISTELA ESCÓRCIO BOTELHO, que também \nparticipou da equipe de fiscalização, disse que a moradia não era tão ruim, mas a\nfamília enfrentava carência alimentar e não dispunha de água potável. Além disso, \nconfirmou a falta de pagamento salarial. De acordo com a testemunha, o\ntrabalhador deixou claro, quando entrevistado, que não poderia sair da fazenda e\nabandonar o gado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Quando indagada pela defesa acerca das condições da água ofertada \nà família do trabalhador, disse que a água era puxada por meio de uma bomba a\npartir de uma estrutura de “cacimba” que ficava dentro de uma “lagoa”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "As testemunha PAULO VINÍCIOS GOMES, ALDEMAR LOPES DE \nSOUSA e RENATA SORAIA DANTAS também confirmaram o que foi dito acerca da\nágua para consumo e da insuficiência dos alimentos disponibilizados ao trabalhador.\nRegistraram que, segundo relatos, os alimentos estariam sendo doados pela família\nde ABIMAEL DA CONCEIÇÃO e pelo Conselho Tutelar de Imperatriz/MA.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em seu interrogatório, o acusado atestou que era o proprietário da \nFAZENDA VL. Confirmou, também, que havia contratado ABIMAEL DA CONCEIÇÃO\npara prestar serviços em sua fazenda após este ter relatado que sua família passava\npor dificuldades. Disse que contratou ABIMAEL para trabalhar como empreiteiro para\na realização de serviços diversos e que ele não era vaqueiro e que “não era fichado na\n\ncarteira”, mas que, de vez em quando, pagava diárias para que ele ajudasse a cuidar\ndo gado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação à moradia do trabalhador, ABIMAEL era diarista e \nempreiteiro, sendo comum que ele trabalhasse um dia na sua fazenda e noutro dia na\nfazenda de terceiro. Na época da fiscalização, por conta do período chuvoso, permitiu\nque o trabalhador permanecesse na sua fazenda. Entretanto, negou que ABIMAEL\ntivesse fixado moradia permanentemente. O réu sabia que ABIMAEL tinha esposa e\nfilhas.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Indagado acerca da oferta de alimentação, disse que todas as despesas \nera por conta do próprio trabalhador, em razão do tipo de acordo que fizeram.\nAfirmou que “se ele come carne lá na casa dele, quer comer carne todo dia no\nserviço dele. Geralmente o trabalhador é desse jeito, entendeu? Então, aí ele\nfalou, eu vou combinar com você, você vai fazer o serviço de diarista aqui,\nempreitada aqui, mas, tudo por tua conta. Eu combinei com ele foi assim. Agora, \nse faltou as coisas para ele comer, foi um problema dele. Se ele jogou fora ou\nvendeu ou alguma coisa é um problema dele. Se ele come carne lá na casa dele\ne vai comer lá no serviço ele quer comer carne todo dia? Então tem empregado\nque é desse jeito aí. Então, resumindo, foi tudo por conta dele que eu combinei”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Indagado a respeito da água, disse que administra o imóvel rural há mais \nde 30 (trinta) anos e que jamais alguém reclamou da água. Disse que à época da\nfiscalização, por conta do período chuvoso, a água apresentava aquele aspecto\ndescrito pelos fiscais do trabalho, sendo que, no período de estiagem (verão). Do\ninterrogatório se pode inferir que o acusado admitiu a falta de cuidado quanto à\nqualidade da água, ao expressar \"não vou te mentir não, porque geralmente caixa\nvocê tem que fazer uma limpeza numa caixa, hoje qualquer residência hoje, \nprincipalmente em fazenda, cê tem que fazer uma limpeza na caixa.\" Então, \"vem\nresíduo, sei lá, e época de chuva também.\"",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Incumbe ao empregador garantir a disponibilização de água potável \ndurante o ano inteiro. Não é aceitável como justificativa a alegação de que a\ncontaminação do reservatório só costumava ocorrer em razão das fortes chuvas. Se\nexistia o risco de o reservatório ser poluído por folhas, resíduos e outros objetos\nlevados pela chuva, caberia ao empregador promover a vedação da caixa d'água,\nassegurando a salubridade do líquido.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "O acusado relatou, ainda, que a casa era feita de tijolos, coberta de telha e \ncimentada, sendo que o banheiro contava com revestimento cerâmico. Sobre a água, \ndisse que disponibilizou um pote com filtro, mas os moradores haviam quebrado.\nChegou a fazer a seguinte recomendação ao trabalhador e a sua família: “na minha\nsede tem outro pote. Qualquer coisa, vocês vão lá na minha sede e filtrem a água!”.\nEsclareceu que, embora a sede da fazenda estivesse trancada, na parte de trás (nos\nfundos) da casa havia uma varanda, onde estava localizada uma geladeira e outro\nfiltro, aos quais o trabalhador e sua família tinham acesso. Inclusive, quando estava na\nfazenda, consumia desta mesma água.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Acontece que não há prova cabal da existência de geladeira e de filtro que \npudessem ser livremente utilizados pelo empregado. O que se demonstrou é que a\nágua disponível ao trabalhador não era tratada, carecendo de plausibilidade a tese de\nque existia, do lado de fora da casa, precisamente na varanda ou nos fundos da\nresidência, geladeira e água filtrada.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Com relação aos pagamentos realizados a ABIMAEL, afirmou que quando \no trabalhador chegou na fazenda, comprou um \"rancho\" cujo valor seria descontado\nnas empreitadas ou nas diárias. Porém, não se recorda quantos “ranchos” forneceu à\nfamília. Disse que mandou entregar um valor para que ABIMAEL pagasse o conserto\nde sua motocicleta. Indagado pelo MPF quanto a este ponto, disse que lembra ter\ngasto R$ 400,00 (quatrocentos reais) uma vez; em outra, R$ 600,00 (seiscentos reais).\nAlém disso, disse ter comprado três cestas (com alimentos) cujo valor seria\ndescontado “no serviço”. Relatou, ainda, que ABIMAEL começou a trabalhar na\nfazenda em janeiro e confirmou que ele ficou, pelo menos, até abril. Disse, entretanto,\nque o trabalho em sua fazenda não era contínuo: “trabalhava um pouco, depois saia. \nIa trabalhar para o vizinho, ia trabalhar para outro vizinho. Depois voltava...”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Confirmou que, na época, havia cerca de 80 (oitenta) cabeças de gado na \nfazenda, e, indagado sobre haver outra pessoa responsável pelos cuidados do\nrebanho, afirmou que “de vez em quando trazia um rapaz para poder me ajudar lá”,\nmas que, nesse período, não havia uma pessoa que residia na fazenda e que era\nresponsável pelos serviços de manejo do gado. Afirmou que pagava um diarista para\ncuidar do gado, “que vinha um dia sim, um dia não...”; que tem outra fazenda nas\nproximidades e que “o rapaz ia a cavalo, mexia com o gado e voltava”.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Como se nota, a documentação produzida durante a fiscalização e as \nprovas colhidas na instrução induzem à conclusão no sentido da existência de vínculo\nempregatício entre o acusado e a vítima ABIMAEL DA CONCEIÇÃO no período de\n24/01/2019 a 05/04/2019, como também que o trabalhador e sua família foram\nsubmetidos a condições degradantes de trabalho, notadamente pela ausência de\nobservância aos direitos trabalhistas mínimos e pela carência de suprimentos básicos.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "É evidente a situação degradante pela qual passava a família do \ntrabalhador, que, tendo de residir na propriedade do réu em razão da própria natureza\ndas funções que exercia, não dispunha de alimentação suficiente ou água\nadequada para consumo, necessidades primárias e imprescindíveis à garantia da\ndignidade a qualquer pessoa. Além disso, o conjunto probatório também evidencia a\nviolação de direitos trabalhistas básicos, como a falta de registro em carteira -\nconforme atestou o próprio acusado -, ou mesmo de pagamento de salário.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Conquanto o réu tenha negado as acusações que lhes são feitas, \napresentou depoimento sem credibilidade e, por vezes, contraditório. Por exemplo, \ndisse que o trabalhador não residia na fazenda e que exercia suas funções como\nempreiteiro ou diarista. Tal relato diverge daquele registrado na ata de audiência de ID\n190439868, p. 30, quando o réu afirmou que havia contratado ABIMAEL há pouco\nmais de um mês, prestando-lhe auxílio com a mudança e combinado prazo de 90 dias\n\nà título de experiência, sem acertar salário.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Do mesmo modo, não possui força suficiente para refutar o conjunto \nprobatório dos autos a afirmação de que ABIMAEL não havia sido contratado como\nvaqueiro. A propósito, o acusado disse que contratava um diarista para cuidar do\ngado, porém não apresentou quaisquer elementos ou maiores detalhes em seu\ndepoimento que permitam infirmar o relato do próprio trabalhador que, indagado pela\nequipe de fiscalização, afirmou ser responsável pelos cuidados do rebanho, tendo\nasseverado, inclusive, que não poderia deixar a fazenda, justamente para não deixar\no gado abandonado.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Em suma, as provas apontam na direção de que a vítima residia \npermanentemente na fazenda, onde realizava serviços gerais e cuidava do rebanho,\npodendo-se afirmar que existem provas acima de toda dúvida razoável no sentido da\nelevada probabilidade da hipótese fática acusatória.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "Dessarte, constatado o vínculo de subordinação do trabalhador ao réu e a \ncaracterização de relação empregatícia em condições comprovadamente degradantes,\nimpõe-se o acolhimento dos pedidos formulados pelo órgão acusador.",
+      "label": "FUNDAMENTACAO"
+    },
+    {
+      "sentenca": "DISPOSITIVO \n\nAnte o exposto, julgo procedente a pretensão punitiva estatal e, por \nconseguinte, condeno o réu VALTER LAGUNA FERRARI pela prática do crime\ntipificado no art. 149 do Código Penal.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Passo, então, à dosimetria das penas, segundo o sistema trifásico, \nprevisto no art. 68 do CP.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Atento às circunstâncias judiciais elencadas no artigo 59 do Código Penal, \nobservo que: a) a culpabilidade do acusado, aqui entendida como o grau de\nreprovabilidade da conduta, não ultrapassa o inerente ao descrito no tipo penal; b) \nnão há nos autos registro de maus antecedentes, tendo em vista a ausência de\nnotícias sobre sentença penal condenatória transitada em julgado em seu desfavor; c) \nnão há informações negativas acerca da conduta social e; d) também, estão ausentes\nelementos que permitam examinar a personalidade do acusado; e) os motivos do\ncrime integram o próprio tipo penal; f) as circunstâncias e consequências do delito não\nreclamam valoração negativa; h) o comportamento da vítima não influenciou a prática\ndo crime pelo acusado.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Nesses termos, considerando as circunstâncias do art. 59 em seu \nconjunto, fixo a pena-base em 2 (dois) anos de reclusão e 10 (dez) dias-multa, que se\ntorna definitiva, uma vez que inexistem circunstâncias atenuantes e agravantes ou\ncausas de diminuição ou de aumento de pena.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Quanto ao dia-multa, fixo-o em 3 (três) salários-mínimos vigentes à época\ndos fatos.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Em atenção ao que dispõe o § 2o, “c”, do art. 33 do Código Penal, \nestabeleço, como regime inicial de cumprimento da pena, o aberto.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Presentes os pressupostos do art. 44, I a III, do Código Penal, e em \natenção ao que dispõe o § 2o, segunda parte, daquele dispositivo, substituo a pena\nprivativa de liberdade ora aplicada por 2 (duas) penas restritivas de direito,\nconsistentes em: a) prestação pecuniária, no valor de 10 (dez) salários-mínimos, em\nfavor de entidade a ser definida por ocasião da audiência admonitória; e b) prestação\nde serviços à comunidade ou a entidades públicas, por tempo equivalente ao da pena\nprivativa de liberdade fixada, na forma dos artigos 46 e 55 daquele diploma legal, em\ninstituição a ser designada pelo Juízo da Execução.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Esclareço que o arbitramento do \"quantum\" da pena pecuniária se faz à \nvista da situação econômica do réu, cuidando-se para que não seja fixada em valor\nirrisório, a ponto de perder sua natureza de sanção, sem perder de vista a\nproporcionalidade, diante da gravidade do crime.",
+      "label": "DOSIMETRIA"
+    },
+    {
+      "sentenca": "Deixo de aplicar o disposto no art. 387, IV do CPP, porque não foi \nformulado requerimento específico pelo MPF.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Com o trânsito em julgado desta sentença, adote a Secretaria as seguintes \nprovidências:",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "a) comunique-se ao Tribunal Regional Eleitoral (inciso III do art. 15 da \nConstituição Federal c/c §2o do art. 71 do Código Eleitoral).",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "b) proceda-se à atualização no SINIC/DPF; \n\nc) voltem os autos conclusos para designação de audiência admonitória.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "d) Consoante disposto na Resolução n. 305/2014 do Conselho da Justiça \nFederal, arbitro o valor de R$ 536,83 (quinhentos e trinta e seis reais e oitenta e três\ncentavos), à título de honorários em prol da defensora dativa Dra. LUANNA LEITE\nMORAES. Com o trânsito em julgado (art. 27 da Resolução CJF 305/2014), proceda-\nse ao pagamento dos honorários.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Custas processuais pelo condenado.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "Publique-se. Intimem-se.",
+      "label": "DISPOSITIVO"
+    },
+    {
+      "sentenca": "GEORGIANO RODRIGUES MAGALHÃES NETO \n\nJuiz Federal Substituto",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[1] BALTAZAR JÚNIOR, José Paulo. Crimes federais. 11a. ed. São Paulo:\nSaraiva, 2017, p. 104.",
+      "label": "OUTROS"
+    },
+    {
+      "sentenca": "[2] BALTAZAR JÚNIOR, José Paulo. Crimes federais. 11a. ed. São Paulo:\nSaraiva, 2017, p. 107-108.",
+      "label": "OUTROS"
+    }
+  ]
+}
