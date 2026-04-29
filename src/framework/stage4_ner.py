@@ -70,12 +70,22 @@ def run_stage4_ner(
     if not isinstance(data, list):
         raise ValueError("Formato de entrada inválido: esperado lista de registros")
 
-    ner = pipeline("ner", model=model_name, aggregation_strategy="simple", device=-1)
+    from transformers import AutoTokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    ner = pipeline("ner", model=model_name, tokenizer=tokenizer, aggregation_strategy="simple", device=-1)
+    max_len = min(getattr(tokenizer, 'model_max_length', 512), 512)
 
     results = []
+    total = len(data)
     for idx, item in enumerate(data):
+        if idx % 100 == 0:
+            print(f"[{idx}/{total}] Processando NER...", flush=True)
         sentenca = str(item.get(sentence_key, ""))
         section = str(item.get(label_key, ""))
+        # Truncate to model max token length to avoid runtime errors
+        tokens = tokenizer.encode(sentenca, add_special_tokens=False)
+        if len(tokens) > max_len - 2:  # reserve space for [CLS] and [SEP]
+            sentenca = tokenizer.decode(tokens[:max_len - 2], skip_special_tokens=True)
         entities_raw = ner(sentenca) if sentenca else []
         entities = [
             {
