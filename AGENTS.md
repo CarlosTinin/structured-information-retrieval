@@ -110,7 +110,7 @@ scopus: para obtenção dos artigos relacionados ao tema do trabalho
 
 ### Apendice
 
-#### Query do Scopus para obtenção dos artigos com a construção de frameworks de AI semelhantes
+#### Query do Scopus para obtenção dos artigos com a construção de frameworks de AI semelhantes - filtrados por decisões judiciais
 
 query textual:
 "machine learning" OR "learning of machine" OR "NLP" OR "natural language processing" OR "NER" OR "Named entity recognition"
@@ -118,6 +118,27 @@ query textual:
 AND
 
 "court decision" OR "legal documents" OR "legal decisions"
+
+AND
+
+framework
+
+critérios de busca:
+
+- 2021 - 2026
+- em ingles
+- ordenados por quantidade de citações
+- artigos de periódico
+- remover artigos com < 50% de percentil ou < 100 citações
+
+obtive 45 artigos
+
+Especifiquei mais por NER, dado que quero comparar com minha abordagem obtive 3 artigos para análise.
+
+#### Query do Scopus para obtenção dos artigos com a construção de frameworks de AI semelhantes
+
+query textual:
+"machine learning" OR "learning of machine" OR "NLP" OR "natural language processing" OR "NER" OR "Named entity recognition"
 
 AND
 
