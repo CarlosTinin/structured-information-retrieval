@@ -18,6 +18,12 @@ from sklearn.svm import SVC
 
 from .io_utils import ensure_parent_dir, read_csv_smart, save_json
 
+
+def strip_punctuation_from_text(text: str) -> str:
+    """Remove all punctuation from text, keeping only alphanumeric chars and whitespace."""
+    text = re.sub(r"[^\w\s]", " ", text, flags=re.UNICODE)
+    return re.sub(r"\s{2,}", " ", text).strip()
+
 try:
     import xgboost as xgb
 except Exception:
@@ -85,6 +91,7 @@ def run_stage2_embeddings(
     k_folds: int = 3,
     seed: int = 42,
     target_labels: tuple[str, ...] = ("condenação", "extinto", "absolvição"),
+    strip_punctuation: bool = False,
 ) -> dict:
     np.random.seed(seed)
 
@@ -95,6 +102,11 @@ def run_stage2_embeddings(
         before = len(df)
         df = df[df["label"].isin(target_set)].copy()
         print(f"Filtrando classes-alvo: {sorted(target_set)} | {before} -> {len(df)} documentos")
+
+    if strip_punctuation:
+        print("[Ablation] Removendo pontuação dos textos antes da geração de embeddings...")
+        df["text"] = df["text"].apply(strip_punctuation_from_text)
+        df = df[df["text"].str.len() > 10]  # re-filter after stripping
 
     class_counts = df["label"].value_counts()
     if class_counts.empty:
@@ -153,6 +165,7 @@ def run_stage2_embeddings(
 
     report = {
         "embedding_model": model_name,
+        "strip_punctuation": strip_punctuation,
         "classes": encoder.classes_.tolist(),
         "models": {},
     }
@@ -196,7 +209,8 @@ def run_stage2_embeddings(
     print(metrics_df.to_string(index=False, float_format=lambda x: f"{x:.4f}"))
 
     # Exportar tabela LaTeX
-    table_path = Path(output_root) / "tables" / "table.tex"
+    suffix = "_no_punct" if strip_punctuation else ""
+    table_path = Path(output_root) / "tables" / f"table{suffix}.tex"
     ensure_parent_dir(table_path)
     latex_df = metrics_df.copy()
     for col in ["Accuracy", "Precision", "Recall", "F1"]:
@@ -231,7 +245,7 @@ def run_stage2_embeddings(
         plt.tight_layout()
 
         model_slug = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-        image_path = images_dir / f"matriz_confusao_{model_slug}.png"
+        image_path = images_dir / f"matriz_confusao_{model_slug}{suffix}.png"
         plt.savefig(image_path, dpi=200)
         plt.close()
 
