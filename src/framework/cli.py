@@ -77,6 +77,8 @@ def build_parser() -> argparse.ArgumentParser:
     p2x.add_argument("--target-labels", default="condenação,extinto,absolvição")
     p2x.add_argument("--num-background", type=int, default=20)
     p2x.add_argument("--max-tokens", type=int, default=256)
+    p2x.add_argument("--strip-punctuation", action="store_true", default=False,
+                      help="Remove punctuation before embedding (ablation study)")
 
     p4 = sub.add_parser("stage4", help="Etapa 4 - Extração NER (etapa final)")
     p4.add_argument("--input-json", required=True)
@@ -191,6 +193,7 @@ def main() -> None:
                 target_labels=target_labels,
                 num_background=args.num_background,
                 max_tokens=args.max_tokens,
+                strip_punctuation=args.strip_punctuation,
             )
         )
         return

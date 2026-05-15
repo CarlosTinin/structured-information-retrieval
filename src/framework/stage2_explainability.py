@@ -39,6 +39,7 @@ from sklearn.svm import SVC
 
 from .io_utils import ensure_parent_dir, read_csv_smart, save_json
 from .stage2_embeddings import load_dataset
+from .stage2_embeddings import strip_punctuation_from_text
 
 try:
     import xgboost as xgb
@@ -524,6 +525,7 @@ def run_stage2_explainability(
     target_labels: tuple[str, ...] = ("condenação", "extinto", "absolvição"),
     num_background: int = 20,
     max_tokens: int = 256,
+    strip_punctuation: bool = False,
 ) -> dict:
     """Run SHAP explainability analysis on Stage 2 classifiers.
 
@@ -569,6 +571,11 @@ def run_stage2_explainability(
         target_set = {x.strip().lower() for x in target_labels}
         df = df[df["label"].isin(target_set)].copy()
     print(f"Documentos após filtragem: {len(df)}")
+
+    if strip_punctuation:
+        print("[Ablation] Removendo pontuação dos textos...")
+        df["text"] = df["text"].apply(strip_punctuation_from_text)
+        df = df[df["text"].str.len() > 10]
 
     encoder = LabelEncoder()
     df["label_encoded"] = encoder.fit_transform(df["label"])
@@ -834,6 +841,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--target-labels", default="condenação,extinto,absolvição")
     parser.add_argument("--num-background", type=int, default=20)
     parser.add_argument("--max-tokens", type=int, default=256)
+    parser.add_argument("--strip-punctuation", action="store_true", default=False,
+                        help="Remove punctuation before embedding (ablation study)")
     return parser
 
 
@@ -851,6 +860,7 @@ def main() -> None:
         target_labels=target_labels,
         num_background=args.num_background,
         max_tokens=args.max_tokens,
+        strip_punctuation=args.strip_punctuation,
     )
 
 

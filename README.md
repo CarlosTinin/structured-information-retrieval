@@ -6,6 +6,7 @@ Estrutura modular proposta:
 - `framework/stage1_1_document_type.py`: subetapa 1.1 (classificação por tipo já conhecido da extração).
 - `framework/stage1_2_preprocessing.py`: subetapa 1.2 (normalização de texto jurídico para classificação).
 - `framework/stage2_embeddings.py`: etapa 2 (usa BERT como encoder e classifica mérito penal com modelos clássicos, foco em `condenação`, `extinto` e `absolvição`).
+- `framework/stage2_llm_baseline.py`: etapa 2 - baseline LLM (classifica mérito penal via Gemini Pro 2.5 zero-shot e few-shot, usando os mesmos splits K-fold do stage2_embeddings para comparabilidade direta).
 - `framework/stage3_segmentation.py`: etapa 3 (segmentação de sentenças com Gemini, usando prompt em `src/prompts/prompt_segmentation.txt`).
 - `framework/stage4_ner.py`: etapa 4 (extração de entidades - NER, etapa final).
 - `framework/cli.py`: interface única para execução etapa por etapa.
@@ -30,6 +31,12 @@ No diretório raiz do projeto:
 `python -m src.framework.cli stage2-embeddings --input files/output/dataset_normalized.csv --output-root output`
 
 Saídas da etapa `stage2-embeddings`: tabela LaTeX em `output/tables/table.tex` e matrizes de confusão por modelo em `output/images/matriz_confusao_*modelo*.png`.
+
+`python -m src.framework.cli stage2-llm-baseline --input files/output/dataset_normalized.csv --prompt-file src/prompts/prompt_classification_merit.txt --output-root output`
+
+Saídas da etapa `stage2-llm-baseline`: tabela LaTeX em `output/tables/table_llm_baseline.tex`, matrizes de confusão em `output/images/matriz_confusao_gemini_*.png` e resultados em `output/stage2_llm_baseline_results.json`.
+Autenticação Gemini: mesma configuração do stage3 (`GEMINI_API_KEY` no ambiente ou `.env`).
+Variantes avaliadas: zero-shot (apenas prompt) e few-shot (3 exemplos por classe do training fold).
 
 `python -m src.framework.cli stage3-segmentation --input files/output/dataset_normalized_for_ner.csv --prompt-file src/prompts/prompt_segmentation.txt --output-json files/Documentos-Segmentados/resultado_anotacao.json`
 
@@ -76,11 +83,11 @@ LegalVis demonstrates that legal professionals require explainability alongside 
 
 ---
 
-1. Benchmark against a Portuguese-law LLM baseline for Stage2
+1. ~~Benchmark against a Portuguese-law LLM baseline for Stage2~~ **(Implementado: `stage2_llm_baseline.py`)**
 
 Gap identified from: Ariai et al. 02\_02, Chen et al. 03\_06
 
-The survey notes that LLMs are being increasingly used for zero-shot and few-shot legal classification. Adding a GPT-4o or Gemini Pro 2.5 zero-shot baseline for penal-merit classification (with a carefully designed prompt stating the Art.~149 framing and the three target classes) would contextualize the Stage2 results against the most capable available models — and the expected finding that the BERT+SVM pipeline is more stable under class imbalance would strengthen the methodological argument for the embedding approach.
+Implementado com Gemini Pro 2.5, variantes zero-shot e few-shot (3 exemplos/classe), avaliadas nos mesmos splits K-fold estratificados do `stage2_embeddings` (seed=42). Prompt em `src/prompts/prompt_classification_merit.txt` enquadra Art. 149 CP e as três classes-alvo. Saídas: `output/stage2_llm_baseline_results.json`, tabela LaTeX e matrizes de confusão.
 
 ---
 
@@ -88,3 +95,11 @@ The survey notes that LLMs are being increasingly used for zero-shot and few-sho
 
 Gap identified from: Chen et al. 03\_06, Guha et al. 03\_08
 Both papers providing production-scale results (CoTHSSum and the TI DSS system) discuss computational overhead explicitly. Reviewers of applied AI journals will expect: total Stage3 LLM API cost (number of tokens × price), average latency per document, and proportion of documents requiring retry. This is already a placeholder in the Experimental Setup section but should be treated as a first-class result, not a footnote
+
+---
+
+1. LLM-based relation extraction on key sections (stage5)
+
+Gap identified from: current pipeline limitation — entities are extracted but lack relational context.
+
+The current NER output provides entity-level information (persons, locations, dates, legislation) but does not capture **relations** between them (e.g., which person committed which crime, at which location, during which period). A planned stage5 would use an LLM (e.g., Gemini Pro 2.5) to extract structured relation triples from the most informative document sections (DOS_FATOS, DISPOSITIVO). The input would be the section text along with the already-detected entities, and the output would be structured triples such as `(PESSOA, committed, CRIME)`, `(CRIME, location, LOCAL)`, `(PESSOA, sentenced_to, PENA)`, etc. This would enable construction of a knowledge graph linking entities across documents and support the broader goal of indirect supply-chain correlation. The section-aware entity grouping (`ner_results_by_section.json`) already provides the foundation for targeting only the relevant sections, minimising LLM calls and hallucination risk.

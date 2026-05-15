@@ -10,3 +10,5 @@ transformers
 sentence-transformers
 xgboost
 google-generativeai
+shap
+scipy

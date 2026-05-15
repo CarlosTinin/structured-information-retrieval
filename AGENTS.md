@@ -69,7 +69,17 @@ Essa etapa foi realizada para determinar os segmentos dos documentos jurídicos 
 
 ### NER
 
-Foi realizada a aplicação de um modelo NER para realizar a obtenção das entidades dos documentos, que então seriam exportadas e armazenadas num banco de dados json.
+No `stage4_ner`, a extração de entidades nomeadas é realizada com o modelo BERT pré-treinado `dominguesm/legal-bert-ner-base-cased-ptbr` (token-classification via HuggingFace `transformers.pipeline`).
+
+**Entrada**: `files/Documentos-Segmentados/resultado_anotacao.json` — objeto JSON com array `resultados`, onde cada documento possui `doc_id` e um array `dados` de registros sentenciais (`sentenca`, `label`).
+
+**Sliding window para sentenças longas**: Sentenças que excedem o limite de 510 tokens do modelo (512 menos CLS/SEP) são processadas com uma janela deslizante (window=510, stride=256 tokens). Cada chunk é decodificado de volta ao texto, as entidades são extraídas e seus offsets de caracteres são mapeados de volta à sentença original. Entidades duplicadas na região de sobreposição entre janelas são mescladas por span e label, mantendo o maior score de confiança. Cada registro sentencial inclui um campo `windowed` indicando se a janela deslizante foi necessária.
+
+**Saídas** (quatro arquivos):
+- `files/NER/ner_results.json` — array de registros por sentença, cada um com `doc_id`, `id` (sequencial), `sentenca`, `label` (seção), `entidades` (lista de spans com text/label/start/end/score), `num_entidades` e `windowed`.
+- `files/NER/ner_results.csv` — versão achatada com uma linha por entidade, incluindo colunas `doc_id`, `id`, `sentenca`, `secao`, `windowed`, `entidade_texto`, `entidade_label`, `entidade_start`, `entidade_end`, `entidade_score`.
+- `files/NER/ner_results_by_document.json` — agregação por documento com entidades deduplicadas por par `(text, label)` mantendo o maior score. Estrutura: `[{"doc_id": N, "total_entities": N, "extracted_entities": [...]}]`.
+- `files/NER/ner_results_by_section.json` — agrupamento por documento e seção, com entidades organizadas por tipo (entity label). Para cada par `(doc_id, section)`, as entidades são deduplicadas por `(text, label)` e agrupadas em `entities_by_type` (e.g. `PESSOA`, `LOCAL`, `TEMPO`, `LEGISLACAO`, `ORGANIZACAO`). Entidades co-ocorrentes na mesma seção (especialmente DOS_FATOS e DISPOSITIVO) possuem relação semântica implícita, permitindo inferir conexões como qual pessoa cometeu qual crime em qual local.
 
 ## Estrutura de pastas
 
@@ -80,6 +90,18 @@ Na versão atual do código, as rotinas de classificação anteriormente na etap
 No `stage2_embeddings`, o texto normalizado é convertido em embeddings com um modelo BERT jurídico (encoder), e em seguida são treinados classificadores clássicos (Logistic Regression, SVM, Random Forest e XGBoost) para prever o tipo de decisão de mérito, com foco nas classes `condenação`, `extinto` e `absolvição`.
 Essa etapa imprime métricas no terminal e também exporta artefatos para análise no paper: tabela em LaTeX (`output/tables/table.tex`) e matrizes de confusão por modelo (`output/images/matriz_confusao_*.png`).
 Uma variante com fine-tuning chegou a ser testada, mas foi removida da pipeline principal devido à baixa quantidade de exemplos rotulados e alta instabilidade dos resultados.
+
+#### Baseline LLM (stage2_llm_baseline)
+
+Para contextualizar os resultados do `stage2_embeddings` frente a modelos de linguagem de grande escala, foi adicionado um baseline utilizando o Gemini Pro 2.5 com duas variantes: **zero-shot** e **few-shot** (3 exemplos por classe).
+
+- **Prompt**: `src/prompts/prompt_classification_merit.txt` — enquadra o artigo 149 do Código Penal e as três classes-alvo (`condenação`, `absolvição`, `extinto`), solicitando resposta em JSON `{"decisao": "<categoria>"}`.
+- **Avaliação**: utiliza os mesmos splits estratificados K-fold (mesmo seed=42) do `stage2_embeddings` para garantir comparabilidade direta. Apenas os documentos do test fold são classificados pela LLM.
+- **Few-shot**: os exemplos são amostrados do training fold de cada iteração (evitando data leakage), priorizando documentos mais curtos para caber no contexto da LLM.
+- **Fallback**: em caso de falha após 3 tentativas, a classe majoritária é atribuída (abordagem conservadora que penaliza a LLM, não infla resultados).
+- **Saídas**: `output/stage2_llm_baseline_results.json`, `output/tables/table_llm_baseline.tex` e matrizes de confusão em `output/images/matriz_confusao_gemini_*.png`.
+
+O argumento metodológico esperado: se o pipeline BERT+SVM igualar ou superar a LLM zero-shot/few-shot, demonstra-se que a abordagem de embeddings é mais estável sob desbalanceamento de classes, com custo computacional significativamente menor e resultados reprodutíveis.
 No `stage3_segmentation`, o dataset `files/output/dataset_normalized_for_ner.csv` é usado como entrada, com filtragem padrão para `decisao=condenação` (subconjunto de interesse, ~25 documentos), e cada linha é enviada para uma LLM Gemini com um prompt-base em `src/prompts/prompt_segmentation.txt` para gerar a segmentação estruturada em JSON, salva em `files/Documentos-Segmentados/resultado_anotacao.json`.
 
 Na pasta paper estão os arquivos relacionados à escrita do artigo, como o template em latex, o arquivo .bib com as referências e o arquivo .tex com o texto do artigo utilizando o template da primeira revista mencionada a Information Processing & Management.

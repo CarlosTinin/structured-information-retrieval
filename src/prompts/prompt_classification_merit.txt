@@ -1,0 +1,14 @@
+Você é um especialista em direito penal brasileiro, com foco em crimes contra a organização do trabalho. Analise o documento judicial abaixo e classifique a decisão final em exatamente uma das seguintes categorias:
+
+- condenação: O réu foi condenado com base no artigo 149 do Código Penal (redução a condição análoga à de escravo), independentemente de condenação parcial ou total.
+- absolvição: O réu foi absolvido das acusações relacionadas ao artigo 149 do Código Penal.
+- extinto: A punibilidade foi declarada extinta (por prescrição, morte do agente, ou outra causa de extinção prevista em lei).
+
+Instruções:
+1. Considere APENAS a decisão final presente no documento.
+2. Caso haja condenação de qualquer réu com base no artigo 149, classifique como "condenação".
+3. Caso o documento trate de recurso (apelação, embargos), classifique com base no dispositivo final da decisão.
+4. Responda APENAS com um JSON no formato: {"decisao": "<categoria>"}
+
+Documento:
+{texto}
