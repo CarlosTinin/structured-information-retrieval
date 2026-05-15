@@ -249,7 +249,7 @@ def run_stage2_embeddings(
         plt.savefig(image_path, dpi=200)
         plt.close()
 
-    output_path = Path(output_root) / "stage2_embeddings_results.json"
+    output_path = Path(output_root) / f"stage2_embeddings_results{suffix}.json"
     ensure_parent_dir(output_path)
     save_json(report, output_path)
     print(f"\nResultados salvos em: {output_path}")
@@ -267,6 +267,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model-name", default="dominguesm/legal-bert-base-cased-ptbr")
     parser.add_argument("--k-folds", type=int, default=3)
     parser.add_argument("--target-labels", default="condenação,extinto,absolvição")
+    parser.add_argument("--strip-punctuation", action="store_true", default=False,
+                        help="Remove punctuation before embedding (ablation study)")
     return parser
 
 
@@ -281,6 +283,7 @@ def main() -> None:
         model_name=args.model_name,
         k_folds=args.k_folds,
         target_labels=target_labels,
+        strip_punctuation=args.strip_punctuation,
     )
 
 
