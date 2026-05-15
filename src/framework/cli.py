@@ -33,6 +33,22 @@ def build_parser() -> argparse.ArgumentParser:
     p2e.add_argument("--model-name", default="dominguesm/legal-bert-base-cased-ptbr")
     p2e.add_argument("--k-folds", type=int, default=3)
     p2e.add_argument("--target-labels", default="condenação,extinto,absolvição")
+    p2e.add_argument("--strip-punctuation", action="store_true", default=False,
+                      help="Remove punctuation before embedding (ablation study)")
+
+    p2l = sub.add_parser("stage2-llm-baseline", help="Etapa 2 - Baseline LLM (zero-shot + few-shot)")
+    p2l.add_argument("--input", required=True)
+    p2l.add_argument("--prompt-file", required=True)
+    p2l.add_argument("--output-root", default="output")
+    p2l.add_argument("--text-column", default="texto_normalizado")
+    p2l.add_argument("--label-column", default="decisao")
+    p2l.add_argument("--model-name", default="gemini-2.5-pro")
+    p2l.add_argument("--k-folds", type=int, default=3)
+    p2l.add_argument("--seed", type=int, default=42)
+    p2l.add_argument("--target-labels", default="condenação,extinto,absolvição")
+    p2l.add_argument("--n-few-shot", type=int, default=3)
+    p2l.add_argument("--sleep", type=float, default=1.0)
+    p2l.add_argument("--api-key-env", default="GEMINI_API_KEY")
 
     p3 = sub.add_parser("stage3-segmentation", help="Etapa 3 - Segmentação de sentenças com Gemini")
     p3.add_argument("--input", default="files/output/dataset_normalized_for_ner.csv")
@@ -49,6 +65,18 @@ def build_parser() -> argparse.ArgumentParser:
     p3.add_argument("--request-timeout", type=int, default=180)
     p3.add_argument("--max-retries", type=int, default=3)
     p3.add_argument("--retry-backoff-seconds", type=float, default=3.0)
+
+    p2x = sub.add_parser("stage2-explainability", help="Etapa 2 - Explainability (SHAP para SVM e XGBoost)")
+    p2x.add_argument("--input", required=True)
+    p2x.add_argument("--output-root", default="output")
+    p2x.add_argument("--results-json", default=None)
+    p2x.add_argument("--text-column", default="texto_normalizado")
+    p2x.add_argument("--label-column", default="decisao")
+    p2x.add_argument("--model-name", default="dominguesm/legal-bert-base-cased-ptbr")
+    p2x.add_argument("--seed", type=int, default=42)
+    p2x.add_argument("--target-labels", default="condenação,extinto,absolvição")
+    p2x.add_argument("--num-background", type=int, default=20)
+    p2x.add_argument("--max-tokens", type=int, default=256)
 
     p4 = sub.add_parser("stage4", help="Etapa 4 - Extração NER (etapa final)")
     p4.add_argument("--input-json", required=True)
@@ -97,6 +125,29 @@ def main() -> None:
                 model_name=args.model_name,
                 k_folds=args.k_folds,
                 target_labels=target_labels,
+                strip_punctuation=args.strip_punctuation,
+            )
+        )
+        return
+
+    if args.command == "stage2-llm-baseline":
+        from .stage2_llm_baseline import run_stage2_llm_baseline
+
+        target_labels = tuple(x.strip() for x in args.target_labels.split(",") if x.strip())
+        print(
+            run_stage2_llm_baseline(
+                input_csv=args.input,
+                prompt_file=args.prompt_file,
+                output_root=args.output_root,
+                text_column=args.text_column,
+                label_column=args.label_column,
+                model_name=args.model_name,
+                k_folds=args.k_folds,
+                seed=args.seed,
+                target_labels=target_labels,
+                n_few_shot_per_class=args.n_few_shot,
+                sleep_between_requests=args.sleep,
+                api_key_env=args.api_key_env,
             )
         )
         return
@@ -120,6 +171,26 @@ def main() -> None:
                 request_timeout=args.request_timeout,
                 max_retries=args.max_retries,
                 retry_backoff_seconds=args.retry_backoff_seconds,
+            )
+        )
+        return
+
+    if args.command == "stage2-explainability":
+        from .stage2_explainability import run_stage2_explainability
+
+        target_labels = tuple(x.strip() for x in args.target_labels.split(",") if x.strip())
+        print(
+            run_stage2_explainability(
+                input_csv=args.input,
+                output_root=args.output_root,
+                results_json=args.results_json,
+                text_column=args.text_column,
+                label_column=args.label_column,
+                model_name=args.model_name,
+                seed=args.seed,
+                target_labels=target_labels,
+                num_background=args.num_background,
+                max_tokens=args.max_tokens,
             )
         )
         return

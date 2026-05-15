@@ -1,0 +1,71 @@
+\begin{table}[htbp]
+\centering
+\caption{Top-5 most influential tokens per sample identified by SHAP token-level attribution.}
+\label{tab:explainability}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllp{5cm}r}
+\toprule
+Model & Sample & Type & True$\rightarrow$Pred & Top-5 Tokens & SHAP \\
+\midrule
+SVM (Linear) & S45 & correct & absolvição$\rightarrow$absolvição & \texttt{comprovadas.} & -0.0905 \\
+ &  &  &  & \texttt{,} & -0.0710 \\
+ &  &  &  & \texttt{trabalho} & -0.0570 \\
+ &  &  &  & \texttt{,} & +0.0546 \\
+ &  &  &  & \texttt{).} & +0.0530 \\
+\cmidrule(lr){2-6}
+ & S27 & correct & condenação$\rightarrow$condenação & \texttt{foram} & -0.1087 \\
+ &  &  &  & \texttt{id} & +0.0626 \\
+ &  &  &  & \texttt{a} & -0.0597 \\
+ &  &  &  & \texttt{a} & -0.0551 \\
+ &  &  &  & \texttt{roraima,} & +0.0531 \\
+\cmidrule(lr){2-6}
+ & S8 & correct & extinto$\rightarrow$extinto & \texttt{,} & -0.0967 \\
+ &  &  &  & \texttt{14003-54.2017.4.01.3700} & +0.0388 \\
+ &  &  &  & \texttt{.} & +0.0368 \\
+ &  &  &  & \texttt{c/c} & +0.0362 \\
+ &  &  &  & \texttt{ouvido,} & +0.0254 \\
+\cmidrule(lr){2-6}
+ & S37 & misclassified & absolvição$\rightarrow$extinto & \texttt{,} & -0.0892 \\
+ &  &  &  & \texttt{/reqdo:} & -0.0690 \\
+ &  &  &  & \texttt{,} & -0.0678 \\
+ &  &  &  & \texttt{o} & -0.0677 \\
+ &  &  &  & \texttt{).} & +0.0629 \\
+\cmidrule(lr){2-6}
+ & S31 & misclassified & condenação$\rightarrow$absolvição & \texttt{entretanto,} & -0.1061 \\
+ &  &  &  & \texttt{.} & -0.0763 \\
+ &  &  &  & \texttt{e} & +0.0409 \\
+ &  &  &  & \texttt{e} & +0.0291 \\
+ &  &  &  & \texttt{(quarenta)} & +0.0289 \\
+\midrule
+XGBoost & S45 & correct & absolvição$\rightarrow$absolvição & \texttt{e.} & +0.0785 \\
+ &  &  &  & \texttt{).} & +0.0643 \\
+ &  &  &  & \texttt{considera-} & +0.0617 \\
+ &  &  &  & \texttt{trf1:} & -0.0427 \\
+ &  &  &  & \texttt{o} & -0.0342 \\
+\cmidrule(lr){2-6}
+ & S27 & correct & condenação$\rightarrow$condenação & \texttt{,} & +0.0611 \\
+ &  &  &  & \texttt{a} & -0.0405 \\
+ &  &  &  & \texttt{,} & -0.0397 \\
+ &  &  &  & \texttt{“} & -0.0396 \\
+ &  &  &  & \texttt{fls.} & -0.0367 \\
+\cmidrule(lr){2-6}
+ & S8 & correct & extinto$\rightarrow$extinto & \texttt{,} & +0.0611 \\
+ &  &  &  & \texttt{registre-se.} & -0.0477 \\
+ &  &  &  & \texttt{processo} & -0.0422 \\
+ &  &  &  & \texttt{dê-} & +0.0401 \\
+ &  &  &  & \texttt{o} & -0.0315 \\
+\cmidrule(lr){2-6}
+ & S37 & misclassified & absolvição$\rightarrow$extinto & \texttt{,} & +0.0937 \\
+ &  &  &  & \texttt{.} & +0.0763 \\
+ &  &  &  & \texttt{a} & +0.0719 \\
+ &  &  &  & \texttt{/reqte:} & +0.0678 \\
+ &  &  &  & \texttt{,} & -0.0501 \\
+\cmidrule(lr){2-6}
+ & S31 & misclassified & condenação$\rightarrow$absolvição & \texttt{e} & +0.0597 \\
+ &  &  &  & \texttt{e} & +0.0518 \\
+ &  &  &  & \texttt{.} & -0.0436 \\
+ &  &  &  & \texttt{a} & -0.0413 \\
+ &  &  &  & \texttt{;} & -0.0350 \\
+\bottomrule
+\end{tabular}}
+\end{table}
