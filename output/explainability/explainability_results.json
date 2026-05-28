@@ -11,166 +11,166 @@
   ],
   "samples": [
     {
-      "index": 45,
+      "index": 0,
       "type": "correct",
       "true_label": "absolvição",
       "pred_label": "absolvição",
-      "confidence": 0.6581612190834136,
-      "text_preview": "-ma e -ma \"d\" processo: classe: - (283) : (procuradoria) : : - sp278836 e - ma23424 sentença o , . 149 . narra a o acusado, “ e consciente, reduziu o , à à , submetendo-o a , ma 270, s/n°, , , — ma\". "
+      "confidence": 0.7432608864904526,
+      "text_preview": "go e go d processo classe 283 procuradoria e outros mg113266 sentença relatório o e s do s delito s previsto s no s caput por 5 cinco vezes 69 em 28 2021 e e consciente reduziram 5 cinco trabalhadores"
     },
     {
-      "index": 27,
+      "index": 28,
       "type": "correct",
       "true_label": "condenação",
       "pred_label": "condenação",
-      "confidence": 0.32426207793172696,
-      "text_preview": "4a processo: classe: - (283) : (procuradoria) : e “d” ( 535/2006) sentença 1. relatório trata- imputando a , e a a . 149, caput, . narra a denúncia: “ , 20 2018, , -207, bonfim/rr, , e cesar , e consc"
+      "confidence": 0.6092747007202935,
+      "text_preview": "mg 1a e mg vistos e das a seguinte 1a vara uberaba crime ação tipo d s e n t e n ç a i relatório o e dando artigos 149 caput e 297 e porque e e emprego e mg com o denúncia a e a a mg em 11 2019 a a a "
     },
     {
       "index": 8,
       "type": "correct",
       "true_label": "extinto",
       "pred_label": "extinto",
-      "confidence": 0.9696774330830837,
-      "text_preview": "sentença trata- carneiro, atribuindo-lhe a prática, , . 149 c/c . a . citado, o , o é o n. 14003-54.2017.4.01.3700. , requereu a . ouvido, o e o n. 14003-54.2017.4.01.3700, o . assim, requereu a , por"
+      "confidence": 0.9859712708322634,
+      "text_preview": "sentença trata carneiro atribuindo lhe a prática 149 c c a citado o o é o n 14003 54 2017 4 01 3700 requereu a ouvido o e o n 14003 54 2017 4 01 3700 o assim requereu a porquanto o n 14003 54 2017 4 0"
+    },
+    {
+      "index": 51,
+      "type": "misclassified",
+      "true_label": "condenação",
+      "pred_label": "absolvição",
+      "confidence": 0.8626755236359359,
+      "text_preview": "s e n t e n ç a 1 relatório trata frares e imputando lhes a 149 caput 70 e entre e narra a denúncia id 1 que entre o 1o 2 12 a 25 4 13 a rod br 299 km 66 03 à direita à itiquira mt proprietário e epp "
     },
     {
       "index": 37,
       "type": "misclassified",
       "true_label": "absolvição",
       "pred_label": "extinto",
-      "confidence": 0.66372043368136,
-      "text_preview": "o , constitucionais, . 149 (id ). aduz, , que o acusado, , na , 486 364, à à , sujeitando-o a . a (id ). (id ), o à acusação, (id ), . a (id ), o o a (id ). a (id ). a a e o (id ). . 402 , o requereu "
-    },
-    {
-      "index": 31,
-      "type": "misclassified",
-      "true_label": "condenação",
-      "pred_label": "absolvição",
-      "confidence": 0.6486430471904893,
-      "text_preview": "justiça federal2a (procuradoria) ré(u/s) , s e n t e n ç a o e , .149, caput, . o mpf, , consciente e voluntária, , reduziram a à à , sujeitando-a a 40 (quarenta) anos. a , às , a ; ; , e ; e ; e ; a "
+      "confidence": 0.7602873410743907,
+      "text_preview": "o constitucionais 149 id aduz que o acusado na 486 364 à à sujeitando o a a id id o à acusação id a id o o a id a id a a e o id 402 o requereu a e a 05 cinco a id pág 2 d processo n classe 283 reqte p"
     }
   ],
   "token_attributions": {
     "SVM (Linear)": [
       {
-        "sample_index": 45,
+        "sample_index": 0,
         "sample_order": 0,
         "type": "correct",
         "true_label": "absolvição",
         "pred_label": "absolvição",
-        "confidence": 0.6581612190834136,
+        "confidence": 0.7432608864904526,
         "num_tokens": 256,
         "top_tokens": [
           {
-            "token": "comprovadas.",
-            "shap_value": -0.09049667047889311,
+            "token": "e",
+            "shap_value": -0.0644402321694003,
             "rank": 1
           },
           {
-            "token": ",",
-            "shap_value": -0.07103833295099946,
+            "token": "apurou",
+            "shap_value": -0.059382147770787895,
             "rank": 2
           },
           {
-            "token": "trabalho",
-            "shap_value": -0.0570040294851251,
+            "token": "meses",
+            "shap_value": 0.055938284030694514,
             "rank": 3
           },
           {
-            "token": ",",
-            "shap_value": 0.05464180457924295,
+            "token": "quatro",
+            "shap_value": 0.044407827204121654,
             "rank": 4
           },
           {
-            "token": ").",
-            "shap_value": 0.05300259427884524,
+            "token": "acompanhou",
+            "shap_value": -0.042222802757215586,
             "rank": 5
           },
           {
-            "token": ",",
-            "shap_value": 0.04842347746145085,
+            "token": "5",
+            "shap_value": -0.03499245364675668,
             "rank": 6
           },
           {
-            "token": ",",
-            "shap_value": 0.04626351513519086,
+            "token": "multa",
+            "shap_value": -0.032213640368712645,
             "rank": 7
           },
           {
-            "token": "(acr",
-            "shap_value": 0.032470528177775085,
+            "token": "menores",
+            "shap_value": 0.031502377995951396,
             "rank": 8
           },
           {
-            "token": "),",
-            "shap_value": 0.032316782941817425,
+            "token": "a",
+            "shap_value": -0.020468779567334724,
             "rank": 9
           },
           {
-            "token": "-",
-            "shap_value": 0.03157263382416046,
+            "token": "férias",
+            "shap_value": -0.004827810664961251,
             "rank": 10
           }
         ]
       },
       {
-        "sample_index": 27,
+        "sample_index": 28,
         "sample_order": 1,
         "type": "correct",
         "true_label": "condenação",
         "pred_label": "condenação",
-        "confidence": 0.32426207793172696,
+        "confidence": 0.6092747007202935,
         "num_tokens": 256,
         "top_tokens": [
           {
-            "token": "foram",
-            "shap_value": -0.10873191860769472,
+            "token": "a",
+            "shap_value": 0.04829615364547637,
             "rank": 1
           },
           {
-            "token": "id",
-            "shap_value": 0.06261632652361707,
+            "token": "21",
+            "shap_value": -0.047417308921498785,
             "rank": 2
           },
           {
-            "token": "a",
-            "shap_value": -0.05971934893812738,
+            "token": "p",
+            "shap_value": 0.04270641670267133,
             "rank": 3
           },
           {
-            "token": "a",
-            "shap_value": -0.055123770445456084,
+            "token": "05",
+            "shap_value": 0.04157448225911044,
             "rank": 4
           },
           {
-            "token": "roraima,",
-            "shap_value": 0.053093297079168725,
+            "token": "ação",
+            "shap_value": -0.041071241156147485,
             "rank": 5
           },
           {
-            "token": "e",
-            "shap_value": 0.052382852008884526,
+            "token": "a",
+            "shap_value": -0.03833501830471275,
             "rank": 6
           },
           {
-            "token": "o",
-            "shap_value": 0.03807890975243445,
+            "token": "e",
+            "shap_value": -0.03762798271941863,
             "rank": 7
           },
           {
-            "token": "condições",
-            "shap_value": 0.03123024316970244,
+            "token": "7",
+            "shap_value": 0.036893735829459165,
             "rank": 8
           },
           {
-            "token": "68/83).",
-            "shap_value": 0.029943585180577235,
+            "token": "crime",
+            "shap_value": 0.03197351510886215,
             "rank": 9
           },
           {
-            "token": "trabalho",
-            "shap_value": 0.022928880121312806,
+            "token": "31",
+            "shap_value": 0.031225079199083346,
             "rank": 10
           }
         ]
@@ -181,179 +181,179 @@
         "type": "correct",
         "true_label": "extinto",
         "pred_label": "extinto",
-        "confidence": 0.9696774330830837,
-        "num_tokens": 131,
+        "confidence": 0.9859712708322634,
+        "num_tokens": 129,
         "top_tokens": [
           {
-            "token": ",",
-            "shap_value": -0.09672331940821838,
+            "token": "01",
+            "shap_value": 0.1395151079038086,
             "rank": 1
           },
           {
-            "token": "14003-54.2017.4.01.3700",
-            "shap_value": 0.03875639163702016,
+            "token": "01",
+            "shap_value": -0.12373475586508267,
             "rank": 2
           },
           {
-            "token": ".",
-            "shap_value": 0.03675481425043558,
+            "token": "a",
+            "shap_value": 0.10497589878531811,
             "rank": 3
           },
           {
-            "token": "c/c",
-            "shap_value": 0.03615112837029715,
+            "token": "09",
+            "shap_value": 0.10408580688945088,
             "rank": 4
           },
           {
-            "token": "ouvido,",
-            "shap_value": 0.025358164951015796,
+            "token": "é",
+            "shap_value": 0.09015783905040065,
             "rank": 5
           },
           {
-            "token": "e",
-            "shap_value": 0.01991308389772887,
+            "token": "a",
+            "shap_value": -0.0806836314943118,
             "rank": 6
           },
           {
-            "token": "a",
-            "shap_value": -0.00906803925525927,
+            "token": "trata",
+            "shap_value": -0.06393945858315592,
             "rank": 7
           },
           {
-            "token": "litispendência",
-            "shap_value": -0.004254297272624588,
+            "token": "carneiro",
+            "shap_value": 0.06320441779155876,
             "rank": 8
           },
           {
-            "token": "vara",
-            "shap_value": 0.0,
+            "token": "2017",
+            "shap_value": -0.029108032097572272,
             "rank": 9
           },
           {
-            "token": "n.",
-            "shap_value": 0.0,
+            "token": "a",
+            "shap_value": -0.022692431301522004,
+            "rank": 10
+          }
+        ]
+      },
+      {
+        "sample_index": 51,
+        "sample_order": 3,
+        "type": "misclassified",
+        "true_label": "condenação",
+        "pred_label": "absolvição",
+        "confidence": 0.8626755236359359,
+        "num_tokens": 256,
+        "top_tokens": [
+          {
+            "token": "nr",
+            "shap_value": -0.04099547715349012,
+            "rank": 1
+          },
+          {
+            "token": "12",
+            "shap_value": -0.04045698260557388,
+            "rank": 2
+          },
+          {
+            "token": "nr",
+            "shap_value": 0.035617634889628595,
+            "rank": 3
+          },
+          {
+            "token": "s",
+            "shap_value": 0.023843924962309426,
+            "rank": 4
+          },
+          {
+            "token": "31",
+            "shap_value": -0.007858015033272587,
+            "rank": 5
+          },
+          {
+            "token": "item",
+            "shap_value": -0.007790805279565715,
+            "rank": 6
+          },
+          {
+            "token": "12",
+            "shap_value": -0.007508471901163685,
+            "rank": 7
+          },
+          {
+            "token": "entre",
+            "shap_value": -0.006503431208450164,
+            "rank": 8
+          },
+          {
+            "token": "e",
+            "shap_value": -0.006449973204877114,
+            "rank": 9
+          },
+          {
+            "token": "caput",
+            "shap_value": -0.006214593252162659,
             "rank": 10
           }
         ]
       },
       {
         "sample_index": 37,
-        "sample_order": 3,
+        "sample_order": 4,
         "type": "misclassified",
         "true_label": "absolvição",
         "pred_label": "extinto",
-        "confidence": 0.66372043368136,
-        "num_tokens": 161,
+        "confidence": 0.7602873410743907,
+        "num_tokens": 106,
         "top_tokens": [
           {
-            "token": ",",
-            "shap_value": -0.08917533094420373,
+            "token": "486",
+            "shap_value": 0.08654197325415038,
             "rank": 1
           },
           {
-            "token": "/reqdo:",
-            "shap_value": -0.06901590896854222,
+            "token": "cinco",
+            "shap_value": -0.08143989779752658,
             "rank": 2
           },
           {
-            "token": ",",
-            "shap_value": -0.0677537425038108,
+            "token": "sujeitando",
+            "shap_value": -0.07796510518000349,
             "rank": 3
-          },
-          {
-            "token": "o",
-            "shap_value": -0.06770803972623791,
-            "rank": 4
-          },
-          {
-            "token": ").",
-            "shap_value": 0.0628690320359259,
-            "rank": 5
-          },
-          {
-            "token": "/reqte:",
-            "shap_value": 0.05724182599479565,
-            "rank": 6
-          },
-          {
-            "token": "a",
-            "shap_value": 0.05235479775485894,
-            "rank": 7
-          },
-          {
-            "token": "),",
-            "shap_value": 0.050372692762932395,
-            "rank": 8
-          },
-          {
-            "token": "aduz,",
-            "shap_value": 0.015775124524692034,
-            "rank": 9
-          },
-          {
-            "token": ",",
-            "shap_value": 0.013554796534850703,
-            "rank": 10
-          }
-        ]
-      },
-      {
-        "sample_index": 31,
-        "sample_order": 4,
-        "type": "misclassified",
-        "true_label": "condenação",
-        "pred_label": "absolvição",
-        "confidence": 0.6486430471904893,
-        "num_tokens": 256,
-        "top_tokens": [
-          {
-            "token": "entretanto,",
-            "shap_value": -0.10609849305524321,
-            "rank": 1
-          },
-          {
-            "token": ".",
-            "shap_value": -0.07628113842026259,
-            "rank": 2
-          },
-          {
-            "token": "e",
-            "shap_value": 0.0409229508213999,
-            "rank": 3
-          },
-          {
-            "token": "e",
-            "shap_value": 0.02910929014040489,
-            "rank": 4
-          },
-          {
-            "token": "(quarenta)",
-            "shap_value": 0.028875406109531623,
-            "rank": 5
           },
           {
             "token": "à",
-            "shap_value": 0.027139428193848684,
-            "rank": 6
-          },
-          {
-            "token": ":",
-            "shap_value": 0.02403310689067794,
-            "rank": 7
-          },
-          {
-            "token": ").",
-            "shap_value": 0.0,
-            "rank": 8
-          },
-          {
-            "token": "determinou-se",
-            "shap_value": 0.0,
-            "rank": 9
+            "shap_value": 0.0709109807797452,
+            "rank": 4
           },
           {
             "token": "o",
-            "shap_value": 0.0,
+            "shap_value": 0.06605341394664951,
+            "rank": 5
+          },
+          {
+            "token": "05",
+            "shap_value": 0.06197309073387641,
+            "rank": 6
+          },
+          {
+            "token": "id",
+            "shap_value": -0.028356253842087953,
+            "rank": 7
+          },
+          {
+            "token": "à",
+            "shap_value": -0.009932143385932879,
+            "rank": 8
+          },
+          {
+            "token": "149",
+            "shap_value": -0.00630254807887294,
+            "rank": 9
+          },
+          {
+            "token": "publique",
+            "shap_value": -0.0032414421519806965,
             "rank": 10
           }
         ]
@@ -361,123 +361,123 @@
     ],
     "XGBoost": [
       {
-        "sample_index": 45,
+        "sample_index": 0,
         "sample_order": 0,
         "type": "correct",
         "true_label": "absolvição",
         "pred_label": "absolvição",
-        "confidence": 0.6581612190834136,
+        "confidence": 0.7432608864904526,
         "num_tokens": 256,
         "top_tokens": [
           {
-            "token": "e.",
-            "shap_value": 0.07851833010894134,
+            "token": "submissão",
+            "shap_value": 0.028445478164110347,
             "rank": 1
           },
           {
-            "token": ").",
-            "shap_value": 0.06430248860134069,
+            "token": "a",
+            "shap_value": -0.021958894090050512,
             "rank": 2
           },
           {
-            "token": "considera-",
-            "shap_value": 0.06174847303345244,
+            "token": "e",
+            "shap_value": 0.010896284060341533,
             "rank": 3
           },
           {
-            "token": "trf1:",
-            "shap_value": -0.042664185566065015,
+            "token": "submissão",
+            "shap_value": 0.006114472620442232,
             "rank": 4
           },
           {
-            "token": "o",
-            "shap_value": -0.03423483537276669,
+            "token": "a",
+            "shap_value": -0.005701025188279045,
             "rank": 5
           },
           {
-            "token": ".",
-            "shap_value": -0.03152115804778657,
+            "token": "c",
+            "shap_value": -0.004877242763588152,
             "rank": 6
           },
           {
-            "token": "classe:",
-            "shap_value": -0.029103627848897584,
+            "token": "diante",
+            "shap_value": -0.003805059400814385,
             "rank": 7
           },
           {
-            "token": ",",
-            "shap_value": -0.02487152966926219,
+            "token": "b",
+            "shap_value": -0.0034366544314636794,
             "rank": 8
           },
           {
-            "token": "o",
-            "shap_value": -0.020481308427448938,
+            "token": "a",
+            "shap_value": -0.002723830461464695,
             "rank": 9
           },
           {
-            "token": "a",
+            "token": "o",
             "shap_value": 0.0,
             "rank": 10
           }
         ]
       },
       {
-        "sample_index": 27,
+        "sample_index": 28,
         "sample_order": 1,
         "type": "correct",
         "true_label": "condenação",
         "pred_label": "condenação",
-        "confidence": 0.32426207793172696,
+        "confidence": 0.6092747007202935,
         "num_tokens": 256,
         "top_tokens": [
           {
-            "token": ",",
-            "shap_value": 0.06111466945393743,
+            "token": "densidade",
+            "shap_value": 0.0813349971865686,
             "rank": 1
           },
           {
-            "token": "a",
-            "shap_value": -0.040510606010266785,
+            "token": "mg",
+            "shap_value": -0.04511971213588375,
             "rank": 2
           },
           {
-            "token": ",",
-            "shap_value": -0.03968612669813214,
+            "token": "cinco",
+            "shap_value": 0.023282209125688996,
             "rank": 3
           },
           {
-            "token": "“",
-            "shap_value": -0.03960182659701658,
+            "token": "2019",
+            "shap_value": -0.02214719222124509,
             "rank": 4
           },
           {
-            "token": "fls.",
-            "shap_value": -0.03668443872257104,
+            "token": "05",
+            "shap_value": -0.021741520056240006,
             "rank": 5
           },
           {
-            "token": "bonfim/rr,",
-            "shap_value": -0.035436800003491045,
+            "token": "768",
+            "shap_value": -0.02129090626689257,
             "rank": 6
           },
           {
-            "token": ",",
-            "shap_value": 0.03244894540823988,
+            "token": "1a",
+            "shap_value": 0.014736125772924604,
             "rank": 7
           },
           {
-            "token": "vítima",
-            "shap_value": -0.031959812942083436,
+            "token": "0",
+            "shap_value": 0.013360059073035562,
             "rank": 8
           },
           {
-            "token": ",",
-            "shap_value": 0.03119289007513202,
+            "token": "a",
+            "shap_value": 0.01180063796831858,
             "rank": 9
           },
           {
-            "token": ").",
-            "shap_value": -0.020431399028558228,
+            "token": "e",
+            "shap_value": -0.004032043611830552,
             "rank": 10
           }
         ]
@@ -488,56 +488,117 @@
         "type": "correct",
         "true_label": "extinto",
         "pred_label": "extinto",
-        "confidence": 0.9696774330830837,
-        "num_tokens": 131,
+        "confidence": 0.9859712708322634,
+        "num_tokens": 129,
         "top_tokens": [
           {
-            "token": ",",
-            "shap_value": 0.061127018988631,
+            "token": "determino",
+            "shap_value": 0.1525453514902451,
             "rank": 1
           },
           {
-            "token": "registre-se.",
-            "shap_value": -0.04770517719412715,
+            "token": "litispendência",
+            "shap_value": -0.09167687336143233,
             "rank": 2
           },
           {
-            "token": "processo",
-            "shap_value": -0.04221107977134009,
+            "token": "carneiro",
+            "shap_value": 0.06890412098178547,
             "rank": 3
           },
           {
-            "token": "dê-",
-            "shap_value": 0.04011531243885508,
+            "token": "sentença",
+            "shap_value": -0.0517465489175959,
             "rank": 4
           },
           {
-            "token": "o",
-            "shap_value": -0.03148688589617518,
+            "token": "14003",
+            "shap_value": -0.041855279279945395,
             "rank": 5
           },
           {
-            "token": ",",
-            "shap_value": -0.023953114574591337,
+            "token": "54",
+            "shap_value": -0.017436560077248156,
             "rank": 6
           },
           {
-            "token": ",",
-            "shap_value": -0.01900535719223571,
+            "token": "e",
+            "shap_value": -0.014257353200405182,
             "rank": 7
           },
           {
-            "token": ",",
-            "shap_value": 0.0,
+            "token": "01",
+            "shap_value": -0.013260263770736195,
             "rank": 8
           },
           {
-            "token": ".",
+            "token": "n",
             "shap_value": 0.0,
             "rank": 9
           },
           {
-            "token": "assim,",
+            "token": "o",
+            "shap_value": 0.0,
+            "rank": 10
+          }
+        ]
+      },
+      {
+        "sample_index": 51,
+        "sample_order": 3,
+        "type": "misclassified",
+        "true_label": "condenação",
+        "pred_label": "absolvição",
+        "confidence": 0.8626755236359359,
+        "num_tokens": 256,
+        "top_tokens": [
+          {
+            "token": "5",
+            "shap_value": -0.05973873625062415,
+            "rank": 1
+          },
+          {
+            "token": "e",
+            "shap_value": 0.04046481875153858,
+            "rank": 2
+          },
+          {
+            "token": "sendo",
+            "shap_value": 0.03890690786861132,
+            "rank": 3
+          },
+          {
+            "token": "no",
+            "shap_value": 0.03698174247081057,
+            "rank": 4
+          },
+          {
+            "token": "e",
+            "shap_value": 0.026316521666191542,
+            "rank": 5
+          },
+          {
+            "token": "a",
+            "shap_value": 0.013073852225752068,
+            "rank": 6
+          },
+          {
+            "token": "que",
+            "shap_value": 0.006778260715970995,
+            "rank": 7
+          },
+          {
+            "token": "corte",
+            "shap_value": 0.0,
+            "rank": 8
+          },
+          {
+            "token": "e",
+            "shap_value": 0.0,
+            "rank": 9
+          },
+          {
+            "token": "por",
             "shap_value": 0.0,
             "rank": 10
           }
@@ -545,122 +606,61 @@
       },
       {
         "sample_index": 37,
-        "sample_order": 3,
+        "sample_order": 4,
         "type": "misclassified",
         "true_label": "absolvição",
         "pred_label": "extinto",
-        "confidence": 0.66372043368136,
-        "num_tokens": 161,
+        "confidence": 0.7602873410743907,
+        "num_tokens": 106,
         "top_tokens": [
           {
-            "token": ",",
-            "shap_value": 0.09372630970954414,
+            "token": "o",
+            "shap_value": 0.08611453005474771,
             "rank": 1
           },
           {
-            "token": ".",
-            "shap_value": 0.07626512827649068,
+            "token": "publique",
+            "shap_value": -0.06664771797998632,
             "rank": 2
           },
           {
             "token": "a",
-            "shap_value": 0.07187925823678874,
-            "rank": 3
-          },
-          {
-            "token": "/reqte:",
-            "shap_value": 0.06775354025970097,
-            "rank": 4
-          },
-          {
-            "token": ",",
-            "shap_value": -0.05008780857699255,
-            "rank": 5
-          },
-          {
-            "token": ",",
-            "shap_value": 0.049631438415910126,
-            "rank": 6
-          },
-          {
-            "token": ".",
-            "shap_value": -0.045698104508273316,
-            "rank": 7
-          },
-          {
-            "token": "(procuradoria)",
-            "shap_value": -0.041149773924292636,
-            "rank": 8
-          },
-          {
-            "token": ",",
-            "shap_value": -0.032682384775522495,
-            "rank": 9
-          },
-          {
-            "token": ",",
-            "shap_value": -0.0294456738425683,
-            "rank": 10
-          }
-        ]
-      },
-      {
-        "sample_index": 31,
-        "sample_order": 4,
-        "type": "misclassified",
-        "true_label": "condenação",
-        "pred_label": "absolvição",
-        "confidence": 0.6486430471904893,
-        "num_tokens": 256,
-        "top_tokens": [
-          {
-            "token": "e",
-            "shap_value": 0.05967609005740117,
-            "rank": 1
-          },
-          {
-            "token": "e",
-            "shap_value": 0.05181296340413857,
-            "rank": 2
-          },
-          {
-            "token": ".",
-            "shap_value": -0.0435612280312423,
+            "shap_value": 0.0578088367675088,
             "rank": 3
           },
           {
             "token": "a",
-            "shap_value": -0.04131377959957966,
+            "shap_value": 0.053528168443315774,
             "rank": 4
           },
           {
-            "token": ";",
-            "shap_value": -0.03504711193007046,
+            "token": "absolvição",
+            "shap_value": -0.05079093659070157,
             "rank": 5
           },
           {
-            "token": "a",
-            "shap_value": -0.031776403232003314,
+            "token": "absolvo",
+            "shap_value": -0.03890782498997667,
             "rank": 6
           },
           {
-            "token": "subordinada,",
-            "shap_value": -0.030576588574101258,
+            "token": "a",
+            "shap_value": 0.03876878332796242,
             "rank": 7
           },
           {
-            "token": ",",
-            "shap_value": 0.0264752312225142,
+            "token": "o",
+            "shap_value": -0.023760439254356384,
             "rank": 8
           },
           {
-            "token": "acusação",
-            "shap_value": -0.022694299872416335,
+            "token": "reqdo",
+            "shap_value": -0.020568534643111265,
             "rank": 9
           },
           {
-            "token": "a",
-            "shap_value": 0.02219337423921134,
+            "token": "à",
+            "shap_value": -0.014579705411539958,
             "rank": 10
           }
         ]
@@ -669,39 +669,39 @@
   },
   "cross_model_agreement": [
     {
+      "sample_index": 0,
+      "true_label": "absolvição",
+      "type": "correct",
+      "spearman_rho": -0.007051151349737525,
+      "p_value": 0.9106111483496482
+    },
+    {
       "sample_index": 8,
       "true_label": "extinto",
       "type": "correct",
-      "spearman_rho": 0.006484809693826746,
-      "p_value": 0.9413991298669936
+      "spearman_rho": 0.08866431482869357,
+      "p_value": 0.3176974751092572
     },
     {
-      "sample_index": 27,
+      "sample_index": 28,
       "true_label": "condenação",
       "type": "correct",
-      "spearman_rho": 0.08168355984088395,
-      "p_value": 0.1926707133246307
-    },
-    {
-      "sample_index": 31,
-      "true_label": "condenação",
-      "type": "misclassified",
-      "spearman_rho": 0.0,
-      "p_value": 1.0
+      "spearman_rho": -0.1260806429344623,
+      "p_value": 0.04385566119744612
     },
     {
       "sample_index": 37,
       "true_label": "absolvição",
       "type": "misclassified",
-      "spearman_rho": 0.08763863714896905,
-      "p_value": 0.26895445228773346
+      "spearman_rho": 0.08140927540270483,
+      "p_value": 0.40676497769892705
     },
     {
-      "sample_index": 45,
-      "true_label": "absolvição",
-      "type": "correct",
-      "spearman_rho": 0.007051151349737525,
-      "p_value": 0.9106111483496482
+      "sample_index": 51,
+      "true_label": "condenação",
+      "type": "misclassified",
+      "spearman_rho": 0.01614161651852139,
+      "p_value": 0.7971643334909176
     }
   ]
 }

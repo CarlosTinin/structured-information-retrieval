@@ -80,6 +80,11 @@ def build_parser() -> argparse.ArgumentParser:
     p2x.add_argument("--strip-punctuation", action="store_true", default=False,
                       help="Remove punctuation before embedding (ablation study)")
 
+    p4v = sub.add_parser("stage4-viz", help="Etapa 4 - Visualizações NER (heatmap + tabela LaTeX)")
+    p4v.add_argument("--input-by-section", default="files/NER/ner_results_by_section_v2.json")
+    p4v.add_argument("--output-root", default="output")
+    p4v.add_argument("--doc-id", type=int, default=0, help="doc_id for the single-document LaTeX table")
+
     p4 = sub.add_parser("stage4", help="Etapa 4 - Extração NER (etapa final)")
     p4.add_argument("--input-json", required=True)
     p4.add_argument("--output-json", required=True)
@@ -196,6 +201,12 @@ def main() -> None:
                 strip_punctuation=args.strip_punctuation,
             )
         )
+        return
+
+    if args.command == "stage4-viz":
+        from .stage4_ner_viz import run_stage4_viz
+
+        print(run_stage4_viz(args.input_by_section, args.output_root, args.doc_id))
         return
 
     if args.command == "stage4":

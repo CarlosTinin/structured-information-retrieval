@@ -81,6 +81,17 @@ No `stage4_ner`, a extração de entidades nomeadas é realizada com o modelo BE
 - `files/NER/ner_results_by_document.json` — agregação por documento com entidades deduplicadas por par `(text, label)` mantendo o maior score. Estrutura: `[{"doc_id": N, "total_entities": N, "extracted_entities": [...]}]`.
 - `files/NER/ner_results_by_section.json` — agrupamento por documento e seção, com entidades organizadas por tipo (entity label). Para cada par `(doc_id, section)`, as entidades são deduplicadas por `(text, label)` e agrupadas em `entities_by_type` (e.g. `PESSOA`, `LOCAL`, `TEMPO`, `LEGISLACAO`, `ORGANIZACAO`). Entidades co-ocorrentes na mesma seção (especialmente DOS_FATOS e DISPOSITIVO) possuem relação semântica implícita, permitindo inferir conexões como qual pessoa cometeu qual crime em qual local.
 
+### Visualizações NER (stage4-viz)
+
+O subcomando `stage4-viz` gera artefatos visuais a partir de `files/NER/ner_results_by_section_v2.json`:
+
+- **Heatmap composto** (`output/images/fig2_ner_heatmap.{png,pdf}`): matriz seção × tipo de entidade com totais marginais (linha e coluna). Os totais por coluna substituem um gráfico de barras separado para distribuição de tipos de entidade, condensando duas visualizações em uma única figura de alta densidade informacional.
+- **Tabela LaTeX** (`output/tables/table_ner_single_doc.tex`): extração detalhada de entidades para um documento representativo (configurável via `--doc-id`), destinada a apêndice do artigo.
+
+Uso: `python -m framework stage4-viz [--input-by-section FILE] [--output-root DIR] [--doc-id N]`
+
+O código está em `src/framework/stage4_ner_viz.py`.
+
 ## Estrutura de pastas
 
 Na pasta src estão os códigos utilizados para realizar as atividades descritas acima, como a classificação por tipo de documento, a filtragem por mérito penal, a segmentação de sentenças e a aplicação do modelo NER.
