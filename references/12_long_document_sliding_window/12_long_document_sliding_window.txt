@@ -1,0 +1,610 @@
+================================================================================
+PAPER: 12_01_An Empirical Survey on Long Document Summarization Datasets, Models, and Metrics
+================================================================================
+
+--- TITLE ---
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics HUAN YEE KOH and JIAXIN JU, Monash University
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Summarization of textual information is an exacting task for humans and the rate of information
+growth in the era of big data has made summarizing most information manually to be impractical
+This work is done while Shirui Pan is with Monash University. From August 2022, he is with the School of Information
+and Communication Technology, Griffith University, Southport, QLD 4222, Australia.
+Authors’ addresses: H. Y. Koh, J. Ju, and S. Pan (corresponding author), Monash University, Australia; emails: huan.
+koh@monash.edu, jjuu0002@student.monash.edu, shiruipan@ieee.org; M. Liu (corresponding author), Deakin University,
+Australia; email: m.liu@deakin.edu.au.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2022 Association for Computing Machinery.
+0360-0300/2022/12-ART154 $15.00
+https://doi.org/10.1145/3545176
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154
+
+154:2
+
+H. Y. Koh et al.
+
+and impossible. This phenomenon is exacerbated when it comes to long form textual documents
+as the knowledge and human labor effort required to process and summarize it increases exponentially with the length of documents. Inevitably, a significant amount of invaluable information and
+knowledge have gone unnoticed, presenting an important bottleneck in the progress of social and
+economic development. In response, there has been a strong demand for exhaustive research in
+the field of automatic long document summarization [2, 20, 25, 77, 104].
+Automatic text summarization involves a process of shortening a source text efficiently while
+keeping the main idea intact, which aids in reducing the amount of time required to process
+information, helps with faster search for information, and makes learning one topic easier
+[71, 73]. While the potentiality of developing an effective automatic text summarization system
+has attracted significant interest and attention from the research community, automatic text
+summarization remains a challenging task and is not ready for wide practical use in day-to-day
+lives, particularly when it comes to summarizing long documents [8, 61, 62, 81]. Intuitively, long
+document summarization is harder than short document summarization due to the significant
+difference in the amount of lexical tokens and breadth of content between short and long
+documents. As the length increases, the content that would be considered important will also
+increase, resulting in a more challenging task for an automatic summarization model to capture
+all salient information in the limited output length [37]. Furthermore, short documents are often
+generic text such as news articles [43, 84, 87, 102], while long documents are commonly domainspecific articles such as scientific papers that contain more complex formulas and terminologies
+[20, 49, 59]. Together with other reasons that will be explored in this survey, long document
+summarization poses a significantly more challenging task than short document summarization.
+In general, automatic text summarization can be conceptualized as having three approaches:
+extractive, abstractive, and hybrid approach [62]. The extractive approach directly copies salient
+sentences from the source document and combine them as the output [15, 38], whereas the abstractive approach imitates human that comprehends a source document and writes a summary
+output based on the salient concepts of the source document [101, 103]. The hybrid approach attempts to combine the best of both approaches by rewriting a summary based on a subset of salient
+content extracted from the source document [36, 47, 73]. Each approach has its advantages and
+limitations that may suit certain summarization tasks better. For example, extractive summarization may be sufficient in summarizing certain news articles [15, 128] but inadequate to summarize
+a long dialogue where salient content are sparsely distributed [131]. This is because while the extractive summarization approach is always factually consistent with the source document, it does
+not modify the original text and thus lacks the ability to generate fluent and concise summary
+[120].
+Historically, to measure the performance of different summarization architectures, ROUGE
+score [70] has been the modus operandi for researchers in the summarization research field to
+compare and study the quality of different candidate summaries. The core idea of ROUGE score
+is to measure the lexical overlaps such as words and phrases between candidate summary and
+ground truth summary. While it is efficient, recent findings have shown that ROUGE score does
+not correlate well with how humans assess the quality of a candidate summary [3, 11, 44, 61].
+As a result, there is a significant amount of effort in improving the way we measure the quality
+of candidate summaries and performance of summarization architectures [62, 80, 81, 126, 130].
+Unfortunately, these efforts have entirely been focusing on the short document domains and the
+progress in measuring the quality of long document summarization approach has been lacking
+[3, 41, 48, 89, 93].
+Nevertheless, there has been a considerable amount of advancement made in the long document
+summarization research field and the area lacks a comprehensive survey [5, 28, 32, 105]. Our article
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:3
+
+fills this gap by providing a comprehensive overview of the research on long document summarization and a systematic evaluation across the three principal components of its research setting:
+benchmark datasets, summarization models, and evaluation metrics.
+The contribution of our article is as follows:
+Comprehensive Review. A comprehensive survey of the long document summarization research
+
+--- CONCLUSION ---
+In this survey, we conduct a comprehensive overview of long document summarization and systematically analyze the three key components of its research settings: benchmark datasets, summarization models, and evaluation metrics. We first highlight the intrinsic differences of short and
+long document datasets and show that summarizing long documents requires extra compression of
+the source text through the identification of key narratives that are more uniformly scattered across
+the source documents. Nevertheless, long documents are often more extractive in nature and often have explicit discourse structures to take advantage of. For summarization models, we provide
+a thorough review, comparison and summarization of the model architectures and mechanisms
+used to generate long document summaries. Through ad-hoc experiment, we also systematically
+investigate the architectures and mechanisms that are widely applied across various works. We
+further discuss the current research in evaluation metrics and call attention to the lack of research
+on metrics that can be easily applied to the long document summarization domain. Finally, we explore the applications of long document summarization models and suggest five future directions
+for long document summarization research.
+
+
+================================================================================
+PAPER: 12_02_Efficient Long-Text Understanding with Short-Text Models
+================================================================================
+
+--- TITLE ---
+Efficient Long-Text Understanding with Short-Text Models Maor Ivgi Uri Shaham Jonathan Berant
+
+--- ABSTRACT ---
+Transformer-based pretrained language models (LMs) are ubiquitous across natural
+language understanding, but cannot be applied
+to long sequences such as stories, scientific articles, and long documents due to
+their quadratic complexity. While a myriad
+of efficient transformer variants have been
+proposed, they are typically based on custom implementations that require expensive
+pretraining from scratch. In this work, we propose SLED: SLiding-Encoder and Decoder,
+a simple approach for processing long sequences that re-uses and leverages battle-tested
+short-text pretrained LMs. Specifically, we
+partition the input into overlapping chunks,
+encode each with a short-text LM encoder
+and use the pretrained decoder to fuse information across chunks (fusion-in-decoder). We
+illustrate through controlled experiments that
+SLED offers a viable strategy for long text
+understanding and evaluate our approach on
+SCROLLS, a benchmark with seven datasets
+across a wide range of language understanding tasks. We find that SLED is competitive
+with specialized models that are up to 50x
+larger and require a dedicated and expensive
+pretraining step.
+
+--- INTRODUCTION ---
+Transformer-based pretrained language models
+(Vaswani et al., 2017; Devlin et al., 2019; Lewis
+et al., 2020; Raffel et al., 2020b; Brown et al.,
+2020) have been widely successful across all areas of natural language understanding. However,
+applying them over long texts (such as stories,
+scripts, or scientific articles) is prohibitive due to
+their quadratic complexity in the input length. To
+bridge this gap, recent work has developed more
+efficient transformer variants (Kitaev et al., 2020;
+Beltagy et al., 2020; Zaheer et al., 2020a; Guo
+et al., 2022) and applied them over long-range
+language understanding tasks (Mehta et al., 2022;
+Shaham et al., 2022).
+284
+
+Transactions of the Association for Computational Linguistics, vol. 11, pp. 284–299, 2023. https://doi.org/10.1162/tacl a 00547
+Action Editor: Mauro Cettolo. Submission batch: 8/2022; Revision batch: 12/2022; Published 3/2023.
+c
+ 2023 Association for Computational Linguistics. Distributed under a CC-BY 4.0 license.
+
+Downloaded from http://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00547/2075722/tacl_a_00547.pdf by guest on 29 May 2026
+
+However, most efficient transformers use
+specialized architectures with custom implementations that are not guaranteed to scale as well as
+vanilla transformers (Tay et al., 2022a). Moreover,
+they require an expensive pretraining step and do
+not exploit off-the-shelf pretrained LMs that were
+trained for short texts. To date, their performance
+on long texts has not matched the success of their
+short-range counterparts.
+In this work, we present SLED: SLidingEncoder and Decoder, a simple yet powerful method for applying off-the-shelf pretrained
+encoder-decoder models on long text problems,
+with a linear time and space dependency. Specifically (see Figure 2), we partition long documents
+into overlapping chunks of tokens of constant
+length and encode each chunk independently with
+an already-pretrained encoder. Then, a pretrained
+decoder attends to all contextualized input representations to generate the output. Our main
+assumption is that input tokens can be contextualized through their local surrounding (using a
+short-text LM), and any global cross-chunk reasoning can be handled by the decoder, similar
+to fusion-in-decoder (FiD) (Izacard and Grave,
+2021). Our approach can be readily applied to any
+pretrained encoder-decoder LM such as T5 (Raffel
+et al., 2020b) and BART (Lewis et al., 2020) (but
+is not applicable to decoder-only [Brown et al.,
+2020] or encoder-only models [Liu et al., 2019;
+Conneau et al., 2020]).
+We evaluate SLED on a wide range of language
+understanding tasks. To substantiate SLED’s adequacy for text processing, we perform controlled
+experiments over modified versions of SQuAD
+1.1 (Rajpurkar et al., 2016) and HotpotQA (Yang
+et al., 2018) to show that SLED can (a) find
+relevant information that is embedded within a
+long text sequence and (b) fuse information from
+chunks that were encoded separately.
+Our main evaluation is over SCROLLS, a
+recently-released benchmark that includes 7 longrange tasks across Question Answering (QA),
+
+local encoding of chunks is a modeling assumption that needs testing. In recent work, Vig et al.
+(2022) proposed a similar architecture to tackle
+long inputs from QMSum (Zhong et al., 2021),
+but did not systematically analyze it. We standardize this methodology for the first time, and
+extensively analyze the effectiveness of FiD for
+encoding long documents across multiple tasks.
+To summarize, our main contributions are:
+
+Figure 1: Models’ SCROLLS score (Shaham et al.,
+2022) as a function of parameter count. Plugging
+existing pretrained LMs into the SLED framework
+dramatically improves their SCROLLS score (arrows
+from blue circles to orange stars). Gray triangles indicate models with dedicated pretraining for capturing
+long-range dependencies. BARTlarge -SLED is competitive with LongT5base (Guo et al., 2022) and UL2 (Tay
+et al., 2022b) (which has 50x more parameters), and
+slightly lags behind larger LongT5 models.
+
+--- CONCLUSION ---
+B Chunking vs. Local-attention
+Both LED and SLED are long-range models built
+on top of the same short-text model (BART), and
+employ local attention. However, SLED relies on
+chunking, while LED uses per-layer local attention. In this section, we now discuss in more detail
+the relation between the two approaches.
+
+
+================================================================================
+PAPER: 12_03_Efficient Memory-Enhanced Transformer for Long-Document Summarization in Low-Resource Regimes
+================================================================================
+
+--- TITLE ---
+sensors Article Efficient Memory-Enhanced Transformer for Long-Document
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+In the natural language processing (NLP) field, long document summarization (LDS)
+synthesizes a lengthy input text while retaining relevant information, a critical task to
+help experts in analyzing massive documents. State-of-the-art (SOTA) solutions are based
+on transformers [1] and struggle to deal with prolonged documents because of the selfattention mechanism that requires high-memory GPUs to address its quadratic memory
+growth regarding input size. Most documents, such as contracts and research papers,
+breach endurable input size limits. This issue has recently opened new research directions
+towards attention approximations with linear complexity [2,3]. Nevertheless, despite their
+success, efficient transformers are still GPU-demanding and bound to the input size, e.g.,
+48 GB for 16 K source tokens [4].
+A promising approach to mitigate this issue is exploiting memory-based strategies [5,6].
+Specifically, language models are trained to recurrently process a chunk-divided input,
+writing and reading the past latent knowledge at each step; in this way, the GPU is restricted
+to working with several length-constrained text fragments instead of elaborating the entire
+source document at once. Current memory-enhanced models are found on encoder- or
+decoder-only architectures, preventing their application on sequence-to-sequence tasks
+such as LDS. Indeed, the most promising research directions for abstractive single- and
+multi-document summarization currently follow an encoder–decoder paradigm, with
+
+4.0/).
+
+Sensors 2023, 23, 3542. https://doi.org/10.3390/s23073542
+
+https://www.mdpi.com/journal/sensors
+
+Sensors 2023, 23, 3542
+
+--- CONCLUSION ---
+6. Conclusion
+328
+Although augmenting transformers with memory is receiving less attention and effort
+Although augmenting transformers with memory is getting lower attention and effort 329
+than efficient transformers, it can play a pivotal role in low-resource settings and domains
+than efficient transformers, it can play a pivotal role in low-resource settings and domains 330
+with extremely long documents. In this work, we presented E MMA, the first memoryhaving extremely-long documents. In this work, we present E MMA, the first memory- 331
+enhanced
+encoder–decoder transformer for long-document summarization. The proposed
+enhanced encoder-decoder transformer for LDS. The proposed architecture leverages two 332
+architecture
+elements:
+(i)for
+a segmentation
+algorithm
+for splitting
+fundamentalleverages
+elements:two
+(i) afundamental
+segmentation
+algorithm
+splitting the input
+document
+into 333
+the
+input
+document
+into
+chunks
+and
+pairing
+them
+with
+the
+most
+related
+parts
+of
+the
+target
+chunks and pairing them with the most related parts of the target summary, (ii) a recursive 334
+summary,
+and (ii)
+a recursive
+memory
+modulefrom
+capable
+of storing
+past 335
+memory module
+capable
+of storing
+information
+the past
+chunks.information
+We test our from
+solution
+chunks.
+We
+tested
+our
+solution
+with
+multiple
+datasets
+of
+different
+domains,
+obtaining
+with multiple datasets of different domains, obtaining competitive results with state-of- 336
+competitive
+results
+with
+models
+full-training
+conditions
+outper- 337
+the-art models
+under
+fullstate-of-the-art
+training conditions
+andunder
+outperforming
+prior
+works inand
+few-shot
+forming
+prior
+works
+in
+few-shot
+learning.
+Exceptionally,
+depending
+only
+on
+the
+chunk
+size, 338
+learning. Exceptionally, depending only on the chunk size, we show that the GPU need
+the
+GPU
+need
+remained
+constant
+regardless
+of
+the
+whole
+document
+length.
+Compared
+remains constant regardless of the whole document length. Compared to segmentation-onlyto 339
+segmentation-only
+our memory
+component
+boosted summarization
+quality, 340
+techniques, we provetechniques,
+that our memory
+component
+boosts summarization
+quality, avoiding
+avoiding
+treating
+each
+chunk
+independently,
+and
+better
+exploiting
+their
+semantic
+linkage.
+treating each chunk independently and better exploiting their semantic linkage. We also 341
+We
+alsothat
+verified
+that the
+chunkbesize
+could
+kept low
+withoutdrops
+significant
+drops
+in sum- 342
+verify
+the chunk
+size can
+kept
+low be
+without
+significant
+in
+summarization
+marization
+results,
+enabling
+SOTAon limited
+performance
+on limited
+hardware.
+ablation 343
+results,
+enabling
+SOTA
+performance
+hardware.
+In-depth
+ablationIn-depth
+studies support
+studies
+support our
+architectural
+choices.
+This study
+promotes
+novel toward
+research 344
+our
+architectural
+design
+choices. Wedesign
+hope this
+study will
+promote novel
+research
+toward
+memory-enhanced
+efficientefficient
+memory-enhanced
+languagelanguage
+models. models.
+345
+7.
+Limitations
+and
+Future
+Directions
+Limitations
+and
+Future
+Directions
+346
+Our document
+document segmentation
+segmentationalgorithm
+algorithmrequires
+requiresthe
+thelength
+lengthofofthe
+thegolden
+goldensummary
+summarytoto 347
+notnot
+be too short;
+short; otherwise,
+otherwise, paired
+pairedtargets
+targets are
+composed
+of a few
+tokens.
+According
+to our 348
+be
+would be
+composed
+of a few
+tokens.
+According
+empirical
+tests intests
+the listed
+ablation
+backpropagation
+through chunks
+led to 349
+to our
+empirical
+in studies,
+ablationenabling
+studies, enabling
+the backpropagation
+through
+worse
+Deeper
+investigations
+solve
+this issue.
+chunksresults.
+leads to
+worsening
+results. are
+We needed
+believe to
+that
+more
+profound investigations are 350
+needed
+to solve
+thishould
+issue. explore memory writing/reading operations with structured in- 351
+Future
+works
+Future works
+explore
+memoryunsupervised
+writing/reading
+operations
+structured
+in- 352
+formation
+xtractedshould
+from text,
+comparing
+techniques
+for with
+document
+metadata
+formation
+extracted
+from text,
+comparing
+unsupervised
+techniques
+document
+metadata
+acquisition (e.g.,
+classes
+[49,50]
+and entity
+relationships
+[51,52])for
+with
+advanced
+seman- 353
+tic parsing solutions such as event extraction [53,54] and abstract meaning representation, which was recently used for knowledge injection into deep neural networks [55,56].
+The community should envisage novel graph representation learning methods [57–60] to
+densely represent multi-relational structured data following a Linked Open Data vision
+
+Sensors 2023, 23, 3542
+
+12 of 16
+
+centered on the integration of several source knowledge graphs or relational databases
+via automatic entity matching [61]. Taking inspiration from biology [62,63] and communication networks [64–67], we underline the importance of managing dynamic scenarios,
+tracking knowledge refinements among sentences, and propagating information, which is
+pivotal when processing lengthy inputs. Segmentation strategies and memory-enhanced
+encoder–decoder transformers could be inspected in other downstream tasks with long
+documents and cross-dependencies among chunks, such as claim verification with evidence
+retrieval [68,69].
+Author Contributions: Conceptualization, L.R., L.V. and G.M. (Gianluca Moro); methodology, L.R.,
+L.V. and G.M. (Gianluca Moro); software, L.V.; validation, L.R., L.V. and G.F.; formal analysis, L.R.,
+L.V. and G.F.; investigation, L.V.; resources, G.M. (Gianluca Moro); data curation, L.R. and L.V.;
+writing—original draft preparation, L.R., L.V., G.F. and G.M. (Gianluca Moro); writing—review and
+editing, L.R., L.V., G.F., G.M. (Gianluca Moro), C.S. and G.M. (Gustavo Marfia); visualization, L.R., L.V.
+and G.F.; supervision, G.M. (Gianluca Moro); project administration, G.M. (Gianluca Moro), C.S. and
+G.M. (Gustavo Marfia). All authors have read and agreed to the published version of the manuscript.
+Funding: This research is partially supported by the project DARE (Digital Lifelong Prevention)
+initiative—(PNC-I.1 “Iniziative di ricerca per tecnologie e percorsi innovativi in ambito sanitario e
+assistenziale” D.D. 931, 06/06/2022—PNC0000002, CUP B53C22006450001 funded by the National
+Plan for NRRP Complementary Investments—Law Decree 6 May 2021, n. 59, converted and modified
+as to Law n. 101/2021 Research initiatives for technologies and innovative trajectories in the health
+and care sectors.
+Institutional Review Board Statement: Depending on user intentions, the ability of language models
+to generate human-indistinguishable text can be dangerous, emphasizing the need for legislative regulations. Fake news production, automatic phishing, and sensible data extraction are possible misuses
+of these models. Nonetheless, the training of E MMA does not involve sensible or dangerous data.
+Informed Consent Statement: Not applicable.
+Data Availability Statement: All pre-trained models and corpora used in this work are publicly
+available (see Appendix A).
+Conflicts of Interest: The authors declare no conflict of interest.
+
+Abbreviations
+The following abbreviations are used in this manuscript:
+LDS
+LSH
+
+Long document summarization
+Locality-sensitive hashing
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{Koh2023, author = {Koh, Huan Yee and Ju, Jiaxin and Liu, Ming and Pan, Shirui}, title = {An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

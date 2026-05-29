@@ -1,0 +1,663 @@
+================================================================================
+PAPER: 10_01_A survey of sentiment analysis in the Portuguese language
+================================================================================
+
+--- TITLE ---
+Artificial Intelligence Review (2021) 54:1087–1115 https://doi.org/10.1007/s10462-020-09870-1 A survey of sentiment analysis in the Portuguese language Denilson Alves Pereira1
+
+--- ABSTRACT ---
+Sentiment analysis is an area of study that aims to develop computational methods and
+tools to extract and classify the opinions and emotions expressed by people on social networks, blogs, forums, online shoppings, and others. A lot of research has been developed
+addressing opinions expressed in the English language. However, studies involving the
+Portuguese language still need to be advanced to make better use of the specificities of
+the language. This paper aims to survey the efforts made specifically to address sentiment
+analysis in the Portuguese language. It categorizes and describes state of the art works
+involving approaches to each of the tasks of sentiment analysis, as well as supporting language resources such as natural language processing tools, lexicons, corpora, ontologies,
+and datasets.
+
+--- INTRODUCTION ---
+User-written opinions in product, service, or event reviews have great commercial value.
+They assist other users in decision making, such as purchasing a new product, and are very
+useful for companies in monitoring their products/services, promoting better relationships
+with their customers, developing better marketing strategies, improving and innovating
+their products/services. However, the challenge is to automatically process a large amount
+of data and provide a summary of the considerations encountered.
+Sentiment analysis is an area of study that aims to find computational solutions to extract
+and analyze people’s opinions and emotions about an entity and its different aspects, and
+to identify the sentiment expressed in those opinions. Good surveys on the subject were
+written by Cambria et al. (2013), Cambria (2016), Chaturvedi et al. (2018), Medhat et al.
+(2014), Yadollahi et al. (2017) and Zhang and Liu (2014).
+Identify and extract sentiments of natural language is not a trivial task, as it requires
+a thorough understanding of syntactic and semantic rules of language. Opinion texts are
+* Denilson Alves Pereira
+denilsonpereira@ufla.br
+1
+
+Department of Computer Science, Federal University of Lavras, P.O. Box 3037,
+Lavras 37.200‑900, Brazil
+
+13
+
+Vol.:(0123456789)
+
+1088
+
+D. A. Pereira
+
+generally informal and contain slang, ironies, sarcasms, abbreviations and emoticons,
+which makes their analysis even harder. To discover and retrieve information and opinions
+from vast textual sources, sentiment analysis uses data mining, information retrieval, and
+natural language processing (NLP) techniques.
+Sentiment analysis for the English language is well advanced (Soleymani et al. 2017;
+Cambria et al. 2018; Zhang et al. 2018). However, English-speaking users represented
+only about 25% of Internet users worldwide in April 2019.1 The potential for applications involving sentiment analysis in different languages is vast. However, the linguistic
+resources available for sentiment analysis in other languages are still limited. One approach
+to address this deficiency and also allow applications supporting multiple languages simultaneously is multilingual sentiment analysis (Araújo et al. 2020; Lo et al. 2017). The main
+techniques used are the automatic translation of the target language datasets into English
+and the subsequent use of the methods and resources available to English, or the use of
+parallel corpora, which does not require a translation machine. Such strategies have shown
+better results than specific language efforts, however, they are still limited to languages
+with scarce linguistic resources.
+In addition, languages have sentiment specific knowledge, expressed through slangs,
+idioms and local culture. The strategies used for multilingual sentiment analysis often do
+not capture this specific knowledge, since automatic translation is done through the use of
+parallel corpora and the tools are trained to capture primarily the generic patterns shared
+across languages (Chen et al. 2019).
+Portuguese is one of the languages with few linguistic resources available (Lo et al.
+2017), despite being among the top five languages used in the Web. It is the official language of Portugal, Brazil and several former colonies of Portugal, with approximately 290
+million speakers worldwide.2 Portuguese evolved from Latin, and it is one of the languages
+known as Romance Languages, along with Spanish, French, Italian, Romanian and others
+(Harris and Vincent 2003). These languages have common characteristics, however they
+have been influenced by other local languages. Italian is the closest phonetically to Latin,
+Portuguese and French are the most distant. Portuguese emerged from Galician and suffered influences from the Lusitanian language. And the Portuguese of each of Portugal’s
+former colonies was also influenced by local native languages.
+The main effort to characterize the research on sentiment analysis for the Portuguese
+language was made by Souza et al. (2016b). They performed a systematic mapping review
+to identify the state of the art of text mining for the Portuguese language. In related works,
+Pardo et al. (2010) described the stage of development of research on computational linguistics in Brazil, and da Silva Conrado et al. (2014) presented a survey of automatic term
+extraction for Brazilian Portuguese.
+This survey aims to cover the state of the art of research related to sentiment analysis
+for the Portuguese language. Unlike previous works (Souza et al. 2016b; Pardo et al. 2010;
+da Silva Conrado et al. 2014), which present statistical data or cover specific linguistic
+resources, this survey aims to describe and categorize works related to sentiment analysis
+more broadly. This includes discuss works that involve sentiment analysis approaches specific to the Portuguese language and its supporting resources, such as NLP tools, lexicons,
+
+1
+
+https​://www.inter​netwo​rldst​ats.com/stats​7.htm.
+Portuguese is an official language in Angola, Brazil, Cape Verde, East Timor, Equatorial Guinea, GuineaBissau, Macau, Mozambique, Portugal, and São Tomé and Príncipe.
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 10_02_Using deep learning to predict outcomes of legal appeals better than human experts
+================================================================================
+
+--- TITLE ---
+PLOS ONE RESEARCH ARTICLE Using deep learning to predict outcomes of legal appeals better than human experts: A
+
+--- ABSTRACT ---
+Legal scholars have been trying to predict the outcomes of trials for a long time. In recent
+years, researchers have been harnessing advancements in machine learning to predict the
+behavior of natural and social processes. At the same time, the Brazilian judiciary faces a
+challenging number of new cases every year, which generates the need to improve the
+throughput of the justice system. Based on those premises, we trained three deep learning
+architectures, ULMFiT, BERT, and Big Bird, on 612,961 Federal Small Claims Courts
+appeals within the Brazilian 5th Regional Federal Court to predict their outcomes. We compare the predictive performance of the models to the predictions of 22 highly skilled experts.
+All models outperform human experts, with the best one achieving a Matthews Correlation
+Coefficient of 0.3688 compared to 0.1253 from the human experts. Our results demonstrate
+that natural language processing and machine learning techniques provide a promising
+approach for predicting legal outcomes. We also release the Brazilian Courts Appeal Dataset for the 5th Regional Federal Court (BrCAD-5), containing data from 765,602 appeals to
+promote further developments in this area.
+
+--- INTRODUCTION ---
+Legal judgment prediction (LJP) is one of the most common tasks that legal scholars perform
+every day. Lawyers and their clients try to predict the outcome of lawsuits, hoping to improve
+their chances of achieving favorable results. Despite being neutral players, judges may also
+desire to know if a higher court would overrule their decision in case of an appeal, especially in
+legal systems in which stare decisis must be observed.
+The ability to foresee how a conflict will end is deeply tied to the law itself, as a way to make
+social interactions more predictable, stable, and reliable. Some authors argue that predicting
+the behavior of courts can enhance our understanding of decision theory and shed light on the
+evolution of the judiciary [1]. Predicting outcomes of legal problems has high economic, political, and theoretical value.
+
+PLOS ONE | https://doi.org/10.1371/journal.pone.0272287 July 28, 2022
+
+1 / 20
+
+PLOS ONE
+
+with code: https://github.com/eliasjacob/paper_
+brcad5.
+Funding: This study was funded by the National
+Council for Scientific and Technological
+Development (CNPq) through a scholarship to
+Elias Jacob de Menezes-Neto (302668/2020-9).
+The Brazilian Coordenação de Aperfeiçoamento de
+Pessoal de Nı́vel Superior (CAPES) financed the fee
+to publish this article (finance code 001). Funders
+had no role in the study design, data collection and
+analysis, or the decision to prepare and publish the
+manuscript.
+Competing interests: Elias Jacob de Menezes-Neto
+declares no competing interests. Marco Bruno
+Miranda Clementino is a federal judge in the 5th
+Regional Federal Court jurisdiction. Although his
+position is not affected in any way by this paper,
+we understand that this affiliation may be seen as a
+non-financial competing interest. This does not
+alter our adherence to PLOS ONE policies on
+sharing data and materials.
+
+Using deep learning to predict outcomes of legal appeals better than human experts
+
+Unsurprisingly, computers have long been considered a possible tool to aid legal scholars in
+achieving this goal [2]. More recently, researchers have become interested in harnessing the
+power of machine learning (ML) to predict the fate of legal cases. Several legal and technological factors support this trend, but, mainly, this advancement is now possible due to the
+increased adoption of electronic filing systems. Having almost 100% of their cases processed
+electronically, Brazilian federal courts generate large amounts of data as a byproduct of their
+daily activities. All parties must submit their filings electronically. Since 2006, in some
+instances, no paper at all is submitted. This creates large amounts of data available for analysis.
+In 2019 only, Brazilian Federal Trial Courts received 4,118,969 new lawsuits, of which 73%
+(3,003,387) were filed at Federal Small Claims Courts (FSCC). During the same year, Federal
+Appeals Courts received 1,078,049 new appeals, of which almost half (536.048) came from
+Federal Small Claims Courts. A three-judge appellate panel (AP, also known as "Turma Recursal") hears each appeal and tries the case, usually ending in one of the following results: "full
+reverse", "partial reverse" or "affirm" the first instance decision. That result from the AP is what
+we want to predict in this paper.
+Appellate panels affirm lower court decisions in 79% of cases. As a consequence of losing,
+most appellants have to pay legal expenses for the prevailing party, representing a significant
+economic impact for those seeking to modify previous rulings. From a broader social perspective, there are no real winners when the affirmation rates are so high and steady. On the one
+hand, if the losing party is the federal government, taxpayer money is lost paying expenses due
+to an ill-fated appeal. On the other hand, if the government wins, people who are usually
+already impoverished must pay the government’s legal fees, making their financial situation
+even worse than when they began. As if that weren’t enough, unnecessary appeals hinder the
+capability of the judiciary to handle cases in a timely manner.
+The ability to better predict an outcome can lead to better decisions about when to appeal,
+causing an overall drop in the proportion of decisions that affirm the first instance court ruling. It could also enhance the workflow of the courts by automatically evaluating an appeal
+and suggesting the best outcome for that specific case. In such cases, an AI could enhance the
+throughput of the judiciary.
+Considering this, we propose the use of natural language processing and deep learning
+models to predict the outcomes of appeals tried by these APs, showing that our models are not
+only better than random guessing but, primarily, that they outperform human experts on this
+task. Using only the final decision text of trial courts, our models outperform by almost three
+times the predictions determined by human experts.
+We evaluated three deep learning architectures, of which one [3] is exclusively based on a
+classifier layer built on top of a tweaked Long Short-Term Memory (LSTM) network [4]. For
+the second architecture [5], we used an approach that combines a Transformer, in our case, a
+BERT-based model [6], with an LSTM as a way to overcome sequence length limitations for
+traditional Transformers. Finally, the third model uses a Big Bird architecture [7] capable of
+handling texts with up to 7,680 tokens.
+AI-driven systems could potentially improve stability, predictability, efficiency, and fairness
+in a legal system with more than 80 million new cases every year, strengthening the use of legal
+precedents by the Brazilian judiciary. On one side, lawyers can leverage machine learning
+models to reduce litigation costs and legal expenses, leading to broader access to legal services.
+On the other side, the judiciary can also benefit from this kind of approach by creating automated management systems for most common cases. This technology could potentially
+improve the throughput of legal systems by supporting federal judges and their staff.
+While our models cannot replace human decision-making, they can assist courts in handling more cases. Machine learning solutions would further expand access to justice, especially
+
+PLOS ONE | https://doi.org/10.1371/journal.pone.0272287 July 28, 2022
+
+2 / 20
+
+PLOS ONE
+
+Using deep learning to predict outcomes of legal appeals better than human experts
+
+for often marginalized groups that commonly seek to assert their rights in Federal Small
+Claims Courts.
+
+Institutional background
+The Brazilian judiciary is defined in the Constitution, in articles 92 through 126. It consists of
+several bodies divided into branches structured based on the distribution of jurisdictional
+powers (federal, state, labor, electoral, and military).
+In federal and state courts, there also exists a parallel structure which is found in the small
+claims courts, with the specific purpose of processing less complex civil and criminal cases.
+The concept of "less complexity" referred to in the Constitution is interpreted in terms of the
+economic value involved in the case. Thus, civil lawsuits of lesser economic value are as a rule
+processed in the small claims courts, where certain procedural privileges are attributed to
+citizens.
+Even though they are part of the federal and state courts, the small claims courts have a
+completely different organizational structure and form a subsystem within each of the abovementioned branches. Thus, when an appeal is filed against the decisions of these courts, the
+judgment is carried out by an appellate panel, consisting of a collegiate jurisdictional body,
+composed of first instance judges gathered to act temporarily in the second instance.
+Although, over constitutional issues, parties can always appeal to the Supreme Court, in cases
+of questions of federal law, appeals to the Superior Court of Justice are rarely permitted by law.
+
+Litigiousness and the judiciary
+The Brazilian Constitution establishes access to justice as a fundamental right, stipulating, in
+Article 5, XXXV, that "the law will not exclude from judiciary assessment injury or threats
+against rights". There is no denying the importance of giving constitutional status to access to
+justice, especially after two decades of dictatorship, the context in which the 1988 Constitution
+was promulgated. However, since the Brazilian legal culture has traditionally relied on the
+judicial process as the instrument for resolving disputes, jurisdiction has been strengthened,
+without much attention given to either preventive or alternative means of resolving conflicts.
+This choice in jurisdiction has resulted in a highly litigious social environment in which citizens are encouraged to approach the judiciary to solve their problems, however simple they
+may be. As a result, a multitude of lawsuits occur, many of which are repetitive or sometimes
+even artificially created by opportunistic lawyers for gain. If this situation were not enough,
+legal proceedings tend to continue for long periods, because of the established dogma that
+jurisdictional quality can only be assessed in terms of the defense opportunities afforded to the
+individual, and not by the judiciary’s capacity to legitimately resolve disputes.
+The model of jurisdiction in Brazil presents several characteristics which increase the volume of legal cases, including appeals. Foremost are characteristics established by the Constitution. Not only does the Constitution define access to justice as a human right and guarantee it.
+It also contemplates certain directives of social transformation. Consequently, legal cases have
+become the keystone for control of public policy. Moreover, the Constitution prescribes
+behaviors over the full spectrum of life and politics. As a result, any matter can be brought
+before the judiciary.
+Also significant are two other facts: First, appealing to higher courts is relatively easy. Second, the civil process has both an individualistic and formalistic profile. This profile makes it
+difficult to resolve conflicts from a collective perspective, or even to prevent litigation. Accordingly, the legal system discourages consensual conflict resolution and generates a plurality of
+
+PLOS ONE | https://doi.org/10.1371/journal.pone.0272287 July 28, 2022
+
+3 / 20
+
+PLOS ONE
+
+Using deep learning to predict outcomes of legal appeals better than human experts
+
+individual decisions. This great number of decisions makes it difficult to give precedence its
+due, further increasing the volume of legal cases.
+Access to justice even for the most disadvantaged is also guaranteed by a series of measures
+that facilitate protection of rights. Going to court is relatively cheap and accessible, even in this
+country that socially and economically marginalizes a significant part of its population. Court
+fee waivers are guaranteed to the most needy and in numerous situations, it is possible to litigate even without a lawyer. Citizens count on free services for filing lawsuits even within the
+judiciary itself, in the small claims courts, and with the Public Defender’s Office, whose mission is to provide legal assistance exclusively to those in need.
+Brazil has over 1.2 million active lawyers, which creates a large market in search of cases. In
+this environment of high competition, it is common for lawyers to bargain for fees, making litigation economically attractive for them. In addition to that, the resulting attorney fees make it
+more profitable for lawyers to litigate than to seek alternative solutions for the litigants. Moreover, law schools train lawyers as experts in litigation, not as litigation analysts.
+Historically, Brazilian law does not favor alternative means of resolving conflicts. This characteristic is indicative of another: Brazilian law discourages negotiated solutions, giving little
+importance to free will. This influences interpretation of legal norms towards a more formal
+sense, in which jurisprudence is seen in terms of oppositions and conflicts, and not as an
+instrument for harmonizing interests. And though it is true that, more recently, much has
+been legislated to change that, such laws are still in the process of assimilation and
+improvement.
+Also, Brazilian law does not traditionally give due value to judicial precedent, weakening
+the stabilizing function of courts. Only in 2016, the new Civil Procedure Code established
+binding precedents, a concept that has been improving judicial management of conflicts.
+However, since most lawyers did not study the topic in law school, the positive effects of the
+new policy have been felt very slowly.
+Finally, a comprehensive defense is often associated with the prerogative of unlimited
+appeal against judicial decisions. Strictly speaking, Brazilian law allows parties to appeal almost
+indefinitely, especially in the higher courts. The interesting thing is that our data show a low
+reversal rate in judicial decisions, which is why it is yet more likely that artificial litigations
+result from the incentive to appeal.
+This combination of factors makes it attractive to choose to resolve conflicts by non-consensual means, in accordance with the traditional model of jurisdiction. Parties more often opt
+for individual lawsuits. These are prolonged through the excess of both bureaucracy and the
+lack of available resources. This adds to the number of cases pending trial, which in turn compounds the number of unresolved lawsuits, hindering the capacity of the judiciary to solve
+cases in a timely manner.
+As a result, Brazil has become a highly litigious environment, with 75.4 million lawsuits in
+progress, a number that has been decreasing in recent years, thanks to the planning and management activities of both the courts and the National Council of Justice, along with massive
+investment in technology. Although relevant, these activities have not proven sufficient for
+reducing the backlog of pending cases. The official data presented in the "Justice in Numbers"
+report from the Brazilian National Council of Justice shows a growing proportion of cases
+using electronic filing systems, which reached 96.9% of the total number of new cases in 2020.
+In contrast, the percentage was 11.2% in 2009. These data are particularly important, because
+they reveal the historical curve of investment in technology, notably in electronic filing systems. Despite these advancements, resolving cases in a timely manner remains a problem in
+Brazil.
+
+PLOS ONE | https://doi.org/10.1371/journal.pone.0272287 July 28, 2022
+
+4 / 20
+
+PLOS ONE
+
+Using deep learning to predict outcomes of legal appeals better than human experts
+
+The federal judiciary
+Currently, the federal judiciary is composed of federal judges, who act during the first instance,
+and five Federal Regional Court, each with jurisdiction over a part of the country. In total,
+there are 989 federal courts, divided into either general or specialized competence.
+Our study used lawsuits that were
+
+--- CONCLUSION ---
+We have shown that it is possible to use deep learning models to predict outcomes of appeals
+in Brazilian courts, achieving performance that is better than that resulting from analysis by
+human experts. We found that the ULMFiT methodology (AWD-LSTM) performed better for
+
+PLOS ONE | https://doi.org/10.1371/journal.pone.0272287 July 28, 2022
+
+17 / 20
+
+PLOS ONE
+
+Using deep learning to predict outcomes of legal appeals better than human experts
+
+this specific task, showing that there is still room for Recurrent Neural Networks, especially
+when considering longer texts, like judicial decisions.
+We also provide a new dataset called the Brazilian Courts Appeals Dataset for the 5th
+Regional Federal Court—BrCAD-5 which can be used in the future to establish a common
+ground for this kind of modeling and foster future endeavors in LJP tasks within the Brazilian
+judiciary.
+
+Supporting information
+S1 Appendix. Code, datasets and datasheet for the Brazilian Courts Appeals Dataset for
+the 5th Regional Federal Court—BrCAD-5.
+(DOCX)
+
+
+================================================================================
+PAPER: 10_03_Artificial intelligence and speedy trial in the judiciary- Myth, reality or need? A case study in the Brazilian Supreme Court (STF)
+================================================================================
+
+--- TITLE ---
+Government Information Quarterly 39 (2022) 101660 Contents lists available at ScienceDirect Government Information Quarterly
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+For decades, the role of the Judiciary in several countries has been
+considered precarious (Bielen, Peeters, Marneffe, & Vereeck, 2017;
+French, 1933; Friesen & Information, 1984). In this context, one of the
+most debated issues is the speedy trial, which is related to the system’s
+ability to respond to the demand by the Judiciary at an appropriate time
+(Ippoliti, Melcarne, & Ramello, 2014). Nevertheless, it has been
+observed high costs, long delays for the completion of proceedings and,
+consequently, procedural congestion (Gomes, Alves, & Silva, 2018).
+Notwithstanding historical progress, delays and other problems in
+public services persist and are addressed continuously with Information
+and Communication Technology (ICT) (Dutta et al., 2019; Kum, Duncan,
+& Stewart, 2009). In this sense, Artificial Intelligence (AI) has been
+drawing attention (Chen, Guo, Gao, & Liang, 2019; de Sousa, De Melo,
+De Souza, Farias, & Gomes, 2019; Kankanhalli, Charalabidis, & Mel­
+louli, 2019; Levmore & Fagan, 2019). There are courts in several
+countries that adhere to this technology (Alshahrani, Dennehy, &
+Mäntymäki, 2021; Julius, 2018).
+Zeleznikow (2017), for example, presents the online dispute
+
+resolution systems (Online Dispute Resolution - ODR), which have
+proved to be a good option for improving the speed. On the other hand,
+Langbroek (2019) points out that AI does not appear to be the solution
+for reducing procedural stock or for increasing speed. It only reports that
+this technology can provide other types of benefits, such as improving
+the assertiveness of the evidence.
+Thus, there are divergent hypotheses, but without checking the im­
+plications of AI on speedy trials and the factors associated with this
+phenomenon. Therefore, it is not clear whether the expected evolution
+occurs, which is corroborated by recent studies, which warn about the
+importance of understanding what the implications of new technologies
+for legal institutions are - with emphasis on AI (Andrade & Joia, 2012;
+Gomes et al., 2018; Iriberri, 2015; Omoteso, 2012; Wallace, 2017).
+In addition to the whole context involving AI and speedy trials, de
+Sousa et al. (2019) draw attention to the need to investigate the use of AI
+in specific areas of the public sector, which constitutes a promising
+research opportunity. This study seeks to understand and analyze the
+use of AI in the Judiciary, more specifically, the contributions and
+limitations of this technology in the speedy trial.
+To attend this objective, the Brazilian Superior Federal Court (STF)
+
+* Corresponding author at: St. de Autarquias Norte Q 5, Centro Empresarial CNC, Torre A, Sala 1501, Asa Norte, Brasília, DF 70297-400, Brazil.
+E-mail addresses: wesleigomes@gmail.com, weslei.gomes@mpt.mp.br (W.G. de Sousa).
+https://doi.org/10.1016/j.giq.2021.101660
+Received 29 August 2020; Received in revised form 5 November 2021; Accepted 6 November 2021
+Available online 3 December 2021
+0740-624X/© 2021 Elsevier Inc. All rights reserved.
+
+W.G. de Sousa et al.
+
+Government Information Quarterly 39 (2022) 101660
+
+computer systems can perform tasks that require rational human ca­
+pacity (Bačić, 2016; Mikalef et al., 2021). Between them, the Natural
+language processing (NLP) technique stands out, which has proven
+beneficial in judicial systems (Xiao, Hu, Liu, Tu, & Sun, 2021). NLP seeks
+to “achieve language processing similar to human, so that a series of
+tasks can be performed” (Liddy, 2001).
+Despite providing facilities, the use of AI techniques faces challenges
+(Alshahrani et al., 2021; Mikalef et al., 2021; Zuiderwijk, Chen, &
+Salem, 2021). An obstacle in the Judiciary is the unstructured nature of
+the data. Although the cases cover similar periods and the decisions
+follow a general form, the judges are individualistic in the way they
+present information (Alarie & Yoon, 2017). In addition, there is
+disagreement in decisions about similar facts, which support different
+legal precedents. Thus, AI-based solutions can produce inaccurate re­
+sults (Rosenthal & Yoon, 2011).
+Therefore, it is a mistake to think that instructing AI is an easy task,
+as it can be challenging to deal with cases in which the determination of
+a legal issue does not serve as an identifiable set of factors or when there
+is insufficient data (Rosenthal & Yoon, 2011). A central point for dealing
+with the problem is to transform unstructured data into structured data.
+Acting in a scenario with these characteristics is laborious and re­
+quires the participation of professionals from different areas. In addi­
+tion, the misuse of these tools or the lack of knowledge about their
+behavior can lead to the production of decisions contrary to legal
+principles (Rosenthal & Yoon, 2011). Nevertheless, if used well, they can
+generate economies of scale and increase the availability of services
+(Zeleznikow, 2017).
+
+was selected for a case study, considering the analysis perspectives
+present in the literature. This study analyzes the STF’s experience from
+the point of view of the implications of AI in the speedy trial. It also
+presents how AI has contributed to accelerating legal proceedings and
+obtaining a path for quantitative research that allows generalization.
+The remainder of this paper is structured as follows. Section 2 pre­
+sents the main concepts related to AI and speedy trial. Section 3 de­
+scribes the research methods and techniques applied, detailing the case
+study and the literature review. Next, section 4 presents the results and
+discussions. In this section, it discusses the framework of the impact of
+AI on speedy trial. Finally, section 5 presents the conclusion, demon­
+strating the limitations of this study, and potential future researches.
+
+--- CONCLUSION ---
+6. Framework
+design and
+conclusion of
+writing
+
+Fig. 1. Research procedures.
+
+inclusion, in which the exclusion criteria (Textbox 1) and inclusion
+(Textbox 2) are taken into account.
+
+Textbox 1: Exclusion criteria.
+e.i) Focus on the private sector or not focused on justice; *
+e.ii) Essentially technical publications; *
+e.iii) Date of publication before 01/01/1970.
+* The criteria e.i and e.ii are not mutually exclusive.
+
+Textbox 2: Inclusion criteria.
+i.i) Academic or commercial research focusing on the adoption of AI to treat speedy trial;
+i.ii) Terms related to AI and speedy trial in accordance with what was defined by de Sousa et al. (2019) and also the terms backlog; judicial; and
+delay. Used after research to eliminate misunderstandings. AI, for example, is an acronym commonly used for autopsy image (Okuda, Shiotani,
+Sakamoto, & Kobayashi, 2013).
+i.iii) The time frame was from 01/01/1970, when AI started to be applied to different areas of knowledge (Bobrow & Raphael, 1974; Nilsson,
+1971; Waterman & Newell, 1971), at 31/07/2019, date of obtaining information for the research.
+
+3.3. Collection, organization, and analysis of the case study information
+
+We conduct the identification phase between August 15 and 30,
+2019, based on journals Science Direct and Capes and the Google
+Scholar tool, with the following arguments: (“dispute resolution” OR
+“judicial” OR “court” OR “judge”) AND (“artificial intelligence” OR
+“intelligent information system” OR “intelligent application” OR (“court
+backlog” OR “court delay”). Capes: restricted to Law. Science Direct: we
+implemented logical structure in parts. Google Scholar: the option to
+include patents and citations was excluded, with classification by date.
+The samples were stored in the Mendeley Reference Management Soft­
+ware®, and we removed the duplicates. From there, we proceeded with
+the steps of eligibility and inclusion for application of the criteria,
+resulting in 135 publications, which started to compose the work.
+
+The collection of information sought to identify the characteristics
+and results of the application through documentary research combined
+with semi-structured interviews (de Marconi & Lakatos, 2017; de Mar­
+tins & Theóphilo, 2016). We carried out these procedures from the
+perspective of three categories of analysis: Technical, Negotiation, and
+Result (Andersen & Danziger, 1995; Bardin, 2016; Mairiza, Zowghi, &
+Nurmuliani, 2010; Wilmot, 2007).
+In order to have a systematic view of the problem, we selected three
+people who could contribute to the case study, each with different
+competencies and attributions, with the following characteristics:
+• Interviewee 1: Information Technology Manager. Primary respon­
+sible for the analyzed AI tool. Has business, management, and
+technical knowledge.
+• Interviewee 2: Systems Analyst. The responsible for the analyzed AI
+tool. Knows technical and performance details of the application.
+• Interviewee 3: Legal analyst. Legal professional with knowledge
+about the routines and rules of the analyzed body.
+
+3.2. Selection of the case study and unit of analysis
+For the case study, an organization of the Judiciary was sought, with
+an application based on AI to improve speedy trial, willing to make
+available people and materials for data collection, and meet the critic
+case selection Flyvbjerg (2001). Thus, we chose the Federal Supreme
+Court of Brazil (STF). With the Victor system, the Agency meets all re­
+quirements and has aroused interest in the results of the application
+(Dissony et al., 2018; Oliveira & Costa, 2019; Orlando, 2018; Tepedino
+& Silva, 2019).
+The STF is the highest level of the Brazilian Judiciary System. Its
+main mission is to uphold the Constitution, the country’s fundamental
+and supreme law, thus ensuring the functioning of democracy. The ac­
+tions performed at the STF are resonated throughout the legal system
+(da Costa, 2006).
+
+The choice of professionals for the interviews was made based on the
+necessity of information related to the research objectives. Thus, to
+provide a holistic analysis, it included people with management, tech­
+nical and juridical perspectives. This action was necessary for the ac­
+curate compression of the case study, including enabling the
+understanding of the limitations of the AI application in the STF.
+Thus, the collection was divided into three parts:
+
+4
+
+W.G. de Sousa et al.
+
+Government Information Quarterly 39 (2022) 101660
+
+4. Results and discussion
+
+i) Characterization of the problem: we attempted to understand the
+reasons and decision process that led the institution to adopt AI to
+support speedy trial (Subsections 3.1 and 3.2). Thus, it is possible
+to verify the relationship between AI and speedy trial, confront
+the observations with some theoretical elements, and guide the
+verification of the scope of the expected results.
+ii) The business context of the AI solution: we sought to verify the
+results generated by the tool in speedy trial and the institution’s
+involvement in establishing the instrument and conducting a
+holistic analysis of the effects of AI on speed. Therefore, in
+addition to the time, we assessed its use’s budgetary, personnel,
+efficiency, and effectiveness (Subsections 3.3 and 3.4).
+iii) Technical characterization of the AI solution: considering that AI
+is an IT tool and that technical aspects can influence, mainly, in
+terms of time and quality of results, we sought to briefly check the
+technical aspects of the solution (Subsection 3.1.2). This infor­
+mation is essential to establish a framework that allows, in the
+future, to verify whether changes in speedy trial by the use of AI
+had a technological influence.
+
+4.1. The federal supreme court and the adoption of technologies based on
+AI
+The institution chosen for the case study was the Federal Supreme
+Court (STF), the highest Court in the hierarchy of the Brazilian Judiciary
+system. It is responsible for ensuring that the legal rules follow the
+dictates of the Brazilian Constitution (Filho, 2016).
+Among its main attributions is to judge direct actions of unconsti­
+tutionality and declaratory actions of the constitutionality of laws, as
+well as the plea of noncompliance with a fundamental precept arising
+from the Constitution itself and extradition requested by foreign states
+(Brasil., 1988). Since 2018, the STF traces, in its strategic planning, the
+search for greater celerity of the jurisdictional provision (Brasil, 2020).
+In general, the procedural flow at the STF occurs in the stages repre­
+sented in Fig. 2.
+The proceedings begin with the receipt of cases, which may be filed
+directly with the STF or come from other courts or tribunals. The next
+step is the speedy trial. The analysis starts with the Judicial Secretariat,
+which forwards the case to the presidency or distribution to the judges.
+In the case of preference for the presidency or internal or external ap­
+peals, a panel may decide the case. The action of the STF ends with the
+discharge to the file, determining a jurisprudence, or sending it to
+another lower court (Supremo Tribunal Federal, 2019).
+The jurisdiction of the STF is broad (CNJ, 2018b); however, the
+Judiciary function is primarily exercised, with emphasis on extraordi­
+nary appeals (EA), which apply to cases decided in a trial court or
+appellate Court. When the appealed decision violates provisions of the
+Constitution and has far-reaching repercussions (GR), that is, the issue
+goes beyond individual interests. Given the high procedural demand and
+the rise of AI, the body decided to enjoy the technological opportunity
+(Santos & Melo, 2017).
+
+
+================================================================================
+PAPER: 10_04_INACIA Integrating Large Language Models in Brazilian AuditCourts Opportunities and Challenges
+================================================================================
+
+--- TITLE ---
+INACIA: Integrating Large Language Models in Brazilian Audit Courts: Opportunities and Challenges JAYR PEREIRA, NeuralMind.ai, Campinas, Brazil and University of Campinas, Campinas, Brazil
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Large Language Models (LLMs) have emerged as a pivotal innovation in the artificial intelligence space, altering our interaction with digital technologies. Their applications span a diverse spectrum, including but not
+limited to information retrieval, data extraction, text classification, machine translation, and question answering
+[12]. Beyond these conventional domains, LLMs demonstrate remarkable capabilities in areas such as standardized testing, creative writing [24], and even complex decision-making tasks in business and legal environments
+[5, 28]. This versatility showcases their ability to generate insights and solutions that are contextually relevant.
+In this article, we introduce a groundbreaking application of LLMs for administrative case processing and
+assisted decision-making developed jointly by the Tribunal de Contas da União (TCU) (or Brazilian Federal
+Court of Accounts) and experts at several Brazilian research organizations. Instrução Assistida com Inteligência Artificial (INACIA) (or Artificial Intelligence–Assisted Legal Instruction) is a system that suggests adjudication directions to court decision-makers—consisting of structured reasoning around cases’ claims, evidence, and
+relationship to legal provisions in Brazilian law. TCU’s staff auditors draw from INACIA’s analytical support but
+ultimately bear the responsibility of making adjudication recommendations to court decision-makers. Its inputs
+are case filings; outputs are suggestions to the auditor to write the initial instruction.1 INACIA uses a combination of pre-trained LLMs and search engines to extract information from case documents and to reason through
+the extracted information.
+Importantly, INACIA goal’s is to expedite case adjudication as it sifts through case documents and connects
+claims, evidence, and legal provisions. INACIA, however, is not replacing skilled auditors; instead, it is augmenting their productivity. By handling routine and straightforward tasks, INACIA allows auditors to focus on more
+complex, analytical tasks, thereby deepening the overall effectiveness and efficiency of TCU staff.
+The main challenge in developing systems like INACIA is evaluating their performance. How can we ensure
+the quality of the produced text and extracted data? To address this challenge, we construct a validation dataset
+from TCU’s case filings and propose a methodology that uses LLMs to evaluate the system’s outputs. To the
+best of our knowledge, this is the first evaluation of this kind in the legal domain. We demonstrate that our
+methodology is highly correlated with human evaluation and can be used to evaluate the system’s performance.
+Our results demonstrate that INACIA can produce high-quality text for the initial instruction but also forewarn
+the need for further research to improve the quality of the system’s outputs.
+The remainder of this article is organized as follows. Section 2 provides an overview of TCU and the role of
+Artificial Intelligence (AI) in its operations. Section 3 reviews the related work in the field of AI and LLMs in
+legal settings. Section 4 introduces INACIA, detailing its case processing pipeline and the challenges it addresses.
+Section 5 presents the experiments conducted to evaluate INACIA’s performance, including the validation dataset
+and the evaluation methodology. Section 6 discusses the results of the experiments and their implications. Section 7 discusses the broader implications of INACIA and the challenges of integrating AI in legal systems. Finally,
+Section 8 concludes the article and outlines future research directions.
+
+--- CONCLUSION ---
+In this article, we presented INACIA, an innovative system designed to integrate LLMs into the Brazilian Federal
+Court of Accounts operational framework. Our experiments and analyses reveal that INACIA holds significant
+potential to support the auditor in the audit process with greater speed and security in analyzing cases and
+making decisions.
+The utilization of LLMs for processing and analyzing case documents demonstrated a moderate level of accuracy in capturing essential elements and information from cases. The system’s ability to handle various stages of
+case processing, from basic information extraction to admissibility examination, precautionary measure analysis,
+legal plausibility assessment, and final recommendations generation, showcases its versatility and adaptability
+to the complex requirements of legal proceedings.
+Moving forward, we will focus on enhancing INACIA’s capabilities through continuous development and improvements. Besides, we will explore implementing an auditing system based on INACIA’s architecture, allowing
+us to evaluate the system’s performance in a real-world setting. In conclusion, INACIA represents a significant
+step forward in applying artificial intelligence in the legal domain. Its development and implementation in the
+Brazilian audit courts can serve as a blueprint for similar initiatives globally.
+
+9 There are other relatively minor risks that any new system carries, such as data security and privacy and job displacement, that are not
+particular to INACIA. As far as data security and privacy go, INACIA is being built to be compatible with existing TCU systems without
+adding any new risk. As to potential job displacement risks, TCU is precisely looking to replace tasks in its staff’s work assignments with
+AI such that staff can shift their skills to other, more important tasks within TCU.
+
+Digit. Gov. Res. Pract., Vol. 6, No. 1, Article 6. Publication date: February 2025.
+
+6:18 •
+
+J. Pereira et al.
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{Pereira20211087, author = {Pereira, Denilson Alves}, title = {A survey of sentiment analysis in the Portuguese language},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

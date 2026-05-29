@@ -1,0 +1,1448 @@
+================================================================================
+PAPER: 08_01_An entity-centric approach to manage court judgments based on Natural Language Processing
+================================================================================
+
+--- TITLE ---
+Computer Law & Security Review 52 (2024) 105904 Contents lists available at ScienceDirect Computer Law & Security Review: The International Journal of Technology Law and Practice
+
+--- ABSTRACT ---
+In this paper, we present an entity-centric infrastructure to manage legal documents, especially court
+judgments, based on the organization of a textual document repository and on the annotation of these
+documents to serve a variety of downstream tasks. Documents are pre-processed and then iteratively annotated
+using a set of NLP services that combine complementary approaches based on machine learning and syntactic
+rules. We present a framework that has been designed to be developed and maintained in a sustainable way,
+allowing for multiple services and uses of the annotated document repository and considering the scarcity of
+annotated data as an intrinsic challenge for its development. The design activity is the result of a cooperative
+project where a scientific team, institutional bodies, and companies appointed to implement the final system
+are involved in co-design activities. We describe experiments to demonstrate the feasibility of the solution and
+discuss the main challenges to scaling the system at a national level. In particular, we report the results we
+obtained in annotating data with different low-resource methods and with solutions designed to combine these
+approaches in a meaningful way. An essential aspect of the proposed solution is a human-in-the-loop approach
+to control the output of the annotation algorithms in agreement with the organizational processes in place in
+Italian courts. Based on these results we advocate for the feasibility of the proposed approach and discuss the
+challenges that must be addressed to ensure the scalability and robustness of the proposed solution.
+
+--- INTRODUCTION ---
+Legal documents, especially court judgments and similar resolutions
+such as orders, contain information that is valuable in multiple applications (from legal case retrieval to legal process analysis), for different
+purposes (from the comparison with similar cases for uniform judgments to discovering trends for specific legal subjects, e.g., counting the
+average maintenance in relation to economical conditions of the partners in divorces), and stakeholders (from judges to law administrators,
+lawmakers, lawyers, scholars, and the general public). For the sake of
+simplicity, in the rest of the paper, we will use ‘‘judgements’’ to indicate
+also similar documents. Several applications, e.g., legal search engines,
+are already in place, but recent advances in data management, Natural
+Language Processing (NLP), and Machine Learning (ML) are dramatically transforming legal text processing, promising more powerful or
+completely novel functionalities in legal applications.
+
+References to entities such as organizations, persons, locations,
+dates and money2 play an important role in these documents: the
+extraction, consolidation and storage of these references in the form
+of metadata and annotations can support many of current and future
+applications. For example, considering entities in a faceted search
+application [2] can help users retrieve legal cases they are interested
+in (e.g., ‘‘find all judgments that mention the Wells Fargo bank’’) or
+locate specific entities in long judgments (e.g., ‘‘find all occurrences
+of Jane Smith in a judgment consisting of several pages’’); studying
+the relation between maintenance and economical conditions of the
+partners can be better supported by extracting all references to money
+in the judgment; studying trends at the regional level can be better
+supported by extracting addresses in multiple judgment. Solutions to
+extract information from legal documents have in fact a long tradition
+and are attracting an even increased interest [3].
+
+∗ Corresponding author.
+
+E-mail address: riccardo.pozzi@unimib.it (R. Pozzi).
+All authors contributed equally.
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 08_02_Information extraction framework to build legislation network
+================================================================================
+
+--- TITLE ---
+Artificial Intelligence and Law (2021) 29:35–58 https://doi.org/10.1007/s10506-020-09263-3 ORIGINAL RESEARCH Information extraction framework to build legislation
+
+--- ABSTRACT ---
+This paper concerns an information extraction process for building a dynamic legislation network from legal documents. Unlike supervised learning approaches which
+require additional calculations, the idea here is to apply information extraction methodologies by identifying distinct expressions in legal text in order to extract network information. The study highlights the importance of data accuracy in network
+analysis and improves approximate string matching techniques to produce reliable
+network data-sets with more than 98% precision and recall. The applications and
+the complexity of the created dynamic legislation network are also discussed and
+challenged.
+
+--- INTRODUCTION ---
+The process of legal text retrieval for machine-readable structured documents is well
+explored in the literature. Fowler et al. in 2007 used a computer based search-andretrieval strategy that automated the process of finding Shepard’s citation1 in the
+HTML files of U.S Supreme Court cases (Fowler et al. 2007). In 2011 De Maat et al.
+developed a context-free grammar approach to find references in and between Dutch
+legal sources. This approach was proposed to parse the text files, but the evaluation
+results are only available for XML structured files from MetaLex2 (De Maat et al.
+2006).
+1
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 08_03_A Frustratingly Easy Approach for Entity and Relation Extraction
+================================================================================
+
+--- TITLE ---
+A Frustratingly Easy Approach for Entity and Relation Extraction Zexuan Zhong Danqi Chen
+
+--- ABSTRACT ---
+that model these two tasks jointly (Li and Ji, 2014;
+Miwa and Bansal, 2016; Katiyar and Cardie, 2017;
+Zhang et al., 2017a; Li et al., 2019; Luan et al.,
+2018, 2019; Wadden et al., 2019; Lin et al., 2020;
+Wang and Lu, 2020). There has been a long held
+belief that joint models can better capture the interactions between entities and relations and help
+mitigate error propagation issues.
+In this work, we re-examine this problem and
+present a simple approach which learns two encoders built on top of deep pre-trained language
+models (Devlin et al., 2019; Beltagy et al., 2019;
+Lan et al., 2020). The two models — which we
+refer them as to the entity model and relation model
+throughout the paper — are trained independently
+and the relation model only relies on the entity
+model to provide input features. Our entity model
+builds on span-level representations and our relation model builds on contextual representations specific to a given pair of spans. Despite its simplicity,
+we find this pipelined approach to be extremely
+effective: using the same pre-trained encoders, our
+model outperforms all previous joint models on
+three standard benchmarks: ACE04, ACE05 and
+SciERC, advancing the previous state-of-the-art by
+1.7%–2.8% absolute in relation F1.
+To better understand the effectiveness of this approach, we carry out a series of careful analyses.
+We observe that, (1) the contextual representations
+for the entity and relation models essentially capture distinct information, so sharing their representations hurts performance; (2) it is crucial to fuse
+the entity information (both boundary and type)
+at the input layer of the relation model; (3) leveraging cross-sentence information is useful in both
+tasks. Hence, we expect that this simple model
+will serve as a very strong baseline in end-to-end
+relation extraction and make us rethink the value
+of joint modeling of entities and relations.
+Finally, one possible shortcoming of our approach is that we need to run our relation model
+
+End-to-end relation extraction aims to identify
+named entities and extract relations between
+them. Most recent work models these two
+subtasks jointly, either by casting them in one
+structured prediction framework, or performing multi-task learning through shared representations. In this work, we present a simple
+pipelined approach for entity and relation extraction, and establish the new state-of-the-art
+on standard benchmarks (ACE04, ACE05 and
+SciERC), obtaining a 1.7%-2.8% absolute improvement in relation F1 over previous joint
+models with the same pre-trained encoders.
+Our approach essentially builds on two independent encoders and merely uses the entity
+model to construct the input for the relation
+model. Through a series of careful examinations, we validate the importance of learning
+distinct contextual representations for entities
+and relations, fusing entity information early
+in the relation model, and incorporating global
+context. Finally, we also present an efficient
+approximation to our approach which requires
+only one pass of both entity and relation encoders at inference time, achieving an 8-16×
+speedup with a slight reduction in accuracy.1
+
+--- INTRODUCTION ---
+Extracting entities and their relations from unstructured text is a fundamental problem in information extraction. This problem can be decomposed into two subtasks: named entity recognition (Sang and De Meulder, 2003; Ratinov and
+Roth, 2009) and relation extraction (Zelenko et al.,
+2002; Bunescu and Mooney, 2005). Early work
+employed a pipelined approach, training one model
+to extract entities (Florian et al., 2004, 2006),
+and another model to classify relations between
+them (Zhou et al., 2005; Kambhatla, 2004; Chan
+and Roth, 2011). More recently, however, end-toend evaluations have been dominated by systems
+1
+Our code and models are publicly available at https:
+//github.com/princeton-nlp/PURE.
+
+50
+Proceedings of the 2021 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Language Technologies, pages 50–61
+June 6–11, 2021. ©2021 Association for Computational Linguistics
+
+(a) Entity model
+Method
+
+mor
+
+##pa
+
+(b) Relation model
+<S:Md>
+
+mor
+
+Method
+
+is
+
+a
+
+fully
+
+implemented
+
+par
+
+Task
+
+#ser
+
+for
+
+a
+
+text - to
+
+-
+
+speech system
+
+<O:Md>
+
+par
+
+#ser
+
+</O:Md>
+
+for
+
+a
+
+for
+
+⟨O:Tk>
+
+text
+
+- to -
+
+HYPONYM-OF
+
+##pa
+
+</S:Md>
+
+is
+
+a fully implemented
+
+text - to
+
+-
+
+speech system
+
+USED-FOR
+
+mor
+
+##pa
+
+is
+
+a
+
+fully
+
+implemented
+
+<S:Md>
+
+par
+
+#ser
+
+</S:Md>
+
+(c) Relation model with batch computations
+mor
+
+##pa
+
+is
+
+a fully
+
+implemented
+
+par #ser for
+
+a
+
+a
+
+speech
+
+HYPONYM-OF
+text
+
+-
+
+to
+
+-
+
+speech
+
+system
+
+[S:Md] [/S:Md]
+
+[O:Md] [/O:Md]
+
+</O:Tk> system
+
+USED-FOR
+[S:Md] [/S:Md]
+
+[O:Tk]
+
+[/O:Tk]
+
+Figure 1: An example from the SciERC dataset (Luan et al., 2018). Given an input sentence MORPA is a fully
+implemented parser for a text-to-speech system, an end-to-end relation extraction system is expected to extract
+that MORPA and PARSER are entities of type M ETHOD, TEXT- TO - SPEECH is a TASK, as well as MORPA is a
+hyponym of PARSER and MORPA is used for TEXT- TO - SPEECH. (a) Our entity model predicts all the entities
+at once. (b) Our relation model considers every pair of entities independently by inserting typed entity markers
+(e.g., [S:M D ]: the subject is a M ETHOD, [O:T K ]: the object is a TASK). (c) We also proposed an approximation
+relation model which supports batch computations. The tokens of the same color share the positional embeddings
+(see Section 4.3 for more details).
+
+--- CONCLUSION ---
+In this paper, we present a simple and effective
+approach for end-to-end relation extraction. Our
+model learns two encoders for entity recognition
+and relation extraction independently and our experiments show that it outperforms previous stateof-the-art on three standard benchmarks considerably. We conduct extensive analyses to undertand
+the superior performance of our approach and validate the importance of learning distinct contextual
+representations for entities and relations and using
+entity information as input features for the relation
+model. We also propose an efficient approximation,
+obtaining a large speedup at inference time with
+a small reduction in accuracy. We hope that this
+simple model will serve as a very strong baseline
+and make us rethink the value of joint training in
+end-to-end relation extraction.
+
+
+================================================================================
+PAPER: 08_04_A strategic framework for artificial intelligence in marketing
+================================================================================
+
+--- TITLE ---
+Journal of the Academy of Marketing Science (2021) 49:30–50 https://doi.org/10.1007/s11747-020-00749-9 CONCEPTUAL/THEORETICAL PAPER A strategic framework for artificial intelligence in marketing
+
+--- ABSTRACT ---
+The authors develop a three-stage framework for strategic marketing planning, incorporating multiple artificial intelligence (AI)
+benefits: mechanical AI for automating repetitive marketing functions and activities, thinking AI for processing data to arrive at
+decisions, and feeling AI for analyzing interactions and human emotions. This framework lays out the ways that AI can be used
+for marketing research, strategy (segmentation, targeting, and positioning, STP), and actions. At the marketing research stage,
+mechanical AI can be used for data collection, thinking AI for market analysis, and feeling AI for customer understanding. At the
+marketing strategy (STP) stage, mechanical AI can be used for segmentation (segment recognition), thinking AI for targeting
+(segment recommendation), and feeling AI for positioning (segment resonance). At the marketing action stage, mechanical AI
+can be used for standardization, thinking AI for personalization, and feeling AI for relationalization. We apply this framework to
+various areas of marketing, organized by marketing 4Ps/4Cs, to illustrate the strategic use of AI.
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 08_05_A knowledge-centered framework for exploration and retrieval of legal documents
+================================================================================
+
+--- TITLE ---
+Information Systems 106 (2022) 101842 Contents lists available at ScienceDirect Information Systems
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+In the era of big data, research activity on data science focuses on the collection, processing, and interpretation of large
+datasets to produce knowledge for decision-making processes in
+different application domains and contexts. In the legal domain,
+thousands of legal documents are constantly produced by institutional bodies, such as Parliaments and Courts, both law and
+court decisions documents. Law documents are stated using a
+general and abstract terminology, in that law provides statements
+governing human conduct that must be applicable to several
+cases and circumstances. On the opposite, court decision documents are written using specific and concrete terminology, in
+that they provide a contextualized, case-oriented interpretation
+of law deriving from the way judges/lawyers decide to apply
+the law statements to the specific circumstances/situation of the
+case at hand. Both law and case-law, that is, the collection of
+court decisions, constitute prominent sources to be considered
+for knowledge extraction, in that they provide the general legal framework (law) and the specific interpretations (case-law)
+adopted for already analyzed and processed cases. When a new
+∗ Corresponding author.
+E-mail addresses: silvana.castano@unimi.it (S. Castano),
+mattia.falduti@unimi.it (M. Falduti), alfio.ferrara@unimi.it (A. Ferrara),
+stefano.montanelli@unimi.it (S. Montanelli).
+https://doi.org/10.1016/j.is.2021.101842
+0306-4379/© 2021 Elsevier Ltd. All rights reserved.
+
+case is submitted for judgment, according to a knowledge-based
+process, a new legal document like a court decision can be produced for the case at hand by retrieving relevant legal knowledge,
+that is, knowledge deriving from (i) the law, for understanding
+the general rules that are relevant/prominent for the current
+case [1,2], and (ii) the case-law, for detecting possible relevant
+interpretations of law terminology in history of similar case-law
+documentation [3,4]. In this context, automated legal knowledge
+extraction systems are strongly demanded, to support annotation of legal documents as well as knowledge extraction from
+them, to provide useful and relevant suggestions to legal actors (e.g., judges, lawyers) for managing incoming new cases [5].
+However, the effectiveness of above solutions depends on the capability of capturing the features and nature of terminology used
+in legal documents and to the capability of developing knowledge
+models where such features are properly formalized and implemented as ontology tools. Furthermore, automated terminological
+extraction techniques are required in order to cope with growing volume, complexity, and articulation of legal documents, to
+overcome the limitations of manually performed term-extraction
+tasks, representing a critical activity also in supervised learning
+approaches to build the training set [6].
+In this paper, we address these issues and we propose CRIKE
+(CRIme Knowledge Extraction), a knowledge-based framework
+conceived to support legal knowledge extraction from a collection of legal documents, based on a reference legal ontology
+
+S. Castano, M. Falduti, A. Ferrara et al.
+
+Information Systems 106 (2022) 101842
+
+the large set of rules, written by the legislative powers, to govern
+human conduct. As a matter of fact, real-life is too complex and
+unpredictable to be completely foreseen in legal structures with
+the consequence that it is impossible to rule on every single possible scenario. In order for the law to be applicable to unpredictable
+new cases and uncountable future events, the solution for legislators has been to include an abstract terminology in the legal
+jargon, referred to using multiple expressions in the literature,
+such as the indeterminacy in legal rules [7], legal indeterminacy
+of law [8] or the vague expressions of legal texts [9]. Consider,
+for example, the following excerpt of the Italian law about drugs
+and related drug offenses [10]. ‘‘the Consolidated Law, adopted by
+Presidential Decree No 309 on 9 October 1990 and subsequently
+amended, provides the legal framework for trade, treatment and
+prevention, and prohibition and punishment of illegal activities in
+the field of drugs and psychoactive substances. Drug use in itself is
+not mentioned as an offense. [. . . ] The threshold between personal
+possession and trafficking is determined by the circumstances of the
+specific case (e.g., the act, possession of tools for packaging, different
+types of drug possessed, number of doses in excess of average daily
+use, means of organization). The penalty for supply-related offenses,
+such as production, sale, transport, distribution or acquisition, depends on the type of drug. However, when the offenses are considered
+minor because of the means, modalities or circumstances, the terms
+of imprisonment are lower. Evaluating whether or not the offense is
+minor should take into account a set of ‘‘ancillary’’ elements such as
+the mode of action, possible criminal motives, quality and quantity
+of drug possessed, the character of the offender, conduct during or
+subsequent to the offense, and the family and social conditions of the
+offender’’. The notion of minor offense is an example of abstract
+terminology in the above law quotation, that is, it expresses
+open-textured concept not rigorously defined in the law, which
+finds a concrete interpretation only with a precise definition of
+circumstances and related threshold quantities of the specific
+case at hand. In a similar way, drug trafficking is another example of open-textured concept in that the final decision/verdict
+for a given case is based on a specific interpretation of what
+‘‘drug trafficking’’ is, by considering the specific circumstances
+and quantities featuring the case. The capability of capturing and
+representing in a legal ontology not only conventional concepts
+but also open-textured, abstract concepts is essential to provide a
+comprehensive and suitable legal knowledge representation. The
+following efforts need to be taken into account:
+
+called LATO (Legal Abstract Term Ontology). We first introduce
+LATO-KM, the knowledge model of LATO where legal knowledge
+featuring documents in the collection is properly formalized as
+conceptual knowledge, in form of legal concepts and relationships, and terminological knowledge, in form of term-sets associated with legal concepts. Then, we present the bootstrapping
+cycle of CRIKE that aims to progressively enrich the terminological knowledge layer of LATO by extracting new terms from legal
+documents to be used for enriching the term-set associated with
+a corresponding legal concept. In a bootstrapping cycle of CRIKE
+(i) term extraction is based on multi-label annotation techniques
+where the collection of annotated documents is built by relying
+on the conceptual knowledge actually available in LATO without
+the need of manual annotation and (ii) term enrichment relies on
+information retrieval techniques for discovering new terms with
+which to populate the terminological layer (i.e., term-sets) of legal concepts to be exploited for subsequent exploration/retrieval
+operations, to get the most pertinent legal documents from the
+collection.
+To evaluate the results obtained through CRIKE, we discuss experimental results on a real dataset of 180,000 court decisions of
+the State of Illinois taken from the Caselaw Access Project (CAP).
+The experimentation has a twofold objective: on one side, terminology assessment, with the aim to measure the effectiveness of
+the terms discovered by CRIKE after the first bootstrapping cycle;
+on the other side, bootstrapping assessment, with the aim to evaluate the improvement of CRIKE retrieval after a few bootstrapping
+cycles.
+The paper is organized as follows. Section 2 presents the motivating scenario as well as an overview of the CRIKE framework.
+Section 3 presents the LATO Knowledge Model and related ontology formalization. The CRIKE bootstrapping techniques for term
+extraction and enrichment are described in Section 4. In Section 5,
+we discuss the CRIKE modalities for supporting exploration and
+retrieval of legal documents. In Section 6, we illustrate experimental results on a real collection of court decision documents.
+
+--- CONCLUSION ---
+The paper presented the CRIKE framework and related LATO
+ontology knowledge model for supporting legal document exploration and retrieval. The experimental results on a real collection of court-decision documents show that the bootstrapping
+13
+
+S. Castano, M. Falduti, A. Ferrara et al.
+
+Information Systems 106 (2022) 101842
+[30] S. Raju, P. Pingali, V. Varma, An unsupervised approach to product attribute
+extraction, in: European Conference on Information Retrieval, Springer,
+2009, pp. 796–800.
+[31] Q. Zhao, H. Wang, P. Lv, C. Zhang, A bootstrapping based refinement
+framework for mining opinion words and targets, in: Proceedings of the
+23rd ACM International Conference on Conference on Information and
+Knowledge Management, 2014, pp. 1995–1998.
+[32] K.D. Ashley, Artificial Intelligence and Legal Analytics: New Tools for Law
+Practice in the Digital Age, Cambridge University Press, 2017.
+[33] A. Nazarenko, A. Wyner, Legal NLP introduction, Trait. Autom. Des Lang.
+58 (2) (2017) 7–19.
+[34] J. Savelka, M. Grabmair, K.D. Ashley, Mining information from statutory
+texts in multi-jurisdictional settings, in: Proc. of the Int. Conference on
+Legal Knowledge and Information Systems, IOS Press, 2014, pp. 133–142.
+[35] M. Grabmair, K.D. Ashley, R. Chen, P. Sureshkumar, C. Wang, E. Nyberg, V.R.
+Walker, Introducing LUIMA: an experiment in legal conceptual retrieval of
+vaccine injury decisions using a UIMA type system and tools, in: Proc. of
+the 15th Int. Conference on Artificial Intelligence and Law, ACM, 2015, pp.
+69–78.
+[36] J. Savelka, K.D. Ashley, Extracting case law sentences for argumentation
+about the meaning of statutory terms, in: Proc. of the 3rd Int. Workshop
+on Argument Mining, Berlin, Germany, 2016, pp. 50–59.
+[37] R. Mochales, M.-F. Moens, Argumentation mining, Artif. Intell. Law 19 (1)
+(2011) 1–22.
+[38] M. Saravanan, B. Ravindran, Identification of rhetorical roles for segmentation and summarization of a legal judgment, Artif. Intell. Law 18 (1) (2010)
+45–76.
+[39] K.D. Ashley, S. Brüninghaus, Automatically classifying case texts and
+predicting outcomes, Artif. Intell. Law 17 (2) (2009) 125–165.
+
+[22] C. Cevenini, G. Contissa, M. Laukyte, R. Riveret, R. Rubino, Development of
+the ALIS IP ontology: Merging legal and technical perspectives, in: Proc.
+of the the 2nd Topical Session on Computer-Aided Innovation, CAI2008,
+Boston, MA, USA, 2008, pp. 169–180.
+[23] A. Boer, R. Hoekstra, R. Winkels, The CLIME ontology, in: Proc. of the 2nd
+Workshop on Legal Ontologies At the 14th Int. Conf. on Legal Knowledge
+and Information System, JURIX 2011, Amsterdam, The Netherlands, 2001,
+pp. 37–47.
+[24] G. Ajani, G. Boella, L. Di Caro, L. Robaldo, L. Humphreys, S. Praduroux,
+P. Rossi, A. Violato, European Legal taxonomy syllabus: A multi-lingual,
+multi-level ontology framework to untangle the web of European legal
+terminology, Appl. Ontol. 11 (4) (2017) 1–51.
+[25] B. Fawei, J.Z. Pan, M.J. Kollingbaum, A.Z. Wyner, A semi-automated ontology construction for legal question answering, New Gener. Comput. 37 (4)
+(2019) 453–478.
+[26] S. Lovrencic, I.J. Tomac, Managing understatements in legislation acts when
+developing legal ontologies, in: Proc. of the 10th Int. Conf. on Intelligent
+Engineering Systems, INES2006, London, UK, 2006, pp. 69–73.
+[27] N. Kiyavitskaya, N. Zeni, T.D. Breaux, A.I. Antón, J.R. Cordy, L. Mich,
+J. Mylopoulos, Automating the extraction of rights and obligations for
+regulatory compliance, in: Proc. of the 27th Int. Conf. on Conceptual
+Modeling, ER2008, Barcelona, Spain, 2008, pp. 154–168.
+[28] G. Lame, Law and the Semantic Web: Legal Ontologies, Methodologies,
+Legal Information Retrieval, and Applications, Springer Berlin Heidelberg,
+2005, pp. 169–184.
+[29] T.A. Rana, Y.-N. Cheah, Aspect extraction in sentiment analysis:
+comparative analysis and survey, Artif. Intell. Rev. 46 (4) (2016) 459–483.
+
+14
+
+
+================================================================================
+PAPER: 08_06_Judicial nested named entity recognition method with MRC framework
+================================================================================
+
+--- TITLE ---
+International Journal of Cognitive Computing in Engineering 4 (2023) 118–126 Contents lists available at ScienceDirect International Journal of Cognitive Computing in Engineering
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+In recent years, with the opening of judicial big data and the development of artiﬁcial intelligence technology, “wisdom justice” has
+gradually become a research hotspot, which can improve the eﬃciency
+of case processing for judicial workers. Nowadays, wisdom justice services are roughly divided into three stages: (1) Assist judicial oﬃcers
+to handle some simple, mechanical, and tedious tasks. (2) Learn artiﬁcial intelligence technology to assist in legal trials. (3) Active carry
+out judicial-related convenience services in courts around the world,
+such as intelligent judicial trials, and legal consultation (Zhong et al.,
+2020; Kumar Sangaiah et al., 2020). In order to promote intelligent
+technology-enabled and achieve a higher level of digital justice, China
+Judicial Big Data Research Institute, Chinese Information Processing
+Society of China, Tsinghua University, and other institutions have
+launched the “Chinese AI & Law Challenge (CAIL)” for four consecutive
+years since 2018. Further, the tasks of information extraction, similar
+case retrieval and case label prediction have been launched recently in
+CAIL 2021. The information extraction is a signiﬁcant research task under the wisdom justice services system, which is widely concerned in
+industry and academia.
+
+Named entity recognition (NER) task in information extraction is a
+basic task in natural language processing, which aims to recognize the
+required entities from unstructured text and marks them as predeﬁned
+categories, such as Person, Location, Organization, etc. (Wang et al.,
+2022; Li et al., 2022). In the legal text, NER’s main purpose is to extract
+key information entities in the case, such as the criminal suspect, the
+involved goods, the victim, the value of goods, etc. As a key and basic work in judicial artiﬁcial intelligence, judicial named entity recognition (JNER) has important application value in judicial judgment prediction (Zhong et al., 2020), judicial knowledge graph construction, similar
+cases retrieval, and so on.
+At present, AI has promoted the development of various ﬁelds and
+the research of NER has made signiﬁcant progress in some general ﬁelds,
+such as news, medical (Zhang et al., 2022; Luo et al., 2018) and ﬁnance.
+However, the NER research in the judicial ﬁeld is relatively few. Compared with the general ﬁeld, legal texts are more complex and specialized, and often use nested named entities to describe detailed cases.
+Thus, JNER is more diﬃcult. For example, the proportion of judicial
+nested entities in CAIL2021 dataset is about 22%. In the theft case shown
+in Fig. 1, the nested types of the entities include “Victim and Location”,
+“Victim and Stolen Goods”, “Location and Organization”, and “Stolen
+
+∗
+
+Corresponding author.
+E-mail address: zhanghu@sxu.edu.cn (H. Zhang).
+#
+School of Computer and Information Technology, No.92, Wucheng Road, Xiaodian District, Taiyuan, Shanxi 030006,China
+https://doi.org/10.1016/j.ijcce.2023.03.002
+Received 22 December 2022; Received in revised form 1 March 2023; Accepted 1 March 2023
+Available online 9 March 2023
+2666-3074/© 2023 The Authors. Publishing Services by Elsevier B.V. on behalf of KeAi Communications Co. Ltd. This is an open access article under the CC
+BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+H. Zhang, J. Guo, Y. Wang et al.
+
+International Journal of Cognitive Computing in Engineering 4 (2023) 118–126
+
+Fig. 1. Nested types of entities in theft cases.
+
+Goods and Crime Tools”. When dealing with named entities, the existing sequence labeling methods tend to assign a single label to a token
+and cannot properly handle entities with nested structures, resulting
+in incomplete or incorrect entity type recognition. For example, when
+dealing with the nested entity type “People and Location” in Fig. 1, only
+“The ﬂower shop operated by victim Gao Moumou” can be identiﬁed as
+a Location, while the Victim “Gao Moumou” is not identiﬁed. On the one
+hand, it leads to a decline in the accuracy of entity recognition. On the
+other hand, it loses the correlation between “Gao Moumou” and “operated ﬂower shop”, which also aﬀects the subsequent downstream tasks.
+If the entity’s nesting problem can be eﬀectively solved, the accuracy of
+the JNER can be further improved, which will play an important role in
+the actual need of judicial service and downstream tasks.
+MRC task aims to understand the question and the relevant article to
+answer questions automatically. As a general method, MRC has become
+a paradigm for dealing with diﬀerent problems. Many basic technologies of natural language processing tasks, such as relation extraction,
+event extraction and textual entailment, can achieve good results by
+using reading comprehension methods. Inspired by these methods, we
+converted NER tasks into MRC tasks. Each entity type is represented by
+a related question query, and entities are extracted by answering these
+queries in a given context. For example, extracting entities type with
+the “victim” is formalized as extracting answer spans to the question
+“Who is the victim in the case?”. By answering diﬀerent independent
+questions, the problem of entity nesting is naturally solved.
+In this paper, we employ the information extraction dataset in
+CAIL2021 (CAIL-IE) as the experimental dataset and explore the method
+of NER in the judicial ﬁeld. We transform the NER task into an MRC
+task according to a span extraction-based MRC framework. We construct the question templates by introducing the entity’s label information and the legal prior knowledge that the entity implies. Then, combining with the proposed question, we use the span extraction MRC model
+based on BERT (Bidirectional Encoder Representation from Transformers) (Devlin & Chang, 2019) to extract the corresponding entities from
+the case description context. In this way, we can extract two overlapping entities by answering diﬀerent categories of questions, and verify
+the eﬀectiveness of the proposed method in CAIL-IE.
+The main contributions of this paper are as follows:
+
+(3) The experimental results on the CAIL-IE dataset show that the
+proposed method achieves signiﬁcant improvements than other
+state-of-the-art baselines.
+
+--- CONCLUSION ---
+Aiming at the problem that the traditional NER models in the judicial ﬁeld cannot eﬀectively deal with the nested entities, we propose a
+judicial nested NER model based on the MRC. Firstly, the question templates are constructed based on the given judicial documents to generate
+the reading comprehension dataset. Then, the reading comprehension
+model extracts the answer spans from the context as the entity recognition result. Experimental results demonstrate that our method can effectively improve the recognition eﬀect of nested entities commonly ex125
+
+H. Zhang, J. Guo, Y. Wang et al.
+
+International Journal of Cognitive Computing in Engineering 4 (2023) 118–126
+
+Grishman, R., & Sundheim, B. (1995). Design of the MUC-6 Evalution. In Proceedings of the
+Sixth Message Understanding Conference(MUC-6): Proceedings of a Conference Held in
+Columbia, Maryland November 6-8, 1995.
+Black, W. J., Rinaldi, F., & Mowatt, D. (1998). FACILE: Description of the NE system used
+for MUC-7. In Proceedings of the Seventh Message Understanding Conference (MUC-7):
+Proceedings of a Conference Held in Fairfax, Virginia April 29 - May 1, 1998.
+Quinlan, J. R. (1986). Induction of decision trees. Machine Learning, 1, 81–106.
+Borthwick, A. E., & Grishman, R. (1999). A maximum entropy approach to named entity
+recognition. USA: New York University PhD Thesis.
+Sun, J., Gao, J., Zhang, L., et al., (2002). Chinese named entity identiﬁcation using
+class-based language model. In Proceeding of the 19th International Conference on Computational Linguistics: 1 (pp. 1–7). Association for Computational Linguistics.
+Zhang, H., Liu, Q., Yu, H., et al., (2003). Chinese named entity recognition using role
+model. International Journal of Computational Linguistics & Chinese Language Processing,
+8(2), 29–60.
+Jindal, R., Seeja, K. R., & Jain, S. (2020). Construction of domain ontology utilizing formal
+concept analysis and social media analytics. International Journal of Cognitive Computing in Engineering, 1, 62–69 ISSN 2666-3074.
+Sharma, S., Gupta, R., Bhatia, R., Toor, A. P., & Setia, H. (2021). Predicting microbial response to anthropogenic environmental disturbances using artiﬁcial neural network
+and multiple linear regression. International Journal of Cognitive Computing in Engineering, 2, 65–70 ISSN 2666-3074.
+Collobert, R., Weston, J., Bottou, L., et al., (2011). Natural language processing (almost)
+from scratch. In Journal of Machine Learning Research, 12(1), 2493–2537.
+Agrawal, R., & Goyal, R. (2021). Developing bug severity prediction models using
+word2vec. International Journal of Cognitive Computing in Engineering, 2, 104–115 ISSN
+2666-3074.
+Lample, G., Ballesteros, M., Subramanian, S., et al., (2016). Neural Architectures for
+named entity recognition. In Proceedings of the NAACL-HLT (pp. 260–270).
+Ma, X., & Hovy, E. (2016a). End-to-end sequence labeling via Bi-directional LSTM-CNNs-CRF. Proceedings of the 54th Annual Meeting of the Association for Computational
+Linguistics, 1, 1064–1074.
+Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation,
+9(8), 1735–1780.
+Rai, N., Kumar, D., Kaushik, N., Raj, C., & Ali, A. (2022). Fake News Classiﬁcation using transformer based enhanced LSTM and BERT. International Journal of Cognitive
+Computing in Engineering, 3, 98–105 ISSN 2666-3074.
+Kim, Y. (2014). Convolutional neural networks for sentence classiﬁcation. In Proceedings
+of the 2014 Conference on Empirical Methods in Natural Language Processing (EMNLP)
+(pp. 1746–1751).
+Rei, M., Crichton, G., & Pyysalo, S. (2016). Attending to characters in neural sequence
+labeling models. In Proceedings of COLING 2016 (pp. 309–318). Technical Papers.
+Strubell, E., Verga, P., Belanger, D., et al., (2017). Fast and accurate entity recognition
+with iterated dilated convolutions. In Proceedings of EMNLP (pp. 2670–2680).
+Cetoli, A., Bragaglia, S., O’Harney, A., et al., (2017). Graph convolutional networks for
+named entity recognition. In Proceedings of the 16th International Workshop on Treebanks and Linguistic Theories (pp. 37–45).
+Zhang, Y., & Yang, J. (2018). Chinese NER using lattice LSTM. In Proceedings of ACL
+(pp. 1554–1564).
+Li, X., Yan, H., Qiu, X., & Huang, X. (2020a). FLAT: Chinese NER using ﬂat-lattice transformer. In Proceedings of ACL (pp. 6836–6842).
+Ma, R., Peng, M., Zhang, Q., et al., (2020). Simplify the usage of lexicon in chinese NER.
+In Proceedings of ACL (pp. 5951–5960).
+
+Liu, W., Fu, X., Zhang, Y., et al., (2021). Lexicon enhanced chinese sequence labeling using
+BERT adapter. In Proceedings of ACL (pp. 5847–5858).
+J. Li, K. Meng. (2021). MFE-NER: Multi-feature fusion embedding for chinese named entity
+recognition. arXiv preprint arXiv: 2109.07877.
+Wu, S., Song, X., & Feng, Z. (2021). MECT: Multi-metadata embedding based cross-transformer for Chinese named entity recognition. In Proceedings of ACL (pp. 1529–1539).
+Liu, B., Su, Z., & Qu, G. (2022). AIP: A named entity recognition method combining glyphs
+and sounds. Transactions on Asian and Low-Resource Language Information Processing.
+Wang, D., Wang, S., Pei, W., et al., (2020). Named entity recognition method based on
+JLWA-DLSTM for legal instruments. Journal of Chinese Information Processing, 34(10),
+51–58.
+Zhang, H., Gao, H., Zhou, J., et al., (2020). Applying model fusion to augment data for
+entity recognition in legal documents. In Proceedings of NLPCCC (pp. 244–255).
+Guo, L., Wang, S., Li, Y., et al., (2022). Named entity recognition in legal instruments
+based on matching strategy and community attention mechanism. Journal of Chinese
+Information Processing, 36(2), 85–92.
+Rajpurkar, P., Zhang, J., Lopyrev, K., et al., (2016). SQuAD: 100,000+ questions for machine comprehension of text. In Proceedings of EMNLP (pp. 2383–2392).
+M. Seo, A. Kembhavi, A. Farhadi, et al. (2017). Bidirectional attention ﬂow for machine
+comprehension. ICLR. arXiv preprint arXiv:1611.01603.
+Wang, W., Yang, N., Wei, F., et al., (2017). Gated self-matching networks for reading
+comprehension and question answering. In Proceedings of ACL (pp. 189–198).
+Yu, A. W., Dohan, D., Luong, M.-T., et al., (2018). QANet: Combining local convolution
+with global self-attention for reading comprehension. In Proceedings of the 6th International Conference on Learning Representations.
+Y. Liu, M. Ott, N. Goyal, et al. (2019). RoBERTa: A robustly optimized BERT pretraining
+approach. arXiv preprint arXiv: 1907.11692.
+Z. Lan, M. Chen, S. Goodman, et al. (2019). ALBERT: A lite BERT for self-supervised
+learning of language representations. arXiv preprint arXiv: 1909.11942.
+Li, X., Yin, F., Sun, Z., et al., (2019). Entity-relation extraction as multi-turn question
+answering. In Proceedings of ACL (pp. 1340–1350).
+Levy, O., Seo, M., Choi, E., et al., (2017). Zero-shot relation extraction via reading comprehension. In Proceedings of the 21st Conference on Computational Natural Language
+Learning (CoNLL) (pp. 333–342).
+Li, X., Feng, J., Meng, Y., et al., (2020b). A Uniﬁed MRC framework for named entity
+recognition. In Proceedings of ACL (pp. 5849–5859).
+Chen, M., Wu, F., Wang, Z., et al., (2020). Chinese event argument extraction using reading
+comprehension framework. In Proceedings of the 19th Chinese National Conference on
+Computational Linguistics (pp. 376–389).
+Ju, M., Miwa, M., & Ananiadou, S. (2018). A neural layered model for nested named entity
+recognition. In Proceedings of NAACL-HLT (pp. 1446–1459).
+Straková, J., Straka, M., & Hajic, J. (2019). Neural architectures for nested NER through
+linearization. In Proceedings of ACL (pp. 5326–5331).
+Luo, Y., & Zhao, H. (2021). Bipartite ﬂat-graph network for nested named entity recognition. In Proceedings of ACL (pp. 6408–6418).
+Ma, X., & Hovy, E. (2016b). End-to-end sequence labeling via bi-directional lstm-cnns-crf.
+In Proceedings of ACL (pp. 1064–1074).
+Zhang, C., Ding, J., Zhan, J., et al., (2022). Fuzzy intelligence learning based on bounded
+rationality in IoMT systems: A case study in Parkinson’s disease. IEEE
+
+
+================================================================================
+PAPER: 08_07_Enforcing legal information extraction through context-aware techniques- The ASKE approach
+================================================================================
+
+--- TITLE ---
+Computer Law & Security Review 52 (2024) 105903 Contents lists available at ScienceDirect Computer Law & Security Review: The International Journal of Technology Law and Practice
+
+--- ABSTRACT ---
+To cope with the growing volume, complexity, and articulation of legal documents as well as to foster
+digital justice and digital law, increasing effort is being devoted to legal knowledge extraction and digital
+transformation processes. In this paper, we present the ASKE (Automated System for Knowledge Extraction)
+approach to legal knowledge extraction, based on a combination of context-aware embedding models and
+zero-shot learning techniques into a three-phase extraction cycle, which is executed a number of times (called
+generations) to progressively extract concepts representative of the different meanings of terminology used in
+legal documents chunks. A graph-based data structure called ASKE Conceptual Graph is initially populated
+through a data preparation step, and it is continuously enriched at each ASKE generation with results
+of document chunk classification, new extracted terminology, and newly derived concepts. A quantitative
+evaluation of ASKE knowledge extraction and document classification is provided by considering the EurLex
+dataset. Furthermore, we present the results of applying ASKE to a real case-study of Italian case law decisions
+with qualitative feedback from legal experts in the framework of an ongoing national research project.
+
+--- INTRODUCTION ---
+Law plays a crucial role in almost every aspect of our life, both public and private. Thousands of legal documents are constantly produced
+by institutional bodies, such as Parliaments and Courts, and constitute a prominent source of information and knowledge primarily for
+judges, lawyers, and other legal practitioners involved in legal decisionmaking, but also for general subjects like citizens or private and public
+organizations. Knowing how to navigate such a complex context both
+in structure and content is a primary need for several categories of
+users like legal practitioners, to support their professional activities,
+administrators, to enforce law procedures, and generic users/citizens, to
+enforce effective legal information exploration and exploitation [1].
+The availability of a technology for extracting knowledge from legal
+documents is not only desirable but even necessary, and the benefits and concrete outcomes that could result from the diffusion of
+such technology are many and different for both legal practitioners
+(i.e., lawyers, judges and Courts), administrations, and final users. Legal
+search through legal knowledge extraction is an extremely important
+instrument for legal practitioners in both common law [2] and civil
+law [3] systems. Indeed, one of the milestone principles of law is the
+
+certainty of law. For example, legal search over precedent case law may
+be useful for a lawyer to retrieve a decision rendered in a case similar to
+the case at hand, where the Court decided in a way that is favorable to
+its client position, or a decision rendered in a different case on the basis
+of a reasoning that, applied to the case at hand, leads to a favorable
+interpretation of its client position [4]. When conducting case law
+research, it is important to focus on both the decision of the case, but
+also the motivation and the reasoning (called ‘‘rationale’’) behind the
+decision. During this process, great help may come from knowledge extraction systems, especially if they are ‘‘context-aware’’. In the context
+of administrative decisions, knowledge extraction from legal documents
+could help public administrations to identify the legislation applicable
+to the specific case, being able to ensure in-depth and always up-to-date
+knowledge of any relevant legislation, including the most specific one.
+Such technology could also be used to automate, at least in part, some
+administrative processes, considering that in most European countries
+the principle of ‘‘digital only’’ has been diffused, thus enabling the use
+of legal search technologies as well [5–8]. From the point of view of
+generic users/citizens, the development of knowledge extraction tools
+could foster transparency, accessibility, and fairness within the legal
+
+∗ Corresponding author.
+
+E-mail address: sergio.picascia@unimi.it (S. Picascia).
+https://doi.org/10.1016/j.clsr.2023.105903
+Available online 24 October 2023
+2212-473X/© 2023 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/bync-nd/4.0/).
+
+S. Castano et al.
+
+Computer Law & Security Review: The International Journal of Technology Law and Practice 52 (2024) 105903
+
+and the adoption of context-aware embedding models. Zero-shot learning techniques allow to deal with situations in which labeled datasets
+are not available, which is the case of the legal field. Legal corpora
+are usually not annotated and, when some annotation is available, it is
+not suitable for fine-grained, sentence-level information retrieval tasks,
+as expected. Common benchmarks of legal information retrieval, such
+as the ones proposed for the TREC Legal Track [10] or the FIRE AILA
+Track [11], require an entire document to be used as input in order to
+retrieve precedents or similar cases. This is not the situation in which
+legal actors would like to work, in that they prefer to retrieve specific
+portions/sentences of a document, rather than going through an entire
+document in order to find the section of interest.
+Dealing with domain-specific text-processing applications, our cho
+ice is for context-aware embedding models rather than non-contextual
+ones (e.g., Word2Vec). The motivation is that the language employed
+in the legal field is usually technical. Not only is the sentence structure
+peculiar, but some terms may also assume completely different meaning
+when used in different contexts/sentences of court decisions. Being
+able to capture contextual information, such as the part of a document
+where a certain idea is expressed, can be crucial when it comes to
+distinguishing if a certain matter is treated in the introduction or in
+the conclusion of a case law decision. Furthermore, we choose neural
+embedding models over non-neural retrieval models (e.g., BM25) for
+their ability to map concepts and documents in the same space.
+After a data preparation step, knowledge extraction consists of the
+execution of a cycle composed of three phases (see Fig. 1): (i) document chunk classification, (ii) terminology enrichment, (iii) concept
+derivation.
+The data preparation step performs the embedding of concepts and
+document chunks into the same vector space using a context-aware
+embedding model. In the document chunk classification phase, document
+chunks are assigned to concepts by exploiting the similarity 𝜎 between
+their respective vector representations. In the terminology enrichment
+phase, ASKE assigns to a concept 𝑐 the most similar new terms occurring in document chunks classified under 𝑐 in the previous phase. In
+the concept derivation phase, all the terms associated with each concept
+𝑐 are submitted to a clustering algorithm to (possibly) derive new concept(s) representative of a cluster of highly similar terms. Results of the
+knowledge extraction process populate the so-called ASKE Conceptual
+Graph (ACG), organized according to the knowledge model described
+in the following.
+
+system, by equipping citizens with valuable insights and resources.
+By granting easier access to legal documents such as laws, judicial
+decisions, and administrative proceedings, it would empower citizens
+with a better understanding of their rights and available opportunities.
+To support case analysis and legal decision-making in an effective
+way, advanced knowledge extraction solutions are thus demanded,
+based on Natural Language Processing (NLP), Machine Learning (ML),
+and Artificial Intelligence (AI), to deal with challenging requirements
+posed by the legal documentation, such as the language complexity,
+the significant length of the legal texts, the poor accessibility of legal
+datasets that makes large-scale downloads challenging or even impossible, as well as the lack of sufficiently-large annotated corpora for model
+training. Context-aware embedding techniques are being adopted to
+address language complexity [9]: the whole chunk of text in which a
+word appears is considered for the embedding construction, to better
+deal with word-sense disambiguation and high domain-specificity of
+the legal terminology.
+In this paper, we present ASKE (Automated System for Knowledge
+Extraction), an approach to legal knowledge extraction with focus on
+abstract concept discovery a combination of context-aware embedding
+models and zero-shot learning techniques. ASKE takes a corpus of legal
+documents as input and it extracts a graph of concepts which are
+used to classify the given documents at a chunk-level (e.g., paragraph)
+granularity. Through context-aware embedding, document chunks and
+concept definitions are projected in the same semantic space, to appropriately capture and manage the meaning of legal terminology by
+taking into account the context in which terms are used. Through
+zero-shot learning, a multi-label classification process is performed in
+an unsupervised way, without relying on any pre-existing annotation
+of legal documents. The distinguishing feature of ASKE is the implementation of a cyclic extraction process by which, at each cycle: (i)
+embedded documents chunks are classified against the current concepts
+(document chunk classification); (ii) new terminology recognized to be
+relevant for/similar to a given concept is extracted and assigned to
+the concept (terminology enrichment ); (iii) new concepts are possibly
+derived based on the results of similarity-based term clustering (concept
+derivation). A graph-based data structure called ACG (ASKE Conceptual
+Graph) is initially populated through a data preparation step, and
+it is continuously enriched at each ASKE generation with results of
+document chunk classification, new extracted terminology, and newly
+derived concepts. To evaluate the extraction process, we run ASKE
+on a split of the EurLex dataset, containing 45,000 EU legislative
+documents from the EUR-LEX portal annotated with concepts from
+the EuroVoc taxonomy, and we use BERTopic and Zero-Shot TM as
+baselines for the comparison. Then, we discuss the application of ASKE
+to a real knowledge extraction case study based on a corpus of 50
+Italian case law decisions, in the framework of the Next Generation UPP
+(NGUPP) project, funded by the Italian Ministry of Justice, aiming at
+providing artificial intelligence and advanced information management
+techniques for the digital transformation of Italian legal processes and
+digital justice in general.
+The paper is organized as follows. In Section 2, we present the
+ASKE approach to legal knowledge extraction, with focus on the ACG
+knowledge model and on classification/extraction techniques featuring
+each ASKE cycle. In Section 3, we describe the ASKE evaluation to
+assess the quality of the extraction and classification results against the
+EurLex legal dataset. Section 4 is devoted to the presentation of a real
+case study of using ASKE on a corpus of Italian case law decisions in
+the framework of the NGUPP project. Section 5 discusses the related
+work. Finally, in Section 6, we provide our concluding remarks.
+
+2.1. The ASKE knowledge model
+The ASKE knowledge model is organized as a graph-based data
+structure called ASKE Conceptual Graph (ACG) whose conceptual sch
+ema is shown in Fig. 2. ACG is based on three main entities, namely
+document chunk, term, and concept.
+• A document chunk corresponds to a portion (e.g., sentence)
+of the original documents extracted through the application of
+tokenization techniques. A document chunk 𝑘 has the form 𝑘 =
+(𝑘𝑑 , ̄𝑘), where 𝑘𝑑 is the textual content of the chunk and ̄𝑘 is its
+vector representation.
+• A term corresponds to an n-gram occurring in a document chunk.
+A term 𝑤 has form 𝑤 = (𝑤𝑙 , 𝑤𝑑 , ̄
+𝑤), where 𝑤𝑙 is the label of the
+term, 𝑤𝑑 is a description of the term meaning, and 𝑤̄ is its vector
+representation.
+• A concept represents the meaning of a set (i.e., a cluster) of
+terms. A concept 𝑐 has the form 𝑐 = (𝑐𝑙 , ̄𝑐), where 𝑐𝑙 is the
+label assigned to the concept and 𝑐̄ is its vector representation.
+The label 𝑐𝑙 abstracts the meaning of the concept, expressing
+it in a synthetic and human-understandable way. The label is
+selected among the terms in the 𝑐 cluster.1 A concept is active by
+
+--- CONCLUSION ---
+problem for Chinese. In [27], information extraction approach for
+named entity recognition has been presented, with focus on German
+legal documents. Other approaches to information extraction exploit
+external resources, such as ontologies combined with NLP techniques
+such as [28], where a tool for semantic analysis and annotation of
+legal documents is presented, based on an ontology of deontic concepts.
+In [29], an approach combining linguistic information provided by
+WordNet together with NLP techniques is proposed for the extraction
+of rules from legal documents, while [30] aims at extracting legal rules
+using hierarchical recurrent neural networks. The increasing interest
+towards the application of artificial intelligence techniques to the legal
+field brought to the proposal of several competitions related to the
+analysis of legal documents and related datasets. The most relevant
+for the purpose of this paper is the COLIEE [31] competition, where
+tasks for legal information extraction from case law and statute law
+are proposed.
+Despite the increasing interest about the application of artificial
+intelligence techniques to the legal field, there is still a need for
+approaches suitable to deal with unlabeled datasets. For this reason,
+one of the topic of interest for our work has been the zero-shot learning
+(ZSL) approach. ZSL is a problem setup in the field of machine learning,
+where a classifier is required to predict labels of examples extracted
+from classes that were never observed in the training phase. First
+referred to as dataless classification in 2008 [32], ZSL has quickly
+become a subject of interest in the field of NLP. The great advantage of
+this approach consists in the resulting classifier being able to operate
+efficiently in a partially or totally unlabeled environment. It is possible
+to categorize ZSL techniques according to three different criteria, as
+explained in [33]: the learning setting, the semantic space and the
+method. Firstly, ZSL can be applied on a completely unlabeled dataset,
+as in the original paper [32], or on a partially labeled one, like
+in [34]; with this last approach, called generalized ZSL, the goal of the
+classifier shifts to distinguishing between observation from already seen
+classes, and examples from unseen ones. Secondly, one may discern
+an engineered semantic space from a learned semantic space: the
+former is designed by humans and can be constructed upon a set of
+attributes [35] or a collection of keywords [36], while the latter is
+built on top of the results of a machine learning model, as in the
+case of a text-embedding space [37]. Finally, ZSL methods can be
+divided in instance-based [38], whose focus is on obtaining examples
+for unseen classes, and classifier-based [39], which instead focus on
+directly building a classifier for unlabeled instances. With respect to the
+above solutions, the proposed ASKE approach enforces legal knowledge
+extraction in an unsupervised environment by operating in a textembedding space, therefore eliminating the need for annotated data.
+The employed ZSL instance-based method goes under the category of
+projection methods, which consists in labeling instances (i.e. document
+chunks and terms in ASKE) by collocating these examples in the same
+semantic space with class prototypes (i.e., ASKE concepts).
+A key component in ASKE is Sentence-BERT [12], a modification of
+BERT language model [40] that is specifically aimed at representing
+sentence meaning in a vector space. In the legal domain, LEGALBERT, a version of BERT pre-trained on legal corpora [9], has been
+proposed for the English language, and Italian Legal BERT [41] is under
+evaluation for the Italian language. Another proposal for Italian legal
+documents is LamBERTa [42], with a focus on law article retrieval.
+However, we eventually decided to adopt Sentence-BERT because it
+has been trained in such a way to ensure consistent representation
+of the meaning of entire sentences, which was a major requirement
+in designing ASKE and for dealing with legal language complexity.
+Indeed, appropriate sentence meaning representation is crucial for the
+quality of document chunk classification with ASKE concepts and for
+term sense disambiguation in the concept extraction process. With the
+consolidation of models that combine consistent sentence representation with in-domain pre-training, an extended version of ASKE based
+on them could be evaluated.
+
+In the paper, we presented the ASKE approach to legal knowledge extraction, which is based on a combination of context-aware
+embedding models and zero-shot learning techniques. A featuring contribution of ASKE is the three-phase extraction cycle, which is executed
+a number of times (called generations) starting from even a poorly
+described seed concept to progressively extract new concepts which
+(i) are representative of the different meanings of the terminology
+used in legal document chunks and (ii) are used for fine-grained,
+multi-label classification of legal documents at the chunk level without
+relying on any document annotation. Another contribution is related
+to the definition of the ASKE knowledge model, by formalizing entities
+and relationships featuring the ACG initial population and subsequent
+evolution according to the progress of the extraction process. According
+to the obtained experimental results, we note that ASKE mostly outperforms a considered baseline (i.e., BERTopic), and it has comparable
+performance with respect to the other considered baseline (i.e., ZeroShot TM). However, as a difference from Zero-Shot TM, it is worth
+noting that ASKE does not require to predefine the number of target
+topics to discover. Thus, ASKE results are particularly appropriate to
+satisfy exploratory information needs in those situations where a priori
+knowledge about the corpus is not available.
+A further contribution of this work is related to the synergic collaboration within an interdisciplinary research team that involves experts
+from legal, linguistic, data science, and computer science fields. This
+multiplicity of expertise and background has been fundamental for
+results validation and tuning purposes. The evaluation feedback of
+ASKE results from legal and linguistic experts has been important for a
+semantic analysis of extracted concepts. Furthermore, it has been taken
+into account for ASKE setup and tuning, to define suitable configurations of the ASKE hyperparameters and to set the number of generations
+for a document corpus.
+Ongoing and future work is in two main directions. First, we are
+working on further tuning the ASKE model to take into account the
+specificity of the Italian legal domain. Moreover, the development of
+a suite of application tools based on ASKE is currently in progress.
+On one side, the ASKE components for knowledge extraction are being
+integrated in a service-oriented infrastructure for Italian digital justice.
+In this context, the ASKE concept graph can be employed by citizens
+and general subjects for concept-based query answering on a given corpus
+of legal documents like judgments and sentences. Here, we assume that
+ASKE is triggered on a set of seeds predefined on main legal subject areas (e.g., banking, family, corporate law) according to the composition
+of the underlying corpus [43]. On the other side, ASKE can be employed
+as a support service to enforce legal document building, where a new case
+law document for a target case at hand can be composed starting from
+the most similar and prominent document chunks retrieved by ASKE.
+For example, by working with the document builder interface, a legal
+practitioner enters the specific background and the specific claims of
+the parties (in the form of a query seed). ASKE retrieves the document
+chunks describing decisions and related motivations extracted from
+similar precedents, to be used for the composition of the motivations
+and decision section of the case law document at hand [44].
+CRediT authorship contribution statement
+Silvana Castano: Conceptualization, Methodology, Writing - Review & Editing. Alfio Ferrara: Conceptualization, Methodology, Writing - Review & Editing. Emanuela Furiosi: Cooperated in drafting the
+Introduction and Section 4 and she is the sole authoress of Section
+4.2. Stefano Montanelli: Conceptualization, Methodology, Writing Review & Editing. Sergio Picascia: Conceptualization, Methodology,
+Writing - Original Draft, Software, Validation. Davide Riva: Conceptualization, Methodology, Writing - Original Draft, Software, Validation. Carolina Stefanetti: Cooperated in drafting the Introduction and
+Section 4 and she is the sole authoress of Section 4.1.
+12
+
+S. Castano et al.
+
+Computer Law & Security Review: The International Journal of Technology Law and Practice 52 (2024) 105903
+
+Declaration of competing interest
+
+[17] Song Y, Zhao J, Specia L. SentSim: Crosslingual semantic evaluation of machine
+translation. In: Proceedings of the 2021 conference of the North American
+chapter of the Association for Computational Linguistics: Human language technologies. Association for Computational Linguistics; 2021, p. 3143–56. http://dx.
+doi.org/10.18653/v1/2021.naacl-main.252, Online. URL https://aclanthology.
+org/2021.naacl-main.252.
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+
+[18] Role F, Morbieu S, Nadif M. Unsupervised evaluation of text co-clustering
+algorithms using neural word embeddings. In: Proceedings of the 27th ACM
+international conference on information and knowledge management. New York,
+NY, USA: Association for Computing Machinery; 2018, p. 1827–30. http://dx.doi.
+org/10.1145/3269206.3269282.
+
+Data availability
+The authors do not have permission to share data.
+
+[19] Bojanowski P, Grave E, Joulin A, Mikolov T. Enriching word vectors with
+subword information. Trans Assoc Comput Linguist 2017;5:135–46. http://dx.
+doi.org/10.116
+
+
+================================================================================
+PAPER: 08_08_An Approach for Analyzing Unstructured Text Data Using Topic Modeling Techniques for Efficient Information Extraction
+================================================================================
+
+--- TITLE ---
+New Generation Computing (2024) 42:109–134 https://doi.org/10.1007/s00354-023-00230-5 An Approach for Analyzing Unstructured Text Data Using Topic Modeling Techniques for Efficient Information
+
+--- ABSTRACT ---
+Topic modeling techniques are popularly used for document clustering, large-scale
+text analysis, information extraction from unstructured text documents, feature selection from large corpus, and various recommendation systems. This work suggested
+a framework using topic modeling techniques for legal information extraction from
+the Indian judicial system’s unstructured legal judgments. The suggested approach
+aims to eliminate time-consuming manual judgment analysis in favor of automated
+judgment analysis that can quickly examine large number of judgments in reduced
+time span. In this work, we have experimented with different topic modeling methodologies for information extraction. The proposed framework is built on the Latent
+Dirichlet Allocation, to categorize legal judgments into extracted topic groups.
+Indian Supreme Court judgements are considered for the experimental setting. The
+three main elements of the framework are pre-processing, applying the topic model,
+and model evaluation using a coherence score metric. The framework was successfully applied to a corpus size of 100, 500, and 1000 legal judgments in batches. The
+proposed framework is used to measure legal judgment similarity to demonstrate its
+quantitative evaluation. In the future scope, various legal tasks that can benefit from
+the proposed framework for performance improvement are suggested.
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 08_09_CoLE- A collaborative legal expert prompting framework for large language models in law
+================================================================================
+
+--- TITLE ---
+Knowledge-Based Systems 311 (2025) 113052 Contents lists available at ScienceDirect Knowledge-Based Systems journal homepage: www.elsevier.com/locate/knosys
+
+--- ABSTRACT ---
+Large Language Models (LLMs) have achieved remarkable outcomes in various natural language processing
+tasks. However, their application to the highly specialized field of law presents unique challenges. Legal
+language, characterized by complex syntax, domain-specific terminology, and nuanced logical relationships,
+poses significant hurdles for existing NLP models in accurately understanding and processing legal queries.
+Furthermore, the sheer volume of legal documents complicates information retrieval and knowledge extraction,
+making it difficult for models to pinpoint relevant legal articles and cases. Moreover, existing legal LLMs
+often struggle to effectively handle colloquial user queries and lack efficient mechanisms for selecting the
+most relevant demonstrations in In-Context Learning (ICL), hindering their ability to provide accurate and
+comprehensive legal advice. In order to address these issues, we propose a novel prompting framework named
+‘‘Collaborative Legal Experts’’ (CoLE). This framework draws inspiration from teamwork paradigms in realworld legal case processing. First, we design an intent identification module to analyze user queries for
+identifying potential intents and law domains. Then, through two subsequent processes, potential background
+information and the best demonstration are generated. Finally, we design a prompt generator to assemble
+prompts generated from the previous steps. It combines with the LLMs to generate the final answer. Notably,
+we find that the self-generated information by LLMs has a smaller gap when fused with LLMs. We evaluate
+performance by integrating it with 7 general-purpose Chinese LLMs and comparing its performance against
+8 specialized legal LLMs across 10 datasets, including Single-Choice, Multiple-Choice, and Question&Answer.
+The results indicate that integrating with CoLE’s LLMs has the potential to significantly enhance performance
+in the law field, particularly without the need for annotated datasets or model parameter updates. Moreover,
+our proposed model outperforms all state-of-the-art LLMs in law. The code is available at https://github.com/
+liboaccn/cole.
+
+--- INTRODUCTION ---
+With the increase of computing power and the amount of data, Artificial Intelligence (AI) technology develops rapidly [1–3]. Large Language Models (LLMs) [4–8] have made significant strides in the field of
+Natural Language Processing (NLP). Moreover, some Chinese-oriented
+LLMs [9–13] have enhanced Chinese understanding, often outperforming multilingual models in Chinese NLP tasks. Beyond demonstrating
+exceptional performance across a range of standard tasks, there is
+growing interest in the development of specialized LLMs for particular
+domains, including education [14], healthcare [15,16], law [17–20]
+and finance [21,22]. Recently, many works apply LLMs to the law
+domain to solve some problems that are not well addressed by traditional methods [23–28]. Major advancements have been made in areas
+
+such as legal prediction [23,24], interpretation of legal provisions [25],
+dispute mediation [29], legal information extraction [26–28], and legal
+reasoning [18,30–32]. As the population increases, so does the number
+of judicial cases. Users can ask legal questions to the model and
+receive responses and suggestions based on training data [33–35]. The
+application of LLMs in the law field is expected to alleviate the problem
+of ‘‘many cases and fewer people’’, thus improving the efficiency and
+quality of the justice system [36,37]. However, applying LLMs to
+the law field presents significant challenges. Legal language, with its
+specialized terminology, complex sentence structures, and reliance on
+precedent, poses a significant challenge for NLP. Existing NLP models,
+often trained on general text data, struggle to accurately understand
+and process legal queries. For example, identifying the relevant legal
+
+∗ Corresponding authors.
+
+E-mail address: zhushaolin@tju.edu.cn (S. Zhu).
+https://doi.org/10.1016/j.knosys.2025.113052
+Received 3 May 2024; Received in revised form 2 January 2025; Accepted 16 January 2025
+Available online 23 January 2025
+0950-7051/© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 1. Comparison between Qwen-1.5-14B model and Qwen-1.5-14B model with CoLE. It can be seen that the answers ofQwen-1.5-14B model with CoLEare more accurate and
+comprehensive, and detailed legal references are provided.
+
+we propose ‘‘Collaborative Legal Expert ’’ (CoLE), a novel prompting
+framework which draws inspiration from the collaborative nature of
+real-world legal teams, simulating the division of labor and knowledge sharing amongst legal professionals [58]. This framework leverages LLMs to analyze user queries, retrieve relevant legal knowledge,
+and generate comprehensive responses. By integrating domain-specific
+knowledge and incorporating a novel demonstration selection mechanism, CoLE aims to significantly enhance the accuracy and reliability
+of LLMs in addressing complex legal queries.
+First, to address the issue of user query colloquialism, we initially
+develop a Query Intent Identification (QII) Module that examines user
+queries. This module translates informal user questions into formal
+legal terms, thereby improving the large language model’s comprehension of the question. Then, we create a Legal Knowledge Encoding
+(LKE) Model containing 1290 current Chinese laws and regulations,
+which serves as a foundation for retrieving and analyzing legal knowledge. Additionally, we establish a Demonstration Encoding (SE) Model
+that encompasses a substantial number of past case decision analyses and their corresponding reasoning outcomes. Next, we utilize
+two subsequent processes, Legal Knowledge Retrieval (LKR) and Best
+Demonstration Retrieval (BDR). These subsequent processes employ
+a two-stage filtering process to semantically retrieve similar cases.
+This allows the LLM to independently choose the best demonstration,
+resulting in potential background information and the best reference.
+This approach effectively overcomes the challenge of selecting the most
+suitable demonstration and reference information in the ICL system.
+After that, we create a Prompt Generation (PG) Module that combines
+the prompts generated in the previous steps and integrates the information with the LLM to produce the ultimate response. Finally, our
+approach does not require the labeling of the dataset and the updating
+of model parameters, resulting in a significant reduction in human
+effort and resource usage. Moreover, it can be more easily implemented
+in practical situations.
+To give an intuitive explanation of our main idea, let us take a practical case for example. As illustrated in Fig. 1, we present a comparative
+analysis of the generated responses to the question ‘‘How long can
+I get my driver’s license back after drunk driving?’’
+using both the basic Qwen-1.5-14B model and the Qwen-1.5-14B model
+integrated with CoLE. The basic Qwen-1.5-14B model achieves a score
+of 7 in the evaluation of human legal experts, while the model with
+CoLE improves to a score of 9. This is a strong indication that the
+results produced by our method demonstrate a significant advantage in
+terms of understanding user queries and providing improved answers.
+Overall, in this paper, we propose CoLE framework to solve the problem
+of applying LLMs in the law field. The main contributions of this work
+can be summarized as follows.
+
+statutes from a user’s query, which can involve colloquialisms and
+ambiguities, requires a nuanced understanding of legal concepts and
+their interrelationships. Similarly, the vast and constantly evolving
+body of legal documents makes information retrieval a daunting task
+for these models.
+(I) The colloquialism of user query. Users’ inputs are typically
+colloquial, with queries in spoken scenarios containing more irrelevant and confusing information, including potential spelling errors.
+Specifically, the colloquial nature of user queries, often riddled with
+ambiguities and lacking legal precision, poses a significant hurdle for
+LLMs trained on formal legal documents. Additionally, the effective
+selection of demonstrations, which provide context and guide the LLM’s
+reasoning process in In-Context Learning (ICL), becomes crucial for
+achieving accurate and reliable results in the legal domain where
+nuances and specific case details are paramount. We have identified
+notable disparities between written and spoken language when LLMs
+interpret sentence semantics. These colloquial or logically structured
+queries do not conform to the LLM’s conditional probability distribution. This is particularly problematic in the highly specialized field
+of law, where misunderstandings of user intent can lead to incorrect
+predictions outputted by LLMs.
+(II) The selection of demonstrations. In the field of In-Context
+Learning (ICL) [38], providing demonstrations has been demonstrated
+to effectively stimulate the performance of LLMs in downstream tasks
+[39–41]. While the selection of demonstrations is crucial for effective
+inference, the quest for the best demonstration selection remains a
+persistent challenge and a pending issue. There are some strategies having been proposed, based on human manual selection [42] or random
+selection [43], as well as more recent considerations of factors such as
+relevance ranking [44], complexity [45], diversity [46], difficulty [47],
+and perplexity [48]. Recently, the quantity [49,50], order [51], and
+format [52] of demonstrations must also be considered. These methods
+are based on external strategies rather than inherent LLM selection.
+This can potentially create a gap between the selected instances and
+the LLM itself, thereby exacerbating the ambiguity of model inference.
+(III) The cost influence. Precise domain-specific knowledge is
+required when dealing with highly specialized fields such as law. In
+particular, legal data exhibits diverse characteristics, with each domain
+having its own unique regulations and types. Given the vast quantity
+and variety, different analytical methods and expertise can be very
+complex [53]. Lawyer-LLaMA [54] is a Chinese legal LLM trained
+on a large-scale legal dataset, and HanFei [55] pre-trains on approximately 60 GB of Chinese legal data. LexiLaw [56], LawLLM [57],
+LAW_GPT [19] and others use a few hundred KB of legal-related
+datasets for supervised fine-tuning, and LexiLaw also mitigates the
+catastrophic forgetting problem brought by fine-tuning with general
+domain data. Nevertheless, the use of high-quality datasets for pretraining or supervised fine-tuning incurs substantial cost influence.
+These challenges require the development of specialized approaches
+tailored to the intricacies of the legal domain. To address these issues,
+
+• Inspired by the team collaboration model in real-world legal case
+processing, we enhance the application ability of LLMs in the law
+field by simulating the division of labor and cooperation in a
+
+--- CONCLUSION ---
+In this paper, we explore how to use LLMs to solve those problems existing in Chinese legal. In detail, we propose a novel prompting framework, ‘‘Collaborative Legal Expert’’ (CoLE), taking inspiration from teamwork paradigms in real-world legal case processing.
+It presents a practical and efficient solution to the challenges faced
+by legal LLMs. The framework’s Query Intent Identification Module
+and the two subsequent processes, Legal Knowledge Retrieval and
+Best Demonstration Retrieval enhance the LLM’s comprehension of
+colloquial user queries and improve the selection of best demonstration
+for ICL, respectively. Compared to traditional methods that use neural
+networks to train a model from supervising, our method can quickly
+obtain a strong model to solve Chinese-oriented legal problems. Our
+extensive experiments, conducted across 15 models and 10 datasets,
+have yielded compelling evidence that the integration with CoLE’s LLM
+substantially improves performance in legal tasks and our proposed
+model outperforms all SOTA LLMs in law. Notably, this enhancement
+is achieved without the need for annotated datasets or model parameter updates, which not only reduces the financial burden but also
+simplifies the implementation process. In the future, we will focus
+
+5.11. Time complexity analysis
+The overall time complexity of CoLE is primarily determined by the
+following components:
+QII: This module involves a single inference pass through the LLM,
+resulting in a time complexity of 𝑂(𝐿), where L represents the length
+12
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 8. Workflow Demo of CoLE.
+
+on exploring the generalizability of CoLE across different languages
+and legal systems. We will investigate cross-lingual transfer learning
+techniques and methods to incorporate diverse legal datasets from
+various jurisdictions, thereby enhancing its cross-cultural applicability.
+Furthermore, we plan to apply CoLE to more universal models such as
+Gemini, Claude, and GPT models, to validate its generality.
+
+This may involve incorporating elements of legal argumentation theory
+and utilizing expert-annotated legal datasets for supervised training of
+evaluation models. Furthermore, investigating the use of more powerful
+LLMs, such as GPT-4, as automated evaluation proxies is a promising
+direction.
+Thirdly, legal landscapes and jurisprudence are constantly evolving. Incorporating dynamic updates into CoLE’s knowledge base is
+essential for maintaining its accuracy and relevance. Future work will
+investigate methods for automatically updating the legal knowledge
+and demonstration repositories, potentially leveraging techniques like
+incremental learning and knowledge graph embedding. This will ensure
+that CoLE remains up-to-date with the latest legal developments and
+can adapt to changes in legal interpretation and practice. Furthermore,
+exploring methods for incorporating real-time legal information feeds
+and updates into CoLE’s reasoning process is an important direction.
+Finally, enhancing CoLE’s reasoning capabilities beyond retrieval
+and prompting is a key area for future research. Integrating legal knowledge graphs could provide a more structured representation of legal
+knowledge and facilitate more sophisticated reasoning and inference.
+Exploring multi-modal legal reasoning, incorporating visual or auditory information alongside textual data, could further enhance CoLE’s
+understanding of complex legal scenarios. Furthermore, investigating
+the application of reinforcement learning techniques to optimize the
+demonstration selection process and refine the prompting strategies
+could lead to more robust and adaptive performance.
+By addressing these limitations and pursuing the outlined research
+directions, we aim to enhance CoLE’s capabilities and contribute to the
+development of more accurate, reliable, interpretable, and adaptable
+legal LLMs.
+
+Limitations and future work
+While CoLE demonstrates promising results in enhancing the performance of LLMs in the legal domain, our work has limitations that
+provide avenues for future research.
+Firstly, our current implementation and experiments primarily focus
+on the Chinese legal system. Adapting CoLE to other legal systems
+presents significant challenges due to variations in legal frameworks,
+languages, and reasoning patterns. Future work will explore crosslingual transfer learning techniques and investigate methods for incorporating diverse legal datasets from different jurisdictions to enhance
+CoLE’s cross-cultural applicability. This includes exploring techniques
+for aligning legal concepts and terminology across languages and legal
+systems.
+Secondly, while our evaluation includes both quantitative metrics
+and human evaluation by legal experts, expanding the scope of automatic evaluation metrics remains crucial. Current NLP metrics like
+ROUGE, while informative, do not fully capture the nuances of legal
+reasoning and argumentation. We aim to develop more specialized
+evaluation metrics that directly assess the quality of legal arguments,
+the accuracy of legal advice, and the ability to predict case outcomes.
+13
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+CRediT authorship contribution statement
+
+[16] G. Wang, G. Yang, Z. Du, L. Fan, X. Li, ClinicalGPT: Large language models
+finetuned with diverse medical data and comprehensive evaluation, 2023, arXiv
+preprint arXiv:2306.09968.
+[17] Q. Huang, M. Tao, Z. An, C. Zhang, C. Jiang, Z. Chen, Z. Wu, Y. Feng, Lawyer
+LLaMA technical report, 2023, arXiv preprint arXiv:2305.15062.
+[18] J. Cui, Z. Li, Y. Yan, B. Chen, L. Yuan, Chatlaw: Open-source legal large
+language model with integrated external knowledge bases, 2023, arXiv preprint
+arXiv:2306.16092.
+[19] Y. Hongcheng Liu, Y. Liao, Y. Meng, Wang, LawGPT: Chinese legal dialogue
+language model, GitHub Repos. (2023).
+[20] U. Iqbal, From knowledge management to intelligence engineering-a practical
+approach to building AI inside the law-firm using open-source large language
+models, in: Third International Workshop on Artificial Intelligence and Intelligent
+Assistance for Legal Professionals in the Digital Workplace, LegalAIIA 2023,
+2023.
+[21] H. Yang, X.-Y. Liu, C.D. Wang, FinGPT: Open-source financial large language
+models, 2023, arXiv preprint arXiv:2306.06031.
+[22] S. Wu, O. Irsoy, S. Lu, V. Dabravolski, M. Dredze, S. Gehrmann, P. Kambadur, D.
+Rosenberg, G. Mann, Bloomberggpt: A large language model for finance, 2023,
+arXiv preprint arXiv:2303.17564.
+[23] Y. Feng, C. Li, V. Ng, Legal judgment prediction via event extraction with
+constraints, in: Proceedings of the 60th Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers), 2022, pp. 648–664.
+[24] Y. Wu, K. Kuang, Y. Zhang, X. Liu, C. Sun, J. Xiao, Y. Zhuang, L. Si, F. Wu,
+De-biased court’s view generation with causality, in: Proceedings of the 2020
+Conference on Empirical Methods in Natural Language Processing, EMNLP, 2020,
+pp. 763–780.
+[25] J. Savelka, K.D. Ashley, M.A. Gray, H. Westermann, H. Xu, Explaining legal
+concepts with augmented large language models (GPT-4), 2023, arXiv preprint
+arXiv:2306.09525.
+[26] F. Yao, C. Xiao, X. Wang, Z. Liu, L. Hou, C. Tu, J. Li, Y. Liu, W. Shen, M. Sun,
+LEVEN: A large-scale Chinese legal event detection dataset, in: Findings of the
+Association for Computational Linguistics: ACL 2022, 2022, pp. 183–201.
+[27] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, M. Sun, How does NLP benefit
+legal system: A summary of legal artificial intelligence, in: Proceedings of the
+58th Annual Meeting of the Association for Computational Linguistics, 2020, pp.
+5218–5230.
+[28] I. Chalkidis, M. Fergadiotis, P. Malakasiotis, N. Aletras, I. Androutsopoulos,
+LEGAL-BERT: The muppets straight out of law school, in: Findings of the
+Association for Computational Linguistics: EMNLP 2020, 2020, pp. 2898–2904.
+[29] H. Westermann, J. Savelka, K. Benyekhlef, Llmediator: Gpt-4 assisted online
+dispute resolution, 2023, arXiv preprint arXiv:2307.16732.
+[30] A. Blair-Stanek, N. Holzenberger, B. Van Durme, Can GPT-3 perform statutory reasoning? in: Proceedings of the Nineteenth International Conference on
+Artificial Intelligence and Law, 2023, pp. 22–31.
+[31] Q. Huang, M. Tao, C. Zhang, Z. An, C. Jiang, Z. Chen, Z. Wu, Y. Feng, Lawyer
+llama, 2023, https://github.com/AndrewZhe/lawyer-llama.
+[32] B. Li, S. Fan, J. Huang, CSAFT: Continuous semantic augmentation fine-tuning
+for legal large language models, in: M. Wand, K. Malinovská, J. Schmidhuber,
+I.V. Tetko (Eds.), Artificial Neural Networks and Machine Learning – ICANN
+2024, Springer Nature Switzerland, Cham, ISBN: 978-3-031-72344-5, 2024, pp.
+293–307.
+[33] Z. Wang, B. Wang, X. Duan, D. Wu, S. Wang, G. Hu, T. Liu, IFlyLegal: a
+Chinese legal system for consultation, law searching, and document analysis, in:
+Proceedings of the 2019 Conference on Empirical Methods in Natural Language
+Processing and the 9th International Joint Conference on Natural Language
+Processing (EMNLP-IJCNLP): System Demonstrations, 2019, pp. 97–102.
+[34] Lawtime, Lawtime.cn, 2023, https://www.lawtime.cn/.
+[35] Justia, Justia.com, 2023, https://answers.justia.com/.
+[36] R.M. Re, A. Solow-Niederman, Developing artificially intelligent justice, Stan.
+Tech. L. Rev. 22 (2019) 242.
+[37] S. Zhang, Path analysis of procedural diversion in plea cases, Mod. L. Rsch. 3
+(2022) 1.
+[38] Q. Dong, L. Li, D. Dai, C. Zheng, Z. Wu, B. Chang, X. Sun, J. Xu, L. Li, Z. Sui,
+A survey on in-context learning, 2023, arXiv:2301.00234.
+[39] T. Brown, B. Mann, N. Ryder, M. Subbiah, J.D. Kaplan, P. Dhariwal, A.
+Neelakantan, P. Shyam, G. Sastry, A. Askell, et al., Language models are few-shot
+learners, Adv. Neural Inf. Process. Syst. 33 (2020) 1877–1901.
+[40] J. Von Oswald, E. Niklasson, E. Randazzo, J. Sacramento, A. Mordvintsev, A. Zhmoginov, M. Vladymyrov, Transformers learn in-context by gradient descent, in:
+International Conference on Machine Learning, PMLR, 2023, pp. 35151–35174.
+[41] S. Gar
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{Castano2022, author = {Castano, Silvana and Falduti, Mattia and Ferrara, Alfio and Montanelli, Stefano}, title = {A knowledge-centered framework for exploration and retrieval of legal documents},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

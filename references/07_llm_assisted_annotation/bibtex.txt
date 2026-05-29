@@ -1,0 +1,101 @@
+@ARTICLE{Gilardi2023,
+	author = {Gilardi, Fabrizio and Alizadeh, Meysam and Kubli, Maël},
+	title = {ChatGPT outperforms crowd workers for text-annotation tasks},
+	year = {2023},
+	journal = {Proceedings of the National Academy of Sciences of the United States of America},
+	volume = {120},
+	number = {30},
+	doi = {10.1073/pnas.2305016120},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85165519030&doi=10.1073%2fpnas.2305016120&partnerID=40&md5=09ed480d906f9a3f557de6a7dc23257c},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 770; All Open Access, Green Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Nasution202471876,
+	author = {Nasution, Arbi Haza and Onan, Aytug},
+	title = {ChatGPT Label: Comparing the Quality of Human-Generated and LLM-Generated Annotations in Low-Resource Language NLP Tasks},
+	year = {2024},
+	journal = {IEEE Access},
+	volume = {12},
+	pages = {71876 – 71900},
+	doi = {10.1109/ACCESS.2024.3402809},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85194055834&doi=10.1109%2fACCESS.2024.3402809&partnerID=40&md5=07817622b48527ed0c65ec731654a8e7},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 100; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Alizadeh2025,
+	author = {Alizadeh, Meysam and Kubli, Maël and Samei, Zeynab and Dehghani, Shirin and Zahedivafa, Mohammadmasiha and Bermeo, Juan D. and Korobeynikova, Maria and Gilardi, Fabrizio},
+	title = {Open-source LLMs for text annotation: a practical guide for model setting and fine-tuning},
+	year = {2025},
+	journal = {Journal of Computational Social Science},
+	volume = {8},
+	number = {1},
+	doi = {10.1007/s42001-024-00345-9},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85212398986&doi=10.1007%2fs42001-024-00345-9&partnerID=40&md5=e0326e6016a78641adc8f04221535c5d},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 47; All Open Access, Green Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Vujinović2024,
+	author = {Vujinović, Aleksandar and Luburić, Nikola and Slivka, Jelena and Kovačević, Aleksandar},
+	title = {Using ChatGPT to annotate a dataset: A case study in intelligent tutoring systems},
+	year = {2024},
+	journal = {Machine Learning with Applications},
+	volume = {16},
+	doi = {10.1016/j.mlwa.2024.100557},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-105027908964&doi=10.1016%2fj.mlwa.2024.100557&partnerID=40&md5=3619beb3ed965d3f8b665d4ecc4a3703},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 23; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Wang2024,
+	author = {Wang, Lei and Ma, Yinyao and Bi, Wenshuai and Lv, Hanlin and Li, Yuxiang},
+	title = {An Entity Extraction Pipeline for Medical Text Records Using Large Language Models: Analytical Study},
+	year = {2024},
+	journal = {Journal of Medical Internet Research},
+	volume = {26},
+	number = {1},
+	doi = {10.2196/54580},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85189257501&doi=10.2196%2f54580&partnerID=40&md5=6209045eb96490c2ec77e5784db8ad8a},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 22; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Majdik2024,
+	author = {Majdik, Zoltan P. and Graham, S. Scott and Shiva Edward, Jade C. and Rodriguez, Sabrina N. and Karnes, Martha S. and Jensen, Jared T. and Barbour, Joshua B. and Rousseau, Justin F.},
+	title = {Sample Size Considerations for Fine-Tuning Large Language Models for Named Entity Recognition Tasks: Methodological Study},
+	year = {2024},
+	journal = {JMIR AI},
+	volume = {3},
+	doi = {10.2196/52095},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-105006909298&doi=10.2196%2f52095&partnerID=40&md5=d92ccf2450da0a039ea21e0a929b7a3d},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 21; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{ValizadehAslani2024,
+	author = {ValizadehAslani, Taha and Shi, Yiwen and Wang, Jing and Ren, Ping and Zhang, Yi and Hu, Meng and Zhao, Liang and Liang, Hualou},
+	title = {Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data},
+	year = {2024},
+	journal = {Neurocomputing},
+	volume = {592},
+	doi = {10.1016/j.neucom.2024.127801},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85193011832&doi=10.1016%2fj.neucom.2024.127801&partnerID=40&md5=0cf0d3e477c8648a3d435fd4fec7f63e},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 20; All Open Access, Hybrid Gold Open Access}
+}

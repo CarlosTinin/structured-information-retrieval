@@ -1,0 +1,73 @@
+
+@ARTICLE{Guimarães2024,
+	author = {Guimarães, Gabriel M.C. and da Silva, Felipe X.B. and Queiroz, Andrei L. and Marcacini, Ricardo M. and Faleiros, Thiago P. and Borges, Vinicius R.P. and Garcia, Luís P.F.},
+	title = {DODFMiner: An automated tool for Named Entity Recognition from Official Gazettes},
+	year = {2024},
+	journal = {Neurocomputing},
+	volume = {568},
+	doi = {10.1016/j.neucom.2023.127064},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85178111435&doi=10.1016%2fj.neucom.2023.127064&partnerID=40&md5=a8cd2b8b8fd3f038b955d2432addf3de},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 6}
+}
+
+@ARTICLE{Song2022,
+	author = {Song, Dezhao and Vold, Andrew and Madan, Kanika and Schilder, Frank},
+	title = {Multi-label legal document classification: A deep learning-based approach with label-attention and domain-specific pre-training},
+	year = {2022},
+	journal = {Information Systems},
+	volume = {106},
+	doi = {10.1016/j.is.2021.101718},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85100111664&doi=10.1016%2fj.is.2021.101718&partnerID=40&md5=97a23b899bc648d79f7aa90e1ccbe3b0},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 84}
+}
+
+@ARTICLE{Sukanya2021531,
+	author = {Sukanya, G. and Priyadarshini, J.},
+	title = {A Meta Analysis of Attention Models on Legal Judgment Prediction System},
+	year = {2021},
+	journal = {International Journal of Advanced Computer Science and Applications},
+	volume = {12},
+	number = {2},
+	pages = {531 – 538},
+	doi = {10.14569/IJACSA.2021.0120266},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85102041095&doi=10.14569%2fIJACSA.2021.0120266&partnerID=40&md5=1a319a27ab614a32da3b7d44a15917f2},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 26; All Open Access, Gold Open Access}
+}
+
+@ARTICLE{Imran202355664,
+	author = {Imran, Ali Shariq and Hodnefjeld, Henrik and Kastrati, Zenun and Fatima, Noureen and Daudpota, Sher Muhammad and Wani, Mudasir Ahmad},
+	title = {Classifying European Court of Human Rights Cases Using Transformer-Based Techniques},
+	year = {2023},
+	journal = {IEEE Access},
+	volume = {11},
+	pages = {55664 – 55676},
+	doi = {10.1109/ACCESS.2023.3279034},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85161038665&doi=10.1109%2fACCESS.2023.3279034&partnerID=40&md5=a8b656a465be9ee321e71dfad2f783bd},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 17; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Jin2024,
+	author = {Jin, Yilun and Yin, Wei and Wang, Haoseng and He, Fang},
+	title = {Capturing word positions does help: A multi-element hypergraph gated attention network for document classification},
+	year = {2024},
+	journal = {Expert Systems with Applications},
+	volume = {251},
+	doi = {10.1016/j.eswa.2024.124002},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85191155685&doi=10.1016%2fj.eswa.2024.124002&partnerID=40&md5=0828acf0c5398752df65c939e76de11c},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 13}
+}

@@ -1,0 +1,72 @@
+@ARTICLE{Castano2022,
+	author = {Castano, Silvana and Falduti, Mattia and Ferrara, Alfio and Montanelli, Stefano},
+	title = {A knowledge-centered framework for exploration and retrieval of legal documents},
+	year = {2022},
+	journal = {Information Systems},
+	volume = {106},
+	doi = {10.1016/j.is.2021.101842},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85109613081&doi=10.1016%2fj.is.2021.101842&partnerID=40&md5=ca6821bc9f1648b26ecab7348928a6b5},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 20}
+}
+
+@ARTICLE{Zhang2023118,
+	author = {Zhang, Hu and Guo, Jiayu and Wang, Yujie and Zhang, Zhen and Zhao, Hansen},
+	title = {Judicial nested named entity recognition method with MRC framework},
+	year = {2023},
+	journal = {International Journal of Cognitive Computing in Engineering},
+	volume = {4},
+	pages = {118 – 126},
+	doi = {10.1016/j.ijcce.2023.03.002},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85150468629&doi=10.1016%2fj.ijcce.2023.03.002&partnerID=40&md5=37a0720c8e7129e68b4f2aa270028583},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 16; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Castano2024,
+	author = {Castano, Silvana and Ferrara, Alfio and Furiosi, Emanuela and Montanelli, Stefano and Picascia, Sergio and Riva, Davide and Stefanetti, Carolina},
+	title = {Enforcing legal information extraction through context-aware techniques: The ASKE approach},
+	year = {2024},
+	journal = {Computer Law and Security Review},
+	volume = {52},
+	doi = {10.1016/j.clsr.2023.105903},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85174834651&doi=10.1016%2fj.clsr.2023.105903&partnerID=40&md5=5cc84861287127777513c1323f9531d1},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 15; All Open Access, Green Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Zadgaonkar2024109,
+	author = {Zadgaonkar, Ashwini and Agrawal, Avinash J.},
+	title = {An Approach for Analyzing Unstructured Text Data Using Topic Modeling Techniques for Efficient Information Extraction},
+	year = {2024},
+	journal = {New Generation Computing},
+	volume = {42},
+	number = {1},
+	pages = {109 – 134},
+	doi = {10.1007/s00354-023-00230-5},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85169106597&doi=10.1007%2fs00354-023-00230-5&partnerID=40&md5=a5a513b85732a1e0cca299567e632f17},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 14}
+}
+
+@ARTICLE{Li2025,
+	author = {Li, Bo and Fan, Shuang and Zhu, Shaolin and Wen, Lijie},
+	title = {CoLE: A collaborative legal expert prompting framework for large language models in law},
+	year = {2025},
+	journal = {Knowledge-Based Systems},
+	volume = {311},
+	doi = {10.1016/j.knosys.2025.113052},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85215999842&doi=10.1016%2fj.knosys.2025.113052&partnerID=40&md5=c0e5d20170fcd3fb2ccc420290c6b603},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 8}
+}

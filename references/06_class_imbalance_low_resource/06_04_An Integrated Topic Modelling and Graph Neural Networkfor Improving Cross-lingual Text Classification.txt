@@ -1,0 +1,933 @@
+An Integrated Topic Modelling and Graph Neural Network
+for Improving Cross-lingual Text Classification
+THAM VO, Thu Dau Mot University, Binh Duong, Vietnam
+In recent years, along with the dramatic developments of deep learning in the natural language processing
+(NLP) domain, notable multilingual pre-trained language techniques have been proposed. These recent multilingual text analysis and mining models have demonstrated state-of-the-art performance in several primitive
+NLP tasks, including cross-lingual text classification (CLC). However, these recent multilingual pre-trained
+language models still suffer limitations regarding their adaptation for specific task-driven fine-tuning in the
+context of low-resource languages. Moreover, they also encounter problems related to the capability of preserving the global semantic (e.g., topic, etc.) and long-range relationships between words to better fine-tune
+and effectively handle the cross-lingual text classification task. To meet these challenges, in this article, we
+propose a novel topic-driven multi-typed text graph attention–based representation learning method for
+dealing with the cross-lingual text classification problem called TG-CTC. In the proposed TG-CTC model, we
+utilize a novel fused topic-driven multi-typed text graph representation to jointly learn the rich-schematic
+structural and global semantic information of texts to effectively handle the CLC task. More specifically, we
+integrate the heterogeneous text graph attention network with the neural topic modelling approach to enrich
+the semantic information of learned textual representations in the context of multiple languages. Extensive
+experiments in benchmark multilingual datasets showed the effectiveness of the proposed TG-CTC model
+compared with the contemporary state-of-the-art baselines.
+CCS Concepts: • Computing methodologies → Natural language processing;
+Additional Key Words and Phrases: Topic modelling, graph attention network, BERT, cross-lingual text
+classification
+ACM Reference format:
+Tham Vo. 2022. An Integrated Topic Modelling and Graph Neural Network for Improving Cross-lingual Text
+Classification. ACM Trans. Asian Low-Resour. Lang. Inf. Process. 22, 1, Article 22 (November 2022), 18 pages.
+https://doi.org/10.1145/3530260
+
+1
+
+INTRODUCTION
+
+Along with tremendous developments of the Internet and multiple networked data platforms (e.g.,
+social networks, e-commercial networks, online news networks, etc.), there is a huge number of
+textual data resources [1, 2] (e.g., posts, micro-blogs, product’s reviews, etc.) that is generated on
+these platforms every day. The massive amounts of data are in different types of languages. Thus,
+it is necessary to develop cross-language-based text analysis and mining models [3] that can be
+This research is funded by Thu Dau Mot University, Binh Duong, Vietnam.
+Authors’ address: T. Vo (corresponding author), Number 6, Tran Van On Street, Phu Hoa Ward, Thu Dau Mot City, Binh
+Duong Province, 820000, Vietnam; email: thamvth@tdmu.edu.vn.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2022 Association for Computing Machinery.
+2375-4699/2022/11-ART22 $15.00
+https://doi.org/10.1145/3530260
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22
+
+22:2
+
+T. Vo
+
+adapted in the context of non-English annotated low-resources. In general, different from the traditional singular language-based classification problem, the cross-lingual text classification model
+is designed to learn the latent textual features of the source language. Then, these learned distinctive features are transferred into the knowledge of other target low-resource languages. Therefore,
+cross-lingual text classification (CLC) is considered to be more challenging than the traditional
+mono-language-based classification task in which the model training must adopt advanced natural language processing (NLP) techniques. In this approach, different advanced NLP methods are
+combined to simultaneously learn and transfer the learned textual features (normally in English)
+into other target low-resource languages that facilitate the cross-language classification task. In the
+past, most CLC-based models utilized the translation-based mechanism [4]/dual-language dataset
+[5] or external language resources (e.g., multilingual dictionaries) [6, 7] to efficiently handle the
+linguistic knowledge transferring problem. However, these traditional CLC-based models are considered laborious and high cost due to the sufficient requirements of human interactions and expert
+knowledge on constructing the translated datasets or cross-language dictionary-related resources.
+In addition, the traditional CLC-based approaches also suffer limitations related to the capability
+of efficiently preserving the contextual latent representations of text in the context of multiple
+languages. In recent years, with the significant progress in deep learning and advanced neural
+architectures in the NLP domain, different primitive tasks in this domain, such as text clustering,
+classification, or machine reading comprehension, have been remarkably handled with state-ofthe-art performance. Specifically, for English language NLP-based tasks, with the huge amounts
+of annotated datasets available, these recent deep learning-based language models have made impressive strides in tackling the existing challenges of low-quality representation and shallow understanding of textual data. However, for other types of languages, the amounts of corresponding
+labelled datasets might be insufficient, and they cannot be adopted in complex deep neural representation learning processes, as it is too cost prohibitive. These deep neural textual learning
+processes require a huge numbers of training data to achieve reasonable accuracy performance.
+In fact, for most deep learning–based CLC models, in the situation of non-English, labeled data
+are usually unavailable, and thus many researchers have attempted to build deep neural network
+classifiers that can be trained upon the rich-resource languages, like English, and then applied the
+transfers to targeted languages that lack annotated training data.
+1.1 Recent Achievements and Existing Challenges
+In the cross-language classification task, finding an appropriated textual representation learning
+technique to fully preserve the syntactical and semantic gaps between multilingual text documents
+is important. In recent years, several deep learning–based efforts have demonstrated the successes
+in efficiently exploiting the structural and semantic latent language-varied information in text
+to handle the CLC problem, such as CLNB [8], DNN/Pivot-CLCD [9], and ADAN [10]. However,
+these previous deep learning–based approaches still encounter problems related to the capability
+of fully exploring the contextual similarity among different languages. It effectively learns the
+rich semantic language-agnostic representations for multilingual text corpora. Recently, with the
+rise of transformer-based architectures (e.g., ELMo [11], GPT-2 [12], and BERT [13]), proposed
+CLC-based models have been shifted to the utilization of an advanced multilingual pre-trained
+language platform in which complex deep neural networks are pre-trained upon large-scale crosslinguistic corpora. However, these transformer-based models still suffer limitations regarding the
+ability to explicitly preserve the global long-range dependent relationships as well as syntactic
+structures of documents in the multilingual datasets that might lead to a downgrade in the
+performance of knowledge transferring between the source and target language. Moreover, most
+of these multilingual transformer-based techniques also requires a huge amount of cross-linguistic
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:3
+
+Fig. 1. Illustration of the overall architecture of our proposed TG-CTC model.
+
+annotated training resources as well as high computational efforts with new target languages that
+are considered as inflexible and time-consuming for practical implementations. To deal with the
+limitation related to the syntactical structural representation learning of text, recently researchers
+have focused on the utilization of graph neural network– (GNN) based architecture, such as
+GraphSage [14], graph convolutional network (GCN) [15], and graph attention network
+(GAT) [16], and so on, to efficiently obtain the global word long-range dependent relationships and
+syntactical structures of documents. There are many contemporary notable GNN-based works in
+text analysis and mining area (e.g., TextGCN [17], TensorGCN [18], and TG-Transformer [19]) that
+have shown state-of-the-art performances in comparing with the transformer-based approaches.
+The potentiality of neural topic modelling and text graph embedding integration. However, in general these GNN-based techniques still lack thorough evaluations of the global semantic
+information of text documents, such as topics that can be utilized to enrich the textual representations of cross-linguistic text corpora. In recent times, multiple studies [17–19] have concentrated
+on modelling long-range heterogeneous dependent relationships between documents to leverage
+the quality of textual representations. These extensive experiments [19] have demonstrated the effectiveness of heterogeneous text graph modelling and representation learning via different graph
+neural network–based architectures. The achieved graph-structured text representations are later
+utilized to achieve better fine-tuning results in primitive NLP’s tasks including classification.
+Recent studies on textual representation learning have also demonstrated the effectiveness
+of other textual global information, such as topic attributes [20, 21]. Several recent works have
+presented the success and potentiality of integrating a topic modelling approach with different
+neural text embedding architectures such as auto-encoding [22], transformer [23, 24], and so
+on. These works have proved that latent topic modelling and extraction within the neural
+representation learning process can directly improve the quality of textual embedding as well
+as multiple task-driven fine-tuning processes. Thus, the fusion between neural topic modelling
+and text graph–based representation learning via GNN is considered a promising direction for
+enhancing the performance of cross-lingual contextual embedding and classification.
+1.2
+
+Our Contributions and Motivations
+
+Inspired by the achievements of recent GNN-based efforts in CLC and motivated to tackle the
+above listed challenges, in this article we propose a novel CLC-based model called TG-CTC (see
+Figure 1). In our proposed TG-CTC model, we utilize the combination between neural latent topic
+modelling with heterogeneous multi-typed text graph representation learning by using GAT [16]
+to achieve the rich structural and contextual representations of multilingual texts for handling
+CLC tasks. In particular, to efficiently extract latent topic representations of documents, we used
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:4
+
+T. Vo
+
+previous neural topic modelling techniques [25, 26] that are designed upon the topic modelling
+inference paradigm via the neural variational auto-encoding (VAE) mechanism.
+Then, the latent topic embedding vectors are fused with the rich contextual representations
+that are produced by utilizing existing multilingual pre-trained language models, such as XLMRoBERTa [27]. Then, these rich semantic and contextual representations of texts are used to assist
+the heterogeneous text graph embedding process via GAT. Similarly to previous studies [17–19,
+28] in a GNN-based text analysis and representation learning approach, we transform and represent multilingual documents in a given corpus in forms of heterogeneous networks with different
+word–word, word–document, and document–document heterogeneous sub-networks/subgraphs. From the given constructed heterogeneous text graphs, we applied a multi-layered
+GAT-based architecture to efficiently capture and aggregate the joint contextual and structural
+representations of documents and their associated words through the graph-based propagation
+learning process. In our approach, the graph-based attention mechanism is applied to sufficiently
+preserve the importance of different neighboring multi-typed word and document nodes that
+leverage the performance of a document’s class prediction through a neural full-connected layer
+with a softmax function. In general, our contributions in this article can be summarized as follows:
+• First, we present a combination of a neural topic modelling and pre-trained language textual representation learning approach to capture the joint global semantic and contextual
+information of documents in a given multilingual corpus. To efficiently merge the latent
+topic representations with rich contextual information of documents, we applied a neural network–based fusion mechanism to transform different textual embedding vectors of
+words and documents into the unified embedding spaces.
+• Next, we utilized previous rich semantic textual latent representations in the heterogeneous
+text graph construction and embedding process by using a multi-layered GAT-based architecture that effectively learns and aggregates latent structural information of documents.
+The utilization of self-attention in GAT identifies important information of multi-typed
+word and document nodes during the propagation learning strategy, which directly facilitates the global structural document embedding process as well as the cross-language
+classification task.
+• Finally, we conducted extensive experiments in three benchmark datasets (Amazon
+Reviews-{Book, DVD and Music}, XGLUE News, and Facebook Multilingual SLU) to present
+the effectiveness of our proposed TG-CTC model compared with recent state-of-the-art
+CLC-based techniques. The comparative experimental outputs showed the usefulness of
+our proposed ideas in this article.
+Difference between our works and previous studies. Within the proposed TG-CTC model,
+we introduced a novel integration between the latent topic extraction and the multi-lingual heterogeneous text graph construction strategy to improve the performance of global information
+and long-range relationship capturing. To efficiently extract and learn latent topics from a given
+cross-linguistic text corpus, we utilize the neural topic modelling approach in which distributions
+of latent topics over documents are fully preserved during the variational auto-encoding-based
+generative process. Then the generative latent topic embedding vectors are combined with graphbased document representations that are produced by using graph attention neural network architecture over the constructed heterogeneous cross-linguistic text graphs. Different from previous approaches [28–30], in our proposed model the combination between global latent topic
+information with the long-range dependent relational features enables us to capture richer contextual features from documents in a given cross-linguistic text corpus. These rich contextual
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:5
+
+representations of documents are later utilized to achieve better fine-tuning results for the text
+classification task.
+In general, the remainder of our article is divided into four sections. In the next section, we
+briefly review recent efforts in CLC as well as discuss pros/cons of each approach. In the third
+section, we formally demonstrate the methodology, background concepts, and detailed implementations of our proposed TG-CTC model. In the fourth section, we present extensive empirical studies on the CLC task by using different CLC-based techniques within standard datasets. Finally, we
+conclude this article as well as provide potential directions for future work in the fifth section.
+2
+
+RELATED WORKS AND MOTIVATIONS
+
+In recent years, with the support of multiple advanced deep learning architectures in the NLP domain, great progress has been achieved in multiple primitive tasks of text analysis and mining,
+including cross-language classification. Different from the traditional singular language text classification, the cross-lingual text classification task mainly focuses on creating a text classifier by
+using the source language and transferring the learned knowledge to categorize the associated
+documents in other target languages. In general, CLC-based models are designed to handle text
+classification task low-resource languages. Most text classifiers are considered a supervised learning approach in which a sufficient amount of training of a dataset is required to achieve reasonable
+classification outputs. However, annotated training data are usually rare or unavailable in many
+languages, and thus researchers have attempted to develop novel techniques that can learn from
+a rich textual resource language (e.g., English) to classify other low-resource linguistic documents
+(e.g., French, German, Japanese). There are notable early efforts in utilizing cross-linguistic translation [4], dual-language datasets [5], or external language resources (e.g., bilingual dictionaries)
+[6, 7]. These works have demonstrated significant successes in both cross-language textual feature
+learning and knowledge transferring to handling the cross-language classification task. However,
+these previous CLC-based techniques still suffer major limitations related to the high efforts on
+constructing external linguistic resources (e.g., bilingual dictionaries, etc.) as well as the low quality in contextual representations of documents in the cross-linguistic context.
+2.1
+
+Cross-lingual Word Embedding and Transformer-based Approach
+
+Recently, with the rapid developments of the deep learning approach in NLP, several deep neural
+architectures have been applied in the CLC task, resulting in remarkable enhancements in preserving the semantic and syntactical similarities between documents in different languages that
+directly leverages the performance of feature learning from the source language and knowledge
+transferring for text categorization in the target language. Xu et al. proposed the CLNB model [8],
+which utilized the regularized linear regression as the supervised approach to model the crosslanguage word mapping between different languages via a dictionary. In the DNN/Pivot-CLCD
+model [9], Ziser et al. proposed a novel pivot-based and structure-ware deep learning–based architecture to efficiently learn and transfer textual features between different languages. Similarly,
+Chen et al. proposed a deep adversarial network for the CLC task, called ADAN [10]. In the
+ADAN model, Chen et al. proposed a novel adversarial deep neural averaging network architecture to effectively learn and transfer the latent textual features from the annotated datasets of
+the resource-rich source language to low-resource languages to handle the CLC task. Within the
+word embedding–based cross-lingual text analysis approach [31], Karamanolakis et al. [32] proposed a novel method, called as cross-lingual teacher-student, that extracts and transfers important
+classification-driven words across different languages. These extracted features are later used to
+initialize the classifier to achieve improvements in multilingual classification tasks. Zhang et al.
+[33] proposed the enhanced word-level knowledge transfer learning method to directly support the
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:6
+
+T. Vo
+
+text classification problem within cross-lingual text corpora. Similarly, the recent proposed CLIME
+[34] and CLWE [35] models also demonstrated significant improvements of enhanced cross-lingual
+word embedding–based techniques in dealing with a multilingual text classification task within
+the context of low-resource training. However, the notable word embedding and deep learning–
+based methods still suffer several limitations related to the low performance in preserving the
+semantic proximity between documents in different languages.
+To deal with these challenges, multilingual pre-trained language models [11–13] have been applied in primitive cross-language textual analysis tasks and demonstrated state-of-the-art performance. There are multiple BERT-based cross-linguistic models, such as XLMs [36], XTREME [37],
+and XLM-RoBERTa [27], have pre-trained the complex transformer-based neural architectures
+upon multilingual large-scale text corpora. These multilingual pre-trained models have performed
+excellently in multitask-driven textual representation learning and knowledge transferring that
+leverage the performances of multiple cross-linguistic-based tasks. However, these transformerbased architectures still encounter limitations regarding the capability of preserving the global
+structural and long-range dependent relationships between words and documents during the textual representation learning process, which might lead to significantly poorer results in the knowledge transferring process on target languages.
+2.2
+
+Topic Modelling Approach in Cross-lingual Text Analysis
+and Representation Learning
+In the past, topic modelling has attracted a lot of attention from researchers in the NLP domain due
+to its advantages in multiple textual feature engineering and the representation learning approach.
+Within the topic modelling paradigm, the models are designed to extract the distributions of latent
+topics over textual documents to capture rich global information from a given text corpus. Within
+the neural learning approach, several studies [20, 21] have applied variational auto-encoding-based
+architectures to effectively extract latent topic distributions from text to form rich semantic word
+and document representation. In the multilingual text analysis domain, recent well-known studies
+also demonstrated success in applying the unsupervised latent topic representation learning in
+multiple NLP-based tasks. Mimno et al. [38] and Yuan et al. [39] utilized the latent topic learning
+framework to reveal a rich semantic pattern within the cross-lingual document corpora. Similarly,
+Yang et al. proposed a novel multilingual topic models (MTM) technique [40] that enables us
+to effectively learn the weighted topic relationships in which cross-lingual latent topic are linked.
+The MTM model has demonstrated remarkable improvements in the cross-lingual text analysis
+and representation learning domain that proved the usefulness and potentiality of this direction
+in the multilingual textual analysis and mining domain.
+2.3 Text Graph Representation Learning Approach
+To efficiently preserve both contextual and syntactic structural information of texts within documents of target resource-rich language source, such as English, as well as other language sources,
+many researchers have paid a lot of attention to the application of GNN to facilitate the text graph
+representation learning process [17–19]. There are now several notable GNN-based models for
+CLC tasks, such as MGL [41] and CLHG [28]. In the MGL model [41], Li et al. proposed a novel
+meta-graph-based representation learning strategy upon multiple constructed heterogeneous text
+graphs and then formulated the linguistic knowledge transferring process as the information propagation over dynamic heterogeneous text graphs. Similarly, Wang et al. proposed a novel heterogeneous text graph representation learning approach over multi-typed text graphs in the CLHG
+model [28] that consisted of different part-of-speech– (POS) based, word–document-based, and
+document–document-based relationships. By utilizing the heterogeneous graph neural network
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:7
+
+learning with attention mechanism, CLHG [28] can efficiently capture the global structural features of texts to better fine-tune for the cross-language text classification task. Although these
+recent GNN-based models have demonstrated significant improvements in the CLC-based task,
+they still suffer limitations regarding thorough evaluations on the global semantic information of
+multilingual documents during the learning and transferring processes. Thus, they cannot achieve
+better quality in the representations of texts as well as classification outputs in the context of crosslinguistic learning.
+3
+
+METHODOLOGY
+
+In this section, we formally present the methodology and detailed implementation of our proposed TG-CTC model. In our proposed model, we first utilize a combination between neural topic
+modelling and pre-trained BERT-based language model to capture the rich global semantic and
+contextual information of the given rich-resource linguistic documents. Then, we utilize these
+achieved textual representations in the multi-typed heterogeneous text graph construction process in which different text graphs are used to represent multi-typed relationships between word
+and document nodes. Finally, a multi-layered GAT-based architecture is applied to learn and aggregate rich semantic and structural representations of texts for handling the cross-language text
+categorization task in form of network’s node classification problem.
+3.1 Topic-driven Textual Representation Learning via Pre-trained Language Model
+To extract and learn the distributions of latent topics over a given text corpus, we apply the previous neural topic modelling approaches [25, 26] in which a VAE mechanism is applied to model
+the latent topic-word distributions over documents. Specifically, following the classical topic modelling paradigm, for the evaluated latent topic distributions of each document (𝒹) in a given text
+corpus (𝒟, 𝒹 ∈ 𝒟), denoted as (𝓏𝒹 ) and 𝓏𝒹 ∈ R1×K with (K), is the pre-defined number of latent
+topics in a given text corpus. Similarly to a previous approach [28], the given text corpus 𝒟 contains a set of documents that come from the rich-resource language for training as well as their
+translated versions for the target transferring low-resource language.
+However, for each latent topic-word assignment, we have the (𝓉𝓌 ) present for the topic assignment of a specific unique word (𝓌) of the given text corpus, where (𝒲, 𝓌 ∈ 𝒲) is the vocabulary set of (𝒟). Then, to efficiently achieve the topic–word and document–topic distributions, a
+VAE-based architecture is applied to encode and decode latent topic representations of each input
+document (𝒹) in both the source and target languages. The used VAE-based architecture contains
+the separated neural generative (encoder) and inference (decoder) networks. At the generative
+neural network part, each input document (𝒹) is encoded and transformed into the latent topic
+representations (𝓏𝒹 ). Then, these topic distribution embedding vectors are fed into the inference
+neural network/the decoder part to reconstruct the original input document (𝒹). The utilization
+of VAE-based architecture in the latent topic inference process is to effectively estimate and parameterize the multinomial distributions of (K) latent topics over documents in which the prior
+distributions are not specified, and, thus, it can sufficiently control the overall topic generative
+process. For each input document (𝒹), the topic model generative process via VAE [25, 26] can be
+formulated as follows:
+
+
+ω  Norm μ0 , σ02
+𝓏𝒹 = softmax (Wω ω + bω )
+𝓉𝓌 ∼ Multinomial (𝓏𝒹 )
+
+
+𝓌 ∼ Multinomial β𝓉𝓌
+
+(1)
+
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:8
+
+T. Vo
+
+In this neural topic modelling approach [25, 26], the Gaussian distribution (where μ0 and σ02 are
+the mean and variance of Gaussian distribution) is applied to effectively parameterize the topic
+distribution of each input document (𝒹) and then produce the variational topic distributions with
+the facilitation of an unbiased gradient estimation approach. At the end of this process, we can
+produce the topic–word embedding matrix, denoted as β ∈ RK× | 𝒲 | , in which each (ith) column
+shows the global topic-driven semantic embedding vector of a specific (ith) word (𝓌i ) in a given
+text corpus (𝒟). In general, the neural topic modelling mechanism can be formulated as a mapping
+function as fNTM (. ) and fNTM : 𝒟 → β.
+To achieve the rich contextual information of each input document for the cross-language analysis task, we apply an existing multilingual pre-trained language model (mPLM); the textual
+embedding mechanism via a specific mPLM model is denoted as a mapping function, fmPLM (. ),
+which enables us to obtain the contextual latent representations of input documents and their
+contained words in both the source and target languages. For most of the BERT-based and mPLMbased platforms (e.g., XLMs [36], XTREME [37], and XLM-RoBERTa [27]) is considered as the
+sentence-level textual representation learning approach in which achieved word embedding vec−−−−−−→
+tors, denoted as 𝓌mPLM as the corresponding output hidden states of the last (kth) layer of the given
+mPLM-based architecture. The mPLM-based word embedding vectors carry different semantic information in their involved sentences. Thus, to achieve the completed document representation,
+−−−−−→
+as 𝒹mPLM , we applied a Bi-LSTM architecture [42, 43] that aggregates the contextual information
+−−−−−→
+of all sentences, denoted as 𝓈mPLM in each document. The general mPLM-based textual embedding
+process can be formulated as follows:
+
+
+−−−mPLM
+−−−→ −−−mPLM
+−−−→
+−−−mPLM
+−−−→
+
+
+k]
+𝓌1
+, 𝓌2
+, . . . , 𝓌 |𝒲 |
+= f[mPLM
+𝓌1 , 𝓌2 , . . . , 𝓌 | 𝒲 |
+
+
+−−mPLM
+−−−→ −−mPLM
+−−−→
+−−mPLM
+−−−→
+𝒹,+
++
+h = LSTM
+𝓈1
+, 𝓈2
+, . . . , 𝓈 |𝒹 |
+
+
+−−mPLM
+−−−→ −−mPLM
+−−−→
+−−mPLM
+−−−→
+𝒹,−
+−
+h = LSTM
+𝓈1
+, 𝓈2
+, . . . , 𝓈 |𝒹 |
+
+−−−
+−−→ 
+𝒹mPLM = h𝒹,+ , h𝒹,−
+
+(2)
+
+At the end of this process, we can achieve the mPLM-based rich contextual word and document
+embedding matrices, denoted as XmPLM
+∈ R | 𝒲 |×d and XmPLM
+∈ R | 𝒟 |×d . For the dimensionality of
+𝓌
+𝒹
+both word and document embedding vectors, we applied the dense-based neural network layers
+to reduce the output size to the fixed (d) value. From the contextual word embedding vectors via
+mPLM, we merged them with a previous obtained topic–word embedding matrix (β) by using
+a neural fusion mechanism to produce the rich global topic-driven semantic representations of
++NTM . In general, this word embedding fusion
+all words in a given text corpus, denoted as XmPLM
+𝓌
+strategy can be formulated as follows:
+
+
++NTM
+mPLM
+T
+XmPLM
+= Wfuse
++ Linear Wfuse
+(3)
++ bfuse .
+𝓌
+α . X𝓌
+beta .β
+In this equation, for the topic–word distribution embedding matrix, we apply the neural densebased linear layer to softly normalize and align the dimensionality of latent topic-word embedding
+matrix (β) with the rich contextual word embedding matrix (XmPLM
+) achieved previously by using
+𝓌
+the mPLM-based architecture.
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:9
+
+3.2 Heterogeneous Text Graph Construction
+In this part, we present different heterogeneous text graph construction approaches for a given
+text corpus. The constructed heterogeneous text graph of a given text corpus (𝒟) contains different word–word, word–document, and document–document relationships as sub-graphs/subnetworks that are mostly inherited from previous works [17–19].
+Word co-occurrence (word-word) relationship. For the word–word relationships in (𝒟), we
+−𝓌
+−𝓌 𝓌 −𝓌
+−𝓌
+constructed a word co-occurring sub-graph, denoted as 𝒢𝓌
+= (𝒱𝓌
+, ℰco ), where 𝒱𝓌
+co
+co
+co
+𝓌 −𝓌
+𝓌−𝓌
+and ℰco
+are the sets of unique words, as 𝒱co
+= 𝒲 and their co-occurring relationships
+in a given text corpus, respectively. The edge’s weight of two specific (ith) and (jth) words in
+−𝓌
+( ℰ𝓌
+) is identified by calculating the cosine similarity between their corresponding combined
+co
+contextual and global semantic (mPLM+NTM) embedding vectors, denoted as cosine (𝓌i , 𝓌j ) =
+−−−mPLM
+−−−−−+NTM
+−−−→ −−−mPLM
+−−−−−+NTM
+−−−→
+𝓌i
+. 𝓌j
+−−−−−−−−+NTM
+−−−→ −−−mPLM
+−−−−−+NTM
+−−−→ .
+ 𝓌mPLM
+ .  𝓌j
+
+i
+
+Word–document relationship. For the word–document relationships, similarly to previous
+works [28], there are three types of sub-graphs that are utilized to present the word[noun]–
+document, word[verb]–document, and word[adjective]–document relations. To extract the partof-speech of all words in documents of different languages for creating these relationships, we
+mainly applied existing NLP toolkits, such as Stanford CoreNLP [44] and NLTK. For different
+−𝒹
+𝓌 −𝒹
+word POS-based relationships, we have different sub-graphs, denoted as 𝒢𝓌
+POS−Noun , 𝒢POS−Verb, and
+𝓌 −𝒹
+𝒢POS−Adj , present for the word[noun]–document, word[verb]–document, and word[adjective]–
+document relations, respectively. Word co-occurrence (word-word) relationship that are gener−𝒹
+𝓌−𝒹 𝓌−𝒹
+𝓌−𝒹
+𝓌−𝒹
+ally formulated as 𝒢𝓌
+POS = ( 𝒱POS , ℰPOS ) with 𝒱POS and ℰPOS are the sets of unique word–POS
+𝓌−𝒹
+pairs and documents in (𝒟), as 𝒱POS ⊂ {𝒲 ∪ 𝒟} and their corresponding POS-based occurring
+relationships, respectively. For the word co-occurrence relationships in, we also constructed an−𝒹
+−𝒹 𝓌−𝒹
+𝓌 −𝒹
+other sub-graph, denoted as 𝒢𝓌
+= (𝒱𝓌
+is the set of unique words and
+oc
+oc , ℰoc ), where 𝒱oc
+𝓌 −𝒹
+−𝒹
+documents, as 𝒱oc = {𝒲 ∪ 𝒟} in a given text corpus (𝒟). The (ℰ𝓌
+oc ) present for the set of word–
+document occurring relationships with each edge’s weight is identified as the TF-IDF score of a
+specific word in each document.
+Document–document relationship. For preserving the document–document relationships,
+−𝒹
+−𝒹 𝒹−𝒹
+we constructed the 𝒢𝒹tran
+= (𝒱𝒹tran
+, ℰtran ), which presents for the relationships between resource−𝒹
+rich language documents and their translated target low-resource language versions, with 𝒱𝒹tran
+=
+𝒟. In addition, to capture the document similarity relationships in each language, we also construct
+−𝒹
+−𝒹 𝒹−𝒹
+a document similarity-based sub-graph as 𝒢𝒹sim
+= (𝒱𝒹sim
+, ℰsim ), that presents the top-n relevant
+documents of a specific document in (𝒟); the similarity score between two (ith) and (jth) documents
+is identified by cosine similarity of their corresponding mPLM-based embedding vectors, denoted
+as cosine (𝒹i , 𝒹j ) =
+3.3
+
+−−mPLM
+−−−→ −−mPLM
+−−−→
+𝒹i
+. 𝒹j
+−−−−−→ −−mPLM
+−−−→ .
+ 𝒹mPLM
+ .  𝒹j
+
+i
+
+Heterogeneous Text Graph Representation Learning via GAT
+
+The constructed heterogeneous text graph of a given text corpus (𝒟), denoted as (𝒢𝒟 ), is
+the composition of different sub-graphs that are described in the previous section or 𝒢𝒟 =
+−𝓌
+−𝒹
+𝓌 −𝒹
+𝓌−𝒹
+𝒹 −𝒹 𝒹 −𝒹
+{𝒢𝓌
+, 𝒢𝓌
+co
+POS−Noun , 𝒢POS−Verb , 𝒢POS−Adj 𝒢tran , 𝒢sim }. Then, to efficiently capture and aggregate the
+structural information of these heterogeneous sub-graphs, we apply a multi-layered GAT-based
+architecture that enables us to handle the end-to-end textual representation learning and knowledge transferring processes to handle the cross-language classification task. The initial rich global
+semantic and contextual encoded information of all word and document nodes in a given heteroge+NTM )
+neous text graph (𝒢𝒟 ) are set as their corresponding embedding matrices, which are (XmPLM
+𝓌
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:10
+
+T. Vo
+
+and (XmPLM
+), generally denoted as X𝒟 . These node embedding matrices are utilized as the initial
+𝒹
+node features fixed during the heterogeneous GAT-based training process. In general, the initial
+graph-based neural network layer and next (lth) layer of a specific (τ) sub-graph in (𝒢𝒟 ) are formulated as follows:
+
+
+, [0]
+, [0]
+τ
+ℋGAT
+= ReLU WGAT
+. X𝒟 . 𝒜
+τ
+τ
+(4)
+
+
+, [l]
+, [l−1]
+, [l−1] 
+= ReLU WGAT
+.ℋGAT
+. 𝒜τ .
+ℋGAT
+τ
+τ
+τ
+In the context of heterogeneous GAT-based propagation learning, we applied the previous heterogeneous graph convolutional learning strategy [45] to efficiently aggregate the rich-schematic
+information of different node types in separated sub-graphs and projected them into a unified
+embedding space for cross-language classification task-driven training. The heterogeneous GATbased learning strategy with different sub-graphs at each (lth) layer is generally formulated as
+,[l−1]
+,[l−1] 
+ℋ[l] = Relu ( τ∈𝒢𝒟 WGAT
+.ℋGAT
+.𝒜τ ). Finally, the last (kth) output hidden state of a given
+τ
+τ
+[k]
+GAT-based architecture, (ℋ ), is fed to a fully connected layer with the softmax activation funcˆ = softmax (ℋ[k] ). Then, the crosstion for handling the document node classification task, 𝒴
+entropy loss with L-2 norm is applied over the ground-truth annotated labels as 𝒴 (where 𝒞 is the
+number of classes), of the rich-resource language documents for training (𝒟train ) to achieve overij ) + η ΘTG−CTC 2 . To
+all the model’s parameters (ΘTG−CTC ), denoted as ℒ = i ∈𝒟train j ∈𝒞 𝒴ij .log (𝒴
+efficiently achieve the defined learning objective and update the model’s parameters, we apply the
+stochastic gradient descent strategy with (η) as the learning rate.
+4
+
+EXPERIMENTS AND DISCUSSIONS
+
+In this section, we present extensive experiments to evaluate the performance of our proposed
+TG-CTC model with recent state-of-the-art techniques for a cross-language text classification task
+(including traditional mBERT [13], XLM [36], XLM-RoBERTa [27], MGL [41], MVEC [29], CoSDAML [30], and CLHG [28]) in three benchmark datasets, Amazon Reviews, XGLUE News, and Facebook Multilingual SLN. Competitive experimental outputs demonstrate the effectiveness of our
+proposed ideas in this article.
+4.1 Dataset and Experimental Setups
+To evaluate the performance of CLC-based methods, we mainly utilized three benchmark datasets,
+Amazon Reviews, XGLUE News, and Facebook Multilingual SLN. In the following we present
+detailed information about these datasets.
+• Amazon Reviews:1 This is considered the most popular multilingual dataset for both sentiment and traditional text classification tasks. This dataset contains customer’s reviews in
+three product categories, including “Book,” “DVD,” and “Music.” These reviews are written in four different languages, which are English, Japanese, German, and French. For the
+document’s class, each customer’s review includes the corresponding rating score (in the
+range [1–5]). Similarly to previous works [28, 29], we transformed the five rating labels into
+binary labels with the threshold at 3.
+• XGLUE News:2 This is originally included in the well-known standard dataset for the
+multiple cross-language analysis and mining tasks (e.g., NER, POS tagging, and news
+classification) called XGLUE. XGLUE News is a classification task-driven dataset that
+1 Amazon Reviews: https://webis.de/data/webis- cls- 10.html.
+2 XGLUE News: https://microsoft.github.io/XGLUE/.
+
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:11
+
+contains collected news/articles that are written in five languages (including English,
+Spanish, German, Russian, and French) and assigned into 10 different categories.
+• Facebook Multilingual SLU [30]:3 This is also a well-known multilingual dataset that
+contains documents that are in written three languages: English Spanish, and Thai. The
+documents contained in this dataset are covered in different types of topics, such as weather
+and reminder. This dataset has been popularly used in previous studies related to multilingual textual data analysis and representation learning.
+Textual pre-processing steps. For multilingual textual pre-processing steps, such as stopword filtering, word tokenization, POS tagging, and so on, we mainly applied different NLP toolkits. Specifically for the POS tagging task, the Stanford CoreNLP [44]4 is mainly used for the English
+(EN), German (DE), Spanish (ES), and French (FR) (with different language models); MeCab5 for
+the Japanese (JA); NLTK6 for the Russian (RU); and PyThaiNLP7 for the Thai (TH).
+4.2
+
+Experimental Environment and Configurations
+
+We implement our proposed TG-CTC model with the Python programming language under the
+support of the well-known PyTorch machine learning framework. All experimental baselines and
+our TG-CTC model are set up in a single server with the Intel Xeon SKL-SP 4210 CPU and 64-Gb
+memory.
+For the implementation of the mPLM-based textual embedding mechanism (described in
+Section 3.1), we mainly used the XLM-RoBERTa [27], which is considered the most popular unsupervised cross-lingual pre-trained language model and has been pre-trained on large-scale text corpora of 100 languages. The detailed information and implementation guide about XLM-RoBERTa
+can be downloaded.8 For the training process with English documents in each dataset, we mainly
+utilized Google translation API9 to produce the target language documents. For the setup of the
+GAT-based architecture (described in Section 3.3), we implemented our proposed model with a
+five-layered GAT-based neural network to learn and aggregate the structural information of the
+constructed heterogeneous text graph of each dataset. The other detailed configurations of our
+proposed TG-CTC model are listed in Table 1.
+4.3 Comparative Baselines
+To evaluate the effectiveness of our proposed TG-CTC model with the contemporary state-of-theart baselines in the cross-language text classification task, we also implemented multiple CLCbased techniques for our experiments, which are as follows:
+• mBERT [13]: This is the multilingual pre-trained language version of the traditional BERT
+model (mBERT). Similarly to recent empirical studies [28, 41], the BERT model is set up as
+the language-agnostic textual encoding mechanism that proceeds the self-supervised learning procedure with shared common word tokens as the anchor across different languages
+to produce the multilingual representations of documents. These multilingual textual representations are later used to facilitate the cross-language classification task.
+3 Multilingual SLU: https://nlpforthai.com/tasks/slu/.
+4 Stanford CoreNLP POS tagger: https://nlp.stanford.edu/software/tagger.shtml.
+5 MeCab Japanese POS tagger: https://taku910.github.io/mecab/.
+6 NLTK POS tagger: https://www.nltk.org/_modules/nltk/tag.html.
+7 PyThaiNLP: https://pythainlp.github.io/docs/2.0/notes/pythainlp- 1_7- 2_0.html.
+8 XLM-RoBERTa: https://huggingface.co/transformers/model_doc/xlmroberta.html.
+9 Google Translate API: https://cloud.google.com/translate.
+
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:12
+
+T. Vo
+Table 1. Configurations of Our Proposed TG-CTC for Experiments
+
+TG-CTC’s configurations
+Dimensonality of word/document embedding vector by using
+pre-trained XLM-RoBERTa (dXLM−RoBERTa ) (described in Section 3.1)
+Number of LSTM-based cells (dBi−LSTM ) for the used Bi-LSTM
+archiecture (described in Section 3.1)
+Number of GAT-based layers
+Number of training epochs
+Learning rate (η)
+General dropout rate
+Model’s optimizer
+
+Value
+768
+512
+5
+25
+0.001
+0.5
+Adam (Weighting
+decay: 0.005)
+
+• XLM [36]: This is considered an early attempt on the utilization of transformer-based architecture in handling multilingual textual representation learning. In the XML model, Conneau et al. proposed a shared sub-word vocabulary modelling paradigm to establish the
+unified embedding spaces for words in different languages, which thus can be fine-tuned
+for different tasks like classification in the context of cross-language textual understanding
+and representation learning.
+• XLM-RoBERTa [27]: This is the most recent transformer-based multilingual textual representation learning approach. XLM-RoBERTa is a BERT-based unsupervised language model
+that has been pre-trained on large-scale text corpora of 100 languages. Extensive experimental studies of Conneau et al. [27] demonstrated remarkable improvements of the XLMRoBERTa model compared with the traditional mBERT in a variety of cross-lingual tasks,
+including the classification task.
+• MGL [41]: This is an early GNN-based proposal for handling multiple cross-language text
+analysis and transferring problems. In the MGL model, Li et al. [41] proposed a novel metagraph-based learning approach to deal with the cross-lingual feature representation learning and meta-knowledge transferring tasks. In general, the MGL models the global structural relationships between words and documents in different languages as dynamic metagraphs over the constructed corpus’s text graph in the form of the heterogeneous network
+within the GAT-based propagation learning strategy.
+• MVEC [29]: This is a recent unsupervised cross-lingual text classification model that was
+developed as deep learning–based multi-viewed auto-encoding for classification mechanisms. In the proposed MVEC model, Fei et al. proposed an extensive encoder–decoder
+architecture with the unsupervised machine translation mechanism to effectively assist the
+cross-lingual textual representation learning and classification.
+• CoSDA-ML [30]: This is also a well-known multi-lingual contextualized text representation learning and classification approach that was developed under the novel multi-lingual
+code-switching paradigm on the mBERT architecture [13]. In the CoSDA-ML model, Qin
+et al. proposed a custom data argument-based mechanism to effectively generate richcontextual multi-lingual representations of textual data that are later fine-tuned in the
+mBERT model to achieve improvements in the multi-lingual classification task.
+• CLHG [28]: Similarly to the MGL model [41], the CLHG is a recent proposal on the unitization of GNN-based architecture in learning the structural representations of texts for
+leveraging the performance of the CLC task. In CLHG model, Wang et al. [28] proposed a
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:13
+
+Fig. 2. Experimental outputs in terms of the accuracy metric for the cross-language classification task in the
+benchmark Amazon Reviews dataset using different techniques.
+
+novel heterogeneous text graph construction with multiple sub-graphs that present complex word–document and document–document relationships. Then, the GNN-based architecture is applied to learn the structural information of documents from constructed
+heterogeneous text graphs to conduct the cross-language classification task. Extensive experiments in benchmark datasets [28] proved the improved performance of the CLHG
+model compared with recent BERT-based baselines. The CLHG model is considered the
+main competitor of our proposed TG-CTC model.
+For implementations of the above-listed comparative techniques, we configured the models’
+parameters as the same in their original works in which these models achieved the highest performances for the CLC task. For other common parameters, we set them as the same as our proposed
+TG-CTC model’s configurations (as shown in the Table 1).
+4.4
+
+Experimental Results and Discussions
+
+Figures 2 and 3 show the experimental outputs in terms of the accuracy metric for the crosslingual classification task via different CLC-based techniques in the benchmark Amazon Reviews
+and XGLUE News datasets. In general, as shown from these experimental results, our proposed
+TG-CTC model explicitly outperforms all recent state-of-the-art BERT-based and GNN-based CLC
+methods. Specifically, in the Amazon Reviews dataset, our proposed TG-CTC model on average
+significantly outperforms the traditional mBERT, XLM, and XLM-RoBERTa by about 11.3%, 7.51%,
+and 2.9%, respectively, in terms of the accuracy metric for all languages.
+For our main GNN/transformer-based competitors, including the MGL, MVEC, CoSDA-ML
+(mBERT), and CLHG models, the proposed TG-CTC model also slightly improves the accuracy
+performance by about 10.12%, 6.21%, 1.83%, and 1.1%, respectively, for all types of languages. Similarly to the experiments in the XGLUE News dataset, our proposed TG-CTC model also remarkably
+achieves better performance than BERT-based models (MGL, MVEC, and CoSDA-ML) by approximately 3.53%, 4.04%, and 1.98%, respectively, and by about 2.11% with GNN-based models (CLHG)
+for all languages.
+Similarly to experiments with two benchmark Amazon Reviews and XGLUE News datasets,
+the accuracy performance results within the Facebook Multilingual SLU dataset (as shown in
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:14
+
+T. Vo
+
+Fig. 3. Experimental outputs in terms of the accuracy metric for the cross-language classification task in the
+benchmark XGLUE News dataset using different techniques.
+
+Fig. 4. Experimental outputs in terms of the accuracy metric for the cross-language classification task in the
+benchmark Facebook Multilingual SLU dataset using different techniques.
+
+Figure 4) also demonstrated the effectiveness of our proposed TG-CTC model compared with
+recent multilingual textual representation learning and classification baselines. Compared with
+advanced cross-linguistic rich contextual text embedding methods that are considered our
+model’s competitors, such as MGL, MVEC, CoSDA-ML (mBERT), and CLHG, our model achieved
+improvements in classification-based performance accuracy of approximately 8.1%, 11.6%, 2.67%,
+and 0.3% for all languages, respectively.
+In general, through extensive empirical studies in benchmark datasets, the experimental results
+have shown the usefulness of the integration between latent topic extraction through neural
+topic modelling approach within the heterogeneous text graph embedding process for dealing
+with cross-linguistic text classification problem. To achieve better representations of documents
+in different languages, our proposed TG-CTC model has utilized the cross-language text graph
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:15
+
+Fig. 5. Experimental studies on the stability of our proposed TG-CTC model in the Amazon Reviews and
+XGLUE News datasets.
+
+construction strategy, which is mainly inspired from the CLHG model. Through this text graph
+modelling approach, it effectively captures the multilingual word-based relationships between
+textual documents in different languages.
+4.5 Ablation Studies
+In this section, we demonstrated extensive empirical studies on the stability and parameter sensitivity of our proposed TG-CTC model. Figure 5 shows the influences of different training set sizes
+(%) on the overall performance of the TG-CTC model in the cross-lingual classification task. As
+shown from the experimental outputs of both the Amazon Reviews (Figure 5(a)) and XGLUE News
+(Figure 5(b)) datasets, our proposed model is quite stable with the changes on the training set sizes.
+The overall reported accuracy performances in both datasets are gradually increased along with
+the training set sizes, thus proving that our proposed TG-CTC model can be stable in the situation
+of low-quantity training data. Furthermore, in this section, we also present extra empirical studies
+on the model’s parameter sensitivity of the number of GAT-based layers and training epochs. For
+the number of used GAT-based layers in our proposed TG-CTC model, we varied this parameter
+from 1 to 8 and reported the fluctuations of overall model’s performance in term of the accuracy
+metric for the CLC task. As shown from the experimental outputs in Figure 6(a), our model is explicitly insensitive with this parameter. In both the Amazon Reviews and XGLUE News datasets,
+the TG-CTC model achieves the highest performances with number of used GAT-based layers is
+over 4. Similar to that with studies in number of training epochs (as shown in Figure 6(b)), our
+proposed TGAT4CLC model reaches the convergence points with the value of this parameter is
+≥25 within two datasets. These experimental outputs demonstrated the effectiveness of our proposed TG-CTC model in both stability and time-consuming performance aspects that require a
+reasonable number of training epochs to reach the highest model’s accuracy performances.
+5
+
+CONCLUSIONS AND FU T URE WORKS
+
+In this article, we proposed a novel TG-CTC model for the CLC task. Our proposed TG-CTC model
+is a combination between a topic-driven transformer-based and GAT-based textual representation
+learning approach over multi-typed constructed text graphs in a heterogeneous network. To efficiently learn the joint global semantic and contextual information of documents in a multilingual
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:16
+
+T. Vo
+
+Fig. 6. Experimental studies on the number of GAT-based layers and training epochs parameters of our
+proposed TG-CTC model in the Amazon Reviews and XGLUE News datasets.
+
+text corpus, we apply the fused neural topic modelling with the existing mPLM approach, such as
+XLM-RoBERTa. Then, the resulting rich global semantic and contextual representations of texts are
+utilized in the heterogeneous text graph construction and global structural representation learning via GAT to effectively handle the CLC task. Extensive experiments in benchmark multilingual
+datasets like Amazon Reviews and XGLUE News demonstrate the effectiveness of our proposed
+ideas in this article. For our future work, we intend to expand our proposed TG-CTC model in
+other cross-lingual analysis and representation learning tasks as well as low-resource language
+knowledge transferring.
+REFERENCES
+[1] T. Nakamura, M. Shirakawa, T. Hara, and S. Nishio. 2018. Wikipedia-based relatedness measurements for multilingual
+short text clustering. ACM Trans. Asian Low-Resour. Lang. Inf. Process. 18, 2 (2018), 1–25.
+[2] Y. Xiang, Z. Yu, J. Guo, Y. Huang, and Y. Xian. 2021. Event graph neural network for opinion target classification of
+microblog comments. Trans. Asian Low-Resour. Lang. Inf. Process. 21, 1 (2021), 1–13.
+[3] A. De, D. Bandyopadhyay, B. Gain, and A. Ekbal. 2021. A transformer-based approach to multilingual fake news
+detection in low-resource languages. Trans. Asian Low-Resour. Lang. Inf. Process. 21, 1 (2021), 1–20.
+[4] X. Wan. Co-training for cross-lingual sentiment classification. In Proceedings of the Joint Conference of the 47th Annual
+Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP.
+[5] K. Duh, A. Fujino, and M. Nagata. 2011. Is machine translation ripe for cross-lingual sentiment classification? In
+Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies.
+[6] L. Shi, R. Mihalcea, and M. Tian. 2010. Cross language text classification by model translation and semi-supervised
+learning. In Proceedings of the Conference on Empirical Methods in Natural Language Processing.
+[7] D. Andrade, K. Sadamasa, A. Tamura, and M. Tsuchida. 2015. Cross-lingual text classification using topic-dependent
+word probabilities. In Proceedings of the Conference of the North American Chapter of the Association for Computational
+Linguistics: Human Language Technologies.
+[8] R. Xu, Y. Yang, H. Liu, and A. Hsi. 2016. Cross-lingual text classification via model translation with limited dictionaries.
+In Proceedings of the 25th ACM International on Conference on Information and Knowledge Management.
+[9] Y. Ziser and R. Reichart. 2018. Deep pivot-based modeling for cross-language cross-domain transfer with minimal
+guidance. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing.
+[10] X. Chen, Y. Sun, B. Athiwaratkun, C. Cardie, and K. Weinberger. 2018. Adversarial deep averaging networks for
+cross-lingual sentiment classification. Trans. Assoc. Comput. Ling. 6 (2018), 557–570.
+[11] M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer. 2018. Deep contextualized word
+representations. In Proceedings of the Conference of the North American Chapter of the Association for Computational
+Linguistics: Human Language Technologies.
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:17
+
+[12] A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever. 2018. Improving language understanding by generative
+pre-training. OpenAI.
+[13] J. Devlin, M. W. Chang, K. Lee, and K. Toutanova. 2019. Bert: Pre-training of deep bidirectional transformers for
+language understanding. In Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies.
+[14] W. L. Hamilton, R. Ying, and J. Leskovec. 2017. Inductive representation learning on large graphs. In Proceedings of
+the 31st International Conference on Neural Information Processing Systems.
+[15] T. N. Kipf and M. Welling. 2016. Semi-supervised classification with graph convolutional networks. In 5th International
+Conference on Learning Representations (ICLR’17).
+[16] P. Veličković, G. Cucurull, A. Casanova, A. Romero, P. Lio, and Y. Bengio. 2018. Graph attention networks. In Proceedings of the International Conference on Learning Representations (ICLR’18).
+[17] L. Yao, C. Mao, and Y. Luo. 2019. Graph convolutional networks for text classification. In Proceedings of the AAAI
+Conference on Artificial Intelligence.
+[18] X. Liu, X. You, X. Zhang, J. Wu, and P. Lv. 2020. Tensor graph convolutional networks for text classification. In
+Proceedings of the AAAI Conference on Artificial Intelligence.
+[19] H. Zhang and J. Zhang. 2020. Text graph transformer for document classification. In Proceedings of the 2020 Conference
+on Empirical Methods in Natural Language Processing (EMNLP’20).
+[20] P. Kherwa and P. Bansal. 2020. Topic modeling: a comprehensive review. EAI Endors. Trans. Scal. Inf. Syst. 7, 24, (2020).
+[21] L. Lin, H. Jiang, and Y. Rao. 2020. Copula guided neural topic modelling for short texts. In Proceedings of the 43rd
+International ACM SIGIR Conference on Research and Development in Information Retrieval.
+[22] R. Wang, X. Hu, D. Zhou, Y. He, Y. Xiong, C. Ye, and H. Xu. 2020. Neural topic modeling with bidirectional adversarial
+training. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+[23] N. Peinelt, D. Nguyen, and M. Liakata. 2020. tBERT: Topic models and BERT joining forces for semantic similarity
+detection. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+[24] X. Song, J. Petrak, Y. Jiang, I. Singh, D. Maynard, and K. Bontcheva. 2021. Classification aware neural topic model for
+COVID-19 disinformation categorisation. PloS One 16, 2 (2021), e0247086.
+[25] Y. Miao, E. Grefenstette, and P. Blunsom. 2017. Discovering discrete latent topics with neural variational inference.
+In Proceedings of the International Conference on Machine Learning (PMLR’17).
+[26] A. Srivastava, and C. Sutton. 2017. Autoencoding variational inference for topic models. In Proceedings of the 5th
+International Conference on Learning Representations (ICLR).
+[27] A. Conneau, K. Khandelwal, N. Goyal, V. Chaudhary, G. Wenzek, F. Guzmán, and V. Stoyanov. 2020. Unsupervised
+cross-lingual representation learning at scale. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+[28] Z. Wang, X. Liu, P. Yang, S. Liu, and Z. Wang. 2021. Cross-lingual text classification with heterogeneous graph neural
+network. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th
+International Joint Conference on Natural Language Processing (Volume 2: Short Papers). 612–620.
+[29] H. Fei and P. Li. 2020. Cross-lingual unsupervised sentiment classification with multi-view transfer learning. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+[30] L. Qin, M. Ni, Y. Zhang, and W. Che. 2020. Cosda-ml: Multi-lingual code-switching data augmentation for zero-shot
+cross-lingual nlp. In Proceedings of the Twenty-Ninth International Conference on International Joint Conferences on
+Artificial Intelligence. 3853–3860.
+[31] S. Ruder, I. Vulić, and A. Søgaard. 2019. A survey of cross-lingual word embedding models. J. Artif. Intell. Res. 65
+(2019) 569–631.
+[32] G. Karamanolakis, D. Hsu, and L. Gravano. 2020. Cross-lingual text classification with minimal resources by transferring a sparse teacher. In Findings of the Association for Computational Linguistics: EMNLP 2020. 3604–3622.
+[33] M. Zhang, Y. Fujinuma, and J. Boyd-Graber. 2020. Exploiting cross-lingual subword similarities in low-resource document classification. In Proceedings of the AAAI Conference on Artificial Intelligence.
+[34] M. Yuan, M. Zhang, B. Van Durme, L. Findlater, and J. Boyd-Graber. 2020. Interactive refinement of cross-lingual
+word embeddings. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing
+(EMNLP’20).
+[35] M. Zhang, Y. Fujinuma, M. J. Paul, and J. Boyd-Graber. 2020. Why overfitting isn’t always bad: Retrofitting crosslingual word embeddings to dictionaries. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 2214–2220.
+[36] A. Conneau and G. Lample. 2019. Cross-lingual language model pretraining. In Advances in Neural Information Processing Systems.
+[37] J. Hu, S. Ruder, A. Siddhant, G. Neubig, O. Firat, and M. Johnson. 2020. Xtreme: A massively multilingual multitask benchmark for evaluating cross-lingual generalisation. In Proceedings of the International Conference on Machine
+Learning (PMLR).
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:18
+
+T. Vo
+
+[38] D. Mimno, H. Wallach, J. Naradowsky, D. A. Smith, and A. McCallum. 2009. Polylingual topic models. In Proceedings
+of the Conference on Empirical Methods in Natural Language Processing.
+[39] M. Yuan, D. Van Durme, and J. L. Ying. 2018. Multilingual anchoring: interactive topic modeling and alignment across
+languages. In Proceedings of the Conference and Workshop on Neural Information Processing Systems (NeurIPS’18),
+8667–8677.
+[40] W. Yang, J. Boyd-Graber, and P. Resnik. 2019. A multilingual topic model for learning weighted topic links across
+corpora with low comparability. In Proceedings of the Conference on Empirical Methods in Natural Language Processing
+and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP’19).
+[41] Z. Li, M. Kumar, W. Headden, B. Yin, Y. Wei, Y. Zhang, and Q. Yang. 2020. Learn to cross-lingual transfer with meta
+graph learning across heterogeneous languages. In Proceedings of the Conference on Empirical Methods in Natural
+Language Processing (EMNLP’20).
+[42] S. Hochreiter and J. Schmidhuber. 1997. Long short-term memory. Neur. Comput. 9, 8 (1997), 1735–1780.
+[43] A. Graves, S. Fernández, and J. Schmidhuber. 2005. Bidirectional LSTM networks for improved phoneme classification
+and recognition. In Proceedings of the International Conference on Artificial Neural Networks.
+[44] C. D. Manning, M. Surdeanu, J. Bauer, J. R. Finkel, S. Bethard, and D. McClosky. 2014. The stanford CORENLP natural
+language processing toolkit. In Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics:
+System Demonstrations.
+[45] H. Linmei, T. Yang, C. Shi, H. Ji, and X. Li. 2019. Heterogeneous graph attention networks for semi-supervised short
+text classification. In Proceedings of the Conference on Empirical Methods in Natural Language Processing and the 9th
+International Joint Conference on Natural Language Processing (EMNLP-IJCNLP’19).
+
+Received 12 July 2021; revised 16 December 2021; accepted 3 April 2022
+
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+

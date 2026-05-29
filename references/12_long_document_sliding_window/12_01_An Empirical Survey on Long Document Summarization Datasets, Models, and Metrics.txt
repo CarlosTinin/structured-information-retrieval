@@ -1,0 +1,1930 @@
+An Empirical Survey on Long Document Summarization:
+Datasets, Models, and Metrics
+HUAN YEE KOH and JIAXIN JU, Monash University
+MING LIU, Deakin University
+SHIRUI PAN, Monash University
+Long documents such as academic articles and business reports have been the standard format to detail out
+important issues and complicated subjects that require extra attention. An automatic summarization system
+that can effectively condense long documents into short and concise texts to encapsulate the most important
+information would thus be significant in aiding the reader’s comprehension. Recently, with the advent of
+neural architectures, significant research efforts have been made to advance automatic text summarization
+systems, and numerous studies on the challenges of extending these systems to the long document domain
+have emerged. In this survey, we provide a comprehensive overview of the research on long document summarization and a systematic evaluation across the three principal components of its research setting: benchmark datasets, summarization models, and evaluation metrics. For each component, we organize the literature
+within the context of long document summarization and conduct an empirical analysis to broaden the perspective on current research progress. The empirical analysis includes a study on the intrinsic characteristics
+of benchmark datasets, a multi-dimensional analysis of summarization models, and a review of the summarization evaluation metrics. Based on the overall findings, we conclude by proposing possible directions for
+future exploration in this rapidly growing field.
+CCS Concepts: • Information systems → Summarization; • Computing methodologies → Information
+extraction;
+Additional Key Words and Phrases: Document summarization, datasets, neural networks, language models,
+transformer
+ACM Reference format:
+Huan Yee Koh, Jiaxin Ju, Ming Liu, and Shirui Pan. 2022. An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics. ACM Comput. Surv. 55, 8, Article 154 (December 2022), 35 pages.
+https://doi.org/10.1145/3545176
+
+1 INTRODUCTION
+Summarization of textual information is an exacting task for humans and the rate of information
+growth in the era of big data has made summarizing most information manually to be impractical
+This work is done while Shirui Pan is with Monash University. From August 2022, he is with the School of Information
+and Communication Technology, Griffith University, Southport, QLD 4222, Australia.
+Authors’ addresses: H. Y. Koh, J. Ju, and S. Pan (corresponding author), Monash University, Australia; emails: huan.
+koh@monash.edu, jjuu0002@student.monash.edu, shiruipan@ieee.org; M. Liu (corresponding author), Deakin University,
+Australia; email: m.liu@deakin.edu.au.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2022 Association for Computing Machinery.
+0360-0300/2022/12-ART154 $15.00
+https://doi.org/10.1145/3545176
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154
+
+154:2
+
+H. Y. Koh et al.
+
+and impossible. This phenomenon is exacerbated when it comes to long form textual documents
+as the knowledge and human labor effort required to process and summarize it increases exponentially with the length of documents. Inevitably, a significant amount of invaluable information and
+knowledge have gone unnoticed, presenting an important bottleneck in the progress of social and
+economic development. In response, there has been a strong demand for exhaustive research in
+the field of automatic long document summarization [2, 20, 25, 77, 104].
+Automatic text summarization involves a process of shortening a source text efficiently while
+keeping the main idea intact, which aids in reducing the amount of time required to process
+information, helps with faster search for information, and makes learning one topic easier
+[71, 73]. While the potentiality of developing an effective automatic text summarization system
+has attracted significant interest and attention from the research community, automatic text
+summarization remains a challenging task and is not ready for wide practical use in day-to-day
+lives, particularly when it comes to summarizing long documents [8, 61, 62, 81]. Intuitively, long
+document summarization is harder than short document summarization due to the significant
+difference in the amount of lexical tokens and breadth of content between short and long
+documents. As the length increases, the content that would be considered important will also
+increase, resulting in a more challenging task for an automatic summarization model to capture
+all salient information in the limited output length [37]. Furthermore, short documents are often
+generic text such as news articles [43, 84, 87, 102], while long documents are commonly domainspecific articles such as scientific papers that contain more complex formulas and terminologies
+[20, 49, 59]. Together with other reasons that will be explored in this survey, long document
+summarization poses a significantly more challenging task than short document summarization.
+In general, automatic text summarization can be conceptualized as having three approaches:
+extractive, abstractive, and hybrid approach [62]. The extractive approach directly copies salient
+sentences from the source document and combine them as the output [15, 38], whereas the abstractive approach imitates human that comprehends a source document and writes a summary
+output based on the salient concepts of the source document [101, 103]. The hybrid approach attempts to combine the best of both approaches by rewriting a summary based on a subset of salient
+content extracted from the source document [36, 47, 73]. Each approach has its advantages and
+limitations that may suit certain summarization tasks better. For example, extractive summarization may be sufficient in summarizing certain news articles [15, 128] but inadequate to summarize
+a long dialogue where salient content are sparsely distributed [131]. This is because while the extractive summarization approach is always factually consistent with the source document, it does
+not modify the original text and thus lacks the ability to generate fluent and concise summary
+[120].
+Historically, to measure the performance of different summarization architectures, ROUGE
+score [70] has been the modus operandi for researchers in the summarization research field to
+compare and study the quality of different candidate summaries. The core idea of ROUGE score
+is to measure the lexical overlaps such as words and phrases between candidate summary and
+ground truth summary. While it is efficient, recent findings have shown that ROUGE score does
+not correlate well with how humans assess the quality of a candidate summary [3, 11, 44, 61].
+As a result, there is a significant amount of effort in improving the way we measure the quality
+of candidate summaries and performance of summarization architectures [62, 80, 81, 126, 130].
+Unfortunately, these efforts have entirely been focusing on the short document domains and the
+progress in measuring the quality of long document summarization approach has been lacking
+[3, 41, 48, 89, 93].
+Nevertheless, there has been a considerable amount of advancement made in the long document
+summarization research field and the area lacks a comprehensive survey [5, 28, 32, 105]. Our article
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:3
+
+fills this gap by providing a comprehensive overview of the research on long document summarization and a systematic evaluation across the three principal components of its research setting:
+benchmark datasets, summarization models, and evaluation metrics.
+The contribution of our article is as follows:
+Comprehensive Review. A comprehensive survey of the long document summarization research
+literature.
+Full-View of Summarization Research. Text summarization literature mainly explores the three
+key aspects of research setting: developing advanced models, releasing new datasets, and proposing alternative evaluation metrics. We empirically provide a detailed review of all three key components within the context of long document summarization.
+Empirical Studies and Thorough Analysis. To ensure wide coverage of emerging trends, we empirically analyze each component of the long document summarization research setting through
+fine-grained human analysis and ad-hoc experiments.
+Future Direction. We discuss the current progress of long document summarization, analyze
+the limitation of existing methods, and suggest promising future research directions in terms of
+model designs, quality and diversity of datasets, the practicality of evaluation metrics and, finally,
+the feasibility of implementing summarization techniques to real-life applications.
+The survey is organized as follows: firstly, an overview of the fundamentals of long document
+summarization in Section 2. Secondly, a detailed study of 10 summarization benchmark datasets
+is in Section 3. A comprehensive survey on summarization models that are designed specifically
+or have to ability to summarize long documents in Section 4. Then, in Section 5, we analyze the
+performances of models that are representative of the different types of architectures commonly
+used by researchers through ad-hoc experiments. In Section 6, we summarize the advancement
+in evaluation metrics and their applicability in the long document summarization domain. Section 7 goes into the applications of long document summarization models and Section 8 discusses
+promising future research direction in this field. Finally, Section 9 concludes this survey.
+2 FUNDAMENTALS OF LONG DOCUMENT SUMMARIZATION
+To make clear the distinction between short and long documents, we conceptualize the summarization task problem from three different fundamental aspects: (1) length of document, (2) breath
+of content, and (3) degree of coherence.
+2.1
+
+Length of Document
+
+Documents are commonly classified as “long” because the number of lexical tokens in the source
+document is enormous and it requires a considerable amount of time for an average human to
+consume the full text. While this definition makes intuitive sense, in the context of machine learning, a document is considered long when current state-of-the-art models for a normal document
+cannot be implemented similarly in an effective manner due to hardware and model limitations.
+For example, previous research [10] considers CNN/DM and NYT benchmark datasets in the news
+domain as long documents when in the present research context they are now considered to be
+short document datasets. Currently, a benchmark dataset with an average source document length
+that exceeds 3,000 lexical tokens could be well-considered as “long documents” [77, 127] due to
+the fact that most existing state-of-the-art summarization systems (e.g., pre-trained models) are
+limited to 512 to 1,024 lexical tokens only [23, 129]. These limitations cannot be easily solved without novel techniques that help in assisting current architectures to reason over a long range of
+textual inputs [77, 82, 127]. Accordingly, this survey adopts a similar definition where a document
+is only considered as long if current state-of-the-art systems used in the short document cannot
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:4
+
+H. Y. Koh et al.
+
+be extended and applied to a document with significantly longer text. Despite the potentially confusing definition, this enduring definition ensures that the model architectures implemented by
+researchers require novel techniques to overcome hardware limitations rather than just a mere
+replica of previous works.
+2.2
+
+Breadth of Content
+
+On average, informative content that is non-redundant will increase together with the length of
+a document. However, despite the fact that reference summary length often increases together
+with the source document length, the length of a summary is usually constrained by what an
+average user considered as reasonable [20, 104]. Thus, while it may be sufficient for summaries of
+a reasonable length to cover the most or even all of the informative aspects for short documents,
+this is not necessarily true for summaries of long documents. In Section 3, we empirically show
+that the relative length of summary against the source document becomes exponentially shorter as
+the source document length increases. Due to this elevated constraint, the ground truth summary
+of a long document will inevitably lose information that is not key to the central narrative of the
+original author or summary writer [37]. Furthermore, recent work [61] has also identified that
+human users could not agree on what should be considered important for a given document in
+the short document news domain due to the heterogeneity of user preferences and expectations.
+This issue is exacerbated when it comes to long document summarization as (a) the relative length
+of summary against the source document is shorter and (b) the chance of users having different
+preferences and expectations would increase as the breadth of content increases, making the long
+document summarization task significantly harder than short document.
+2.3
+
+Degree of Coherence
+
+As compared to short documents, long documents are often structured into sections for the ease
+of user comprehension [20, 59]. The content within each section also differ to a certain extent
+despite revolving around a key narrative of the long documents. This makes the long document
+summarization task more burdensome as summarization models cannot concatenate salient texts
+from different sections without considering its impact on the fluency, redundancy, and semantic
+coherence of the final summary outputs.
+Based on the fundamental aspects, the rest of this article provides an empirical survey on long
+document summarization, covering the benchmark datasets, summarization models, and metrics.
+3 DATASETS
+Publicly available benchmark datasets have been introduced to evaluate the performance of summarization models. Nonetheless, the benchmark datasets have different intrinsic characteristics
+that have been found to be crucial in the understanding of model performances [81, 111], summarization approach suitability (i.e., extractive or abstractive approach) [104, 128] and evaluation
+metrics effectiveness [31, 89]. Hence, only through a comprehensive understanding of the benchmark datasets, one can assess the underlying performance and applicability of a summarization
+model in the real-world settings [61]. Furthermore, insights drawn from benchmark datasets have
+led to the introduction of state-of-the-art models across a wide range of natural language processing (NLP) tasks [13, 123], including the text summarization task [25, 37, 77]. In response,
+intrinsic dataset evaluation through large-scale automatic evaluation [4] or more fine-grained human evaluation at a smaller scale [111] has also been performed to enhance the understanding
+of various benchmarks. Nevertheless, none of the aforementioned works performed a large-scale
+automatic evaluation analysis nor a thorough human evaluation of benchmark datasets in the long
+document text summarization domain. To address this gap, this section explores the basic statistics
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:5
+
+and intrinsic characteristics of popular benchmarks in short and long document domain through
+the usage of large-scale automatic evaluation metrics and performs fine-grained human analysis
+on the arXiv benchmark to encourage a better appreciation of the most widely used long document
+summarization dataset [49, 77, 127].
+3.1
+
+Corpora
+
+Short document. Short-document datasets studied in this survey are CNN-DM, NWS, XSUM,
+Reddit-TIFU, and WikiHow. The first three news datasets are chosen due to their popularity while
+Reddit-TIFU and WikiHow are studied to ensure short documents from other domains are also included. The document-summary pairs from CNN-DM, NWS, and XSUM are typical of that in the
+news domain, where the source document represents news article while the summary represents
+either human-curated summary [43, 87] or summary created by concatenating bullet-point sentences in the original source document [84]. On the other hand, Reddit-TIFU is a dataset collected
+from the subreddit r/TIFU [56], while the WikiHow benchmark is created using the first sentence
+of each WikiHow web page’s paragraph as the summary and the rest as source text [60].
+Long document. For long document summarization research, arXiv, PubMed, BIGPATENT,
+BillSum, and GovReport have been used in prior research to test and compare novel long
+document summarization models. arXiv and PubMed [20] are scientific long document summarization datasets collected from arXiv.org and PubMed.com scientific repository. Both datasets
+represent the earliest work on large-scale long document summarization datasets. BIGPATENT
+[104] is an enormous dataset with over 1.3 million document-summary records of U.S. patent documents along with human written abstractive summary. BillSum [59] is a dataset on summarizing
+Congressional and California state bills where the content structures and stylistic features of writing are considerably different from documents in other domains. GovReport [49], assembled from
+reports published by U.S. Government Accountability Office, is markedly longer than the other
+long document datasets. Other long document benchmark datasets that are worth mentioning but
+are no longer widely used due to the limited amount of document-summary pairs are CL-SciSumm
+and SciSummNet [50, 121]. Some other benchmark datasets that are released more recently in the
+podcast [19] and dialogue domains [9, 51, 97, 138] may also be classified as long document
+summarization benchmark [77] but are not explored in this survey as dialogue summarization
+has been recognized as another sub-domain due to its distinctive features as compared to other
+document types.
+3.2
+
+Data Metrics
+
+Given a document, D, and a corresponding reference summary, S, each document will have a sequence of tokens D t oken = {t 1 , t 2 , . . . , tn } and each summary will also have a sequence of tokens
+∗ }. Similarly, each document and summary have l and o sentences as repS t oken = {t 1∗ , t 2∗ , . . . , tm
+resented by D sent = {s 1 , s 2 , . . . , sl } and Ssent = {s 1∗ , s 2∗ , . . . , so∗ }, respectively. Length of document
+and summary measured in number of tokens are represented as |D| and |S | while length measured in number of sentences are represented as ||D|| and ||S ||. Extending on the works in the
+short document summarization domain [4, 43], the following discusses each of the five metrics
+used to evaluate the benchmark datasets shown in Table 1: compression ratio, extractive coverage,
+extractive density, redundancy, and uniformity.
+Compression Ratio measures the ratio of a source document length against its reference summary
+length. A higher compression ratio indicates larger information loss in the original document after
+being summarized. Compression ratios are measured based on tokens and sentences:
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:6
+
+H. Y. Koh et al.
+
+|D|
+||D||
+and COMPRESSIONsent =
+|S |
+||S ||
+Extractive Coverage and Extractive Density are introduced by Grusky et al. [43] based on the
+notion of matching fragments. Fragments are obtained by greedily matching the longest shared
+token sequence where F (D, S ) reflects a set of fragments with each fragment having a length
+represented by | f |. Extractive coverage calculates the percentage of tokens in summary that is a
+derivation of the original source text, whereas, extractive density relates to the average squared
+length of the extractive fragments in the summary. The former indicates the need for a model to
+coin novel tokens that are not in the original source text while the latter measures whether a model
+can match the ground truth summary merely by extracting from the original source text without
+rearranging or paraphrasing text.
+
+1
+|f |
+COV ERAGE(D, S ) =
+|S |
+f ∈ F (D,S )
+
+1
+DEN SITY (D, S ) =
+| f |2
+|S |
+COMPRESSIONt oken =
+
+f ∈ F (D,S )
+
+Redundancy relates to the redundancy of ground truth summary by measuring the average
+ROUGE-L F1-score of all distinct pairs of summary sentences [4]. As ROUGE-L measures the
+longest common sub-sequence overlap between two texts [70], a higher redundancy score would
+suggest that a candidate summary is more redundant as the sentence pairs in the ground truth
+summary contain more similar content in each sentence pair. For each summary consisting of m
+sentences, S, we have a set of distinct pairs of sentences, S × S, where the redundancy score is
+calculated as
+REDU N DANCY (S ) =
+averaдe ROU GE (x i , x j )
+(x i ,x j ) ∈S×S, x i x j
+
+Uniformity measures whether content that are considered important by the reference summary
+are uniformly scattered across the entire source document. A higher score indicates that important
+content are scattered across the entire document with no obvious layout bias to take advantage of.
+This is calculated based on the normalized entropy of the decile positions of salient unigrams in
+the source text, where salient unigrams are the top 20 keywords extracted,1 excluding stopwords,
+from the reference summary.
+U N F (uniдrampos ) = Hnorm (uniдrampos )
+3.3
+
+Intrinsic Characteristics of Datasets
+
+3.3.1 Short vs Long Document Benchmark Dataset. Based on Table 1 below, the following discusses the findings of intrinsic characteristics of long document benchmark datasets in comparison to short document benchmark datasets.
+Finding 1. Length of Long Documents: A basic yet important finding is that, except for
+BillSum, all the other long document datasets have an average source document length of at least
+3,000 tokens. In contrast, the longest short document dataset, CNN-DM, has an average document
+length of 774 tokens. This indicates that a vanilla pre-trained Transformer-based models [66, 96,
+129], which commonly have an input length limit of 1,024 tokens would need to truncate at least
+half of the source document in the long document benchmark datasets. Thus, if pre-trained models
+that have proven to work well under short document settings are implemented without any long
+1 We use NLTK-RAKE for keywords extraction.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:7
+
+Table 1. Comparison of Short and Long Document Summarization Datasets
+
+# doc-summ.
+summ tokens
+doc tokens
+summ sents
+doc sents
+Compressiontoken
+Compressionsent
+Coverage
+Density
+Redundancy
+Uniformity
+
+CNN-DM
+278K
+55
+774
+3.8
+29
+14.8
+8.3
+0.890
+3.6
+0.157
+0.856
+
+Short Document Datasets
+NWS XSum WikiHow
+955K 203K
+231K
+31
+24
+70
+767
+438
+501
+1.5
+1
+5.3
+31
+19
+27
+31.7
+19.7
+7.2
+22.4
+18.9
+3.3
+0.855 0.675
+0.610
+9.8
+1.1
+1.1
+0.088
+–
+0.324
+0.781 0.841
+0.813
+
+Reddit
+120K
+23
+444
+1.4
+22
+18.4
+14.5
+0.728
+1.4
+0.078
+0.777
+
+ArXiv
+215K
+242
+6446
+6.3
+251
+41.2
+44.3
+0.920
+3.7
+0.144
+0.894
+
+Long Document Datasets
+PubMed BigPatent BillSum GovReport
+133K
+1.34M
+21.3K
+19.5K
+208
+117
+243
+607
+3143
+3573
+1686
+9409
+7.1
+3.6
+7.1
+21.4
+102
+143
+42
+300
+16.6
+36.3
+12.2
+18.7
+15.6
+58.7
+9.7
+18.1
+0.893
+0.861
+0.913
+0.942
+5.6
+2.1
+6.6
+7.7
+0.146
+0.223
+0.163
+0.124
+0.896
+0.922
+0.903
+0.932
+
+Long vs. Short
+Avg. Ratio
+–
+6.9x
+8.3x
+3.7x
+6.5x
+1.4x
+2.2x
+1.2x
+1.5x
+1.0x
+1.2x
+
+Intrinsic characteristics are computed based on the average result of test samples. Average Ratios are computed based
+on the average long over short document statistics.
+
+document adaptations in their architectural settings and mechanisms, they are unlikely to generate
+high-quality summaries for long documents [45, 81, 100].
+Finding 2. High Compression Ratio and its Implications: On average, the token-level and
+sentence-level compression ratio of the long document summarization datasets is greater than
+the short document datasets by 1.4 and 2.2 times, respectively. For long documents, this suggests
+that either (a) there is a greater information loss in the summaries, (b) the salient content is more
+sparsely distributed across the source documents, and/or (c) the source document contains significantly more redundant information. As the high compression ratio of long document benchmark
+is more likely to be the results of the two former factors, this increases the relative difficulty of the
+long document summarization task as a model would have to clearly identify the key narrative
+from the source while excluding the content that are expected to be less important by the summary readers. Moreover, if there is a greater information loss in the summary of a long document,
+the generated summary will inevitably miss an even greater amount of information that is considered important by some readers, diminishing the effectiveness of a generalized summarization
+approach to satisfy the needs of summary readers. This finding supports the efforts in controllable summarization, where the final generated summaries will be based on the reader’s needs and
+expectations [45, 116].
+Finding 3. Abstractiveness and Diversity of Datasets: With the exception of BIGPATENT,
+all long document datasets have greater coverage and density values than the short document
+datasets. This is likely due to the genres of benchmark datasets where long documents are often
+related to domain-specific articles such as scientific papers that contain more complex formulas
+and terminologies. Nonetheless, this indicates that a model that merely extracts lexical fragments
+from the original source text of a long document can still generate a summary that more closely
+resembles the reference summary. As abstractive summarization models have recently been found
+to contain factual inconsistencies in up to 30% of the summary outputs in the short document
+domain [8, 62] while extractive summarization model will faithfully preserve the original content, this finding is encouraging for the development of long document extractive models in the
+real-world production level settings. Finally, as the abstractiveness of datasets have been found to
+greatly affect the summarization strategies of a supervised model [115, 119, 128], efforts to introduce benchmark datasets with greater abstractiveness (low extractive coverage and density value)
+should be encouraged to improve the diversity of long document benchmark datasets.
+Finding 4. Lesser Layout Bias in Long Document: Kryściński et al. [61] found substantial
+layout bias in the source text where nearly 60% of important sentences are contained in the first
+30% of the source articles and argued that such layout bias does not apply to the other domains.
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:8
+
+H. Y. Koh et al.
+
+Fig. 1. Pairwise correlations between metrics (Figure 1(a)) and facets covered by arXiv ground truth summary
+(Figure 1(b)). For Figure 1(a), the upper diagonal reflects Pearson correlation coefficient for long document
+benchmarks while the lower diagonal reflects values for short document benchmarks. Figure 1(b)’s barplot
+is constructed based on human annotated testset data as described in Section 3.5.
+
+Our findings on the uniformity of salient content in Table 1 validates their arguments where the
+salient content of long documents are scattered across the entire source text more uniformly than
+the short documents. This suggests that unlike practices in the short document summarization
+domain where models are often benefited by taking advantage of layout biases [36, 90, 103], long
+document models that implement a truncation strategy to process only a small subset of the leading
+content of the long documents will likely suffer from significant performance degradation.
+Finding 5. Relationship between Intrinsic Characteristics: Other than the intrinsic characteristic measured in Table 1, the statistical relationship between these metrics could yield insights
+regarding the underlying properties of a benchmark dataset. More importantly, whether the relationship between these metrics differs significantly under short and long document summarization
+settings should also be of great interest to practitioners. To quantify this, we report the pairwise
+correlations between each metric pair for both short document (lower diagonal) and long document (upper diagonal) benchmark datasets in Figure 1(a). The values reported are calculated using
+the Pearson correlation coefficient, ρ. As represented by darker blue color in Figure 1(a), ρ = 1
+reflects a perfectly positive correlation between the metric pair and ρ = −1 when it is perfectly
+negative (shown in darker red color).
+For positive controls, we see a strong positive relationship between the two compression ratios
+and the two extractive metrics (coverage and density) under short and long document settings.
+We also see a lack of statistical correlation when uniformity is measured against other metrics
+as uniformity relates more to the genres of documents rather than the other characteristics.
+We further observe redundancy to be inversely related to coverage and density, where a more
+abstractive reference summary often contains more redundant information. This finding is
+consistent with a human evaluation study by Kryscinski et al. [62] where writers are found
+to be more verbose and write summary content that do not add information when they are
+writing unconstrained, abstractive summaries. Intriguingly, we see a weakly positive correlation
+between the extractive metrics and the compression metrics under the short document setting
+but a strongly negative correlation under the long document setting. It is hypothesize that when
+authors have to write a concise summary, they are forced to paraphrase the original content more
+to ensure that the summary can cover the salient content within the constrained summary length.
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:9
+
+3.3.2 Comparison between Long Document Dataset Benchmarks. Looking at the intrinsic characteristics between long document benchmark datasets, arXiv and BIGPATENT have significantly
+higher compression ratios but lower extractive density values than the others, indicating that two
+of these datasets require a summarization model to generate a significantly shorter summary that
+is not written in the same way as the source text. As discussed above, this is likely because for a
+summary to cover more content within a constrained summary length, one has to paraphrase the
+original content more. This is also evidenced by the diverging values between extractive coverage
+and density metric for arXiv benchmark dataset that suggest summaries of arXiv scientific papers
+have high matching tokens and terminologies with the source document (high coverage) but low
+matching phrases (low density). Overall, the BIGPATENT dataset is the most suitable benchmark
+for long document supervised abstractive summarization due to its low coverage and density, substantial training sample pairs to serve as supervisory signals, and high uniformity in salient content. However, only a handful of fully-supervised abstractive long document summarization works
+[94, 127, 129] evaluated their models on BIGPATENT, limiting the visibility of current progress on
+long document summarizers in general applications. This is despite the fact that BIGPATENT was
+introduced not long after arXiv and PubMed. Encouragingly, with the recent introduction of long
+document datasets in domains other than scientific papers including financial reports [75] and
+books [63], the research progress of long document summarization models toward general application should become clearer in the near future.
+3.4
+
+Fine-Grained Analysis on ArXiv
+
+To perform fine-grained human analysis on the arXiv benchmark, this survey implements a
+stratified random sampling strategy based on the six different categories of scientific domains
+contained in the arXiv.org scientific repository: physics (ph), computer-science (cs), mathematics (math), quantitative-biology (q-bio), quantitative-finance (q-fin), and statistics
+(stat). In total, we obtained over 700 annotated ground truth summaries with physics having the
+most samples (369) followed by computer science (140). Based on fine-grained human analysis
+of 743 ground truth summaries in the arXiv test set, this subsection reports the disturbing data
+quality results and studies the degree of diversity in formatting style of reference summary.
+Noise in ArXiv Benchmark Dataset: With the advent of data-hungry neural architectures, there
+has been an enormous demand for benchmark datasets with document-summary pairs that are at
+least in the tens of thousands created through heuristic means such as scraping it directly from the
+web. As a result, depending on the means of extracting these datasets, the quality of benchmark
+datasets may vary significantly from one another. To this end, Kryściński et al. [61] have quantified
+the percentage of samples with noise for CNN-DM and Newsroom from the short document summarization datasets to be 4.19% and 3.17% using simple heuristic methods. The noises found in the
+datasets through heuristic means can only suggest a lower bound of what the true amount of noises
+are as heuristic approaches can only detect obvious structural flaws in the samples. This suggests
+that the true underlying noises are extremely widespread and often understated. Glaringly, in our
+experiment, the problem of noisy data affects more than 60% of the annotated ground truth summaries in the randomly sampled arXiv test set. This is greater than 54% detected in XSUM dataset
+[111]. While many of the errors and noises are minor, more than 15% of the reference summaries
+have significant errors where at least half of the summary contains errors, rendering the summaries to be unreadable. Reassuringly, the rest of the test sets with identified noises are not overly
+significant and often only affect one or two sentences in a benchmark dataset with an average of
+10 sentences in the reference summary. To further understand why the noises and errors occurred,
+we trace the original data based on the arXiv id provided by the benchmark datasets. It was found
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:10
+
+H. Y. Koh et al.
+
+that many errors occurred such as missing content or sentence breaking after a newline could
+be due to large-scale scraping of the original data using pandoc [20]. As neural summarization
+models may overfit to these problematic noises and contribute to less interpretable benchmarking
+results, we release the annotated data to allow a better understanding of the common noises and
+to encourage quality improvement in future benchmark datasets.2
+Content Coverage of Reference Summary: Other than analyzing the noises in the arXiv benchmark dataset, we also explore to what extent the ground truth summary covers various sections
+or facets of the source article. Figure 1(b) shows the average distribution of sections covered by
+ground truth summaries for different domains. The distribution is plotted based on the assumption that each sentence in the reference summary covers a single facet of the original article and
+human annotators are asked to identify the section covered by the summary sentences. The facets
+studied are Introduction, Methodology, Result, Conclusion, and Limitation of Research. Interestingly, while the reference summaries in all domains have covered introduction and methodology
+sections with similar emphasis, we see a negative correlation between contribution and conclusion
+(i.e., papers that emphasize contributions will write less on conclusions, and vice-versa). Notably,
+we see scientific papers in the mathematics domain emphasize more on the contribution while
+papers in the physics domain emphasize more on conclusions. These results make intuitive sense
+as findings in mathematics often do not lead to a strong substantive conclusion. The tradeoff between various sections also illustrates the inevitable information loss when summarizing a long
+document as the summary can only describe certain aspects of the source document but not all.
+Style of Writing and External Knowledge: Importantly, except for quantitative-biology, all scientific papers do not discuss the limitations of their research. This is consistent with common
+practices of writing abstracts to attract readers in reading the original article by emphasizing on
+the result findings and contributions of the authors. Nevertheless, most researchers would find
+a discussion on the limitations of research works to be informative and significant. Whether the
+abstract itself represents the best possible summary for a summarization architecture to imitate
+from and learn how to appropriately summarize all the salient content including the limitation
+discussed in the original article remains an important question to be answered. Recent progress
+on summarization approaches that generate user-specific summaries based on the need of readers
+are also important directions toward general applicability of summarization models in commercial settings [45, 116]. Lastly, to summarize the limitations of a article often requires more external
+knowledge outside of the content related to the source document and whether current summarization models are able to infer such knowledge from the benchmark dataset is an interesting study
+left for future works.
+4 MODELS
+4.1 Overview
+The following describes the differences between the extractive, abstractive, and hybrid summarization approaches and the general taxonomy of a summarization system, see Figure 2.
+(A) Extractive, Abstractive, and Hybrid Approach. The works in automatic text summarization
+research are traditionally classified into three different summarization approaches: (i) the extractive approach that involves direct extraction of salient fragments such as sentences of the original documents into a summary [15, 38], (ii) the abstractive approach imitates human behavior
+of paraphrasing important parts of a document into a summary [101, 103] and (iii) the hybrid
+2 The annotated dataset are released: https://github.com/huankoh/long-doc-summarization.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:11
+
+Fig. 2. Overview of model architectures.
+
+approach that attempts to combine the best of both approaches [37, 77]. Intuitively, the extractive
+summarization method is an easier machine learning task and can be thought of as a classification
+and/or ranking problem of extracting lexical fragment units (e.g., sentences) into a summary. Contrastively, abstractive summarization requires paraphrasing important ideas of a document into a
+summary either by rearranging words and phrases from original text or contriving novel wordings
+while maintaining the factual consistency of the generated summary with the original document.
+Since the extractive summarization approach only extracts and arranges the original text that it
+believes to be salient and does not alter the original text, it enjoys the benefit of generating summaries that are factually consistent with the source document [21]. Nevertheless, as human-based
+summarization often involves paraphrasing ideas and concepts into shorter, concise sentences,
+the extracted sentences of this approach often contain redundant and uninformative phrases [42].
+While there exist extractive summarization models that break a source document into lower lexical units than sentences (e.g., elementary discourse units) [120], they are often not applied in the
+long document summarization domain due to the extreme length of the input document.
+On the other hand, mimicking how humans write summaries, the abstractive summarization
+approach presents a blue-sky potential of generating summaries that are fluent, concise and relevant to the source document [103]. It can also incorporate external knowledge to the summary
+depending on the needs of a user [81]. However, at the current stage of development, summaries
+generated by the state-of-the-art abstractive models often contain a significant amount of content that is factually inconsistent with the source document, limiting its application in commercial
+settings [8, 62].
+Finally, in response to the limitation of current model architectures and designs, the hybrid
+summarization approach only differs from the abstractive summarization approach in that it takes
+in a carefully chosen subset of the original input document rather than the entire input document
+in its original form [37, 94]. This extra step reduces the burden on the abstractive summarization
+models that have to generate an abstract summary and select important content at the same time.
+This approach is used more often in the long document summarization domain because current
+models still fail either (a) at reasoning over extremely long texts [77, 82] and/or (b) suffers from
+memory complexity issues and hardware limitations that prevent it from processing over a long
+input text [49, 127].
+(B) General Taxonomy. In each long document summarization model, this article breaks down
+a model into two different constituents: (i) Main Architecture and (ii) its Mechanisms. The main
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:12
+
+H. Y. Koh et al.
+
+architecture refers to the core framework structure that a model uses and the mechanisms are the
+different settings or modifications implemented by a model to the main architecture. Two differing
+models may use the same main architectures but are implemented with different mechanisms,
+and vice-versa. For example, models that use graph-based main architecture may use different
+encoding mechanisms in vectorizing the sentences of an input document. The following describes
+the various main architectures of the summarization models together with how previous works
+differ in the mechanisms employed to generate long document summaries.
+4.2 Main Architecture and its Mechanisms
+In the search for optimal architectural settings of summarization systems, the research field started
+out with many different novel designs of main architectures and mechanisms but often converge
+towards a few ideas that are often most effective until another ground-breaking idea that leap-frogs
+the performance of previous systems, and the cycle repeats.
+(1) Graph Architecture. For the extractive summarization approach, the classic graph architecture
+involves a two-stage process of mapping a document into a graph network, where the vertices are
+sentences and the edges are the similarity between these sentences, and extracting the top-K sentences. The sentences are ranked based on the graph centrality scoring of each sentence [29, 83]. As
+there are many different ways to (a) encode or vectorize a sentence before calculating the similarity
+between them and (b) calculate the centrality score of each sentence, research involving this architecture often differs only in these two mechanisms. For example, with respect to the former mechanism, graph architecture in the past [29, 83] encodes sentences based on word-occurrence or term
+frequency-inverse document frequency (Tf-Idf) while graph architecture today [69, 135]
+encodes sentences with state-of-the-art pre-trained models. On the other hand, to improve the
+centrality scoring mechanism, PacSum [135] and FAR [69] adjust the centrality score of a sentence
+based on whether the other sentences come before or after it, while HipoRank [25] exploits the
+discourse structure contained in by adjusting the centrality score with positional and sectional
+bias. In general form, given a set of sentences in the original source document, D = {s 1 , s 2 , . . . , sm }
+with the inter-sentential similarity relations represented as ei j = (si , s j ) ∈ E where i  j, the
+following illustrates the aforementioned architecture in computing the scoring for each sentence:
+
+ei j ∗ Bias (ei j )
+centrality(si ) =
+j ∈ {1, ...,i−1,i+1, ...,m }
+
+The similarity between each sentence is computed using similarity measures such as dot product
+or cosine similarity, and the sentences are vectorized using Tf-Idf or BERT representation values.
+The final summary is generated by extracting the top-k sentences ranked by centrality(si ). Importantly, while there are other classical architectures [38, 112], the graph architecture is worth
+a separate mentioning here due to the fact that (a) it remains as a strong baseline against other
+advanced architectures, (b) it can effectively incorporate external knowledge as an inductive bias
+to the calculation of the importance of a sentence and (c) it achieves state-of-the-art result in long
+document unsupervised extractive summarization setting when integrated with current state-ofthe-art pre-trained models [25, 69]. Lastly, other than the multi-sentence compression approach
+[6, 54, 132] that may be extended to long document summarization tasks, there has been no applicable work on classical graph-based architecture for long document abstractive summarization.
+(2) Other Classical Architectures. In the early work of automated, non-neural text summarization models, past research mostly focused on the extractive summarization approach due to the
+difficulty of the abstractive summarization task. The main architectures that were tested ranged
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:13
+
+from support vector machines [12, 106], Bayesian classifiers [64], decision trees [57, 78] to citation network-based summarization [95]. The ones that remained relevant when comparing model
+performance across various benchmarks in long document summarization settings are LSA [38],
+which is based on Singular Value Decomposition (SVD), and SumBasic [112] that ranks sentences by simple average word-occurrence probability [112].
+(3) Recurrent Neural Networks. Extractive summarization that employed neural networks with
+continuous representations rather than pre-trained word embeddings on traditional techniques
+[58, 124] was proposed by Cheng and Lapata [15]. The model implemented an RNN encoderdecoder architecture with attention mechanism to locate the region of focus during sentence extraction process. Nevertheless, due to the lack of a large-scale long document dataset and the
+RNN’s inability in capturing long-range temporal dependencies across a long input text, it was
+not until Xiao and Carenini [118] that tried implementing LSTM-minus (a variant of RNN) on
+solving long document summarization task. Typical of a long document summarization system,
+it incorporates discourse-information (i.e., section structure) of the source document by encoding
+the section-level and document-level representation into each sentence to significantly boost the
+model performance. Pilault et al. [94] also suggested two different variants of RNNs on extractive
+summarization for long document summarization. Rather than utilizing pre-trained word embeddings, they implemented a hierarchical LSTM to encode words and sentences separately.
+When it comes to the abstractive summarization approach, Celikyilmaz et al. [10] proposed
+multiple communicating agents to address the task of long document summarization. However, as
+compared to other simpler architecture, this approach did not gain significant traction after the
+introduction of the first large-scale dataset on long scientific documents. Together with the contribution of two most commonly used long scientific document datasets, arXiv and PubMed, Cohan
+et al. [20] presented an LSTM encoder-decoder architecture where the decoder attends to each
+section of the source document to determine section-level attention weights before attending to
+each word. While similar architectures have been widely used in prior works, this work effectively
+incorporates discourse information that suits the long document summarization task well.
+(4) Transformers. The Transformer model proposed in 2017, together with the pre-trained Bidirectional Encoder Representation from Transformers (BERT) model that was based on
+the Transformer model itself have taken the NLP area by storm [23, 113]. Like other NLP tasks,
+subsequent summarization model architectures have changed significantly to take advantage of
+these two momentous ideas. Importantly, BERTSum [74] showed that by modifying the BERTsegmentation embeddings, it can capture not only sentence-pair inputs but multi-sentential inputs.
+The BERTSum model could effectively solve both extractive and abstractive summarization tasks.
+The extractive summarization model proposed by BERTSum involves stacking a Transformerbased classifier on top of the fine-tuned BERT to select and extract salient sentences while the abstractive summarization model involves a classic encoder-decoder Transformer framework where
+the encoder is a fine-tuned BERT and the decoder is a randomly-initialized Transformer that is
+jointly trained together in an end-to-end manner. While effective, this architecture cannot be implemented to solve long document summarization tasks due to the BERT’s input length limit of
+512 tokens. In this survey, we define Transformer as the main architecture and settings related
+to the Transformer model as the mechanisms including the use of different types of pre-trained
+models. As Transformer has effectively replaced most main architectures in both summarization
+approaches as state-of-the-art models, the various mechanisms applied in the long document summarization context will be thoroughly discussed in Section 4.3.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:14
+
+H. Y. Koh et al.
+
+Fig. 3. Overview of transformer-based abstractive and hybrid summarization models.
+
+4.3
+
+Mechanisms of Transformer-Based Architectures
+
+Transformer-based model is ubiquitously state-of-the-art across a wide range of tasks in the NLP
+domain. In line with this development, recent works in the long document summarization models
+often involve using the same Transformer base architecture but with different proposing mechanisms. These Transformer-based models involve implementing novel mechanisms with long document adaptations to ensure the task of summarizing a document with significantly longer input
+sequence texts can be effectively addressed. The mechanisms used by extractive, abstractive and
+hybrid Transformer-based summarization models are described in the following with an overview
+of mechanisms used by abstractive and hybrid summarization models shown in Figure 3.
+(A) Extractive Transformer. As Transformer and its pre-trained models are optimized for short
+document settings, they may not reason well over long text sequences if not properly fine-tuned.
+To this end, Cui et al. [22] proposed combining neural topic modeling together with BERT in
+learning a topic-enhanced, inter-sentence relationship across the entire document. Nonetheless,
+the issues of memory complexity and input token length limits were not resolved and significant
+source text is truncated under this research setting. Recently, Cui and Hu [21] proposed a memory network that incorporates graph attention networks and gated recurrent units to dynamically
+select important sentences through sliding a window along the entire source document. This approach can effectively integrate the pre-trained BERT model for long document summarization
+task by limiting its usage within each window, where the window size is set to be lower than or
+equal to 512 tokens.
+(B) Abstractive Transformer. (1) General Sequence-to-Sequence Pre-Training Task. Since the advent of BERT [23], various large-scale models with different pre-training tasks have been introduced. As summarization with the abstractive approach is naturally a sequence-to-sequence task,
+a pre-trained model with a sequence-to-sequence objective task would suit it better rather than
+an encoder-only (e.g., BERT/RoBERTa) or a decoder-only (e.g., GPT-2/GPT-3) pre-trained model.
+In the summarization domain, Bidirectional and Auto-Regressive Transformers (BART) [66]
+and Text-to-Text Transfer Transformer (T5) [96] are the two most widely used sequence-tosequence pre-trained models. BART is pre-trained on a self-supervised task of reconstructing arbitrarily corrupted text while T5 is pre-trained on both unsupervised and supervised objectives, such
+as token masking, as well as translation and summarization. Interestingly, none of the supervised
+Transformer models in the long document summarization domain has implemented a summarizer
+with T5 pre-training task despite its success in the short document domain [100].
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:15
+
+Fig. 4. How prompt engineered language tasks differ. Classification task example from [34] and summarization task using keywords from original document as language prompt from [45].
+
+(2) Gap-Sentence Generation (GSG) Pre-Training Task. Other than the generalized pre-training
+task like BART and T5, PEGASUS [129] attempted to significantly advance the progress in the
+abstractive summarization field through large-scale pre-training with objectives that are specific
+to the summarization task. The proposed model is self-trained on two large scale datasets (C4
+and HugeNews) with the gap-sentence generation pretraining task. Gap-sentence generation pretraining task draws a close resemblance with the general summarization task by self-supervising
+the model to generate sentences that are masked entirely in a given document. At the time of
+PEGASUS model release, the model effectively achieves state-of-the-art results across 12 different
+benchmark datasets, including long document arXiv and PubMed dataset.
+(3) Efficient Attentions. The vanilla Transformer models that utilize full attention have a memory
+complexity O (n2 ). This attribute limits its wider usage across many domains, including long document summarization. For example, to circumvent the input tokens limits of PEGASUS, DANCER
+[37] summarizes each section of the long document separately and concatenates each of them
+to form the final summary. As not all benchmark datasets contain discourse information such as
+section structures, this limits the model usage in many long document summarization settings.
+To this end, researchers have proposed various ingenious ideas to reduce the memory and time
+complexity of Transformer models. The variants of Transformer models that require less memory
+are often known as efficient Transformers [109, 110] and the mechanism is referred to as efficient
+attentions [49].
+Longformer [2] combines local attention, stride patterns and global memory for fine-tuning pretrained BART to effectively summarize long documents with a maximum input length of 16,384
+tokens as opposed to the 1,024 token limit of the original BART model. The model achieved stateof-the-art results in the long document summarization along with other NLP tasks when the model
+was introduced. BigBird [127] also implemented the efficient attention mechanism on Transformerbased abstractive summarizer by utilizing the same attention modifications as Longformer with an
+additional random pattern to achieve matching performance results in terms of ROUGE score. An
+important work by Huang et al. [49] explores and compares the performance of different variants
+of efficient transformers in the context of long document summarization.
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:16
+
+H. Y. Koh et al.
+
+(4) Prompt-Engineering. The GPT-3 model [7] has strongly demonstrated that large-scale pretrained language models can achieve impressive results on numerous downstream language tasks
+in zero- and few-shots experimental settings. Rather than fine-tuning the language models for specific tasks in a conventional way, natural language prompts and task demonstrations were created
+for GPT-3 to infer and complete the tasks. Importantly, this is different from the conventional tagging method such as <bos> token for conditional generations or taking [CLS] tag from BERT for
+classification tasks. Prompt engineering refers to taking the extra step to design a natural language
+prompt or template that can optimize the pre-trained model for a specific task. Figure 4 illustrates
+this important difference.
+Many works have explored the ways of uncovering the right prompt for various downstream language tasks to significantly boost the performance of pre-trained models [34, 108]. In the long document summarization research area, CRTLSum [45] achieves significant improvement on vanilla
+fine-tuned BART model on arXiv dataset through prompt-engineering. The model attempts to
+more effectively use the pre-trained BART model with the help of extracted keyword prompts, as
+shown in Figure 4. Furthermore, the work also showed that, given an optimized language prompt,
+the implemented BART summarization model can achieve ROUGE score that matches ROUGE
+score of oracle summaries in the test dataset.
+(5) Signal Guidance. Unlike a prompt-engineering mechanism that requires an engineered language prompt or template for a given task, the signal guidance mechanism relates to utilizing signals as inputs to lead models in better identifying and summarizing important content of source
+texts. Using this approach, the GSum [26] model implemented a fine-tuned BART model with dual
+encoders, one for input document and another for extracted signals, and a decoder that attends
+to both encoded representations. Similar signal based approach is also used by Ju et al. [55] to
+implement an unsupervised pipeline-based long document summarization model.
+(6) Discourse Bias. Similar to the signal guidance mechanism, discourse bias involves the inclusion of the discourse structure of a source document such as the section of a sentence as signals for
+summarization systems to better identify and summarize important content in the original source
+text [17, 122]. This mechanism can be classified under signal guidance but is mentioned separately
+due to its effectiveness and popularity in Transformer [37, 94] and non-Transformer [20, 25] based
+long document summarization models. Unlike short documents, long documents often contain
+discourse structure information such as table of content, section structures, references and others to guide a human reader in comprehending the original document and previous works have
+exploited this information to achieve state-of-the-art results. Nonetheless, previous works in the
+long document summarization domain only utilized discourse information that is made available
+by the benchmark datasets and did not implement automatic discourse parsing using RST trees
+[79] and coreference mentions due to the difficulties of building an effective representation for a
+document with extreme input length [52, 120].
+(C) Hybrid Transformer - Content Selection + Abstractive Summarization. The hybrid summarization approach only differs from the abstractive approach in that it takes in a carefully chosen
+subset of the input document rather than the entire input document. This extra step reduces the
+burden on the neural summarizers that have to generate an abstract summary and select important
+content at the same time. Some also refer models that utilize the hybrid approach as retrieve-thesummarize model because it involves retrieving a subset of long document text before summarizing
+it [131]. TLM+Ext [94] first implemented this method by limiting inputs of the scientific articles
+in arXiv datasets as the introduction of the document, a subset of carefully selected sentences of
+the original article using extractive summarization approach, and, finally, include the remaining
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:17
+
+Table 2. Long Document Summarization Models in Chronological Order
+
+Unsupervised
+Extractive
+
+Supervised
+Extractive
+
+Supervised
+Abstractive
+
+Supervised
+Hybrid
+
+Model
+PacSum [135]
+HipoRank [25]
+FAR [69]
+IBSumm [55]
+GlobalLocal [118]
+Sent-CLF/PTR [94]
+Topic-GraphSum [22]
+SSM-DM [21]
+Discourse-Aware [20]
+Longformer [2]
+BigBird [127]
+GSUM [26]
+CRTLSum [45]
+HAT-BART [99]
+HEPOS [49]
+TLM+Ext [94]
+DANCER [37]
+SEAL [134]
+LoBART [77]
+
+Architecture
+Graph
+Graph
+Graph
+Pipeline
+RNN
+RNN
+GAT
+DMN
+RNN
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+Transformer
+
+Pre-Train
+BERT
+BERT
+BERT
+SciBERT
+–
+–
+BERT
+BERT
+–
+BART
+PEGASUS
+BART
+BART
+BART
+BART
+–
+PEGASUS
+–
+BART
+
+Long Document Mechanism
+Discourse Bias
+Discourse Bias
+Facet-Aware Scoring
+Signal Guidance
+Discourse Bias
+–
+Neural Topic Modelling
+–
+Discourse Bias
+Efficient Attention
+Efficient Attention
+Signal Guidance
+Prompt Engineering
+Hierarchical Attention
+Efficient Attention
+Content Selection + Discourse Bias
+Content Selection + Discourse Bias
+Content Selection w/Segment-wise Scorer
+Content Selection + Efficient Attention
+
+Max Token
+–
+–
+–
+–
+–
+–
+–
+–
+16,384
+4,096
+4,096
+1,024
+1,024
+10,240
+–
+–
+–
+–
+
+Max token represents the maximum input sequence length that the model can process and any text that exceeds this
+cutoff point will be truncated.
+
+text if there remains extra space for Transformer-based decoder. However, given the effectiveness of sequence-to-sequence neural models, one limitation of this work is that it only utilizes
+a decoder framework to generate the final summary rather than an encoder-decoder framework
+that most subsequent works on abstractive and hybrid summarization approach do. Consequently,
+LoBART [77] proposes a hybrid summarization system that completes a summary generation in
+two separate steps, (i) content selection: using a multi-task RNN, select salient content from the
+original source document until the total text output reaches the limit of the sequence-to-sequence
+pre-trained BART model and (ii) abstractive summarization: summarize the carefully selected subset using a pre-trained BART model with efficient transformer mechanism. SEAL [134] presents
+a generalized encoder-decoder framework for transformer-based long document summarization
+and proposed an abstractive summarization system that selects salient content and dynamically
+choose segments of the selected content for the decoder to attend and summarize in an end-toend manner. The architecture, however, did not attempt in exploiting the large-scale pre-trained
+models that were used in most summarization research works. Lastly, facing a similar issue, development in the open-domain question-answering and knowledge-intensive language tasks reflect
+an interesting parallel with the progress in the long document summarization domain [67, 91].
+4.4
+
+Summary of Trends in Long Document Summarization Systems
+
+Table 2 summarizes the trends and developments in long document summarization models
+as discussed above. The two standout base architectures that are used in the long document
+summarization domains are graph-based ranking algorithm for unsupervised extractive models
+and pre-trained Transformer for supervised abstractive models. While both architectures were
+initially proposed and tested on short documents, they can be effectively adapted to summarize
+long documents after incorporating novel mechanisms.3
+Finding 1. Graph-Based Extractive Models with Discourse Bias: Classical graph-based
+unsupervised extractive models have been found to suffer from picking similar sentences that results in a summary with redundant sentences [69]. To this end, HipoRank [25] implements the
+3 For a brief description of each model, please refer to the Supplementary Materials.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:18
+
+H. Y. Koh et al.
+
+graph-based architecture for unsupervised extractive summarization by including the sectional
+information of ArXiv/PubMed as inductive bias when calculating centrality scoring to achieve
+state-of-the-art results. The discourse bias mechanism is commonly incorporated by other proposed summarization models, including models with RNN and Transformer base architectures.
+Finding 2. Pre-Training Task for Abstractive Summarization Models: Interestingly, despite having other pre-trained sequence-to-sequence models such as T5 [96], BART and PEGASUS
+are the only two Transformer-based pre-trained models that were used for long document summarization [66, 129]. Nevertheless, as both pre-trained models are trained on short documents, they
+have an input limit of 1,024 tokens. To process long documents that are longer than this limit, the
+pre-trained Transformers will have to incorporate long document mechanisms to extend the input
+limits.
+Finding 3. Long Document Mechanisms for Transformer: As pre-trained models were often trained on large-scale datasets with input limit length between 512 to 1,024 [23, 66], these
+Transformer-based pre-trained models were optimized for short document language tasks rather
+than long documents. Without any long document mechanisms to adapt these models for the
+long document summarization task, Meng et al. [82] has shown that BART cannot summarize a
+long document effectively. Other than the discourse bias mechanism, we observe that (a) efficient
+attention and (b) content selection mechanisms are the two most notable long document mechanisms. As the content selection mechanism requires a separate retriever to extract salient content
+from the source (i.e., the hybrid approach), we distinguish Transformer models with content selection mechanism as the retrieve-then-summarize model [131] and the pure encoder-decoder Transformer without this mechanism as an end-to-end model for the rest of this work. Lastly, it is also
+important to note that both mechanisms can be jointly implemented within a single architecture,
+where the content selection mechanism will extract a longer subset of input to be processed by a
+Transformer with efficient attention [77].
+5 MULTI-DIMENSIONAL ANALYSIS OF LONG DOCUMENT SUMMARIZERS
+Given the important findings in the graph-based unsupervised extractive model and the
+Transformer-based supervised abstractive model in the previous section, we design an experiment
+with the aim of thoroughly understanding the reasons behind the popularity of these architectures
+and its mechanisms. Our experiment tests out the graph-based extractive and Transformer-based
+abstractive summarization architectures and its mechanisms on the arXiv benchmark dataset. The
+documents in the arXiv dataset have an average length of 6,446 tokens. Mechanisms of the supervised extractive approach are not examined as the architectures used between the proposed
+models vary greatly.
+5.1 Implementation
+5.1.1 Graph - Unsupervised Extractive. To investigate the effect of incorporating long document
+discourse structure information, we experiment with four unsupervised graph models by varying
+the two following mechanisms:
+— Sentence Encoder Mechanism: Sentences of source text are encoded either using Tf-Idf [53]
+or BERT SentenceTransformer [98].
+— Discourse Bias Mechanism: For both models that implement Tf-Idf or BERT sentence encoder, we experiment a model with the long document discourse bias mechanism and one
+without the bias. For models without a discourse bias mechanism, the centrality score of
+each sentence is computed based on the summation of cosine similarity between other sentences. For models with a discourse bias mechanism, the mechanism implemented follows
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:19
+
+the work of Dong et al. [25]. For each sentence, we adjust centrality score based on the sentence position within each section, c int r a (si ), and the sentence’s section position within the
+document, c int er (si ). Sentences that are closer to the section and document boundaries will
+be given higher importance. The “discourse-aware” centrality score for each sentence is
+c (si ) = μ 1 · c int er (si ) + c int r a (si )
+where μ 1 is a weighting factor for inter-section centrality. Following the original author, we
+fine-tune the weighting factor based on validation set. To ensure comparability, the maximum length of summary for all unsupervised extractive models is set to be 242 tokens.4
+5.1.2 Transformer - Supervised Abstractive. To study the current state-of-the-art abstractive
+neural summarizers, we experiment with two different pre-trained Transformers, BART and PEGASUS. For BART, we analyze the long document mechanisms from the perspective of two common
+approaches:
+— End-to-End: We experiment with three end-to-end BART models. Firstly, a vanilla BART
+model with full self-attention that will truncate any input text that exceed 1,024 tokens.
+Then, two BART models with efficient longformer attention [2] that can extend up to 4,096
+and 16,384 input tokens, respectively. The main goal of assessing end-to-end BART with
+and without efficient attention is to assess how the quality of the generated summary is
+affected when BART is adapted from a short document summarizer into long document
+summarizer by allowing it to process long input sequences at the cost of full self-attention.
+For implementation, due to lack of computational resources, we only fine-tuned original
+BART on arXiv and obtain the weights of longformer that was trained on arXiv from the
+original author.5
+— Retrieve-then-summarize: For BART retrieve-then-summarize model, our experiment follows entirely the implementation of LoBART by [77].6 LoBART has two variants: (a) BART
+with full self-attention that takes in a selected subset of input text with a maximum length of
+1,024 tokens and (b) BART with efficient local attention where maximum length of subset input is 4,096 tokens. The only difference between the two variants is the amount of content to
+be retrieved from the original source text before feeding it into the Transformer BART model.
+The two main objectives of experimenting with the retrieve-then-summarize BART models
+are to assess: (1) the effectiveness of content selection mechanism in adapting short document BART to summarize a long document and (2) whether the performance is improved
+when content selection mechanism is combined with efficient attention mechanism.
+As there is no existing framework that applies content selection mechanism on PEGASUS, we
+only experiment two end-to-end PEGASUS model: original PEGASUS7 and PEGASUS with BigBird
+efficient attention.8 The models have input token limit of 1,024 and 4,096, respectively. Pre-trained
+weights for both model variants on arXiv benchmark are obtained directly from the original author.
+5.1.3 Assessing Model Outputs. Rather than relying entirely on ROUGE score like most summarization research settings, we use four different metrics to analyse model summary outputs from
+three important dimensions (D#): relevance, informativeness, and semantic coherence.
+4 Details of implementation are reported in the Supplementary Materials.
+5 https://huggingface.co/allenai/led-large-16384-arxiv.
+6 https://github.com/potsawee/longsum0.
+7 https://github.com/google-research/pegasus.
+8 https://github.com/google-research/bigbird.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:20
+
+H. Y. Koh et al.
+
+— D1 - Relevance of a summary is the extent to which a summary contains the main ideas
+of a source. We use ROUGE [70] and BERTScore [130] metrics to measure relevancy of the
+candidate summary.
+— D2 - Informativeness is the amount of new information and knowledge a summary brings to
+the reader [92]. This information may not necessarily be key to the narrative of the source
+but should add value to readers. For example, the limitations of an academic article are not
+central to the narrative but do add value to readers. This metric tests a model architecture’s
+ability to effectively generate summary that can cover different aspects of the original source
+text. This is approximated by the percentage of sections that are covered by a candidate
+summary, where we assume each sentence of the candidate summary covers a particular
+section and the sentence belongs to the section where it achieves the highest ROUGE-L
+score.
+— D3 - Semantic Coherence measures whether a summary is fluent and semantically coherent.
+Following Bommasani and Cardie [4]’s implementation, this is approximated as
+ | |S | |
+N SP (si |si−1 )
+SC (S ) = i=2
+||S ||
+where N SP (.) is BERT NSP function, and si denotes the position of a sentence in the candidate summary. However, Bommasani and Cardie [4] did not fine-tune the general pre-trained
+BERT model while our BERT NSP model is fine-tuned on arXiv using positive and negative
+sentence-pairs with a final F1-score of 0.92.
+5.1.4 Other Implementation Details. For all the model variants implemented, the train, validation and test sample split on the arXiv benchmark dataset are 203,037/6,436/6,440, which is the
+same for all prior works as they follow the same configuration by the original author [20]. To
+ensure consistent preprocessing pipeline, we follow pre-processing of LoBART in all model implementations [77]. All models that require fine-tuning are trained on the same RTX 3090 GPU with
+24 GiB of GPU memory. We use pyrouge package for ROUGE metric.
+5.2
+
+Results and Analysis
+
+The following discusses the experimental findings based on the results shown in Table 3.
+5.2.1 Graph - Unsupervised Extractive. Finding 1. Global Word Representation versus Contextual Embedding: Using BERT as the sentence encoder mechanism boosts the unsupervised
+summarization model performance in the relevancy and informativeness dimension. We hypothesize this is due to the semantic reasoning capability of BERT in encoding important sentences
+that are informative but are not worded in the same way as the other important sentences when
+similarity and centrality scoring are computed. This is particularly important for long document
+as it has higher compression ratio and a higher chance of having sentences with the exact same
+information being repeated multiple times in the source text. Thus, not encoding the sentences
+with semantically rich encoding may result in a summary with more redundancy.
+Finding 2. Discourse Bias Mechanism boosts Relevance and Informativeness: The inclusion of positional and sectional bias when computing sentence centrality score greatly improves
+the architecture’s ability in capturing more relevant sentences in the long document and generating a more informative summary, validating our hypothesis in Section 4. However, since extractive
+models merely combine the extracted sentences, these sentences that come from various sections
+likely caused a drop in the semantic coherence of the final summary outputs.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:21
+
+Table 3. Experimental Results of Graph-Based Unsupervised Extractive and Transformer-Based
+Supervised Abstractive
+Architecture and its Mechanisms
+
+Tf-Idf
+BERT
+Tf-Idf + Discourse Bias
+BERT + Discourse Bias
+End-to-End (Max Token)
+BART-only (1,024)
+BART+LongformerAttn (4,096)
+BART+LongformerAttn (16,384)
+Retrieve-then-summarize
+BART+CS
+BART+LocalAttn+CS
+End-to-End (Max Token)
+PEGASUS (1,024)
+PEGASUS+BigBirdAttn (4,096)
+
+Relevance
+Informativeness
+R-2
+R-L BERTScore
+Unsupervised Extractive - Graph
+0.344 0.095 0.285
+0.822
+0.355
+0.351 0.098 0.290
+0.819
+0.398
+0.820
+0.447
+0.357 0.113 0.311
+0.822
+0.513
+0.361 0.112 0.322
+Supervised Abstractive - BART Variants
+R-1
+
+0.413
+0.463
+0.467
+
+0.851
+0.855
+0.877
+
+0.837
+0.403
+0.472 0.193 0.419
+0.486 0.201 0.422
+0.845
+0.427
+Supervised Abstractive - PEGASUS Variants
+
+0.812
+0.835
+
+0.333
+0.359
+
+0.863
+0.869
+
+0.171
+0.190
+
+0.368
+0.412
+0.418
+
+0.381
+0.415
+
+0.846
+0.852
+0.865
+
+0.779
+0.792
+0.677
+0.667
+
+0.331
+0.361
+0.433
+
+0.439
+0.462
+
+0.153
+0.187
+0.196
+
+Semantic Coherence
+
+0.857
+0.855
+
+The best results are in boldface, and the second highest scores are underlined. Max token represents the maximum
+input length where texts that exceed this cutoff point are truncated. LocalAttn represents local attention where each
+token only attends to its neighbouring 1,024 tokens. LongformerAttn and BigBirdAttn represents efficient attention
+variants proposed by Longformer [2] and BigBird [127].
+
+5.2.2 Transformer - Supervised Abstractive. Finding 1. Diminishing Return of PEGASUS
+Pre-training: As compared to the BART-only model, the PEGASUS-only model achieved greater
+performance across all dimensions, indicating that PEGASUS pre-training mechanism helps a
+Transformer-based model in writing more relevant, informative and semantically coherent summaries. As PEGASUS is pre-trained on a different corpus as compared to BART [66, 129], it is not
+conclusive whether the GSG pre-training task and/or the difference in the pre-training corpus contributed to the superior performance of PEGASUS. Interestingly, the performance gain is not as
+obvious when the input sequence length is allowed to be extended to 4,096 with efficient attention. This could be due to the difference in the efficient attention mechanism used or the need for
+predicting salient content outside the truncated text has diminished.
+Finding 2. Mixed Results on Retrieve-then-summarize Models: For both retrieve-thensummarize BART models, we see state-of-the-art result achieved in terms of the standard ROUGE
+score metric. The result showed improvement across all dimensions when the Transformer model
+processed a longer subset extracted by the retriever, demonstrating the effectiveness of Transformer in computing pairwise relations between tokens to identify salient content. Except for the
+BART with longformer attention (16,384), retrieve-then-summarize models also performed better in informativeness as the models are allowed to process the entire source documents in arXiv
+dataset. However, the retrieve-then-summarize models performed the worst in semantic coherence
+when compared to the other abstractive summarization models. As the content selection mechanism is not trained in an end-to-end manner, we hypothesize that this is due to the inevitable disconnect between the content selection mechanism and the encoder–decoder Transformer model at
+the inference stage. Furthermore, it is possible when the retrieved subset extracted by the content
+selection mechanism are not ordered in its original form, the incoherence of the subset cascade
+downwards to the final summary output, causing a drop in semantic coherence. This finding also
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:22
+
+H. Y. Koh et al.
+
+illustrates the importance of measuring model performance in a multi-dimensional way rather
+than relying entirely on ROUGE score that has found to have important limitations [3, 61].
+Finding 3. Transformer’s Reasoning Capability over Long Sequences: Holding the pretrained BART model constant, extending the total input token limits for the pre-trained Transformer improves the summarizer’s ability in generating a summary that is more relevant, informative and semantically coherent. This finding is consistent with a human evaluation experiment by
+[49], providing confidence to the automatic evaluation metrics used in this work. The impact of
+processing only 1,024 tokens is particularly obvious when it comes to the informativeness of the
+summary output where BART (1,024) informativeness score is 10 points lower than BART (16,384).
+Importantly, ROUGE score again did not fully capture this performance difference, highlighting
+the limitation of traditional summarization research setting of measuring model performance using only ROUGE score. Lastly, this finding suggests that unlike the result of Meng et al. [82], our
+experiment demonstrates that Transformer can reason over long sequences given that the right
+configuration is made to fine-tuned the model for specific downstream task.
+Through ad-hoc experiment, we systematically analyze the common approaches in long document summarization domain. The experimental result demonstrated that exploiting explicit discourse structures of long documents in unsupervised models and processing longer inputs with
+long document adaptation on pre-trained Transformer models can yield promising outcomes for
+the long document summarization task. The result also showed that retrieve-then-summarize
+model can achieve state-of-the-art results in terms of ROUGE score but may generate less coherent
+summaries.
+5.3
+
+Limitation of Experiment
+
+Recent studies have found that summary outputs of state-of-the-art abstractive summarization
+models contain factual inconsistency in up to 30% of summary output [8, 62, 81]. To address the
+aforementioned issues, various models and metrics have been proposed to measure the factual consistency of candidate summaries conditioned on the source documents [27, 40]. Nonetheless, due to
+the limitations of the proposed metrics including the input length limit of pre-trained models, difficulty of implementation and performance variation across benchmarks [89], we did not measure
+the factual consistency of summary outputs and represents an important limitation of the multidimensional analysis experiment above. This is despite after trying out various adaptations on the
+textual entailment approach proposed by Maynez et al. [81], our tested models have almost no discriminative ability and was thus not used. The robustness of the metrics used across the relevance,
+informativeness and semantic coherence dimensions should also be interpreted with care. Lastly,
+the experiment was only conducted using the arXiv benchmark dataset as it is the only dataset
+where all pre-trained weights are publicly available. To encourage similar analysis to be conducted
+across a wide range of benchmark dataset and model implementation, our evaluation metric toolkit
+for dataset and model is available at https://github.com/huankoh/long-doc-summarization.
+6
+
+METRICS
+
+As evaluating generated summary outputs using manual efforts are costly and impractical, the
+efficient ROUGE metric [70] has long been the standard way of comparing summarization model
+performance. It measures the lexical overlap between reference and candidate summary and the
+common n-gram measures are unigram (ROUGE-1), bigram (ROUGE-2) and longest common subsequence (ROUGE-L). However, as it is based on exact token matches and overlap between synonymous tokens or phrases will be ignored, the limitation of ROUGE score metrics have been
+widely explored [3, 11, 44, 61] and many have also attempted to propose more comprehensive
+content overlap metrics using soft semantic overlap [33, 130]. Furthermore, while content overlap
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:23
+
+is the fundamental objective of summarization, the quality of a summary, as Gehrmann et al. [36]
+and Peyrard [92] suggested, should be measured in a multi-dimensional way including relevance,
+factual consistency, conciseness, and semantic coherence. Relevance refers to whether the candidate summary contains the main ideas. Factual consistency metric measures whether a candidate
+summary is factually consistent with the source document. Conciseness measure whether important information is encapsulated in a short and brief manner. Semantic coherence relates to the
+collective quality and fluency of summary sentences. Based on these quality aspects, the following discusses the research efforts in the wider summarization domain with a focus on the long
+document summarization research settings at the end of this section.
+6.1 Relevance
+(A) Hard Lexical Overlap. As mentioned above, ROUGE score is an efficient way to consider
+content overlap through hard lexical matching between candidate summary and the ground truth
+summary. However, as ROUGE only considers exact matching between reference summary and
+model output, it (a) will penalize models that coin novel wordings and phrases that do not match
+the wordings in the reference summary, (b) does not consider factual consistency between the
+model output and the source document and (c) does not directly consider fluency and conciseness
+of a summary. Finally, ROUGE score also goes against the human approach of clever paraphrasing
+and summarizing.
+(B) Soft Content Overlap. To solve the problem of exact matching of lexical units, Zhang et al.
+[130] proposes a model that measures soft overlap between the reference and candidate summary
+by comparing the contextual BERT embeddings of both summaries. Other variants of this idea
+include MoverScore [133], Word Mover Similarity and an extension of it, Sentence Mover Similarity [18, 65]. The soft content overlap metrics often rely substantially on the encoder used to
+vectorized the candidate and ground truth summary. BERTScore, for example, utilizes BERT as
+the fundamental pre-trained model to encode its representations. While BERT has been proven to
+perform amazingly well under many different benchmark settings, its performance under certain
+domains such as legal or scientific research has not been thoroughly explored. For example, Beltagy
+et al. [1] fine-tuned BERT on large-scale scientific article datasets and have found its performance
+to improve in scientific domains as compared to the BERT-base model. Evidenced by Tejaswin
+et al. [111]’s experimental result where BERTScore is found not to discriminate summaries with
+and without errors well, this questions the use of BERT-base model as the “independent evaluator”
+of candidate summaries across all domains.
+(C) Reference-Free Approach. Rather than measuring the quality of candidate summary based
+on a ground truth summary, reference-free metrics for relevance measure the quality of candidate summary based on pseudo-reference summaries that are generated from source documents.
+Wu et al. [117]’s proposed metric requires training samples of high-quality summaries for model
+supervision while other reference-free metrics can generate metric scores without the use of highquality summaries as supervisory signals [14, 35]. In Section 3 of benchmark datasets, we see that
+the information covered by a reference summary depends on the data annotation approach as
+well as the intent of the original authors. We further observe that reference summaries of certain
+benchmark datasets contain significant noises. If supervised summarization models were to train
+on datasets with similar issues, they may fit on target summaries that are inconsistent with the
+expectation and needs of summary readers. A reference-free approach that can bypass the requirement of ground truth summaries would thus be beneficial to the development of models in cases
+where there is high heterogeneity in summary reader expectation and/or lack of ground truth
+summary labels. Nevertheless, the use case of reference-free metrics is often limited by the fact
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:24
+
+H. Y. Koh et al.
+
+that they still require pseudo-reference summaries to be generated by an “independent model”.
+Last but not least, the reference-free approach can also be used to augment the reference-based
+metrics [46].
+6.2
+
+Factual Consistency
+
+Widespread factual inconsistency in abstractive summarization model outputs greatly limit the
+potentiality of these abstractive models to be applied in most commercial settings. To this end,
+automated metrics on factual consistency have been proposed by others [27, 62, 81, 114], which can
+be categorized into two different approaches: Entailment Classification and Question Answering.
+(A) Entailment Classification Approach. The entailment classification approach evaluates the factual inconsistency of a candidate summary by breaking down the summary into smaller units
+(e.g., phrases/sentences) to be verified against the original document. For example, FactCC [62]
+implements a BERT-based factual consistency classifier that is trained on synthetic data, where
+the positive data labels are non-paraphrased and paraphrased sentences from the original source
+document, and the negative labels are artificially corrupted sentences from the source document.
+At the inference stage, the faithfulness score for a candidate summary is the number of consistent
+sentences divided by the total number of summary sentences. Similarly, other proposed models
+implement factual consistency classifiers by incorporating structured knowledge such as OpenIE
+triples [39] or dependency arc [40]. For the classifiers to be effective in discriminating the factual
+consistency of a candidate summary, they often require supervisory signals from factually consistent and inconsistent data [89].
+(B) Question-Answering Approach. The Question-Answering (QA) approach employs a questiongeneration model to generate questions from a given summary output [27, 114]. The generated
+questions are then answered in two different ways: (i) answering the question conditioning on the
+source text and (ii) answering the question conditioning on the summary output. If the answers
+match between the source text and candidate summary, the answer is then considered consistent,
+otherwise, it is inconsistent. The final score will be based on discrepancies between the answers
+generated conditional on the candidate summary and the answers generated conditional on the
+souce document. Recently, QAGen [85] proposes to generate questions and answers from a given
+text concurrently within a single model to evaluate factual consistency to improve the efficiency
+of this approach.
+Other Important Studies: It is important to note that the aforementioned works consider factual consistency as a binary outcome. In contrast, FRANK [89] advocates for a multi-dimensional
+approach to evaluate factual consistency based on semantic error, discourse error and content
+verifiability error. Through substantial human annotation, the study further found that the effectiveness of metrics is found to be extremely dependent on the types of architecture measured
+and the benchmark dataset used. Similarly, human evaluation experiments from previous works
+have shown conflicting and varying results in the desired approach of developing factuality metrics [81, 85]. In response, Gabriel et al. [31] proposed five conditions for the development of an
+effective factuality metric to encourage better standardization in the factual consistency metric
+research.
+6.3 Conciseness and Semantic Coherence
+Metrics to measure other aspects of summarization such as conciseness and semantic coherence
+were also introduced. As they are not as crucial as relevance and factual consistency, these metrics
+often complement the others to allow a metric or a model to be more holistic and practical. For
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:25
+
+example, Bommasani and Cardie [4] considers semantic coherence of reference summaries when
+evaluating single document benchmark datasets while Ju et al. [55]’s unsupervised model generates fluent summary by utilizing the next sentence prediction task in BERT. Metrics for conciseness
+are also introduced to measure the quality of summaries [4, 14].
+6.4 Research Efforts on Metrics in the Long Document Domain
+Many recently proposed metrics incorporate pre-trained architectures to achieve better performances. However, as argued in the model discussion above, these pre-trained architectures cannot
+be easily extended to long documents. As an illustration, our experiment has attempted various
+adaptations9 on a BERT textual entailment model to evaluate arXiv candidate summaries but has
+found it not effective in discriminating a summary’s factual consistency with the source. This is
+despite Maynez et al. [81]’s finding that this model best correlates with the human judgment of
+factual consistency on the XSUM short document dataset. Furthermore, other than the difficulty of
+adapting these models on long documents, Nan et al. [85] has also identified the issue of resource
+efficiency, where a competing model would take approximately 4 days to evaluate a CNN-DM test
+set with an NVIDIA V100 Tensor Core GPU and would likely take significantly longer under any
+long document benchmark datasets. Consequently, the need of re-designing the proposed evaluation models and the requirement for costly computation resources have likely discouraged the
+adoption of factual consistency assessment models in the long document summarization domain.
+Looking at the broader research on evaluation metrics of summarization as a whole, for 17 different research papers related to evaluation metrics published in ACL main conferences10 from
+2015 to September 2021, there were no discussion on the evaluation metrics in the context of long
+document summarization datasets. This is important as Pagnoni et al. [89] has found that the effectiveness of proposed metrics to vary based on the dataset characteristics. In sum, unlike the quick
+adoption of short document practices in the model architectures space, research in exploring evaluation metrics within the context of long document summarization is lacking and may potentially
+hold back the future progression of long document summarization.
+7
+
+APPLICATIONS
+
+As the quality of long document summaries generated by state-of-the-art models continues to improve, past works have explored their feasibility in the research and industrial domains. A natural
+extension for models that were implemented on the scientific article benchmark, arXiv/PubMed,
+is to employ it for research purposes. These include writing section-structured [82], user-specific
+[45] or presentation-based [107] summaries for scientific papers, automating scientific reviewing
+[126], and even generating literature survey based on multiple biomedical long scientific papers
+[24]. When it comes to the general industrial applications of long document summarization, the
+knowledge and techniques learned from the research domain can address numerous commercial
+tasks. On the surface level, any information that would be expressed in a textual format would benefit from the advancement in this field, which encompasses summarizing any forms of long textual
+documents [75, 104], extracting content as feature snippets for search engines,11 writing reviews
+for long media content [63] and summarizing long dialogues [16, 71, 136, 138] and multi-modal
+content [125]. With the development becomes increasingly mature in the real-world settings,
+summarization models are now commercialized as a Software-as-a-Service (Saas) product in
+9 Result details are in the Supplementary Materials.
+10 ACL main conferences are ACL, NAACL, EACL, EMNLP, CoNLL, and AACL. Papers are listed in the Supplementary
+
+Materials.
+11 https://developers.google.com/search/docs/advanced/appearance/featured-snippets.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:26
+
+H. Y. Koh et al.
+
+the news,12 business13 and consulting14 domains. Furthermore, as the long document summarization task can be generally understood as identification of important aspects from long sequences,
+the positive spillover from successful model implementation in this domain can affect a wide
+range of domains. Long document summarization models, for example, can be utilized for auxiliary tasks such as video captioning [72], long document question-answering [76], or multi-modal
+tasks [68, 86]. Liu et al. [73] also identified the “unexpected side-effect” of language model reliably
+learned how to transliterate names between languages, despite the fact that the model was trained
+to summarize long Wikipedia articles, while BigBird [127] applies Transformer-based models designed for long sequences not only to long document summarization but also to DNA promoter
+region and chromatin profile prediction tasks in the genomics research domain.
+8 GENERAL CHALLENGES AND FUTURE DIRECTIONS
+This section discusses the general challenges of long document summarization that have yet to
+be solved and pinpoints potential future research directions to attract practitioners’ attention and
+improve our understanding and techniques in the long document summarization domain. Advancement in the long document summarization domain should also give rise to beneficial spillover
+to closely-related NLP sub-domains such as multi-hop QA, information retrieval and reading
+comprehension.
+8.1 Neural Models and Long Sequence Reasoning
+While there have been significant efforts in solving the time and memory complexity of a neural
+architecture such as Transformers to enhance model efficiencies, the understanding of a model’s
+effectiveness in solving different NLP tasks or domains is limited. As shown by our model experiment and result findings of others [2, 49, 127], fine-tuning pre-trained models using efficient Transformers that can attend to larger input size of tokens can improve the model performances across
+a wide range of NLP tasks. However, the underlying reasons of the performance improvement
+is not well understood. For example, while Transformer models have found to outperform RNN
+models as RNN lacks the ability to reason over long sequences, Pagnoni et al. [89] have found that
+pre-trained Transformer summarization models still make a similar amount of discourse-related
+errors as the RNN models. Furthermore, research in the effectiveness of various efficient attention
+mechanisms used by a Transformer to summarize long documents also showed varying results.
+On the one hand, Huang et al. [49] showed that efficient attention with learnable patterns to significantly outperform the the efficient attention with fixed patterns such as local-only attention
+mechanism. On the other hand, Manakul and Gales [77] have found that extending window size of
+efficient Transformers to increase number of attended tokens per token do not affect the average
+distance of attended neighbor, suggesting that local attention to neighboring tokens will be sufficient for the long document summarization task. Altogether, these results highlight the limited
+understanding on the strategies employed by current neural models to summarize long document
+and the need of further research to enhance our understanding on this issue.
+8.2 Summarizer with Automatic Discourse Parsers/Annotator
+Our experimental result has demonstrated that the simple unsupervised graph architecture outperforms the other unsupervised models when discourse bias of arXiv section information is
+included. Nonetheless, information regarding sections of a document may not always be of high
+12 https://ai.baidu.com/tech/nlp_apply/news_summary.
+13 https://quillbot.com/.
+14 https://www.datagrand.com/about-us/.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:27
+
+quality or available for a summarization model. This limits the implementation of many long document summarization models that require explicit section-based discourse information. Similar
+issue has been faced by researchers in the dialogue summarization domain where discourse level
+information is not provided and past work in this domain have achieved state-of-the-art results by
+incorporating effective automatic discourse annotators [30, 71, 116]. An architecture that can effectively incorporate automated discourse parsers or annotators would thus be a fruitful direction
+for long document summarization researchers to explore.
+8.3
+
+End-to-End Neural Summarizer with Content Selection Mechanism
+
+In the medium term, in spite of the expected progress in computing efficiencies, there exist a significant amount of long documents such as business reports and books that have tokens that exceed
+hundreds of thousand [63, 75]. Thus, it is not possible to summarize the entire document using a
+powerful state-of-the-art model without any long document adaptation, as it will truncates most
+of the long document source text given the current input length limit. A more practical direction is
+to explore architectures with a content selection mechanism that has shown to be effective in long
+document summarization [77, 134]. Zhao et al. [134] has proposed an end-to-end long document
+summarization framework using transformers but did not incorporate powerful pre-trained models and performed slightly worse than other state-of-the-art models. LoBART [77], on the other
+hand, did not design the content selection and abstractive summarizer in an end-to-end manner.
+Experimental result in this survey has shown that LoBART’s disconnection between the retriever
+and summarizer resulted in less semantically coherent summaries. In the open-domain QA domain,
+RAG [67] achieves state-of-the-art by successfully incorporating content selection mechanism and
+pre-trained models in an end-to-end manner [91], pointing a promising direction for practitioners
+in the long document summarization domain to explore.
+8.4
+
+Quality and Diversity of Benchmark Dataset
+
+In Section 3 of benchmark datasets, human annotation efforts have been done to measure the quality of the most commonly used long document summarization dataset, arXiv. It was found that
+60% of reference summaries contain some form of errors and 15% of them have significant errors
+where at least half of the summary contains errors. This calls for a benchmark dataset with significantly better quality with fewer errors through robust heuristic rules and scraping strategies.
+Moreover, the long document summarization benchmark datasets are often in the legislative and
+scientific domain. While these domains are extremely important, many other domains such as
+financial reports with significant numerical complexity or long-form dialogues of daily conversation in business settings are equally important. Development across different domains could attract
+even greater attention from a wide range of partners to incentivize greater research efforts in the
+summarization field. Last but not least, to achieve the original objectives of benchmark datasets,
+proposed model architectures for long document summarization should also be tested across a
+diverse set of long document benchmark datasets rather than focusing merely on arXiv/PubMed.
+8.5
+
+Practicality of Summarization Metrics
+
+The limitation of ROUGE metric that has been widely explored [33, 61, 88, 137] and significant
+efforts have been made to improve the way we measure candidate summaries from various different aspects. Nonetheless, the proposed methods lack practicality in terms of wide availability
+for all parties in the research communities. For example, Nan et al. [85] found that using a single
+NVIDIA V100 Tensor Core GPU, a factual consistency metric proposed requires longer than four
+days to evaluate a single set of candidate summaries in the CNN-DM test dataset. Many metrics
+proposed also require substantial computing resources to re-train across different benchmark
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:28
+
+H. Y. Koh et al.
+
+settings [27, 62, 114]. These issues will be exacerbated when it comes to the long document
+summarization domain. Moreover, most summarization metrics are only tested in the CNN-DM
+and XSum datasets but not others. This significantly limits its applicability as Pagnoni et al.
+[89] have found most metrics to lack robustness across different benchmark settings. To ensure
+effective metrics have wider application, efficiencies and practicality of metrics should be paid
+with great attention to ensure that sufficient incentive is provided for practitioners to explore the
+practicality of metrics rather than a mere focus on state-of-the-art metric performances.
+9 CONCLUSION
+In this survey, we conduct a comprehensive overview of long document summarization and systematically analyze the three key components of its research settings: benchmark datasets, summarization models, and evaluation metrics. We first highlight the intrinsic differences of short and
+long document datasets and show that summarizing long documents requires extra compression of
+the source text through the identification of key narratives that are more uniformly scattered across
+the source documents. Nevertheless, long documents are often more extractive in nature and often have explicit discourse structures to take advantage of. For summarization models, we provide
+a thorough review, comparison and summarization of the model architectures and mechanisms
+used to generate long document summaries. Through ad-hoc experiment, we also systematically
+investigate the architectures and mechanisms that are widely applied across various works. We
+further discuss the current research in evaluation metrics and call attention to the lack of research
+on metrics that can be easily applied to the long document summarization domain. Finally, we explore the applications of long document summarization models and suggest five future directions
+for long document summarization research.
+REFERENCES
+[1] Iz Beltagy, Kyle Lo, and Arman Cohan. 2019. SciBERT: A pretrained language model for scientific text. In Proceedings
+of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference
+on Natural Language Processing (EMNLP-IJCNLP). 3615–3620.
+[2] Iz Beltagy, Matthew E. Peters, and Arman Cohan. 2020. Longformer: The long-document transformer.
+arXiv:2004.05150. Retrieved from https://arxiv.org/abs/2004.05150.
+[3] Manik Bhandari, Pranav Gour, Atabak Ashfaq, Pengfei Liu, and Graham Neubig. 2020. Re-evaluating evaluation in
+text summarization. arXiv:2010.07100. Retrieved from https://arxiv.org/abs/2010.07100.
+[4] Rishi Bommasani and Claire Cardie. 2020. Intrinsic evaluation of summarization datasets. In Proceedings of the 2020
+Conference on Empirical Methods in Natural Language Processing (EMNLP). 8075–8096.
+[5] Ravali Boorugu and G. Ramesh. 2020. A survey on NLP based text summarization for summarizing product reviews.
+In Proceedings of the 2020 Second International Conference on Inventive Research in Computing Applications (ICIRCA).
+IEEE, 352–356.
+[6] Florian Boudin and Emmanuel Morin. 2013. Keyphrase extraction for n-best reranking in multi-sentence compression. In Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 298–305.
+[7] Tom B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan,
+Pranav Shyam, Girish Sastry, Amanda Askell, et al. 2020. Language models are few-shot learners. arXiv:2005.14165.
+Retrieved from https://arxiv.org/abs/2005.14165.
+[8] Ziqiang Cao, Furu Wei, Wenjie Li, and Sujian Li. 2018. Faithful to the original: Fact aware neural abstractive summarization. In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 32.
+[9] Jean Carletta, Simone Ashby, Sebastien Bourban, Mike Flynn, Mael Guillemot, Thomas Hain, Jaroslav Kadlec, Vasilis
+Karaiskos, Wessel Kraaij, Melissa Kronenthal, et al. 2005. The AMI meeting corpus: A pre-announcement. In Proceedings of the International Workshop on Machine Learning for Multimodal Interaction. Springer, 28–39.
+[10] Asli Celikyilmaz, Antoine Bosselut, Xiaodong He, and Yejin Choi. 2018. Deep communicating agents for abstractive
+summarization. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers). 1662–1675.
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:29
+
+[11] Arun Chaganty, Stephen Mussmann, and Percy Liang. 2018. The price of debiasing automatic metrics in natural language evalaution. In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume
+1: Long Papers). Association for Computational Linguistics, 643–653.
+[12] Yllias Chali, Sadid A. Hasan, and Shafiq R. Joty. 2009. A SVM-based ensemble approach to multi-document summarization. In Proceedings of the Canadian Conference on Artificial Intelligence. Springer, 199–202.
+[13] Danqi Chen, Jason Bolton, and Christopher D. Manning. 2016. A thorough examination of the CNN/daily mail reading comprehension task. In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics
+(Volume 1: Long Papers). 2358–2367.
+[14] Wang Chen, Piji Li, and Irwin King. 2021. A training-free and reference-free summarization evaluation metric via
+centrality-weighted relevance and self-referenced redundancy. In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing
+(Volume 1: Long Papers). Association for Computational Linguistics, 404–414.
+[15] Jianpeng Cheng and Mirella Lapata. 2016. Neural summarization by extracting sentences and words.
+arXiv:1603.07252. Retrieved from https://arxiv.org/abs/1603.07252.
+[16] Bharath Chintagunta, Namit Katariya, Xavier Amatriain, and Anitha Kannan. 2021. Medically Aware GPT-3 as a data
+generator for medical dialogue summarization. In Proceedings of the 2nd Workshop on Natural Language Processing
+for Medical Conversations. 66–76.
+[17] Janara Christensen, Stephen Soderland, Oren Etzioni, et al. 2013. Towards coherent multi-document summarization.
+In Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics:
+Human Language Technologies. 1163–1173.
+[18] Elizabeth Clark, Asli Celikyilmaz, and Noah A. Smith. 2019. Sentence mover’s similarity: Automatic evaluation for
+multi-sentence texts. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2748–
+2760.
+[19] Ann Clifton, Sravana Reddy, Yongze Yu, Aasish Pappu, Rezvaneh Rezapour, Hamed Bonab, Maria Eskevich, Gareth
+Jones, Jussi Karlgren, Ben Carterette, and Rosie Jones. 2020. 100,000 Podcasts: A spoken english document corpus. In
+Proceedings of the 28th International Conference on Computational Linguistics. International Committee on Computational Linguistics, 5903–5917.
+[20] Arman Cohan, Franck Dernoncourt, Doo Soon Kim, Trung Bui, Seokhwan Kim, Walter Chang, and Nazli Goharian.
+2018. A discourse-aware attention model for abstractive summarization of long documents. In Proceedings of the
+2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language
+Technologies, Volume 2 (Short Papers). 615–621.
+[21] Peng Cui and Le Hu. 2021. Sliding selector network with dynamic memory for extractive summarization of long
+documents. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational
+Linguistics: Human Language Technologies. 5881–5891.
+[22] Peng Cui, Le Hu, and Yuanchao Liu. 2020. Enhancing extractive text summarization with topic-aware graph neural
+networks. In Proceedings of the 28th International Conference on Computational Linguistics. 5360–5371.
+[23] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT: Pre-training of deep bidirectional
+transformers for language understanding. In Proceedings of the 2019 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). 4171–
+4186.
+[24] Jay DeYoung, Iz Beltagy, Madeleine van Zuylen, Bailey Kuehl, and Lucy Wang. 2021. MSˆ2: Multi-document summarization of medical studies. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing.
+Association for Computational Linguistics, 7494–7513.
+[25] Yue Dong, Andrei Mircea Romascanu, and Jackie Chi Kit Cheung. 2021. Discourse-aware unsupervised summarization for long scientific documents. In Proceedings of the 16th Conference of the European Chapter of the Association
+for Computational Linguistics: Main Volume. 1089–1102.
+[26] Zi-Yi Dou, Pengfei Liu, Hiroaki Hayashi, Zhengbao Jiang, and Graham Neubig. 2021. GSum: A general framework
+for guided neural abstractive summarization. In Proceedings of the 2021 Conference of the North American Chapter of
+the Association for Computational Linguistics: Human Language Technologies. 4830–4842.
+[27] Esin Durmus, He He, and Mona Diab. 2020. FEQA: A question answering evaluation framework for faithfulness assessment in abstractive summarization. In Proceedings of the 58th Annual Meeting of the Association for Computational
+Linguistics. 5055–5070.
+[28] Wafaa S. El-Kassas, Cherif R. Salama, Ahmed A. Rafea, and Hoda K. Mohamed. 2021. Automatic text summarization:
+A comprehensive survey. Expert Systems with Applications 165 (2021), 113679.
+[29] Günes Erkan and Dragomir R. Radev. 2004. Lexrank: Graph-based lexical centrality as salience in text summarization.
+Journal of Artificial Intelligence Research 22 (2004), 457–479.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:30
+
+H. Y. Koh et al.
+
+[30] Xiachong Feng, Xiaocheng Feng, Libo Qin, Bing Qin, and Ting Liu. 2021. Language model as an annotator: Exploring
+dialoGPT for dialogue summarization. In Proceedings of the 59th Annual Meeting of the Association for Computational
+Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics, 1479–1491.
+[31] Saadia Gabriel, Asli Celikyilmaz, Rahul Jha, Yejin Choi, and Jianfeng Gao. 2021. GO FIGURE: A meta evaluation
+of factuality in summarization. In Proceedings of the Findings of the Association for Computational Linguistics: ACLIJCNLP 2021. Association for Computational Linguistics, 478–487.
+[32] Mahak Gambhir and Vishal Gupta. 2017. Recent automatic text summarization techniques: A survey. Artificial Intelligence Review 47, 1 (2017), 1–66.
+[33] Kavita Ganesan. 2018. ROUGE 2.0: Updated and improved measures for evaluation of summarization tasks.
+arXiv:1803.01937. Retrieved from https://arxiv.org/abs/1803.01937.
+[34] Tianyu Gao, Adam Fisch, and Danqi Chen. 2021. Making pre-trained language models better few-shot learners. In
+Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International
+Joint Conference on Natural Language Processing (Volume 1: Long Papers). Association for Computational Linguistics,
+3816–3830.
+[35] Yang Gao, Wei Zhao, and Steffen Eger. 2020. SUPERT: Towards new frontiers in unsupervised evaluation metrics
+for multi-document summarization. In Proceedings of the 58th Annual Meeting of the Association for Computational
+Linguistics. Association for Computational Linguistics, 1347–1354.
+[36] Sebastian Gehrmann, Yuntian Deng, and Alexander M. Rush. 2018. Bottom-up abstractive summarization. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing. 4098–4109.
+[37] Alexios Gidiotis and Grigorios Tsoumakas. 2020. A divide-and-conquer approach to the summarization of long documents. IEEE/ACM Transactions on Audio, Speech, and Language Processing 28 (2020), 3029–3040.
+[38] Yihong Gong and Xin Liu. 2001. Generic text summarization using relevance measure and latent semantic analysis.
+In Proceedings of the 24th Annual International ACM SIGIR Conference on Research and Development in Information
+Retrieval. 19–25.
+[39] Ben Goodrich, Vinay Rao, Peter J Liu, and Mohammad Saleh. 2019. Assessing the factual accuracy of generated text.
+In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. 166–175.
+[40] Tanya Goyal and Greg Durrett. 2020. Evaluating factuality in generation with dependency-level entailment. In Proceedings of the Findings of the Association for Computational Linguistics: EMNLP 2020. Association for Computational
+Linguistics, 3592–3603.
+[41] Yvette Graham. 2015. Re-evaluating automatic summarization with BLEU and 192 shades of ROUGE. In Proceedings
+of the 2015 Conference on Empirical Methods in Natural Language Processing. 128–137.
+[42] Matt Grenander, Yue Dong, Jackie Chi Kit Cheung, and Annie Louis. 2019. Countering the effects of lead bias in
+news summarization via multi-stage training and auxiliary losses. In Proceedings of the 2019 Conference on Empirical
+Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing
+(EMNLP-IJCNLP). 6019–6024.
+[43] Max Grusky, Mor Naaman, and Yoav Artzi. 2018. Newsroom: A dataset of 1.3 million summaries with diverse extractive strategies. arXiv:1804.11283. Retrieved from https://arxiv.org/abs/1804.11283.
+[44] Tatsunori B. Hashimoto, Hugh Zhang, and Percy Liang. 2019. Unifying human and statistical evaluation for natural
+language generation. In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). Association for Computational
+Linguistics, 1689–1701.
+[45] Junxian He, Wojciech Kryściński, Bryan McCann, Nazneen Rajani, and Caiming Xiong. 2020. Ctrlsum: Towards
+generic controllable text summarization. arXiv:2012.04281. Retrieved from https://arxiv.org/abs/2012.04281.
+[46] Jack Hessel, Ari Holtzman, Maxwell Forbes, Ronan Le Bras, and Yejin Choi. 2021. CLIPScore: A reference-free evaluation metric for image captioning. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language
+Processing. Association for Computational Linguistics, 7514–7528.
+[47] Wan-Ting Hsu, Chieh-Kai Lin, Ming-Ying Lee, Kerui Min, Jing Tang, and Min Sun. 2018. A unified model for extractive and abstractive summarization using inconsistency loss. In Proceedings of the 56th Annual Meeting of the
+Association for Computational Linguistics (Volume 1: Long Papers). 132–141.
+[48] Dandan Huang, Leyang Cui, Sen Yang, Guangsheng Bao, Kun Wang, Jun Xie, and Yue Zhang. 2020. What have we
+achieved on text summarization? In Proceedings of the 2020 Conference on Empirical Methods in Natural Language
+Processing (EMNLP). 446–469.
+[49] Luyang Huang, Shuyang Cao, Nikolaus Parulian, Heng Ji, and Lu Wang. 2021. Efficient attentions for long document
+summarization. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 1419–1436.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:31
+
+[50] Kokil Jaidka, Muthu Kumar Chandrasekaran, Sajal Rustagi, and Min-Yen Kan. 2016. Overview of the CL-Scisumm
+2016 shared task. In Proceedings of the Joint Workshop on Bibliometric-Enhanced Information Retrieval and Natural
+Language Processing for Digital Libraries (BIRNDL). 93–102.
+[51] Adam Janin, Don Baron, Jane Edwards, Dan Ellis, David Gelbart, Nelson Morgan, Barbara Peskin, Thilo Pfau, Elizabeth Shriberg, Andreas Stolcke, et al. 2003. The ICSI meeting corpus. In Proceedings of the 2003 IEEE International
+Conference on Acoustics, Speech, and Signal Processing, Proceedings (ICASSP’03). Vol. 1. IEEE, I–I.
+[52] Yangfeng Ji and Jacob Eisenstein. 2014. Representation learning for text-level discourse parsing. In Proceedings of the
+52nd Annual Meeting of the Association for Computational Linguistics (volume 1: Long Papers). 13–24.
+[53] Karen Sparck Jones. 1972. A statistical interpretation of term specificity and its application in retrieval. Journal of
+Documentation (1972).
+[54] Jiaxin Ju, Ming Liu, Longxiang Gao, and Shirui Pan. 2020. Monash-Summ@ LongSumm 20 SciSummPip: An unsupervised scientific paper summarization pipeline. In Proceedings of the First Workshop on Scholarly Document Processing.
+318–327.
+[55] Jiaxin Ju, Ming Liu, Huan Yee Koh, Yuan Jin, Lan Du, and Shirui Pan. 2021. Leveraging information bottleneck for
+scientific document summarization. In Proceedings of the Findings of the Association for Computational Linguistics:
+EMNLP’21. 4091–4098.
+[56] Byeongchang Kim, Hyunwoo Kim, and Gunhee Kim. 2019. Abstractive summarization of reddit posts with multilevel memory networks. In Proceedings of the 2019 Conference of the North American Chapter of the Association for
+Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers). 2519–2531.
+[57] Kevin Knight and Daniel Marcu. 2002. Summarization beyond sentence extraction: A probabilistic approach to sentence compression. Artificial Intelligence 139, 1 (2002), 91–107.
+[58] Hayato Kobayashi, Masaki Noguchi, and Taichi Yatsuka. 2015. Summarization based on embedding distributions. In
+Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 1984–1989.
+[59] Anastassia Kornilova and Vlad Eidelman. 2019. BillSum: A corpus for automatic summarization of US legislation.
+EMNLP-IJCNLP (2019), 48.
+[60] Mahnaz Koupaee and William Yang Wang. 2018. WikiHow: A large scale text summarization dataset.
+arXiv:1810.09305. Retrieved from https://arxiv.org/abs/1810.09305.
+[61] Wojciech Kryściński, Nitish Shirish Keskar, Bryan McCann, Caiming Xiong, and Richard Socher. 2019. Neural text
+summarization: A critical evaluation. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language
+Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 540–551.
+[62] Wojciech Kryscinski, Bryan McCann, Caiming Xiong, and Richard Socher. 2020. Evaluating the factual consistency
+of abstractive text summarization. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language
+Processing (EMNLP). Association for Computational Linguistics, 9332–9346.
+[63] Wojciech Kryściński, Nazneen Rajani, Divyansh Agarwal, Caiming Xiong, and Dragomir Radev. 2021. BookSum: A
+collection of datasets for long-form narrative summarization. arXiv:2105.08209. Retrieved from https://arxiv.org/abs/
+2105.08209.
+[64] Julian Kupiec, Jan Pedersen, and Francine Chen. 1995. A trainable document summarizer. In Proceedings of the 18th
+Annual International ACM SIGIR Conference on Research and Development in Information Retrieval. 68–73.
+[65] Matt Kusner, Yu Sun, Nicholas Kolkin, and Kilian Weinberger. 2015. From word embeddings to document distances.
+In Proceedings of the International Conference on Machine Learning. PMLR, 957–966.
+[66] Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed, Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer. 2020. BART: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension. In Proceedings of the 58th Annual Meeting of the Association for Computational
+Linguistics. 7871–7880.
+[67] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler,
+Mike Lewis, Wen-tau Yih, Tim Rocktäschel, et al. 2020. Retrieval-augmented generation for knowledge-intensive nlp
+tasks. In Proceedings of the Advances in Neural Information Processing Systems.
+[68] Jiazheng Li, Linyi Yang, Barry Smyth, and Ruihai Dong. 2020. MAEC: A multimodal aligned earnings conference
+call dataset for financial risk prediction. In Proceedings of the 29th ACM International Conference on Information &
+Knowledge Management. 3063–3070.
+[69] Xinnian Liang, Shuangzhi Wu, Mu Li, and Zhoujun Li. 2021. Improving unsupervised extractive summarization with
+facet-aware modeling. In Proceedings of the Findings of the Association for Computational Linguistics: ACL-IJCNLP
+(2021). 1685–1697.
+[70] Chin-Yew Lin. 2004. Rouge: A package for automatic evaluation of summaries. In Proceedings of the Text Summarization Branches Out. 74–81.
+[71] Chunyi Liu, Peng Wang, Jiang Xu, Zang Li, and Jieping Ye. 2019. Automatic dialogue summary generation for customer service. In Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data
+Mining. 1957–1965.
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:32
+
+H. Y. Koh et al.
+
+[72] Hui Liu and Xiaojun Wan. 2021. Video paragraph captioning as a text summarization task. In Proceedings of the 59th
+Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural
+Language Processing (Volume 2: Short Papers). 55–60.
+[73] Peter J. Liu, Mohammad Saleh, Etienne Pot, Ben Goodrich, Ryan Sepassi, Lukasz Kaiser, and Noam Shazeer. 2018.
+Generating wikipedia by summarizing long sequences. In Proceedings of the International Conference on Learning
+Representations.
+[74] Yang Liu and Mirella Lapata. 2019. Text summarization with pretrained encoders. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural
+Language Processing (EMNLP-IJCNLP). 3730–3740.
+[75] Lefteris Loukas, Manos Fergadiotis, Ion Androutsopoulos, and Prodromos Malakasiotis. 2021. EDGAR-CORPUS: Billions of tokens make the world go round. arXiv:2109.14394. Retrieved from https://arxiv.org/abs/2109.14394.
+[76] Chenyang Lyu, Lifeng Shang, Yvette Graham, Jennifer Foster, Xin Jiang, and Qun Liu. 2021. Improving unsupervised question answering via summarization-informed question generation. In Proceedings of the 2021 Conference on
+Empirical Methods in Natural Language Processing. 4134–4148.
+[77] Potsawee Manakul and Mark Gales. 2021. Long-span summarization via local attention and content selection. In
+Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International
+Joint Conference on Natural Language Processing (Volume 1: Long Papers). 6026–6041.
+[78] Inderjeet Mani and Eric Bloedorn. 1998. Machine learning of generic and user-focused summarization. In Proceedings
+of the AAAI/IAAI. 821–826.
+[79] William C. Mann and Sandra A. Thompson. 1988. Rhetorical structure theory: Toward a functional theory of text
+organization. Text-Interdisciplinary Journal for the Study of Discourse 8, 3 (1988), 243–281.
+[80] Yuning Mao, Liyuan Liu, Qi Zhu, Xiang Ren, and Jiawei Han. 2020. Facet-aware evaluation for extractive summarization. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 4941–4957.
+[81] Joshua Maynez, Shashi Narayan, Bernd Bohnet, and Ryan McDonald. 2020. On faithfulness and factuality in abstractive summarization. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+1906–1919.
+[82] Rui Meng, Khushboo Thaker, Lei Zhang, Yue Dong, Xingdi Yuan, Tong Wang, and Daqing He. 2021. Bringing structure into summaries: A faceted summarization dataset for long scientific documents. In Proceedings of the 59th Annual
+Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers). Association for Computational Linguistics, 1080–1089.
+[83] Rada Mihalcea and Paul Tarau. 2004. Textrank: Bringing order into text. In Proceedings of the 2004 Conference on
+Empirical Methods in Natural Language Processing. 404–411.
+[84] Ramesh Nallapati, Bowen Zhou, Cicero dos Santos, Ça glar Gulçehre, and Bing Xiang. 2016. Abstractive text summarization using sequence-to-sequence RNNs and beyond. In Proceedings of the 20th SIGNLL Conference on Computational Natural Language Learning. 280–290.
+[85] Feng Nan, Cicero Nogueira dos Santos, Henghui Zhu, Patrick Ng, Kathleen McKeown, Ramesh Nallapati, Dejiao
+Zhang, Zhiguo Wang, Andrew O. Arnold, and Bing Xiang. 2021. Improving factual consistency of abstractive summarization via question answering. In Proceedings of the 2021 Conference of the North American Chapter of the Association
+for Computational Linguistics: Human Language Technologies. Association for Computational Linguistics.
+[86] Medhini Narasimhan, Anna Rohrbach, and Trevor Darrell. 2021. CLIP-It! language-guided video summarization. In
+Proceedings of the 35th Conference on Neural Information Processing Systems.
+[87] Shashi Narayan, Shay B. Cohen, and Mirella Lapata. 2018. Don’t give me the details, just the summary! topic-aware
+convolutional neural networks for extreme summarization. In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing. 1797–1807.
+[88] Jun Ping Ng and Viktoria Abrecht. 2015. Better summarization evaluation with word embeddings for ROUGE. In
+Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 1925–1930.
+[89] Artidoro Pagnoni, Vidhisha Balachandran, and Yulia Tsvetkov. 2021. Understanding factuality in abstractive summarization with FRANK: A benchmark for factuality metrics. In Proceedings of the 2021 Conference of the North
+American Chapter of the Association for Computational Linguistics: Human Language Technologies. Association for
+Computational Linguistics, 4812–4829.
+[90] Romain Paulus, Caiming Xiong, and Richard Socher. 2018. A deep reinforced model for abstractive summarization.
+In Proceedings of the International Conference on Learning Representations.
+[91] Fabio Petroni, Aleksandra Piktus, Angela Fan, Patrick Lewis, Majid Yazdani, Nicola De Cao, James Thorne, Yacine
+Jernite, Vladimir Karpukhin, Jean Maillard, et al. 2021. KILT: A benchmark for knowledge intensive language tasks.
+In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics:
+Human Language Technologies. 2523–2544.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:33
+
+[92] Maxime Peyrard. 2019. A simple theoretical model of importance for summarization. In Proceedings of the 57th Annual
+Meeting of the Association for Computational Linguistics. 1059–1073.
+[93] Maxime Peyrard. 2019. Studying summarization evaluation metrics in the appropriate scoring range. In Proceedings
+of the 57th Annual Meeting of the Association for Computational Linguistics. 5093–5100.
+[94] Jonathan Pilault, Raymond Li, Sandeep Subramanian, and Christopher Pal. 2020. On extractive and abstractive neural
+document summarization with transformer language models. In Proceedings of the 2020 Conference on Empirical
+Methods in Natural Language Processing (EMNLP). 9308–9319.
+[95] Vahed Qazvinian and Dragomir Radev. 2008. Scientific paper summarization using citation summary networks. In
+Proceedings of the 22nd International Conference on Computational Linguistics (Coling’08). 689–696.
+[96] Colin Raffel, Noam Shazeer, Adam Roberts, Katherine Lee, Sharan Narang, Michael Matena, Yanqi Zhou, Wei Li, and
+Peter J. Liu. 2020. Exploring the limits of transfer learning with a unified text-to-text transformer. Journal of Machine
+Learning Research 21 (2020), 1–67.
+[97] Revanth Rameshkumar and Peter Bailey. 2020. Storytelling with dialogue: A critical role dungeons and dragons
+dataset. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. Association for
+Computational Linguistics, 5121–5134.
+[98] Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence embeddings using siamese BERT-networks. In
+Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International
+Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 3982–3992.
+[99] Tobias Rohde, Xiaoxia Wu, and Yinhan Liu. 2021. Hierarchical learning for generation with long source sequences.
+arXiv:2104.07545. Retrieved from https://arxiv.org/abs/2104.07545.
+[100] Sascha Rothe, Joshua Maynez, and Shashi Narayan. 2021. A thorough evaluation of task-specific pretraining for summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. Association
+for Computational Linguistics, 140–145.
+[101] Alexander M. Rush, Sumit Chopra, and Jason Weston. 2015. A neural attention model for abstractive sentence summarization. In Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 379–389.
+[102] Evan Sandhaus. 2008. The new york times annotated corpus. Linguistic Data Consortium, Philadelphia 6, 12 (2008),
+e26752.
+[103] Abigail See, Peter J. Liu, and Christopher D. Manning. 2017. Get to the point: Summarization with pointer-generator
+networks. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+Papers). 1073–1083.
+[104] Eva Sharma, Chen Li, and Lu Wang. 2019. BIGPATENT: A large-scale dataset for abstractive and coherent summarization. In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics. 2204–2213.
+[105] Tian Shi, Yaser Keneshloo, Naren Ramakrishnan, and Chandan K. Reddy. 2021. Neural abstractive text summarization
+with sequence-to-sequence models. ACM Transactions on Data Science 2, 1 (2021), 1–37.
+[106] K. Shivakumar and Rab Soumya. 2015. Text summarization using clustering technique and SVM technique. International Journal of Applied Engineering Research 10, 12 (2015), 28873–28881.
+[107] Edward Sun, Yufang Hou, Dakuo Wang, Yunfeng Zhang, and Nancy XR Wang. 2021. D2S: Document-to-slide generation via query-based text summarization. In Proceedings of the 2021 Conference of the North American Chapter of
+the Association for Computational Linguistics: Human Language Technologies. 1405–1418.
+[108] Alon Talmor, Yanai Elazar, Yoav Goldberg, and Jonathan Berant. 2020. oLMpics-on what language model pre-training
+captures. Transactions of the Association for Computational Linguistics 8 (2020), 743–758.
+[109] Yi Tay, Mostafa Dehghani, Samira Abnar, Yikang Shen, Dara Bahri, Philip Pham, Jinfeng Rao, Liu Yang, Sebastian
+Ruder, and Donald Metzler. 2020. Long range arena: A benchmark for efficient transformers. In Proceedings of the
+International Conference on Learning Representations.
+[110] Yi Tay, Mostafa Dehghani, Dara Bahri, and Donald Metzler. 2022. Efficient transformers: A survey. ACM Computing
+Surveys (2022). Just Accepted.
+[111] Priyam Tejaswin, Dhruv Naik, and Pengfei Liu. 2021. How well do you know your summarization datasets?
+arXiv:2106.11388. Retrieved from https://arxiv.org/abs/2106.11388.
+[112] Lucy Vanderwende, Hisami Suzuki, Chris Brockett, and Ani Nenkova. 2007. Beyond SumBasic: Task-focused summarization with sentence simplification and lexical expansion. Information Processing & Management 43, 6 (2007),
+1606–1618.
+[113] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia
+Polosukhin. 2017. Attention is all you need. In Proceedings of the 31st International Conference on Neural Information
+Processing Systems. 6000–6010.
+[114] Alex Wang, Kyunghyun Cho, and Mike Lewis. 2020. Asking and answering questions to evaluate the factual consistency of summaries. In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics.
+5008–5020.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+154:34
+
+H. Y. Koh et al.
+
+[115] Matt Wilber, William Timkey, and Marten van Schijndel. 2021. To point or not to point: Understanding how abstractive summarizers paraphrase text. In Proceedings of the Findings of the Association for Computational Linguistics:
+ACL-IJCNLP’21. Association for Computational Linguistics, 3362–3376.
+[116] Chien-Sheng Wu, Linqing Liu, Wenhao Liu, Pontus Stenetorp, and Caiming Xiong. 2021. Controllable abstractive
+dialogue summarization with sketch supervision. In Proceedings of the Findings of the Association for Computational
+Linguistics: ACL-IJCNLP’21. Association for Computational Linguistics, 5108–5122.
+[117] Hanlu Wu, Tengfei Ma, Lingfei Wu, Tariro Manyumwa, and Shouling Ji. 2020. Unsupervised reference-free summary
+quality evaluation via contrastive learning. In Proceedings of the 2020 Conference on Empirical Methods in Natural
+Language Processing (EMNLP). Association for Computational Linguistics, 3612–3621.
+[118] Wen Xiao and Giuseppe Carenini. 2019. Extractive summarization of long documents by combining global and local context. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th
+International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 3011–3021.
+[119] Jiacheng Xu, Shrey Desai, and Greg Durrett. 2020. Understanding neural abstractive summarization models via
+uncertainty. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP).
+6275–6281.
+[120] Jiacheng Xu, Zhe Gan, Yu Cheng, and Jingjing Liu. 2020. Discourse-aware neural extractive text summarization. In
+Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics. 5021–5031.
+[121] Michihiro Yasunaga, Jungo Kasai, Rui Zhang, Alexander R. Fabbri, Irene Li, Dan Friedman, and Dragomir R. Radev.
+2019. Scisummnet: A large annotated corpus and content-impact models for scientific paper summarization with
+citation networks. In Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33. 7386–7393.
+[122] Michihiro Yasunaga, Rui Zhang, Kshitijh Meelu, Ayush Pareek, Krishnan Srinivasan, and Dragomir Radev. 2017.
+Graph-based neural multi-document summarization. In Proceedings of the 21st Conference on Computational Natural
+Language Learning (CoNLL’17). 452–462.
+[123] Mark Yatskar. 2019. A qualitative comparison of CoQA, SQuAD 2.0 and QuAC. In Proceedings of the 2019 Conference
+of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume
+1 (Long and Short Papers). 2318–2323.
+[124] Dani Yogatama, Fei Liu, and Noah A. Smith. 2015. Extractive summarization by maximizing semantic volume. In
+Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. 1961–1966.
+[125] Tiezheng Yu, Wenliang Dai, Zihan Liu, and Pascale Fung. 2021. Vision guided generative pre-trained language models
+for multimodal abstractive summarization. In Proceedings of the 2021 Conference on Empirical Methods in Natural
+Language Processing. 3995–4007.
+[126] Weizhe Yuan, Pengfei Liu, and Graham Neubig. 2021. Can we automate scientific reviewing? arXiv:2102.00176. Retrieved from https://arxiv.org/abs/2102.00176.
+[127] Manzil Zaheer, Guru Guruganesh, Kumar Avinava Dubey, Joshua Ainslie, Chris Alberti, Santiago Ontanon, Philip
+Pham, Anirudh Ravula, Qifan Wang, Li Yang, et al. 2020. Big bird: Transformers for longer sequences. In Proceedings
+of the NeurIPS.
+[128] Fang-Fang Zhang, Jin-ge Yao, and Rui Yan. 2018. On the abstractiveness of neural document summarization. In
+Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing. 785–790.
+[129] Jingqing Zhang, Yao Zhao, Mohammad Saleh, and Peter Liu. 2020. Pegasus: Pre-training with extracted gapsentences for abstractive summarization. In Proceedings of the International Conference on Machine Learning. PMLR,
+11328–11339.
+[130] Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger, and Yoav Artzi. 2019. BERTScore: Evaluating text
+generation with BERT. In Proceedings of the International Conference on Learning Representations.
+[131] Yusen Zhang, Ansong Ni, Tao Yu, Rui Zhang, Chenguang Zhu, Budhaditya Deb, Asli Celikyilmaz, Ahmed Hassan
+Awadallah, and Dragomir Radev. 2021. An exploratory study on long dialogue summarization: What works and
+what’s next. In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing: Findings.
+(2021).
+[132] Jinming Zhao, Ming Liu, Longxiang Gao, Yuan Jin, Lan Du, He Zhao, He Zhang, and Gholamreza Haffari. 2020.
+SummPip: Unsupervised multi-document summarization with sentence graph compression. In Proceedings of the
+43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. 1949–1952.
+[133] Wei Zhao, Maxime Peyrard, Fei Liu, Yang Gao, Christian M. Meyer, and Steffen Eger. 2019. MoverScore: Text generation evaluating with contextualized embeddings and earth mover distance. In Proceedings of the 2019 Conference
+on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language
+Processing (EMNLP-IJCNLP). 563–578.
+[134] Yao Zhao, Mohammad Saleh, and Peter J. Liu. 2020. Seal: Segment-wise extractive-abstractive long-form text summarization. arXiv:2006.10213. Retrieved from https://arxiv.org/abs/2006.10213.
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics
+
+154:35
+
+[135] Hao Zheng and Mirella Lapata. 2019. Sentence centrality revisited for unsupervised summarization. In Proceedings
+of the 57th Annual Meeting of the Association for Computational Linguistics. 6236–6247.
+[136] Ming Zhong, Da Yin, Tao Yu, Ahmad Zaidi, Mutethia Mutuma, Rahul Jha, Ahmed Hassan Awadallah, Asli Celikyilmaz, Yang Liu, Xipeng Qiu, and Dragomir Radev. 2021. QMSum: A new benchmark for query-based multi-domain
+meeting summarization. In Proceedings of the 2021 Conference of the North American Chapter of the Association for
+Computational Linguistics: Human Language Technologies. Association for Computational Linguistics, 5905–5921.
+[137] Liang Zhou, Chin-Yew Lin, Dragos Stefan Munteanu, and Eduard Hovy. 2006. ParaEval: Using paraphrases to evaluate summaries automatically. In Proceedings of the Human Language Technology Conference of the NAACL, Main
+Conference. Association for Computational Linguistics, New York City, 447–454.
+[138] Chenguang Zhu, Yang Liu, Jie Mei, and Michael Zeng. 2021. MediaSum: A large-scale media interview dataset for
+dialogue summarization. In Proceedings of the 2021 Conference of the North American Chapter of the Association for
+Computational Linguistics: Human Language Technologies. 5927–5934.
+
+Received 1 January 2022; accepted 14 June 2022
+
+ACM Computing Surveys, Vol. 55, No. 8, Article 154. Publication date: December 2022.
+
+

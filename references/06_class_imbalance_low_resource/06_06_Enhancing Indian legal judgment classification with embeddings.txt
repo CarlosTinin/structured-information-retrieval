@@ -1,0 +1,4304 @@
+Artificial Intelligence and Law (2026) 34:523–564
+https://doi.org/10.1007/s10506-025-09438-w
+ORIGINAL RESEARCH
+
+Enhancing Indian legal judgment classification
+with embeddings, feature selection, and ensemble
+strategies
+Priyanka Prabhakar1
+
+· Peeta Basa Pati1
+
+Accepted: 29 January 2025 / Published online: 24 March 2025
+© The Author(s), under exclusive licence to Springer Nature B.V. 2025
+
+Abstract
+Legal document analysis presents significant challenges due to its complexity and
+domain-specific nature. This study introduces an innovative approach for classifying
+Indian court judgments into legal domains using diverse machine learning and deep
+learning techniques. The method incorporates feature engineering and deep learning
+algorithms for extracting meaningful features, supported by a wide range of classifiers, including voting classifiers, gradient boosting, and random forest. Embeddings
+are generated using models such as InLegalBERT, InCaseLawBERT, CustomInLawBERT, Mamba, T5, RoBERTa, CodeT5, SBERT, DistilBERT, XLM, XLM
+Large, LegalBERT, GPT2, ALBERT, Electra, DeBERTa, TFDeBERTa, FlanT5,
+FlanT-Large, BART, BigBird Pegasus, LongFormer, and LUKE. To address class
+imbalance, the SMOTE technique is employed, and dimensionality is reduced using
+PCA and forward feature selection. The T5+SMOTE+feature selection+voting classifier configuration achieves a notable accuracy of 98%, highlighting the effectiveness of the proposed approach. These advancements have significant implications
+for applications such as document retrieval, legal discovery, and case law analysis,
+enhancing the accuracy and efficiency of legal document classification.
+Keywords Machine learning · Deep learning · Transfer learning · Transformers ·
+SVM · KNN · Gradient descent · T5 · CNN · RNN · LegalBert
+
+* Peeta Basa Pati
+bp_peeta@blr.amrita.edu
+Priyanka Prabhakar
+priyaamrita108@gmail.com
+1
+
+Department of Computer Science and Engineering, Amrita School of Computing Bengaluru,
+Amrita Vishwa Vidyapeetham, Bengaluru, India
+Vol.:(0123456789)
+
+524
+
+P. Prabhakar, P. B. Pati
+
+1 Introduction
+AI has been applied in the legal domain (Sil et al. 2021) since the 1980s (Nitta
+and Satoh 2020), initially through expert systems leveraging rules and domain
+knowledge for specific tasks, such as product liability dispute resolution (Waterman and Peterson 1981). These early systems were limited in scope and lacked
+adaptability for broader applications. With advancements in deep learning, AI’s
+role in the legal field has expanded significantly, enabling tasks such as legal
+event detection (Yao et al. 2022), legal judgment prediction (Zhong et al. 2020;
+Xiao 2018), legal text classification (Chalkidis and Søgaard 2022; Hendrycks
+2021), legal information extraction (Hong et al. 2021), and legal content generation (Tonguz et al. 2021). Legal judgment classification, in particular, involves
+assigning court decisions to predefined legal domains, such as criminal law, family law, or intellectual property law, using machine learning algorithms trained to
+identify patterns within legal texts. This task is crucial for improving information
+retrieval, legal trend analysis, and case management. While classification techniques have been effectively applied in countries with standardized legal systems
+like the UK, Canada, and the US, the Indian legal system presents unique challenges that remain underexplored (Prabhakar et al. 2022).
+The Indian legal system is characterized by its complexity, combining elements of common, civil, and customary law traditions (Jain 2021; Rankin and
+Claus 2016). It includes multiple court levels (Supreme Court, High Courts, and
+subordinate courts), an extensive body of statutes, and diverse legal principles.
+Legal judgments often lack standardized structures and exhibit verbose, domainspecific language, further complicating automated classification (Ruhl and Katz
+2015). For instance, judgments may include lengthy narratives before presenting
+legal findings, and the terminology varies significantly across legal domains, even
+within the same case type.
+The scale of India’s judicial system compounds these challenges. With millions of pending cases and thousands of new ones added annually, the Supreme
+Court alone faces an immense caseload (Zain et al. 2018; Galanter et al. 2003).
+Efficient classification of judgments is critical for managing this workload,
+streamlining document retrieval, and supporting case prioritization. However,
+most prior research has focused on regions with less complex legal systems, leaving the unique needs of India unaddressed.
+To address these gaps, this study proposes a novel method for classifying Indian legal judgments into specific legal domains. The approach combines
+machine learning (ML) and deep learning (DL) techniques with advanced feature
+engineering to enhance classification accuracy. Techniques such as SMOTE (synthetic minority over-sampling technique) are utilized to address class imbalance,
+ensuring fair representation across legal domains. Additionally, the development
+of voting classifier ensembles integrates the strengths of multiple algorithms for
+improved performance.
+
+Enhancing Indian legal judgment classification with…
+
+525
+
+The study further emphasizes the inclusion of underexplored legal domains
+such as Land Revenue, Execution Petition, and Disciplinary Jurisdiction, providing comprehensive coverage of the Indian judicial corpus. Feature extraction
+methods like TF-IDF, Word2Vec, and contextualized embeddings are tailored to
+capture the linguistic and structural complexities of Indian legal texts. The contributions of this paper are as follows:
+• Domain-specific dataset: The introduction of a novel, manually curated dataset
+•
+•
+•
+•
+•
+•
+
+spanning 14 legal domains addresses the lack of comprehensive datasets in Indian
+legal AI research.
+Hybrid classification approach: Integration of ML and DL techniques allows for
+robust and context-sensitive classification of legal texts.
+Advanced feature engineering: Techniques like TF-IDF, Word2Vec, and contextualized embeddings enable precise representation of complex legal language.
+Class imbalance handling: SMOTE effectively addresses class imbalance, improving classification accuracy for underrepresented domains.
+Voting classifiers: Ensemble models combine multiple classifiers for enhanced
+accuracy and minimized biases.
+Comprehensive coverage: The inclusion of underexplored domains enriches the
+scope of AI applications in the Indian legal system.
+Practical applications: Automated classification enhances legal professionals’ efficiency by enabling faster document categorization, aiding research, and supporting
+case analysis.
+
+This study represents a significant step forward in addressing India’s legal complexities through AI. By integrating advanced techniques and focusing on India’s unique
+legal challenges, the proposed approach sets a benchmark for accuracy and efficiency
+in legal judgment classification, paving the way for broader AI adoption in the legal
+system. One important aspect of this research is its alignment with the United Nations
+Sustainable Development Goals (UN SDGs). By facilitating the management and categorization of large volumes of legal documents, the proposed approach contributes to
+SDG 16: Peace, Justice, and Strong Institutions. SDG 16 specifically emphasizes the
+importance of effective and accountable institutions, access to justice, and the rule of
+law. Overall, the research not only introduces a novel approach for automatic classification of Indian court judgments but also aligns with the UN SDGs, particularly SDG
+16. The emphasis on retrieval addresses the practical challenge of efficiently accessing
+pertinent legal information from diverse datasets, thus contributing to more effective
+legal information systems.
+The paper is structured as follows. Section II presents the background information
+and Section III provides an overview of previous research conducted by scholars. Section IV explains the dataset used this proposed work and Section V outlines the methodology employed in this study, followed by the evaluation results discussed in Section
+VI. Finally; Section VII concludes the paper.
+
+526
+
+P. Prabhakar, P. B. Pati
+
+2 An overview of Indian legal system
+The Indian legal system is one of the most intricate and historically significant
+judicial frameworks in the world. It has evolved as a hybrid system, incorporating
+elements of common law, civil law, customary law, and personal laws, shaped by
+British colonial influence, ancient Hindu and Islamic legal traditions, and modern
+constitutional principles. India follows a federal structure, where both the central
+and state governments have the authority to enact laws, with the judiciary playing
+a crucial role in interpreting and enforcing them. The Constitution of India serves
+as the supreme law, laying down fundamental rights, directive principles, and the
+framework for governance. Alongside constitutional law, the legal framework is
+shaped by statutory laws enacted by Parliament and state legislatures, judicial
+precedents under the doctrine of stare decisis, and customary and personal laws
+that govern family matters like marriage, divorce, and inheritance across Hindu,
+Muslim, Christian, and Parsi communities.
+India’s judicial hierarchy follows a three-tier system. The Supreme Court of
+India, as the apex court, has the authority for constitutional review and final
+appellate jurisdiction. Below it, High Courts operate at the state level, handling
+appeals and writ petitions. Further down, Subordinate Courts, including District Courts, Magistrate Courts, and Special Tribunals, handle civil, criminal,
+and administrative disputes. Legal matters in India are categorized into various
+domains, such as civil, criminal, constitutional, administrative, family, taxation,
+and corporate law. Each domain serves distinct legal purposes—for example,
+civil law governs disputes over contracts, property, and rights, while criminal law
+deals with offenses like theft and murder. Family law addresses issues related to
+marriage, divorce, and child custody, while constitutional law involves the interpretation and enforcement of fundamental rights and governance structures. The
+domain and subdoamin are as show in Table 1 with reference that validate the
+classification. To modernize India’s legal framework, significant legal reforms
+were introduced in 2023, replacing colonial-era laws with updated statutes. The
+Bharatiya Nyaya Sanhita (BNS) replaced the Indian Penal Code (IPC), updating criminal definitions and penalties. The Bharatiya Nagarik Suraksha Sanhita
+(BNSS) replaced the Code of Criminal Procedure (CrPC), streamlining investigations and trial procedures. The Bharatiya Sakshya Adhiniyam (BSA) replaced
+the Indian Evidence Act, expanding the scope of digital and forensic evidence
+in legal proceedings. These reforms aim to increase judicial efficiency, improve
+access to justice, and modernize procedural laws to better reflect India’s evolving
+legal landscape.
+In practice, despite recent advancements, professionals and researchers face
+significant challenges in managing the vast volume and complexity of Indian
+legal texts. Legal judgments often lack a standardized structure, complicating the
+extraction of relevant information. Each judgment may be presented in varying
+formats, requiring manual parsing and interpretation to identify key elements such
+as the case subject, legal arguments, and conclusions. Additionally, the complexity of legal language, with its formalized terms and domain-specific terminology,
+
+Criminal Offenses, Juvenile Justice, Revision Petition (if
+criminal offense included), Disciplinary Jurisdiction (if
+criminal misconduct recorded)
+
+Tax law
+
+Indian Constitution (Articles 32, 226, 136, 141); Supreme Court
+Rules
+
+Bharatiya Nyaya Sanhita (BNS) (replacing Indian Penal Code
+(IPC)); Bharatiya Nagarik Suraksha Sanhita (BNSS) (replacing
+CrPC); Juvenile Justice (Care and Protection of Children) Act,
+2015; Prevention of Corruption Act, 1988
+
+Income Tax, Sales Tax, Excise, Labor Law (if taxation-related) Income Tax Act, 1961; Goods and Services Tax (GST) Act; Central Excise Act, 1944; Employees’ Provident Fund (EPF) Act,
+1952; Employees’ State Insurance (ESI) Act, 1948
+
+Constitutional and administrative law Writ, Constitution
+
+Criminal law
+
+Family Law, Land Revenue, Execution Petition, Revision Peti- Hindu Marriage Act, 1955; Muslim Personal Law; Land Revenue
+tion, Labor Law, Disciplinary Jurisdiction
+Act; Code of Civil Procedure (CPC), Order 21 (Execution Petitions); Industrial Disputes Act, 1947; Prevention of Corruption
+Act, 1988
+
+Civil law and family matters
+
+Standard references
+
+Sub domains
+
+Legal domain
+
+Table 1  Classification of legal domains and subdomains in light of 2023 reforms to Indian penal code, criminal procedure code, and evidence law
+
+Enhancing Indian legal judgment classification with…
+527
+
+528
+
+P. Prabhakar, P. B. Pati
+
+further complicates understanding. The multilingual (Scao et al. 2022) nature of
+India’s legal system adds another layer of difficulty. Legal documents may be in
+English, Hindi, or various regional languages, making accurate translation and
+processing a demanding task. Further complicating matters is the absence of predefined labels for legal texts, which means researchers must manually categorize
+each document, a process that is both time-consuming and prone to human error.
+Without automated tools or standardized systems, this process remains inefficient,
+and inconsistencies often arise, hindering the seamless classification of legal documents. These challenges underscore the need for effective legal domain classification, which organizes judgments in a systematic manner, streamlining legal
+research, case retrieval, and precedent analysis. AI-driven domain classification
+is crucial in this regard, enabling legal professionals to quickly locate relevant
+precedents. By categorizing legal texts into defined domains, AI tools improve
+the speed and efficiency of legal research, enhance access to case law, and facilitate better decision-making. Recent advancements in natural language processing (NLP) and machine learning models like BERT (Kengton et al. 2019) and
+LegalBERT have revolutionized legal text classification, allowing these models
+to analyze legal language, capture contextual nuances, and automate tasks such
+as document categorization, summarization, and retrieval. With structured classification, legal professionals can access concise summaries of key judgments,
+accelerating legal argumentation and research.
+The Indian legal system continues to evolve, integrating technological advancements, legal reforms, and AI-driven automation to address challenges in legal text
+processing and judicial efficiency. By leveraging legal domain classification and AIbased NLP techniques, India’s judiciary is progressively enhancing access to legal
+information, case law organization, and justice delivery. These transformations are
+essential for improving the accessibility, efficiency, and responsiveness of India’s
+legal system while maintaining its fundamental principles of fairness, justice, and
+equality.
+
+3 Related work
+Smart Legal domain categorization has been a topic of interest in the field of NLP in
+recent years. Literature review is subdivided into (i) legal text processing techniques
+(ii) classification of legal documents (iii) advanced machine learning approaches for
+legal analysis (iv) deep learning innovations in legal text understanding (v) leveraging transformer-based models in legal NLP (vi) feature engineering and selection
+techniques (vii) concept of domain concept extraction (DCE) and its significance in
+legal text processing (viii) challenges and gaps of exciting technologies.
+3.1 Legal text processing techniques
+Legal text processing techniques encompass a range of foundational methods aimed
+at transforming unstructured legal texts into analyzable formats. These include
+
+Enhancing Indian legal judgment classification with…
+
+529
+
+linguistic preprocessing steps, such as normalization, part-of-speech tagging, and
+sentence segmentation, tailored to address the unique challenges of legal language
+(Leitner et al. 2019). Indian languages are multilingual and diverse with their own
+complexities (Lalitha and Gupta 2021) Techniques like semantic parsing and discourse analysis are employed to uncover the logical flow and argumentative structure in legal documents (Chalkidis et al. 2019). Advanced methodologies leverage
+hybrid approaches combining rule-based and statistical models to extract key legal
+concepts and relationships, such as obligations, rights, and temporal events (Waltl
+et al. 2018). Additionally, methods for handling multilingual and cross-jurisdictional
+legal texts are gaining traction, addressing the need for harmonized processing in
+globalized legal contexts (Avram et al. 2021). These innovations provide a robust
+framework for more advanced applications in legal NLP. Domain-specific term
+extraction plays a vital role in building legal taxonomies and ontologies, enabling
+efficient knowledge representation (Kang et al. 2014). Tools for legal citation analysis facilitate tracking precedent relationships and understanding case dependencies
+(Opijnen and Santos 2017). Moreover, sentiment analysis and polarity detection are
+increasingly applied to assess opinions in legal arguments, contributing to a nuanced
+understanding of legal texts (Shao et al. 2021).
+
+3.2 Classification of legal documents
+Legal text grouping involves identifying the category of a legal document by examining its connection to that specific category (Boella et al. 2011). Tasks within
+the realm of legal text/document classification encompass law domain classification (Aletras et al. 2016), identification of rulings (Kort 1957), mining arguments
+(Palau and Moens 2009), and predicting court decisions (Zhao et al. 2022; Sulea
+et al. 2017). Numerous research has investigated various aspects of legal classification, including the identification of argumentative propositions, the functions, and
+framework in ECHR (European Court of Human Rights) legal texts (Chalkidis et al.
+2019a, 2019b), the classification of Italian legal texts into relevant domains (Boella
+et al. 2019), prediction of law area rulings and issuance date of ECHR licit documents, and to forecast rulings in the Turkish legal system and determine the law
+domain to which a case pertains (Mumcuoğlu et al. 2021).Some studies have incorporated legal classification into information extraction and speaker coreference resolution tasks (Ji et al. 2020a, b). Ikram and Chakir (2019) present a study on Arabic
+legal text classification using machine learning techniques. The authors evaluated
+different classifiers, including Naïve Bayes, K-Nearest Neighbors, Decision Trees,
+Random Forests (Kumar et al. 2023), and SVM, and concluded that the SVM classifier achieved the highest accuracy. Westermann et al. (2019) present a method for
+creating Boolean search rules to classify legal texts. The authors demonstrate the
+effectiveness of their approach on a dataset of Canadian case law in binary and multiclass classification. Additionally, studies have compared various neural models for
+extensive multi-label text (Chalkidis et al. 2021, Bommarito et al. 2023, Nay et al.
+2023) categorisation of legal texts, with BiGRU and label-wise attention networks
+
+530
+
+P. Prabhakar, P. B. Pati
+
+outperforming others (Chen et al. 2022), and transformer models such as RoBERTa
+achieving state-of-the-art performance in licit text classification (Ku and Leroy
+2014).
+Akça et al. (2022) created large datasets using both supervised and unsupervised
+methods from public sources and tested various classification algorithms, including
+traditional and deep learning models (Prabhakar et al. 2023), on Court of Cassation
+decisions for crime labeling. The results showed that despite the technical language
+and complexity of legal documents, pre-trained neural language models have a high
+potential for real-world scenarios in the legal domain. The work presented by Limsopatham (2021) explores the effectiveness of the BERT model in the task of legal
+document classification, specifically in classifying US Supreme Court cases according to their issue areas. Shaheen et al. (2020) conducted text classification tasks
+and compared the effectiveness of various transformer models on legal datasets.
+Mamooler et al. (2022) propose the active learning pipeline for licit text classification, which includes selecting informative samples to label and training a model on
+these samples. Mencía and Fürnkranz (2010) introduced an efficient algorithm for
+multilabel classification in large-scale legal text datasets. Their method, called MLkNN, is a modification of the k-nearest neighbor algorithm that adapts to multilabel
+classification tasks by considering the label dependencies and reducing the computational complexity. Ikram and Chakir (2019) presented an Arabic text classification
+approach for the legal domain, using a mix of feature selection methods to select the
+most relevant features for their classification model. Howe et al. (2019) presents a
+comparative study of various machine learning methods for classifying legal judgments into distinct areas, using a novel dataset of 6227 Singapore Supreme Court
+judgments. It finds that while traditional models like LSA still outperform newer
+deep learning models in some metrics, the results suggest that further optimization
+of neural-based approaches could lead to improved performance for legal NLP tasks.
+Araújo et al (2021) various machine learning models for classifying legal texts from
+the Brazilian judicial system across ten classes. The study recommends Random
+Forest for its balance of accuracy and interpretability, while also suggesting Naive
+Bayes and KNN as alternatives when computational resources are limited.
+3.3 Advanced machine learning approaches for legal analysis
+Studies by Aleven (2003) and Ashley and Brüninghaus (2009) use rule-based
+algorithms to predict case outcomes based on previously extracted legal features.
+Medvedeva et al. (2020) explores the use of machine learning techniques to forecast the decisions of the ECHR relying on the textual content of case documentation. The authors compare different machine learning models and feature sets, and
+report promising results with a Gradient Boosting Classifier using semantic textual
+features, in predicting the outcomes of cases. Ensemble methods have been under
+exploration in various domains to enhance its application in real world (Sajeev &
+Pati 2022). Xiao et al. (2017) present a study on Chinese question classification
+in the legal domain using machine learning techniques. Specifically, the authors
+explored several feature selection methods and classifiers to predict the category of
+
+Enhancing Indian legal judgment classification with…
+
+531
+
+legal questions and achieved promising results. One study by Jurafsky and Martin
+et al. (2023) explored the use of machine learning algorithms for a variety of NLP
+tasks, including language modeling, part-of-speech tagging, and sentiment analysis.
+The study compared the performance of different algorithms, including SVMs, decision trees, and neural networks, and found that neural networks often outperformed
+the other algorithms. Nay (2018) investigates the use of NLP and machine learning
+for analyzing law and policy texts. Trappey et al. (2020) integrate machine learning
+and NLP methods to create intelligent patent summaries.
+3.4 Deep learning innovations in legal text understanding
+Recent studies have shown that deep neural network models can improve performance in legal NLP tasks, such as recognition of crucial and effectuation components in Japanese licit texts (Nguyen et al. 2018), named entity recognition in
+German legal documents (Leitner et al. 2019), and legal judgment prediction on
+Chinese criminal cases (Chalkidis et al. 2019). Ji et al. (2020a, b) propose a deep
+neural network model for resolving speaker coreference in legal texts. The model
+consists of two sub-networks, a mention detection network and a mention pair classification network, and attains exceptional results on a standardized legal dataset. Ji
+et al. (2020) in another paper propose an end-to-end integrated model for extracting factual data from court record documents. The proposed model combines CNN
+and RNN to perform named entity recognition and related extraction tasks. Jin et al.
+(2020) present a systematic evaluation of the robustness of BERT, a popular pretrained language model, under different natural language challenging scenarios for
+text categorisation and entailment tasks. Li et al. (2020) provide a comprehensive
+analysis of text classification approaches, encompassing both conventional shallow techniques and modern deep learning methods. Ma et al. (2020) propose using
+object-oriented design (OOD) in legal adjudication to improve the clarity and consistency of legal reasoning. The authors argue that this approach can enhance the
+efficiency and accuracy of legal decision-making and facilitate the development of
+legal tech applications.
+Mullick et al. (2022) use a combination of traditional feature-based models and
+deep learning-based models, achieving state-of-the-art performance on a benchmark
+dataset. Another study by Collobert et al. (2011) investigated the use of deep learning algorithms for NLP tasks, including named entity recognition and semantic role
+(Pillai et al. 2018) labeling. The study found that deep learning algorithms, such as
+CNN and RNN, were able to achieve state-of-the-art performance on these tasks.
+Lopez and Kalita et al. (2017), explore the applications of deep learning in NLP.
+Minaee et al. (2021) provide an extensive review of deep learning-based text classification methods.
+3.5 Leveraging transformer‑based models in legal NLP
+Nghiem et al. (2022) conducted a case study on utilizing transformer-based classification models to predict legal claim success in flight compensation cases. They
+
+532
+
+P. Prabhakar, P. B. Pati
+
+combined text data with other data types and achieved significant improvements over
+baselines, leading to productivity gains in an existing claim management system that
+processes thousands of cases per month. Avram et al. (2021) proposed a framework
+for classifying EuroVoc, a multilingual thesaurus used for organizing legislative
+documents of the European Union institutions, using fine-tuned Transformer-based
+language models. Clavié et al. (2021) present a new approach to efficient short legal
+text classification called LegaLMFiT, which utilizes LSTM language model pretraining for improved performance and accuracy. They demonstrate the performance
+of their method on multiple legal classification tasks, achieving state-of-the-art performance on various datasets.
+3.6 Feature engineering and selection techniques
+Zheng et al. (2004) proposed a feature selection approach for text classification in
+imbalanced datasets. Their method, called the improved mutual information feature selection (IMIFS), uses the statistical measure of mutual information to select
+informative features while accounting for class imbalance. Deng et al. (2019) provided a comprehensive review of feature selection methods for text classification,
+including filter, wrapper, and embedded methods. They compared the performance
+of various feature selection techniques on different text datasets and discussed their
+advantages and limitations. Labani et al. (2018) proposed a novel multivariate filter approach for feature selection in text categorisation. Their approach, called multivariate information gain (MIG), selects features that have high relevance to the
+target class while considering the correlations between features. Jin et al. (2023)
+introduced a new feature selection method for text categorization called the max-difference maximization criterion. Their method maximizes the difference of the mean
+feature values between the negative and positive classes to select most discriminative features. Roul et al. (2023) presented a text classification approach using correlation-based feature selection on a multi-layer extreme learning machine (ELM)
+feature space.
+3.7 Concept of domain concept extraction (DCE) and its significance in legal text
+processing
+Kang et al. (2014) propose an intelligent key concept finder from text called CFinder
+that extracts and scores key concepts from domain-specific text for ontology development. They evaluate the effectiveness of CFinder in extracting key concepts from legal
+documents and show that it outperforms other existing methods. Meijer et al. (2014)
+propose a semantic approach for extracting domain taxonomies from text by combining four measures—domain pertinence, lexical cohesion, domain consensus, and structural relevance—to filter candidate term metrics—domain relevance, lexical coherence,
+domain consensus, and structural significance—to refine the selection of potential
+terms. The work of Šajatović et al. (2019) focuses on evaluating different methods for
+the automatic extraction of terms from individual documents using domain-specific
+corpora. They compared different approaches for extracting terms, including the use
+
+Enhancing Indian legal judgment classification with…
+
+533
+
+of linguistic patterns and domain-specific knowledge. Araujo et al. (2017) propose an
+ontology-based approach for extracting information from legal texts in the Brazilian
+legal domain. The authors apply the approach to two case studies, demonstrating its
+effectiveness in extracting relevant information such as case names, legal entities, and
+temporal relations.
+Opijnen and Santos (2017) analyzes the concept of relevance in legal information
+retrieval and identifies two dimensions of relevance: topical and legal relevance. The
+authors argue that a comprehensive evaluation of legal search engines should take both
+dimensions into account. Waltl et al. (2018) present a review of rule-based information
+extraction (RBIE), including its merits, demerits, and future perspectives. The authors
+argue that RBIE is suitable for extracting structured information from unstructured
+data, but its effectiveness depends on the complexity of the data and the rules used for
+extraction. Shao et al. (2021) investigate user behavior in legal case retrieval, using a
+large-scale dataset of user interactions with a legal search engine. The study provides
+insights into user preferences, query reformulation strategies, and the effectiveness of
+various relevance signals for legal search.
+3.8 Challenges and gaps of exciting technologies
+In text classification, an area requiring more attention pertains to the interpretability
+of intricate models like deep neural networks. Although these models exhibit remarkable performance across numerous text classification tasks, they often remain enigmatic “black boxes,” posing challenges in comprehending the rationale behind specific
+predictions. When juxtaposed with international legal texts, like Chinese, Australian,
+and European cases, the spotlight on Indian legal texts has been comparably less pronounced. Further, the prevailing corpus of work primarily revolves around succinct
+texts with modestly sized labeled datasets, potentially posing challenges in handling
+extended texts and scaling up labeled text classification endeavors within the legal context. The intricacies inherent in legal sources and language usage give rise to challenges
+that require developing advanced feature extraction methods and machine learning
+models to facilitate the effective processing of legal text.
+Studies on legal text classification in the Indian landscape have predominantly
+concentrated on analyzing judgments and rulings or have remained confined to specific legal sub-domains like intellectual property or contract law. Consequently, a gap
+emerges in developing and evaluating potent machine learning models tailored for
+legal text classification in the Indian legal sphere. The proposed methodology seeks
+to bridge this gap by integrating diverse deep learning and transformer models recognized for their superiority over conventional methods in NLP tasks. By harnessing
+these advanced techniques, the proposed approach strives to achieve heightened accuracy and efficiency in classifying legal documents, thereby surmounting the limitations
+posed by existing methodologies.
+
+534
+
+P. Prabhakar, P. B. Pati
+
+4 Dataset
+The dataset consists of 3229 legal judgments carefully curated to represent the
+diverse and complex nature of the Indian legal system. Sourced from IndianKanoon.
+com, a publicly accessible and widely recognized legal database, these judgments
+encompass decisions from the Hon’ble Supreme Court of India (SC) and various
+High Courts (HCs), spanning the period from 1950 to 2022. This extensive temporal coverage ensures the inclusion of both historical and contemporary judgments,
+reflecting the evolution of legal reasoning and practices in India. All judgments are
+available in English, making them suitable for academic research without licensing
+restrictions. The dataset spans 14 distinct legal domains, including Civil, Criminal,
+Writ, Income Tax, Constitution, Land Revenue, Family, Execution Petition, Sales
+Tax, Revision Petition, Juvenile Justice, Labour Law, Excise, and Disciplinary Jurisdiction. These domains capture the hybrid nature of India’s legal framework, which
+blends Common Law, Civil Law, and customary traditions. For example, Criminal
+Law and Constitutional Law are rooted in common law principles, while Family
+Law incorporates religious personal laws alongside statutory frameworks. Domains
+such as Taxation, governed by detailed statutory codes, and Labour Law, which integrates statutory provisions with judicial precedents, further illustrate the diversity
+of the system. This comprehensive coverage ensures the dataset reflects the varying
+nature of legal language and reasoning across different contexts.
+The dataset was constructed using a two-stage sampling methodology. Initially, a
+pool of approximately 5000 judgments was collected from IndianKanoon based on
+criteria such as precedential value, structural completeness, and clarity of legal reasoning. From this pool, a systematically sampled set of 3229 judgments was selected
+to align with the official domain distribution patterns reported by the Supreme Court
+of India. This approach ensured that the dataset mirrored the relative proportions
+of cases across domains, such as 23.5% Civil and 19% Criminal, as seen in official judicial statistics. Priority was given to judgments with well-articulated legal
+
+Fig. 1  Sample of the dataset collected from source and maintained with domain and labels marked after
+carefully examining each document
+
+Enhancing Indian legal judgment classification with…
+
+535
+
+Fig. 2  Comparison of domain distribution (in percentage) in Indian legal judgments: dataset versus official data
+
+principles and comprehensive discussions of applicable laws, ensuring both quality and representativeness. A significant challenge was the absence of predefined
+labels for judgments. To address this, each judgment was meticulously read, and its
+domain label was assigned based on content and context. This manual labeling process ensured accurate classification and reflects the dataset’s reliability for domainspecific legal tasks.
+Figure 1 provides a snapshot of how judgments were collected, structured, and
+labeled for analysis. Figure 2 compares the percentage distribution of cases in the
+dataset with the official Supreme Court statistics (https://​www.​sci.​gov.​in/​case-​categ​
+ory/ and https://​scdg.​sci.​gov.​in/​scnjdg/). While slight variations are expected due to
+the curated nature of the dataset, the overall distribution closely aligns with official trends. For instance, Civil and Criminal cases, which dominate the judicial
+landscape, are prominently represented, while less common domains like Family,
+Labour, and Taxation are proportionately included. The dataset’s design aims to capture the breadth and depth of India’s legal system while ensuring practical applicability for research. By covering judgments from a wide temporal range and diverse
+jurisdictions, the dataset offers a robust foundation for developing automated classification models tailored to the unique challenges of Indian legal texts. This alignment with official judicial patterns, combined with a transparent and rigorous selection process, underscores the dataset’s value for exploring India’s multifaceted legal
+landscape.
+The polarity of legal judgments was calculated using sentiment analysis techniques that quantify the sentiment expressed in the text. The analysis of polarity scores across legal domains tests the hypothesis that there is no significant
+difference in sentiment expressed across domains (H₀) against the alternative
+hypothesis that such differences exist (H₁). Despite the narrow range of polarity
+
+536
+
+P. Prabhakar, P. B. Pati
+
+Fig. 3  Visualization of polarity analysis for case text data
+
+Fig. 4  Variation in average subjectivity scores across different legal domains
+
+scores (0.01–0.06), statistical tests confirm that the observed variations are significant, as detailed in the Appendix (Tables 5, 6, 7, 8, 9). For instance, Land
+Revenue judgments exhibit the highest polarity (0.06), reflecting a slightly more
+assertive tone, while Juvenile Justice cases have the lowest polarity indicative
+of a more neutral and somber tone. Figure 3 illustrates these differences, highlighting how sentiment adapts to the contextual nuances of each domain while
+maintaining the professional objectivity typical of legal texts. The polarity scores
+
+Enhancing Indian legal judgment classification with…
+
+537
+
+provide additional context, reflecting the tone of the documents, which could
+potentially enhance domain classification in future research by considering sentiment alongside other textual features. Figure 4 illustrates the average subjectivity
+scores across different domains. Subjectivity plays a crucial role in understanding the tone and impartiality of legal judgments, which are generally crafted to
+remain neutral and objective. In this study, subjectivity scores across different
+legal domains show a narrow range, typically between 0.3 and 0.4, which reflects
+the inherent nature of legal language. Legal judgments are primarily factual and
+focused on legal reasoning, with minimal influence from personal opinions or
+emotional expressions. This results in relatively low subjectivity scores across
+all domains. While these scores do not provide strong differentiators between
+domains, they serve to reinforce the expected neutrality of legal texts. As such,
+subjectivity, though not a primary factor for domain classification in this dataset,
+still contributes to confirming the overall impartial tone of the judgments. This
+insight emphasizes that domain classification in the legal context is more likely to
+be influenced by other features, such as legal terminology and case-specific content, rather than subjective tone.
+Figure 5 displays the distribution of different parts-of-speech (POS) across
+case domains in the dataset. Parts-of-speech (POS) tags play a key role in legal
+domain classification by revealing linguistic patterns unique to each domain.
+Analyzing POS distribution helps identify language styles and terminology specific to different legal areas. For example, criminal cases tend to use more nouns
+and adjectives related to crimes, such as “murder” and “guilty,” while civil cases
+feature terms related to agreements and disputes, like “contract” and “breach.”
+These distinct linguistic patterns aid in distinguishing domains, enhancing the
+
+Fig. 5  Distribution of parts of speech (POS) across different legal case domains
+
+538
+
+P. Prabhakar, P. B. Pati
+
+Fig. 6  Average number of words across different legal case domains
+
+feature extraction process and improving the accuracy of legal domain classifiers.
+Understanding these POS-based distinctions is critical for effective classification.
+Figure 6 shows the average number of words per document across different
+domains. The “average number of words across domain” refers to the average number of words per document in each of the different legal domains present in the dataset. This metric provides insight into the length and complexity of legal judgments
+in different domains. For example, if the mean word count for the “Family” domain
+is higher than the mean word count for the “Civil” domain, it may indicate that Family cases tend to be more complex or involve more detailed legal arguments. Overall,
+these visualizations provide valuable insights into the dataset and can aid in understanding the characteristics of legal judgments in the Indian legal system
+
+5 Methodology
+The objective of legal domain classification is to classify legal records into various
+domains, such as civil, criminal, family law etc. Accurate classification of legal data
+can assist legal professionals in efficiently processing and managing large volumes
+of legal documents. In this paper, a novel methodology for legal domain classification that leverages machine learning techniques and feature selection methods is
+proposed as shown in Fig. 7. The proposed methodology consists of four main steps:
+data preprocessing, feature extraction, Feature selection and classification.
+5.1 Preprocessing
+The dataset consisting of legal judgments from different domains is collected from
+relevant sources as explained in Section III. The dataset does not include any document metadata, which is a common feature in structured legal datasets. In this
+case, the judgments were manually collected, and the required classifications (e.g.,
+
+Enhancing Indian legal judgment classification with…
+
+539
+
+Fig. 7  Illustration of the proposed method for legal document domain classification
+
+domain categorization) were created after thoroughly reading each document. This
+step ensured that the documents were categorized based on their legal domain. The
+gathered data is subjected to preprocessing, which involves eliminating any noise
+and irrelevant information while transforming the text into a suitable format for
+analysis. This stage incorporates various techniques, including tokenization, removal
+
+540
+
+P. Prabhakar, P. B. Pati
+
+of stop words, stemming, and lemmatization, to accomplish the task. Text Cleaning involves removing any irrelevant or unnecessary text such as special characters,
+punctuations, and numbers from the dataset. Tokenization step involves breaking down the text into separate words or tokens. Following tokenization, stopword
+removal encompasses the elimination of commonly used words, such as “a,” “an,”
+“the,” and similar terms, which carry minimal significance in the text. Lemmatization involves reducing words to their base or root form, so that variations of the
+same word are treated as the same token. Part-of-Speech tagging involves identifying grammatical category, such as noun, adjective, verb, and so on, of each token in
+the text.
+5.2 Data augmentation
+The SMOTE is a widely used approach in resolving data imbalance problems, specifically in classification tasks. It involves oversampling the minority class by generating artificial instances via interpolation between adjacent instances of the minority
+class, aiming to address the imbalance issue and prevent the classifier from favoring
+the majority class. The SMOTE algorithm selects k closest minority class instances
+and generates synthetic instances by interpolating between them in feature space,
+which results in more representative and robust synthetic instances. The sampling
+ratio, a user-defined parameter, controls the number of synthetic instances for each
+minority class instance. SMOTE has demonstrated its effectiveness in enhancing the
+accuracy of classifiers for imbalanced data, including fraud detection, medical diagnosis, and credit scoring. However, it is worth mentioning that SMOTE may not be
+effective in scenarios where the class imbalance is severe or the feature distributions
+of the minority and majority classes are significantly different. Moreover, the selection of the k parameter plays a crucial role in the SMOTE algorithm’s effectiveness,
+and it might need some trial and error to determine the optimal value. Furthermore,
+the legal domain can benefit from employing data augmentation approaches, including the synthetic minority over-sampling technique (SMOTE), to handle imbalanced
+class distributions. By generating synthetic instances of the minority class, SMOTE
+can rebalance the class distribution and enhance the classifiers’ performance.
+5.3 Feature extraction
+Feature extraction involves selecting and transforming relevant raw data into a collection of features that are more informative and suitable for machine learning models. In the context of natural language processing (NLP), this process entails converting textual data into numerical formats that machine learning algorithms can
+process effectively.
+5.3.1 Traditional feature extraction methods
+a. Term frequency-inverse document frequency (TF-IDF): TF-IDF is a statistical
+measure that evaluates the importance of a term in a document relative to its
+
+Enhancing Indian legal judgment classification with…
+
+541
+
+occurrence in a larger corpus. Unlike the Bag of Words (BoW) approach, TFIDF also accounts for the rarity of words across documents, making it a more
+sophisticated feature extraction technique.
+
+TF − IDF = TF * log
+
+N
+DF
+
+(1)
+
+where:
+	  TF = Term frequency.
+	  DF = Document frequency.
+	  N = Total number of documents in the corpus.
+	  log = natural logarithm.
+b. Word embeddings: Word embeddings represent words as dense vectors of real
+numbers in a high-dimensional space. These embeddings preserve semantic relationships between words based on their contexts within the corpus. For example,
+Word2Vec and GloVe generate embeddings where each word is mapped to a
+vector:
+
+Word2Vec(w) = (v1, v2, ..., vn)
+
+(2)
+
+where:
+	  w = word.
+	 v1, ­v2, …, ­vn = values of the vector representation of the word.
+5.3.2 Transformer‑based feature extraction
+Modern transformer models are employed to extract contextual embeddings
+that capture the syntactic and semantic nuances of legal text. This study utilizes
+transformer models tailored for legal and general text processing, including:
+• Legal-specific models: InLegalBERT, InCaseLawBERT, LegalBERT, and
+
+CustomInLawBERT.
+
+• General transformers: Mamba, T5, RoBERTa, CodeT5, SBERT, DistilBERT,
+
+XLM, XLM Large, GPT-2, ALBERT, Electra, DeBERTa, TFDeBERTa,
+FlanT5, FlanT-Large, BART, BigBird Pegasus, LongFormer, and LUKE.
+
+The embeddings were extracted from the final hidden layers of these transformer models, leveraging their ability to capture contextual dependencies. For
+longer legal texts that exceed the token limit of models like BERT (512 tokens),
+the text was divided into overlapping chunks, each processed separately. The
+embeddings of these chunks were aggregated using mean pooling to form a
+comprehensive representation of the document. Fine-tuning was not conducted
+to avoid potential overfitting or additional complexity, especially considering
+that the dataset was already diverse and comprehensive.
+
+542
+
+P. Prabhakar, P. B. Pati
+
+5.3.3 Deep learning models for feature extraction
+Deep learning models, including custom Convolutional Neural Networks (CNNs),
+Recurrent Neural Networks (RNNs), and Long Short-Term Memory (LSTM) networks, were also employed for feature extraction. These models excel at capturing
+sequential and hierarchical patterns in legal texts, further enriching the extracted
+feature set.
+The extracted features, both traditional and transformer-based, were subjected to
+Principal Component Analysis (PCA). PCA reduced the dimensionality of the dataset while preserving its critical patterns and variance. The reduced feature set facilitated efficient computation and minimized overfitting risks. The features extracted
+through traditional, transformer-based, and deep learning methods were analyzed in
+various combinations. This analysis included both raw features and PCA-reduced
+features to determine the optimal feature set for domain classification.
+
+5.4 Feature selection
+Filter methods in feature selection involve selecting the most important features
+based on some statistical measure or evaluation metric, without involving the
+machine learning model. The forward feature selection method (Bharti and Singh
+2014) is used, which involves adding one feature at a time and selecting the subset
+that yields the best model performance. By iteratively adding one feature at a time
+and selecting the subset that resulted in the best model performance, the most relevant features were identified. The feature selection aimed at improving the performance of the learning model by identifying the most informative features and reducing the redundancy in the feature set.
+
+5.5 Classification
+Classification of legal domain is a significant problem in the area of NLP and judicial system. The legal domain consists of multiple sub-domains such as civil, criminal, family, constitution etc. which can be classified using different AI techniques.
+The features extracted as explained in Section 4.3 are then used as input to traditional machine learning models, such as Bagging Classifier, CatBoost Classifier,
+DecisionTree Classifier, GaussianNB, GradientBoosting Classifier, HistGradient
+Boosting Classifier, KNeighbors Classifier, LinearSVC, Logistic Regression, MLP
+Classifier, Random Forest Classifier, SGD Classifier, SVC, and XGB Classifier, and
+deep learning models, such as CNNs, RNNs, LSTM and BiLSTM, to perform the
+legal domain classification task. The combination of transformer models and traditional machine learning models or deep learning models is expected to provide
+a better performance than using either approach alone. The feature extracted using
+traditional methods are given as input to the different machine learning models
+and deep learning models. The performance of the various trained model is then
+
+Enhancing Indian legal judgment classification with…
+
+543
+
+evaluated. The comprehensive approach strives to achieve remarkable accuracy in
+legal domain classification while capitalizing on the respective advantages of these
+methods.
+5.6 Evaluation
+In this study, the evaluation of the deep learning models was performed using two
+important metrics: Mean Accuracy and Standard Deviation. A fivefold cross-validation approach was chosen for evaluation. This technique strikes a balance between
+computational efficiency and reliable performance estimation. Mean Accuracy was
+calculated by averaging the accuracy scores obtained from each fold, providing an
+overall measure of the classifier’s performance and mitigating potential variations
+across folds. Additionally, Standard Deviation was used to quantify the variability
+of the classifier’s performance across different folds, indicating the consistency of its
+performance. A smaller standard deviation suggests more consistent performance,
+while a larger standard deviation may indicate greater variability. The chosen evaluation metrics, provide valuable insights into the models’ performance, generalization ability, and consistency.
+
+6 Experimental results and analysis
+6.1 Experimental results
+The experimental study investigated various approaches to legal document summarization and classification using a dataset of 3329 cases from the Indian judicial system, spanning 14 distinct domains. The focus was on evaluating the effectiveness
+of different combinations of embeddings, preprocessing techniques, and models to
+address the complexities of the legal domain. The experiments systematically analyzed traditional word embeddings, transformer-based embeddings, dimensionality
+reduction, class balancing, and diverse classification models to identify the optimal
+configuration. The experiments conducted are:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+Traditional Embeddings + DL
+Transformers Embeddings + DL
+Transformers Embeddings + PCA + DL
+Transformers Embeddings + Feature Selection + DL
+Transformers Embeddings + SMOTE + DL
+Transformers Embeddings + PCA + SMOTE + Feature Selection + DL
+Transformers Embeddings + SMOTE + Feature Selection + DL
+Traditional Embeddings + ML
+Transformers Embeddings + ML
+Transformers Embeddings + PCA + ML
+Transformers Embeddings + Feature Selection + ML
+Transformers Embeddings + SMOTE + ML
+
+544
+
+P. Prabhakar, P. B. Pati
+
+• Transformers Embeddings + PCA + SMOTE + Feature Selection + ML
+• Transformers Embeddings + SMOTE + Feature Selection + ML
+
+Initially, traditional word embeddings, including TF-IDF, Word2Vec, GloVe, and
+FastText, were evaluated with deep learning models such as CNN, RNN, LSTM,
+and BiLSTM. Among these, BiLSTM with GloVe embeddings achieved a mean
+accuracy of 0.62 (standard deviation: 0.123), outperforming other combinations.
+This result highlighted BiLSTM’s ability to capture sequential dependencies, making it particularly suitable for processing legal texts. However, the overall performance of these methods remained limited due to the inherent complexity and variability of legal language.
+To enhance performance, transformer embeddings such as T5, InLegalBERT,
+LegalBERT, and others were incorporated. These embeddings provided richer
+semantic and contextual representations, leading to improved outcomes. For example, BiLSTM with T5 embeddings initially achieved an accuracy of 0.57, which
+increased to 0.60 when feature selection was applied to reduce the embedding
+dimensions from 768 to 120. This dimensionality reduction not only improved
+efficiency but also mitigated overfitting. The highest performance in deep learning models was observed when combining T5 embeddings with feature selection
+and SMOTE, achieving a mean accuracy of 0.64. However, it was noted that excessive use of PCA for dimensionality reduction negatively impacted performance, as
+seen in the BiLSTM configuration with T5 embeddings, PCA, SMOTE, and feature
+selection, which achieved a reduced accuracy of 0.44.
+In addition to deep learning, machine learning classifiers such as Logistic Regression, Random Forest, Polynomial SVM, CatBoost, and Voting Classifiers were
+evaluated. Traditional embeddings performed reasonably well in these models; for
+instance, CatBoost with GloVe achieved an accuracy of 0.58. However, transformer
+embeddings significantly improved results. Logistic Regression with T5 embeddings and feature selection achieved an accuracy of 0.68, while Polynomial SVM
+with T5 embeddings and SMOTE reached 0.79 (standard deviation: 0.076). These
+results demonstrated the ability of transformer embeddings to enhance classification
+by capturing nuanced semantic relationships.
+The best-performing configuration was observed with the Voting Classifier,
+which combined T5 embeddings with feature selection and SMOTE. This setup
+achieved an exceptional mean accuracy of 0.99 with minimal variance (standard
+deviation: 0.001). The ensemble approach of the Voting Classifier leveraged the
+strengths of multiple classifiers, providing robust and consistent predictions even
+with high-dimensional and imbalanced data. This result highlighted the effectiveness of integrating advanced preprocessing techniques, robust transformer embeddings, and ensemble models for achieving near-perfect accuracy in legal document
+classification.
+The Table 2 underscores the importance of selecting the right combination of
+embeddings, preprocessing techniques, and models to address the challenges of legal
+document summarization. While deep learning models showed competitive results,
+the integration of transformer embeddings with ensemble machine learning classifiers emerged as the most effective strategy for handling the complexity of legal texts.
+
+Enhancing Indian legal judgment classification with…
+
+545
+
+Table 2 Summary of performance of the models under different configurations, highlighting the best-performing configuration
+Model/Technique
+
+Embeddings PCA
+
+Feature
+selection
+
+SMOTE
+
+Mean accuracy
+
+Standard
+DEVIATION
+
+BiLSTM
+
+GloVe
+
+No
+
+No
+
+No
+
+0.62
+
+0.123
+
+BiLSTM
+
+T5
+
+No
+
+No
+
+No
+
+0.57
+
+0.060
+
+BiLSTM
+
+T5
+
+Yes
+
+No
+
+No
+
+0.54
+
+0.050
+
+BiLSTM
+
+T5
+
+No
+
+Yes
+
+No
+
+0.60
+
+0.013
+
+BiLSTM
+
+T5
+
+No
+
+No
+
+Yes
+
+0.51
+
+0.002
+
+BiLSTM
+
+T5
+
+Yes
+
+Yes
+
+Yes
+
+0.44
+
+0.0217
+
+BiLSTM
+
+T5
+
+No
+
+Yes
+
+Yes
+
+0.64
+
+0.010
+
+CatBoostClassifier
+
+GloVe
+
+No
+
+No
+
+No
+
+0.58
+
+0.040
+
+SDG classifier
+
+T5
+
+No
+
+No
+
+No
+
+0.67
+
+0.017
+
+Logistic regression
+
+T5
+
+Yes
+
+No
+
+No
+
+0.58
+
+0.112
+
+Logistic regression
+
+T5
+
+No
+
+Yes
+
+No
+
+0.68
+
+0.112
+
+Polynomial SVM
+
+T5
+
+No
+
+No
+
+Yes
+
+0.69
+
+0.076
+
+Logistic Regression
+
+T5
+
+Yes
+
+Yes
+
+Yes
+
+0.53
+
+0.162
+
+Voting classifier (ML)
+
+T5
+
+No
+
+Yes
+
+Yes
+
+0.99
+
+0.001
+
+6.2 Discussion
+The experiments conducted in this study demonstrated the utility of specific embedding techniques—such as GloVe, FastText, and T5—when combined with deep learning models like BiLSTM for the classification of Indian legal judgments. These experiments emphasized the importance of selecting appropriate embeddings, handling class
+imbalance, and incorporating feature selection techniques for optimal performance.
+Class imbalance handling through techniques like SMOTE showed mixed results.
+SMOTE, which generates synthetic samples for the minority class, was found to
+reduce accuracy when used with deep learning models. This may be due to the efficient handling of class imbalance by deep learning models themselves, with the
+introduction of synthetic samples potentially leading to overfitting, especially in
+smaller legal domains. However, combining SMOTE with feature selection yielded
+better results overall, as it mitigated the negative effects of class imbalance. The corresponding accuracy values for experiments involving SMOTE and feature selection
+with ML classifiers are provided in Appendix.
+Transformer-based models like T5 outperformed other models due to their ability
+to capture complex relationships through self-attention mechanisms, allowing better
+understanding of legal text’s semantic nuances. Despite this, domain-specific models like InLegalBERT, IncaselawBERT, and CustomInLawBERT showed a marginal
+decrease in performance (2–5% lower) compared to T5-based models. This could be
+attributed to the complexity and diversity of the legal domain, which might not be
+fully captured by these models. Additionally, T5’s pretraining (Zheng et al. 2021)
+and generalization capabilities made it more suitable for the task despite not being
+fine-tuned on Indian legal datasets (Prabhakar et al. 2022).
+
+546
+
+P. Prabhakar, P. B. Pati
+
+Some models, particularly those using basic embeddings like FastText, showed
+relatively low performance (below 60% accuracy), even when the dataset size was
+increased from 900 to 3229 cases. This marginal improvement suggests that the
+complexity and diversity of the legal domain were underrepresented, limiting the
+models’ ability to capture nuanced patterns. Moreover, the intricacies of legal language and variability across domains contributed to lower accuracy with simpler
+embeddings. Therefore, improvements in dataset size, diversity, and more advanced
+modeling techniques are needed for significant performance gains.
+The experiments were conducted using Google Colab with Python 3, utilizing the
+Google Compute Engine backend. The system resources included 12.7 GB of RAM
+(1.8 GB used) and 107.7 GB of disk space (33.1 GB utilized), which were sufficient
+for executing the models. However, hardware limitations may have influenced the
+overall runtime and efficiency. In conclusion, the combination of transformer-based
+embeddings, feature selection, and ensemble methods proved to be the most effective strategy for achieving high classification accuracy, with the best performance
+reaching 0.99. However, further research into domain-specific models, error analysis, and class-wise performance is needed to improve model robustness and explainability for legal document classification. The scalability of transformer embeddings
+combined with ML classifiers offers a cost-effective solution for automating legal
+document summarization in resource-constrained settings, making it a promising
+approach for large-scale legal applications requiring real-time processing.
+Table 3 provides a comparative analysis of the optimal model configurations. The
+BiLSTM + GloVe configuration, while capturing sequential dependencies, achieved
+a moderate accuracy of 0.62 due to the limitations of traditional word embeddings in
+handling the complexities of legal text. Incorporating T5 embeddings with BiLSTM
+and feature selection improved accuracy slightly to 0.60, though the feature selection process resulted in a loss of crucial information. Adding SMOTE alongside feature selection in BiLSTM + T5 + SMOTE + Feature Selection improved accuracy to
+0.64, addressing class imbalance and dimensionality reduction. Logistic Regression
+with T5 and feature selection reached 0.68, benefiting from high-quality embeddings but limited by its simpler model structure. Polynomial SVM + T5 + SMOTE
+improved to 0.69, effectively handling class imbalance but introducing higher
+variance due to oversampling. The best-performing configuration, Voting Classifier + T5 + SMOTE + Feature Selection, achieved an accuracy of 0.99, leveraging
+ensemble learning, data balancing, and dimensionality reduction to optimize performance. Further enhancements, using models like ‘SGD + XGB + SVC + RF + HG
+B + LGBM’ within ensemble approaches, consistently yielded up to 0.99 accuracy,
+underscoring the value of advanced embeddings, ensemble strategies, and supplementary techniques for optimal performance in legal text classification tasks.
+The combination of models SGD + XGB + SVC + RF + HGB + LGBM is strategically employed in ensemble approaches to effectively address the complexities of
+legal text classification. Each model brings unique strengths, improving performance
+and ensuring more accurate outcomes. SGD offers simplicity and efficiency, making it
+ideal for large datasets with high-dimensional features commonly found in legal texts.
+XGB excels at capturing non-linear relationships and interactions, providing robust
+accuracy in structured legal data. SVC works well in high-dimensional spaces, making
+
+Transformer embeddings + Important Features
+Transformer embeddings + Oversampling + Important Feature
+Transformer embeddings + Important Features
+Transformer embeddings + Oversampling
+Transformer embeddings + Ensemble Learning 0.99
+
+BiLSTM + T5 + Feature Selection
+
+BiLSTM + T5 + SMOTE + Feature Selection
+
+Logistic Regression + T5 + Feature Selection
+
+Polynomial SVM + T5 + SMOTE
+
+Voting Classifier + T5 + SMOTE + Feature Selection
+
+0.69
+
+0.68
+
+0.64
+
+0.60
+
+0.62
+
+Traditional embeddings
+
+BiLSTM + GloVe
+
+Optimal combination, leveraging oversampling,
+dimensionality reduction, and diverse classifiers
+
+Addressed class imbalance effectively but slightly
+higher variance due to oversampling
+
+Effective use of dimensionality reduction in
+machine learning classifiers
+
+Balancing data and dimensionality reduction
+enhanced performance significantly
+
+Reduced dimensions improved efficiency but deep
+learning’s performance remained moderate
+
+Sequential dependency captured well but limited by
+the complexity of legal domain semantics
+
+Mean accuracy Key insights
+
+Key techniques
+
+Configuration
+
+Table 3  Comparative analysis of optimal model configurations
+
+Enhancing Indian legal judgment classification with…
+547
+
+548
+
+P. Prabhakar, P. B. Pati
+
+Table 4  Performance of top models before and after application of SMOTE and feature selection across
+major and minority classes for unseen data
+Model
+
+P (C)
+
+R (C)
+
+F1 (C)
+
+P (Co)
+
+R (Co)
+
+F1 (Co)
+
+P (D)
+
+R (D)
+
+F1 (D)
+
+Before using SMOTE and feature selection
+Voting Classifier
+
+0.70
+
+0.6
+
+0.65
+
+0.30
+
+0.40
+
+0.35
+
+0.2
+
+0.3
+
+0.25
+
+Bagging Classifier
+
+0.60
+
+0.5
+
+0.55
+
+0.30
+
+0.35
+
+0.32
+
+0.2
+
+0.25
+
+0.22
+
+Random Forest
+
+0.65
+
+0.75
+
+0.7
+
+0.30
+
+0.45
+
+0.36
+
+0.2
+
+0.4
+
+0.27
+
+After using SMOTE and feature selection
+Voting Classifier
+
+0.9
+
+0.95
+
+0.92
+
+0.8
+
+0.85
+
+0.82
+
+0.6
+
+0.65
+
+0.63
+
+Bagging Classifier
+
+0.8
+
+0.85
+
+0.82
+
+0.8
+
+0.75
+
+0.77
+
+0.6
+
+0.55
+
+0.58
+
+Random Forest
+
+0.85
+
+0.9
+
+0.87
+
+0.8
+
+0.8
+
+0.79
+
+0.6
+
+0.7
+
+0.65
+
+P, precision; R, recall; F1, F1 score; C, civil; Co, constitution; D, disciplinary jurisdiction
+
+it particularly suitable for the intricate and diverse nature of legal language. RF mitigates overfitting and handles noisy data, which is often present in the variable structure of legal judgments. HGB is optimized for speed and accuracy, efficiently managing large datasets with imbalanced classes, while LGBM captures complex patterns
+in large-scale text data. This ensemble approach effectively combines the strengths
+of each model, addressing their individual weaknesses and resulting in a more reliable system for classifying legal texts. The Voting Classifier leverages this ensemble
+strategy to further enhance performance, improving generalization by aggregating predictions from diverse models like SVC, Random Forest, and XGBoost. This aggregation reduces overfitting and outperforms individual models, particularly in tasks with
+complex data, such as legal text classification, where variance and data complexity
+pose significant challenges (Dietterich 2000). Additionally, the use of T5 embeddings, which offer advanced contextual understanding, significantly enhances model
+performance by capturing the nuanced meanings and relationships inherent in legal
+language. This aligns with recent NLP research, which shows that transformer-based
+models like T5 outperform traditional word embeddings in tasks requiring high-level
+comprehension (Raffel et al. 2020). Together, these methods form a powerful and efficient system for legal text classification, delivering robust and accurate results.
+The performance of the three highest-accuracy classification models was compared
+both before and after applying SMOTE (Synthetic Minority Over-sampling Technique)
+and feature selection as in Table 4 using unseen test data. The models were evaluated using Precision (P), Recall (R), and F1-Score (F1) metrics, focusing on three key
+classes: Civil, Constitution, and Disciplinary Jurisdiction, representing both major and
+minority classes. Before applying SMOTE and feature selection, the models demonstrated moderate performance, especially for the minority classes. For example, the
+Voting Classifier had a Precision of 0.70 and a Recall of 0.60 for the Civil class, with
+an F1-Score of 0.65. However, the Constitution and Disciplinary Jurisdiction classes
+showed lower values, with Precision scores of 0.30 and 0.20, respectively, indicating the
+models’ bias toward the majority class and difficulty in identifying minority class cases.
+After applying SMOTE and feature selection, significant improvements were observed
+across all models. SMOTE balanced the dataset by generating synthetic samples for
+
+Enhancing Indian legal judgment classification with…
+
+549
+
+the minority classes, while feature selection removed irrelevant and redundant features,
+allowing the models to focus on more critical aspects of the data. As a result, there was
+a notable enhancement in performance, especially for the minority classes. The Voting
+Classifier, for example, saw Precision for the Civil class increase from 0.70 to 0.90 and
+Recall rise from 0.60 to 0.95, leading to a higher F1-Score of 0.92. These improvements indicate that the model became more effective at identifying Civil cases.
+Further, the models’ performance for the Constitution and Disciplinary Jurisdiction
+classes also saw substantial gains. Precision for the Constitution class rose from 0.30 to
+0.80, and Recall increased from 0.40 to 0.85. Similarly, for the Disciplinary Jurisdiction class, Precision improved from 0.20 to 0.60, and Recall rose from 0.30 to 0.65.
+These results show that SMOTE and feature selection not only improved overall model
+accuracy but also addressed the challenges of classifying the minority classes. Thus, the
+use of SMOTE and feature selection significantly enhanced the models’ ability to classify both majority and minority classes. These preprocessing techniques helped mitigate class imbalance and eliminated irrelevant features, leading to more accurate and
+robust predictions. The results underscore the importance of these methods in improving machine learning model performance, particularly for legal text classification tasks.
+
+7 Conclusion
+The legal domain classification is a crucial task that plays a vital role in many applications such as legal document summarization, legal recommendation systems, and
+legal decision making. In this paper, we proposed a methodology for legal domain
+classification using deep learning and machine learning models. We performed feature extraction using transformer models and applied oversampling techniques such
+as SMOTE to handle class imbalance. We also evaluated the performance of various
+models such as Random Forest, Support Vector Machine, other machine learning
+classifiers Transformer models, CNN, RNN and LSTM on the proposed dataset. The
+experimental results showed that the transformer-based feature extraction combined
+with the ML models outperformed the other models, achieving an accuracy of 99%.
+In the future, there is a need for further research to improve the performance
+of legal domain classification. One possible direction for future research is to
+explore the use of more advanced transformer models such as GPT-3 for feature
+extraction. It would be interesting to explore the use of other feature extraction
+techniques on the performance of these models and also fine-tuning the transformers could potentially improve performance. Additionally, it would be valuable to collect larger and more diverse legal datasets to further evaluate the
+generalizability of these models in real-world legal applications. Additionally,
+investigating the use of ensemble learning techniques and other oversampling
+methods such as ADASYN and SMOTE-NC can help improve the classification accuracy. Another future research direction is to evaluate the proposed
+methodology on larger and more diverse legal datasets from different jurisdictions to test its generalizability. Furthermore, the proposed methodology can
+be extended to other applications such as legal question answering systems and
+legal case prediction. Overall, legal domain classification is an exciting area of
+
+550
+
+P. Prabhakar, P. B. Pati
+
+research that has the potential to contribute significantly to the legal domain and
+improve access to justice for all.
+
+Appendix
+See Tables 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16.
+
+Table 5  Kruskal–Wallis tests
+conducted to check the polarity
+nature of Indian legal judgments
+
+Table 6  Dunn’s post-hoc
+analysis conducted to check the
+polarity nature of Indian legal
+judgments
+
+Kruskal–Wallis test results
+Test statistic
+
+H-value
+
+p-value
+
+Kruskal–Wallis test
+
+228.6249
+
+0
+
+Dunn’s Post-hoc Analysis Results (p-Values):
+Group 1
+
+Group 2
+
+p-value
+
+Civil
+
+Criminal
+
+8.57E−30
+
+Civil
+
+Writ
+
+8.12E−02
+
+Civil
+
+Income tax
+
+1.00E+00
+
+Civil
+
+Constitution
+
+1.15E−01
+
+Civil
+
+Land revenue
+
+1.00E+00
+
+Civil
+
+Family
+
+1.00E+00
+
+Civil
+
+Execution petition
+
+1.00E+00
+
+Civil
+
+Sales tax
+
+1.00E+00
+
+Civil
+
+Revision petition
+
+1.00E+00
+
+Civil
+
+Juvenile justice
+
+2.43E−01
+
+Civil
+
+Labour law
+
+1.00E+00
+
+Civil
+
+Excise
+
+1.00E+00
+
+Civil
+
+Disciplinary jurisdiction
+
+1.00E+00
+
+Criminal
+
+Writ
+
+8.57E−30
+
+Criminal
+
+Income tax
+
+4.16E−14
+
+Criminal
+
+Constitution
+
+1.40E−22
+
+Criminal
+
+Land revenue
+
+7.28E−05
+
+Criminal
+
+Family
+
+4.17E−06
+
+Criminal
+
+Execution petition
+
+1.00E+00
+
+Criminal
+
+Sales tax
+
+1.00E+00
+
+Criminal
+
+Revision petition
+
+2.51E−03
+
+Criminal
+
+Juvenile justice
+
+1.00E+00
+
+Criminal
+
+Labour law
+
+1.00E+00
+
+Criminal
+
+Excise
+
+3.67E−01
+
+Criminal
+
+Disciplinary jurisdiction
+
+1.00E+00
+
+Enhancing Indian legal judgment classification with…
+Table 7  Cohen’s d effect
+conducted to check the polarity
+nature of Indian legal judgments
+
+551
+
+Cohen’s d effect sizes
+Comparison
+
+Cohen’s d
+
+Civil versus criminal
+
+0.5561
+
+Civil versus writ
+
+− 0.1576
+
+Civil versus income tax
+
+− 0.0173
+
+Civil versus constitution
+
+− 0.2414
+
+Civil versus land revenue
+
+− 0.4403
+
+Civil versus family
+
+− 0.0796
+
+Civil versus execution petition
+
+0.3749
+
+Civil versus sales tax
+
+0.0745
+
+Civil versus revision petition
+
+0.1623
+
+Civil versus juvenile justice
+
+1.1978
+
+Civil versus labour law
+
+0.2234
+
+Civil versus excise
+
+0.0266
+
+Civil versus disciplinary juridiction
+
+Table 8  Shapiro–Wilk test
+conducted to check the polarity
+nature of Indian legal judgments
+
+Table 9  Levene’s test conducted
+to check the polarity nature of
+Indian legal judgments
+
+− 0.0844
+
+Normality test results (Shapiro–Wilk test)
+Group
+
+W− statistic
+
+p-value
+
+Civil
+
+0.967
+
+0
+
+Criminal
+
+0.99
+
+0.0004
+
+Writ
+
+0.9552
+
+0
+
+Income tax
+
+0.974
+
+0.0001
+
+Constitution
+
+0.9636
+
+0
+
+Land revenue
+
+0.9175
+
+0.0515
+
+Family
+
+0.9306
+
+0
+
+Execution petition
+
+0.9655
+
+0.8586
+
+Sales tax
+
+0.9483
+
+0.6223
+
+Revision petition
+
+0.9634
+
+0.0046
+
+Juvenile justice
+
+0.9167
+
+0.4438
+
+Labour law
+
+0.9863
+
+0.6152
+
+Excise
+
+0.9644
+
+0.4418
+
+Disciplinary juridiction
+
+0.9596
+
+0.7812
+
+Levene’s test for homogeneity of variances
+Test statistic (W)
+
+p-value
+
+Levene’s test
+
+2.0625
+
+552
+
+P. Prabhakar, P. B. Pati
+
+Table 10  ANOVA conducted
+to check the polarity nature of
+Indian legal judgments
+
+ANOVA results
+Test statistic (F)
+
+p-VALUE
+
+ANOVA
+
+16.3658
+
+Table 11  Tukey HSD post-hoc test conducted to check the polarity nature of Indian legal judgments
+Tukey HSD post-hoc test results
+Group 1
+
+Group 2
+
+Mean difference
+
+p-value
+
+95% confidence interval
+
+Reject null
+
+Civil
+
+Constitution
+
+0.0102
+
+0.116
+
+[-0.001, 0.0213]
+
+No
+
+Civil
+
+Criminal
+
+-0.0257
+
+0
+
+[-0.0331, -0.0183]
+
+Yes
+
+Civil
+
+Disciplinary Juridiction
+
+0.004
+
+1
+
+[-0.0446, 0.0525]
+
+No
+
+Civil
+
+Excise
+
+-0.0011
+
+1
+
+[-0.0303, 0.0281]
+
+No
+
+Civil
+
+Execution Petition
+
+-0.0168
+
+0.9924
+
+[-0.0612, 0.0275]
+
+No
+
+Civil
+
+Family
+
+0.0035
+
+1
+
+[-0.0116, 0.0185]
+
+No
+
+Civil
+
+Income Tax
+
+0.0008
+
+1
+
+[-0.0094, 0.0111]
+
+No
+
+0.59
+
+0.58
+
+0.53
+
+0.55
+
+0.57
+
+0.54
+
+0.37
+
+0.52
+
+0.37
+
+0.35
+
+0.35
+
+0.37
+
+0.35
+
+0.35
+
+0.36
+
+0.36
+
+0.38
+
+0.38
+
+0.37
+
+0.37
+
+0.37
+
+0.37
+
+0.34
+
+0.36
+
+InLegalBERT
+
+InCaseLawBERT
+
+CustomInLawBERT
+
+Mamba
+
+Roberta
+
+CodeT5
+
+SBert
+
+DistilBert
+
+XLM
+
+XLMLarge
+
+LegalBert
+
+GPT2
+
+AlBert
+
+Electra
+
+DeBerta
+
+TFDeBerta
+
+FlanT5
+
+FlanT5-Large
+
+Bart
+
+BigBird
+
+BigBirdPegasus
+
+LongFormer
+
+Luke
+
+0.017
+
+0.024
+
+0.020
+
+0.022
+
+0.015
+
+0.012
+
+0.010
+
+0.006
+
+0.009
+
+0.012
+
+0.015
+
+0.018
+
+0.021
+
+0.037
+
+0.012
+
+0.018
+
+0.045
+
+0.037
+
+0.028
+
+0.021
+
+0.009
+
+0.005
+
+0.011
+
+0.029
+
+0.39
+
+0.37
+
+0.39
+
+0.40
+
+0.40
+
+0.40
+
+0.41
+
+0.41
+
+0.40
+
+0.39
+
+0.38
+
+0.38
+
+0.40
+
+0.37
+
+0.38
+
+0.40
+
+0.55
+
+0.40
+
+0.57
+
+0.58
+
+0.57
+
+0.59
+
+0.61
+
+0.62
+
+Mean accuracy
+
+Mean accuracy
+
+Std deviation
+
+RNN
+
+CNN
+
+T5
+
+Embeddings
+
+0.055
+
+0.047
+
+0.038
+
+0.030
+
+0.021
+
+0.013
+
+0.004
+
+0.012
+
+0.011
+
+0.010
+
+0.010
+
+0.087
+
+0.008
+
+0.068
+
+0.059
+
+0.050
+
+0.041
+
+0.037
+
+0.012
+
+0.018
+
+0.005
+
+0.004
+
+0.008
+
+0.004
+
+Std deviation
+
+0.39
+
+0.39
+
+0.39
+
+0.40
+
+0.41
+
+0.41
+
+0.41
+
+0.41
+
+0.40
+
+0.39
+
+0.38
+
+0.39
+
+0.40
+
+0.38
+
+0.39
+
+0.40
+
+0.55
+
+0.41
+
+0.57
+
+0.58
+
+0.59
+
+0.56
+
+0.58
+
+0.62
+
+Mean accuracy
+
+LSTM
+
+0.080
+
+0.051
+
+0.049
+
+0.061
+
+0.035
+
+0.061
+
+0.044
+
+0.029
+
+0.071
+
+0.023
+
+0.023
+
+0.042
+
+0.037
+
+0.012
+
+0.018
+
+0.003
+
+0.004
+
+0.012
+
+0.006
+
+0.001
+
+0.005
+
+0.012
+
+0.016
+
+0.008
+
+Std deviation
+
+0.42
+
+0.41
+
+0.45
+
+0.42
+
+0.43
+
+0.44
+
+0.44
+
+0.44
+
+0.43
+
+0.43
+
+0.40
+
+0.41
+
+0.42
+
+0.42
+
+0.42
+
+0.44
+
+0.58
+
+0.44
+
+0.59
+
+0.58
+
+0.60
+
+0.61
+
+0.63
+
+0.64
+
+Mean accuracy
+
+BiLSTM
+
+0.016
+
+0.003
+
+0.023
+
+0.042
+
+0.016
+
+0.026
+
+0.071
+
+0.044
+
+0.023
+
+0.014
+
+0.051
+
+0.029
+
+0.032
+
+0.029
+
+0.026
+
+0.023
+
+0.019
+
+0.016
+
+0.013
+
+0.010
+
+0.007
+
+0.004
+
+0.005
+
+0.010
+
+Std deviation
+
+Table 12  Model comparisons in terms of mean accuracy and standard deviation for model with transformer embeddings + smote + feature selection + deep learning models
+
+Enhancing Indian legal judgment classification with…
+553
+
+0.030
+
+0.040
+
+0.95
+
+LongFormer
+
+0.020
+
+0.95
+
+0.95
+
+BigBird
+
+BigBirdPegasus
+
+0.020
+
+0.95
+
+0.95
+
+FlanT5-Large
+
+Bart
+
+0.020
+
+0.020
+
+0.020
+
+0.020
+
+0.020
+
+0.95
+
+0.95
+
+TFDeBerta
+
+0.010
+
+0.030
+
+FlanT5
+
+0.95
+
+0.94
+
+Electra
+
+0.030
+
+0.020
+
+0.94
+
+0.94
+
+GPT2
+
+AlBert
+
+DeBerta
+
+0.020
+
+0.94
+
+0.94
+
+XLMLarge
+
+LegalBert
+
+0.040
+
+0.030
+
+0.95
+
+0.94
+
+DistilBert
+
+0.020
+
+XLM
+
+0.94
+
+0.96
+
+CodeT5
+
+SBert
+
+0.020
+
+0.015
+
+0.91
+
+0.96
+
+0.005
+
+0.010
+
+0.94
+
+0.94
+
+InCaseLawBERT
+
+CustomInLawBERT
+
+Mamba
+
+0.020
+
+0.003
+
+0.96
+
+0.93
+
+T5
+
+InLegalBERT
+
+Roberta
+
+Mean accuracy
+
+Std deviation
+
+Mean accuracy
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.92
+
+0.91
+
+0.92
+
+0.92
+
+0.93
+
+0.92
+
+0.93
+
+0.93
+
+0.92
+
+0.92
+
+0.93
+
+0.93
+
+0.88
+
+0.92
+
+0.93
+
+0.93
+
+0.96
+
+Catboost classifier
+
+Bagging classifier
+
+Embeddings
+
+0.030
+
+0.030
+
+0.030
+
+0.030
+
+0.030
+
+0.030
+
+0.040
+
+0.040
+
+0.050
+
+0.030
+
+0.050
+
+0.030
+
+0.040
+
+0.040
+
+0.050
+
+0.040
+
+0.040
+
+0.050
+
+0.033
+
+0.033
+
+0.030
+
+0.040
+
+0.030
+
+Std deviation
+
+0.82
+
+0.82
+
+0.82
+
+0.81
+
+0.83
+
+0.81
+
+0.82
+
+0.81
+
+0.81
+
+0.81
+
+0.81
+
+0.82
+
+0.83
+
+0.81
+
+0.83
+
+0.87
+
+0.82
+
+0.88
+
+0.81
+
+0.85
+
+0.87
+
+0.85
+
+0.89
+
+Mean accuracy
+
+0.050
+
+0.050
+
+0.050
+
+0.050
+
+0.040
+
+0.050
+
+0.020
+
+0.020
+
+0.050
+
+0.070
+
+0.070
+
+0.060
+
+0.040
+
+0.060
+
+0.050
+
+0.020
+
+0.040
+
+0.020
+
+0.013
+
+0.005
+
+0.003
+
+0.010
+
+0.020
+
+Std deviation
+
+Decision tree classifier
+
+0.92
+
+0.92
+
+0.91
+
+0.92
+
+0.92
+
+0.92
+
+0.88
+
+0.87
+
+0.89
+
+0.91
+
+0.91
+
+0.89
+
+0.92
+
+0.92
+
+0.89
+
+0.88
+
+0.91
+
+0.90
+
+0.82
+
+0.85
+
+0.88
+
+0.92
+
+0.95
+
+Mean accuracy
+
+Gaussian NB
+
+0.040
+
+0.040
+
+0.040
+
+0.030
+
+0.030
+
+0.030
+
+0.060
+
+0.070
+
+0.060
+
+0.040
+
+0.060
+
+0.040
+
+0.050
+
+0.050
+
+0.060
+
+0.016
+
+0.026
+
+0.018
+
+0.018
+
+0.029
+
+0.019
+
+0.010
+
+0.040
+
+Std deviation
+
+Table 13  Model comparisons in terms of mean accuracy and standard deviation for model with transformer embeddings + smote + feature selection + machine learning
+models
+
+554
+P. Prabhakar, P. B. Pati
+
+Luke
+
+Embeddings
+
+Table 13  (continued)
+
+0.94
+
+0.020
+
+0.92
+
+Mean accuracy
+
+Mean accuracy
+
+Std deviation
+
+Catboost classifier
+
+Bagging classifier
+
+0.030
+
+Std deviation
+0.84
+
+Mean accuracy
+0.060
+
+Std deviation
+
+Decision tree classifier
+
+0.91
+
+Mean accuracy
+
+Gaussian NB
+
+0.050
+
+Std deviation
+
+Enhancing Indian legal judgment classification with…
+555
+
+0.044
+
+0.047
+
+0.92
+
+0.92
+
+0.93
+
+FlanT5-Large
+
+Bart
+
+BigBird
+
+0.93
+
+0.92
+
+TFDeBerta
+
+FlanT5
+
+0.92
+
+0.92
+
+Electra
+
+0.038
+
+0.038
+
+0.92
+
+0.91
+
+GPT2
+
+AlBert
+
+DeBerta
+
+0.053
+
+0.93
+
+0.91
+
+XLMLarge
+
+LegalBert
+
+0.047
+
+0.034
+
+0.040
+
+0.040
+
+0.040
+
+0.019
+
+0.029
+
+0.056
+
+0.056
+
+0.92
+
+0.93
+
+DistilBert
+
+0.019
+
+XLM
+
+0.92
+
+0.96
+
+CodeT5
+
+SBert
+
+0.024
+
+0.001
+
+0.95
+
+0.96
+
+0.004
+
+0.022
+
+0.90
+
+0.92
+
+InCaseLawBERT
+
+CustomInLawBERT
+
+Mamba
+
+0.003
+
+0.002
+
+0.97
+
+0.94
+
+T5
+
+InLegalBERT
+
+Roberta
+
+Mean accuarcy
+
+Std deviation
+
+Mean accuarcy
+
+0.88
+
+0.87
+
+0.87
+
+0.87
+
+0.89
+
+0.88
+
+0.87
+
+0.87
+
+0.87
+
+0.87
+
+0.88
+
+0.88
+
+0.87
+
+0.94
+
+0.87
+
+0.95
+
+0.95
+
+0.87
+
+0.89
+
+0.94
+
+0.97
+
+KNN classifier
+
+Histogram gradient boosting classifier
+
+Embeddings
+
+0.020
+
+0.023
+
+0.023
+
+0.023
+
+0.009
+
+0.019
+
+0.024
+
+0.028
+
+0.023
+
+0.025
+
+0.023
+
+0.023
+
+0.024
+
+0.019
+
+0.024
+
+0.015
+
+0.030
+
+0.036
+
+0.026
+
+0.019
+
+0.015
+
+Std deviation
+
+0.93
+
+0.94
+
+0.94
+
+0.94
+
+0.93
+
+0.92
+
+0.93
+
+0.93
+
+0.93
+
+0.92
+
+0.93
+
+0.93
+
+0.93
+
+0.95
+
+0.93
+
+0.95
+
+0.90
+
+0.90
+
+0.96
+
+0.93
+
+0.97
+
+Mean accuarcy
+
+LGBM
+
+0.030
+
+0.031
+
+0.031
+
+0.031
+
+0.027
+
+0.026
+
+0.043
+
+0.032
+
+0.039
+
+0.034
+
+0.041
+
+0.041
+
+0.043
+
+0.028
+
+0.037
+
+0.033
+
+0.026
+
+0.030
+
+0.029
+
+0.020
+
+0.015
+
+Std deviation
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.94
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.96
+
+0.93
+
+0.96
+
+0.94
+
+0.93
+
+0.92
+
+0.92
+
+0.96
+
+Mean accuarcy
+
+Linear SVM
+
+0.011
+
+0.014
+
+0.014
+
+0.014
+
+0.003
+
+0.013
+
+0.021
+
+0.019
+
+0.013
+
+0.014
+
+0.009
+
+0.009
+
+0.021
+
+0.023
+
+0.015
+
+0.023
+
+0.024
+
+0.001
+
+0.022
+
+0.022
+
+0.014
+
+Std deviation
+
+Table 14  Model comparisons in terms of mean accuracy and standard deviation for model with transformer embeddings + smote + feature selection + machine learning
+models
+
+556
+P. Prabhakar, P. B. Pati
+
+0.92
+
+0.93
+
+LongFormer
+
+Luke
+
+0.031
+
+0.038
+0.88
+
+0.87
+
+0.87
+
+Mean accuarcy
+
+0.039
+
+Std deviation
+
+Mean accuarcy
+
+0.92
+
+KNN classifier
+
+Histogram gradient boosting classifier
+
+BigBirdPegasus
+
+Embeddings
+
+Table 14  (continued)
+
+Std deviation
+
+0.019
+
+0.022
+
+0.022
+0.93
+
+0.93
+
+0.93
+
+Mean accuarcy
+
+LGBM
+Std deviation
+
+0.029
+
+0.030
+
+0.030
+0.93
+
+0.93
+
+0.93
+
+Mean accuarcy
+
+Linear SVM
+Std deviation
+
+0.009
+
+0.013
+
+0.013
+
+Enhancing Indian legal judgment classification with…
+557
+
+0.016
+
+0.021
+
+0.94
+
+LongFormer
+
+0.009
+
+0.94
+
+0.94
+
+BigBird
+
+BigBirdPegasus
+
+0.011
+
+0.94
+
+0.94
+
+FlanT5-Large
+
+Bart
+
+0.003
+
+0.011
+
+0.011
+
+0.011
+
+0.011
+
+0.95
+
+0.94
+
+TFDeBerta
+
+0.013
+
+0.007
+
+FlanT5
+
+0.92
+
+0.94
+
+Electra
+
+0.014
+
+0.018
+
+0.94
+
+0.93
+
+GPT2
+
+AlBert
+
+DeBerta
+
+0.011
+
+0.93
+
+0.93
+
+XLMLarge
+
+LegalBert
+
+0.021
+
+0.007
+
+0.92
+
+0.93
+
+DistilBert
+
+0.022
+
+XLM
+
+0.94
+
+0.96
+
+CodeT5
+
+SBert
+
+0.020
+
+0.023
+
+0.89
+
+0.90
+
+0.022
+
+0.021
+
+0.91
+
+0.90
+
+InCaseLawBERT
+
+CustomInLawBERT
+
+Mamba
+
+0.021
+
+0.017
+
+0.92
+
+0.90
+
+T5
+
+InLegalBERT
+
+Roberta
+
+Mean accuracy
+
+Std deviation
+
+Mean accuracy
+
+0.58
+
+0.59
+
+0.51
+
+0.61
+
+0.61
+
+0.61
+
+0.18
+
+0.17
+
+0.20
+
+0.56
+
+0.14
+
+0.62
+
+0.27
+
+0.27
+
+0.20
+
+0.72
+
+0.48
+
+0.76
+
+0.49
+
+0.52
+
+0.41
+
+0.51
+
+0.61
+
+MLP classifier
+
+Logistic regression
+
+Embeddings
+
+0.039
+
+0.040
+
+0.036
+
+0.041
+
+0.041
+
+0.041
+
+0.019
+
+0.029
+
+0.057
+
+0.017
+
+0.057
+
+0.066
+
+0.020
+
+0.020
+
+0.057
+
+0.053
+
+0.081
+
+0.107
+
+0.018
+
+0.024
+
+0.001
+
+0.022
+
+0.170
+
+Std deviation
+
+0.94
+
+0.94
+
+0.94
+
+0.94
+
+0.94
+
+0.94
+
+0.94
+
+0.93
+
+0.93
+
+0.94
+
+0.93
+
+0.93
+
+0.94
+
+0.94
+
+0.93
+
+0.96
+
+0.94
+
+0.97
+
+0.78
+
+0.95
+
+0.88
+
+0.92
+
+0.97
+
+Mean accuracy
+
+0.021
+
+0.022
+
+0.019
+
+0.022
+
+0.022
+
+0.022
+
+0.003
+
+0.013
+
+0.021
+
+0.017
+
+0.022
+
+0.012
+
+0.035
+
+0.035
+
+0.021
+
+0.020
+
+0.021
+
+0.023
+
+0.001
+
+0.022
+
+0.004
+
+0.002
+
+0.005
+
+Std deviation
+
+Random forest classifier
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.93
+
+0.92
+
+0.92
+
+0.92
+
+0.92
+
+0.92
+
+0.92
+
+0.92
+
+0.91
+
+0.95
+
+0.92
+
+0.97
+
+0.89
+
+0.88
+
+0.89
+
+0.92
+
+0.98
+
+Mean accuracy
+
+SGD classifier
+
+0.021
+
+0.021
+
+0.019
+
+0.020
+
+0.026
+
+0.021
+
+0.007
+
+0.017
+
+0.028
+
+0.015
+
+0.026
+
+0.011
+
+0.020
+
+0.010
+
+0.030
+
+0.020
+
+0.020
+
+0.020
+
+0.018
+
+0.024
+
+0.001
+
+0.022
+
+0.007
+
+Std deviation
+
+Table 15  Model comparisons in terms of mean accuracy and standard deviation for model with transformer embeddings + smote + feature selection + machine learning
+models
+
+558
+P. Prabhakar, P. B. Pati
+
+Luke
+
+Embeddings
+
+Table 15  (continued)
+
+0.93
+
+0.006
+
+0.56
+
+Mean accuracy
+
+Mean accuracy
+
+Std deviation
+
+MLP classifier
+
+Logistic regression
+
+0.039
+
+Std deviation
+0.95
+
+Mean accuracy
+0.025
+
+Std deviation
+
+Random forest classifier
+
+0.92
+
+Mean accuracy
+
+SGD classifier
+
+0.020
+
+Std deviation
+
+Enhancing Indian legal judgment classification with…
+559
+
+560
+
+P. Prabhakar, P. B. Pati
+
+Table 16  Model comparisons in terms of mean accuracy and standard deviation for model with transformer embeddings + smote + feature selection + machine learning models
+Embeddings
+
+Polynomial SVM
+
+XGB Classifier
+
+Voting classifier
+
+Mean accuracy
+
+Std deviation Mean
+accuracy
+
+Std deviation Mean accuracy
+
+Std deviation
+
+T5
+
+0.97
+
+0.006
+
+0.97
+
+0.006
+
+0.99
+
+0.001
+
+InLegalBERT
+
+0.89
+
+0.022
+
+0.90
+
+0.002
+
+0.95
+
+0.010
+
+InCaseLawBERT
+
+0.94
+
+0.001
+
+0.92
+
+0.004
+
+0.97
+
+0.009
+
+CustomInLaw- 0.95
+BERT
+
+0.010
+
+0.88
+
+0.004
+
+0.96
+
+0.005
+
+Mamba
+
+0.93
+
+0.010
+
+0.91
+
+0.006
+
+0.96
+
+0.013
+
+Roberta
+
+0.98
+
+0.010
+
+0.98
+
+0.010
+
+0.99
+
+0.013
+
+CodeT5
+
+0.95
+
+0.010
+
+0.95
+
+0.010
+
+0.96
+
+0.013
+
+SBert
+
+0.97
+
+0.020
+
+0.97
+
+0.020
+
+0.98
+
+0.020
+
+DistilBert
+
+0.95
+
+0.030
+
+0.95
+
+0.030
+
+0.96
+
+0.027
+
+XLM
+
+0.95
+
+0.020
+
+0.95
+
+0.020
+
+0.96
+
+0.023
+
+XLMLarge
+
+0.95
+
+0.020
+
+0.95
+
+0.020
+
+0.96
+
+0.017
+
+LegalBert
+
+0.95
+
+0.010
+
+0.95
+
+0.010
+
+0.96
+
+0.014
+
+GPT2
+
+0.94
+
+0.022
+
+0.94
+
+0.022
+
+0.95
+
+0.018
+
+AlBert
+
+0.95
+
+0.016
+
+0.95
+
+0.016
+
+0.96
+
+0.019
+
+Electra
+
+0.95
+
+0.027
+
+0.95
+
+0.027
+
+0.96
+
+0.023
+
+DeBerta
+
+0.94
+
+0.010
+
+0.94
+
+0.010
+
+0.95
+
+0.016
+
+TFDeBerta
+
+0.95
+
+0.000
+
+0.95
+
+0.000
+
+0.96
+
+0.006
+
+FlanT5
+
+0.95
+
+0.016
+
+0.95
+
+0.016
+
+0.96
+
+0.013
+
+FlanT5-Large
+
+0.95
+
+0.016
+
+0.95
+
+0.016
+
+0.96
+
+0.018
+
+Bart
+
+0.95
+
+0.016
+
+0.95
+
+0.016
+
+0.96
+
+0.019
+
+BigBird
+
+0.95
+
+0.012
+
+0.95
+
+0.012
+
+0.96
+
+0.015
+
+BigBirdPegasus
+
+0.95
+
+0.015
+
+0.95
+
+0.015
+
+0.96
+
+0.016
+
+LongFormer
+
+0.95
+
+0.015
+
+0.95
+
+0.015
+
+0.96
+
+0.017
+
+Luke
+
+0.94
+
+0.013
+
+0.94
+
+0.013
+
+0.96
+
+0.015
+
+Funding None.
+
+Declarations
+Conflict of interest All authors declare that they have no conflict of interest.
+
+References
+Akça O, Bayrak G, Issifu AM, Ganiz MC (2022) Traditional machine learning and deep learningbased text classification for Turkish law documents using transformers and domain adaptation.
+In: 2022 international conference on innovations in intelligent systems and applications (INISTA), IEEE, pp 1–6
+
+Enhancing Indian legal judgment classification with…
+
+561
+
+Aletras N, Tsarapatsanis D, Preoţiuc-Pietro D, Lampos V (2016) Predicting judicial decisions of the
+European Court of Human Rights: a natural language processing perspective. PeerJ Comput Sci
+2:e93. https://​doi.​org/​10.​7717/​peerj-​cs.​93
+Aleven V (2003) Using background knowledge in case-based legal reasoning: a computational model
+and an intelligent learning environment. Artif Intell 150(1–2):183–237. https://​doi.​org/​10.​1016/​
+S0004-​3702(03)​00105-X
+Araújo DC, Lima A, Lima JP, Costa JA (2021) A comparison of classification methods applied to
+legal text data. In: Progress in artificial intelligence: 20th EPIA conference on artificial intelligence, EPIA 2021, virtual event, September 7–9, 2021, proceedings 20, Springer International
+Publishing, pp 68–80
+Ashley KD, Brüninghaus S (2009) Automatically classifying case texts and predicting outcomes.
+Artif Intell Law 17:125–165
+Avram AM, Pais V, Tufis D (2021) Pyeurovoc: a tool for multilingual legal document classification with
+eurovoc descriptors. arXiv preprint arXiv:​2108.​01139
+Bharti KK, Singh PK (2014) A survey on filter techniques for feature selection in text mining. In: Proceedings of the second international conference on soft computing for problem solving (SocProS
+2012), December 28–30, 2012, Springer, India, pp 1545–1559. https://​doi.​org/​10.​1007/​978-​81-​322-​
+1602-5_​154
+Boella G, Di Caro L, Leone V (2019) Semi-automatic knowledge population in a legal document management system. Artif Intell Law 27:227–251. https://​doi.​org/​10.​1007/​s10506-​018-​9239-8
+Boella G, Di Caro L, Humphreys L (2011) Using classification to support legal knowledge engineers in
+the Eunomos legal document management system. In: Fifth international workshop on Juris-informatics (JURISIN)
+Bommarito J, Bommarito M, Katz DM, Katz J (2023) Gpt as knowledge worker: a zero-shot evaluation
+of (AI) CPA capabilities. arXiv preprint arXiv:​2301.​04408. https://​doi.​org/​10.​48550/​arXiv.​2301.​
+04408
+Chalkidis I, Søgaard A (2022) Improved multi-label classification under temporal concept drift: Rethinking group-robust algorithms in a label-wise setting. arXiv preprint arXiv:​2203.​07856. https://​doi.​
+org/​10.​48550/​arXiv.​2203.​07856
+Chalkidis I, Androutsopoulos I, Aletras N (2019) Neural legal judgment prediction in English. arXiv preprint arXiv:​1906.​02059. https://​doi.​org/​10.​48550/​arXiv.​1906.​02059
+Chalkidis I, Androutsopoulos I, Aletras N (2019) Neural legal judgment prediction in English. arXiv
+preprint arXiv:​1906.​02059
+Chalkidis I, Fergadiotis M, Malakasiotis P, Aletras N, Androutsopoulos I (2019) Extreme multi-label
+legal text classification: a case study in EU legislation. arXiv preprint arXiv:​1905.​10892
+Chalkidis I, Fergadiotis M, Androutsopoulos I (2021) Multieurlex-a multi-lingual and multi-label legal
+document classification dataset for zero-shot cross-lingual transfer. In: Proceedings of the 2021 conference on empirical methods in natural language processing, pp 6974–6996 (2021). https://​aclan​
+tholo​gy.​org/​2021.​emnlp-​main.​559/
+Chen H, Wu L, Chen J, Lu W, Ding J (2022) A comparative study of automated legal text classification using random forests and deep learning. Inf Process Manage 59(2):102798. https://​doi.​org/​10.​
+1016/j.​ipm.​2021.​102798
+Clavié B, Gheewala A, Briton P, Alphonsus M, Laabiyad R, Piccoli F (2021) LegaLMFiT: efficient short
+legal text classification with LSTM language model pre-training. arXiv preprint arXiv:​2109.​00993
+Collobert R, Weston J, Bottou L, Karlen M, Kavukcuoglu K, Kuksa P (2011) Natural language processing (almost) from scratch. J Mach Learning Res 12:2493–2537. https://​doi.​org/​10.​48550/​arXiv.​
+1103.​0398
+Supreme Court of India (n.d.) “Case Category.” Accessed January 11, 2025. https://​www.​sci.​gov.​in/​case-​
+categ​ory/
+Supreme Court of India (n.d.) “Supreme Court Judgments.” Accessed January 11, 2025. https://​scdg.​sci.​
+gov.​in/​scnjdg/.
+de Araujo DA, Rigo SJ, Barbosa JLV (2017) Ontology-based information extraction for juridical events
+with case studies in Brazilian legal realm. Artif Intell Law 25:379–396. https://​doi.​org/​10.​1007/​
+s10506-​017-​9203-z
+Deng X, Li Y, Weng J, Zhang J (2019) Feature selection for text classification: a review. Multimed Tools
+Appl 78:3797–3816. https://​doi.​org/​10.​1007/​s11042-​018-​6083-5
+Dietterich TG (2000) Ensemble methods in machine learning. International workshop on multiple classifier systems. Springer, Berlin, pp 1–15
+
+562
+
+P. Prabhakar, P. B. Pati
+
+Galanter M, Krishnan JK (2003) Bread for the poor: access to justice and the rights of the needy in India.
+HAStIngS lJ 55:789
+Hendrycks D, Burns C, Chen A, Ball S (2021) Cuad: an expert-annotated NLP dataset for legal contract
+review. arXiv preprint arXiv:​2103.​06268. https://​doi.​org/​10.​48550/​arXiv.​2103.​06268
+Hong J, Chong D, Manning CD (2021) Learning from limited labels for long legal dialogue. In: Proceedings of the natural legal language processing workshop, pp 190–204. https://​aclan​tholo​gy.​org/​2021.​
+nllp-1.​20/
+Howe JST, Khang LH, Chai IE (2019) Legal area classification: a comparative study of text classifiers on
+singapore supreme court judgments. arXiv preprint arXiv:​1904.​06470.
+Ikram AY, Chakir LOQMAN (2019) Arabic text classification in the legal domain. In: 2019 third international conference on intelligent computing in data sciences (ICDS), IEEE, pp 1–6
+Jain AK (2021) Indian legal system. Ascent Publications
+Ji D, Gao J, Fei H, Teng C, Ren Y (2020a) A deep neural network model for speakers coreference resolution in legal texts. Inf Process Manage 57(6):102365. https://​doi.​org/​10.​1016/j.​ipm.​2020.​102365
+Ji D, Tao P, Fei H, Ren Y (2020b) An end-to-end joint model for evidence information extraction from
+court record document. Inf Process Manage 57(6):102305
+Jin L, Zhang L, Zhao L (2023) Max-difference maximization criterion: a feature selection method for text
+categorization. Front Comp Sci 17(1):1–3. https://​doi.​org/​10.​1007/​s11704-​022-​2154-x
+Jin D, Jin Z, Zhou JT, Szolovits P (2020) Is Bert really robust? A strong baseline for natural language
+attack on text classification and entailment. In: Proceedings of the AAAI conference on artificial
+intelligence, vol. 34, no. 05, pp 8018–8025. https://​doi.​org/​10.​1609/​aaai.​v34i05.​6311
+Jurafsky D, Martin JH (2023) Speech and language processing: an introduction to natural language processing, computational linguistics, and speech recognition. https://​web.​stanf​ord.​edu/​~juraf​sky/​slp3/
+Kang YB, Haghighi PD, Burstein F (2014) CFinder: an intelligent key concept finder from text for ontology development. Expert Syst Appl 41(9):4494–4504. https://​doi.​org/​10.​1016/j.​eswa.​2014.​01.​006
+Kenton JDMWC, Toutanova LK (2019) Bert: pre-training of deep bidirectional transformers for language
+understanding. In: Proceedings of naacL-HLT, vol. 1, p. 2
+Kort F (1957) Predicting Supreme Court decisions mathematically: a quantitative analysis of the “right to
+counsel” cases. Am Polit Sci Rev 51(1):1–12
+Ku CH, Leroy G (2014) A decision support system: automated crime report analysis and classification for
+e-government. Gov Inf Q 31(4):534–544. https://​doi.​org/​10.​1016/j.​giq.​2014.​08.​003
+Kumar AA, Pati PB, Deepa K, Sangeetha ST (2023) Toxic comment classification using S-BERT vectorization and random forest algorithm. In: 2023 IEEE international conference on contemporary
+computing and communications (InC4), vol 1, pp 1–6. IEEE
+Labani M, Moradi P, Ahmadizar F, Jalili M (2018) A novel multivariate filter method for feature selection
+in text classification problems. Eng Appl Artif Intell 70:25–37. https://​doi.​org/​10.​1016/j.​engap​pai.​
+2017.​12.​014
+Lalitha S, Gupta D (2021) Investigation of automatic mixed-lingual affective state recognition system for
+diverse Indian languages. J Intell Fuzzy Syst 41(5):5467–5476. https://​doi.​org/​10.​3233/​JIFS-​189868
+Leitner E, Rehm G, Moreno-Schneider J (2019) Fine-grained named entity recognition in legal documents. In: International conference on semantic systems, Springer International Publishing, Cham,
+pp 272–287. https://​doi.​org/​10.​1007/​978-3-​030-​33220-4_​20
+Li Q, Peng H, Li J, Xia C, Yang R, Sun L, He L (2020) A survey on text classification: from shallow to
+deep learning. arXiv preprint arXiv:​2008.​00364
+Limsopatham N (2021) Effectively leveraging BERT for legal document classification. In: Proceedings
+of the natural legal language processing workshop 2021, pp 210–216. https://​aclan​tholo​gy.​org/​2021.​
+nllp-1.​22/
+Lopez MM, Kalita J (2017) Deep learning applied to NLP. arXiv preprint arXiv:​1703.​03091
+Loza Mencía E, Fürnkranz J (2010) Efficient multilabel classification algorithms for large-scale problems
+in the legal domain. Springer, Berlin, pp 192–215. https://​doi.​org/​10.​1007/​978-3-​642-​12837-0_​11
+Ma M, Podkopaev D, Campbell-Cousins A, Nicholas A (2020) Deconstructing legal text: object-oriented
+design in legal adjudication. arXiv preprint arXiv:​2009.​06054
+Mamooler S, Lebret R, Massonnet S, Aberer K (2022) An efficient active learning pipeline for legal text
+classification. arXiv preprint arXiv:​2211.​08112
+Medvedeva M, Vols M, Wieling M (2020) Using machine learning to predict decisions of the European
+Court of Human Rights. Artif Intell Law 28:237–266. https://​doi.​org/​10.​1007/​s10506-​019-​09255-y
+Meijer K, Frasincar F, Hogenboom F (2014) A semantic approach for extracting domain taxonomies from
+text. Decis Support Syst 62:78–93. https://​doi.​org/​10.​1016/j.​dss.​2014.​03.​006
+
+Enhancing Indian legal judgment classification with…
+
+563
+
+Minaee S, Kalchbrenner N, Cambria E, Nikzad N, Chenaghlu M, Gao J (2021) Deep learning–based
+text classification: a comprehensive review. ACM Comput Surv 54(3):1–40. https://​doi.​org/​10.​1145/​
+34397​26
+Mullick A, Nandy A, Kapadnis MN, Patnaik S, Raghav R (2022) Fine-grained intent classification in the
+legal domain. arXiv preprint arXiv:​2205.​03509
+Mumcuoğlu E, Öztürk CE, Ozaktas HM, Koç A (2021) Natural language processing in law: Prediction
+of outcomes in the higher courts of Turkey. Inf Process Manage 58(5):102684. https://​doi.​org/​10.​
+1016/j.​ipm.​2021.​102684
+Nay J (2018) Natural language processing and machine learning for law and policy texts. https://​ssrn.​
+com/​abstr​act=​34382​76 or https://​doi.​org/​10.​2139/​ssrn.​34382​76
+Nay JJ (2023) Large language models as corporate lobbyists. arXiv preprint arXiv:​2301.​01181. https://​
+doi.​org/​10.​48550/​arXiv.​2301.​01181
+Nghiem, M. Q., Baylis, P., Freitas, A., and Ananiadou, S. (2022, June). Text Classification and Prediction
+in the Legal Domain. In Proceedings of the Thirteenth Language Resources and Evaluation Conference (pp. 4717–4722). https://​aclan​tholo​gy.​org/​2022.​lrec-1.​504/
+Nguyen TS, Nguyen LM, Tojo S, Satoh K, Shimazu A (2018) Recurrent neural network-based models for
+recognizing requisite and effectuation parts in legal texts. Artif Intell Law 26:169–199. https://​doi.​
+org/​10.​1007/​s10506-​018-​9225-1
+Nitta K, Satoh K (2020) AI applications to the law domain in Japan. Asian J Law Soc 7(3):471–494.
+https://​doi.​org/​10.​1017/​als.​2020.​35
+Palau RM, Moens MF (2009) Argumentation mining: the detection, classification and structure of arguments in text. In: Proceedings of the 12th international conference on artificial intelligence and law,
+pp 98–107
+Pillai LR, Veena G, Gupta D (2018) A combined approach using semantic role labelling and word sense
+disambiguation for question generation and answer extraction. In: 2018 second international conference on advances in electronics, computers and communications (ICAECC), IEEE, pp 1–6
+Prabhakar P, Gupta D, Pati PB (2022) Abstractive summarization of Indian legal judgments. In: Proc.
+2022 OITS Int. Conf. Inf. Technol. (OCIT), Bhubaneswar, India, pp 256–261. https://​doi.​org/​10.​
+1109/​OCIT5​6763.​2022.​00056
+Prabhakar P, Palaniswamy S, Pati PB (2023) Stress analysis in online examination using deep learning
+approach. In: 2023 IEEE 8th international conference for convergence in technology (I2CT), IEEE,
+pp 1–7
+Raffel C, Shazeer N, Roberts A, Lee K, Narang S, Matena M, Zhou Y, Li W, Liu PJ (2020) Exploring the
+limits of transfer learning with a unified text-to-text transformer. J Mach Learning Res 21(1):5485–
+5551. https://​doi.​org/​10.​48550/​arXiv.​1910.​10683
+Rankin GC (2016) Background to Indian law. Cambridge University Press
+Roul RK, Sahoo JK, Satyanath G (2023) Text classification using correlation based feature selection on
+multi-layer ELM feature space. In: Distributed computing and intelligent technology: 19th international conference, ICDCIT 2023, Bhubaneswar, India, January 18–22, 2023, proceedings, Springer
+Nature Switzerland, Cham, pp. 355–361. https://​doi.​org/​10.​1007/​978-3-​031-​24848-1_​27
+Ruhl JB, Katz DM (2015) Measuring, monitoring, and managing legal complexity. Iowa L. Rev. 101:191
+Šajatović A, Buljan M, Šnajder J, Bašić BD (2019) Evaluating automatic term extraction methods on
+individual documents. In: Proceedings of the joint workshop on multiword expressions and WordNet (MWE-WN 2019), pp 149–154. https://​aclan​tholo​gy.​org/​W19-​5118/
+Sajeev V, Pati PB (2022) System for identification of references. In: 2022 2nd Asian conference on innovation in technology (ASIANCON), IEEE, pp 1–6
+Scao TL, et al (2022) Bloom: a 176b-parameter open-access multilingual language model. arXiv preprint
+arXiv:​2211.​05100. https://​doi.​org/​10.​48550/​arXiv.​2211.​05100
+Shaheen Z, Wohlgenannt G, Filtz E (2020) Large scale legal text classification using transformer models.
+arXiv preprint arXiv:​2010.​12871
+Shao Y, Wu Y, Liu Y, Mao J, Zhang M, Ma S (2021) Investigating user behavior in legal case retrieval.
+In: Proceedings of the 44th international ACM SIGIR conference on research and development in
+information retrieval, pp 962–972
+Sil R, Alpana, Roy A (2021) A review on applications of artificial intelligence over Indian legal system.
+IETE J Res. https://​doi.​org/​10.​1080/​03772​063.​2021.​19873​43
+Sulea OM, Zampieri M, Malmasi S, Vela M, Dinu LP, Van Genabith J (2017) Exploring the use of text
+classification in the legal domain. arXiv preprint arXiv:​1710.​09306. https://​doi.​org/​10.​48550/​arXiv.​
+1710.​09306
+
+564
+
+P. Prabhakar, P. B. Pati
+
+Tonguz O, Qin Y, Gu Y, Moon HH (2021) Automating claim construction in patent applications: the
+CMUmine dataset. In: Proceedings of the natural legal language processing workshop, pp 205–209.
+https://​aclan​tholo​gy.​org/​2021.​nllp-1.​21/
+Trappey AJ, Trappey CV, Wu JL, Wang JW (2019) Intelligent compilation of patent summaries using
+machine learning and natural language processing techniques. Adv Eng Inf 43:101027. https://​doi.​
+org/​10.​1016/j.​aei.​2019.​101027
+Van Opijnen M, Santos C (2017) On the concept of relevance in legal information retrieval. Artif Intell
+Law 25:65–87. https://​doi.​org/​10.​1007/​s10506-​017-​9195-8
+Waltl B, Bonczek G, Matthes F (2018) Rule-based information extraction: advantages, limitations, and
+perspectives. Jusletter IT (02 2018), 4. https://​api.​seman​ticsc​holar.​org/​Corpu​sID:​21600​6964
+Waterman DA, Peterson MA (1981) Models of legal decisionmaking: research design and methods. Rand
+Corporation, the Institute for Civil Justice
+Westermann H, Savelka J, Walker VR, Ashley KD, Benyekhlef K (2019) Computer-assisted creation of
+boolean search rules for text classification in the legal domain. In: JURIX, pp 123–132. https://​doi.​
+org/​10.​3233/​FAIA1​90313
+Xiao G, Chow E, Chen H, Mo J, Guo J, Gong Z (2017) Chinese questions classification in the law
+domain. In: 2017 IEEE 14th international conference on e-business engineering (ICEBE), IEEE, pp
+214–219
+Xiao C, Zhong H, Guo Z, Tu C, Liu Z, Sun M, Feng Y, Han X, Hu Z, Wang H, Xu J (2018) Cail2018: a
+large-scale legal dataset for judgment prediction. arXiv preprint arXiv:​1807.​02478. https://​doi.​org/​
+10.​48550/​arXiv.​1807.​02478
+Yao F, Xiao C, Wang X, Liu Z, Hou L, Tu C, Li J, Liu Y, Shen W, Sun M (2022) Leven: a large-scale
+Chinese legal event detection dataset. arXiv preprint arXiv:​2203.​08556. https://​doi.​org/​10.​48550/​
+arXiv.​2203.​08556
+Zain NAM, Saman WSWM, Yatin SFM, Rahman A, Ahmad NS, Mokhtar WNHW, Ramlee
+NNEN (2018) Developing legal framework for E-court in judicial de-livery. Int J Eng Technol
+7(3.7):202–205
+Zhao G, Shi H, Wang J (2022) A grey BP neural network-based model for prediction of court decision
+service rate. Comput Intell Neurosci. https://​doi.​org/​10.​1155/​2022/​73643​75
+Zheng Z, Wu X, Srihari R (2004) Feature selection for text categorization on imbalanced data. ACM
+SIGKDD Explor Newsl 6(1):80–89. https://​doi.​org/​10.​1145/​10077​30.​10077​41
+Zheng L, Guha N, Anderson BR, Henderson P, Ho DE (2021) When does pretraining help? Assessing
+self-supervised learning for law and the casehold dataset of 53,000+ legal holdings. In: Proceedings
+of the eighteenth international conference on artificial intelligence and law, pp 159–168. https://​doi.​
+org/​10.​48550/​arXiv.​2104.​08671
+Zhong H, Wang Y, Tu C, Zhang T, Liu Z, Sun M (2020) Iteratively questioning and answering for interpretable legal judgment prediction. In: Proceedings of the AAAI conference on artificial intelligence, vol. 34, no. 01, pp 1250–1257. https://​doi.​org/​10.​1609/​aaai.​v34i01.​5479
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and
+applicable law.
+
+

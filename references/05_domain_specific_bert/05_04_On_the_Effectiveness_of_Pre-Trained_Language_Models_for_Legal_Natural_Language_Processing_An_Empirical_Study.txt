@@ -1,0 +1,2273 @@
+Received 11 May 2022, accepted 2 July 2022, date of publication 12 July 2022, date of current version 22 July 2022.
+Digital Object Identifier 10.1109/ACCESS.2022.3190408
+
+On the Effectiveness of Pre-Trained Language
+Models for Legal Natural Language
+Processing: An Empirical Study
+DEZHAO SONG
+
+1 , SALLY GAO2 , BAOSHENG HE3 , AND FRANK SCHILDER1
+
+1 Thomson Reuters, Eagan, MN 55123, USA
+
+2 Thomson Reuters, New York, NY 10036, USA
+3 Meta Platforms Inc., Menlo Park, CA 94025, USA
+
+Corresponding author: Dezhao Song (dezhao.song@thomsonreuters.com)
+This work was supported by Thomson Reuters.
+
+ABSTRACT We present the first comprehensive empirical evaluation of pre-trained language models (PLMs) for legal natural language processing (NLP) in order to examine their effectiveness in this domain.
+Our study covers eight representative and challenging legal datasets, ranging from 900 to 57K samples,
+across five NLP tasks: binary classification, multi-label classification, multiple choice question answering,
+summarization and information retrieval. We first run unsupervised, classical machine learning and/or nonPLM based deep learning methods on these datasets, and show that baseline systems’ performance can
+be 4%∼35% lower than that of PLM-based methods. Next, we compare general-domain PLMs and those
+specifically pre-trained for the legal domain, and find that domain-specific PLMs demonstrate 1%∼5%
+higher performance than general-domain models, but only when the datasets are extremely close to the pretraining corpora. Finally, we evaluate six general-domain state-of-the-art systems, and show that they have
+limited generalizability to legal data, with performance gains from 0.1% to 1.2% over other PLM-based
+methods. Our experiments suggest that both general-domain and domain-specific PLM-based methods
+generally achieve better results than simpler methods on most tasks, with the exception of the retrieval
+task, where the best-performing baseline outperformed all PLM-based methods by at least 5%. Our findings
+can help legal NLP practitioners choose the appropriate methods for different tasks, and also shed light on
+potential future directions for legal NLP research.
+INDEX TERMS Legal natural language processing, pre-trained language model, deep learning, machine
+learning.
+
+I. INTRODUCTION
+
+In recent years, pre-trained language model (PLM) based
+methods have gained significant traction in the natural
+language processing (NLP) field among both academic
+researchers and industrial practitioners. They typically follow
+a ‘‘pre-train and fine-tune’’ paradigm. First, a PLM is
+pre-trained on large-scale corpora of texts on masked word
+prediction, next sentence prediction, and/or other tasks in
+order to learn dependencies and contextual information over
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Fan Zhang
+VOLUME 10, 2022
+
+.
+
+longer pieces of text rather than just over a few adjacent
+words. Then, the model can be further fine-tuned on the texts
+of a specific domain, targeting a downstream task of that
+domain. Researchers have proposed a number of PLMs in the
+past a few years (e.g., BERT [1], RoBERTa [2], BART [3],
+PEGASUS [4], BIGBIRD [5], etc.) and have demonstrated
+their advantages over traditional methods on a variety of NLP
+tasks in different domains. For the rest of this paper, we call
+PLMs that are pre-trained on general-domain texts ‘‘generaldomain’’ PLMs. In addition to those that were pre-trained
+on general-domain texts, several domain-specific PLMs have
+also been released to the community and have achieved
+
+This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/
+
+75835
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+superior performances compared to general-domain models.
+These include SCIBERT [6], BioBERT [7], MatBERT [8],
+GraphCodeBERT [9] and LegalBERT [10].
+NLP tasks in the legal domain present several unique and
+significant challenges. First of all, the lack of large-scale,
+high-quality datasets has been a major hurdle in advancing
+legal NLP research. More so than other domains, annotating
+legal documents for a specific task requires substantial
+domain knowledge, which makes annotation processes both
+time-consuming and monetarily expensive. Furthermore,
+legal documents possess a distinctive vocabulary, containing
+both unique legal terms (e.g., ‘‘estoppel’’) as well as terms
+with specific legal meanings that differ from their regular
+English meanings. For instance, the word ‘‘standing’’ in
+the legal sense refers to a party’s right to initiate a lawsuit
+or petition; however, in general-domain texts, ‘‘standing’’
+typically encodes the meaning of the verb ‘‘to stand’’.
+Also, legal texts may require custom pre-processing, which
+poses a challenge for existing NLP tools developed for
+general-domain texts. For instance, legal citations (e.g.,
+Schwenker v. St. Louis County National Bank, 682 S.W.2d
+868, 870 (Mo.App.1984)) in caselaw opinions are extremely
+important as they may indicate the precedents1 for new
+cases, and methods have been specifically developed for the
+extraction and resolution of such information [11]. Lastly,
+legal documents are often significantly longer than texts from
+other domains. For example, Song et al. showed that in a
+dataset of 50K U.S. cases, about 35% of them have 3,000
+words or more [12]. In contrast, news stories typically consist
+of only a few hundred words. This poses another critical
+challenge for legal NLP systems, especially those based on
+PLMs.
+Despite the challenges mentioned above, PLMs have
+drawn substantial attention from legal NLP researchers.
+A growing number of datasets have been released to facilitate
+research in this area on different tasks, including binary
+classification [13], [14], multi-label classification [12], [15],
+[16], question answering [14], [17], summarization [18]–[20]
+and information retrieval [21]. Datasets in languages other
+than English have also become more readily available, such
+as a trilingual (French/German/Italian) outcome prediction
+dataset [22], the 2.6 million-case dataset from China’s
+Supreme Court [23], and GerDaLIR (a German information
+retrieval dataset with 123K queries) [24].
+Much effort has been devoted to the design and
+development of novel techniques for legal NLP applications. Vacek et al. [25] implemented an outcome extraction system that combines SVM [26] and deep neural
+networks. Chalkidis et al. [15] compared several classical and PLM-based methods for a multi-label document classification task with more than 4,000 labels.
+By utilizing a label embedding mechanism and multi-task
+learning, LAMT_MLC [12] obtained higher performance
+than state-of-the-art methods on two large-scale multi-label
+1 Prior cases that serve as authority to justify the current decision.
+
+75836
+
+classification datasets. On two different question answering
+tasks [14], [27], general-domain and domain-specific PLMs
+have respectively shown superior performance over other
+methods. In the information retrieval field, Shao et al. [28]
+developed a system that utilizes both domain-specific pretraining and fine-tuning of BERT [1] and secured one of the
+top ranks in the COLIEE2020 competition [29].
+Despite the substantial developments in several aspects
+of legal NLP research, the effectiveness of different types
+of approaches on a diverse range of legal NLP tasks are
+not well understood because they have not been directly
+and comprehensively compared in a single study. First of
+all, although there exist several NLP benchmarks, such
+as GLUE [30], SuperGLUE [31], CLUE [32], KILT [33],
+CUGE [34], LexGLUE [35] and GEM [36], most of
+them focus on general-domain texts rather than legal data.
+Therefore, it is difficult to understand how well existing
+approaches work for legal tasks, given the specific challenges
+of legal texts as discussed above. Furthermore, existing legal
+NLP benchmarks typically have limited coverage on different
+types of tasks. For example, Niklaus et al. [22] studied the
+effectiveness of simple baselines and several PLMs only on
+a binary judgment prediction task. LexGLUE [35] is a recent
+effort with broader coverage that evaluated several PLMs on
+seven legal datasets; however, six out of the seven datasets
+are multi-class/multi-label classification tasks. Also, it only
+evaluated general-domain or domain-specific PLMs with no
+coverage on state-of-the-art systems.
+Considering the challenging nature of legal NLP tasks,
+the growing interest in this field and the limited availability and coverage of existing benchmarks, we present
+a comprehensive and up-to-date empirical study on eight
+datasets across five different legal NLP tasks: binary classification, multi-label classification, multiple choice question answering, summarization and information retrieval.
+We start with simple baselines (e.g., unsupervised methods,
+classical machine learning algorithms or non-PLM deep
+learning approaches) in order to set up the basis for
+further comparison. Next, we employ several mainstream
+general-domain PLMs on each dataset to examine their
+effectiveness over baselines. We further run domain-specific
+PLMs (pre-trained on top of general-domain models or from
+scratch by using legal documents) on these datasets in order
+to study whether PLMs embedded with legal knowledge
+can outperform general-domain models. Finally, we apply
+six recent state-of-the-art systems that were developed for
+general-domain texts to these legal datasets in order to
+understand their applicability to the legal domain. By conducting extensive experiments, we try to answer the following
+questions:
+1) Are simple baseline systems able to achieve decent
+performance on legal NLP tasks?
+2) Would mainstream general-domain PLMs outperform
+simple baselines?
+3) Would domain-specific PLMs achieve better performance than general-domain models?
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+4) Are PLM-based state-of-the-art systems developed for
+general domains generalizable to legal data?
+5) What are the challenges and future directions for legal
+natural language processing?
+We organize the rest of the paper as following. In Section II,
+we discuss existing work on different legal NLP tasks.
+We then describe the selected datasets and our evaluation
+strategy in Section III, and present the evaluation results in
+Section IV. We discuss the results, the challenges and future
+directions in Section V and conclude in Section VI.
+II. RELATED WORK
+
+In this section, we review related techniques for major
+NLP tasks in the legal domain. For each task, we discuss
+both traditional methods and more recent deep learning/
+PLM-based approaches.
+A. AN OVERVIEW OF MAJOR LEGAL NLP TASKS
+
+Binary Classification aims at differentiating data samples
+between only two classes. Despite its relatively straightforward nature, it has a number of applicable scenarios in the
+legal domain, such as legal judgment prediction [37], license
+clause fairness classification [13] and overruling statement
+detection [14]. SVM [26] and other classical machine
+learning algorithms with TF-IDF features are well-suited for
+such problems. Different deep learning architectures (e.g.,
+LSTM [38] and attention-based methods [39], [40]) with
+one-hot encodings of the tokens have also been applied to
+binary classification tasks [14], [37], [41].
+Researchers have applied PLMs to different legal binary
+classification datasets and achieved comparable or better
+performance than less complex methods, depending on
+the difficulty of the task [14], [22], [37]. For example,
+Zheng et al. [14] achieved very similar performance between
+SVM and BERT on a simple overruling task, but observed
+substantial differences on a more challenging unfairness
+detection problem. Due to the imbalanced nature of many
+binary classification datasets in the legal domain, class
+weights or downsampling techniques may be adopted for
+possible performance improvements.
+Later in Section IV-A, our experiments show that both
+general-domain and legal-specific PLMs are not much better
+in terms of F1 score than simple baseline methods on binary
+classification tasks where the data is relatively balanced;
+however, substantial performance gains can be expected for
+more complex and imbalanced datasets.
+Multi-class/Multi-label Classification tasks are generally
+more complex than binary classifications. Given a document
+(e.g., a news article, a legal case, etc.), the goal is to predict
+one or more categories for it. Multi-class/multi-label classification techniques have broad applicability to many legal
+tasks, such as case outcome extraction [25], legal judgment
+prediction [37], document/case categorization [15], [42],
+and extracting legal procedural postures [12]. By utilizing
+either TF-IDF features [23] or word embeddings [43], [44],
+VOLUME 10, 2022
+
+traditional machine learning approaches are readily applicable, including one-vs-all classifiers [43], [45], tree-based
+algorithms [46]–[48] and Multilayer Perceptron [49].
+Deep learning and PLM-based methods have also been
+well-studied for multi-class/multi-label classification tasks.
+The organizers of the Chinese AI and Law (CAIL) challenge
+applied Convolutional Neural Networks (CNN) to two legal
+classification tasks and achieved higher accuracy than a SVM
+baseline with TF-IDF features [23]. Chalkidis et al. [37]
+demonstrated the superior performance of BERT over a SVM
+classifier and multiple attention-based approaches on the
+ECHR dataset. Song et al. [12] presented a RoBERTa-based
+architecture that leverages a label embedding mechanism and
+multi-task learning. The system achieved better performance
+than both classical machine learning methods and stateof-the-art systems on two legal datasets with 256 and
+4,271 labels respectively. Rather than merely relying on
+textual information, LeSICiN utilizes a citation network to
+identify statutes in legal cases [50]. Using an alternative
+approach, Chen et al. [42] mine the most effective terms for
+each label from the texts. By using a selected subset of
+such label-specific features in a Random Forest classifier, the
+system performed substantially better than general-domain
+BERT on a multi-class legal case categorization task with
+50 labels.
+Having a large number of classes and data imbalance
+typically result in low performance for multi-label classification tasks. In Section IV-B, we show that although
+baselines are able to deal with frequent classes, PLM-based
+methods demonstrate much better capability in handling rare
+ones. Also, state-of-the-art systems only achieve slightly
+better performance than general-domain and domain-specific
+PLMs.
+Summarization is another challenging task in NLP
+research. Given a document, the goal is to produce an
+accurate, grammatical, fluent and concise summary that
+covers the major aspects of the document. Summarization
+systems can be either extractive or abstractive. Extractive
+systems typically focus on sentence or word ranking in
+order to select the most important parts of the document as
+the summary [51]–[53] while abstractive systems normally
+involve rewriting and paraphrasing. Many recent systems
+follow the Encoder-Decoder architecture [54]. The encoder is
+used to produce a vector representation of an input document;
+the decoder then utilizes the input states and the vector
+representation of the words/tokens that were generated from
+previous steps to produce the summary until an EOS token is
+generated or it reaches a maximum length. Extractive-thenAbstractive systems have also been proposed: an extractor
+first finds the most relevant sentences from a document;
+such sentences are then compressed and paraphrased by an
+abstractor [55].
+Summarization techniques have very practical applications
+in the legal domain (e.g., case and legislation summarization),
+and both unsupervised and supervised methods have been
+adopted in the literature. Listenmaa et al. [56] utilized a
+75837
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+rule-based approach for drafting contracts. CaseSummarizer
+is an extractive system that uses both word frequencies and
+entities in the sentences for ranking purposes [57]. Hachey
+and Grover [58] cast extractive summarization as a sentence
+classification problem by leveraging different features, such
+as location, length and entities involved. Grabmair et al. [59]
+proposed an extractive case summarization system based
+on Convolutional Neural Network (CNN). Instead of considering the entire case, it relies on identifying sentences
+with higher predictive power with respect to case outcomes.
+Rather than summarizing entire cases, LetSum [60] provides
+a summary for each major section, such as introduction,
+analysis and decision. Duan et al. [61] designed an interesting system that summarizes the debate process in courts
+with the goal of effectively assisting judges’ decision-making
+process. While not specifically targeting the legal domain,
+several recent PLMs have demonstrated promising results
+on summarizing U.S. Congressional bills [4], [62]. Two
+recent surveys of legal summarization research can be found
+here [63], [64]. Although writing summaries for cases or
+other legal documents has historically been an editorial process, (semi-)automated summarization systems, especially
+those powered by deep learning/PLMs, are promising in
+terms of providing effective assistance [65].
+Among the general-domain PLMs, our results in
+Section IV-C suggest that those specifically pre-trained for
+sequence-to-sequence tasks achieve better performance than
+others on summarization (or similar) tasks. When using the
+base models, state-of-the-art systems show minimal improvements (<1%) over other out-of-the-box methods (e.g.,
+BART [3]). One interesting finding is that TextRank [51],
+an unsupervised baseline method, outperforms all other
+systems on an extremely challenging dataset with long
+summaries (182 words on average), suggesting the need for
+more advanced approaches to deal with long outputs.
+Question Answering generally includes two sub-types:
+retrieval-style and multiple-choice. While both have their
+respective applications, in this work, we focus on the
+latter. Legal question answering has been the focal point
+of many studies. Early systems adopted rules and other
+unsupervised techniques for answering Yes/No questions
+from bar exams [66], [67]. Later works are generally
+supervised, using classical machine learning methods (e.g.,
+logistic regression) [68] and different types of neural
+networks (e.g., CNN) [69], [70]. Following the rise of PLMs,
+Zhong et al. compared different approaches on the JEC-QA
+dataset (questions from the Chinese bar exam) and showed
+that BERT achieved an accuracy of 22% [71]. Tang et al. [72]
+achieved a substantially higher accuracy of 28.6% on the
+same data by separately modeling evidence/answer and
+context/question/answer. However, both systems are far
+below a human-level performance of 81%. Huang et al. [73]
+presented an interesting study where they jointly model
+language generation and question answering, and obtained
+better performance on both tasks. Lawformer [74] tries to
+specifically address the long-document challenge; however,
+75838
+
+it achieved lower performance than a RoBERTa variant. This
+suggests that rather than merely feeding more texts to PLMs,
+legal question answering may require deeper understanding
+and advanced reasoning about the underlying facts and legal
+concepts.
+Although not specifically designed for legal tasks, several
+interesting techniques have been proposed in the literature. MMM [75] uses both out-of-domain and in-domain
+datasets during fine-tuning, and outperformed prior systems
+on benchmark datasets. Both DCMN+ [76] and BlockSkim [77] try to find the most salient texts rather than having
+to process the full context. Based on a similar idea, with
+post-hoc interpretation of intermediate results, the system by
+Ju et al. [78] penalizes the attributions between the wrong
+answers and their supporting text snippets. Instead of only
+relying on the given context, Ren et al. [79] tried to retrieve
+additional knowledge from an external corpus for context
+augmentation. Prioritizing speed, DeFormer [80] processes
+the context and the question independently in the lower
+layers of PLMs based on the observation that there is less
+variance in the lower layer representations of the text when
+jointly modeled with different questions. A survey of question
+answering research can be found here [81].
+In Section IV-D, we show that all PLM-based methods
+achieve substantially better performance (∼30% higher
+accuracy) than a simple baseline, indicating that question
+answering tasks benefit substantially from models that can
+capture contextual representations. Furthermore, we achieved
+substantially better results using a highly domain-specific
+PLM, compared to general-domain PLMs or even a PLM
+pre-trained on a legal sub-domain different from the evaluation dataset. The evaluated state-of-the-art system, however,
+only obtains similar performance to other PLMs.
+Information Retrieval techniques are at the core of many
+legal research platforms, such as Lexis+2 and Westlaw
+Edge,3 and have several critical application scenarios,
+such as legislative document retrieval [82], [83] and case
+retrieval [84], [85]. Depending on the application, the queries
+can be short (e.g., simple keywords), of medium length
+(e.g., Boolean or natural language queries) or long (e.g.,
+whole documents). Early legal retrieval systems are generally
+unsupervised [86] while recent research tends to center
+around different flavors of machine learning techniques [87],
+[88]. By using word embeddings, several systems have been
+developed to find the relevant sentences within specific
+documents [89], [90]. In addition to textual information,
+citations [91] and ontologies [92] have also been utilized
+for retrieval or legal knowledge extraction. On the query
+generation side, Turtle [93] presented a comparison between
+Boolean and natural language queries. Locke et al. [94] tried
+to generate queries by using the sentences that contain
+citations, and compared their effectiveness to manually
+crafted ones.
+2 https://www.lexisnexis.com/en-us/products/lexis-plus.page
+3 https://legal.thomsonreuters.com/en/products/westlaw-edge
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+In the context of document-to-document retrieval where
+the ‘‘query’’ can be extremely long, Tran et al. [95] first
+produce a summary that is further paired with lexical
+features in order to retrieve cases. Both PARM [96] and
+BERT-PLI [28] also tried to condense the documents, and
+performed paragraph-level modeling on top of candidates
+returned via BM25 or similar methods. Instead of focusing on
+the techniques, Shao et al. [85] presented a comparative user
+behavior study between legal and general-domain search, and
+suggested that legal information retrieval is more challenging
+with respect to query length and number of clicks/pages,
+among other metrics. A recent survey on legal information
+retrieval is available here [97].
+In our work, we focus on the more challenging documentto-document retrieval problem. Here, both the query and the
+candidates are full documents and can be extremely long,
+thus posing great computational challenges for PLM-based
+methods. As shown in Section IV-E, different from the other
+tasks, we find that all PLM-based approaches, including a
+state-of-the-art system, have substantially lower Micro-F1
+scores (5% or more) than an unsupervised baseline algorithm,
+suggesting the need for significant further research on legal
+information retrieval tasks. A domain-specific PLM, despite
+having decent recall, has an especially low precision of
+about 6%, indicating that it is unable to differentiate between
+similar but irrelevant legal documents.
+B. DOMAIN-SPECIFIC PRE-TRAINED LANGUAGE MODELS
+
+Rather than only fine-tuning general-domain PLMs,
+researchers have performed domain-specific pre-training
+in many domains. SCIBERT [6] comprises a series of
+pre-trained PLMs in the domain of scientific publications
+(computer science and biomedical research), including
+models further pre-trained on top of BERT and those
+that were pre-trained from scratch using domain-specific
+vocabularies. The pre-trained models demonstrated better
+performance than general-domain BERT on named entity
+recognition, relation extraction and classification. Similar
+efforts have also been made in other domains, such as
+BioBERT [7] (biomedical), Med-BERT [98] (medical),
+MatBERT [8] (materials science) and GraphCodeBERT [9]
+(programming language).
+Several legal PLMs have also become available in recent
+years. LEGAL-BERT [10] is one of the first efforts and
+includes PLMs pre-trained on different types of legal data,
+e.g., European legislative documents and U.S./EU case
+opinions. Zheng et al. [14] conducted (further) pre-training
+with BERT using 3.5 million U.S. cases and demonstrated
+the models’ superior performance on both classification
+and question answering. Song et al. [12] performed further
+pre-training of general-domain RoBERTa; despite using
+a much smaller corpus of about 30K U.S. cases, the
+system achieved better performance than several state-ofthe-art methods on two large-scale multi-label classification
+datasets. In order to tackle the long-document challenge,
+Lawformer [74] was pre-trained on a collection of about
+VOLUME 10, 2022
+
+23 million Chinese cases with support for up to 4,096 tokens,
+and obtained better performance than BERT and RoBERTa
+on the LeCaRD case retrieval dataset [99]. In this paper,
+we first experiment with several mainstream general-domain
+PLMs, comparing their performance to simpler methods.
+Furthermore, we study whether domain-specific PLMs would
+provide further improvements by evaluating two recent legal
+models, AUEB-Eurolex [10] and Custom LegalBERT [14],
+which were pre-trained with different types of legal corpora.
+C. LEGAL NLP BENCHMARKS
+
+Following the release of general-domain NLP benchmarks, such as SQuAD [100], GLUE [30] and SuperGLUE [31], researchers have made similar efforts in the
+legal domain. Several existing works focus on comparing different approaches on specific tasks. For example,
+Bhattacharya et al. [101] compared classical and PLM-based
+approaches on legal summarization with a focus on judgments from the Indian Supreme Court. In order to build an
+Austrian legal knowledge graph, Filtz et al. [102] evaluated
+classical techniques (e.g., CRF) and different PLMs on a legal
+entity extraction task. Mandal et al. [103] presented another
+related effort in catchphrase extraction and explored different
+deep learning methods (e.g., CNN and GRU). Without
+being task-specific, Chalkidis and Kampas [104] conducted a
+thorough evaluation on the effectiveness of word embeddings
+on three legal tasks: information extraction, classification and
+retrieval.
+We compare our study with LexGLUE [35] and
+CLAIM [105], which are two recent legal NLP benchmarks.
+LexGLUE covers seven datasets for different legal applications, e.g., judgment prediction and legislative document
+categorization; however, most of the datasets center around
+multi-class/multi-label classification. CLAIM focuses on
+Chinese legal documents/cases. The authors compared
+classical methods, traditional deep neural networks and
+PLMs on several legal applications, such as case matching
+and judgment prediction. Compared to LexGLUE, our work
+further includes summarization, information retrieval and
+binary classification tasks, covering eight datasets across
+a total of five different types of NLP tasks (Section III).
+In terms of PLMs, CLAIM is mostly centered around BERT
+(in addition to other baseline and deep learning methods)
+while our work compares a broader range of PLMs (BERT,
+RoBERTa, BIGBIRD, T5 and BART). Compared to both
+benchmarks, we take the additional step of applying six
+recent general-domain state-of-the-art systems to our legal
+datasets in order to study their generalizability to other
+domains, which is a critical step in further advancing legal
+NLP research.
+III. TASKS, DATASETS AND EVALUATION STRATEGY
+
+In this section, we present the details of our study,
+including the datasets, the baseline methods for each task,
+the general-domain and legal-specific PLMs, evaluation
+75839
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 1. Summary of existing legal NLP datasets by task. We highlight the ones used for our study in bold.
+
+metrics, and software and hardware specifications for our
+experiments.
+A. DATASET SELECTION
+
+In this paper, we focus on five different types of NLP tasks:
+binary classification, multi-label classification, multiple
+choice question answering, summarization and information
+retrieval. As discussed in Section II, each task has broad
+and practical applications in the legal domain. Table 1
+summarizes the existing legal datasets for each task and we
+highlight the ones used in our study in bold. Although we
+include datasets in different languages, this paper focuses on
+those in English and we leave PLMs in a multilingual setting
+for future work. When selecting datasets, we consider their
+size, complexity and also geographical diversity.
+1) BINARY CLASSIFICATION
+
+Between the two U.S. datasets, although the Congressional
+bill survival prediction dataset [106] has a large number of
+samples, we selected Overruling [14] because the underlying
+task (deciding whether a given sentence overturns a precedent) could have more significant real-world impact. From
+the EU datasets, we chose Terms of Service rather than the
+75840
+
+ECHR dataset (cases from the European Court of Human
+Rights) [37] because we used two other datasets of court cases
+among the remaining tasks. The data by Niklaus et al. [22] is
+not in English, thus out of scope.
+The Overruling data, although small, represents a very
+impactful legal scenario: predicting whether a sentence in a
+case contains overruling language. This dataset is relatively
+balanced, with positive samples accounting for ∼50% of the
+entire dataset. Terms of Service is a larger dataset with ∼9.2K
+clauses from online consumer contracts and the task is to
+decide whether a given clause is unfair. Each clause was
+manually annotated to be clearly fair, potentially unfair or
+clearly unfair. Following prior work [13], [14], we consider a
+clause to be unfair if it is either potentially or clearly unfair.
+Unlike Overruling, this dataset is extremely imbalanced, with
+only ∼11% of the clauses labeled as unfair.
+2) MULTI-LABEL CLASSIFICATION
+
+Among the multi-label datasets in Table 1, we selected
+EUROLEX57K [15] and POSTURE50K [12] for the following reasons. First of all, they are both relatively large
+compared to some of the other options and both datasets are
+extremely imbalanced. For example, among the 256 labels in
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+POSTURE50K, only 16 of them occur 500 times or more in
+the dataset. Hence, they are ideal for testing PLMs’ capability
+of handling rare classes. The documents in EUROLEX57K
+and POSTURE50K are also extremely long, with an average
+of more than 700 and 2,900 words respectively. Even though
+LEDGAR [16] has about 846K provisions (from over 60K
+contracts), each provision is only 124 tokens long on average;
+therefore, it is less appealing for studying PLMs’ ability to
+handle long texts.
+POSTURE50K includes 50,000 case opinions between
+2013 and 2020 covering all U.S. jurisdictions. The cases
+cover a diverse range of areas, such as civil, criminal,
+bankruptcy, etc., and are from different courts, e.g., Supreme
+Court, Court of Appeals, and trial court. The task is to extract
+legal procedural postures, which are motions (e.g., Motion
+to Dismiss) brought up by parties and also substantively
+discussed in courts. There are 256 different types of motions
+with varying frequencies. EUROLEX57K contains 57,000
+European legislative documents that cover a variety of topics,
+such as environment, finance, transportation, and so on. The
+task is to classify each document to a pre-defined set of
+4,271 topics, where each document may be assigned more
+than one topic. Both datasets present significant challenges
+in terms of class imbalance and long texts.
+3) SUMMARIZATION
+
+For this task, we selected the JRC-Acquis [18] and the
+BillSum [19] datasets for our experiments. We did not find a
+download link for the dataset by Bhattacharya et al. [101] and
+the LegalOps [20] dataset was not available while we were
+conducting our summarization experiments. The AILA2021
+dataset and the one by Manor and Li [108] are of substantially
+smaller scale than the two selected ones, and are thus less
+ideal for our study.
+The JRC-Acquis dataset consists of about 23K samples
+and the goal is to produce summaries for EU legislation,
+international agreements, treaties, among other types of
+documents. BillSum also contains about 23K samples, and
+the task is to summarize U.S. Congressional and state
+bills. One major difference between the two datasets is
+their input and output length. In terms of input documents, JRC-Acquis and BillSum have an average of 2,000
+and 1,300 words respectively; for the targets, BillSum’s
+summaries are 182 words long on average, substantially
+longer than JCR-Acquis’ average length of 30 words. The
+long inputs from both datasets certainly pose significant
+challenges for several mainstream PLMs (e.g., BERT and
+RoBERTa where there is a hard limit of 512 tokens); more
+importantly, the much longer target texts from BillSum make
+the summarization process both more technically challenging
+and time-consuming.
+4) MULTIPLE CHOICE QUESTION ANSWERING
+
+From Table 1, we selected CaseHOLD [14] for our study
+due to its size and recency. Since our work focuses on
+publicly available English datasets, JEC-QA [71] and the
+VOLUME 10, 2022
+
+one by Adebayo et al. [110] are out of scope. Compared
+to CaseHOLD, the Multistate Bar Exam dataset [109] and
+PrivacyQA [17] are of much smaller scale with 100 and 1.75K
+questions respectively. Furthermore, according to Vold and
+Conrad [27], there may also be some data leakage issues in
+PrivacyQA. Therefore, we did not select them for our study.
+In the CaseHOLD dataset, the task is to find the correct
+holding given certain contextual information. A holding is
+a court’s answer to a legal issue or question in a case.
+To reach a holding, a court looks at the law in question
+and applies the facts to that law to decide what the outcome
+should be. This outcome is what is referred to as a holding.
+Depending on the case, a decision may have one or more
+holdings. In CaseHOLD, the holding is removed from a given
+paragraph and the task is to choose the correct holding from
+five text snippets (i.e., five choices). For each paragraph, there
+is one and only one correct holding. Prior work [14], [35]
+showed that PLMs achieved accuracies ranging from 70% to
+76%, suggesting that it is a non-trivial task and can serve as
+a challenging benchmark dataset.
+5) INFORMATION RETRIEVAL
+
+Among the several existing English information retrieval
+datasets, we selected the one from the 2021-edition COLIEE
+competition [21]. COLIEE is a long-running competition in
+the legal domain, with the 2021 dataset being particularly
+challenging. For example, in the 2020 edition, for each query
+(i.e., a whole case), the task is to choose the relevant cases
+from a pool of 200 candidates provided by the organizers,
+and the proportion of relevant cases is about 2.44%. However,
+in the 2021 competition, the number of candidate cases
+increased to 4,415 and on average, there are only 5 relevant
+cases. Therefore, a system would have to pick out the
+5 relevant cases from a much larger pool, a proportion of
+about 0.1%. REG-IR [82] is another interesting dataset where
+the goal is to map EU directives to UK legislative documents
+and vice versa.
+We selected COLIEE over REG-IR due to its more
+challenging nature (considering the extremely low performances of the participating systems in the 2021 competition) and its potentially broader impact to real-world
+applications (e.g., suggest or retrieve case precedents). For
+example, according to the REG-IR paper, BM25 was able
+to achieve a recall@20 of 45.8% and 87.5% respectively
+when trying to retrieve UK legislation for a given EU
+document and vice versa; however, as shown later in
+Section IV-E, BM25 only obtained a recall@20 of 33.4% on
+the COLIEE-2021 dataset. Document-to-document retrieval
+is already challenging due to the potential of having
+substantial term overlap between ‘‘similar’’ but irrelevant
+documents, making it difficult to achieve high precision; the
+additional difficulty of finding as many relevant documents
+as possible (i.e., obtaining high recall) only makes the
+problem even more challenging. Therefore, we selected
+the COLIEE-2021 dataset and leave REG-IR for future
+work.
+75841
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 2. Comparison systems shared across different tasks. RNN stands for recurrent neural network.
+
+B. COMPARISON SYSTEMS
+
+In this paper, we group our approaches into the
+following categories: baselines, general-domain PLMs,
+domain-specific PLMs and task-specific general-domain
+state-of-the-art systems. Table 2 summarizes the systems
+that are commonly adopted across the different tasks.
+We introduce the state-of-the-art systems while discussing
+their results in Section IV.
+1) BASELINES
+
+SVM [26] is a classical machine learning algorithm and is
+well-suited to binary classification tasks. For both of our
+datasets, we performed basic text pre-processing (such as
+stopword removal and stemming) and converted the texts to
+TF-IDF vectors.
+Multilayer Perceptron (MLP) [49] is a simple neural
+network consisting of multiple feedforward layers and is
+applicable to different types of classification tasks. It is able
+to handle multi-label tasks by nature and therefore we apply it
+to both multi-label datasets in our study. For MLP, we extract
+word-level n-grams to build the feature vectors.
+Long Short-Term Memory (LSTM) [38] is a type of
+recurrent neural network and is applicable to both token-level
+and sequence-level classification tasks. Generally speaking,
+an input sequence of tokens is first converted to a feature
+vector via one-hot encoding and embeddings (either a custom
+embedding layer or pre-trained embeddings), which is then
+sent to a neural network with one or more LSTM layers.
+A final dense layer then tries to map the LSTM outputs to
+the label space using Softmax or Sigmoid for binary/multiclass or multi-label classification respectively. We adopt
+LSTM for both binary and multi-label tasks in this work and
+compare its performance to that of classical machine learning
+methods.
+2) GENERAL-DOMAIN PRE-TRAINED LANGUAGE MODELS
+
+BERT [1] is one of the most widely used general-domain
+PLMs. It was pre-trained on two large-scale text corpora
+(a total of 16GB uncompressed text) and on two tasks:
+masked token prediction and next sentence prediction.
+RoBERTa [2], another mainstream general-domain PLM,
+has been utilized for a variety of tasks, e.g., classification,
+summarization, question answering, and so on. Following
+a similar idea to BERT, RoBERTa was pre-trained on over
+160GB of uncompressed text with the same two tasks
+75842
+
+(but with dynamic masking). In our work, we compare BERT
+and RoBERTa to simpler baselines and also set the basis for
+further comparison with domain-specific PLMs and state-ofthe-art methods.
+BIGBIRD [5] is one of the more recent PLMs. As discussed in Section I, one major challenge in the legal domain
+is the presence of long documents, such as legal cases and
+legislative documents. BIGBIRD surpasses the 512-token
+limit of BERT/RoBERTa and supports up to 4,096 tokens.
+Although it seems to be a natural choice for long documents,
+we compare its performance to both general-domain and
+domain-specific PLMs on three datasets and also discuss
+the trade-offs between performance gains and runtime
+costs.
+BART [3] and T5 [114] are PLMs specifically designed
+for sequence-to-sequence tasks. BART was pre-trained using
+160GB of news, books, stories and web text. During pretraining, several transformations were applied to the text, e.g.,
+token masking and deletion, text infilling (replacing a text
+span with a single [MASK] token), sentence permutation and
+documentation rotation (by randomly replacing the first token
+of the entire document). Also, several different tasks were
+involved in pre-training, aiming to support different applications, such as sequence classification, token classification
+and generation. T5 also performs span corruption and was
+pre-trained with more than 700GB of texts.
+3) LEGAL-SPECIFIC PRE-TRAINED LANGUAGE MODELS
+
+Custom LegalBERT [14] is a PLM specifically built for
+the legal domain. It was pre-trained from scratch on
+about 3.5 million U.S. case decisions for 2 million steps
+and contains a custom vocabulary. The same authors also
+conducted further pre-training on top of BERT using the
+same legal corpus. According to their experiments on three
+datasets, Custom LegalBERT achieved the best performance
+on all tasks and thus we selected it for our evaluation.
+We are interested in this model’s effectiveness on the various
+datasets, especially those that involve legal cases.
+AUEB-Eurolex is one of the legal PLMs released as part
+of Legal-BERT [10]. The pre-training data included about
+180K EU and UK legislative documents. It is a natural
+fit for tasks involving legislation. Also, with both Custom
+LegalBERT and AUEB-Eurolex, we explore the transfer
+properties of domain-specific PLMs. For example, in our
+evaluation, we applied Custom LegalBERT to EU legislative
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 3. Overview of data preparation, evaluation metrics and model selection criteria. We indicate the metrics used for model selection in underlined
+bold.
+
+document classification and adopted AUEB-Eurolex for U.S.
+cases.
+C. DATA PREPARATION AND EVALUATION METRICS
+
+Table 3 provides an overview of our evaluation strategy,
+including data preparation, evaluation metrics and the model
+selection criteria. For the first five datasets in Table 3,
+we conduct 10-fold cross validation: We split each dataset
+into ten folds of equal size. Each time, 80% of the data is
+used for training, 10% is used as validation data and the last
+10% is used as test data. We then rotate the folds such that
+neither the ten validation sets nor the ten test sets overlap.
+For the two multi-label datasets, one unique characteristic
+is that many classes only occur once or a few times in
+the entire dataset. If we randomly split the data (as in
+traditional cross validation), many such rare classes would
+fall into the training data without any presence in the
+validation or test data, making the task less challenging.
+Therefore, instead of doing a traditional 10-fold cross
+validation, we performed 10 shuffles to generate 10 different
+but overlapping Train/Validation/Test splits by following
+the procedure here [12]. The goal of each shuffle is to
+generate Train/Validation/Test splits such that the classes in
+Validation are a subset of those in Train and Test; at the same
+time, classes in Train all have presence in Test. For each
+shuffle, we allocate 64% of the data for training, 16% for
+validation and the other 20% for testing. The overlapping
+rates between different test sets are about 21% and 28%
+for POSTURE50K and EUROLEX57K respectively, which
+is determined by the number of classes that have sparse
+samples in the corresponding datasets. For the COLIEE2021
+competition, the original dataset is relatively small, consisting
+of 650 training queries and 250 test queries. Therefore,
+we shuffled the original training data three times and each
+time, 100 queries were randomly selected as the validation
+data.
+In all situations, for each shuffle, we perform evaluation
+on the validation data after each training epoch and select
+the best model with the indicated metrics. We follow this
+procedure for each parameter setting and use the average
+score of the 10 validation sets to select the best setting, and
+report the average score of the 10 test sets under that setting.
+VOLUME 10, 2022
+
+D. IMPLEMENTATION AND EXPERIMENTAL DETAILS
+
+We conducted all our experiments on AWS.4 For the SVM
+baseline, we used an instance with 4 vCPUs and 16GB
+of RAM. For MLP, BiLSTM, PLMs and the state-of-theart systems, we utilized two different types of instances:
+a) p3.2xlarge: this instance type has a single V100 GPU,
+8 vCPUs and 61GB of RAM; b) g4dn.xlarge: this instance
+type has a single T4 GPU, 4 vCPUs and 16GB of RAM.
+This is mainly due to limited availability of the p3.2xlarge
+instances while we were conducting experiments on certain
+datasets. We made sure to use the same instance type for
+all experiments on a given dataset, except for one situation
+(to be explained in Section IV-B).
+We use PLMs (the base models) from Hugging Face.5
+We implemented the SVM baseline using scikit-learn [115],
+and used Keras [116] for the BiLSTM baseline for binary
+classification and question answering. We implemented the
+code for all other experiments in PyTorch.6 For all PLMs
+and PLM-based state-of-the-art approaches, we use mixed
+precision training in order to speed up the process, except for
+T5 which does not have good support for mixed precision.
+Since each task may require different value ranges for the
+same parameter, we provide the details of our parameter
+tuning in Section IV while presenting results on each dataset.
+IV. EVALUATION RESULT
+
+In this section, we present the evaluation results on each
+selected dataset, our parameter tuning strategies7 and brief
+descriptions of the state-of-the-art systems, where applicable.
+A. BINARY CLASSIFICATION
+1) PARAMETER TUNING
+
+On both datasets, we applied the same strategy for parameter
+tuning. For SVM, we tried both linear and RBF kernels, and
+used n-grams (n ∈ [1, 3]) to build feature vectors of different
+sizes ({5K, 8K, 16K}). For BiLSTM, we experimented with
+4 https://aws.amazon.com/
+5 https://huggingface.co/
+6 https://pytorch.org/
+7 We summarize the optimal parameter settings of all approaches in
+Table 10, Table 11 and Table 12 in the appendix.
+
+75843
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 4. Binary classification result. Precision, Recall and F1 are for the positive class; SD denotes standard deviation. We highlight the best
+performances in bold.
+
+the following parameters: batch size ({8, 16}), learning rate
+({1e-4, 1e-5}) and the size of hidden states ({250, 500});
+also, we set the maximum input length to 100 words and the
+embedding dimension at 500, used the Adam optimizer, and
+trained for 25 epochs for each setting.
+For all PLMs, we used the Adam optimizer and input
+lengths of 256 tokens, which is longer than 99% of all
+the samples in both datasets. Then, we tried different
+combinations of batch sizes and learning rates ({8, 16} ×
+{1e-5, 2e-5}), which typically have greater impact than
+other parameters. On top of the best combination, we also
+considered an additional dropout layer (with dropout rate ∈
+{0.1, 0.2}) before we sent the final hidden state of the [CLS]
+token to the linear classification head. Given that binary
+classification is a relatively straightforward task, we did not
+run any general-domain state-of-the-art systems on these two
+datasets.
+2) RESULTS
+
+As shown in Table 4, between the two baselines, we do
+not observe any major differences in F1 score, suggesting
+that simple deep learning baselines may not surpass classical
+machine learning algorithms on relatively straightforward
+tasks. Given two groups of F1 scores (ten in each group,
+representing the test scores of a single approach across ten test
+sets), we also performed a paired t-test to measure statistical
+significance. For both datasets, the differences between SVM
+and BiLSTM are not significant, with p-values of 0.4419
+(Terms of Service) and 0.0519 (Overruling) respectively.
+When compared to PLMs, the two baseline methods clearly
+have disadvantageous F1 scores, which demonstrates the
+potential of PLMs even on less complex NLP tasks. All the
+pairings between SVM/BiLSTM and PLMs show statistically
+significant differences with p-values <0.005.
+In terms of the domain-specific PLMs, AUEB-Eurolex did
+not outperform general-domain models on either dataset. One
+possible reason is that it was pre-trained on EU/UK legislative
+documents, which are not sufficiently similar to the texts in
+the evaluation datasets. Although Custom LegalBERT was
+also pre-trained on a corpus of a related, but not identical,
+sub-domain (U.S. cases), its pre-training corpus is one order
+of magnitude larger than that used for AUEB-Eurolex. This
+75844
+
+may have enabled Custom LegalBERT to achieve 2%∼3%
+higher scores than the other PLMs on the more complex
+Terms of Service dataset. Comparing the best performer
+Custom LegalBERT to other PLMs, on Overruling, we only
+observed a statistically significant difference to RoBERTa
+with a p-value of 0.0141; on Terms of Service, the differences
+between Custom LegalBERT and RoBERTa/AUEB-Eurolex
+are both significant with p-values <0.005.
+B. MULTILABEL CLASSIFICATION
+1) PARAMETER TUNING
+
+For BiLSTM, we capped the vocabulary at 50K words and
+set the maximum input length to 500. We then experimented with several major parameters: embedding dimension
+({300, 600}), number of layers ({1, 2}), size of hidden
+states ({300, 600}), batch size ({8, 16}), learning rate
+({1e-3, 1e-4, 5e-4}) and dropout rate ({0.1, 0.2}). For
+multilayer perceptron, we used n-grams (n ∈ {1, 3, 5})
+with TF-IDF vectors of the following sizes: {1K, 3K, 5K}.
+We also tuned batch size ({64, 128}), learning rate ({1e-2,
+1e-3}), number of layers ({1, 2, 3}) and size of hidden states
+({100, 150}). For both baselines, we trained the models for
+20 epochs for all settings.
+Given the size of both multi-label datasets, the PLM
+experiments were time-consuming; therefore, we mainly
+tuned two major parameters: learning rate ({1e-5, 2e-5} for
+POSTURE50K and {4e-5, 5e-5, 1e-4} for EUROLEX57K)
+and batch size ({8, 16}). We also added an optional dropout
+layer between PLM outputs and the classification head,
+and tested different dropout rates ({0.1, 0.2}). Except for
+BIGBIRD, we truncate the inputs to the maximum allowed,
+i.e., 512 tokens. We use BIGBIRD to specifically examine
+the impact of consuming longer inputs. Considering that
+its training process is extremely time-consuming, we used
+the parameter setting where other PLMs achieved their best
+performances but experimented with different maximum
+input lengths: For POSTURE50K, we tried 1,024 and 2,048
+tokens and only considered 1,024 tokens for EUROLEX57K,
+which covers most of the samples in this dataset.
+LightXML [117] and LAMT_MLC [12] are two stateof-the-art multi-label classification systems. Both systems
+have demonstrated better performance than prior approaches
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 5. Multi-label classification results. SD denotes standard deviation. We highlight the best performances in bold.
+
+on several benchmark datasets. LightXML allows the use
+of different underlying PLMs and we considered BERT,
+RoBERTa and Custom LegalBERT in our study: First,
+by using the two general-domain PLMs, we examine whether
+LightXML, as a general-domain system, is able to achieve
+better performance than those PLMs alone. Then, when
+coupled with a domain-specific PLM, we examine whether
+it would demonstrate any further advantage. Due to the
+difficulty of obtaining p3.2xlarge instances from AWS,
+we used g4dn.xlarge instances for running all LightXML
+experiments. By design, LAMT_MLC relies on domainspecific PLMs; thus, we directly use Custom LegalBERT
+and AUEB-Eurolex as its PLM kernel on POSTURE50K
+and EUROLEX57K repsectively. For LightXML, we used
+the learning rate and batch size where other PLMs obtained
+their best performance on POSTURE50K, and we adopted
+the best settings from its own experiments on an older version
+of EUROLEX57K. For LAMT_MLC, we used the settings
+where Custom LegalBERT and AUEB-Eurolex achieved
+their best performance.
+2) BASELINE RESULTS
+
+In Table 5, compared to the other approaches, the two
+baselines achieved reasonable Micro and Weighted F1 scores
+on both datasets; however, their Macro F1 scores are
+substantially lower than all other systems. This suggests that
+simple baselines may be capable of handling frequent classes
+while struggling to capture rare ones. Since we used the
+Macro F1 score for model selection and parameter tuning
+(Table 3), we also measure statistical significance on this
+metric. The differences between the two baselines are statistically significant with a p-value of 0.0001 on both datasets.
+The differences between multilayer perceptron/BiLSTM and
+other methods are also significant with a p-value of 0.0001 on
+both datasets.
+VOLUME 10, 2022
+
+3) GENERAL-DOMAIN VS. DOMAIN-SPECIFIC PLMs
+
+We observed mixed results when comparing BERT/RoBERTa
+and the two domain-specific PLMs. On the POSTURE50K
+dataset, Custom LegalBERT achieved 3%∼4% higher Macro
+F1 scores than BERT and RoBERTa with comparable or
+slightly better Micro and Weighted scores. We attribute
+this to Custom LegalBERT’s domain-specific pre-training.
+However, we did not observe similar improvements on
+EUROLEX57K by using AUEB-Eurolex. Although it
+achieved better results than RoBERTa, it has slightly lower
+scores than BERT on all three metrics. On the Macro
+F1 scores, we observed significant differences between
+Custom LegalBERT and BERT/RoBERTa with a p-value
+of 0.0001 for POSTURE50K; the differences between
+AUEB-Eurolex and RoBERTa are also significant with a
+p-value of 0.0062 on EUROLEX57K.
+4) CONSUMING LONGER INPUTS
+
+On POSTURE50K, we used a maximum input length
+of 2,048 tokens for BIGBIRD. In Table 5, among the
+five general-domain and domain-specific PLMs, BIGBIRD
+achieved the highest Micro and Weighted F1 scores.
+As for Macro F1, BIGBIRD outperformed all approaches
+except for Custom LegalBERT; the differences between
+BIGBIRD and other PLMs are significant with p-values
+<0.02. However, BIGBIRD performed similarly to the
+other PLMs on EUROLEX57K, especially on Micro and
+Weighted F1. Figure 1 compares the distributions of the
+length of input documents of the two datasets. We can
+see that even with a maximum length of 512 tokens,
+84% of the documents in EUROLEX57K are covered; in
+contrast, only 3% of the U.S. cases in POSTURE50K
+have 512 or fewer tokens. This partially explains why
+BIGBIRD performed better on POSTURE50K than on
+EUROLEX57K.
+75845
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+FIGURE 1. Document length distribution on POSTURE50K and
+EUROLEX57K.
+
+5) RESULTS OF STATE-OF-THE-ART SYSTEMS
+
+LAMT_MLC was designed specifically to handle rare
+classes. It combines domain-specific PLMs and multitask
+learning, where one of the tasks targets less frequent
+classes in order to boost their signals. It also has a label
+embedding mechanism that tries to pull samples of the
+same rare classes closer to each other in the embedding
+space. Unsurprisingly, it achieved the highest Macro F1
+score on both datasets. On POSTURE50K, the differences
+in Macro F1 between LAMT_MLC and all other systems
+are statistically significant with p-values <0.001, except
+for Custom LegalBERT. On EUROLEX57K, although the
+differences in Macro F1 between LAMT_MLC and some of
+the other systems are relatively small, they are all statistically
+significant with p-values <0.001.
+We observe a different pattern for LightXML, where it
+achieved the best Micro F1 scores on both datasets when
+using the corresponding domain-specific PLMs. One of its
+core design principles is to make sure the predictions with
+the highest confidence scores are correct. For datasets that are
+highly imbalanced with a few dominating classes (Figure 2),
+it demonstrates advantages on Micro F1 but fails to capture
+rare classes, thus adversely impacting its Macro F1 scores.
+C. SUMMARIZATION
+1) PARAMETER TUNING
+
+For both datasets, we truncate the source documents to
+512 tokens for all PLM-based methods; considering the differences between JRC-Acquis and BillSum in terms of summary length (an average of 30 and 182 words respectively),
+we set the target lengths to 128 and 256 for JRC-Acquis
+and BillSum respectively. Given that PLM-based summarization tasks are both memory-intensive and time-consuming,
+we only considered a batch size of 88 and mainly tuned
+different learning rates: For JRC-Acquis, we tried 1e-5, 2e-5
+and 3e-5; for BillSum, we used larger values, including
+3e-5 and 5e-5 for BERT and Custom LegalBERT, 5e-5 and
+
+FIGURE 2. Class distribution of the two multi-label datasets.
+
+1e-4 for BART and DYPLOC, and 2e-5 for Global-aware
+(following the original paper). Although beam search may
+have brought further improvements, we disabled it to speed
+up the generation process, except where we used a beam size
+of 8 for Global-aware following the original paper.
+TextRank [51] is an unsupervised baseline for extractive
+summarization. It builds a graph by using the sentences as
+vertices and their similarity relations as edges, and then
+applies graph-based ranking algorithms to select sentences as
+the final summary. We experimented with different sentence
+lengths: 32, 64 and 128 for JRC-Acquis; and, 64, 128 and
+256 for BillSum. DYPLOC [118] and Global-aware [62] are
+two state-of-the-art systems. One of DYPLOC’s goals is to
+produce coherent long generations, which is a good fit for the
+BillSum dataset. Global-aware tries to use global attention
+to guide the beam search process and pairs it with a novel
+scoring mechanism. It achieved improved results on several
+benchmark datasets compared to regular beam search.
+The original JRC-Acquis dataset contains training data and
+test data; in this work, we conduct 10-fold cross validation
+using the original training data and report two groups of
+results: the average scores of the 10 test sets (which is part
+of the original training data) and those on the original test set.
+We do the same to BillSum, except it includes two original
+test sets: one for U.S. Congressional bills and the other for
+California state bills.
+2) BASELINE RESULTS
+
+8 There are two exceptions. We had to use batch size 6 on BillSum for
+
+BERT and Custom LegalBERT and on JRC-Acquis for T5 due to GPU
+memory constraints. For Global-aware, we were able to use larger batches
+and thus experimented with batch sizes 8 and 16.
+75846
+
+Table 6 shows the summarization results. In most situations,
+TextRank performs substantially worse than all other systems, suggesting the need for more advanced approaches
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 6. Summarization results. TextRank is unsupervised and thus its results do not vary on the original test sets. CLB denotes the Custom LegalBERT
+model. R-1, R-2 and R-L represent ROUGE-1, ROUGE-2 and ROUGE-L respectively; SD indicates standard deviation. We highlight the best performances in
+bold.
+
+for PLMs, which may also impact their capability to produce
+longer summaries.
+3) DOMAIN-SPECIFIC PLMS VS. GENERAL-DOMAIN MODELS
+
+On JRC-Acquis, Custom LegalBERT is slightly better than
+BERT on all metrics and the differences in ROUGE-L
+are statistically significant, with p-values of 0.0030 and
+0.0061 on Test and Original Test respectively. On BillSum,
+we see mixed results and minimal differences. Since Custom
+LegalBERT was pre-trained on U.S. cases, it is unsurprising
+that it is not substantially better than BERT for summarizing
+EU/UK legislation and U.S. Congressional and state bills.
+Both T5 and BART were pre-trained specifically targeting
+sequence-to-sequence tasks and therefore achieved better performance than BERT/Custom LegalBERT on both datasets.
+We did not run T5 on the more challenging BillSum data
+because it is less performant on JRC-Acquis than BART; also,
+it does not have good support for mixed precision training,
+which poses significant computational challenges.
+4) RESULTS OF STATE-OF-THE-ART METHODS
+
+FIGURE 3. Input and output length distribution of BillSum.
+
+for both datasets. The only exception is that it achieved
+the highest scores on BillSum’s California test set for all
+three metrics. As shown in Figure 3b, one possibility is that
+the summaries in the California test set are much longer
+than those in the other two test sets, giving TextRank an
+advantage over the PLM-based approaches, which all have
+a 256-token limit for the target summaries. Furthermore,
+as mentioned earlier, we truncate all inputs to 512 tokens
+VOLUME 10, 2022
+
+DYPLOC obtained the best performance on JRC-Acquis
+across the board. Between the two top performers DYPLOC
+and BART, we observed statistically significant differences in
+ROUGE-L on Test but not on Original Test. We did not run
+Global-aware on JRC-Acquis, since it requires a pre-trained
+model from the same or a very close domain. On BillSum,
+although Global-aware achieved superior performance on the
+Test set, we do not observe similar performance gains from
+either state-of-the-art system over BART (the best model
+among the other approaches) on the other two test sets.
+While both DYPLOC and Global-aware have noticeably
+better ROUGE-1 scores than BART on the California test set,
+the ROUGE-L scores of the three models are very close.
+One interesting observation is that although Global-aware
+achieved substantially better results than others on BillSum’s
+Test, it is not superior to DYPLOC or BART on the other
+75847
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+two test sets. From Figure 3, Test and Original Test US have
+very similar input and summary length distributions, so it is
+reasonable to assume the input/output length differences are
+less likely to cause Global-aware’s different performances
+on the two test sets. Also, we double-checked to make sure
+we were using the same model and inference code for all
+three test sets on BillSum, so coding issues should not be
+the cause either. Another possibility is that the samples in the
+original test sets are inherently more difficult than those in
+Test and thus the model does not generalize well. We have
+not found a plausible explanation at the moment, but will
+continue investigating this.
+D. QUESTION ANSWERING
+1) PARAMETER TUNING
+
+When using PLMs for multiple choice question answering,
+the inputs to the models are the concatenation of the context,
+the question and a candidate choice: [CLS] [Tokens in
+context (a textual paragraph)] [SEP] [Tokens in a question]9
+[Tokens of one of the choices] [SEP]. The [SEP] special
+token separates the different parts of the input. We extract
+the hidden state of the [CLS] token from the last layer
+of a PLM and send it to the classification head, which is
+a common practice when using PLMs for multiple choice
+question answering. Similar to other experiments, we truncate
+the inputs to 512 tokens for all general-domain and domainspecific PLMs and tuned different learning rates ({1e-5,
+2e-5}), batch sizes ({8, 16}) and an optional dropout layer
+before the classification head (rate ∈ {0.1, 0.2}).
+For BiLSTM, we concatenate the textual paragraph with
+each of the choices, and truncate the inputs to 275 words.
+We then tested different batch sizes ({8, 16}) and learning
+rates ({1e-4, 1e-5}). For all experiments, we used the Adam
+optimizer and trained for 3 epochs. Instead of an embedding
+layer (as in our binary classification experiments), we used
+the GloVe embeddings [119].
+MMM [75] is a state-of-the-art system that leverages a
+novel attention architecture, a two-stage fine-tuning process
+and multi-task learning. We did not find the two-stage finetuning code from its repository and also do not have a second
+large-scale question answering dataset; thus, our experiments
+mainly evaluate the novel attention architecture. For MMM,
+due to GPU memory constraints, we used a maximum
+input length of 256 tokens and a batch size of 8, and tried
+two different learning rates: 1e-5 and 2e-5. We trained all
+PLM-based methods for 3 epochs, which we find sufficient
+for reaching model convergence.
+2) RESULTS
+
+As shown in Table 7, it is clear that the BiLSTM baseline
+is less competitive than all other approaches, suggesting the
+need for more complex methods that can better ‘‘understand’’
+the legal nuances in the context and the choices. Between
+the two general-domain PLMs, RoBERTa had slightly higher
+9 CaseHOLD does not contain ‘‘questions’’, hence this part is left empty.
+
+75848
+
+TABLE 7. Multiple choice question answering result on the CaseHOLD
+dataset. SD denotes standard deviation. We highlight the best
+performance in bold.
+
+accuracy than BERT; even though their differences are
+statistically significant with a p-value of 0.0001, the absolute
+difference is only 1.2%.
+Custom LegalBERT shows remarkable superiority on
+this task, mainly because it acquired domain knowledge
+via its pre-training on 3.5 million U.S. cases. However, AUEB-Eurolex, pre-trained on EU/UK legislative
+documents, does not outperform other PLMs, suggesting limited in-domain transferability of domain-specific
+PLMs. The differences between Custom LegalBERT and
+BERT/RoBERTa/AUEB-Eurolex are all significant with a
+p-value of 0.0001.
+Comparing the two MMM variants, using the Custom
+LegalBERT kernel resulted in a 4.6% accuracy gain over
+BERT, indicating that domain-specific PLMs are effective
+on datasets from the same or close domains to their pretraining corpora. Its slightly lower accuracy compared to
+BERT/Custom LegalBERT may be partially due to the fact
+that GPU memory limits constrained us to 256 input tokens.
+E. INFORMATION RETRIEVAL
+1) PARAMETER TUNING AND RETRIEVAL WORKFLOW
+
+BM25 [120] is an unsupervised scoring method. We first
+build an inverted index on all the legal cases in the dataset.
+Then, given a query (which is an entire legal case from the
+dataset), we return the top-k candidates and experiment with
+different values for k ∈ {10, 20, 30, 50}. LMIR [121] models
+case retrieval as a query generation process and candidates
+are ranked by their probability of generating the input query.
+Figure 4 demonstrates the fine-tuning and the inference
+pipeline for all PLM models. For fine-tuning (Figure 4a),
+the training data consists of all groundtruth case pairs, i.e.,
+a case is paired with each of its relevant cases. In order
+to obtain negative samples, we use BM25 to retrieve k
+candidates and randomly sample m irrelevant cases from
+them. Depending on the value of k, the fine-tuning process
+may be extremely computationally challenging; thus, we only
+use a subsample of the negative cases. Then, we cast this as a
+binary classification problem where we try to predict whether
+a pair of cases are related or not. Assuming the maximum
+input length is n, for a pair of cases, we take n2 tokens from
+each case and feed them to the PLMs. The inference process
+(Figure 4b) is relatively straightforward, where the query case
+is paired with all k candidates and sent to the classifier.
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+FIGURE 4. The fine-tuning and inference workflow for case retrieval.
+
+For all PLMs, we truncate the inputs to 512 tokens,
+except for BIGBIRD where we used 1,024 tokens, and tested
+different combinations between k ({10, 30}) and m ({3, 5,
+10, 15}). We also experimented with different batch sizes
+({8, 16}) and learning rates ({1e-5, 2e-5}).
+2) RESULTS
+
+Table 8 presents the results on the COLIEE-2021 Legal Case
+Retrieval competition [21]. We performed model selection
+and parameter tuning using Macro-F1, which is a typical
+practice for information retrieval systems. However, because
+the COLIEE2021 competition was judged using Micro-F1,
+we also report the Micro scores where each system achieved
+its best Macro-F1 score.
+One clear but surprising finding is that LMIR
+(a classical retrieval method) not only achieved the highest
+Micro-F1 score but also substantially outperformed all
+other approaches. One possibility is that the contextual
+knowledge acquired by the PLMs during pre-training is
+negatively impacting their ability to differentiate between
+similar but irrelevant cases. This theory is supported by
+the especially low precision of all PLM-based methods.
+In the COLIEE competition, the task is to find relevant
+cases given a query case. Although many of the retrieved
+cases may be similar due to substantial term or even topic
+VOLUME 10, 2022
+
+overlap, they may not be considered relevant from a legal
+perspective.
+For example, for query case 072899, RoBERTa, the
+best PLM model, returned case 079775 as relevant. Both
+cases are about immigration and refugees, thus overlapping
+substantially on words and topics; however, they are not
+‘‘relevant’’ according to the groundtruth.
+This is further worsened by the fact that legal cases may
+be (extremely) long, making it very challenging to precisely
+spot just a few truly relevant cases. Although BM25 achieved
+the highest recall (both Micro and Macro) and MAP when
+considering the top-20 candidates, its low precision makes
+it impractical for this document-to-document retrieval task
+when used alone.
+BERT and RoBERTa achieved similar Macro recall; even
+though RoBERTa achieved slightly higher precision, both
+systems struggle to perform as well as LMIR. Although
+BIGBIRD is able to handle longer inputs than RoBERTa,
+this does not translate to better performance on this task.
+Unlike what we observed on the multi-label POSTURE50K
+dataset (Table 5), for the purpose of retrieving relevant cases,
+merely feeding in more text is less likely to help the model
+to better differentiate between similar but irrelevant cases.
+Also, we note that the time required to train BIGBIRD was
+seven times longer than what was needed for RoBERTa,
+75849
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 8. Evaluation results on the COLIEE-2021 dataset. MAP represents mean average precision, and SD denotes standard deviation. We highlight the
+best performances in bold.
+
+which poses significant computational challenges for larger
+datasets. Custom LegalBERT achieved the highest recall
+among all PLMs, but its F1 scores are offset by its
+low precision scores. The additional domain knowledge
+from the pre-training process does allow it to be more
+comprehensive (i.e., high recall) but at the price of having
+inferior discriminative power.
+We also considered using BERT-PLI [28], a state-of-the-art
+information retrieval system. Rather than directly comparing
+entire input texts, it uses paragraph-level interactions to find
+related cases. The system achieved superior performance on a
+prior version of the COLIEE competition, where the task was
+to find ∼5 relevant cases from a total pool of 200. However,
+in COLIEE-2021, the case pool increased sharply to 4,415,
+while the number of relevant cases per query stayed the same.
+Therefore, BERT-PLI’s paragraph-level modeling might be
+too granular to achieve high precision. We were not able to
+successfully run BERT-PLI and thus did not replace its BERT
+kernel with Custom LegalBERT.
+V. DISCUSSION, IMPLICATIONS AND FUTURE WORK
+
+In Section I, we proposed five questions that we address in
+this study. We summarize our findings in Table 9 and discuss
+them in detail in the rest of this section.
+A. DISCUSSION OF RESULTS
+1) Q1 & Q2: ARE SIMPLE BASELINE SYSTEMS ABLE TO
+ACHIEVE DECENT PERFORMANCE ON LEGAL NLP TASKS?
+WOULD MAINSTREAM GENERAL-DOMAIN PLMs
+OUTPERFORM SIMPLE BASELINES?
+
+According to our experiments, mainstream general-domain
+PLMs (and other approaches) generally outperform simple
+baseline systems, but the actual improvements may be
+dependent on the difficulty of the task. For example, as shown
+in Table 4, on the relatively straightforward Overruling
+binary classification task, both SVM and BiLSTM achieved
+F1-scores of about 94%, only 2%∼3% lower than that of
+PLMs; however, on the more complex CaseHOLD question
+answering dataset, Table 7 shows that BERT achieved nearly
+30% higher accuracy than BiLSTM. One exception is on the
+COLIEE-2021 case retrieval task, where baseline systems
+75850
+
+actually achieved the best performance. Such retrieval
+tasks certainly deserve more attention in future legal NLP
+research, especially when dealing with long documents,
+in order to better differentiate between similar but irrelevant
+candidates.
+2) Q3: WOULD DOMAIN-SPECIFIC PLMs ACHIEVE BETTER
+PERFORMANCE THAN GENERAL-DOMAIN MODELS?
+
+Based on our results, domain-specific PLMs perform better
+than general-domain PLMs on most, but not all, tasks.
+Depending on the difficulty of the task, domain-specific
+PLMs demonstrate varying levels of benefits. For example,
+Custom LegalBERT has a nearly 5% performance gain
+over BERT on the CaseHOLD dataset (Table 7); similarly, it achieved about 4% higher Macro F1 score than
+BERT/RoBERTa on the POSTURE50K multi-label dataset
+(Table 5). However, on the two summarization datasets,
+we only observed a small improvement of about 1% when
+applying it to the comparatively less challenging JRC-Acquis
+data (Table 6a). Although domain-specific PLMs do have
+their advantages, they may not universally outperform
+general-domain PLMs across the board.
+3) Q4: ARE PLM-BASED STATE-OF-THE-ART SYSTEMS
+DEVELOPED FOR GENERAL DOMAINS GENERALIZABLE TO
+LEGAL DATA?
+
+One unique aspect of our work is to examine the generalizability of the general-domain state-of-the-art systems.
+While there are situations where they were able to achieve
+better performance, e.g., the JRC-Acquis summarization task
+(Table 6a) and the two multi-label classification datasets
+(Table 5), the absolute improvements that we observed were
+limited. Furthermore, on some of the more challenging
+datasets, such as the BillSum summarization data (Table 6b)
+and the COLIEE-2021 retrieval task (Table 8), the stateof-the-art systems were either comparable to or even much
+worse than the other approaches. Although we only evaluated
+six state-of-the-art systems in this paper, they are all from
+top-tier conferences/journals and are from the last two years.
+Given the observations from our extensive experiments,
+we believe that methods that specifically address the unique
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 9. Summary of findings based on the five NLP tasks. GD and SOTA denote ‘‘general-domain’’ and ‘‘state-of-the-art’’ respectively. We use ‘‘<’’ to
+indicate the performance relations between different approaches.
+
+and significant domain challenges (as described in Section I)
+are needed to advance legal NLP research.
+In addition to answering these questions, we also discuss
+two other observations from our experiments. First of all,
+we find that domain-specific PLMs have limited in-domain
+transferability. In this work, we evaluated two domainspecific PLMs: Custom LegalBERT (pre-trained on U.S.
+cases) and AUEB-Eurolex (pre-trained on EU/UK legislative
+documents), and observed improvements when applying
+them to datasets that are extremely close to their pretraining corpora, e.g., Custom LegalBERT on POSTURE50K
+(Table 5) and CaseHOLD (Table 7) and AUEB-Eurolex on
+EUROLEX57K (Table 5). However, when we employ them
+to legal datasets that are just ‘‘related’’ to their pre-training
+corpora, the benefits of domain-specific pre-training are
+generally offset by the language differences across the subdomains. For instance, AUEB-Eurolex only exhibits trivial
+improvements on the POSTURE50K multi-label dataset
+over BERT (Table 5) and does not have any advantage
+on CaseHOLD (Table 7); similarly, Custom LegalBERT
+performed even worse than BERT on the EUROLEX57K
+multi-label dataset on all three metrics (Table 5). Since
+PLM pre-training is expensive with respect to both time and
+monetary costs, and may also require special hardware (e.g.,
+TPU), only being advantageous on datasets with extremely
+similar texts may limit their adoption and prevent them
+from having broader impact. One potential future direction
+is to improve the in-domain transferability of these PLMs
+by utilizing large-scale pre-training corpora that cover a
+variety of sub-domains, and by including diverse tasks during
+pre-training.
+Furthermore, we also discuss the trade-offs between
+performance gains and runtime costs for PLMs that are
+capable of handling long texts. One unique characteristic
+of the legal domain is that the documents may be extremely
+long (e.g., as shown in Figure 1 and Figure 3a). This poses
+significant challenges especially for PLM-based approaches.
+Several mainstream PLMs have a hard input limit of
+512 tokens. Although certain PLMs (e.g., BIGBIRD) try
+to extend beyond this limit by using different attention
+mechanisms, they typically require substantially more computing resources. For example, when applying BIGBIRD
+to POSTURE50K (Table 5), a single training epoch took
+70 minutes and 120 minutes with maximum input lengths
+of 1,024 and 2,048 tokens respectively, while Custom
+VOLUME 10, 2022
+
+LegalBERT only needed 15 minutes with 512 tokens. Even
+with such substantial runtime differences, BIGBIRD only
+achieved about 1.5% higher Micro F1 and Weighted F1
+but with a nearly 2% lower Macro F1. In the long run,
+domain-specific PLMs may still be preferred, since they
+can potentially be used for multiple tasks in the domain,
+especially when running multiple downstream fine-tuning
+experiments.
+B. IMPLICATIONS
+
+When trying to choose the best approach for a given task,
+legal NLP researchers and practitioners are often faced with
+many different options, including unsupervised methods,
+classical machine learning algorithms and deep learning
+systems (including those based on PLMs). Considering
+the complexity of the task, the capabilities of different
+approaches and the time and monetary costs involved, it is
+difficult to select the optimal method without practical guidelines obtained via comprehensive empirical evaluation. For
+example, PLMs, which are typically more costly than simpler
+methods, may not provide substantial performance gains
+across all tasks. Furthermore, the release of domain-specific
+PLMs may seem promising and a natural solution for almost
+any task; however, there is a critical need for legal NLP
+practitioners to understand where domain-specific PLMs do
+and do not achieve success, as they are not better than
+other methods in all cases. To that end, as demonstrated in
+Figure 5, we propose a few high-level guidelines for legal
+NLP work:
+• Domain-specific PLMs can lead to superior performance; however, their pre-training corpora have to
+be the same as or extremely close to the evaluation
+datasets. The ‘‘Legal’’ domain is very broad and covers
+many sub-domains, e.g., case opinions of different
+countries and regions, regional legislative documents,
+political bills and so on. The languages of documents
+in each sub-domain may differ substantially. Our experiments suggest that domain-specific PLMs only provide
+benefits when applied to evaluation datasets of the
+same sub-domain. When such domain-specific PLMs
+are not available, we suggest primarily considering
+general-domain PLMs rather than PLMs pre-trained on
+corpora of merely ‘‘related’’ domains.
+• Based on the architecture in Figure 4 and the results in
+Table 8, we recommend starting with classical methods
+75851
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+FIGURE 5. High-level guidelines for different legal NLP tasks. Dotted lines indicate optional next steps.
+
+for document-to-document retrieval tasks, such as LMIR
+and BM25, as they are both effective and efficient (i.e.,
+no special hardware required). PLM-based methods
+could be further considered; however, they may not offer
+substantial advantages.
+• For the relatively straightforward tasks (e.g., the
+Overruling dataset in Table 4), we suggest starting
+with simple methods, as they may provide similar
+performance to more complex PLM-based approaches
+but do not require any special hardware, allowing for less
+costly deployment. PLMs may be considered if simple
+methods do not provide sufficiently high performance.
+• For text summarization, we strongly recommend models
+specifically pre-trained for sequence-to-sequence tasks.
+For example, in Table 6, both BART and DYPLOC substantially outperformed BERT and Custom LegalBERT
+on both of our summarization datasets.
+C. FUTURE WORK
+
+In all of our experiments, we either feed entire documents to
+PLMs whenever possible or truncate them to some maximum
+length. One potential future direction lies in being more
+selective about the texts we send to PLMs, i.e., Text Selection.
+Take the multi-label POSTURE50K and the case retrieval
+COLIEE-2021 datasets as examples. Cases from these
+datasets can have thousands of words, but may consist of
+multiple ‘‘sections’’ (either explicitly or implicitly) that each
+address a different aspect of the case, such as background,
+analysis and conclusion. For retrieving relevant cases, the
+‘‘summary’’ paragraphs could be more helpful; however,
+for the task of extracting legal procedural postures, sections
+that provide detailed analyses of the major legal issues
+in the case would be needed, since legal postures require
+75852
+
+substantive discussion. Therefore, selecting the potentially
+most helpful paragraphs or sections for a given task may
+lead to better performance. At the same time, this reduces
+the need to ingest longer inputs, thus lowering computational
+costs.
+There have been several studies on fairness, bias and
+stereotypes in word embeddings both in the general
+domain [122]–[124] and in the legal domain [125]. Similarly,
+several recent works have also exposed unintended social
+biases in PLMs [126]–[129]. For example, in the context
+of legal judgment prediction, Wang et al. [125] showed the
+existence of regional sentencing differences on the same
+types of crimes. Although not the focus of this paper,
+considering the high stakes involved in machine-assisted
+decision making in the legal domain and the rising adoption
+of PLMs, we believe future research around these topics
+deserves more attention from (legal) NLP researchers,
+domain experts and social scientists.
+Another area of study might be around data annotation.
+As mentioned earlier, obtaining high-quality and largescale annotated legal data is expensive in several aspects.
+Therefore, it would be interesting to examine how different
+techniques (such as active learning and data augmentation)
+could facilitate the annotation process, and explore their
+impact on final model performance. Finally, given the
+existence of datasets in different languages (Table 1),
+multilingual PLMs could be another interesting research
+topic, especially on the potential transferability across
+different languages.
+VI. CONCLUSION
+
+In this paper, we presented an extensive and up-to-date
+empirical study on the effectiveness of pre-trained language
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 10. Optimal parameter settings for baseline systems. MLP represents Multilayer perceptron. vocab and lr denote vocabulary and learning rate
+repsectively. For BiLSTM, the ‘‘max input’’ refers to the number of words separated by whitespace.
+
+TABLE 11. Optimal parameter settings for general-domain and domain-specific PLMs. lr denotes learning rate. ‘‘max input’’ and ‘‘max output’’ (whenever
+applicable) are with respect to the number of tokens decided by the corresponding PLM tokenizers.
+
+models (PLMs) for legal NLP. Rather than focusing on one
+or two specific types of NLP tasks, our study covers eight
+legal datasets that belong to five different types of tasks,
+including Binary Classification, Multi-label Classification,
+Summarization, Multiple Choice Question Answering and
+Information Retrieval, all of which have very critical
+applications in the legal domain. We ran simple baselines
+VOLUME 10, 2022
+
+in order to set up the basis for further comparison. Then,
+we experimented with both mainstream general-domain
+PLMs and two recent legal-specific PLMs on these tasks, and
+compared their performance. Importantly, we also selected
+and applied six recent general-domain state-of-the-art systems to the legal datasets in order to explore their out-ofdomain generalizability. Finally, we summarize and discuss
+75853
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+TABLE 12. Optimal parameter settings for state-of-the-art approaches. lr denotes learning rate. The ‘‘max input’’ and ‘‘max output’’ (whenever applicable)
+are with respect to the number of tokens decided by the corresponding PLM tokenizers. We mainly tuned the parameters displayed in this table and
+followed the original papers for the other settings. On each of the two multi-label datasets, LightXML obtained its best performance on the same setting
+when using different PLM kernels. On CaseHOLD, MMM achieved the best performance on the same setting with different PLM kernels.
+
+our findings, and also present several potentially promising
+future directions for legal NLP research, such as in-domain
+transferability, text selection and fairness/bias/stereotype
+detection.
+In future work, rather than truncating long inputs, one
+promising direction is to perform text selection, which
+could potentially lead to better performance at reduced cost.
+Also, data augmentation techniques could be considered,
+e.g., for the less frequent labels in multi-label classification
+tasks, among others. Finally, fairness and bias in word
+embeddings and language models deserve continued research
+efforts.
+For industrial practitioners, we hope that our study can
+serve as a practical guide for selecting the appropriate
+methods for different tasks, considering the trade-offs
+between performance gains and computational costs. At the
+same time, we hope that the extensive experiments on
+different tasks, especially the comparisons between different
+types of approaches, can shed light on the most promising
+and pressing research directions for legal natural language
+processing.
+APPENDIX OPTIMAL PARAMETER SETTINGS
+
+See Tables 10–12.
+ACKNOWLEDGMENT
+
+Baosheng He was at Thomson Reuters, New York,
+NY 10036, USA.
+REFERENCES
+[1] J. Devlin, M. Chang, K. Lee, and K. Toutanova, ‘‘BERT: Pre-training
+of deep bidirectional transformers for language understanding,’’ in Proc.
+Conf. North Amer. Chapter Assoc. Comput. Linguistics: Hum. Lang.
+Technol. (NAACL-HLT), vol. 1, J. Burstein, C. Doran, and T. Solorio,
+Eds. Minneapolis, MN, USA: Association for Computational Linguistics,
+Jun. 2019, pp. 4171–4186, doi: 10.18653/v1/n19-1423.
+[2] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis,
+L. Zettlemoyer, and V. Stoyanov, ‘‘RoBERTa: A robustly optimized
+BERT pretraining approach,’’ 2019, arXiv:1907.11692.
+[3] M. Lewis, Y. Liu, N. Goyal, M. Ghazvininejad, A. Mohamed,
+O. Levy, V. Stoyanov, and L. Zettlemoyer, ‘‘BART: Denoising
+sequence-to-sequence pre-training for natural language generation,
+translation, and comprehension,’’ in Proc. 58th Annu. Meeting Assoc.
+Comput. Linguistics (ACL), D. Jurafsky, J. Chai, N. Schluter, and
+J. R. Tetreault, Eds. Stroudsburg, PA, USA: Association for Computational Linguistics, Jul. 2020, pp. 7871–7880. [Online]. Available:
+https://doi.org/10.18653/v1/2020.acl-main.703
+75854
+
+[4] J. Zhang, Y. Zhao, M. Saleh, and P. J. Liu, ‘‘PEGASUS: Pre-training
+with extracted gap-sentences for abstractive summarization,’’ in Proc.
+37th Int. Conf. Mach. Learn. (ICML) (Proceedings of Machine Learning
+Research), vol. 119. PMLR, Jul. 2020, pp. 11328–11339. [Online].
+Available: http://proceedings.mlr.press/v119/zhang20ae.html
+[5] M. Zaheer, G. Guruganesh, K. A. Dubey, J. Ainslie, C. Alberti,
+S. Ontañón, P. Pham, A. Ravula, Q. Wang, L. Yang, and
+A. Ahmed, ‘‘Big bird: Transformers for longer sequences,’’
+in Proc. Adv. Neural Inf. Process. Syst., Annu. Conf. Neural
+Inf. Process. Syst. (NeurIPS), H. Larochelle, M. Ranzato,
+R. Hadsell, M. Balcan, and H. Lin, Eds. Dec. 2020, pp. 1–15.
+[Online]. Available: https://proceedings.neurips.cc/paper/2020/hash/
+c8512d142a2d849725f31a9a7a361ab9-Abstract.html
+[6] I. Beltagy, K. Lo, and A. Cohan, ‘‘Scibert: A pretrained language model
+for scientific text,’’ in Proc. 2019 Conf. Empirical Methods Natural Lang.
+Process. 9th Int. Joint Conf. Natural Lang. Process. (EMNLP-IJCNLP),
+K. Inui, J. Jiang, V. Ng, and X. Wan, Eds. Hong Kong: Association for
+Computational Linguistics, 2019, pp. 3613–3618. [Online]. Available:
+https://doi.org/10.18653/v1/D19-1371
+[7] J. Lee, W. Yoon, S. Kim, D. Kim, S. Kim, C. H. So, and
+J. Kang, ‘‘BioBERT: A pre-trained biomedical language
+representation model for biomedical text mining,’’ Bioinformatics,
+vol. 36, no. 4, pp. 1234–1240, Feb. 2020. [Online]. Available:
+https://doi.org/10.1093/bioinformatics/btz682
+[8] N. Walker, A. Trewartha, H. Huo, S. Lee, K. Cruse, J. Dagdelen,
+A. Dunn, K. Persson, G. Ceder, and A. Jain, ‘‘The impact of domainspecific pre-training on named entity recognition tasks in materials
+science,’’ Available at SSRN 3950755, to be published.
+[9] D. Guo, S. Ren, S. Lu, Z. Feng, D. Tang, S. Liu, L. Zhou, N. Duan,
+A. Svyatkovskiy, S. Fu, M. Tufano, S. K. Deng, C. B. Clement,
+D. Drain, N. Sundaresan, J. Yin, D. Jiang, and M. Zhou, ‘‘GraphcodeBERT: Pre-training code representations with data flow,’’ in Proc. ICLR,
+2021, pp. 1–8.
+[10] I. Chalkidis, M. Fergadiotis, P. Malakasiotis, N. Aletras, and
+I. Androutsopoulos, ‘‘LEGAL-BERT: ‘Preparing the muppets for
+court,’’’ in Findings Assoc. Comput. Linguistics (EMNLP) T. Cohn,
+Y. He, and Y. Liu, Eds. Stroudsburg, PA, USA: Association
+Computational Linguistics, Nov. 2020, pp. 2898–2904. [Online].
+Available: https://doi.org/10.18653/v1/2020.findings-emnlp.261
+[11] O. T. Tran, B. X. Ngo, M. L. Nguyen, and A. Shimazu, ‘‘Automated
+reference resolution in legal texts,’’ Artif. Intell. Law, vol. 22, no. 1,
+pp. 29–60, Mar. 2014, doi: 10.1007/s10506-013-9149-8.
+[12] D. Song, A. Vold, K. Madan, and F. Schilder, ‘‘Multi-label
+legal document classification: A deep learning-based approach
+with label-attention and domain-specific pre-training,’’ Inf.
+Syst., vol. 106, May 2022, Art. no. 101718. [Online]. Available:
+https://www.sciencedirect.com/science/article/pii/S0306437921000016
+[13] M. Lippi, P. Pałka, G. Contissa, F. Lagioia, H.-W. Micklitz,
+G. Sartor, and P. Torroni, ‘‘CLAUDETTE: An automated detector
+of potentially unfair clauses in online terms of service,’’ Artif. Intell.
+Law, vol. 27, no. 2, pp. 117–139, Jun. 2019, doi: 10.1007/s10506-01909243-2.
+[14] L. Zheng, N. Guha, B. R. Anderson, P. Henderson, and D. E. Ho,
+‘‘When does pretraining help?: Assessing self-supervised learning for
+law and the casehold dataset of 53,000+ legal holdings,’’ in Proc.
+18th Int. Conf. Artif. Intell. Law, J. Maranhão and A. Z. Wyner, Eds.
+São Paulo, Brazil: ACM Press, Jun. 2021, pp. 159–168. [Online].
+Available: https://doi.org/10.1145/3462757.3466088
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+[15] I. Chalkidis, M. Fergadiotis, P. Malakasiotis, and I. Androutsopoulos,
+‘‘Large-scale multi-label text classification on EU legislation,’’ in Proc.
+57th Conf. Assoc. Comput. Linguistics (ACL) 2019, vol. 1, A. Korhonen,
+D. R. Traum, and L. Màrquez, Eds. Florence, Italy: Association for
+Computational Linguistics, 2019, pp. 6314–6322. [Online]. Available:
+https://doi.org/10.18653/v1/p19-1636
+[16] D. Tuggener, P. von Däniken, T. Peetz, and M. Cieliebak, ‘‘LEDGAR: A
+large-scale multi-label corpus for text classification of legal provisions
+in contracts,’’ in Proc. 12th Lang. Resour. Eval. Conf. (LREC),
+N. Calzolari, F. Béchet, P. Blache, K. Choukri, C. Cieri, T. Declerck,
+S. Goggi, H. Isahara, B. Maegaard, J. Mariani, H. Mazo, A. Moreno,
+J. Odijk, and S. Piperidis, Eds. Marseille, France: European Language Resources Association, 2020, pp. 1235–1241. [Online]. Available:
+https://aclanthology.org/2020.lrec-1.155/
+[17] A. Ravichander, A. W. Black, S. Wilson, T. B. Norton, and N. M. Sadeh,
+‘‘Question answering for privacy policies: Combining computational and
+legal perspectives,’’ in Proc. 2019 Conf. Empirical Methods Natural
+Lang. Process. 9th Int. Joint Conf. Natural Lang. Process. (EMNLPIJCNLP), K. Inui, J. Jiang, V. Ng, and X. Wan, Eds. Hong Kong: Association for Computational Linguistics, 2019, pp. 4946–4957. [Online].
+Available: https://doi.org/10.18653/v1/D19-1500
+[18] R. Steinberger, B. Pouliquen, A. Widiger, C. Ignat, T. Erjavec,
+D. Tufis, and D. Varga, ‘‘The JRC-Acquis: A multilingual aligned parallel
+corpus with 20+ languages,’’ in Proc. 5th Int. Conf. Lang. Resour.
+Eval. (LREC), N. Calzolari, K. Choukri, A. Gangemi, B. Maegaard,
+J. Mariani, J. Odijk, and D. Tapias, Eds. Genoa, Italy: European Language Resources Association, 2006, pp. 2142–2147. [Online]. Available:
+http://www.lrec-conf.org/proceedings/lrec2006/summaries/340.html
+[19] A. Kornilova and V. Eidelman, ‘‘BillSum: A corpus for automatic
+summarization of U.S. legislation,’’ 2019, arXiv:1910.00523.
+[20] A. Gargett, R. Firth, and N. Aletras, ‘‘LegalOps: A summarization corpus
+of legal opinions,’’ in Proc. IEEE Int. Conf. Big Data (Big Data),
+X. Wu, C. Jermaine, L. Xiong, X. Hu, O. Kotevska, S. Lu, W. Xu,
+S. Aluru, C. Zhai, E. Al-Masri, Z. Chen, and J. Saltz, Eds. Atlanta,
+GA, USA: IEEE Press, Dec. 2020, pp. 2117–2120. [Online]. Available:
+https://doi.org/10.1109/BigData50022.2020.9378308
+[21] J. Rabelo, R. Goebel, M.-Y. Kim, Y. Kano, M. Yoshioka, and K. Satoh,
+‘‘Overview and discussion of the competition on legal information
+extraction/entailment (COLIEE) 2021,’’ Rev. Socionetw. Strategies,
+vol. 16, no. 1, pp. 111–133, 2022, doi: 10.1007/s12626-022-00105-z.
+[22] J. Niklaus, I. Chalkidis, and M. Stürmer, ‘‘Swiss-judgment-prediction:
+A multilingual legal judgment prediction benchmark,’’ 2021,
+arXiv:2110.00806.
+[23] C. Xiao, H. Zhong, Z. Guo, C. Tu, Z. Liu, M. Sun, Y. Feng, X. Han, Z. Hu,
+H. Wang, and J. Xu, ‘‘CAIL2018: A large-scale legal dataset for judgment
+prediction,’’ 2018, arXiv:1807.02478.
+[24] M. Wrzalik and D. Krechel, ‘‘GerDaLIR: A German dataset for
+legal information retrieval,’’ in Proc. Natural Legal Lang. Process.
+Workshop. Punta Cana, Dominican Republic: Association for Computational Linguistics, Nov. 2021, pp. 123–128. [Online]. Available:
+https://aclanthology.org/2021.nllp-1.13
+[25] T. Vacek, D. Song, H. Molina-Salgado, R. Teo, C. Cowling, and
+F. Schilder, ‘‘Litigation analytics: Extracting and querying motions
+and orders from U.S. federal courts,’’ in Proc. Conf. North Amer.
+Chapter Assoc. Comput. Linguistics: Hum. Lang. Technol. (NAACLHLT), W. Ammar, A. Louis, and N. Mostafazadeh, Eds. Minneapolis,
+MN, USA: Association for Computational Linguistics, Jun. 2019,
+pp. 116–121, doi: 10.18653/v1/n19-4020.
+[26] C. Cortes and V. Vapnik, ‘‘Support-vector networks,’’ Mach. Learn.,
+vol. 20, no. 3, pp. 273–297, Jan. 1995, doi: 10.1007/BF00994018.
+[27] A. Vold and J. G. Conrad, ‘‘Using transformers to improve answer
+retrieval for legal questions,’’ in Proc. 18th Int. Conf. Artif. Intell.
+Law (ICAIL), J. Maranhão and A. Z. Wyner, Eds. São Paulo Brazil: ACM
+Press, 2021, pp. 245–249, doi: 10.1145/3462757.3466102.
+[28] Y. Shao, J. Mao, Y. Liu, W. Ma, K. Satoh, M. Zhang, and S. Ma, ‘‘BERTPLI: Modeling paragraph-level interactions for legal case retrieval,’’ in
+Proc. 29th Int. Joint Conf. Artif. Intell. (IJCAI), C. Bessiere, Ed. Jul. 2020,
+pp. 3501–3507, doi: 10.24963/ijcai.2020/484.
+[29] J. Rabelo, M. Kim, R. Goebel, M. Yoshioka, Y. Kano, and K. Satoh,
+‘‘COLIEE 2020: Methods for legal document retrieval and entailment,’’ in
+Proc. New Frontiers Artif. Intell.-JSAI-isAI Workshops JURISIN (LENLS)
+(Lecture Notes in Computer Science), vol. 12758, N. Okazaki, K. Yada,
+K. Satoh, and K. Mineshima, Eds. Springer, 2020, pp. 196–210, doi:
+10.1007/978-3-030-79942-7_13.
+VOLUME 10, 2022
+
+[30] A. Wang, A. Singh, J. Michael, F. Hill, O. Levy, and S. R. Bowman,
+‘‘GLUE: A multi-task benchmark and analysis platform for natural language understanding,’’ in Proc. 7th Int. Conf. Learn. Represent. (ICLR),
+New Orleans, LA, USA, May 2019, pp. 1–20. [Online]. Available:
+https://openreview.net/forum?id=rJ4km2R5t7
+[31] A. Wang, Y. Pruksachatkun, N. Nangia, A. Singh, J. Michael,
+F. Hill, O. Levy, and S. R. Bowman, ‘‘Superglue: A stickier benchmark for
+general-purpose language understanding systems,’’ in Proc. Adv. Neural
+Inf. Process. Syst., Annu. Conf. Neural Inf. Process. Syst. (NeurIPS),
+H. M. Wallach, H. Larochelle, A. Beygelzimer, F. d’Alché-Buc,
+E. B. Fox, and R. Garnett, Eds. Vancouver, BC, Canada, Dec. 2019,
+pp. 3261–3275. [Online]. Available: https://proceedings.neurips.
+cc/paper/2019/hash/4496bf24afe7fab6f046bf4923da8de6-Abstract.html
+[32] L. Xu, H. Hu, X. Zhang, L. Li, C. Cao, Y. Li, and Y. Xu, ‘‘CLUE:
+A Chinese language understanding evaluation benchmark,’’ in Proc.
+28th Int. Conf. Comput. Linguistics (COLING), D. Scott, N. Bel,
+and C. Zong, Eds. Barcelona, Spain: International Committee on
+Computational Linguistics, 2020, pp. 4762–4772. [Online]. Available:
+https://doi.org/10.18653/v1/2020.coling-main.419
+[33] F. Petroni, A. Piktus, A. Fan, P. S. H. Lewis, M. Yazdani,
+N. D. Cao, J. Thorne, Y. Jernite, V. Karpukhin, J. Maillard, V. Plachouras,
+T. Rocktäschel, and S. Riedel, ‘‘KILT: A benchmark for knowledge
+intensive language tasks,’’ in Proc. Conf. North Amer. Chapter Assoc.
+Comput. Linguistics: Hum. Lang. Technol. (NAACL-HLT), K. Toutanova,
+A. Rumshisky, L. Zettlemoyer, D. Hakkani-Tür, I. Beltagy, S. Bethard,
+R. Cotterell, T. Chakraborty, and Y. Zhou, Eds. Stroudsburg, PA, USA:
+Association for Computational Linguistics, 2021, pp. 2523–2544, doi:
+10.18653/v1/2021.naacl-main.200.
+[34] Y. Yao, H. Hu, X. Zhang, L. Li, C. Cao, Y. Li, and Y. Xu, ‘‘CUGE: A
+Chinese language understanding and generation evaluation benchmark,’’
+2021, arXiv:2112.13610.
+[35] I. Chalkidis, A. Jana, D. Hartung, M. Bommarito, I. Androutsopoulos,
+D. Martin Katz, and N. Aletras, ‘‘LexGLUE: A benchmark dataset for
+legal language understanding in English,’’ 2021, arXiv:2110.00976.
+[36] S. Gehrmann, T. Adewumi, and K. Aggarwal, ‘‘The GEM benchmark: Natural language generation, its evaluation and metrics,’’ 2021,
+arXiv:2102.01672.
+[37] I. Chalkidis, I. Androutsopoulos, and N. Aletras, ‘‘Neural legal
+judgment prediction in English,’’ in Proc. 57th Conf. Assoc. Comput.
+Linguistics (ACL), vol. 1, A. Korhonen, D. R. Traum, and L. Màrquez,
+Eds. Florence, Italy: Association for Computational Linguistics,
+Jul. 2019, pp. 4317–4323. [Online]. Available: https://doi.org/10.18653/
+v1/p19-1424
+[38] S. Hochreiter and J. Schmidhuber, ‘‘Long short-term memory,’’
+Neural Comput., vol. 9, no. 8, pp. 1735–1780, 1997, doi:
+10.1162/neco.1997.9.8.1735.
+[39] Z. Yang, D. Yang, C. Dyer, X. He, A. J. Smola, and E. H. Hovy,
+‘‘Hierarchical attention networks for document classification,’’ in Proc.
+Conf. North Amer. Chapter Assoc. Comput. Linguistics: Hum. Lang.
+Technol. (NAACL HLT), K. Knight, A. Nenkova, and O. Rambow, Eds.
+San Diego, CA, USA: Association for Computational Linguistics, 2016,
+pp. 1480–1489, doi: 10.18653/v1/n16-1174.
+[40] J. Mullenbach, S. Wiegreffe, J. Duke, J. Sun, and J. Eisenstein,
+‘‘Explainable prediction of medical codes from clinical text,’’ in Proc.
+Conf. North Amer. Chapter Assoc. Comput. Linguistics: Hum. Lang.
+Technol. (NAACL-HLT), vol. 1, M. A. Walker, H. Ji, and A. Stent, Eds.
+New Orleans, LA, USA: Association for Computational Linguistics,
+Jun. 2018, pp. 1101–1111, doi: 10.18653/v1/n18-1100.
+[41] A. Quemy and R. Wrembel, ‘‘ECHR-OD: On building an integrated
+open repository of legal documents for machine learning applications,’’
+Inf. Syst., vol. 106, May 2022, Art. no. 101822. [Online]. Available:
+https://www.sciencedirect.com/science/article/pii/S0306437921000636
+[42] H. Chen, L. Wu, J. Chen, W. Lu, and J. Ding, ‘‘A comparative
+study of automated legal text classification using random forests and
+deep learning,’’ Inf. Process. Manage., vol. 59, no. 2, Mar. 2022,
+Art. no. 102798. [Online]. Available: https://www.sciencedirect.
+com/science/article/pii/S0306457321002764
+[43] H. Jain, V. Balasubramanian, B. Chunduri, and M. Varma,
+‘‘Slice: Scalable linear extreme classifiers trained on 100 million
+labels for related searches,’’ in Proc. 12th ACM International
+Conference on Web Search and Data Mining (WSDM),
+J. S. Culpepper, A. Moffat, P. N. Bennett, and K. Lerman, Eds.
+Melbourne, VIC, Australia: ACM Press, 2019, pp. 528–536. [Online].
+Available: https://doi.org/10.1145/3289600.3290979
+75855
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+[44] Y. Tagami, ‘‘AnnexML: Approximate nearest neighbor search for extreme
+multi-label classification,’’ in Proc. 23rd ACM SIGKDD Int. Conf. Knowl.
+Discovery Data Mining, Halifax, NS, Canada, Aug. 2017, pp. 455–464,
+doi: 10.1145/3097983.3097987.
+[45] I. E. Yen, X. Huang, P. Ravikumar, K. Zhong, and I. S. Dhillon,
+‘‘PD-Sparse: A primal and dual sparse approach to extreme
+multiclass and multilabel classification,’’ in Proc. 33rd Int.
+Conf. Mach. Learn. (ICML) (JMLR Workshop and Conference
+Proceedings), vol. 48. M. Balcan and K. Q. Weinberger, Eds.
+New York, NY, USA: JMLR, 2016, pp. 3069–3077. [Online]. Available:
+http://proceedings.mlr.press/v48/yenb16.html
+[46] L. Breiman, ‘‘Random forests,’’ Mach. Learn., vol. 45, no. 1, pp. 5–32,
+2001, doi: 10.1023/A:1010933404324.
+[47] Y. Prabhu and M. Varma, ‘‘FastXML: A fast, accurate and stable treeclassifier for extreme multi-label learning,’’ in Proc. 20th ACM SIGKDD
+Int. Conf. Knowl. Discovery Data Mining (KDD) S. A. Macskassy,
+C. Perlich, J. Leskovec, W. Wang, and R. Ghani, Eds. New York, NY,
+USA: ACM Press, 2014, pp. 263–272, doi: 10.1145/2623330.2623651.
+[48] W. Siblini, F. Meyer, and P. Kuntz, ‘‘Craftml, an efficient clusteringbased random forest for extreme multi-label learning,’’ in Proc.
+35th Int. Conf. Mach. Learn. (ICML) (Proceedings of Machine
+Learning Research), vol. 80, J. G. Dy and A. Krause, Eds.
+Stockholm, Sweden: PMLR, 2018, pp. 4671–4680. [Online]. Available:
+http://proceedings.mlr.press/v80/siblini18a.html
+[49] K. Hornik, M. Stinchcombe, and H. White, ‘‘Multilayer feedforward
+networks are universal approximators,’’ Neural Netw., vol. 2, no. 5,
+pp. 359–366, 1989. [Online]. Available: https://doi.org/10.1016/08936080(89)90020-8
+[50] S. Paul, P. Goyal, and S. Ghosh, ‘‘LeSICiN: A heterogeneous graphbased approach for automatic legal statute identification from Indian legal
+documents,’’ in Proc. 36th AAAI Conf. Artif. Intell. (AAAI). Menlo Park,
+CA, USA: AAAI Press, 2022, pp. 1–8.
+[51] R. Mihalcea and P. Tarau, ‘‘TextRank: Bringing order into text,’’
+in Proc. Conf. Empirical Methods Natural Lang. Process., EMNLP
+meeting SIGDAT, Special Interest Group ACL, Held Conjunct. ACL,
+Jul. 2004, Barcelona, Spain: ACL, 2004, pp. 404–411. [Online]. Available: https://aclanthology.org/W04-3252/
+[52] G. Erkan and D. R. Radev, ‘‘LexRank: Graph-based lexical centrality as
+salience in text summarization,’’ J. Artif. Intell. Res., vol. 22, pp. 457–479,
+Dec. 2004. [Online]. Available: https://doi.org/10.1613/jair.1523
+[53] C. Fang, D. Mu, Z. Deng, and Z. Wu, ‘‘Word-sentence co-ranking for
+automatic extractive text summarization,’’ Expert Syst. Appl., vol. 72,
+pp. 189–195, Apr. 2017, doi: 10.1016/j.eswa.2016.12.021.
+[54] K. Cho, B. van Merrienboer, C. C. Gülçehre, D. Bahdanau, F. Bougares,
+H. Schwenk, and Y. Bengio, ‘‘Learning phrase representations
+using RNN encoder–decoder for statistical machine translation,’’ in
+Proc. Conf. Empirical Methods Natural Lang. Process. (EMNLP),
+A. Moschitti, B. Pang, and W. Daelemans, Eds. Doha, Qatar: ACL,
+Oct. 2014, pp. 1724–1734, doi: 10.3115/v1/d14-1179.
+[55] Y. Chen and M. Bansal, ‘‘Fast abstractive summarization with
+reinforce-selected sentence rewriting,’’ in Proc. 56th Annu. Meeting Assoc. Comput. Linguistics (ACL), vol. 1, I. Gurevych and
+Y. Miyao, Eds. Melbourne, VIC, Australia: Association for Computational Linguistics, Jul. 2018, pp. 675–686. [Online]. Available: https://
+aclanthology.org/P18-1063/
+[56] I. Listenmaa, M. Hanafiah, R. Cheong, and A. Källberg,
+‘‘Towards CNL-based verbalization of computational contracts,’’
+in Proc. 7th Int. Workshop Controlled Natural Lang. (CNL),
+Amsterdam, Netherlands, Sep. 2021, pp. 1–7. [Online]. Available:
+https://aclanthology.org/2021.cnl-1.10
+[57] S. Polsley, P. Jhunjhunwala, and R. Huang, ‘‘Casesummarizer: A system
+for automated summarization of legal texts,’’ in Proc. COLING 26th Int.
+Conf. Comput. Linguistics, Conf. Syst. Demonstrations, H. Watanabe,
+Ed. Osaka, Japan: ACL, Dec. 2016, pp. 258–262. [Online]. Available:
+https://aclanthology.org/C16-2054/
+[58] B. Hachey and C. Grover, ‘‘Extractive summarisation of legal texts,’’
+Artif. Intell. Law, vol. 14, no. 4, pp. 305–345, 2006, doi: 10.1007/
+s10506-007-9039-z.
+[59] M. Grabmair, K. D. Ashley, R. Chen, P. Sureshkumar, C. Wang,
+E. Nyberg, and V. R. Walker, ‘‘Introducing LUIMA: An experiment in
+legal conceptual retrieval of vaccine injury decisions using a UIMA type
+system and tools,’’ in Proc. 15th Int. Conf. Artif. Intell. Law (ICAIL),
+T. Sichelman and K. Atkinson, Eds. San Diego, CA, USA: ACM,
+Jun. 2015, pp. 69–78, doi: 10.1145/2746090.2746096.
+75856
+
+[60] A. Farzindar and G. Lapalme, ‘‘Legal text summarization by exploration of the thematic structure and argumentative roles,’’ in Text
+Summarization Branches Out. Barcelona, Spain: Association for
+Computational Linguistics, Jul. 2004, pp. 27–34. [Online]. Available:
+https://aclanthology.org/W04-1006
+[61] X. Duan, Y. Zhang, L. Yuan, X. Zhou, X. Liu, T. Wang, R. Wang,
+Q. Zhang, C. Sun, and F. Wu, ‘‘Legal summarization for multi-role
+debate dialogue via controversy focus mining and multi-task learning,’’
+in Proc. 28th ACM Int. Conf. Inf. Knowl. Manage. (CIKM), W. Zhu,
+D. Tao, X. Cheng, P. Cui, E. A. Rundensteiner, D. Carmel, Q. He, and
+J. X. Yu, Eds. Beijing, China: ACM Press, 2019, pp. 1361–1370, doi:
+10.1145/3357384.3357940.
+[62] Y. Ma, Z. Lan, L. Zong, and K. Huang, ‘‘Global-aware beam search for
+neural abstractive summarization,’’ Proc. Adv. Neural Inf. Process. Syst.,
+vol. 34, 2021, pp. 1–13.
+[63] A. Kanapala, S. Pal, and R. Pamula, ‘‘Text summarization from legal
+documents: A survey,’’ Artif. Intell. Rev., vol. 51, no. 3, pp. 371–402,
+Mar. 2019.
+[64] D. Jain, M. D. Borah, and A. Biswas, ‘‘Summarization of legal
+documents: Where are we now and the way forward,’’ Comput. Sci. Rev.,
+vol. 40, May 2021, Art. no. 100388, doi: 10.1016/j.cosrev.2021.100388.
+[65] M. Norkute, N. Herger, L. Michalak, A. Mulder, and S. Gao, ‘‘Towards
+explainable AI: Assessing the usefulness and impact of added explainability features in legal document summarization,’’ in Proc. Extended Abstr.
+CHI Conf. Hum. Factors Comput. Syst., May 2021, p. 53.
+[66] M. Kim, Y. Xu, R. Goebel, and K. Satoh, ‘‘Answering yes/no questions
+in legal bar exams,’’ in Proc. JSAI-isAI Workshops (Lecture Notes in
+Computer Science), vol. 8417. Springer, 2013, pp. 199–213.
+[67] Y. Kano, R. Hoshino, and R. Taniguchi, ‘‘Analyzable legal yes/no
+question answering system using linguistic structures,’’ in Proc. COLIEE@ICAIL, vol. 47, 2017, pp. 57–67.
+[68] R. Chitta and A. K. Hudek, ‘‘A reliable and accurate multiple choice
+question answering system for due diligence,’’ in Proc. 17th Int. Conf.
+Artif. Intell. Law, Jun. 2019, pp. 184–188.
+[69] M. Kim, Y. Xu, and R. Goebel, ‘‘Applying a convolutional neural network
+to legal question answering,’’ in Proc. New Frontiers Artif. Intell.-JSAIisAI 2015 Workshops, LENLS, JURISIN, AAA, HAT-MASH, TSDAA,
+ASD-HR, and SKL, (Lecture Notes in Computer Science), M. Otake,
+S. Kurahashi, Y. Ota, K. Satoh, and D. Bekki, Eds. Kanagawa, Japan,
+Springer, 2015, pp. 282–294, doi: 10.1007/978-3-319-50953-2_20.
+[70] P.-K. Do, H.-T. Nguyen, C.-X. Tran, M.-T. Nguyen, and M.-L. Nguyen,
+‘‘Legal question answering using ranking SVM and deep convolutional
+neural network,’’ 2017, arXiv:1703.05320.
+[71] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, and M. Sun, ‘‘JEC-QA:
+A legal-domain question answering dataset,’’ in Proc. 34th AAAI
+Conf. Artif. Intell., AAAI, 32nd Innov. Appl. Artif. Intell. Conf.,
+IAAI, 10th AAAI Symp. Educ. Adv. Artif. Intell. (EAAI). New York,
+NY, USA: AAAI Press, 2020, pp. 9701–9708. [Online]. Available:
+https://aaai.org/ojs/index.php/AAAI/article/view/6519
+[72] M. Tang, J. Cai, and H. H. Zhuo, ‘‘Multi-matching network for multiple
+choice reading comprehension,’’ in Proc. 33rd AAAI Conf. Artif. Intell.,
+AAAI, 31st Innov. Appl. Artif. Intell. Conf., IAAI, 9th AAAI Symp.
+Educ. Adv. Artif. Intell. (EAAI). Honolulu, HI, USA: AAAI Press, 2019,
+pp. 7088–7095, doi: 10.1609/aaai.v33i01.33017088.
+[73] W. Huang, X. Liao, Z. Xie, J. Qian, B. Zhuang, S. Wang, and J.
+Xiao, ‘‘Generating reasonable legal text through the combination of
+language modeling and question answering,’’ in Proc. 29th Int. Joint
+Conf. Artif. Intell. (IJCAI), C. Bessiere, Ed. Jul. 2020, pp. 3687–3693,
+doi: 10.24963/ijcai.2020/510.
+[74] C. Xiao, X. Hu, Z. Liu, C. Tu, and M. Sun, ‘‘Lawformer: A pretrained language model for Chinese legal long documents,’’ AI Open,
+vol. 2, pp. 79–84, 2021. [Online]. Available: https://www.sciencedirect.
+com/science/article/pii/S2666651021000176
+[75] D. Jin, S. Gao, J. Kao, T. Chung, and D. Hakkani-Tür, ‘‘MMM: Multistage multi-task learning for multi-choice reading comprehension,’’ in
+Proc. 34th AAAI Conf. Artif. Intell., AAAI, 32nd Innov. Appl. Artif. Intell.
+Conf., IAAI, 10th AAAI Symp. Educ. Adv. Artif. Intell. (EAAI). New York,
+NY, USA: AAAI Press, Feb. 2020, pp. 8010–8017. [Online]. Available:
+https://aaai.org/ojs/index.php/AAAI/article/view/6310
+[76] S. Zhang, H. Zhao, Y. Wu, Z. Zhang, X. Zhou, and X. Zhou, ‘‘DCMN+:
+Dual co-matching network for multi-choice reading comprehension,’’ in
+Proc. 34th AAAI Conf. Artif. Intell., AAAI, 32nd Innov. Appl. Artif. Intell.
+Conf., IAAI, 10th AAAI Symp. Educ. Adv. Artif. Intell. (EAAI). New York,
+NY, USA: AAAI Press, Feb. 2020, pp. 9563–9570. [Online]. Available:
+https://aaai.org/ojs/index.php/AAAI/article/view/6502
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+[77] Y. Guan, Z. Li, J. Leng, Z. Lin, M. Guo, and Y. Zhu, ‘‘Block-skim:
+Efficient question answering for transformer,’’ in Proc. 36th AAAI Conf.
+Artif. Intell. (AAAI). AAAI Press, 2022, pp. 1–10.
+[78] Y. Ju, Y. Zhang, Z. Tian, K. Liu, X. Cao, W. Zhao, J. Li, and
+J. Zhao, ‘‘Enhancing multiple-choice machine reading comprehension by
+punishing illogical interpretations,’’ in Proc. Conf. Empirical Methods
+Natural Lang. Process. (EMNLP), M. Moens, X. Huang, L. Specia,
+and S. W. Yih, Eds. Punta Cana, Dominican Republic: Association for
+Computational Linguistics, 2021, pp. 3641–3652. [Online]. Available:
+https://doi.org/10.18653/v1/2021.emnlp-main.295
+[79] M. Ren, H. Huang, and Y. Gao, ‘‘SKR-QA: Semantic ranking and knowledge revise for multi-choice question answering,’’ Neurocomputing,
+vol. 459, pp. 142–151, Oct. 2021, doi: 10.1016/j.neucom.2021.06.076.
+[80] Q. Cao, H. Trivedi, A. Balasubramanian, and N. Balasubramanian, ‘‘DeFormer: Decomposing pre-trained transformers for faster
+question answering,’’ in Proc. 58th Annu. Meeting Assoc. Comput. Linguistics (ACL), D. Jurafsky, J. Chai, N. Schluter, and
+J. R. Tetreault, Eds. Stroudsburg, PA, USA: Association for Computational Linguistics, Jul. 2020, pp. 4487–4497. [Online]. Available:
+https://doi.org/10.18653/v1/2020.acl-main.411
+[81] Z. Zhang, H. Zhao, and R. Wang, ‘‘Machine reading comprehension:
+The role of contextualized language models and beyond,’’ 2020,
+arXiv:2005.06249.
+[82] I. Chalkidis, M. Fergadiotis, N. Manginas, E. Katakalou, and
+P. Malakasiotis,
+‘‘Regulatory
+compliance
+through
+doc2doc
+information retrieval: A case study in EU/U.K. legislation where
+text similarity has limitations,’’ in Proc. 16th Conf. Eur. Chapter
+Assoc. Comput. Linguistics: Main (EACL), P. Merlo, J. Tiedemann,
+and R. Tsarfaty, Eds. Stroudsburg, PA, USA: Association for
+Computational Linguistics, 2021, pp. 3498–3511. [Online]. Available:
+https://doi.org/10.18653/v1/2021.eacl-main.305
+[83] E. Souza, D. Vitório, G. Moriyama, L. Santos, L. Martins, M.
+Souza, M. F. F. da Silva, N. Félix, A. C. P. L. F. de Carvalho,
+H. O. Albuquerque, and A. L. I. Oliveira, ‘‘An information retrieval
+pipeline for legislative documents from the Brazilian chamber of
+deputies,’’ in Proc. JURIX (Frontiers in Artificial Intelligence and
+Applications), vol. 346. Amsterdam, The Netherlands: IOS Press, 2021,
+pp. 119–126.
+[84] J. Li, M. Yang, and C. Li, ‘‘CLC-RS: A Chinese legal case retrieval system
+with masked language ranking,’’ in Proc. 30th ACM Int. Conf. Inf. Knowl.
+Manage., 2021, pp. 4734–4738.
+[85] Y. Shao, Y. Wu, Y. Liu, J. Mao, M. Zhang, and S. Ma, ‘‘Investigating user
+behavior in legal case retrieval,’’ in Proc. 44th Int. ACM SIGIR Conf. Res.
+Develop. Inf. Retr., Jul. 2021, pp. 962–972.
+[86] H. Turtle, ‘‘Text retrieval in the legal world,’’ Artif. Intell. Law, vol. 3,
+nos. 1–2, pp. 5–54, 1995.
+[87] J. Landthaler, B. Waltl, P. Holl, and F. Matthes, ‘‘Extending full text
+search for legal document collections using word embeddings,’’ in Proc.
+JURIX (Frontiers in Artificial Intelligence and Applications), vol. 294.
+Amsterdam, The Netherlands: IOS Press, 2016, pp. 73–82.
+[88] T. Novotná, ‘‘Human evaluation experiment of legal information retrieval
+methods,’’ in Proc. JURIX (Frontiers in Artificial Intelligence and
+Applications), vol. 346. Amsterdam, The Netherlands: IOS Press, 2021,
+pp. 131–137.
+[89] I. Nejadgholi, R. Bougueng, and S. Witherspoon, ‘‘A semi-supervised
+training method for semantic search of legal facts in Canadian immigration cases,’’ in Proc. JURIX (Frontiers in Artificial Intelligence and
+Applications), vol. 302. Amsterdam, The Netherlands: IOS Press, 2017,
+pp. 125–134.
+[90] J. Šavelka and K. D. Ashley, ‘‘Legal information retrieval for understanding statutory terms,’’ Artif. Intell. Law, vol. 30, no. 2, pp. 245–289,
+Jun. 2022.
+[91] A. L. Monroy, H. Calvo, A. Gelbukh, and G. G. Pacheco, ‘‘Link analysis
+for representing and retrieving legal information,’’ in Computational
+Linguistics and Intelligent Text Processing (Lecture Notes in Computer
+Science), vol. 7817, A. Gelbukh, Ed. Berlin, Germany: Springer, 2013,
+doi: 10.1007/978-3-642-37256-8_32.
+[92] S. Castano, M. Falduti, A. Ferrara, and S. Montanelli, ‘‘A knowledgecentered framework for exploration and retrieval of legal documents,’’
+Inf. Syst., vol. 106, May 2022, Art. no. 101842. [Online]. Available:
+https://www.sciencedirect.com/science/article/pii/S0306437921000788
+[93] H. R. Turtle, ‘‘Natural language vs. Boolean query evaluation: A comparison of retrieval performance,’’ in Proc. SIGIR, 1994, pp. 212–220.
+[94] D. Locke, G. Zuccon, and H. Scells, ‘‘Automatic query generation from
+legal texts for case law retrieval,’’ in Proc. AIRS (Lecture Notes in
+Computer Science), vol. 10648. Springer, 2017, pp. 181–193.
+VOLUME 10, 2022
+
+[95] V. Tran, M. L. Nguyen, and K. Satoh, ‘‘Building legal case retrieval
+systems with lexical matching and summarization using a pre-trained
+phrase scoring model,’’ in Proc. 17th Int. Conf. Artif. Intell. Law,
+Jun. 2019, pp. 275–282.
+[96] S. Althammer, S. Hofstätter, M. Sertkan, S. Verberne, and A. Hanbury,
+‘‘PARM: A paragraph aggregation retrieval model for dense documentto-document retrieval,’’ in Proc. Adv. Inf. Retr., 44th Eur. Conf. IR Res.,
+Stavanger, Norway, Apr. 2022, pp. 1–16.
+[97] C. Sansone and G. Sperlí, ‘‘Legal information retrieval systems:
+State-of-the-art and open issues,’’ Inf. Syst., vol. 106, May 2022,
+Art. no. 101967. [Online]. Available: https://www.sciencedirect.
+com/science/article/pii/S0306437921001551
+[98] N. Liu, Q. Hu, H. Xu, X. Xu, and M. Chen, ‘‘Med-BERT: A pretraining
+framework for medical records named entity recognition,’’ IEEE Trans.
+Ind. Informat., vol. 18, no. 8, pp. 5600–5608, Aug. 2022.
+[99] Y. Ma, Y. Shao, Y. Wu, Y. Liu, R. Zhang, M. Zhang, and S. Ma,
+‘‘Lecard: A legal case retrieval dataset for Chinese law system,’’ in Proc.
+44th Int. (SIGIR), F. Diaz, C. Shah, T. Suel, P. Castells, R. Jones, and
+T. Sakai, Eds. New York, NY, USA: ACM Press, 2021, pp. 2342–2348,
+doi: 10.1145/3404835.3463250.
+[100] P. Rajpurkar, R. Jia, and P. Liang, ‘‘Know what you don’t know:
+Unanswerable questions for squad,’’ in Proc. ACL, 2018, pp. 784–789.
+[101] P. Bhattacharya, K. Hiware, S. Rajgaria, N. Pochhi, K. Ghosh, and
+S. Ghosh, ‘‘A comparative study of summarization algorithms applied to
+legal case judgments,’’ in Proc. 41st Eur. Conf. IR Res. (ECIR) (Lecture
+Notes in Computer Science), vol. 11437, L. Azzopardi, B. Stein, N. Fuhr,
+P. Mayr, C. Hauff, and D. Hiemstra, Eds. Cologne, Germany: Springer,
+2019, pp. 413–428, doi: 10.1007/978-3-030-15712-8_27.
+[102] E. Filtz, S. Kirrane, and A. Polleres, ‘‘The linked legal data landscape:
+Linking legal data across different countries,’’ Artif. Intell. Law, vol. 29,
+no. 4, pp. 485–539, Dec. 2021.
+[103] A. Mandal, K. Ghosh, S. Ghosh, and S. Mandal, ‘‘A sequence labeling
+model for catchphrase identification from legal case documents,’’ Artif.
+Intell. Law, pp. 1–34, Jul. 2021.
+[104] I. Chalkidis and D. Kampas, ‘‘Deep learning in law: Early adaptation
+and legal word embeddings trained on large corpora,’’ Artif. Intell. Law,
+vol. 27, no. 2, pp. 171–198, Jun. 2019, doi: 10.1007/s10506-018-9238-9.
+[105] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, and M. Sun, ‘‘How does
+NLP benefit legal system: A summary of legal artificial intelligence,’’ in
+Proc. 58th Annu. Meeting Assoc. Comput. Linguistics (ACL), D. Jurafsky,
+J. Chai, N. Schluter, and J. R. Tetreault, Eds. Stroudsburg, PA,
+USA: Association for Computational Linguistics, 2020, pp. 5218–5230.
+[Online]. Available: https://doi.org/10.18653/v1/2020.acl-main.466
+[106] T. Yano, N. A. Smith, and J. D. Wilkerson, ‘‘Textual predictors of
+bill survival in congressional committees,’’ in Proc. HLT-NAACL, 2012,
+pp. 793–802.
+[107] K. Sugathadasa, B. Ayesha, N. de Silva, A. S. Perera, V. Jayawardana,
+D. Lakmal, and M. Perera, ‘‘Synergistic union of Word2 Vec and
+lexicon for domain specific semantic similarity,’’ in Proc. IEEE Int. Conf.
+Ind. Inf. Syst. (ICIIS), Peradeniya, Sri Lanka, Dec. 2017, pp. 1–6, doi:
+10.1109/ICIINFS.2017.8300343.
+[108] L. Manor and J. J. Li, ‘‘Plain English summarization of contracts,’’ in
+Proc. Natural Legal Lang. Process. Workshop. Minneapolis, MN, USA:
+Association for Computational Linguistics, Jun. 2019, pp. 1–11. [Online].
+Available: https://aclanthology.org/W19-2201
+[109] B. Fawei, A. Z. Wyner, and J. Z. Pan, ‘‘Passing a USA national bar
+exam: A first corpus for experimentation,’’ in Proc. 10th Int. Conf.
+Lang. Resour. Eval. (LREC), N. Calzolari, K. Choukri, T. Declerck,
+S. Goggi, M. Grobelnik, B. Maegaard, J. Mariani, H. Mazo, A. Moreno,
+J. Odijk, and S. Piperidis, Eds. Portorož, Slovenia: European Language Resources Association (ELRA), 2016. [Online]. Available:
+http://www.lrec-conf.org/proceedings/lrec2016/summaries/1160.html
+[110] K. J. Adebayo, L. D. Caro, and G. Boella, ‘‘Solving bar exam questions
+with deep neural networks,’’ in Proc. 2nd Workshop Automated Semantic
+Anal. Inf. Legal Texts Co-Located 16th Int. Conf. Artif. Intell. Law
+(ICAIL) (CEUR Workshop Proceedings), vol. 2143, K. D. Ashley,
+K. Atkinson, L. K. Branting, E. Francesconi, M. Grabmair, M. Lauritsen,
+V. R. Walker, and A. Z. Wyner, Eds. London, U.K.: CEUR-WS, 2017.
+[Online]. Available: http://ceur-ws.org/Vol-2143/paper3.pdf
+[111] P. Bhattacharya, P. Mehta, K. Ghosh, S. Ghosh, A. Pal, A. Bhattacharya,
+and P. Majumder, ‘‘Overview of the FIRE 2020 AILA track: Artificial
+intelligence for legal assistance,’’ in FIRE (Working Notes) (CEUR
+Workshop Proceedings), vol. 2826. CEUR-WS, 2020, pp. 1–11.
+75857
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+[112] A. Louis and G. Spanakis, ‘‘A statutory article retrieval dataset in French,’’
+2021, arXiv:2108.11792.
+[113] P. M. Kien, H. Nguyen, N. X. Bach, V. Tran, M. L. Nguyen, and
+T. M. Phuong, ‘‘Answering legal questions by learning neural attentive
+text representation,’’ in Proc. COLING, 2020, pp. 988–998.
+[114] C. Raffel, N. Shazeer, A. Roberts, K. Lee, S. Narang, M. Matena, Y. Zhou,
+W. Li, and P. J. Liu, ‘‘Exploring the limits of transfer learning with a
+unified text-to-text transformer,’’ J. Mach. Learn. Res., vol. 21, p. 140,
+Mar. 2020. [Online]. Available: http://jmlr.org/papers/v21/20-074.html
+[115] F. Pedregosa, ‘‘Scikit-learn: Machine learning in Python,’’ J. Mach.
+Learn. Res., vol. 12, pp. 2825–2830, Jan. 2011. [Online]. Available:
+http://dl.acm.org/citation.cfm?id=2078195
+[116] F. Chollet. (2015). Keras. [Online]. Available: https://keras.io
+[117] T. Jiang, D. Wang, L. Sun, H. Yang, Z. Zhao, and F. Zhuang,
+‘‘Lightxml: Transformer with dynamic negative sampling for highperformance extreme multi-label text classification,’’ in Proc. 35th
+AAAI Conf. Artif. Intell., AAAI, 33rd Conf. Innov. Appl. Artif. Intell.,
+IAAI, 11th Symp. Educ. Adv. Artif. Intell. (EAAI). Menlo Park, CA,
+USA: AAAI Press, Feb. 2021, pp. 7987–7994. [Online]. Available:
+https://ojs.aaai.org/index.php/AAAI/article/view/16974
+[118] X. Hua, A. Sreevatsa, and L. Wang, ‘‘DYPLOC: Dynamic planning
+of content using mixed language models for text generation,’’ in
+Proc. 59th Annu. Meeting Assoc. Comput. Linguistics 11th Int. Joint
+Conf. Natural Lang. Process. (ACL/IJCNLP), vol. 1, C. Zong, F. Xia,
+W. Li, and R. Navigli, Eds. Stroudsburg, PA, USA: Association
+for Computational Linguistics, Aug. 2021, pp. 6408–6423. [Online].
+Available: https://doi.org/10.18653/v1/2021.acl-long.501
+[119] J. Pennington, R. Socher, and C. Manning, ‘‘GloVe: Global vectors
+for word representation,’’ in Proc. 2014 Conf. Empirical Methods
+Natural Lang. Process. (EMNLP). Doha, Qatar: Association for Computational Linguistics, Oct. 2014, pp. 1532–1543. [Online]. Available:
+https://aclanthology.org/D14-1162
+[120] S. E. Robertson, S. Walker, S. Jones, M. Hancock-Beaulieu,
+and M. Gatford, ‘‘Okapi at TREC-3,’’ in Proc. 3rd Text Retr.
+Conf. (TREC) (NIST Special Publication), D. K. Harman, Ed.
+Gaithersburg, MD, USA: National Institute of Standards and
+Technology (NIST), 1994, pp. 109–126. [Online]. Available:
+http://trec.nist.gov/pubs/trec3/papers/city.ps.gz
+[121] J. M. Ponte and W. B. Croft, ‘‘A language modeling approach to
+information retrieval,’’ in Proc. 21st Annu. Int. ACM SIGIR Conf. Res.
+Develop. Inf. Retr., W. B. Croft, A. Moffat, C. J. van Rijsbergen,
+R. Wilkinson, and J. Zobel, Eds. Melbourne, VIC, Australia: ACM Press,
+1998, pp. 275–281, doi: 10.1145/290941.291008.
+[122] N. Garg, L. Schiebinger, D. Jurafsky, and J. Zou, ‘‘Word embeddings
+quantify 100 years of gender and ethnic stereotypes,’’ Proc. Nat. Acad.
+Sci. USA, vol. 115, no. 16, pp. E3635–E3644, Apr. 2018.
+[123] A. C. Kroon, D. Trilling, and T. Raats, ‘‘Guilty by association: Using word
+embeddings to measure ethnic stereotypes in news coverage,’’ Journalism
+Mass Commun. Quart., vol. 98, no. 2, pp. 451–477, Jun. 2021, doi:
+10.1177/1077699020932304.
+[124] T. E. S. Charlesworth, V. Yang, T. C. Mann, B. Kurdi, and M. R. Banaji,
+‘‘Gender stereotypes in natural language: Word embeddings show robust
+consistency across child and adult language corpora of more than 65
+million words,’’ Psychol. Sci., vol. 32, no. 2, pp. 218–240, Feb. 2021, doi:
+10.1177/0956797620963619.
+[125] Y. Wang, C. Xiao, S. Ma, H. Zhong, C. Tu, T. Zhang, Z. Liu, and
+M. Sun, ‘‘Equality before the law: Legal judgment consistency analysis
+for fairness,’’ 2021, arXiv:2103.13868.
+[126] E. Sheng, K.-W. Chang, P. Natarajan, and N. Peng, ‘‘The woman
+worked as a babysitter: On biases in language generation,’’ in Proc.
+Conf. Empirical Methods Natural Lang. Process. 9th Int. Joint Conf.
+Natural Lang. Process. (EMNLP-IJCNLP). Hong Kong: Association
+for Computational Linguistics, Nov. 2019, pp. 3407–3412. [Online].
+Available: https://aclanthology.org/D19-1339
+[127] K. Lu, P. Mardziel, F. Wu, P. Amancharla, and A. Datta, ‘‘Gender
+bias in neural natural language processing,’’ in Logic, Language, and
+Security (Lecture Notes in Computer Science), vol. 12300. Springer,
+2020, pp. 189–202.
+
+75858
+
+[128] P. P. Liang, C. Wu, L. Morency, and R. Salakhutdinov, ‘‘Towards
+understanding and mitigating social biases in language models,’’ in Proc.
+Int. Conf. Mach. Learn., vol. 139, 2021, pp. 6565–6576.
+[129] T. Shen, J. Li, M. Reda Bouadjenek, Z. Mai, and S. Sanner, ‘‘Unintended
+bias in language model-driven conversational recommendation,’’ 2022,
+arXiv:2201.06224.
+
+DEZHAO SONG received the bachelor’s and
+master’s degrees from the Beijing Institute of
+Technology, Beijing, China, and the Ph.D. degree
+in computer science from Lehigh University, PA,
+USA. He is a Senior Applied Research Scientist
+with Thomson Reuters, Eagan, MN, USA. His
+research interests include information integration,
+semantic web, machine learning, natural language
+processing, and their applications to different
+domains.
+
+SALLY GAO received the bachelor’s degree from
+Columbia University, NY, USA, and the master’s
+degree in data science from the University of Virginia, VA, USA. She is an Applied Research Scientist with Thomson Reuters, Boston, MA, USA.
+Her research interests include machine learning,
+natural language processing, and human-centered
+AI (HCAI).
+
+BAOSHENG HE received the bachelor’s and
+master’s degrees in electrical and electronics
+engineering from Xi’an Jiaotong University, Xian,
+China, and the master’s degree in statistics and
+the Ph.D. degree in industrial engineering from the
+University of Iowa, Iowa, USA. He is a Research
+Engineer with Meta Platforms Inc. His research
+interests include natural language processing,
+multimodal learning, and machine learning.
+
+FRANK SCHILDER received the master’s degree
+in computer science (diplom-informatik) from the
+University of Hamburg and the Ph.D. degree
+in cognitive science from the University of
+Edinburgh, Scotland.
+He was an Assistant Professor at the Department for Informatics, University of Hamburg,
+Germany. He is a Senior Research Director at
+Thomson Reuters Laboratories, leading a team
+of researchers to explore new machine learning
+and artificial intelligence techniques in order to create smart products for
+legal NLP problems. His research interests include summarization, question
+answering and information extraction, and natural language generation.
+
+VOLUME 10, 2022
+
+

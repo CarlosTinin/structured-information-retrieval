@@ -1,0 +1,956 @@
+Artificial Intelligence and Law (2025) 33:361–381
+https://doi.org/10.1007/s10506-023-09388-1
+ORIGINAL RESEARCH
+
+Combining prompt‑based language models and weak
+supervision for labeling named entity recognition on legal
+documents
+Vitor Oliveira1 · Gabriel Nogueira1 · Thiago Faleiros1 · Ricardo Marcacini2
+Accepted: 20 December 2023 / Published online: 15 February 2024
+© The Author(s), under exclusive licence to Springer Nature B.V. 2024
+
+Abstract
+Named entity recognition (NER) is a very relevant task for text information retrieval
+in natural language processing (NLP) problems. Most recent state-of-the-art NER
+methods require humans to annotate and provide useful data for model training.
+However, using human power to identify, circumscribe and label entities manually
+can be very expensive in terms of time, money, and effort. This paper investigates
+the use of prompt-based language models (OpenAI’s GPT-3) and weak supervision
+in the legal domain. We apply both strategies as alternative approaches to the traditional human-based annotation method, relying on computer power instead human
+effort for labeling, and subsequently compare model performance between computer
+and human-generated data. We also introduce combinations of all three mentioned
+methods (prompt-based, weak supervision, and human annotation), aiming to find
+ways to maintain high model efficiency and low annotation costs. We showed that,
+despite human labeling still maintaining better overall performance results, the alternative strategies and their combinations presented themselves as valid options, displaying positive results and similar model scores at lower costs. Final results demonstrate preservation of human-trained models scores averaging 74.0% for GPT-3,
+95.6% for weak supervision, 90.7% for GPT + weak supervision combination, and
+83.9% for GPT + 30% human-labeling combination.
+Keywords Named entity recognition · GPT-3 · Weak supervision
+
+1 Introduction
+The Official Gazette of the Federal District (Diário Oficial do Distrito Federal
+[DODF]) is a publication that contains reports on Brazilian government actions
+and is updated daily. The DODF includes information about retirements, public
+G. Nogueira, T. Faleiros and R. Marcacini contributed equally to this work.
+Extended author information available on the last page of the article
+Vol.:(0123456789)
+
+362
+
+V. Oliveira et al.
+
+procurement, decrees, and other matters, organized by the government agency. The
+documents in each edition of the DODF are called acts and are divided into different types. These types are grouped into sections: Sect. 1 includes normative acts of
+general interest, such as laws, decrees, and resolutions; Sect. 2 contains information
+related to civil servants; and Sect. 3 covers bidding processes and information about
+contracts.
+The Official Gazette of the Federal District (DODF) can be a valuable resource
+for anyone or any organization that wishes to monitor government activities. Though
+it serves as a transparency journal, it is mainly used by public officials and other professionals for professional purposes. The DODF can be used to verify if something
+has been made official and to access information about an action, such as the date
+or the agency involved. It allows tracking information such as companies hired by
+the government, the career progression of civil servants, and much more. However,
+extracting information from the DODF by natural language processing can be challenging because no detailed information in the acts is labeled.
+Natural language processing (NLP) is a vast branch of computer science and artificial intelligence that can be defined as a series of computerized approaches and
+techniques for analyzing and representing naturally occurring texts (Chowdhary
+2020; Torfi et al 2020). One of NLP’s most acknowledged and challenging tasks
+is named entity recognition (NER) which consists in identifying and classifying
+specific types of information elements, called named entities, in natural texts (Marrero et al 2013). In the NER task, given a sample text, key named entities, such
+as “Name”, “Place” or “Value”, are defined and the machine must efficiently identify them by using several differentiation factors, for example, “Name” type entities
+always presents their initial letter capitalized.
+Regarding information extraction in legal domain documents, such as DODF,
+NER is one of the main options to retrieve knowledge efficiently (Giri et al 2017).
+Legal Texts are usually lengthy and complex by nature, preferring formal structure
+rather than readability. However, legal bodies’ language cores contain large collections of patterns and identifiers that can define many rules for NER classifiers and
+further enable their use (Sakhaee and Wilson 2021). In most recent years, state-ofthe-art computation techniques used for the NER task normally include training
+and testing Deep Neural Network models (Nasar et al 2021). Although such models
+obtain promising results, they normally depend on large pools of data to provide a
+reliable source of information for training and achieving ideal behavior (Zhang et al
+2019).
+In this context, there is a growing need of dependable labeled data to provide
+the models, which commonly is supplied by human effort, by manually annotating
+and categorizing texts.(Fredriksson et al 2020) Even though this human participation improves model performance, in many projects, the usual process of reading,
+searching, identifying, circumscribing, and reviewing can be costly in terms of time,
+money, and effort. Our paper aims to explore alternative strategies to this traditional
+NER approach, introducing solutions using weak labeling, machine learning, and
+other computational methods to target cost and effort reduction.
+In particular, we focus on two recent and promising strategies for dealing with
+tasks involving unlabeled data. The first is the use of prompt-based language models,
+
+Combining prompt‑based language models and weak supervision…
+
+363
+
+such as OpenAI GPT-3, to leverage pre-trained models to generate texts with predefined structures and extract relevant information for a given domain. The second
+consists of weak supervision techniques incorporating rule-based systems and heuristics to generate labeled datasets quickly. Below, we present a brief description and
+motivation of these strategies to support the data labeling of legal documents.
+Generative Pre-trained Transformer 3, or GPT-3, is an autoregressive language
+model released by the non-profit research organization OpenAI (Brown et al 2020).
+GPT-3 makes use of deep learning techniques to generate, from prompt-based
+inputs, natural language texts that are remarkably hard to distinguish from humanauthored content. The transformer model has proved to be very potent and efficient
+in many NLP tasks, even though it shows limitations in semantic coherence and
+generation of unreal assertions (Dale 2021). The proposal here is using GPT-3 abilities to address the NER task, generating texts to actively predict named entities of a
+given instance and efficiently supply labeled data for training models.
+Weak Supervision or Weak Labeling is another alternative to support data labeling since it focuses on bootstrapping new labeled data with computer effort (Zamani and Croft 2018). It consists of combining noisy, limited, or imprecise sources of
+supervision signals, such as rule-based systems or other machine learning models, to
+obtain probabilistic labels for large amounts of unlabeled data (Zhou 2018; Ratner
+et al 2016).1 In better terms, weak supervision works by heuristically creating its
+own categorized data, relying on label functions to annotate documents automatically. These functions can use different strategies in their labeling processes such as
+regular expression patterns, class-indicative keywords, or heuristic methods (Bach
+et al 2019; Dai et al 2021).
+The remaining of this work is structured as follows. In Sect. 2, we present the
+most related works to our proposal, that we could find in the literature. In Sect. 3,
+we present an overview of our research methodology focusing on dataset characteristics, the two previously mentioned labeling approaches(prompt-based models and
+weak supervision), and the four chosen models and their training hyperparameters.
+In Sect. 4, we present the experimental evaluation we performed and the results we
+obtained. Finally, in Sect. 5 we draw our main conclusions from this work and present some perspectives on future works.
+
+2 Related work
+The first work to explicitly define NER as a term in the legal domain was Dozier
+et al (2010). In this paper, named entity recognition and resolution in legal documents are thoroughly discussed, and afterward examined by the implementation
+of named entities lists lookups, contextual rules, and statistical models applied in
+the US case law and many other legal documents. By using the three mentioned
+methods, the paper then describes an actual system capable of efficiently identifying
+named entities in legal texts and subsequently evaluates its accuracy.
+1
+
+https://​ai.​stanf​ord.​edu/​blog/​weak-​super​vision/.
+
+364
+
+V. Oliveira et al.
+
+Further works such as Vardhan et al (2021) display NER as a powerful method to
+correctly recognize numerous entities and relevant information in legal bodies. The
+paper also approximates itself to state-of-the-art techniques, using deep neural network elements, such as convolutional neural networks and multi-layer perceptrons,
+to build an effective NER model for legal information extraction.
+Regarding NER uses in Brazilian legal documents, also our paper’s main language domain, Luz de Araujo et al (2018) presents LeNER-Br, a dataset specifically
+constructed for this task. After the dataset confection, the paper proceeds on training
+a relevant state-of-the-art machine learning model, LSTM-CRF, and achieves good
+performance averaging F1 scores of 92.53%, verifying the viability of the proposed
+dataset and NER models for legal applications.
+Related to the proposed GPT-3 approach there are many works that stand out.
+Firstly, Wang et al (2021) explores ways to leverage GPT-3 as a low-cost data labeler
+for model training. Results here show that GPT-3 can achieve the same model performance in a variety of Natural Language Understanding and Natural Language
+Generation tasks as human labels while maintaining a cost reduction of 50% to 96%.
+Furthermore, it is also proposed a novel framework of combining pseudo labels
+from GPT-3 with human labels, which leads to even better performance with a limited labeling budget.
+Meyer et al (2022) proposes approaches such as synthetically generating data and
+data augmentation using prompt-based GPT-3. They investigate the feasibility and
+cost-benefit trade-offs of using non-fine-tuned synthetic data to train classification
+algorithms, comparing performance between classifiers trained with synthetically
+generated data and real user data. The conclusion shows that, although the trained
+classifiers perform much better than random baselines, their performance does not
+compare to classifiers trained on even small amounts of real user data, largely due to
+lacking variability. Also, it is concluded that synthetically generated data might be
+preferable to the collection and annotation of naturalistic data.
+Considering the use of prompt-based language models specifically in the NER
+task, Wang et al (2023) stands out by designing GPT-NER, a framework that bridges
+the gap between the NER sequence labeling and LLM’s text-generation models
+essentially by transforming the tasks of the first type into the later and facilitating
+LLM prompt adaptability. Results show that GPT-NER exhibits a greater labeling
+ability in low-resource or few-shot setups and performs significantly better than
+supervised models. Also, Wei et al (2023) leverages ChatGPT to build ChatIE a
+two-stage framework for Zero-shot information extraction, and is used for tasks such
+as named entity recognition, entity relation triple extract, and event extraction even
+surpassing some full-shot models.
+Given GPT-3 capabilities and considerate power in text generation, many questions regarding its benefits and hazards have been raised. The article by Floridi
+and Chiriatti (2020) expands a thorough analysis of GPT-3’s scope and nature,
+specifically focusing on experimenting with its mathematical, semantic, and ethical aspects. The paper shows that while GPT-3 is indeed a powerful technology, it
+still failed all three experiments, not always being able to solve simple mathematical
+expressions, presenting no understanding of semantics and contexts, and reflecting
+humanity’s worst tendencies and ethical issues such as racism. Still, even though
+
+Combining prompt‑based language models and weak supervision…
+
+365
+
+GPT is not an intelligent or sensible AI, its remarkable ability for generating wellstructured and syntactically coherent texts is unquestionable, presenting many applications for the right tasks.
+Now considering weak supervision, there is also a broad spectrum of works in
+the area. For example, Ratner et al (2020) presents Snorkel, a system that uses weak
+supervision to train state-of-the-art models without hand labeling any training data.
+Snorkel delivers a flexible interface, allowing users to efficiently write labeling functions that express arbitrary noisy heuristics, afterward applying and denoising these
+functions in an end-to-end implementation. It is shown that Snorkel enables building models 2.8× faster and increases predictive performance by an average of 45.5%
+versus hand labeling.
+Similar to Ratner et al (2020) approach, Karamanolakis et al (2021) develops
+ASTRA​, a framework for iterative self-training of deep neural networks with weak
+supervision, aiming to improve on the effectiveness of regular weak supervision of
+frameworks like Snorkel. Results show that the strategy implemented, using selftraining models and rule attention, presented significant improvements over state-ofthe-art baselines.
+Probably the most aligned weak supervision inspiration to our article is Lison
+et al (2020). In this work, weak supervision is presented in a broad spectrum of
+labeling functions specifically targeting the NER task. Also, the paper follows an
+approach based on label function aggregation using a Hidden Markov Model
+(HMM), which will also be used in our paper, for capturing functions with varying accuracies and mislabeling. Essentially, a successful NER approach is achieved,
+well suited for sequence labeling tasks and probabilistic labeling predictions by utilizing the aggregation of a vast number of different label functions.
+
+3 Research methodology
+In this paper, we investigated prompt-based language models and weak supervision
+to address the drawback of high labeling cost and annotation effort in legal domain
+texts. An overview of the research methodology proposed in this paper is illustrated
+in Fig. 1, involving four steps: data gathering, prompt-based language model labeling, weak supervision labeling, and models and training. This section will discuss
+in detail the procedures and techniques adopted by each one of these four steps.
+3.1 Data gathering
+The Dataset used for this experiment was the DODFCorpus I: Atos de Contratos e
+Licitações, provided by the project UnB-KnEDLe2,3 from Universidade de Brasília.
+It consists of a Brazilian Portuguese dataset extracted from the previously mentioned
+Official Gazette of the Federal District (Diário Oficial do Distrito Federal [DODF]),
+2
+3
+
+https://​nido.​unb.​br/.
+https://​github.​com/​UnB-​KnEDLe.
+
+366
+
+V. Oliveira et al.
+
+Fig. 1  Methodology workflow
+Table 1  DODFCorpus dataset
+partitions in training, validation,
+and testing
+
+Training
+
+Validation
+
+Testing
+
+783
+
+379
+
+380
+
+a daily updated public document from the Brazilian capital Brasília and its federation unit the Distrito Federal. DODF reports on Brazilian government actions and
+contains all the acts of public administration and services conducted in the region.
+We will be strictly focusing on the 1.542 instances composing the “Contract” acts,
+a specific type of act in the corpus that corresponds to a regulated contract between
+companies and the public state.
+Considering GPT-3 prompt-size limitations, we partition the dataset via random
+sampling into 783 training acts, 379 validation acts, and 380 testing acts, as can be
+seen in the superior part of Table 1. Also, ⋅ ⋅Table’s 2 inferior part displays a listing
+of all extracted named entities and their description. Lastly, Fig. 2 presents a practical “Contract” labeling example.
+3.2 Prompt‑based language model labeling
+In this section, we propose the use of language models trained on large datasets to
+support data labeling. The most recent models use the prompt learning mechanism,
+in which the task definition can be described in the data input and formulated as a
+
+Entity description
+
+Contract identification number
+
+Process number before the Federal District government (GDF)
+
+Combination of contracting body, contracted entity, and convening entities
+
+Object to which the contract refers
+
+Contract signature date
+
+Estimated contract final value
+
+Contract term of validity
+
+Contract budget union number
+
+Contract work program number
+
+Contract nature of expenses number
+
+Contract commitment note
+
+Named entities
+
+contract_number
+
+GDF_process
+
+contractual_parties
+
+contract_object
+
+contract_date
+
+contract_value
+
+contract_duration
+
+budget_unit
+
+work_program
+
+nature_of_expenditure
+
+commitment_note
+
+Table 2  Listing of DODFCorpus “Contract” named entities
+
+Combining prompt‑based language models and weak supervision…
+367
+
+368
+
+V. Oliveira et al.
+
+Fig. 2  “Contract” act labeling example
+
+masked language modeling task. An advantage of the prompt-learning mechanism
+is the reuse of language models without the need for retraining, which is potentially
+useful for transfer learning and few-shot learning (Liu et al 2023). Here, we exploit
+prompt learning to extract entities from new texts with a few annotated examples
+from legal documents.
+The GPT models (versions 2 and 3) stood out with the use of prompt learning.
+In this work, we investigate the recent GPT-3 (Brown et al 2020) model which is
+composed of four main models with different levels of power suitable for different
+tasks. The model used in this experiment was Davinci, GPT-3’s most capable and
+also most expensive model, having a cost of $0.02 for 1,000 GPT-3 tokens, which
+corresponds to an average of 750 words.
+The Davinci model used in this paper is able to compute only a maximum request
+of about 2,049 tokens for context (prompt and completion). Given the fact that some
+“Contracts” instances present a considerably large size, not all of the 1.542 “Contracts” acts fit those descriptions. With that in mind, GPT-3 predictions were only
+successfully applied to 783 acts of the complete dataset, establishing this acts as the
+final training dataset and hereafter splitting the 759 remaining acts into 380 for testing and 379 for validation.
+Thereby, the complete GPT-3 labeling process consists in prompting Davinci
+examples of labeled data and collecting the predictions made in the 783 acts of the
+training base. For this, three dataset instances were handpicked according to their
+structures and label occurrences. Then, these instances were selected one at a time,
+in a randomly and evenly distributed manner, and given as a prompt example to
+GPT-3’s Davinci model. Davinci next applies its prediction method to exactly one
+unlabeled act for each selected prompt and generates an annotated instance similar to the given example. This process ensures the occurrence of all of the eleven
+“Contracts” named entities, since there are missing entities in some acts, and also
+
+Combining prompt‑based language models and weak supervision…
+
+369
+
+Fig. 3  GPT-3 prompt-labeling process example
+
+GPT-3’s adaptability to different structured acts. Finally, by the end of these procedures, the 783 training instances were successfully labeled by GPT-3, which applied
+its predictions in a total of 1.565.108 tokens and had a final cost of $31.30 dollars.
+
+370
+
+V. Oliveira et al.
+
+Next, in Fig. 3 we present a practical example referent to GPT-3’s prompt-labeling process mentioned in the previous paragraph, using a “Contract” text as input
+and showing the expected output. In the figure, we can observe how GPT-3 uses the
+prompt as a labeling example, generating an annotation text output from the unlabeled “Contract” that resembles the output example given by the prompt.
+
+3.3 Weak supervision labeling
+Regarding the weak supervision labeling process, the approach consists in developing label functions capable of efficiently identifying named entities focusing on
+different characteristics, strategies, and heuristics. Afterward, label function results
+must be denoised and merged using an effective aggregation method, finally generating a more accurate and refined label prediction.
+We designed two types of label functions for each entity of the “Contract” dataset. The first one is a regular expression (regex) oriented label function, it uses regex
+to specify and identify a search pattern in the act’s text. The second is a keyword
+detection-oriented function, that is, it uses the occurrence of specific words, punctuation, and symbols to establish starting and ending patterns for all entities. Both
+types of labeling functions were designed and applied for each entity present in the
+dataset and had their results combined with one another by the use of the Hidden
+Markov Model (Eddy 2004) aggregation method.
+All weak supervision labeling functions were formulated and designed with the
+aid of the Skweak (Lison et al 2021) framework for Python, a toolkit to easily define,
+apply, and aggregate label functions. Skweak is also tightly integrated with SpaCy
+(Vasiliev 2020), another Python framework designed to help solve NLP problems
+and tokenization of texts. Finally, all Label functions were then incorporated in a
+script for applying everything specified above and returning the “Contracts” labeling
+results via IOB (inside, outside, beginning) tagging format.
+Next, we present two pseudo codes, Algorithms 1 and 2, for each label function,
+these examples were designed for the named entity “contract_number”.
+• Regex Label Function (Algorithm 1): Searches for an occurrence of the regex
+
+expression in the act text. When found, marks the expression start and end as a
+“contract_number” named entity.
+Algorithm 1  Regex Label Function
+
+• Keyword-List Label Function (Algorithm 2): Searches for an occurrence of any
+
+of the possible “starts” key-words, and if found searches for any of the “ends”
+
+Combining prompt‑based language models and weak supervision…
+
+371
+
+key-words. When both are found, every text between them is marked as a “contract_number” Named Entity.
+Algorithm 2  Keyword-List Label Function
+
+Next, in Fig. 4 we present a practical example referent to the weak supervision process mentioned previously, using a “Contract” text as input and showing
+the expected output. In the figure, we can observe how both label functions were
+directly applied in an unlabeled “Contract” and had their results aggregated by the
+HMM aggregation method.
+3.4 Models and training
+In relation to the NER models, we chose four pre-trained neural language models.
+Each model passed through a fine-tuning process (Sun et al 2019), consisting of
+adding a BI-LSTM (Bidirectional Long Short-Term Memory Network) (Graves and
+Schmidhuber 2005) layer at its top for sequence labeling. The chosen models are the
+following:
+• BERTimbau (Souza et al 2020): Pre-trained BERT model with a Brazilian Portu-
+
+guese textual corpus.
+
+• Lener-BR4: A fine-tuned BERTimbau model for Brazilian Portuguese legislative
+
+texts.
+
+• RoBERTa (Liu et al 2019): An optimized version of the BERT model, developed
+
+with support from Facebook researchers.
+
+• DistilBERT-PT5: A lighter (distilled) version of BERT, pre-trained with a Brazil-
+
+ian Portuguese textual corpus.
+
+4
+5
+
+https://​huggi​ngface.​co/​pierr​eguil​lou/​bert-​base-​cased-​pt-​lener​br.
+https://​huggi​ngface.​co/​adalb​ertoj​unior/​disti​lbert-​portu​guese-​cased.
+
+372
+
+V. Oliveira et al.
+
+Fig. 4  Weak supervision labeling process example
+
+The training process itself was conducted with the aid of the ktrain framework
+(Maiya 2020), a wrapper for machine learning libraries that facilitates building
+
+Combining prompt‑based language models and weak supervision…
+
+373
+
+and deploying neural networks. Each model was trained once in all the 783 base
+instances for each one of the three labeled datasets produced in the previous conducted steps, the Human-labeled dataset extracted from DODFCorpus I annotations,
+the GPT-3-labeled dataset extracted from GPT-3’s prompt predictions, and lastly the
+weak-supervision-labeled dataset extracted from the application and aggregation of
+the weak supervision label functions. For training, we used a triangular learning rate
+policy (Smith 2015), with an initial learning rate of 0.01 and a total of 10 epochs, in
+which we obtained the best training results.
+After the usual training of the three datasets models, we conducted experimentations regarding combinations of the three labeled databases aiming to better comprehend how they could complement each other. The first experiment consisted in combining percentages (10%, 20%..., 100%) of the human-labeled base into the GPT-3
+labeled base and training models for each iteration. Thus generating 10 iterations of
+combined models that would better display how human data could improve training
+using GPT-3 labeled data, while GPT-3 would still be able to reduce some of the
+human annotation effort.
+The second experiment consisted in training a model with a complete combination between the GPT-3 labeled base and the weak supervision labeled base, focusing on the results both strategies would provide together. In a real-life practical point
+o view, it wouldn’t be efficient to combine weak supervision annotation in percentages, similarly to the process conducted in the human and GPT-3 combination, since
+the effort in this approach is mainly present in the label functions creation and development step, while their application into text labeling do not present high computational or time costs, thus applying them only in percentages would be bad resource
+management.
+It is relevant to point out that by introducing combinations we focus on maintaining the balance between low labeling costs and high model scores, therefore combinations are limited, both in score improvement and cost reduction, according to their
+parent methods.
+
+4 Experimental results
+We present and discuss the experimental results considering mainly the performance overview (F1-Score) of the models trained for each of the three training
+bases. Table 3 displays the F1-Score metric for every model in every training dataset
+and also estimates an average score between the models by dataset. As expected,
+Human Labeling presented the best overall accuracy of the three databases, followed
+by Weak Supervision and lastly by GPT-3. This order adequately reflects the cost
+and effort devoted by each approach, being GPT-3 arguably the less costly technique
+while Human Labeling is the most expensive. It is valid to point out the specific case
+where DistilBERT Weak Supervision achieved better performance than DistilBERT
+Human Labeling.
+By analyzing all the eleven named entities’ results in Fig. 5, we can infer that
+some entities represent an extremely difficult labeling task, even for the best-performing models trained using human annotations. With that in mind, and to ensure
+
+374
+Table 3  F1-Score metric and
+average F1-Score metric of each
+model in every dataset
+
+V. Oliveira et al.
+Model
+
+Labeled datasets
+GPT-3 Weak supervision Human labeling
+
+NER-LenerBR
+
+0.554
+
+0.676
+
+0.761
+
+NER-BERTimbau
+
+0.543
+
+0.703
+
+0.755
+
+NER-RoBERTa
+
+0.542
+
+0.674
+
+0.707
+
+NER-DistilBERT-PT 0.473
+
+0.664
+
+0.631
+
+Average F1-Scores
+
+0.679
+
+0.713
+
+0.528
+
+a fairer and solid analysis, we selected only the seven best performing named entities (“contract number”, “GDF process”, “contract value”, “budget unit”, “work
+program”, “nature of expenditure”, “commitment note”) resulting from the Human
+Labeling training, shown in green charts of Fig. 5, and reanalyzed the F1-Score
+metric.
+Table 4 presents models F1-Score overview considering only these seven entities.
+Here we can observe a substantial improvement in the F1-Score values and a bigger
+approximation of the Weak Supervision and GPT-3 results to the Human Labeling
+results. Also, again DistilBERT Weak Supervision achieved better performance than
+DistilBERT Human Labeling.
+Considering the experiments conducted combining percentages of Human Labeling and GPT-3 Labeling, Fig. 6 presents the results on all eleven entities and Fig. 7
+on the seven best-performing entities. In both figures, we can observe how each
+model F1-Score metric behaved with the addition of the human annotations percentages. Most of the four model charts show a similar learning curve at the starting
+iterations, presenting increasing improvements. After the third or fifth iteration, with
+more than 30% − 50% Human Labeling added, this curve usually becomes inconsistent on each iteration not always representing gains in F1-Score. From this behavior,
+it is possible to infer that, at the first iterations, human data is consistently improving model performance and positively impacting GPT-3 data, while at the last iterations, it is arguable that adding more human-labeled data does not necessarily mean
+a definite or substantial improvement in model performance. Therefore, we argue
+not being beneficial, in a combinational approach, to further increase annotation cost
+by adding higher percentages of human labeling.
+Table 5 presents resulting F1-scores from GPT-3 and Weak Supervision combination. The leftmost section of the table represents the complete F1-Score overview,
+while the rightmost section demonstrates the overview considering only the seven
+best-performing named entities previously established. Results show a considerable
+improvement to the GPT-3 results, but also losses and very few gains when compared to Weak Supervision and Human Labeling results.
+In an additional analysis considering the models’ relation with each other, we
+can say BERTimbau and LenerBR achieved the best results. Taking into account
+all named entities and only the seven best-performing ones, LenerBR was superior
+when using GPT-3 Labeling and Human Labeling, while BERTimbau achieved
+better performance with Weak supervision labeling. Following behind RoBERTa
+
+Combining prompt‑based language models and weak supervision…
+
+375
+
+Fig. 5  Charts representing F1-Scores of all named entities for each model trained with the humanlabeled dataset. In green are the chosen seven best-performing entities. (Color figure online)
+
+Table 4  F1-Score metric
+considering only the seven best
+performing named entities
+
+Model
+
+Labeled datasets
+GPT-3 Weak supervision Human labeling
+
+NER-LenerBR
+
+0.815
+
+0.878
+
+0.906
+
+NER-BERTimbau
+
+0.776
+
+0.887
+
+0.902
+
+NER-RoBERTa
+
+0.798
+
+0.881
+
+0.899
+
+NER-DistilBERT-PT 0.664
+
+0.847
+
+0.804
+
+Average F1-Scores
+
+0.873
+
+0.877
+
+0.763
+
+Fig. 6  Charts representing each of the four models F1-Score over the GPT-3 and Human Labeling combining iterations
+
+376
+
+V. Oliveira et al.
+
+Fig. 7  Charts representing each of the four models F1-Score over the GPT-3 and Human Labeling combining iterations considering only the seven best-performing entities
+Table 5  F1-Score values
+resulting from the combination
+of GPT-3 and Weak Supervision
+datasets
+
+Model
+
+GPT-3 and weak supervision
+All eleven entities
+
+Seven best entities
+
+NER-LenerBR
+
+0.709
+
+0.888
+
+NER-BERTimbau
+
+0.686
+
+0.884
+
+NER-RoBERTa
+
+0.558
+
+0.773
+
+NER-DistilBERT-PT
+
+0.632
+
+0.831
+
+Average F1-Scores
+
+0.646
+
+0.844
+
+is consistently performing in the third position even though it is a non-BrazilianPortuguese adapted model. Lastly DistilBERT-PT, the distilled and simpler BERT
+model used, presented the worst results. Overall results are in line with each model’s
+main characteristics, even though BERTimbau outperforms LenerBR in some cases,
+which was not expected due to LenerBR being specially adapted to Brazilian legislative documents, we address these occurrences to BERTimbau’s high adaptability
+during training.
+Lastly, in table 6, we carried out a direct comparison between all models trained,
+based on a preservation score metric that focuses on their ability to preserve the performance presented by the human-trained models. The preservation score is defined
+as F1_tested_model
+, where F1_human is the performance achieved by models trained
+F1_human
+from human-labeled data and F1_tested_model is the performance achieved by
+models trained with all alternative methods previously presented in this paper, that
+is, prompt-based data labeling (GPT-3), weak supervision (Weak-Sup), promptbased labeling and weak supervision combination (GPT + Weak-Sup) and promptbase labeling and human labeling combination (GPT + 30%Human).
+The top part of table 6, presents the preservation score comparison regarding all eleven dataset named entities, while the bottom part regards only the seven
+
+Combining prompt‑based language models and weak supervision…
+
+377
+
+Table 6  Final comparison between the four methods and each of their trained models considering the
+preservation score metric
+Model
+
+GPT-3
+
+Weak-Sup
+
+GPT + Weak-Sup
+
+GPT
++ 30%
+Human
+
+NER-LenerBR
+
+0.728
+
+0.888
+
+0.931
+
+0.818
+
+NER-BERTimbau
+
+0.719
+
+0.931
+
+0.908
+
+0.897
+
+NER-RoBERTa
+
+0.766
+
+0.953
+
+0.789
+
+0.765
+
+NER-DistilBERT-PT
+
+0.749
+
+1.052
+
+1.001
+
+0.877
+
+Average
+
+0.740
+
+0.956
+
+0.907
+
+0.839
+
+NER-LenerBR
+
+0.899
+
+0.969
+
+0.980
+
+0.930
+
+NER-BERTimbau
+
+0.860
+
+0.983
+
+0.980
+
+0.966
+
+NER-RoBERTa
+
+0.887
+
+0.980
+
+0.859
+
+0.838
+
+NER-DistilBERT-PT
+
+0.825
+
+1.053
+
+1.033
+
+1.006
+
+Average
+
+0.867
+
+0.996
+
+0.963
+
+0.935
+
+All eleven entities
+
+Seven best performing entities
+
+best-performing named entities. High preservation score values indicate lower labeling costs while maintaining model performance. In some scenarios, the preservation score is greater than 1, thus indicating that models trained with our methods
+even outperformed models trained with human-annotated data.
+Figure 8 presents the same analysis considering the preservation score, this time
+however, extending it to display all iterations on the combination of GPT-3 and
+Human Labeling percentages.
+Considering table 6, we carried out a statistical analysis of the performance preservation scores presented considering multiple runs and the four approaches. Figure 9 shows the critical difference diagram for preservation score measure, computed by Friedman’s test with Nemenyi’s posttest with 95% confidence level, as
+suggested by Demšar (2006). All approaches are ordered according to the average
+ranking of multiple runs.
+The Critical Difference (CD) value obtained was 1.66, that is, there is no statistical difference in the preservation score between two methods when their difference
+in the average ranking is lower than this value.6 As shown in Fig. 9, none of the four
+models presented a higher difference value in their average ranking position than
+CD’s value, therefore we did not find a significant critical difference between the
+four approaches. Yet, it is essential to point out that in practical aspects, combining GPT-3 with Weak Supervision is a promising approach, as we can use GPT-3
+6
+The Critical Difference (CD) is a metric established at Demšar (2006), that determines if one or more
+learning algorithms, in a specific domain, are in fact statistically different or not. The CD value is calculated considering each algorithm’s results and their relative difference from each other. This value represents a critical difference threshold, that if surpassed by the relative difference between algorithms,
+makes it possible to affirm their statistical difference.
+
+378
+
+V. Oliveira et al.
+
+Fig. 8  Charts representing performance preservation score of each iteration on the combination of GPT-3
+and Human annotation
+
+Fig. 9  Friedman’s test with Nemenyi’s posttest graphical analysis
+
+to label the most complex entities, while the label functions can be used for entities
+that require simple regular expressions.
+
+5 Conclusion
+The main contributions of this paper are:
+• Prompt-based language models (GPT-3) and Weak Supervision in NER: Study
+
+and analysis of GPT-3 and weak supervision use in named entity recognition
+tasks for legal domain, as well as its capacity to efficiently preserve humantrained models accuracy.
+• Exploring Combinations: Exploring combinations of the previously mentioned
+techniques and traditional human labeling, aiming to achieve better model accuracy while maintaining low-cost annotations.
+
+Traditional manual text labeling methods for named entity recognition (NER) in
+legal documents are a naturally expensive task. Our paper investigates how to use
+prompt-based models and weak supervision as alternatives to these methods, labeling unannotated data in a cost-efficient way, and also how to train efficient deep
+
+Combining prompt‑based language models and weak supervision…
+
+379
+
+learning models from these labeling results. We show that applying these less costly
+labeling strategies can still be a valid approach for training efficient Deep Neural
+Network Models, even with their lower performance trade-off. To address this issue,
+we explored three main methods and their combinations: human manual annotation,
+OpenAI’s GPT-3 prompt-based model, and weak supervision.
+Experimental results showed that human labeling still presented itself as the best
+approach considering model accuracy and performance, with weak supervision
+closely behind and GPT-3 with the worst results. This fact rightfully reflects the
+overall cost of each approach, with GPT-3 having the lower cost and Human Annotation having the higher cost. The combination techniques also presented considerable results that managed to further approximate human labeling performance while
+maintaining low cost and labeling effort.
+We also established a final comparison based on a statistical analysis using Friedman’s test and the preservation score metric, calculated to determine how much performance of the human-trained model was preserved by each method. Nevertheless,
+despite the previous findings about each model and their compared performances,
+we verified that there is no significant statistical difference between the four methods’ preservation scores. In conclusion, all the methods presented in this article are
+therefore able to train, despite the variations, efficient models capable of resembling,
+in terms of performance and F1-Score, models trained with human data.
+Limitations of this study are the absence of a precise way to estimate each
+approach’s cost, which could bring great insights, limitations on the size of our
+database, and also not considering annotator mistakes, factors that can be very
+problematic in real-life scenarios. Regarding future work, we plan on expanding
+research to include Active Learning techniques, better integration between presented
+approaches, for example adding GPT-3 as one or more label functions in a weak
+supervision system, using GPT-4 newer version, and repeating the experiments in
+other datasets. Also, we plan on designing new improved strategies for prompting GPT, this way establishing more options and metrics to select textually similar
+prompts for each unlabeled act, therefore, increasing GPT prediction accuracy by
+supplying better input prompts.
+Acknowledgements The authors would like to thank Fundação de Apoio à Pesquisa do Distrito Federal
+(FAPDF), Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES), Fundação
+de Amparo à Pesquisa do Estado de São Paulo (FAPESP - process number 2023/10100-4), and project
+KnEDLe-UNB.
+
+References
+Bach SH, Rodriguez D, Liu Y et al (2019) Snorkel drybell: a case study in deploying weak supervision
+at industrial scale. In: Proceedings of the 2019 international conference on management of data,
+SIGMOD ’19. Association for Computing Machinery, New York, NY, USA, pp 362–375. https://​
+doi.​org/​10.​1145/​32998​69.​33140​36
+Brown TB, Mann B, Ryder N et al (2020) Language models are few-shot learners. arXiv:​2005.​14165
+Chowdhary K (2020) Natural language processing. In: Fundamentals of artificial intelligence. Springer,
+New Delhi, pp 603–649
+
+380
+
+V. Oliveira et al.
+
+Dai H, Song Y, Wang H (2021) Ultra-fine entity typing with weak supervision from a masked language
+model. arXiv:​2106.​04098
+Dale R (2021) Gpt-3: what’s it good for? Nat Lang Eng 27(1):113–118. https://​doi.​org/​10.​1017/​S1351​
+32492​00006​01
+Demšar J (2006) Statistical comparisons of classifiers over multiple data sets. J Mach Learn Res 7:1–30
+Dozier C, Kondadadi R, Light M et al (2010) Named entity recognition and resolution in legal text. In:
+Semantic processing of legal texts. Springer, pp 27–43
+Eddy SR (2004) What is a hidden Markov model? Nat Biotechnol 22(10):1315–1316
+Floridi L, Chiriatti M (2020) Gpt-3: its nature, scope, limits, and consequences. Mind Mach
+30(4):681–694
+Fredriksson T, Mattos DI, Bosch J et al (2020) Data labeling: an empirical investigation into industrial
+challenges and mitigation strategies. In: Product-focused software process improvement: 21st international conference, PROFES 2020, Proceedings 21, Turin, Italy, November 25–27, 2020. Springer,
+pp 202–216
+Giri R, Porwal Y, Shukla V et al (2017) Approaches for information retrieval in legal documents. In:
+2017 tenth international conference on contemporary computing (IC3). IEEE, pp 1–6
+Graves A, Schmidhuber J (2005) Framewise phoneme classification with bidirectional LSTM and other
+neural network architectures. Neural Netw 18(5):602–610. https://​doi.​org/​10.​1016/j.​neunet.​2005.​06.​
+042
+Karamanolakis G, Mukherjee S, Zheng G et al (2021) Self-training with weak supervision. arXiv:​2104.​
+05514
+Lison P, Hubin A, Barnes J et al (2020) Named entity recognition without labelled data: a weak supervision approach. arXiv:​2004.​14723
+Lison P, Barnes J, Hubin A (2021) skweak: weak supervision made easy for NLP. arXiv preprint arXiv:​
+2104.​09683
+Liu Y, Ott M, Goyal N et al (2019) Roberta: a robustly optimized bert pretraining approach. arXiv preprint arXiv:​1907.​11692
+Liu P, Yuan W, Fu J et al (2023) Pre-train, prompt, and predict: a systematic survey of prompting methods in natural language processing. ACM Comput Surv 55(9):1–35. https://​doi.​org/​10.​1145/​35608​
+15
+Luz de Araujo PH, de Campos TE, de Oliveira RR et al (2018) LeNER-Br: a dataset for named entity
+recognition in brazilian legal text. In: International conference on computational processing of the
+Portuguese language. Springer, pp 313–323
+Maiya AS (2020) ktrain: a low-code library for augmented machine learning. arXiv preprint arXiv:​2004.​
+10703 [cs.LG]
+Marrero M, Urbano J, Sánchez-Cuadrado S et al (2013) Named entity recognition: fallacies, challenges
+and opportunities. Comput Stand Interfaces 35(5):482–489
+Meyer S, Elsweiler D, Ludwig B et al (2022) Do we still need human assessors? prompt-based gpt-3
+user simulation in conversational ai. In: Proceedings of the 4th conference on conversational user
+interfaces, CUI ’22. Association for Computing Machinery, New York, NY, USA. https://​doi.​org/​10.​
+1145/​35438​29.​35445​29,
+Nasar Z, Jaffry SW, Malik MK (2021) Named entity recognition and relation extraction: state-of-the-art.
+ACM Comput Surv 54(1):1–39
+Ratner A, Bach SH, Ehrenberg H et al (2020) Snorkel: rapid training data creation with weak supervision.
+VLDB J 29(2):709–730
+Ratner AJ, De Sa CM, Wu S et al (2016) Data programming: creating large training sets, quickly.
+Advances in neural information processing systems 29
+Sakhaee N, Wilson MC (2021) Information extraction framework to build legislation network. Artif Intell
+Law 29(1):35–58
+Smith LN (2015) Cyclical learning rates for training neural networks. arXiv:​1506.​01186
+Souza F, Nogueira R, Lotufo R (2020) BERTimbau: pretrained BERT models for Brazilian Portuguese.
+In: Brazilian conference on intelligent systems. Springer, pp 403–417
+Sun C, Qiu X, Xu Y et al (2019) How to fine-tune bert for text classification? In: China national conference on Chinese computational linguistics. Springer, Cham, pp 194–206
+Torfi A, Shirvani RA, Keneshloo Y et al (2020) Natural language processing advancements by deep
+learning: a survey. arXiv preprint arXiv:​2003.​01200
+Vardhan H, Surana N, Tripathy B (2021) Named-entity recognition for legal documents. In: International
+conference on advanced machine learning technologies and applications. Springer, pp 469–479
+
+Combining prompt‑based language models and weak supervision…
+
+381
+
+Vasiliev Y (2020) Natural Language processing with Python and SpaCy: a practical introduction. No
+Starch Press, San Francisco
+Wang S, Liu Y, Xu Y et al (2021) Want to reduce labeling cost? GPT-3 can help. arXiv:​2108.​13487
+Wang S, Sun X, Li X et al (2023) Gpt-ner: named entity recognition via large language models. arXiv:​
+2304.​10428
+Wei X, Cui X, Cheng N et al (2023) Zero-shot information extraction via chatting with chatgpt. arXiv:​
+2302.​10205
+Zamani H, Croft WB (2018) On the theory of weak supervision for information retrieval. In: Proceedings
+of the 2018 ACM SIGIR international conference on theory of information retrieval, ICTIR ’18.
+Association for Computing Machinery, New York, NY, USA, pp 147–154. https://​doi.​org/​10.​1145/​
+32349​44.​32349​68
+Zhang S, He L, Dragut E et al (2019) How to invest my time: Lessons from human-in-the-loop entity
+extraction. In: Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining, pp 2305–2313
+Zhou ZH (2018) A brief introduction to weakly supervised learning. Natl Sci Rev 5(1):44–53
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and
+applicable law.
+
+Authors and Affiliations
+Vitor Oliveira1 · Gabriel Nogueira1 · Thiago Faleiros1 · Ricardo Marcacini2
+* Ricardo Marcacini
+ricardo.marcacini@usp.br
+Vitor Oliveira
+vasconcelos.oliveira@aluno.unb.br
+Gabriel Nogueira
+gabriel.corvino@aluno.unb.br
+Thiago Faleiros
+thiagodepaulo@unb.br
+1
+
+Departamento de Ciência da Computaça̧o, Universidade de Brasília, Campus Universitário
+Darcy Ribeiro, Brasília, Distrito Federal 70910‑900, Brazil
+
+2
+
+Instituto de Ciências Matemáticas e de Computação, Universidade de São Paulo, Avenida
+Trabalhador São‑carlense, 400 ‑ Centro, São Carlos, São Paulo 13566‑590, Brazil
+
+

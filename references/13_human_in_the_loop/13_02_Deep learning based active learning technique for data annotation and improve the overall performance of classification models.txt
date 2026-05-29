@@ -1,0 +1,1425 @@
+Expert Systems With Applications 228 (2023) 120391
+
+Contents lists available at ScienceDirect
+
+Expert Systems With Applications
+journal homepage: www.elsevier.com/locate/eswa
+
+Deep learning based active learning technique for data annotation and
+improve the overall performance of classification models
+Sareer Ul Amin a , Adnan Hussain b , Bumsoo Kim c , Sanghyun Seo c ,∗
+a
+b
+c
+
+Department of Computer Science and Engineering, Chung-Ang University, Seoul 06974, South Korea
+Department of Computer Science, Islamia College University, Peshawar, 25120, Pakistan
+College of Art and Technology, Chung-Ang University, Anseong, 17546, South Korea
+
+ARTICLE
+
+INFO
+
+ABSTRACT
+
+Keywords:
+Iterative learning
+Active learning
+Deep learning
+Image classification
+Pattern matching
+Finetuning
+
+Deep learning (DL) models achieved a lot of success due to the availability of labeled training data. In
+contrast, labeling a huge amount of data by a human is a time-consuming and expensive solution. Active
+Learning (AL) efficiently addresses the issue of labeled data collection at a low cost by picking the most
+useful samples from a large number of unlabeled datasets. However, current AL techniques largely depend on
+regular human involvement to annotate the most uncertain/informative samples in the collection. Therefore,
+we introduce a Deep Learning Based Active Learning (DLBAL) method that may incrementally learn from a
+small number of annotated training samples to build an effective classifier with optimum feature representation.
+The proposed DLBAL method improves the contemporary AL approaches in two steps. First, EfficientNet-B0
+networks are integrated into AL. The incrementally annotated useful samples may be used to update both the
+representation of the feature and the classification algorithm concurrently. Second, we provide an effective
+technique for sample selection that improves the performance of the classifier with fewer manual annotations
+at a lower cost. In contrast to previous approaches that emphasize only uncertain instances with low prediction
+confidence, we obtain a significant number of instances with high-confidence from the unannotated set for
+pattern learning. Particularly, these instances are randomly picked and assigned labels to them continuously.
+Detailed experiments are conducted to show that the proposed DLBAL system obtained reasonable results on
+two difficult image classification datasets, namely Cross-Age Celebrity face recognition Dataset (CACD) and
+Caltech-256.
+
+1. Introduction
+
+labeling appears to be a factor that restricts the use of deep learning in other research fields and institutions with a smaller labeling
+budget. However, the AL approaches (Settles, 2012) try to address
+this issue by minimizing the effort required for annotation. The main
+idea of AL is that a machine learning algorithm may gain sufficient
+performance with a portion of the training instances provided, if it
+is permitted to select which instance to be label. In AL, the system has been trained on a limited collection of starting labeled data
+known as the initial labeled set. An external oracle annotates samples
+chosen by an acquisition function. The recently annotated samples
+are appended to the labeled training set, and the algorithm is then
+retrained using the updated labeled training set. This procedure is
+continued till the budget for labeling is depleted. AL integrated with
+deep learning enables the building of an approach where the deep
+
+Large-scale datasets having annotations, – for example ImageNet
+for image classification (Deng et al., 2009) and PASCAL VOC for
+segmentation and detection (Everingham, Van Gool, Williams, Winn, &
+Zisserman, 2010), have empowered deep learning methods to achieve
+notable performance in a various of computer vision-related jobs, including classification (He, Zhang, Ren, & Sun, 2016), object detection (Redmon, Divvala, Girshick, & Farhadi, 2016), and segmentation (Chen, Zhu, Papandreou, Schroff, & Adam, 2018; Ul Amin et al.,
+2022). In addition, the process of collecting proper annotations is
+tough and time-consuming. Labeling huge amounts of data is frequently difficult or impractical because of significant labeling costs,
+such as labeling by specialists (Esteva et al., 2017). The expense of
+
+The code (and data) in this article has been certified as Reproducible by Code Ocean: (https://codeocean.com/). More information on the Reproducibility
+Badge Initiative is available at https://www.elsevier.com/physical-sciences-and-engineering/computer-science/journals.
+∗ Corresponding author.
+E-mail addresses: sareer2021@cau.ac.kr (S.U. Amin), adnanhussain.std@icp.edu.pk (A. Hussain), bumsookim00@gmail.com (B. Kim), sanghyun@cau.ac.kr
+(S. Seo).
+https://doi.org/10.1016/j.eswa.2023.120391
+Received 29 November 2022; Received in revised form 3 May 2023; Accepted 4 May 2023
+Available online 10 May 2023
+0957-4174/© 2023 Elsevier Ltd. All rights reserved.
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+learning network architecture is connected with conventional methods
+for data point selection. Active collection of data for a network is
+expected to result in faster convergence, improved efficiency using less
+data, and enhanced robustness because of the targeted extraction of
+data points that are characterized as outliers or difficult cases. There
+are several AL approaches, including uncertainty sampling, predicted
+model change, variation reduction, and query-by-committee (Settles,
+2012). Uncertainty sampling, for which several techniques have been
+presented (Beluch, Genewein, Nürnberger, & Köhler, 2018; Gal, Islam,
+& Ghahramani, 2017; Ozdemir, Peng, Tanner, Fuernstahl, & Goksel,
+2018), is among the most popular frameworks. Several researchers
+have used the AL technique to minimize the time and expense of
+data labeling in a variety of projects. For example, in Stark, Hazırbas,
+Triebel, and Cremers (2015), the researchers describe querying samples
+based on the difference between the probabilities of the first and second
+highest class. Next, Feng, Liu, Kao, and Lee (2017) presented a ResNet
+model; for querying unlabeled samples, they employed two techniques,
+including uncertainty sampling and positive sampling. Beluch et al.
+(2018) proved that ensemble-based uncertainty measures produced the
+most favorable results in their study. Cao, Yao, Xu, and Meng (2020)
+suggested an AL-based technique for the classification of hyperspectral
+images, they integrated AL and DL into a single framework. CNNs
+are initially trained with a small amount of labeled data, and then
+the most important samples from the candidate pool are selected for
+labeling. Next, the newly annotated data is then utilized to fine-tune
+the CNN model using the training set. This phase is repeated with
+the preceding step, and then Markov Random Field (MRF) is used
+to enhance the classification performance of the model by enforcing
+class label smoothness. However, the literature review concludes that
+extensive human involvement in the AL technique results in increased
+computation time and costs. To address each of these concerns, we
+suggested an DLBAL architecture with the following key contributions:
+
+Munsif, Khan, & Lee, 2022; Tanveer, Rajani, Rastogi, Shao, & Ganaie,
+2022), and so on. The acquisition functions are a quick and simple
+method for classifying datasets. The primary idea of AL is that if a
+learning system is permitted to choose the training samples from which
+it learns, it should perform more accurately with fewer labeled training
+instances (Settles, 2009). As a result, this increases the significance of
+the sample selection mechanism. In addition, the most used sample
+selection technique is an uncertainty-based selection (Tong & Koller,
+2001; Wang, Zhang, Li, Zhang, & Lin, 2016), which estimates the
+uncertainty of unannotated data based on the predictions of earlier
+classifiers, is one of the most prevalent techniques. Wang et al. (2016)
+suggested that the sample with the greatest entropy on the conditional probability distribution of estimated labels be extracted as its
+most uncertain sample. According to the SVM-based technique (Tong
+& Koller, 2001), the distance between the most likely instances and
+the decision border was used to select the unsure samples. Earlier
+publications (Freund, Seung, Shamir, & Tishby, 1997; Kee, Del Castillo,
+& Runger, 2018) also identified the sampling uncertainty relating to
+a group of classification models (𝑖.𝑒. , the difference amid class labels
+supplied by a group of classification models). In the literature, this
+architecture is referred to as query-by-committee (Settles, 2009). All
+of the aforementioned uncertainty-based approaches often disregard
+the major portion of unlabeled data; therefore, they are susceptible
+to outliers. In sample selecting, later approaches accounted for the
+information density metrics and utilized the information of unlabeled
+data. To reduce the prediction error of the trained classifier over unlabeled samples, these methods typically successively pick useful samples
+based on probability estimates (Joshi, Porikli, & Papanikolopoulos,
+2012; Wang, Sung, & Yau, 2011) or previous information (Kapoor,
+Hua, Akbarzadeh, & Baker, 2009). For Instance, Joshi, Porikli, and
+Papanikolopoulos (2009) evaluated the uncertainty-based sampling approach, which is effective in handling the multi-class scenario by using
+the probability assessment of classes for each sample in the unlabeled
+pool. In Kapoor et al. (2009), a priori context restrictions are included
+to help users tag face photos more effectively. Simultaneously, it is suggested in several publications (Li & Guo, 2013; Zhao, Sun, Wang, & Cao,
+2020) that samples must be taken in a way that maximizes the mutual
+information that can be gained among the candidate sample and the
+other unannotated samples when using the framework of the Gaussian
+Process. Li and Guo (2013) introduced a unique adaptive AL technique
+that labels crucial instances for image classifications by combining an
+information density measure and the most uncertainty measure. In
+addition, the variety of the picked sample within the given category has
+been considered in Brinker (2003). This is the first research to extend
+the SVM assisted AL method to batch mode. Elhamifar, Sapiro, Yang,
+and Sasrty (2013a) have recently incorporated uncertainty assessment
+across a single batching paradigm using convex scripting for selection
+of unlabeled data. Such a technique is very compatible with all types of
+classification models and is not restricted to those based on maximum
+margin. All of the aforementioned AL approaches only evaluate lowconfidence data instances, ignoring the vast majority of high-confidence
+data instances. However, it is believed that the more confidence data
+instances will help to increase the classification accuracy and maintain
+the consistency of classification models because of their prevalence and
+stability. In addition, the employing of more confidence data instances
+in our work will help to reduce manual annotation effort.
+
+• To the best of our knowledge, the proposed DLBAL framework is
+the one to tackle image classification challenges using the architecture of AL and fine-tuned efficientNet-B0. Our proposed DLBAL
+system is easily extensible to other image classification-related
+problems.
+• The proposed system leads to improving the performance of AL
+by suggesting an efficient and effective technique to instantly
+select and label high-confidence instances from a massive amount
+of unlabeled data in a simple manner. As a result, this method
+replaces the conventional sample selection techniques.
+• We substitute human interference in annotating uncertain data
+with a DLBAL approach to minimize the work required for managing uncertain data.
+• Experiments on the complex and demanding CACD (Chen, Chen,
+& Hsu, 2015) and Caltech 256 (Griffin, Holub, & Perona, 2007)
+datasets demonstrate that our technique surpasses existing approaches, both in terms of classification accuracy and the reduction of human effort in annotation.
+The remaining sections are arranged in the following manner: Section 2 provides a quick overview of relevant work. The Proposed DLBAL
+techniques are thoroughly discussed in Section 3. Section 4 presents
+the results of the experiment with a comprehensive analysis. Finally,
+in Section 5, the conclusion and prospective directions of this paper
+are presented.
+2. Related work
+
+3. Methodology
+
+AL has a significant amount of research studies from the field of
+machine learning, where the earliest work was entirely based on acquisition functions utilizing the deviation of predictions (Tong & Koller,
+2001). These previous approaches were presented alongside conventional machine learning approaches, such as linear regression (Montgomery, Peck, & Vining, 2021), support vector machines (Khan, Haq,
+
+In this section, we discuss the overall AL strategy for image classification and data annotation tasks. Given a huge amount of unlabeled
+data U and an annotated budget 𝐵, the objective of AL is to pick a
+subset of 𝐵 instances to be labeled to optimize the effectiveness of an
+image classification method. Generally, the budget for AL techniques
+is divided into many cycles and implemented sequentially. Here, we
+2
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 1. Illustration of proposed DLBAL framework. Human Annotator/Oracle chooses the sample from the unlabeled data pool, annotates it, and then adds it to the training data
+pool for model updating.
+
+examine the batch-mode variation (Sener & Savarese, 2017) that annotates several samples every cycle, because this is the only reasonable
+choice for CNN training. The algorithm is trained on the earliest set
+of labeled instances at the start of every cycle. Following training,
+the proposed framework is utilized to choose a subsequent set of
+samples to be labeled after the cycle using an acquired function. The
+carefully chosen samples are then integrated into the labeled set 𝐷 for
+the subsequent cycle, and the procedure is continued until the whole
+annotation budget has been consumed. Fig. 1 shows the proposed Deep
+Learning Based AL Technique for Data Annotation and improves the
+overall performance of the classification model.
+
+convolution layers is proportional to the number of filters it possesses.
+The resolution is determined by the input image’s height and width.
+Fig. 2 shows the current EfficientNet-B0 standard model architecture
+that takes a 224 × 224 × 3 image size as an input. Furthermore, the
+model uses multiple convolutional (Conv) layers with a 3 × 3 kernel
+size and the moveable invert bottleneck Conv to extract features in each
+layer. The authors’ proposed scaling of depth, width, and resolution
+concerning 𝜙 is illustrated in Eqs. (1)–(5).
+𝑑 = 𝛼𝜙
+
+(1)
+
+𝑤 = 𝛽𝜙
+
+(2)
+
+𝑟 = 𝛾𝜙
+
+(3)
+
+3.1. Deep learning model
+The Google Brain Researchers introduced the classification algorithm EfficientNet-B0 (Tan & Le, 2019). These studies on network
+scalability found that adjusting the depth, breadth, and resolution of
+the network can enhance performance of the network. Furthermore,
+they scaled a neural network to produce more DL models, which
+are significantly effective and accurate than the previously employed
+CNNs. Besides that, EfficientNet conducted large-scale visual recognition accurately for ImageNet. These EfficientNet architectures family
+is about eight times smaller and six times faster to infer than the
+most exceptional existing techniques, including VGGNets (Simonyan &
+Zisserman, 2014), GoogleNet (Szegedy et al., 2015), Xception (Chollet, 2017), ResNets (He et al., 2016), and InceptionResNet (Szegedy,
+Ioffe, Vanhoucke, & Alemi, 2017). The suggested technique utilized
+EfficientNet-B0 due to its improved accuracy and efficiency in comparison to current CNNs (Hussain, Amin, Fayaz, & Seo, 2023; Munsif,
+Khan, Khan, Hussain, Ullah, Lee, & Baik, 2022). In addition, this
+model adjusts network width, depth, and resolution equally with a
+constant set of scaling factors. EfficientNet-B0 employs a composite
+scalability technique that generates distinct CNN models. The number
+of connected layers equates to the network depth. The width of the
+
+s.t
+
+𝛼 ⋅ 𝛽2 ⋅ 𝛾2 ≈ 2
+
+(4)
+
+𝛼 ≥ 1,
+
+𝛽 ≥ 1,
+
+(5)
+
+𝛾≥1
+
+Utilizing the grid search hyperparameter tuning approach, the constant terms 𝛼, 𝛽, and 𝛾 were found, where 𝑑, 𝑤, and 𝑟 represent the
+network’s depth, width, and resolution, respectively. In addition, coefficient is a pre-defined variable responsible for managing all scaling
+resources for the model. This approach adapts network depth, width,
+and resolution based on available resources to maximize network efficiency and memory utilization. As a result, EfficientNet-B0 outperformed other contemporary methods trained on the ImageNet dataset
+because, unlike all the other deep CNNs, it scaled each dimension by
+utilizing a specified set of scaling coefficients.
+3.2. Proposed layer
+The Proposed EfficientNet-B0 network captured salient features
+from the input image of size 224 × 224 × 3. These features might
+3
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 2. The standard and general architecture of EfficientNet-B0.
+
+manner. Following is the formulation of the DLBAL for deep image
+classification.
+
+be descriptors of color and shape such as edges, circularity, contour,
+and compactness. The final proposed layers for the EfficientNet-B0 are
+shown in Fig. 3, which included three dense layers, dropout, batch
+normalization, global average pooling, and a softmax classifier. In
+addition, the global average pooling layer has been used to transform
+the feature maps from the sixth MBConv layer into a one dimension
+array. The three dense layers, batch-normalization, ReLu activation
+function, and dropout layer are added subsequently. The last features
+vector is used as input for the first and second dense layers, which
+produce vectors with sizes of 1024 and 512, respectively. The 256
+channels for 256 classes are produced by the last dense layer and
+the Softmax layer is used to categorize 256 classes in the final dense
+layer. Moreover, each hidden layer utilizes ReLU as its activation
+function. This is because ReLU accelerates learning and mitigate the
+risk of vanishing gradient problems, making it computationally more
+efficient. In order to solve the overfitting issue, we also utilized batchnormalization and a Dropout Layer following the hidden layers of 1024
+and 512 neurons. We utilized softmax as our final classifier layer to
+estimate the probability score for each class.
+
+DLBAL =
+
+𝑛 𝑚
+}
+(
+)
+1 ∑∑ {
+1 𝑦𝑖 = 𝑗 log 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+𝑛 𝑖=1 𝑗=1
+
+(6)
+{𝑊 ,𝑦𝑖 ,𝑖∈𝐷 }
+{
+}
+where 1 𝑦𝑖 = 𝑗 is the indicating function, making a true statement
+equal to 1 and a false statement equal to 0. In addition, 𝑊 represents
+(
+)
+the CNN network parameters and 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊 reflects the CNN’s
+softmax score for the 𝑗th class, which is the likelihood of sample 𝑥𝑖
+belonging to the 𝑗th class. To optimize the aforementioned Eq. (6), the
+alternate search approach may be conveniently applied. In particular,
+the technique is built by updating alternately the pseudo-annotated
+data sample 𝑦𝑖 ∈ 𝐷 as well as the network parameters 𝑊 . Following
+is a description of the optimization phases along with their physical
+explanations.
+min
+
+−
+
+3.3.1. Initialization
+Prior to the start of the experiment, the annotated samples 𝐷
+are empty. For each class, we take a limited number of training data
+samples from 𝐷 and manually label them to serve as the input for
+initializing the CNN network parameter 𝑊 .
+
+3.3. Active learning framework
+To perform deep image classification as well as data annotation
+tasks, the proposed DLBAL strategy incrementally chooses relevant
+samples for the model update. Assume we have a dataset of 𝑚 classes
+{ }𝑛
+and 𝑛 samples, represented by 𝐷 = 𝑥𝑖 𝑖=1 . We represented the initially
+labeled data samples as 𝐷 while the unannotated data samples as 𝐷 .
+The label for 𝑥𝑖 is 𝑦𝑖 = 𝑗, 𝑗 ∈ {1, … , 𝑚}, indicating that 𝑥𝑖 pertains to the
+𝑗th class. We should make two essential statements about our problem
+setups. The first statement in our examined image classification issues
+is that, approximately all data samples are unannotated, 𝑖.𝑒. , the
+{ }
+majority of 𝑦𝑖 of 𝐷 is undefined and has to be determined during
+the training process. The second statement is that 𝐷 may have been
+incrementally added to the system. This reveals that the volume of
+data may be continuously expanding. The proposed DLBAL method can
+handle unlabeled data that is continually expanding in a comprehensive
+
+3.3.2. Selection of uncertain samples
+We rank the unannotated samples based on the AL criterion, manually label the training data samples with the highest uncertainty, and
+then integrate them into 𝐷 . For the most certain, we provide pseudolabels and indicate them with the symbol 𝐷 . In addition, the proposed
+DLBAL can be utilized with any standard actively learning criterion,
+such as least confidence (Settles, 2009), margin sampling (Scheffer,
+Decomain, & Wrobel, 2001), and entropy (Shannon, 2001), to choose
+the 𝐾 more uncertain data samples remaining in 𝐷 . The selection
+(
+)
+criteria is dependent on 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊 , which represents the probability score that 𝑥𝑖 belongs to the 𝑗th class. In particular, the following
+are the three main selection criteria for uncertain samples:
+4
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+where  represents the quantity of data samples in 𝐷 ∪ 𝐷 . To
+update the 𝑊 , we use the conventional back propagation technique. In
+particular, if 𝐿 represents the loss function of Eq. (11), then the partial
+derivative of 𝑊 following Eq. (11) is:
+{
+}
+(
+)
+∑ ∑𝑚
+− 1 
+𝑖=1
+𝑗=1 1 𝑦𝑖 = 𝑗 𝓁 log 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+𝜕𝐿
+=𝜕
+𝜕𝑊
+𝜕𝑊
+{
+(
+)
+ ∑
+𝑚
+∑
+log 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+{
+}
+1
+𝑦𝑖 = 𝑗 𝜕
+=−
+1
+(12)
+𝜕𝑊
+ 𝑖=1 𝑗=1
+(
+)
+
+}
+(
+)) 𝜕𝑧𝑗 𝑥𝑖 ; 𝑊
+1 ∑( {
+=−
+1 𝑦𝑖 = 𝑗 − 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+𝜕𝑊
+ 𝑖=1
+
+1. Least Confidence (𝓁𝑐𝑖 ): Sort all the unannotated data samples
+according to their 𝓁𝑐𝑖 value in ascending order.
+(
+)
+𝓁𝑐𝑖 = max 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+(7)
+𝑗
+
+According to the definition of 𝓁𝑐𝑖 , the classifier is unsure about
+the data sample if the confidence of the most likely class for a
+given data instance is low.
+2. Margin Sampling (𝑚𝑠𝑖 ): It is a technique in which unannotated
+data samples are arranged based on their 𝑚𝑠𝑖 value in ascending
+order. The 𝑚𝑠𝑖 value is computed for each sample by taking
+the difference between the highest predicted probability and
+the second-highest predicted probability for that sample. This is
+mathematically represented as:
+(
+)
+(
+)
+𝑚𝑠𝑖 = 𝑝 𝑦𝑖 = 𝑗1 ∣ 𝑥𝑖 ; 𝑊 − 𝑝 𝑦𝑖 = 𝑗2 ∣ 𝑥𝑖 ; 𝑊
+(8)
+
+{ (
+)}𝑚
+where 𝑧𝑗 𝑥𝑖 ; 𝑊 𝑗=1 signifies the activation for the 𝑖th data instance
+of the last CNN layer before passing to the softmax layer. The definition
+of the softmax layer is as follows:
+
+The first and next likely class labels estimated by the classification models are represented by 𝑗1 and 𝑗2 respectively. The
+smaller the margin value, the more uncertain the model is about
+the correct label for that sample. Therefore, sorting the unannotated data samples based on 𝑚𝑠𝑖 in ascending order allows us to
+select the most uncertain samples for annotation or inclusion in
+the training set to improve the learning efficiency of the model.
+3. Entropy (𝑒𝑛𝑖 ): It is commonly used as a measure of uncertainty in
+the model’s prediction for a given sample. The concept is that if a
+sample has high entropy, it is more uncertain and therefore more
+informative to the model, as it can help potentially to reduce
+the overall uncertainty of the model. The predicted probabilities
+across different classes are employed to calculate the (𝑒𝑛𝑖 ) for a
+particular sample. The (𝑒𝑛𝑖 ) is described as follows:
+𝑒𝑛𝑖 = −
+
+𝑚
+∑
+(
+)
+(
+)
+𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊 log 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+
+(
+)
+𝑒𝑧𝑗 (𝑥𝑖 ;𝑊 )
+𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊 = ∑
+𝑚
+𝑒𝑧𝑗 (𝑥𝑖 ;𝑊 )
+
+3.3.4. Updating the threshold
+Since the classifier’s classification performance increases throughout
+the iterative learning process and more samples with high-confidence
+are picked, which may lead to a reduction in the wrong annotation. To
+ensure the dependability of high-confidence sample selection, we adjust
+the threshold 𝛿 of more confidence instance at the completion of each
+iteration 𝑡.
+{
+𝛿0 , 𝑡 = 0
+𝛿=
+(14)
+𝛿 − 𝑑𝑟 × 𝑡, 𝑡 > 0
+
+(9)
+
+𝑗=1
+
+The threshold decay rate is controlled by 𝑑𝑟, where 𝛿0 is the starting
+threshold. The complete algorithm can be summed up in Algorithm 1.
+
+(
+)
+where 𝑃 𝑦𝑖 = 𝑗 ∗ ∣ 𝑥𝑖 ; 𝑊 is the predicted probability of class 𝑗
+for the sample 𝑥𝑖 , given the model parameters 𝑊 , and the sum
+is taken over all the classes. The (𝑒𝑛𝑖 ) value displays the extent
+of uncertainty or unpredictability in the model’s prediction for
+the sample. Thereafter, sort all the unannotated data samples
+in decreasing order based on their (𝑒𝑛𝑖 ) value. The samples that
+have the greatest (𝑒𝑛𝑖 ) values are chosen for labeling or inclusion
+in the training set because they are deemed to be the most
+informative samples. By selecting samples with high entropy
+for labeling or inclusion in the training set, active learning
+methods can improve the performance of the model with fewer
+labeled samples, compared to passive learning where all samples
+are labeled. Moreover, we choose the 𝐷 samples with highconfidence whose entropy is below the threshold 𝛿. Then, pseudo
+labels that are precisely identified are assigned to them. The
+definition of the pseudo-label 𝑦𝑖 is as follows:
+{ ∗
+(
+)
+𝑗 , 𝑒𝑛𝑖 < 𝛿
+𝑗 ∗ = argmax𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊 , 𝑦𝑖 =
+(10)
+0,
+otherwise
+𝑗
+
+Algorithm 1
+The proposed DLBAL framework’s Algorithm
+Input:
+Unannotated samples 𝐷 , initially annotated samples 𝐷 , the
+number of uncertain sample 𝐾, high confidence threshold
+in sample selection 𝛿, the decay rate of the threshold 𝑑𝑟,
+optimum iteration  , and finetuning intervals 𝑡.
+Output:
+𝐶𝑁𝑁 network parameters 𝑊
+Step 1: Initialise 𝑊 using 𝐷 .
+Step 2: while not reaching  do
+Step 3: Add 𝐾 uncertain instances into 𝐷 according to Eqs. (7)
+or (8) or (9)
+Step 4: Gain pseudo-labeled samples 𝐷 according to Eq. (10)
+Step 5: In every 𝑡 iteration:
+∙ Update 𝑊 through fine-tuning based on Eq. (11)
+∙ Update 𝛿 based on Eq. (14)
+Step 6: end while
+Step 7: return 𝑊
+
+where 𝑦𝑖 = 1 indicates that 𝑥𝑖 is a sample with high score
+of confidence. The chosen instances are designated
+as 𝐷 . In
+(
+)
+comparison to the classification probability 𝑃 𝑦𝑖 = 𝑗 ∗ ∣ 𝑥𝑖 ; 𝑊 ,
+for the 𝑗 ∗𝑡ℎ category, the used entropy 𝑒𝑛𝑖 comprehensively incorporates the classification probability of the remaining classes,
+𝑖.𝑒. , the data sample must be correctly classified with highconfidence. The 𝛿 is set at a high value to provide a high degree
+of dependability while assigning pseudo-labels.
+
+4. Experimental results and discussion
+In this section, detailed information is provided about the dataset,
+and comparative analysis is performed where the results of the proposed DLBAL method are compared with the contemporary approaches
+in terms of accuracy and loss. The proposed DLBAL method is assessed
+on two easily accessible benchmark datasets CACD (Chen et al., 2015),
+and Caltech-256 (Griffin et al., 2007) with EfficientNet-B0 (Tan & Le,
+2019) Network.
+
+3.3.3. Deep CNN model fine-tuning
+When the pseudo-labeled samples (𝐷 ) as well as manually labeled
+samples (𝐷 ) are fixed, Eq. (6) may be simplified as follows:
+min −
+𝑊
+
+ 𝑚
+}
+(
+)
+1 ∑∑ {
+1 𝑦𝑖 = 𝑗 log 𝑝 𝑦𝑖 = 𝑗 ∣ 𝑥𝑖 ; 𝑊
+ 𝑖=1 𝑗=1
+
+(13)
+
+𝑡=1
+
+(11)
+5
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 3. The Proposed Layer is represented pictorially by global average pooling, dense layers, dropout, batch normalization, and a softmax classifier.
+
+4.1. Dataset description
+
+4.3. Implementation details
+
+In this subsection, we assessed the proposed DLBAL framework
+using two openly available benchmarks dataset, namely CACD (Chen
+et al., 2015) and the Caltech-256 (Griffin et al., 2007). CACD is a sizable
+demanding dataset for facial recognition and retrieval across ages. It
+includes about 160,000 pictures of 2000 famous people, each with a
+different age, posing, lighting, and occlusion. Due to the fact that not
+all of the pictures are labeled, we use a subset of 256 people from the
+entire dataset for our experiment, wherein 200 are initially labeled and
+56 are labeled further by us. However, Caltech-256 is a demanding
+dataset for object recognition including 30,607 real-world pictures of
+varying sizes representing 257 classes (256 object classes and an extra
+clutter class). At least 80 pictures are used to represent each class. This
+dataset extends the Caltech-101 dataset. Fig. 4(a) and Fig. 4(b) show
+various samples of the CACD and Caltech-256, respectively.
+
+For implementation, we utilized the popular Deep Learning framework 𝑖.𝑒. , the keras-supported-tensorflow library was utilized within
+the Python 3.7.1 programming environment. Existing models that have
+been previously trained on considerable ImageNet datasets are used in
+this experiment because we do classification. To improve the proposed
+DLBAL method’s convergence, significant hyper-parameters have been
+shifted. For the proposed method, different learning rates ranging from
+0.1 to 0.0001 as well as dropout values between 0.3 and 0.50 have
+been examined throughout the experiments, taking into consideration
+the limited initial input data. In addition, we used Adam as well as the
+SGD optimization algorithm for training the proposed DLBAL method.
+However, the proposed system performed well employing the SGD
+optimization algorithm during training. The proposed DLBAL method
+takes an input size of 224 × 224 and a batch size of 32 while keeping
+the number of epochs to 50 for both datasets during training and
+testing. The proposed method on CACD and Caltech-256 dataset utilizes
+a dropout of 0.50 between the last two Dense connected layers as
+illustrated in Fig. 3. For a fair comparison with Contemporary methods,
+the proposed model has been trained with a different no. of training
+iterations as shown in Tables 1 and 2. The graphs in Fig. 5 depict the
+desired performance obtained by these hyper-parameters.
+
+4.2. Experimental setting
+For the CACD dataset, all faces are resized to 224 × 224, and
+the following parameters are set: 𝛿0 = 0.05, 𝑑𝑟 = 0.003 and 𝐾 =
+5000. Whereas, for the Caltech-256 dataset, we scale every picture to
+224 × 224 and set 𝛿0 to 0.05, 𝑑𝑟 to 0.003, and 𝐾 to 5000. Following
+the parameters in the current AL technique (Elhamifar et al., 2013a),
+we randomly choose 80% of pictures from every class to create the
+unannotated training set, while the remaining pictures serve as the
+testing set in our research. We randomly choose 10% of samples from
+each class using the unlabeled training set to initialize the DLBAL
+network, leaving the remaining samples for iterative learning. In addition, we use the same network architecture for the experiments of
+the Caltech-256 and CACD datasets as shown in Fig. 3. Following
+the configuration of Donahue et al. (2014), we continue by using
+the pre-trained ImageNet ILSVRC dataset (Russakovsky et al., 2015)
+model with the EfficientNet-B0 architecture for Caltech-256. Next, the
+last layer is modified to carry out the Caltech-256 experiments while
+keeping the other layers fixed. The learning rates are adjusted to 0.01
+and 0.001 for CACD and Caltech-256, respectively. Furthermore, The
+DLBAL method was implemented on the Python 3.7.1 platform using the Keras-supported-tensorflow framework. The experimental trials
+were performed on a personal computer having Windows 10, a GeForce
+RTX-3070 GPU from Nvidia, 32 GB of RAM, and the CUDA toolkit
+11.0 with cuDNN v8.0. The results of the experiments demonstrated
+the effectiveness of the proposed method, and a notable advancement
+over contemporary methods.
+
+4.4. Comparison with contemporary techniques
+We compared the suggested DLBAL method with a contemporary
+Triple Criteria Active Learning (TCAL) as well as baseline methods
+(DLBAL-All and DLBAL-Random), to show that the classification performance may be improved using less labeled data by employing the
+proposed method:
+• DLBAL-All: All training samples are manually labeled and used
+for CNN training. The results obtained with this technique could
+be considered as the upper limit (the remarkable accuracy that an
+algorithm can achieve using all annotated training data).
+• DLBAL-Random: To fine-tune the CNN, random samples are chosen for annotation throughout the training process. This technique
+eliminates all AL methods and can be regarded as the lower limit.
+• TCAL (Demir & Bruzzone, 2014), HDAL (Li, Wang, Nie, & Wang,
+2017), CPAL (Elhamifar, Sapiro, Yang, & Sasrty, 2013b), CEAL
+(Wang et al., 2016), TA-VAAL (Kim, Park, Kim, & Chun, 2021),
+SPMCAL (Yin, Liu, & Sun, 2021), and PMAL (Khan, Haq, Hussain
+6
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 4. The proposed DLBAL framework was assessed by using the well-known benchmark CACD (Chen et al., 2015) and Caltech-256 (Griffin et al., 2007) dataset. Fig. 4(a) and
+Fig. 4(b) illustrate different sample images from CACD and Caltech-256, respectively.
+
+Table 1
+The statistical representation of accuracy at various proportions of labeled samples from the entire training set of the CACD (Chen et al., 2015)
+dataset. The proposed method surpasses the comparison technique in terms of classification accuracy and percentage of labeled samples.
+Training iteration
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+labeled samples
+DLBAL-All
+DLBAL-Random
+TCAL
+HDAL
+CPAL
+CEAL
+DLBAL-MS
+
+0.1%
+59.7%
+61.7%
+57.4%
+59.9%
+59.5%
+57.4%
+59.7%
+
+0.18%
+86.4%
+74.1%
+74.4%
+75.2%
+74.1%
+77.3%
+75.7%
+
+0.27%
+90.3%
+80.2%
+81.6%
+85.0%
+75.4%
+84.5%
+82.6%
+
+0.36%
+94.6%
+84.5%
+85.0%
+86.6%
+85.2%
+88.2%
+85.6%
+
+0.45%
+96.3%
+87.1%
+87.9%
+88.5%
+87.6%
+89.5%
+88.1%
+
+0.54%
+96.5%
+88.5%
+88.5%
+90.8%
+88.5%
+90.5%
+91.8%
+
+0.63%
+97.5%
+88.9%
+89.8%
+91.9%
+89.7%
+91.5%
+93.2%
+
+0.72%
+98.5%
+89.8%
+90.9%
+92.5%
+90.5%
+91.6%
+94.7%
+
+0.81%
+98.7%
+91.2%
+91.5%
+93.3%
+91.9%
+91.7%
+95.1%
+
+0.90%
+98.9%
+91.9%
+91.8%
+93.9%
+92.1%
+91.7%
+95.3%
+
+1.00%
+98.9%
+92.3%
+91.9%
+94.4%
+92.3%
+92.0%
+95.6%
+
+Table 2
+The proposed method outperformed the comparison technique on Caltech-256 (Griffin et al., 2007) dataset by a significant margin in terms of
+accuracy and percentage of labeled samples.
+Training iteration
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+labeled samples
+DLBAL-All
+DLBAL-Random
+TCAL
+CEAL
+
+10%
+72.3%
+57.2%
+58.4%
+58.4%
+
+18%
+87.2%
+61.9%
+62.4%
+64.8%
+
+26%
+94.6%
+63.2%
+65.4%
+68.8%
+
+34%
+97.2%
+65.1%
+67.5%
+70.4%
+
+43%
+98.2%
+68.8%
+69.8%
+71.4%
+
+51%
+98.6%
+69.2%
+70.9%
+72.3%
+
+59%
+98.9%
+70.6%
+71.9%
+72.8%
+
+68%
+99.1%
+71.9%
+72.5%
+73.3%
+
+76%
+99.2%
+72.5%
+73.2%
+73.8%
+
+84%
+99.2%
+73.7%
+73.6%
+74.2%
+
+93%
+99.3%
+73.9%
+73.9%
+74.2%
+
+labeled samples
+TA-VAAL
+
+10%
+62.5%
+
+15%
+71.3%
+
+20%
+74.4%
+
+25%
+75.2%
+
+30%
+77.5%
+
+35%
+78.0%
+
+40%
+79.5%
+
+–
+–
+
+–
+–
+
+–
+–
+
+–
+–
+
+labeled samples
+SPMCAL
+
+2.5%
+28.5%
+
+4.9%
+40.0%
+
+7.5%
+47.5%
+
+10.0%
+51.8%
+
+12.5%
+56.1%
+
+15.0%
+59.0%
+
+17.6%
+60.7%
+
+20.1%
+64.7%
+
+22.6%
+66.7%
+
+25.1%
+68.1%
+
+26.0%
+68.5%
+
+labeled samples
+PMAL
+
+3%
+57.7%
+
+7.3%
+72.1%
+
+14.9%
+75.3%
+
+17.3%
+77.9%
+
+21.8%
+80.1%
+
+24.1%
+80.2%
+
+24.7%
+80.4%
+
+25.6%
+81.4%
+
+26.4%
+81.1%
+
+26.8%
+81.4%
+
+27.1%
+82.1%
+
+labeled samples
+DLBAL-MS
+
+10%
+68.5%
+
+18%
+78.2%
+
+26%
+83.1%
+
+34%
+83.9%
+
+43%
+84.6%
+
+51%
+85.4%
+
+59%
+85.6%
+
+68%
+85.7%
+
+76%
+85.7%
+
+84%
+85.9%
+
+93%
+86.1%
+
+7
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 5. The proposed DLBAL method was evaluated by employing the well-known benchmark CACD (Chen et al., 2015) and Caltech-256 (Griffin et al., 2007) dataset. Fig. 5(a) depicts
+the graphs between the accuracy and percentage of labeled samples for CEAL (Wang et al., 2016), HDAL (Li et al., 2017), TCAL (Demir & Bruzzone, 2014), CPAL (Elhamifar et al.,
+2013b), DLBAL-All, DLBAL-Random, and the suggested DLBAL-MS on CACD datasets while Fig. 5(b) illustrates the graphical representation between the accuracy and percentage
+of labeled samples for DLBAL-All, DLBAL-Random, TCAL, CEAL, DLBAL-MS on Caltech-256 dataset.
+
+et al., 2022) is a complete AL strategy that has been designed to simultaneously assess sampling selection criteria and has surpassed
+contemporary techniques with considerably fewer annotations.
+
+accuracy on the Caltech-256 dataset, respectively, while the DLBALMS method requires a 26% labeled training sample to reach 83.1%
+accuracy. The results reveal that our suggested DLBAL-MS system can
+minimize the need for annotated samples. Moreover, the fair comparisons reveal that our suggested DLBAL consistently outperform the
+contemporary TCAL, CEAL, TA-VAAL, SPMCAL, and PMAL approach in
+terms of classification accuracy and the number of human annotations.
+Because these methods typically extract a small proportion of useful
+samples and cannot provide adequate training set for learning features
+in the context of deep imaging classification. As a result, our DLBAL has
+a considerable advantage when it comes to image classification jobs. To
+properly examine our DLBAL and reveal the efficacy of its components,
+we carried out the experiments described in the parts that follow.
+
+4.4.1. Comparison results
+To show the efficacy of our suggested method, we additionally assess the uncertainty of samples using the margin sampling criteria and
+name this technique DLBAL-MS. Fig. 5(a) depicts the graphs between
+the accuracy and percentage of labeled samples for CEAL, HDAL, TCAL,
+CPAL, DLBAL-All, DLBAL-Random, and the suggested DLBAL-MS on
+CACD datasets while Fig. 5(b) illustrates the graphical representation
+between the accuracy and percentage of labeled samples for DLBALAll, DLBAL-Random, TCAL, CEAL, DLBAL-MS on Caltech-256 dataset.
+Furthermore, the graph also depicts the accuracy at various proportions of labeled instances from the entire training set. As depicted in
+Fig. 5, Tables 1 and 2, our proposed DLBAL framework surpasses the
+comparison technique in terms of classification accuracy and human
+annotation amount. Providing the same number of labeled samples,
+our DLBAL-MS beats the comparison technique by a significant margin
+in terms of classification accuracy, particularly when the number of
+labeled samples is insufficient. According to the amount of human annotation, DLBAL-Random, TCAL, HDAL, CPAL, and CEAL require 89%,
+90%, 61%, 80%, and 91% annotated training samples, respectively, in
+order to reach 91.8% classification accuracy using the CACD dataset.
+However, DLBAL-MS merely requires 54% annotated samples to reach
+91.8% classification accuracy and eliminates roughly 35%, 36%, 7%,
+26%, and 37% user annotations compared to DLBAL-Random, TCAL,
+HDAL, CPAL, and CEAL, respectively. In addition, DLBAL-Random,
+CEAL, and TCAL require 93%, 79%, and 93% annotated training samples, respectively, to reach 73.9% accuracy on the Caltech-256 dataset,
+while DLBAL-MS requires just 15% labeled training samples to achieve
+73.9% accuracy and significantly reduces about 78%, 64%, and 78% of
+user annotations, especially in comparison to DLBAL-Random, CEAL,
+and TCAL. The TA-VAAL method requires a 40% annotated training
+sample to achieve 79.5% accuracy whereas the DLBAL-MS approach
+requires a 20% labeled training sample to achieve 79.5% accuracy
+and significantly reduces about 20% of user annotations, especially in
+comparison to TA-VAAL. The SPMCAL and PMAL methods require 26%
+and 27% of annotated training samples to reach 68.5% and 82.1%
+
+4.4.2. Ablation study
+In this subsection, special attention has been given to displaying
+the efficiency of EfficientNet-B0 as an active network. In the ablation
+experiment, we demonstrated how several deep learning algorithms
+performed and responded at varying percentages of labeled samples
+drawn from the entire training sample. The proportion of the first and
+last annotated samples is displayed on the 𝑥-axis, while accuracy is displayed on the 𝑦-axis in each graph in Fig. 6. Furthermore, the detailed
+visual representations in the graphs depict how VGG-16, InceptionV3, AlexNet, and the most contemporary EfficientNet-B0 performed in
+comparison for all AL techniques, including least confidence, margin
+sampling, and entropy. Fig. 6 shows that the model (EfficientNet-B0)
+employed in the proposed DLBAL approach significantly outperforms
+the VGG-16, Inception-V3, and AlexNet models on both Caltech-256
+and CACD datasets. Furthermore, the EfficientNet-B0 network responds
+considerably faster to newly appended samples than the other approaches because its accuracy increases rapidly, whereas the VGG-16,
+Inception-V3, and AlexNet models show a continuous improvement in
+accuracy over the period of escalating iterations. Moreover, it is shown
+that the VGG-16, Inception-V3, and AlexNet networks work efficiently
+when combined with the least confidence and entropy approach, but
+the EfficientNet-B0 model performs well when combined with the
+margin sampling techniques.
+8
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 6. The results obtained on the Caltech-256 and CACD datasets are organized in rows, while the information regarding VGG-16, Inception-V3, AlexNet, and the most
+contemporary EfficientNet-B0 are organized in columns. In each graph, the 𝑥-axis represents the proportion of labeled samples, while the 𝑦-axis represents the accuracy.
+
+Fig. 7. The graphical depiction between the accuracy and percentage of labeled samples shows that DLBAL-LC, DLBAL-MS, and DLBAL-EN consistently outperformed DLBAL-Random
+on the CACD (the top row) and Caltech-256 (the bottom row) datasets, respectively.
+
+samples using three variations of the DLBAL method, based on 𝓁𝑐𝑖 , 𝑚𝑐𝑖 ,
+and 𝑒𝑛𝑖 . The names for these three variations are DLBAL-LC, DLBALMS, and DLBAL-EN. Meanwhile, the DLBAL-Random method exploits
+pseudo-labeling majority high-confidence sample strategy. Comparing DLBAL-LC, DLBAL-MS, and DLBAL-EN to DLBAL-Random reveals
+comparable improved performance. This demonstrates the validity of
+the majority sample technique based on pseudo-labeling is equally
+successful as other standard informative sample selection criteria. The
+results presented in Fig. 7 demonstrate that DLBAL-LC, DLBAL-MS,
+and DLBAL-EN consistently exhibited better performance compared to
+DLBAL-Random on both the CACD dataset (top-row) and Caltech-256
+dataset (bottom-row). These findings suggest that the majority sample
+technique of pseudo-labeling is comparable to standard informative
+sample selection criteria and can improve classification performance.
+
+4.4.3. Component analysis
+The proposed DLBAL continuously feeds instances from the unannotated set to the Deep CNN Model and picks two types of instances
+for fine-tuning, based on the prediction of the Deep CNN Model. The
+first type includes the most uncertain minority samples, which have
+low confidence in the prediction. While the second type consists of the
+most certain majority samples having high-confidence in the prediction.
+In addition, the proposed DLBAL takes into account three standard
+active learning approaches for the selecting these unsure instances (𝓁𝑐𝑖 ,
+𝑚𝑐𝑖 , and 𝑒𝑛𝑖 ). Whereas, the system provides pseudo-labels to these
+certain majority samples automatically, without human intervention.
+These two types of sample selection show different scores of confidence of the Deep CNN Model for the unlabeled dataset. Moreover,
+to verify that the suggested DLBAL can consistently meet the common
+relevant data samples selection requirements, we evaluate uncertain
+9
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Fig. 8. The average error rate at the first iteration of the training is around 1.3% and 5.5% on Caltech-256 and CACD datasets respectively. As a result, our method can assign
+precise pseudo-labels to unannotated samples while keeping a manageable error rate.
+
+4.5. Reliability of DLBAL
+
+CRediT authorship contribution statement
+
+Based on the aforementioned results, we observe that our DLBAL
+method outperforms other techniques, demonstrating the effectiveness
+of integrating the vast majority of more confidence data instances. In
+addition, to illustrate the validity and reliability of the suggested DLBAL
+method, we additionally assess the average error rate while choosing
+instances with high confidence. The average error rate providing the
+pseudo-labels to the more confidence instances throughout the training
+iteration is depicted in Fig. 8. Besides that, the average error rate during
+starting iteration of the training is relatively low around 1.3% and
+5.5% on Caltech-256 and CACD datasets respectively. Consequently,
+our suggested DLBAL method is able to assign accurate pseudo-labels
+to unannotated data samples while maintaining a reasonable error rate.
+
+Sareer Ul Amin: Conceptualization, Methodology, Visualization,
+Writing – original draft. Adnan Hussain: Visualization, Writing –
+review & editing. Bumsoo Kim: Writing – review & editing. Sanghyun
+Seo: Conceptualization, Methodology, Supervision, Investigation, Writing – review & editing.
+
+5. Conclusion
+
+Data availability
+
+Declaration of competing interest
+The authors affirm that they have no known conflicts of interest or
+personal relationships that might have affected the integrity of the work
+presented in this paper.
+
+Data will be made available on request.
+
+Nowadays, DL algorithms have been showing reasonable performance in a variety of industrial applications because of the massive
+amount of video data generated every day (Amin, Kim, Sami, Park,
+& Seo, 2023). However, gathering annotated data on such a massive scale requires a lot of time and money, consequently making it
+impossible to deploy DL models on many industrial systems. Therefore, AL has been concentrating on automating the procedure of data
+annotation, although they often rely on humans for annotating ambiguous samples. In contrast to previous approaches that emphasize
+only uncertain instances with low prediction confidence, the proposed
+DLBAL framework gained a significant number of instances with higher
+confidence from the unannotated set for pattern learning. Particularly,
+these instances were randomly picked and assigned labels to them
+continuously. Besides that, the high-confidence samples increased the
+classification accuracy, reduced user annotation effort, and maintained
+the stability of the classifier. Lastly, the average error rate at the
+first iteration of the training process is relatively low, around 1.3%
+and 5.5% on Caltech-256 and CACD datasets respectively. As a result,
+the suggested DLBAL method can assign accurate pseudo-labels to
+unannotated data while maintaining a reasonable error rate. Detailed
+experiments are conducted to show that the proposed DLBAL system
+obtained reasonable performance on two difficult image classification
+datasets (CACD and Caltech-256). The proposed method performs well
+than existing techniques but we believe that the classification accuracy
+of the proposed method can be further improved. In the future, we
+want to employ the Attention mechanism in our method and integrate
+more celebrity data from the CACD dataset to improve the classification
+accuracy.
+
+Acknowledgments
+This study received financial support from the Korean government’s
+National Research Foundation (NRF) grant (NRF-2022R1A2C1004657,
+Contribution Rate: 50%) and the Korea Creative Content Agency’s
+Culture Technology R&D Program, funded by the Ministry of Culture, Sports, and Tourism in 2021 (Project Name: A Specialist Training of Content R&D based on Virtual Production, Project Number:
+R2021040044, Contribution Rate: 50%).
+References
+Amin, S. U., Kim, Y., Sami, I., Park, S., & Seo, S. (2023). An efficient attention-based
+strategy for anomaly detection in surveillance video. Computer Systems Science and
+Engineering, 46(3), 3939–3958. http://dx.doi.org/10.32604/csse.2023.034805.
+Beluch, W. H., Genewein, T., Nürnberger, A., & Köhler, J. M. (2018). The power
+of ensembles for active learning in image classification. In Proceedings of the
+IEEE conference on computer vision and pattern recognition (pp. 9368–9377). http:
+//dx.doi.org/10.1109/cvpr.2018.00976.
+Brinker, K. (2003). Incorporating diversity in active learning with support vector
+machines. In Proceedings of the 20th international conference on machine learning
+(pp. 59–66).
+Cao, X., Yao, J., Xu, Z., & Meng, D. (2020). Hyperspectral image classification with convolutional neural network and active learning. IEEE Transactions on Geoscience and
+Remote Sensing, 58(7), 4604–4616. http://dx.doi.org/10.1109/tgrs.2020.2964627.
+Chen, B.-C., Chen, C.-S., & Hsu, W. H. (2015). Face recognition and retrieval using
+cross-age reference coding with cross-age celebrity dataset. IEEE Transactions on
+Multimedia, 17(6), 804–815. http://dx.doi.org/10.1109/tmm.2015.2420374.
+10
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+Li, X., & Guo, Y. (2013). Adaptive active learning for image classification. In 2013
+IEEE conference on computer vision and pattern recognition (pp. 859–866). http:
+//dx.doi.org/10.1109/cvpr.2013.116.
+Li, Y., Wang, K., Nie, L., & Wang, Q. (2017). Face recognition via heuristic deep active
+learning. In Biometric recognition: 12th Chinese conference, CCBR 2017, Shenzhen,
+China, October 28-29, 2017, Proceedings 12 (pp. 97–107). Springer, http://dx.doi.
+org/10.1007/978-3-319-69923-3_11.
+Montgomery, D. C., Peck, E. A., & Vining, G. G. (2021). Introduction to linear regression
+analysis. John Wiley & Sons: http://dx.doi.org/10.1111/biom.12129.
+Munsif, M., Khan, H., Khan, Z. A., Hussain, A., Ullah, F. U. M., Lee, M. Y., et al. (2022).
+Pv-anet: attention-based network for short-term photovoltaic powerforecasting.
+Korea Next Generation Computing Society Conference, 133–135, https://www.earticle.
+net/Article/A419757.
+Ozdemir, F., Peng, Z., Tanner, C., Fuernstahl, P., & Goksel, O. (2018). Active learning
+for segmentation by optimizing content information for maximal entropy. In Deep
+learning in medical image analysis and multimodal learning for clinical decision support
+(pp. 183–191). Springer: http://dx.doi.org/10.1007/978-3-030-00889-5_21.
+Redmon, J., Divvala, S., Girshick, R., & Farhadi, A. (2016). You only look once: Unified,
+real-time object detection. In Proceedings of the IEEE conference on computer vision
+and pattern recognition (pp. 779–788). http://dx.doi.org/10.1109/cvpr.2016.91.
+Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., et al. (2015).
+Imagenet large scale visual recognition challenge. International Journal of Computer
+Vision, 115(3), 211–252. http://dx.doi.org/10.1007/s11263-015-0816-y.
+Scheffer, T., Decomain, C., & Wrobel, S. (2001). Active hidden markov models for
+information extraction. In International symposium on intelligent data analysis (pp.
+309–318). Springer, http://dx.doi.org/10.1007/3-540-44816-0_31.
+Sener, O., & Savarese, S. (2017). Active learning for convolutional neural networks:
+A core-set approach. http://dx.doi.org/10.48550/arXiv.1708.00489, arXiv preprint
+arXiv:1708.00489.
+Settles, B. (2009). Active learning literature survey. University of Wisconsin-Madison
+Department of Computer Sciences, http://digital.library.wisc.edu/1793/60660.
+Settles, B. (2012). Active learning, vol. 6. Morgan & Claypool Publishers, http://dx.doi.
+org/10.1007/978-3-031-01560-1.
+Shannon, C. E. (2001). A mathematical theory of communication. ACM SIGMOBILE
+Mobile Comput. Commun. Rev., 5(1), 3–55. http://dx.doi.org/10.1145/584091.
+584093.
+Simonyan, K., & Zisserman, A. (2014). Very deep convolutional networks for large-scale
+image recognition. http://dx.doi.org/10.48550/arXiv.1409.1556, arXiv preprint
+arXiv:1409.1556.
+Stark, F., Hazırbas, C., Triebel, R., & Cremers, D. (2015). Captcha recognition with
+active deep learning. In Workshop new challenges in neural computation, Vol. 2015
+(p. 94). Citeseer.
+Szegedy, C., Ioffe, S., Vanhoucke, V., & Alemi, A. A. (2017). Inception-v4, inceptionresnet and the impact of residual connections on learning. In Thirty-first AAAI
+conference on artificial intelligence. http://dx.doi.org/10.1609/aaai.v31i1.11231.
+Szegedy, C., Liu, W., Jia, Y., Sermanet, P., Reed, S., Anguelov, D., et al. (2015). Going
+deeper with convolutions. In Proceedings of the IEEE conference on computer vision
+and pattern recognition (pp. 1–9). http://dx.doi.org/10.1109/cvpr.2015.7298594.
+Tan, M., & Le, Q. (2019). Efficientnet: Rethinking model scaling for convolutional
+neural networks. In International conference on machine learning (pp. 6105–6114).
+PMLR, http://proceedings.mlr.press/v97/tan19a.html.
+Tanveer, M., Rajani, T., Rastogi, R., Shao, Y.-H., & Ganaie, M. (2022). Comprehensive
+review on twin support vector machines. Annals of Operations Research, 1–46.
+http://dx.doi.org/10.1007/s10479-022-04575-w.
+Tong, S., & Koller, D. (2001). Support vector machine active learning with applications
+to text classification. Journal of Machine Learning Research, 2(Nov), 45–66.
+Ul Amin, S., Ullah, M., Sajjad, M., Cheikh, F. A., Hijji, M., Hijji, A., et al. (2022). EADN:
+An efficient deep learning model for anomaly detection in videos. Mathematics,
+10(9), 1555. http://dx.doi.org/10.3390/math10091555.
+Wang, J.-G., Sung, E., & Yau, W.-Y. (2011). Active learning for solving the incomplete
+data problem in facial age classification by the furthest nearest-neighbor criterion.
+IEEE Transactions on Image Processing, 20(7), 2049–2062. http://dx.doi.org/10.
+1109/TIP.2011.2106794.
+Wang, K., Zhang, D., Li, Y., Zhang, R., & Lin, L. (2016). Cost-effective active learning
+for deep image classification. IEEE Transactions on Circuits and Systems for Video
+Technology, 27(12), 2591–2600. http://dx.doi.org/10.1109/tcsvt.2016.2589879.
+Yin, T., Liu, N., & Sun, H. (2021). Self-paced active learning for deep CNNs via effective
+loss function. Neurocomputing, 424, 1–8. http://dx.doi.org/10.1016/j.neucom.2020.
+11.019.
+Zhao, J., Sun, S., Wang, H., & Cao, Z. (2020). Promoting active learning with
+mixtures of Gaussian processes. Knowledge-Based Systems, 188, Article 105044.
+http://dx.doi.org/10.1016/j.knosys.2019.105044.
+
+Chen, L.-C., Zhu, Y., Papandreou, G., Schroff, F., & Adam, H. (2018). Encoder-decoder
+with atrous separable convolution for semantic image segmentation. In Proceedings
+of the European conference on computer vision (pp. 801–818). http://dx.doi.org/10.
+1007/978-3-030-01234-2_49.
+Chollet, F. (2017). Xception: Deep learning with depthwise separable convolutions. In
+Proceedings of the IEEE conference on computer vision and pattern recognition (pp.
+1251–1258). http://dx.doi.org/10.1109/cvpr.2017.195.
+Demir, B., & Bruzzone, L. (2014). A novel active learning method in relevance
+feedback for content-based remote sensing image retrieval. IEEE Transactions on
+Geoscience and Remote Sensing, 53(5), 2323–2334. http://dx.doi.org/10.1109/tgrs.
+2014.2358804.
+Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., & Fei-Fei, L. (2009). Imagenet: A
+large-scale hierarchical image database. In 2009 IEEE conference on computer vision
+and pattern recognition (pp. 248–255). Ieee, http://dx.doi.org/10.1109/CVPR.2009.
+5206848.
+Donahue, J., Jia, Y., Vinyals, O., Hoffman, J., Zhang, N., Tzeng, E., et al. (2014).
+Decaf: A deep convolutional activation feature for generic visual recognition.
+In International conference on machine learning (pp. 647–655). PMLR, https://
+proceedings.mlr.press/v32/donahue14.html.
+Elhamifar, E., Sapiro, G., Yang, A., & Sasrty, S. S. (2013a). A convex optimization
+framework for active learning. In 2013 IEEE international conference on computer
+vision (pp. 209–216). http://dx.doi.org/10.1109/iccv.2013.33.
+Elhamifar, E., Sapiro, G., Yang, A., & Sasrty, S. S. (2013b). A convex optimization
+framework for active learning. In Proceedings of the IEEE international conference on
+computer vision (pp. 209–216). http://dx.doi.org/10.1109/iccv.2013.33.
+Esteva, A., Kuprel, B., Novoa, R. A., Ko, J., Swetter, S. M., Blau, H. M., et al. (2017).
+Dermatologist-level classification of skin cancer with deep neural networks. Nature,
+542(7639), 115–118. http://dx.doi.org/10.1038/nature21056.
+Everingham, M., Van Gool, L., Williams, C. K., Winn, J., & Zisserman, A. (2010). The
+pascal visual object classes (voc) challenge. International Journal of Computer Vision,
+88(2), 303–338. http://dx.doi.org/10.1007/s11263-009-0275-4.
+Feng, C., Liu, M.-Y., Kao, C.-C., & Lee, T.-Y. (2017). Deep active learning for civil
+infrastructure defect detection and classification. Computing in Civil Engineering,
+2017, 298–306. http://dx.doi.org/10.1061/9780784480823.036.
+Freund, Y., Seung, H. S., Shamir, E., & Tishby, N. (1997). Selective sampling using
+the query by committee algorithm. Machine Learning, 28(2), 133–168. http://dx.
+doi.org/10.1023/a:1007330508534.
+Gal, Y., Islam, R., & Ghahramani, Z. (2017). Deep bayesian active learning with
+image data. In International conference on machine learning (pp. 1183–1192). PMLR,
+http://dx.doi.org/10.1145/1553374.1553375.
+Griffin, G., Holub, A., & Perona, P. (2007). Caltech-256 object category dataset. California Institute of Technology, https://resolver.caltech.edu/CaltechAUTHORS:CNSTR-2007-001.
+He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image
+recognition. In Proceedings of the IEEE conference on computer vision and pattern
+recognition (pp. 770–778). http://dx.doi.org/10.1109/cvpr.2016.90.
+Hussain, A., Amin, S. U., Fayaz, M., & Seo, S. (2023). An efficient and robust
+hand gesture recognition system of sign language employing finetuned inceptionv3 and efficientnet-b0 network. Computer Systems Science and Engineering, 46(3),
+3509–3525. http://dx.doi.org/10.32604/csse.2023.037258.
+Joshi, A. J., Porikli, F., & Papanikolopoulos, N. (2009). Multi-class active learning
+for image classification. In 2009 IEEE conference on computer vision and pattern
+recognition (pp. 2372–2379). http://dx.doi.org/10.1109/CVPR.2009.5206627.
+Joshi, A. J., Porikli, F., & Papanikolopoulos, N. P. (2012). Scalable active learning for
+multiclass image classification. IEEE Transactions on Pattern Analysis and Machine
+Intelligence, 34(11), 2259–2273. http://dx.doi.org/10.1109/TPAMI.2012.21.
+Kapoor, A., Hua, G., Akbarzadeh, A., & Baker, S. (2009). Which faces to tag: Adding
+prior constraints into active learning. In 2009 IEEE 12th international conference
+on computer vision (pp. 1058–1065). IEEE, http://dx.doi.org/10.1109/ICCV.2009.
+5459392.
+Kee, S., Del Castillo, E., & Runger, G. (2018). Query-by-committee improvement with
+diversity and density in batch active learning. Information Sciences, 454, 401–418.
+http://dx.doi.org/10.1016/j.ins.2018.05.014.
+Khan, A., Haq, I. U., Hussain, T., Muhammad, K., Hijji, M., Sajjad, M., et al. (2022).
+PMAL: A proxy model active learning approach for vision based industrial applications. ACM Transactions on Multimedia Computing, Communications, and Applications
+(TOMM), 18(2s), 1–18. http://dx.doi.org/10.1145/3534932.
+Khan, H., Haq, I. U., Munsif, M., Khan, S. U., & Lee, M. Y. (2022). Automated wheat
+diseases classification framework using advanced machine learning technique.
+Agriculture, 12(8), 1226. http://dx.doi.org/10.3390/agriculture12081226.
+Kim, K., Park, D., Kim, K. I., & Chun, S. Y. (2021). Task-aware variational adversarial
+active learning. In Proceedings of the IEEE/CVF conference on computer vision and
+pattern recognition (pp. 8166–8175). http://dx.doi.org/10.1109/cvpr46437.2021.
+00807.
+
+11
+
+

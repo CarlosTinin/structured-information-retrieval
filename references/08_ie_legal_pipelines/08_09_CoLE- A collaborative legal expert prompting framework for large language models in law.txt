@@ -1,0 +1,2241 @@
+Knowledge-Based Systems 311 (2025) 113052
+
+Contents lists available at ScienceDirect
+
+Knowledge-Based Systems
+journal homepage: www.elsevier.com/locate/knosys
+
+CoLE: A collaborative legal expert prompting framework for large language
+models in law
+Bo Li b,c , Shuang Fan b , Shaolin Zhu a
+
+,∗, Lijie Wen c ,∗
+
+a
+
+College of Intelligence and Computing, Tianjin University, Tianjin, 300072, China
+Baidu Inc., Beijing, 100085, China
+c
+School of Software, Tsinghua University, Beijing, 100084, China
+b
+
+ARTICLE
+
+INFO
+
+Keywords:
+Artificial intelligence
+Natural language processing
+Legal large language models
+
+ABSTRACT
+Large Language Models (LLMs) have achieved remarkable outcomes in various natural language processing
+tasks. However, their application to the highly specialized field of law presents unique challenges. Legal
+language, characterized by complex syntax, domain-specific terminology, and nuanced logical relationships,
+poses significant hurdles for existing NLP models in accurately understanding and processing legal queries.
+Furthermore, the sheer volume of legal documents complicates information retrieval and knowledge extraction,
+making it difficult for models to pinpoint relevant legal articles and cases. Moreover, existing legal LLMs
+often struggle to effectively handle colloquial user queries and lack efficient mechanisms for selecting the
+most relevant demonstrations in In-Context Learning (ICL), hindering their ability to provide accurate and
+comprehensive legal advice. In order to address these issues, we propose a novel prompting framework named
+‘‘Collaborative Legal Experts’’ (CoLE). This framework draws inspiration from teamwork paradigms in realworld legal case processing. First, we design an intent identification module to analyze user queries for
+identifying potential intents and law domains. Then, through two subsequent processes, potential background
+information and the best demonstration are generated. Finally, we design a prompt generator to assemble
+prompts generated from the previous steps. It combines with the LLMs to generate the final answer. Notably,
+we find that the self-generated information by LLMs has a smaller gap when fused with LLMs. We evaluate
+performance by integrating it with 7 general-purpose Chinese LLMs and comparing its performance against
+8 specialized legal LLMs across 10 datasets, including Single-Choice, Multiple-Choice, and Question&Answer.
+The results indicate that integrating with CoLE’s LLMs has the potential to significantly enhance performance
+in the law field, particularly without the need for annotated datasets or model parameter updates. Moreover,
+our proposed model outperforms all state-of-the-art LLMs in law. The code is available at https://github.com/
+liboaccn/cole.
+
+1. Introduction
+With the increase of computing power and the amount of data, Artificial Intelligence (AI) technology develops rapidly [1–3]. Large Language Models (LLMs) [4–8] have made significant strides in the field of
+Natural Language Processing (NLP). Moreover, some Chinese-oriented
+LLMs [9–13] have enhanced Chinese understanding, often outperforming multilingual models in Chinese NLP tasks. Beyond demonstrating
+exceptional performance across a range of standard tasks, there is
+growing interest in the development of specialized LLMs for particular
+domains, including education [14], healthcare [15,16], law [17–20]
+and finance [21,22]. Recently, many works apply LLMs to the law
+domain to solve some problems that are not well addressed by traditional methods [23–28]. Major advancements have been made in areas
+
+such as legal prediction [23,24], interpretation of legal provisions [25],
+dispute mediation [29], legal information extraction [26–28], and legal
+reasoning [18,30–32]. As the population increases, so does the number
+of judicial cases. Users can ask legal questions to the model and
+receive responses and suggestions based on training data [33–35]. The
+application of LLMs in the law field is expected to alleviate the problem
+of ‘‘many cases and fewer people’’, thus improving the efficiency and
+quality of the justice system [36,37]. However, applying LLMs to
+the law field presents significant challenges. Legal language, with its
+specialized terminology, complex sentence structures, and reliance on
+precedent, poses a significant challenge for NLP. Existing NLP models,
+often trained on general text data, struggle to accurately understand
+and process legal queries. For example, identifying the relevant legal
+
+∗ Corresponding authors.
+
+E-mail address: zhushaolin@tju.edu.cn (S. Zhu).
+https://doi.org/10.1016/j.knosys.2025.113052
+Received 3 May 2024; Received in revised form 2 January 2025; Accepted 16 January 2025
+Available online 23 January 2025
+0950-7051/© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 1. Comparison between Qwen-1.5-14B model and Qwen-1.5-14B model with CoLE. It can be seen that the answers ofQwen-1.5-14B model with CoLEare more accurate and
+comprehensive, and detailed legal references are provided.
+
+we propose ‘‘Collaborative Legal Expert ’’ (CoLE), a novel prompting
+framework which draws inspiration from the collaborative nature of
+real-world legal teams, simulating the division of labor and knowledge sharing amongst legal professionals [58]. This framework leverages LLMs to analyze user queries, retrieve relevant legal knowledge,
+and generate comprehensive responses. By integrating domain-specific
+knowledge and incorporating a novel demonstration selection mechanism, CoLE aims to significantly enhance the accuracy and reliability
+of LLMs in addressing complex legal queries.
+First, to address the issue of user query colloquialism, we initially
+develop a Query Intent Identification (QII) Module that examines user
+queries. This module translates informal user questions into formal
+legal terms, thereby improving the large language model’s comprehension of the question. Then, we create a Legal Knowledge Encoding
+(LKE) Model containing 1290 current Chinese laws and regulations,
+which serves as a foundation for retrieving and analyzing legal knowledge. Additionally, we establish a Demonstration Encoding (SE) Model
+that encompasses a substantial number of past case decision analyses and their corresponding reasoning outcomes. Next, we utilize
+two subsequent processes, Legal Knowledge Retrieval (LKR) and Best
+Demonstration Retrieval (BDR). These subsequent processes employ
+a two-stage filtering process to semantically retrieve similar cases.
+This allows the LLM to independently choose the best demonstration,
+resulting in potential background information and the best reference.
+This approach effectively overcomes the challenge of selecting the most
+suitable demonstration and reference information in the ICL system.
+After that, we create a Prompt Generation (PG) Module that combines
+the prompts generated in the previous steps and integrates the information with the LLM to produce the ultimate response. Finally, our
+approach does not require the labeling of the dataset and the updating
+of model parameters, resulting in a significant reduction in human
+effort and resource usage. Moreover, it can be more easily implemented
+in practical situations.
+To give an intuitive explanation of our main idea, let us take a practical case for example. As illustrated in Fig. 1, we present a comparative
+analysis of the generated responses to the question ‘‘How long can
+I get my driver’s license back after drunk driving?’’
+using both the basic Qwen-1.5-14B model and the Qwen-1.5-14B model
+integrated with CoLE. The basic Qwen-1.5-14B model achieves a score
+of 7 in the evaluation of human legal experts, while the model with
+CoLE improves to a score of 9. This is a strong indication that the
+results produced by our method demonstrate a significant advantage in
+terms of understanding user queries and providing improved answers.
+Overall, in this paper, we propose CoLE framework to solve the problem
+of applying LLMs in the law field. The main contributions of this work
+can be summarized as follows.
+
+statutes from a user’s query, which can involve colloquialisms and
+ambiguities, requires a nuanced understanding of legal concepts and
+their interrelationships. Similarly, the vast and constantly evolving
+body of legal documents makes information retrieval a daunting task
+for these models.
+(I) The colloquialism of user query. Users’ inputs are typically
+colloquial, with queries in spoken scenarios containing more irrelevant and confusing information, including potential spelling errors.
+Specifically, the colloquial nature of user queries, often riddled with
+ambiguities and lacking legal precision, poses a significant hurdle for
+LLMs trained on formal legal documents. Additionally, the effective
+selection of demonstrations, which provide context and guide the LLM’s
+reasoning process in In-Context Learning (ICL), becomes crucial for
+achieving accurate and reliable results in the legal domain where
+nuances and specific case details are paramount. We have identified
+notable disparities between written and spoken language when LLMs
+interpret sentence semantics. These colloquial or logically structured
+queries do not conform to the LLM’s conditional probability distribution. This is particularly problematic in the highly specialized field
+of law, where misunderstandings of user intent can lead to incorrect
+predictions outputted by LLMs.
+(II) The selection of demonstrations. In the field of In-Context
+Learning (ICL) [38], providing demonstrations has been demonstrated
+to effectively stimulate the performance of LLMs in downstream tasks
+[39–41]. While the selection of demonstrations is crucial for effective
+inference, the quest for the best demonstration selection remains a
+persistent challenge and a pending issue. There are some strategies having been proposed, based on human manual selection [42] or random
+selection [43], as well as more recent considerations of factors such as
+relevance ranking [44], complexity [45], diversity [46], difficulty [47],
+and perplexity [48]. Recently, the quantity [49,50], order [51], and
+format [52] of demonstrations must also be considered. These methods
+are based on external strategies rather than inherent LLM selection.
+This can potentially create a gap between the selected instances and
+the LLM itself, thereby exacerbating the ambiguity of model inference.
+(III) The cost influence. Precise domain-specific knowledge is
+required when dealing with highly specialized fields such as law. In
+particular, legal data exhibits diverse characteristics, with each domain
+having its own unique regulations and types. Given the vast quantity
+and variety, different analytical methods and expertise can be very
+complex [53]. Lawyer-LLaMA [54] is a Chinese legal LLM trained
+on a large-scale legal dataset, and HanFei [55] pre-trains on approximately 60 GB of Chinese legal data. LexiLaw [56], LawLLM [57],
+LAW_GPT [19] and others use a few hundred KB of legal-related
+datasets for supervised fine-tuning, and LexiLaw also mitigates the
+catastrophic forgetting problem brought by fine-tuning with general
+domain data. Nevertheless, the use of high-quality datasets for pretraining or supervised fine-tuning incurs substantial cost influence.
+These challenges require the development of specialized approaches
+tailored to the intricacies of the legal domain. To address these issues,
+
+• Inspired by the team collaboration model in real-world legal case
+processing, we enhance the application ability of LLMs in the law
+field by simulating the division of labor and cooperation in a
+2
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+lawyer team, and through modules such as QII, LKR, BDR, and
+PG.
+• We use the QII module to convert informal user questions into formal legal terminology, and a two-stage filtering process to select
+the best demonstration, obtaining potential background information and optimal references, effectively solving the challenge
+of selecting the most appropriate demonstration and reference
+information in the context learning system.
+• We build the system through ICL without annotating the dataset
+and updating the model parameters, which significantly reduces
+the use of manpower and resources and is more easily implemented in actual situations.
+• We create extensive experiments on 10 datasets across 15 models
+including single-choice, multiple-choice and legal Q&A tasks. The
+results indicate that integration with CoLE’s LLMs effectively
+improves performance of LLMs. Moreover, our proposed model
+outperforms all SOTA LLMs in law.
+
+works propose to train demonstration retrieval via feedback from LM
+and demonstrate its effectiveness on semantic parsing [63]. XRICL
+further explores semantic cross-language analysis using similar training
+signals [64]. UDR [65] adopts an iterative mining strategy to find
+high-quality demonstrations, which can help LLM fully incorporate the
+signals of various tasks. However, generating and utilizing high-quality
+examples that fit the LLMs’ distribution makes this process challenging.
+This motivates us to design a better mechanism, that is,CoLE, to prompt
+LLMs with in-context learning. Furthermore, how to use ICL to improve
+the task performance of LLMs in the law field has not been fully
+explored.
+2.3. Collaborative legal expert prompting
+While our work draws on existing research on large language models for law, in-context learning, and legal reasoning, CoLE offers several
+new contributions that distinguish it from the state of the art: (I) Unlike
+existing prompt engineering or Retrieval-Augmented Generation (RAG)
+methods, which often focus on individual techniques, CoLE takes a
+holistic, team-based approach. Integrates multiple prompting strategies
+and retrieval techniques within a unified framework that mimics the
+specialized roles and collaborative workflow of real-world legal teams.
+This collaborative framework allows CoLE to synergistically leverage
+the strengths of the various techniques, resulting in improved overall
+performance. (II) CoLE introduces a novel two-stage filtering mechanism in its Legal Knowledge Retrieval (LKR) and Best Demonstration
+Retrieval (BDR) modules. First, a semantic retrieval process identifies
+potentially relevant legal articles and precedents. In a second step,
+the LLM independently selects the most relevant information from the
+candidates retrieved. This LLM-driven selection process overcomes the
+limitations of existing methods that rely solely on external selection
+strategies, often based on metrics such as similarity or complexity.
+CoLE’s approach effectively bridges the gap between the retrieved
+instances and the inherent understanding of the LLM, resulting in more
+informed and accurate reasoning. This self-selection mechanism ensures that the legal knowledge and demonstrations selected match the
+internal representations of the LLM, enabling more effective contextual
+learning and reasoning. (III) CoLE’s Prompt Generation (PG) module
+incorporates established legal reasoning frameworks, specifically legal syllogisms, and the IRAC (Issue, Rule, Application, Conclusion)
+structure [66]. This structured approach guides the LLM to generate
+responses that are not only more accurate but also more transparent
+and interpretable. By explicitly defining the legal problem, providing relevant rules, applying those rules to the specific facts of the
+case, and formulating a well-reasoned conclusion, CoLE enhances the
+ability of LLM to engage in sound legal reasoning. This structured
+reasoning process is more similar to the analytical methods used by
+human lawyers and increases the trustworthiness and explainability
+of the LLM’s results. Together, these innovations contribute to the
+superior performance of CoLE in handling complex legal queries, as
+demonstrated by our extensive experimental results.
+
+2. Related work
+Our work relates to several works in the literature: Large Language Models in Law, In-Context Learning, and Retrieval-Augmented
+Generation. We will discuss each of these as follows.
+2.1. Large language models in law
+The development of Chinese legal large language models primarily revolves around strategies such as training, fine-tuning, and the
+construction of knowledge bases to facilitate enhanced information
+retrieval from expansive legal datasets [19,32,54,55,59]. These models undergo pre-training on vast repositories of Chinese legal texts,
+aiming to strengthen their semantic understanding and applicability in
+legal contexts. For example, the Lawyer-LLaMA [54] model integrates
+a considerable corpus of legal knowledge during its training phase,
+and HanFei [55] utilizes approximately 60 GB of diverse legal data,
+including case files, regulatory texts, complaints, and legal news, for
+comprehensive parameter-level training. Models such as ChatLaw [18],
+LexiLaw [56], Fuzi-Mingcha [59], LAW_GPT [19] and LawLLM [57] are
+subjected to supervised fine-tuning using datasets with legal content,
+which vary in size from 200,000 to 20 million items. The scarcity of
+publicly available law datasets poses a considerable obstacle to conventional fine-tuning methodologies. Models like Lawyer-LLaMA and
+ChatLaw aim to augment their performance by incorporating retrieval
+modules designed to extract pertinent legal articles when addressing
+queries. Such approaches, while beneficial, often require substantial
+computational resources and time, presenting significant challenges for
+researchers working with legal large language models.
+2.2. In-context learning
+Large Language Models have demonstrated impressive reasoning capabilities across various tasks, sparking interest in leveraging In-context
+learning to enhance task performance [39–41]. In-context learning primarily retrieves relevant input/output pairs for a provided test example
+from an annotated dataset. However, performance has been shown
+to strongly depend on the selected examples of ICL. Related research
+can be broadly divided into two categories: unsupervised methods and
+supervised methods [38]. Unsupervised methods utilize the distance of
+L2 or the distance of cosine similarity to select examples [60,61]. SelfPrompting proposes to utilize dense semantic embedders to retrieve
+relevant examples to improve ICL [62]. Recently, some factors about
+demonstration selection have been proposed, such as complexity [45],
+diversity [46], difficulty [47], and perplexity [48]. In addition, the
+quantity [49,50], order [51], and the format [52] of the demonstrations must also be considered. As for supervised methods, some
+
+3. Methodology
+3.1. Overview
+In the realm of judicial case handling, a cooperative division of
+labor among legal professionals is paramount to ensure efficient and
+effective litigation management. The intricacies of modern litigation
+necessitate a nuanced approach to case handling, wherein legal professionals assume distinct roles to collectively navigate the complexities of
+the legal landscape. The division of labor within a legal team is characterized by a hierarchical structure in which senior lawyers assume
+the overarching responsibility for the formulation and decision-making
+of litigation strategies. Associate lawyers, in turn, collaborate closely
+with senior counterparts, offering support in case work execution and
+3
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 2. The overview of CoLE Framework. Query Intent Identification Module translates informal user questions into formal legal terms. Legal Knowledge Encoding Model serves as
+a foundation for retrieving and analyzing legal knowledge. Demonstration Encoding Model encompasses a substantial number of past case decision analyses and their corresponding
+reasoning outcomes. Legal Knowledge Retrieval and Best Demonstration Retrieval allow the LLM to independently choose the best demonstration, resulting in potential background
+information and the best reference. Prompt Generation Module combines the prompts generated in the previous steps and integrates the information with the LLM to produce the
+ultimate response.
+
+client communication. Legal analysts play a pivotal role in conducting
+in-depth legal research and analysis, thus informing strategic decisions
+with their insights. Precedent researchers contribute by meticulously
+examining past legal precedents to glean valuable insights for the
+current case. Meanwhile, knowledge management officers ensure the
+seamless organization and accessibility of case materials and evidence,
+thus facilitating efficient information retrieval and use [58].
+
+3.2. Query Intent Identification (QII) module
+Within the realm of human language habits, a considerable disparity
+between written and spoken languages. The former typically leans towards formality, direct content, and explicit meaning, especially in law
+problems that often entail professional terminology and concepts [67].
+In contrast, oral language often includes numerous mood words or
+colloquialisms. We discovered a significant dichotomy between written
+and spoken languages during the process of using LLMs to understand
+the semantics of legal issues. In scenarios involving spoken languages,
+queries tend to contain more irrelevant and disorderly information,
+potentially leading to erroneous prediction results outputted by the
+legal LLMs. To address this issue, we developed QII which is introduced
+in the following.
+The QII is tasked with analyzing user queries to identify their potential intent and associated legal domain. In addition, it also functions to
+identify relevant legal concepts and terms within the query. It should
+be noted that QII does not introduce additional models, but instead
+leverages the inherent capabilities of the large language model. Specifically, QII uses the LLMs with prompts to generate multiple keyword
+groups representing user query intent, which encompass core issues,
+legal terms, and subsequent modules utilize the results generated by
+QII for retrieval.
+Assuming the user’s query is denoted by 𝑄, the LLMs consequently
+generate the corresponding intent phrase represented as 𝐼
+
+Drawing inspiration from this team collaboration model, we propose ‘‘Collaborative Legal Expert Prompting Framework’’ (CoLE)
+to enhance the legal reasoning and generative capabilities of large
+language models. As shown in Fig. 2, the collaboration of 6 components
+constitutes the CoLE. The Query Intent Identification Module (QII),
+like the Associate Lawyer, translates user-colloquial questions into professional legal keywords to amplify the understanding of the question
+of the large language model. This is the input processing module
+for our method. The Legal Knowledge Encoding Model (LKE) and
+Demonstration Encoding Model (SE), which are comparable to the
+Knowledge Manager, encode the legal clauses involved in the question
+along with numerous reference examples. The LKE and SE are the data
+base for LKR and BDR. The Legal Knowledge Retrieval (LKR) resembles the Legal Analyst, shifts through the question to select relevant law
+clauses for final reference. The Best Demonstration Retrieval (BDR),
+which is similar to the previous researcher, chooses the best case from
+previous cases as a reference for the new user question. Moreover,
+within the LKR and BDR, there are also small groups of retrieval stages
+that cooperate. The Prompt Generation Module (PG) integrates the
+content from LKR and BDR to generate the Prompt template of LLM,
+and the final decision is made by LLM (highest lawyers). This is the
+final output module. Next, we will dive into a detailed introduction of
+each component.
+
+𝐼 = 𝑔(𝑄),
+
+(1)
+
+here, 𝑔 is the generation function with LLMs, 𝐼 is {𝑘1 , 𝑘2 , … 𝑘𝑛 }, where
+𝑘𝑛 denotes the 𝑛th keyword group related to the intent generated by
+LLMs. Next, we encode it, where 𝑉⃗ symbolizes the vector representation following encoding:
+𝑉⃗ = 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝐼),
+where 𝑉⃗ also represents an array {𝑘⃗1 , 𝑘⃗2 , … 𝑘⃗𝑛 }.
+4
+
+(2)
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+3.3. Legal Knowledge Encoding (LKE) model
+
+Algorithm 1 Collaborative Legal Expert (CoLE) Framework
+1: procedure CoLE(𝑄, , 𝑆)
+2:
+𝑉⃗ ← Query Intent Identification Module (𝑄)
+⃗ ← Legal Knowledge Encoding Model ()
+3:
+𝐷
+4:
+𝑆⃗ ← Demonstration Encoding Model (𝑆)
+5:
+𝐿 ← Legal Knowledge Retrieval (𝑉⃗ , ⃗
+𝐷)
+6:
+𝐵 𝑆 ← Best Demonstration Retrieval (𝑉⃗ , ⃗
+𝑆)
+7:
+𝐴𝑛𝑠𝑤𝑒𝑟 ← Prompt Generation Module (𝐿, 𝐵 𝑆 , 𝑄)
+8:
+return 𝐴𝑛𝑠𝑤𝑒𝑟
+9: end procedure
+10: procedure Query Intent Identification Module (𝑄)
+11:
+𝐼 ← 𝑔(𝑄)
+12:
+𝑉⃗ ← 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝐼)
+13:
+return 𝑉⃗
+
+Legal data often exhibits unstructured features, such as legal concepts and legal clause texts. Inconsistent text data formats impact the
+LLM’s comprehension and handling of legal issues [68]. In addition,
+the lack of legal background knowledge inherent in LLM hinders the
+process of reasoning and answering legal questions. To mitigate these
+issues, we constructed the LKE and encoded it. The LKE encompasses
+1290 current Chinese laws and regulations, including the constitution,
+basic laws, common laws, administrative regulations, etc. In essence,
+the LKE module is charged with the storage and management of legal
+text data, providing a foundation of legal knowledge for subsequent
+recall and reasoning tasks.
+The LKE transforms legal text into structured data for storage in a
+knowledge base. Each piece of legal text denoted as 𝑡𝑖 , is represented
+as a vector 𝑑𝑖 :
+𝑑⃗𝑖 = 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝑡𝑖 ).
+
+14: end procedure
+15: procedure Legal Knowledge Encoding Model ()
+16:
+for 𝑡𝑖 ∈  do
+17:
+𝑑⃗𝑖 ← 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝑡𝑖 )
+18:
+end for
+⃗ ← {𝑑⃗1 , 𝑑⃗2 , … , 𝑑⃗𝑚 }
+19:
+𝐷
+⃗
+20:
+return 𝐷
+21: end procedure
+22: procedure Demonstration Encoding Model (𝑆)
+23:
+for 𝑐𝑖 ∈ 𝑆 do
+24:
+𝑠⃗𝑖 ← 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝑐𝑖 )
+25:
+end for
+26:
+𝑆⃗ ← {𝑠⃗1 , 𝑠⃗2 , … , 𝑠⃗𝑚 }
+27:
+return 𝑆⃗
+28: end procedure
+29: procedure Legal Knowledge Retrieval (𝑉⃗ , ⃗
+𝐷)
+30:
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑎𝑡𝑎 ← ∅
+⃗ do
+31:
+for 𝑑⃗𝑚 ∈ 𝐷
+
+(3)
+
+For any given law 𝐷 within the legal knowledge base, its vector
+representation can be calculated via the ensuing formula:
+⃗ = {𝑑⃗1 , 𝑑⃗2 , … , 𝑑⃗𝑚 },
+𝐷
+
+(4)
+
+where 𝑑⃗𝑚 denotes the 𝑚th clause in law 𝐷. Meanwhile, we introduce
+𝑛 expert models, each handling a portion of legal knowledge. All legal
+⃗
+collections are represented as 𝐴:
+𝐴⃗ = {𝐷⃗1 , 𝐷⃗2 , … , 𝐷⃗𝑛 }.
+
+(5)
+
+3.4. Demonstration encoding (SE) model
+
+32:
+
+In judicial decision-making, reference is often made to the precedents of similar cases and the relevant statutes of the law [69]. For
+instance, in legal Q&A, the answer to ‘‘How to terminate a labor contract?’’ and ‘‘What is the procedure for terminating a labor contract?’’
+can refer to the same content. Hence, we partition each dataset into
+demonstration and test sets. The demonstration set emulates historical legal cases, serving as a source for case analysis and reference.
+Analogous to LKE, we transform historical cases into vector representations for storage in a case library. For the 𝑖th case denoted as 𝑐𝑖 , is
+represented as a vector 𝑠𝑖 :
+𝑠⃗𝑖 = 𝐸 𝑚𝑏𝑒𝑑 𝑑 𝑖𝑛𝑔(𝑐𝑖 ).
+
+‖𝑉 ‖×‖⃗𝑠‖
+
+40:
+end for
+41:
+𝐵 𝑆 ← 𝑟(top k results)
+42:
+return 𝐵 𝑆
+43: end procedure
+44: procedure Prompt Generation Module (𝐿, 𝐵 𝑆 , 𝑄)
+45:
+𝐴𝑛𝑠𝑤𝑒𝑟 ← 𝑔(𝐿, 𝐵 𝑆 , 𝑄)
+46:
+return 𝐴𝑛𝑠𝑤𝑒𝑟
+47: end procedure
+
+(6)
+
+(7)
+Second, to better leverage LLMs to comprehend and identify useful
+legal terms, we introduce a self-aggregation step in addition to semantic
+evaluation. The aim is to allow LLMs to autonomously select the most
+relevant content. We combine all outputs of the 𝑛 expert models with
+the user’s original query, and instruct LLMs to make an independent
+selection. We have designed a prompt for selecting the most pertinent
+terms, choosing 𝑦 sentences from the 5𝑛 sentences that LLMs deem most
+useful. The specific formula is as follows:
+
+3.5. Legal Knowledge Retrieval (LKR)
+We construct a sub-stage to select the pertinent legal reference
+knowledge for user queries. Specifically, the selection of legal knowledge comprises two steps.
+The first step involves a semantic space search. We employ cosine
+similarity to compare the keywords obtained from the above QII module with laws and regulations in the knowledge base, thereby recalling
+analogous terms. For the query intent vector 𝑉⃗ and any entry vector 𝑑⃗𝑚
+⃗ where 𝑑⃗𝑚 ∈ , their similarity can
+in the legal knowledge storage 𝐴,
+be computed using cosine similarity:
+𝑉⃗ ⋅ 𝑑⃗𝑚
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑎𝑡𝑎(𝑉 , 𝑑⃗𝑚 ) =
+.
+⃗
+‖𝑉 ‖ × ‖𝑑⃗𝑚 ‖
+
+𝑉⃗ ⋅𝑑⃗𝑚
+‖𝑉⃗ ‖×‖𝑑⃗𝑚 ‖
+
+33:
+end for
+34:
+return 𝐿
+35: end procedure
+36: procedure Best Demonstration Retrieval (𝑉⃗ , ⃗
+𝑆)
+37:
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑒𝑚𝑜𝑛𝑠𝑡𝑟𝑎𝑡𝑖𝑜𝑛 ← ∅
+38:
+for 𝑠⃗ ∈ 𝑆⃗ do
+⃗
+39:
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑒𝑚𝑜𝑛𝑠𝑡𝑟𝑎𝑡𝑖𝑜𝑛(𝑉 , 𝑠) ← ⃗ 𝑉 ⋅⃗𝑠
+
+For any given case set 𝑆 within the legal example library, its vector
+representation can be calculated via the subsequent formula:
+𝑆⃗ = {𝑠⃗1 , 𝑠⃗2 , … , 𝑠⃗𝑚 }.
+
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑎𝑡𝑎(𝑉 , 𝑑𝑚 ) ←
+
+𝐿 = 𝑟(𝑑11 , 𝑑12 , … , 𝑑1𝑛 , … , 𝑑51 , 𝑑52 , … , 𝑑5𝑛 ),
+
+(9)
+
+here, 𝐿 represents the final set of selections, and 𝑟 denotes the function
+where LLM selects the most useful reference content.
+3.6. Best Demonstration Retrieval (BDR)
+
+(8)
+
+The selection of the best demonstration is pivotal in situational
+learning, and different selection strategies can lead to significant variations in results. LLM can offer reference learning demonstrations based
+
+Please note that we deploy 𝑛 expert models in the above LKE model.
+Therefore, during the process of recalling similar terms, we allow each
+expert model to recall the top 5 most relevant terms.
+5
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+on examples to guide model inference and complete the cognitive
+stage. However, there are two issues in creating examples in prior
+legal consulting contexts: one is the absence of a cognitive stage,
+and the other is a discrepancy between the manually constructed
+cognitive stage and LLM itself, which may exacerbate the ambiguity
+of the model. To address these issues, we design Best Demonstration
+Retrieval (BDR), a sub-stage similar to LKR. This method encompasses
+two steps: retrieving similar cases via semantic search and allowing
+LLM to independently select the optimal examples.
+For the query intent vector 𝑉⃗ and any entry vector 𝑠⃗ in the case
+library , where 𝑠⃗ ∈  is similarity can be computed using cosine
+similarity:
+𝑉⃗ ⋅ 𝑠⃗
+𝐶 𝑜𝑠𝑆 𝑖𝑚𝐷𝑒𝑚𝑜𝑛𝑠𝑡𝑟𝑎𝑡𝑖𝑜𝑛(𝑉 , 𝑠⃗) =
+.
+(10)
+‖𝑉⃗ ‖ × ‖⃗𝑠‖
+
+3.8. Summarize of algorithm
+The above 6 modules together build the CoLE system, with cascading execution between the modules, and we use Algorithm 1 for the
+description.
+4. Experimental
+4.1. Datasets
+We evaluate our CoLE on nine large-scale publicly available benchmark datasets of LLM in laws and one of our self-built datasets, including CAIL2018 [71], CAIL2019 [72], CAIL2022 [73], CrimeKgAssitant [74], LawLLM [57], HanFei [55], JEC_QA [75], LAW_GPT [19],
+Lawyer-LLaMA [54] and LvLin (see below). The statistics are reported
+in Table 1.
+LawBench [76] is a comprehensive benchmark for evaluating legal LLMs. We conduct experiments on six sub-datasets of the LawBench benchmark: CAIL2018, CAIL2019, CAIL2022, CrimeKgAssitant,
+JEC_QA and LAW_GPT. We have made a reselection and formatted it
+accordingly.
+CAIL2018 (C18) [71] contains 500 single-selection questions,
+sourced from the open dataset of the China Law Research Cup
+2018 Judicial Artificial Intelligence Challenge.
+CAIL2019 (C19) [72] contains 500 multiple-selection questions,
+sourced from the China Law Research Cup 2019 Judicial Artificial Intelligence.
+CAIL2022 (C22) [73] includes 500 single-selection questions,
+sourced from the China Law Research Cup 2022 Judicial
+Artificial Intelligence Challenge open dataset.
+CrimeKgAssitant (CA) [74] contains 500 single-selection questions
+from the Crime Assistant, which includes crime type prediction and
+crime consult service based on NLP methods and crime KG.
+JEC_QA (JQA) [75] includes 500 single-selection questions, sourced
+from the National Judicial Examination of China.
+LAW_GPT (LG) [19] contains 500 legal Q&A questions, sourced
+from the large legal model LAW_GPT’s open dataset on GitHub.
+In addition to the LawBench benchmark, we also conduct experiments on three other popular datasets: LawLLM, HanFei and LawyerLLaMA.
+LawLLM (LM) [57] contains 300 legal Q&A questions, sourced from
+the large legal model LawLLM’s open dataset on HuggingFace.
+HanFei (HF) [55] includes 11 098 legal Q&A questions, sourced
+from the large legal model HanFei’s open dataset on GitHub.
+Lawyer-LLaMA (LLA) [54] includes 21 476 legal Q&A questions,
+sourced from the large legal model Lawyer-LLaMA’s open dataset on
+HuggingFace.
+Moreover, we built and carefully selected LvLin dataset, to prevent
+the data leakage issues of other open datasets from affecting fair
+evaluation.
+LvLin (LL) contains 741 legal Q&A questions, sourced from actual user questions and legal expert responses. The LvLin dataset was
+constructed using user queries sourced from a prominent online legal
+consultation platform in China. To protect user privacy, all personally
+identifiable information was anonymized during the data collection
+process. A team of 10 experienced legal professionals (each with a minimum of 3 years of experience) was recruited to provide accurate and
+comprehensive answers and explanations for each of the user queries.
+A detailed annotation guideline was developed and followed by all
+experts to ensure consistency and quality in the annotations. To address
+potential contamination and maintain data integrity, we implemented
+the following measures during the dataset creation process: duplicate
+removal, expert review, and cross-validation.
+
+Recall 𝑘 results, together with the user’s original query, and instruct
+LLMs to make its own selection. We choose one best demonstration
+from 𝑘 sentences. The specific formula is as follows:
+𝐵 𝑆 = 𝑟(𝑠1 , 𝑠2 , … , 𝑠𝑘 ),
+
+(11)
+
+here, 𝐵 𝑆 represents the optimal example ultimately selected by LLMs,
+and 𝑟 denotes the function where LLMs select the best case.
+3.7. Prompt Generation module (PG)
+The PG Module constitutes a critical component within the
+CoLE framework, responsible for synthesizing the outputs from the
+LKR, BDR, and QII modules into a coherent and effective prompt
+for the underlying LLM. Drawing inspiration from recent advancements in legal prompting techniques, the PG module has been enhanced to incorporate structured reasoning approaches, specifically legal syllogisms [70] and the IRAC (Issue, Rule, Application, Conclusion)
+framework [66], to enhance the LLM’s legal reasoning capabilities.
+Firstly, utilizing the keywords extracted from the QII module and
+the selected legal articles from the LKR module, the PG module identifies the key legal concepts and the specific legal issue at hand. This
+information is then structured into a premise-based format, aligning
+with the principles of syllogistic reasoning, and explicitly stating the
+legal question that needs to be addressed. Secondly, the PG module incorporates the most relevant legal statutes identified by the LKR module
+into the prompt. These statutes, representing the applicable legal rules,
+provide the LLM with the necessary legal foundation to analyze the
+issue. The PG module integrates the selected best demonstration from
+the BDR module into the prompt. This demonstration, often containing
+a similar legal scenario and its corresponding reasoning, aids the LLM in
+applying the retrieved legal rules to the specific facts and context of the
+user’s query. Finally, the PG module structures the prompt to explicitly
+guide the LLM to synthesize the information presented and formulate
+a well-reasoned conclusion, addressing the legal issue presented in the
+premise.
+By incorporating legal syllogisms and the IRAC structure, the PG
+module facilitates a more structured and legally sound reasoning process within the LLM. This structured approach not only enhances
+the accuracy and reliability of the LLM’s responses but also makes
+its reasoning process more transparent and interpretable, aligning it
+more closely with the analytical methods employed by human legal
+professionals.
+The specific formula composed above 𝐿, 𝐵 𝑆 and 𝑄, is as follows:
+𝐴𝑛𝑠𝑤𝑒𝑟 = 𝑔(𝐿, 𝐵 𝑆 , 𝑄).
+
+(12)
+
+The final 𝐴𝑛𝑠𝑤𝑒𝑟 is the result obtained by concatenating the most
+relevant context with LKR and BDR. This engine is pivotal in ensuring
+that the legal advice rendered is not only contextually appropriate but
+also aligned with the specific nuances of the user’s request.
+6
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+Table 1
+The statistics for these 10 datasets.
+Dataset
+
+C18
+
+C22
+
+CA
+
+JQA
+
+LL
+
+LM
+
+HF
+
+LG
+
+LLA
+
+C19
+
+Type
+Metrics
+
+SC
+Acc
+
+SC
+Acc
+
+SC
+Acc
+
+SC
+Acc
+
+Q&A
+ROUGE
+
+Q&A
+ROUGE
+
+Q&A
+ROUGE
+
+Q&A
+ROUGE
+
+Q&A
+ROUGE
+
+MC
+𝐹1
+
+Demonstrations
+Test
+
+400
+100
+
+400
+100
+
+400
+100
+
+400
+100
+
+641
+100
+
+200
+100
+
+10 998
+100
+
+400
+100
+
+21 376
+100
+
+400
+100
+
+Table 2
+Model list. We validate the performance on 15 LLMs containing 8 LLMs in law field.
+Model
+
+Parameters
+
+Access
+
+Base model
+
+N/A
+N/A
+7/13B
+6B
+0.5/1.8/4/7/14B
+7B
+7/13B
+
+API
+API
+Weights
+Weights
+Weights
+Weights
+Weights
+
+–
+–
+LLaMA-2
+ChatGLM-3
+Qwen-1.5
+InternLM-2
+Baichuan-2
+
+7B
+6B
+6B
+6B
+7B
+13B
+13B
+13B
+
+Weights
+Weights
+Weights
+Weights
+Weights
+Weights
+Weights
+Weights
+
+–
+ChatGLM
+ChatGLM
+ChatGLM
+LLaMA
+LLaMA
+LLaMA
+Baichuan
+
+Fuzi-Mingcha [59]: based on ChatGLM, fine-tuned with unsupervised Chinese judicial texts along with supervised legal fine-tuning
+datasets.
+LAW_GPT [19]: is fine-tuned based on the Chinese-Alpaca-plus (7B)
+with a 350k legal Q&A dataset instructions.
+LaWGPT [78]: based on Chinese-LLaMA, expand the large-scale
+Chinese legal corpus to enhance the basic semantic understanding
+ability of the large model in the law field.
+LexiLaw [56]: a fine-tuned Chinese legal model based on the ChatGLM(6B) with legal datasets.
+HanFei [55]: a fully pre-trained and fine-tuned legal model with 7
+billion parameters.
+LawLLM [57]: is fine-tuned with the 403K supervised fine-tuning
+DISC-Law-SFT datasets based on Baichuan-Base (13B).
+
+General LLMs
+ChatGPT[4]
+ERNIE-Bot[9]
+Chinese-Alpaca-2 [77]
+ChatGLM-3 [10]
+Qwen-1.5-Chat [12]
+InternLM-2-Chat [13]
+Baichuan-2-Chat [11]
+Legal specific LLMs
+HanFei[55]
+LAW_GPT[19]
+LexiLaw[56]
+Fuzi-Mingcha[56]
+LaWGPT[78]
+Lawyer-LLaMA[54]
+ChatLaw[18]
+LawLLM[57]
+
+4.3. Evaluation
+Setup. The operating system which we use is CentOS Linux release
+7.5, and the programming language is Python 3.9.12. Our experiments
+are conducted on NVIDIA TESLA A100-40G GPU, the CUDA version
+is 12.2, and the deep learning framework is PyTorch with version
+2.2.0 and Transformers with 4.38.0. During the inference stage, we set
+the following hyperparameters: temperature, top-k, top-p and
+repetition_penalty to 0.9, 5, 0.85, and 1.1, respectively.
+Metrics. In our experiments, we employ human expert answers
+from the test sets as the benchmark for evaluating the quality and
+performance of the large language models’ responses to legal questions.
+We have defined 3 different metrics in total to measure different types
+of tasks:
+Accuracy (Acc). For single-choice question datasets (SC) (e.g.,
+CAIL2018, CAIL2022, CrimeKgAssitant and JEC_QA), the model’s prediction is considered correct if it exactly matches the answer. If multiple
+answers are extracted from the model’s prediction or if no valid answer
+matches, we treat it as an error.
+𝐹1 -score. For multiple-choice question datasets (MC) (e.g.,
+CAIL2019), we use the 𝐹1 -score for evaluation. The 𝐹1 score measures
+the harmonic mean of precision and recall.
+ROUGE. For Q&A datasets (e.g., LvLin, LawLLM, HanFei, LAW_GPT
+and Lawyer-LLaMA), we use the ROUGE score for evaluation. It focuses on the overlap of words between the generated answer and the
+reference answer. The ROUGE score is calculated as the average of
+ROUGE-1, ROUGE-2, and ROUGE-L scores.
+Human Evaluation. In our experiments, we have engaged 10 senior
+legal experts to evaluate the answers generated by large language
+models. The scoring ranges from 0 to 10 points, requiring the legal
+experts to provide manual assessments and annotations based on legal
+accuracy, clarity of legal arguments, relevance of cited laws, and other
+aspects, along with reasons for their scores.
+LLM Auto Evaluation. The prior researches [80,81] demonstrate
+that, with appropriate prompt design, the evaluation quality achieved
+using LLMs is highly consistent with human judgment. We have incorporated an automated evaluation scoring system based on LLMs.
+This system involves presenting legal questions, reference answers,
+and generated responses to the large model for scoring in terms of
+correctness, effectiveness, objectiveness, clearness, and completeness.
+In the following sections, we compare the generative performance of
+the model with CoLE integrated and the SOTA LLMs in Chinese Law.
+
+4.2. Baseline models
+We focus on the Chinese law field, involving a comprehensive
+assessment of CoLE’s effectiveness with a variety of large language
+models that exhibit robust Chinese language capabilities. We also engage in a detailed comparative analysis with other legal models that
+have been fine-tuned using Chinese legal corpora. The detailed model
+list is presented in Table 2. The baseline is divided into two distinct
+categories: general LLMs and legal LLMs. We provide a brief overview
+of the general LLMs.
+ERNIE-Bot [9]: an ultra-large-scale Chinese pre-training model developed by Baidu, which achieves state-of-the-art performance on a
+wide range of Chinese NLP tasks by training on a diverse corpus of
+Chinese internet text.
+ChatGPT [4]: a conversational AI model developed by OpenAI,
+which is trained to generate human-like text by predicting the next
+word in a conversation, using a combination of supervised fine-tuning
+and Reinforcement Learning from Human Feedback.
+Baichuan 2 [11]: The Baichuan 2 (7B) is trained on 1.2 trillion
+tokens and Baichuan 2 (13B) is trained on 1.4 trillion tokens. Both of
+them focus on English and Chinese.
+ChatGLM 3 [10,79]: A chat language model that has strong performance on several benchmarks.
+Chinese-LLaMA/Chinese-Alpaca 2 [77]: A language model trained
+by fine-tuning LLaMA 2 on the conversational dataset generated by
+ChatGPT.
+Qwen 1.5 [12]: Developed by a Chinese team, Qwen 1.5 is an AI
+language model aimed at providing efficient and intelligent communication experiences for users.
+InternLM 2 [13]: A Chinese language model known for its high performance on various academic and human examination benchmarks.
+LLaMA [5]: A successor model to LLaMA 1 trained on 2 trillion
+tokens and better data mixture.
+In addition to the above general models, we have introduced 8
+SOTA LLMs that have the best performers in the Chinese law field:
+ChatLaw [18]: ChatLawis fine-tuned based on LLaMA(13B).
+Lawyer-LLaMA [54]: based on Chinese-LLaMA(13B), fine-tuned
+with general and legal.
+7
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 3. Comparison with SOTA LLMs in Chinese law field. We separately compare the ROUGE between the 6B/7B parameters models and the 13B/14B parameters models on the
+our LvLin dataset.
+Table 3
+Integration CoLE into baseline LLMs. In this table, ✗ represents the score of the original model inference result, ✓ represents the score of the model with CoLE. The Avg represents
+the average score of 10 datasets and the proportion of CoLE improvement.
+Model
+
+CoLE
+
+C18
+
+C22
+
+CA
+
+JQA
+
+LL
+
+LM
+
+HF
+
+LG
+
+LLA
+
+C19
+
+Avg
+
+ChatGLM-3 (6B) [79]
+
+✗
+✓
+
+58.00
+48.00
+
+31.00
+27.00
+
+52.00
+62.00
+
+25.00
+34.00
+
+13.17
+14.68
+
+10.66
+15.95
+
+17.18
+21.72
+
+13.75
+23.05
+
+14.50
+24.27
+
+40.88
+52.58
+
+27.61
+32.33 (+17.1%)
+
+Chinese-Alpaca-2 (7B) [77]
+
+✗
+✓
+
+41.00
+55.00
+
+12.00
+21.00
+
+37.00
+56.00
+
+22.00
+27.00
+
+12.39
+16.63
+
+13.01
+17.33
+
+21.08
+22.73
+
+24.59
+32.14
+
+20.19
+34.57
+
+61.48
+65.00
+
+26.47
+34.74 (+31.2%)
+
+Baichuan-2 (7B) [11]
+
+✗
+✓
+
+51.00
+69.00
+
+10.00
+24.00
+
+39.00
+52.00
+
+29.00
+37.00
+
+13.81
+16.24
+
+14.23
+19.17
+
+20.82
+22.47
+
+26.67
+31.10
+
+21.17
+28.11
+
+55.86
+70.92
+
+28.16
+37.00 (+31.4%)
+
+Qwen-1.5 (7B) [12]
+
+✗
+✓
+
+83.00
+84.00
+
+19.00
+30.00
+
+60.00
+60.00
+
+49.00
+54.00
+
+15.11
+15.49
+
+13.95
+16.16
+
+17.89
+19.50
+
+20.53
+25.91
+
+18.12
+19.35
+
+76.67
+75.00
+
+37.33
+39.94 (+7.0%)
+
+ChatGPT [4]
+
+✗
+✓
+
+89.00
+95.00
+
+44.00
+45.00
+
+66.00
+73.00
+
+40.00
+41.00
+
+14.17
+16.59
+
+15.02
+18.19
+
+21.30
+21.36
+
+28.30
+35.53
+
+24.36
+31.14
+
+74.50
+71.17
+
+41.67
+44.80 (+7.5%)
+
+InternLM-2 [13]
+
+✗
+✓
+
+92.00
+93.00
+
+40.00
+43.00
+
+75.00
+76.00
+
+46.00
+49.00
+
+14.67
+16.48
+
+15.85
+18.37
+
+22.97
+23.25
+
+24.57
+26.22
+
+22.54
+26.95
+
+72.83
+76.00
+
+42.64
+44.83 (+5.1%)
+
+ERNIE-Bot [9]
+
+✗
+✓
+
+55.00
+95.00
+
+22.00
+40.00
+
+51.00
+76.00
+
+37.00
+68.00
+
+15.89
+17.62
+
+19.83
+19.25
+
+23.23
+23.53
+
+30.71
+29.08
+
+24.26
+25.26
+
+81.00
+82.17
+
+35.99
+47.59 (+32.2%)
+
+5. Results and analysis
+
+depend on context knowledge and answer demonstration in their initial
+states, or that these models have more room for improvement on
+specific legal tasks. In contrast, the improvement of Qwen-1.5 (7B),
+ChatGPT and InternLM-2 are relatively smaller.
+Furthermore, although all models experienced improvement, their
+performances on different evaluation metrics were not entirely consistent. This might be related to the structural characteristics of each
+model, the details of the training data, and optimization methods. For
+example, ERNIE-Bot’s pre-training data likely includes a substantial
+amount of Chinese legal text, providing a strong foundation for legal knowledge understanding. This pre-existing familiarity with legal
+concepts and terminology allows ERNIE-Bot to effectively leverage the
+additional legal knowledge and case demonstrations provided by CoLE.
+CoLE’s structured prompting approach, incorporating legal syllogisms
+and IRAC, may align particularly well with ERNIE-Bot’s internal representations and reasoning mechanisms. CoLE effectively complements
+ERNIE-Bot’s strengths, leading to a more pronounced performance
+improvement compared to other models.
+
+This section focuses on evaluating CoLE’s integration with 7 generalpurpose Chinese LLMs, while the next section presents the comparison
+against specialized legal LLMs.
+5.1. Integration into LLMs
+Each model was tested on 10 different datasets, as shown in Table 3.
+From the table, the average score of ChatGLM-3 (6B) has increased by
+17.1%, Chinese-Alpaca-2 (7B) by 31.2%, Baichuan-2 (7B) by 31.4%,
+Qwen-1.5 (7B) by 7.0%, ChatGPT by 7.5%, InternLM-2 by 5.1%, and
+ERNIE-Bot by 32.2%. Notably, ERNIE-Bot showed a significant advantage both in the proportion of increase and the final score.
+We found that the CoLE has a significant effect on improving the
+inference scores of large language models, proving its effectiveness in
+optimizing model performance. Most importantly, the experimental results show that different models have different degrees of improvement
+in average scores after optimization with the CoLE method, demonstrating its wide applicability. The possible reason is that by extending
+valid background knowledge and providing the best demonstration, the
+models’ understanding and reasoning abilities of legal knowledge are
+enhanced, thereby improving the performance on various evaluation
+metrics.
+Specifically, for each model, CoLE brought about different degrees
+of improvement. For instance, the average score increase for ChineseAlpaca-2 (7B), Baichuan-2 (7B), and ERNIE-Bot was the largest, exceeding 30% after optimization. This might imply that these models heavily
+
+5.2. Comparison with SOTA LLMs in Chinese law
+In an effort to avoid data leakage and provide a rigorous assessment,
+we compare our model’s performance with that of the SOTA models
+using our proprietary LvLin dataset, as shown in Fig. 3.
+We conducted a fair comparison with some of the current SOTA
+LLMs in the Chinese law field using models with the same parameter
+size. The experimental results show that, regardless of whether the
+8
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+Table 4
+The results for traditional models and LLMs across LexGLUE tasks.
+Method
+
+a
+
+ECtHR (A)*
+
+UNFAIR-ToS
+
+CaseHOLD
+
+𝜇-F1
+
+m-F1
+
+ECtHR (B)*
+𝜇-F1
+
+m-F1
+
+SCOTUS*
+𝜇-F1
+
+m-F1
+
+EUR-LEX
+𝜇-F1
+
+m-F1
+
+LEDGAR
+𝜇-F1
+
+𝜇-F1
+
+𝜇-F1
+
+𝜇-F1
+
+𝜇-F1/m-F1
+
+Legal-BERTa
+CaseLaw-BERTa
+
+70.0
+69.8
+
+64.0
+62.9
+
+80.4
+78.8
+
+74.7
+70.3
+
+76.4
+76.6
+
+66.5
+65.9
+
+72.1
+70.7
+
+57.4
+56.6
+
+88.2
+88.3
+
+83.0
+83.0
+
+96.0
+96.0
+
+83.0
+82.3
+
+75.3
+75.4
+
+Chinese-Alpaca-2-CoLE
+InternLM-2-CoLE
+
+80.0
+79.8
+
+74.0
+69.9
+
+85.4
+84.8
+
+77.7
+74.3
+
+86.4
+86.6
+
+76.5
+70.9
+
+82.1
+77.7
+
+65.4
+63.1
+
+90.2
+90.3
+
+88.0
+85.0
+
+99.0
+98.0
+
+84.0
+88.3
+
+80.3
+85.4
+
+Means the data was obtained from the LexGLUE [82] paper.
+
+Fig. 4. Parameters sensitivity analysis. We compare scores on different datasets in terms of Accuracy and ROUGE using 5 Qwen-1.5 models with different parameter sizes
+(0.5B/1.8B/4B/7B/14B) to observe the impact of CoLE.
+
+models have 6B/7B parameters or 13B/14B parameters, the use of
+CoLE to optimize large language models yields superior results compared to SOTA models. This effect is particularly pronounced in models
+with larger parameter sizes.
+
+when making inferences and answering questions. Importantly, this
+indicates that our method demonstrates good adaptability for models
+with a larger number of parameters, which is particularly beneficial
+when dealing with complex legal issues.
+
+5.3. Comparison with traditional methods in English law
+
+5.5. Ablation study
+
+To validate the generalizability of CoLE beyond the Chinese legal system, this section incorporates the LexGLUE benchmark [82], a
+well-established English legal NLP dataset encompassing diverse tasks
+across multiple legal domains. We evaluated model performance on
+the LexGLUE test datasets, utilizing its train datasets to construct the
+BDR module. Additionally, we built the LKR module based on the
+European Convention of Human Rights (ECHR), the SCOTUS database,
+EuroVoc, and EDGAR. By comparing CoLE’s performance against other
+models on LexGLUE, this study assesses its adaptability to different
+legal systems and languages and highlights its advantages over both
+traditional models and LLMs. As demonstrated in Table 4, LLMs integrated with CoLE exhibit significant performance improvements on
+LexGLUE. This stems from the inherent strength of LLMs in semantic
+understanding, coupled with CoLE’s ability to provide precise legal
+knowledge and case references. The complementary nature of LLMs
+and our framework results in a synergistic enhancement of model
+capabilities for processing English legal texts.
+
+To analyze the contribution of each module within the proposed
+CoLE, we conducted ablation studies on two models. We evaluate the
+performance of CoLE on two tasks (CAIL2018 and LvLin) in terms
+of Accuracy and ROUGE using two models, i.e., Chinese-Alpaca and
+ERNIE-Bot, as displayed in Table 5. The experiment reveals consistent
+performances across both models and datasets. First, we observe that
+effective legal knowledge is an essential module, and its removal (w/o
+LKR) leads to a significant decline in performance. This indicates that
+effective legal knowledge is a crucial supplementary information for
+LLMs’ inference and can enhance the performance of the legal task
+within the multilingual model. Second, the best demonstration is also
+of paramount importance, and its removal (w/o BDR) also leads to
+a sharp performance drop. This demonstrates the significant role that
+providing more similar answer demonstrations plays in large language
+model inference. Third, every component of the proposed CoLE system
+plays an indispensable role.
+5.6. Human evaluation
+
+5.4. Parameters sensitivity
+In addition to comparing ROUGE, a critical perspective on CoLE’s
+performance is provided by the manual evaluation of the Q&A tasks
+conducted by legal experts. To provide a qualitative assessment of
+CoLE’s performance, we conducted a human evaluation involving a
+panel of 10 experienced legal professionals. These experts, specializing
+in various areas of Chinese law, including civil law, criminal law,
+contract law, etc., were carefully selected based on their extensive experience and familiarity with legal technology. Each expert possesses a
+minimum of 3 years of professional experience in their respective fields.
+In our experiment, we invite legal experts to contrast and evaluate the
+predictions made by the original models and those enhanced by CoLE,
+
+We carry out experiments using five Qwen-1.5 models with different parameter sizes (0.5B/1.8B/4B/7B/14B) to observe the impact of
+CoLE on the models. The results are shown in Fig. 4. The experimental
+results show that, regardless of whether the tasks are evaluated using
+ROUGE or Accuracy as indicators, the increase in model parameters
+enhances the effectiveness of CoLE.
+This suggests that for the LLMs with a higher number of parameters,
+the effective background knowledge extended by CoLE, and the provision of the best answer choices, can be more effectively absorbed and
+utilized. This leads to a more precise and comprehensive performance
+9
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Table 5
+Ablation study. We evaluate the performance of CoLE on two tasks (CAIL2018 dataset [71] and ours LvLin dataset) in terms
+of Accuracy and ROUGE using two models, i.e., Chinese-Alpaca [77] and ERNIE-Bot [9].
+Chinese-Alpaca
+
+LvLin (ROUGE)
+
+CAIL2018 (Acc)
+
+ERNIE-Bot
+
+LvLin (ROUGE)
+
+CAIL2018 (Acc)
+
+w/ CoLE
+
+16.63
+
+55
+
+w/ CoLE
+
+17.62
+
+95
+
+w/o LKR
+w/o BDR
+
+15.36 ↓
+15.88 ↓
+
+52 ↓
+48 ↓
+
+w/o LKR
+w/o BDR
+
+16.71 ↓
+16.46 ↓
+
+85 ↓
+82 ↓
+
+Fig. 5. Human evaluation. We invite 10 legal experts to contrast and evaluate the predictions made by the original models and those enhanced by CoLE in terms of legal
+accuracy(a)(d), clarity of legal arguments(b)(e) and relevance of cited laws(c)(f). The results were generated by ChatGLM-3 (6B) and Chinese-Alpaca-2 (7B).
+Table 6
+LLM auto evaluation. We use ERNIE-Bot-4 and GPT-4 to perform a comprehensive
+evaluation of the LLMs with CoLE integrated.
+
+in terms of legal accuracy, clarity of legal arguments, and relevance of
+cited laws [83–85]. The results were generated by ChatGLM-3 (6B) and
+Chinese-Alpaca-2 (7B).
+Considering the issue of data leakage, we used a self-constructed
+LvLin dataset for comparison, as shown in Fig. 5.
+It is noteworthy that our method showed apparent enhancements
+in the legal Q&A task in terms of legal accuracy, clarity of legal arguments, and relevance of cited laws, compared to the baseline models.
+Specifically, in the ChatGLM results, we observed a significant increase
+in the higher score range for this trio of aspects, as demonstrated by the
+fact that there are more scores of 7 or higher in the normal distribution
+chart. This signals that after implementing CoLE into ChatGLM, more
+generated Q&A conform more closely to human habits. Similarly, on
+the Chinese-Alpaca results, CoLE obtained higher scores, as represented
+by its scores being further to the right on the normal distribution chart.
+These findings underscore the significant impact of CoLE in enhancing
+the capabilities of LLMs in the law field.
+
+Model
+
+Size
+
+Base model
+
+ERNIE-Bot-4
+
+GPT-4
+
+Avg
+
+Baichuan-2-Chat
+LawLLM
+
+13B
+13B
+
+Baichuan-2-Base
+Baichuan-Base
+
+6.98
+6.25
+
+7.57
+7.37
+
+7.28
+6.81
+
+Chinese-Alpaca-2
+ChatLaw
+Lawyer-LLaMA
+
+13B
+13B
+13B
+
+LLaMA-2
+LLaMA
+LLaMA
+
+6.12
+6.41
+5.33
+
+7.29
+6.95
+6.28
+
+6.71
+6.68
+5.81
+
+ChatGLM-3
+LAW_GPT
+LexiLaw
+Fuzi-Mingcha
+
+6B
+6B
+6B
+6B
+
+–
+ChatGLM
+ChatGLM
+ChatGLM
+
+7.29
+6.79
+5.42
+5.25
+
+7.63
+7.52
+6.93
+6.79
+
+7.46
+7.16
+6.18
+6.02
+
+6B, 7B, and 13B models. These results underline the significant potential of our method when applied to Chinese legal models, demonstrating
+its efficacy in enhancing the inferential abilities of large language
+models, thus producing more accurate, effective, and complete outputs.
+
+5.7. LLM auto evaluation
+
+5.8. Best demonstration selection analysis
+
+Following the acquisition of comprehensive scores in multiple dimensions from ERNIE-Bot-4 and GPT-4, we compare the LLMs with
+CoLE integrated against other fine-tuned models. The detailed results
+are shown in Table 6. Taking into account the issue of data leakage,
+we will utilize our proprietary LvLin dataset for comparison against the
+SOTA model. It can be clearly observed from the graph that our method
+has surpassed the scores of the SOTA model in the comparison of the
+
+In our approach, the selection of optimal examples is crucial. In
+this section, we analyze the significance of using LLM for self-selection.
+During the case selection process, we initially use similarity retrieval
+to retrieve the five most similar questions in the adjacent space. Subsequently, we use LLM to self-select the best example as a reference for
+10
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Table 7
+The probability and average distance. #1 to #5 are the 5 most similar problem rankings. The table shows the probability of being selected by LLM under this sorting and the
+average distance from the corresponding intent query.
+Range
+
+C18
+
+C19
+
+C22
+
+LL
+
+CA
+
+LM
+
+HF
+
+JQA
+
+LG
+
+LLA
+
+#1
+#2
+#3
+#4
+#5
+
+41%|0.4124
+6%|0.4324
+20%|0.4433
+18%|0.4510
+15%|0.4587
+
+71%|0.4413
+4%|0.4592
+5%|0.4712
+10%|0.4802
+10%|0.4866
+
+5%|0.3875
+22%|0.4243
+19%|0.4454
+30%|0.4599
+24%|0.4762
+
+25%|0.4195
+14%|0.4515
+20%|0.4710
+21%|0.4885
+20%|0.5019
+
+40%|0.3899
+14%|0.4430
+22%|0.4684
+18%|0.4813
+6%|0.4920
+
+47%|0.4381
+10%|0.4702
+21%|0.4915
+11%|0.5062
+11%|0.5154
+
+35%|0.2314
+15%|0.2527
+21%|0.2630
+15%|0.2723
+14%|0.2784
+
+42%|0.3878
+13%|0.4135
+14%|0.4253
+17%|0.4374
+14%|0.4444
+
+37%|0.3745
+9%|0.4046
+19%|0.4205
+21%|0.4338
+14%|0.4438
+
+46%|0.3115
+7%|0.3358
+12%|0.3473
+18%|0.3545
+17%|0.3613
+
+Fig. 6. The case of best demonstration selection. In response to question ‘‘Can the divorce be handled on the same day?’’, LLM chose the last of the five referenced
+answers (indicated in green) as the best demonstration over the first.
+
+reasoning.
+Table 7 presents the ratio of suitable answer case self-selection by
+the LLMs across 10 different task datasets. The ranks #1 to #5 shown in
+the table represent the order closest to the original user intent, that is,
+from the most similar to gradually decreasing similarity. We observe
+that the order selected by the LLM varies between different tasks. For
+example, in the CAIL2019 (C19) dataset, there is a 71% probability
+of selecting the closest distance question (#1), which represents the
+group with the closest spatial proximity among #1 to #5 across all
+datasets. In contrast, in the CAIL2022 (C22) dataset, there is only
+a 5% probability of choosing the closest distance question, but it
+possesses the most similar distance within #1 to #5 across all datasets.
+In the LvLin dataset, the proportions for each ranking are relatively
+consistent, but the difference in the spatial distances between #1 to #5
+is twice that of the CAIL2019 dataset. In other datasets, approximately
+half of the proportion selects the closest distance question.
+This shows that (I) during self-selection, LLMs may consider questions of different similarities as the best demonstration. Similarity is
+an essential factor, but not the sole determinant. (II) In the inference
+process, the reference demonstration selected by LLMs may involve
+more profound logical relationships. Hence, relying solely on the surface similarity of the questions may be insufficient to find the best
+demonstration.
+Next, we will demonstrate our findings using an example, as shown
+in Fig. 6. When the user presents question ‘‘Can the divorce be
+handled on the same day?’’ after identification by the intent
+module, the retrieval module recalls the 5 most similar questions.
+However, LLM ultimately selects question ‘‘Will there still be
+a cooling-off period for divorce in 2022?’’ which has
+the largest spatial distance among the five questions, as its reference example. We observe that question ‘‘Will there still be a
+cooling-off period for divorce in 2022?’’ is semantically
+closer to the user’s question, and its answer holds more reference value.
+This indicates that after selecting question ‘‘Will there still be
+a cooling-off period for divorce in 2022?’’ as a reference,
+the answer provided by LLM aligns better with human expectations. Importantly, these findings underscore the need to introduce LLM-based
+optimal demonstration selection in our approach.
+
+5.9. Case study: Qualitative analysis of cole’s impact
+To illustrate the impact of CoLE on the quality of legal answers,
+we present three case studies in Fig. 7 that showcase how CoLE enhances the responses generated by the ERNIE-Bot model. These cases
+demonstrate CoLE’s ability to provide accurate, comprehensive, and
+well-reasoned answers to various legal queries, moving beyond simple
+keyword matching and demonstrating a deeper understanding of legal
+principles.
+(I) Case 1: Legal Interpretation. This case examines a user query
+on whether a company giving gifts to customers constitutes commercial
+bribery. CoLE demonstrates its ability to provide a precise answer by
+stating that it does ‘‘not’’ necessarily constitute bribery, and further
+clarifying the subtleties of legal interpretation. The inclusion of the
+relevant legal article (Article 32 of the ‘‘Anti-Unfair Competition Law of
+the People’s Republic of China’’) strengthens the answer and provides
+a clear legal basis.
+(II) Case 2: Retrieves and applies specific legal knowledge. This
+case involves a complex legal scenario: a cargo ship detained by a
+maritime court for environmental violations and requiring supervision.
+CoLE demonstrates its ability to handle such complex scenarios, providing specific guidance on which departments the maritime court can
+issue an assistance execution notice to. The precise reference to the
+relevant law (Article 26 of Section 2, Detention and Auction of Ships,
+Chapter III, Preservation of Maritime Claims, in the ‘‘Special Maritime
+Procedure Law of the People’s Republic of China’’) underscores how
+effectively CoLE retrieves and applies specific legal knowledge. Furthermore, it provides more comprehensive answers than a simple ‘‘yes’’ or
+‘‘no’’ response.
+(III) Case 3: Ability to dissect complex issue. This case presents
+a complex legal question requiring in-depth analysis and reasoning,
+asking about the legal maxim: ‘‘Uncertainty is criticized in law, but
+extreme certainty can be detrimental to certainty’’. CoLE demonstrates
+its ability to dissect this complex issue, providing a structured response
+that breaks down the question, analyzing different aspects, and ultimately concluding that the statements are too absolute. The provision
+of multiple legal references, including the ‘‘Civil Code of the People’s
+Republic of China’’, showcases CoLE’s ability to process complex legal
+arguments and deliver well-reasoned answers. This case also demonstrates the benefits of citing multiple relevant articles, providing a
+11
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 7. Case Study: Qualitative Analysis of CoLE’s Impact. We present CoLE’s performance in 3 areas: Legal Interpretation, Retrieval and Applications specific legal knowledge,
+and Ability to Dissect complex issues.
+
+broader legal perspective.
+These case studies provide qualitative evidence of CoLE’s capacity
+to enhance the quality of legal responses produced by LLMs. They
+illustrate that CoLE has the potential to deliver more accurate, comprehensive, and better-reasoned answers to complex legal questions.
+
+of the user query.
+LKE and SE: These encoding processes are performed offline during
+preprocessing and do not contribute to the runtime complexity of CoLE.
+LKR: This module involves a cosine similarity search over the legal
+knowledge base (complexity 𝑂(𝑁)) followed by a selection step involving LLM inference (complexity 𝑂(𝐾 ∗ 𝐷)), where 𝑁 is the number of
+documents in the legal knowledge base, 𝐾 is the number of retrieved
+documents, and 𝐷 is the average document length.
+BDR: Similar to LKR, this module also involves a cosine similarity search (complexity 𝑂(𝑀)) and an LLM selection step (complexity
+𝑂(𝐶)), where 𝑀 is the number of demonstrations in the database and
+𝐶 is the length of the chosen demonstration.
+PG: This module primarily involves string concatenation and formatting, resulting in a negligible time complexity compared to other
+components.
+Therefore, the overall time complexity of CoLE can be approximated
+as 𝑂(𝐿 + 𝑁 + 𝐾 ∗ 𝐷 + 𝑀 + 𝐶).
+
+5.10. Workflow demo of cole
+In this section, we use a real legal question to show how CoLE uses
+its various modules to create effective prompts for LLMs. The example
+question relates to maritime law.
+The workflow, shown in Fig. 8, begins with the QII module analyzing the user’s question and extracting important legal terms such
+as ‘‘cargo ship’’, ‘‘arrest warrant’’, ‘‘maritime court’’, ‘‘environmental
+protection’’ and ‘‘enforcement assistance’’ These extracted keywords
+serve as the basis for the subsequent retrieval processes. The LKR module uses these keywords to search the LKE for relevant legal articles.
+LKR’s two-stage process, which combines semantic similarity search
+with LLM-driven selection, ensures that the retrieved articles are both
+semantically related and contextually appropriate for the user’s query.
+At the same time, the BDR module searches the DE for relevant previous
+cases. Using a similar two-stage approach, BDR retrieves and selects
+a case that demonstrates a similar legal issue and factual scenario,
+providing valuable context for the LLM. The PG module then integrates
+the results of QII, LKR, and BDR into a structured prompt. The template
+includes sections for the user’s question, the legal articles retrieved,
+the relevant case summary, and specific instructions for the LLM, as
+shown in Fig. 8. This structured format ensures that the query is clear
+and comprehensive, guiding the LLM to a well-reasoned and legally
+sound response. Crucially, this structure encourages the LLM not only
+to provide a response but also to justify their reasoning based on the
+legal context and precedents provided.
+
+6. Conclusion
+In this paper, we explore how to use LLMs to solve those problems existing in Chinese legal. In detail, we propose a novel prompting framework, ‘‘Collaborative Legal Expert’’ (CoLE), taking inspiration from teamwork paradigms in real-world legal case processing.
+It presents a practical and efficient solution to the challenges faced
+by legal LLMs. The framework’s Query Intent Identification Module
+and the two subsequent processes, Legal Knowledge Retrieval and
+Best Demonstration Retrieval enhance the LLM’s comprehension of
+colloquial user queries and improve the selection of best demonstration
+for ICL, respectively. Compared to traditional methods that use neural
+networks to train a model from supervising, our method can quickly
+obtain a strong model to solve Chinese-oriented legal problems. Our
+extensive experiments, conducted across 15 models and 10 datasets,
+have yielded compelling evidence that the integration with CoLE’s LLM
+substantially improves performance in legal tasks and our proposed
+model outperforms all SOTA LLMs in law. Notably, this enhancement
+is achieved without the need for annotated datasets or model parameter updates, which not only reduces the financial burden but also
+simplifies the implementation process. In the future, we will focus
+
+5.11. Time complexity analysis
+The overall time complexity of CoLE is primarily determined by the
+following components:
+QII: This module involves a single inference pass through the LLM,
+resulting in a time complexity of 𝑂(𝐿), where L represents the length
+12
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+Fig. 8. Workflow Demo of CoLE.
+
+on exploring the generalizability of CoLE across different languages
+and legal systems. We will investigate cross-lingual transfer learning
+techniques and methods to incorporate diverse legal datasets from
+various jurisdictions, thereby enhancing its cross-cultural applicability.
+Furthermore, we plan to apply CoLE to more universal models such as
+Gemini, Claude, and GPT models, to validate its generality.
+
+This may involve incorporating elements of legal argumentation theory
+and utilizing expert-annotated legal datasets for supervised training of
+evaluation models. Furthermore, investigating the use of more powerful
+LLMs, such as GPT-4, as automated evaluation proxies is a promising
+direction.
+Thirdly, legal landscapes and jurisprudence are constantly evolving. Incorporating dynamic updates into CoLE’s knowledge base is
+essential for maintaining its accuracy and relevance. Future work will
+investigate methods for automatically updating the legal knowledge
+and demonstration repositories, potentially leveraging techniques like
+incremental learning and knowledge graph embedding. This will ensure
+that CoLE remains up-to-date with the latest legal developments and
+can adapt to changes in legal interpretation and practice. Furthermore,
+exploring methods for incorporating real-time legal information feeds
+and updates into CoLE’s reasoning process is an important direction.
+Finally, enhancing CoLE’s reasoning capabilities beyond retrieval
+and prompting is a key area for future research. Integrating legal knowledge graphs could provide a more structured representation of legal
+knowledge and facilitate more sophisticated reasoning and inference.
+Exploring multi-modal legal reasoning, incorporating visual or auditory information alongside textual data, could further enhance CoLE’s
+understanding of complex legal scenarios. Furthermore, investigating
+the application of reinforcement learning techniques to optimize the
+demonstration selection process and refine the prompting strategies
+could lead to more robust and adaptive performance.
+By addressing these limitations and pursuing the outlined research
+directions, we aim to enhance CoLE’s capabilities and contribute to the
+development of more accurate, reliable, interpretable, and adaptable
+legal LLMs.
+
+Limitations and future work
+While CoLE demonstrates promising results in enhancing the performance of LLMs in the legal domain, our work has limitations that
+provide avenues for future research.
+Firstly, our current implementation and experiments primarily focus
+on the Chinese legal system. Adapting CoLE to other legal systems
+presents significant challenges due to variations in legal frameworks,
+languages, and reasoning patterns. Future work will explore crosslingual transfer learning techniques and investigate methods for incorporating diverse legal datasets from different jurisdictions to enhance
+CoLE’s cross-cultural applicability. This includes exploring techniques
+for aligning legal concepts and terminology across languages and legal
+systems.
+Secondly, while our evaluation includes both quantitative metrics
+and human evaluation by legal experts, expanding the scope of automatic evaluation metrics remains crucial. Current NLP metrics like
+ROUGE, while informative, do not fully capture the nuances of legal
+reasoning and argumentation. We aim to develop more specialized
+evaluation metrics that directly assess the quality of legal arguments,
+the accuracy of legal advice, and the ability to predict case outcomes.
+13
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+
+CRediT authorship contribution statement
+
+[16] G. Wang, G. Yang, Z. Du, L. Fan, X. Li, ClinicalGPT: Large language models
+finetuned with diverse medical data and comprehensive evaluation, 2023, arXiv
+preprint arXiv:2306.09968.
+[17] Q. Huang, M. Tao, Z. An, C. Zhang, C. Jiang, Z. Chen, Z. Wu, Y. Feng, Lawyer
+LLaMA technical report, 2023, arXiv preprint arXiv:2305.15062.
+[18] J. Cui, Z. Li, Y. Yan, B. Chen, L. Yuan, Chatlaw: Open-source legal large
+language model with integrated external knowledge bases, 2023, arXiv preprint
+arXiv:2306.16092.
+[19] Y. Hongcheng Liu, Y. Liao, Y. Meng, Wang, LawGPT: Chinese legal dialogue
+language model, GitHub Repos. (2023).
+[20] U. Iqbal, From knowledge management to intelligence engineering-a practical
+approach to building AI inside the law-firm using open-source large language
+models, in: Third International Workshop on Artificial Intelligence and Intelligent
+Assistance for Legal Professionals in the Digital Workplace, LegalAIIA 2023,
+2023.
+[21] H. Yang, X.-Y. Liu, C.D. Wang, FinGPT: Open-source financial large language
+models, 2023, arXiv preprint arXiv:2306.06031.
+[22] S. Wu, O. Irsoy, S. Lu, V. Dabravolski, M. Dredze, S. Gehrmann, P. Kambadur, D.
+Rosenberg, G. Mann, Bloomberggpt: A large language model for finance, 2023,
+arXiv preprint arXiv:2303.17564.
+[23] Y. Feng, C. Li, V. Ng, Legal judgment prediction via event extraction with
+constraints, in: Proceedings of the 60th Annual Meeting of the Association for
+Computational Linguistics (Volume 1: Long Papers), 2022, pp. 648–664.
+[24] Y. Wu, K. Kuang, Y. Zhang, X. Liu, C. Sun, J. Xiao, Y. Zhuang, L. Si, F. Wu,
+De-biased court’s view generation with causality, in: Proceedings of the 2020
+Conference on Empirical Methods in Natural Language Processing, EMNLP, 2020,
+pp. 763–780.
+[25] J. Savelka, K.D. Ashley, M.A. Gray, H. Westermann, H. Xu, Explaining legal
+concepts with augmented large language models (GPT-4), 2023, arXiv preprint
+arXiv:2306.09525.
+[26] F. Yao, C. Xiao, X. Wang, Z. Liu, L. Hou, C. Tu, J. Li, Y. Liu, W. Shen, M. Sun,
+LEVEN: A large-scale Chinese legal event detection dataset, in: Findings of the
+Association for Computational Linguistics: ACL 2022, 2022, pp. 183–201.
+[27] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, M. Sun, How does NLP benefit
+legal system: A summary of legal artificial intelligence, in: Proceedings of the
+58th Annual Meeting of the Association for Computational Linguistics, 2020, pp.
+5218–5230.
+[28] I. Chalkidis, M. Fergadiotis, P. Malakasiotis, N. Aletras, I. Androutsopoulos,
+LEGAL-BERT: The muppets straight out of law school, in: Findings of the
+Association for Computational Linguistics: EMNLP 2020, 2020, pp. 2898–2904.
+[29] H. Westermann, J. Savelka, K. Benyekhlef, Llmediator: Gpt-4 assisted online
+dispute resolution, 2023, arXiv preprint arXiv:2307.16732.
+[30] A. Blair-Stanek, N. Holzenberger, B. Van Durme, Can GPT-3 perform statutory reasoning? in: Proceedings of the Nineteenth International Conference on
+Artificial Intelligence and Law, 2023, pp. 22–31.
+[31] Q. Huang, M. Tao, C. Zhang, Z. An, C. Jiang, Z. Chen, Z. Wu, Y. Feng, Lawyer
+llama, 2023, https://github.com/AndrewZhe/lawyer-llama.
+[32] B. Li, S. Fan, J. Huang, CSAFT: Continuous semantic augmentation fine-tuning
+for legal large language models, in: M. Wand, K. Malinovská, J. Schmidhuber,
+I.V. Tetko (Eds.), Artificial Neural Networks and Machine Learning – ICANN
+2024, Springer Nature Switzerland, Cham, ISBN: 978-3-031-72344-5, 2024, pp.
+293–307.
+[33] Z. Wang, B. Wang, X. Duan, D. Wu, S. Wang, G. Hu, T. Liu, IFlyLegal: a
+Chinese legal system for consultation, law searching, and document analysis, in:
+Proceedings of the 2019 Conference on Empirical Methods in Natural Language
+Processing and the 9th International Joint Conference on Natural Language
+Processing (EMNLP-IJCNLP): System Demonstrations, 2019, pp. 97–102.
+[34] Lawtime, Lawtime.cn, 2023, https://www.lawtime.cn/.
+[35] Justia, Justia.com, 2023, https://answers.justia.com/.
+[36] R.M. Re, A. Solow-Niederman, Developing artificially intelligent justice, Stan.
+Tech. L. Rev. 22 (2019) 242.
+[37] S. Zhang, Path analysis of procedural diversion in plea cases, Mod. L. Rsch. 3
+(2022) 1.
+[38] Q. Dong, L. Li, D. Dai, C. Zheng, Z. Wu, B. Chang, X. Sun, J. Xu, L. Li, Z. Sui,
+A survey on in-context learning, 2023, arXiv:2301.00234.
+[39] T. Brown, B. Mann, N. Ryder, M. Subbiah, J.D. Kaplan, P. Dhariwal, A.
+Neelakantan, P. Shyam, G. Sastry, A. Askell, et al., Language models are few-shot
+learners, Adv. Neural Inf. Process. Syst. 33 (2020) 1877–1901.
+[40] J. Von Oswald, E. Niklasson, E. Randazzo, J. Sacramento, A. Mordvintsev, A. Zhmoginov, M. Vladymyrov, Transformers learn in-context by gradient descent, in:
+International Conference on Machine Learning, PMLR, 2023, pp. 35151–35174.
+[41] S. Garg, D. Tsipras, P.S. Liang, G. Valiant, What can transformers learn incontext? A case study of simple function classes, Adv. Neural Inf. Process. Syst.
+35 (2022) 30583–30598.
+[42] J. Wei, X. Wang, D. Schuurmans, M. Bosma, F. Xia, E. Chi, Q.V. Le, D. Zhou, et
+al., Chain-of-thought prompting elicits reasoning in large language models, Adv.
+Neural Inf. Process. Syst. 35 (2022) 24824–24837.
+[43] A. Lewkowycz, A. Andreassen, D. Dohan, E. Dyer, H. Michalewski, V. Ramasesh,
+A. Slone, C. Anil, I. Schlag, T. Gutman-Solo, et al., Solving quantitative reasoning
+problems with language models, Adv. Neural Inf. Process. Syst. 35 (2022)
+3843–3857.
+
+Bo Li: Writing – original draft, Visualization, Software, Resources,
+Methodology, Investigation. Shuang Fan: Validation, Data curation.
+Shaolin Zhu: Writing – review & editing. Lijie Wen: Writing – review
+& editing, Validation, Supervision, Conceptualization.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Acknowledgments
+The present research was supported by the National Natural Science
+Foundation of China Youth Fund (Grant No. 62306210). We would like
+to thank the anonymous reviewers for their insightful comments.
+Data availability
+Data will be made available on request.
+
+References
+[1] S. Zhu, L. Pan, B. Li, D. Xiong, LANDeRMT: Dectecting and routing languageaware neurons for selectively finetuning LLMs to machine translation, in:
+L.-W. Ku, A. Martins, V. Srikumar (Eds.), Proceedings of the 62nd Annual
+Meeting of the Association for Computational Linguistics (Volume 1: Long
+Papers), Association for Computational Linguistics, Bangkok, Thailand, 2024,
+pp. 12135–12148, http://dx.doi.org/10.18653/v1/2024.acl-long.656, URL https:
+//aclanthology.org/2024.acl-long.656.
+[2] B. Li, Q. Zhao, L. Wen, ROME: Memorization insights from text, probability and
+hidden state in large language models, 2024, arXiv preprint arXiv:2403.00510.
+[3] B. Li, S. Zhu, L. Wen, MIT-10M: A large scale parallel corpus of multilingual
+image translation, 2024, arXiv preprint arXiv:2412.07147.
+[4] R. OpenAI, Gpt-4 technical report, 2023, p. 13, arXiv:2303.08774. View in Article
+2.
+[5] H. Touvron, T. Lavril, G. Izacard, X. Martinet, M.-A. Lachaux, T. Lacroix, B.
+Rozière, N. Goyal, E. Hambro, F. Azhar, et al., Llama: Open and efficient
+foundation language models, 2023, arXiv preprint arXiv:2302.13971.
+[6] A. Chowdhery, S. Narang, J. Devlin, M. Bosma, G. Mishra, A. Roberts, P. Barham,
+H.W. Chung, C. Sutton, S. Gehrmann, et al., Palm: Scaling language modeling
+with pathways, J. Mach. Learn. Res. 24 (240) (2023) 1–113.
+[7] E. Almazrouei, H. Alobeidli, A. Alshamsi, A. Cappelli, R. Cojocaru, M. Debbah,
+E. Goffinet, D. Heslow, J. Launay, Q. Malartic, et al., Falcon-40b: an open large
+language model with state-of-the-art performance, Find. Assoc. Comput. Linguist.:
+ACL 2023 (2023) 10755–10773.
+[8] W. Chiang, Z. Li, Z. Lin, Y. Sheng, Z. Wu, H. Zhang, L. Zheng, S. Zhuang, Y.
+Zhuang, J. Gonzalez, et al., Vicuna: An open-source chatbot impressing gpt-4
+with 90%* chatgpt quality, 2023, Mar. 2023.
+[9] Y. Sun, S. Wang, S. Feng, S. Ding, C. Pang, J. Shang, J. Liu, X. Chen, Y. Zhao, Y.
+Lu, et al., Ernie 3.0: Large-scale knowledge enhanced pre-training for language
+understanding and generation, 2021, arXiv preprint arXiv:2107.02137.
+[10] A. Zeng, X. Liu, Z. Du, Z. Wang, H. Lai, M. Ding, Z. Yang, Y. Xu, W. Zheng, X.
+Xia, et al., Glm-130b: An open bilingual pre-trained model, 2022, arXiv preprint
+arXiv:2210.02414.
+[11] A. Yang, B. Xiao, B. Wang, B. Zhang, C. Bian, C. Yin, C. Lv, D. Pan, D. Wang, D.
+Yan, et al., Baichuan 2: Open large-scale language models, 2023, arXiv preprint
+arXiv:2309.10305.
+[12] J. Bai, S. Bai, Y. Chu, Z. Cui, K. Dang, X. Deng, Y. Fan, W. Ge, Y. Han, F. Huang,
+B. Hui, L. Ji, M. Li, J. Lin, R. Lin, D. Liu, G. Liu, C. Lu, K. Lu, J. Ma, R. Men, X.
+Ren, X. Ren, C. Tan, S. Tan, J. Tu, P. Wang, S. Wang, W. Wang, S. Wu, B. Xu,
+J. Xu, A. Yang, H. Yang, J. Yang, S. Yang, Y. Yao, B. Yu, H. Yuan, Z. Yuan, J.
+Zhang, X. Zhang, Y. Zhang, Z. Zhang, C. Zhou, J. Zhou, X. Zhou, T. Zhu, Qwen
+technical report, 2023, arXiv preprint arXiv:2309.16609.
+[13] I. Team, InternLM: A multilingual language model with progressively enhanced
+capabilities, 2023, https://github.com/InternLM/InternLM.
+[14] S. Kikalishvili, Unlocking the potential of GPT-3 in education: opportunities,
+limitations, and recommendations for effective integration, Interact. Learn.
+Environ. (2023) 1–13.
+[15] H. Wang, C. Liu, N. Xi, Z. Qiang, S. Zhao, B. Qin, T. Liu, Huatuo: Tuning llama
+model with chinese medical knowledge, 2023, arXiv preprint arXiv:2304.06975.
+14
+
+Knowledge-Based Systems 311 (2025) 113052
+
+B. Li et al.
+[44] W. Zhao, Y. Liu, Y. Wan, Y. Wang, Q. Wu, Z. Deng, J. Du, S. Liu, Y. Xu, P.S. Yu,
+Knn-icl: Compositional task-oriented parsing generalization with nearest neighbor
+in-context learning, 2023, arXiv preprint arXiv:2312.10771.
+[45] Y. Fu, H. Peng, A. Sabharwal, P. Clark, T. Khot, Complexity-based prompting for
+multi-step reasoning, 2022, arXiv preprint arXiv:2210.00720.
+[46] X. Li, X. Qiu, Finding supporting examples for in-context learning, 2023, arXiv
+preprint arXiv:2302.13539.
+[47] A. Drozdov, H. Zhuang, Z. Dai, Z. Qin, R. Rahimi, X. Wang, D. Alon, M. Iyyer,
+A. McCallum, D. Metzler, et al., PaRaDe: Passage ranking using demonstrations
+with large language models, 2023, arXiv preprint arXiv:2310.14408.
+[48] H. Gonen, S. Iyer, T. Blevins, N.A. Smith, L. Zettlemoyer, Demystifying prompts
+in language models via perplexity estimation, in: Findings of the Association for
+Computational Linguistics: EMNLP 2023, 2023, pp. 10136–10148.
+[49] S. Ye, H. Hwang, S. Yang, H. Yun, Y. Kim, M. Seo, Investigating the effectiveness
+of task-agnostic prefix prompt for instruction following, in: Proceedings of the
+AAAI Conference on Artificial Intelligence, vol. 38, 2024, pp. 19386–19394.
+[50] S. Min, X. Lyu, A. Holtzman, M. Artetxe, M. Lewis, H. Hajishirzi, L. Zettlemoyer,
+Rethinking the role of demonstrations: What makes in-context learning work? in:
+Proceedings of the 2022 Conference on Empirical Methods in Natural Language
+Processing, 2022, pp. 11048–11064.
+[51] Y. Lu, M. Bartolo, A. Moore, S. Riedel, P. Stenetorp, Fantastically ordered
+prompts and where to find them: Overcoming few-shot prompt order sensitivity,
+in: S. Muresan, P. Nakov, A. Villavicencio (Eds.), Proceedings of the 60th
+Annual Meeting of the Association for Computational Linguistics (Volume 1:
+Long Papers), Association for Computational Linguistics, Dublin, Ireland, 2022,
+pp. 8086–8098, URL https://aclanthology.org/2022.acl-long.556.
+[52] C. Yang, X. Wang, Y. Lu, H. Liu, Q.V. Le, D. Zhou, X. Chen, Large language
+models as optimizers, 2023, arXiv preprint arXiv:2309.03409.
+[53] J. Lai, W. Gan, J. Wu, Z. Qi, P.S. Yu, Large language models in law: A survey,
+2023, arXiv preprint arXiv:2312.03718.
+[54] Q. Huang, M. Tao, C. Zhang, Z. An, C. Jiang, Z. Chen, Z. Wu, Y. Feng, Lawyer
+LLaMA technical report, 2023, arXiv abs/2305.15062.
+[55] W. He, J. Wen, L. Zhang, H. Cheng, B. Qin, Y. Li, F. Jiang, J. Chen, B. Wang,
+M. Yang, HanFei-1.0, 2023, https://github.com/siat-nlp/HanFei.
+[56] H. Li, LexiLaw: Chinese legal model, 2023.
+[57] S. Yue, W. Chen, S. Wang, B. Li, C. Shen, S. Liu, Y. Zhou, Y. Xiao, S. Yun, X.
+Huang, Z. Wei, DISC-LawLLM: Fine-tuning large language models for intelligent
+legal services, 2023, arXiv:2309.11325.
+[58] S. Qiu, How to efficiently divide the work of the lawyer team, 2017, http:
+//victory.itslaw.cn.
+[59] S. Wu, Z. Liu, Z. Zhang, Z. Chen, W. Deng, W. Zhang, J. Yang, Z. Yao,
+Y. Lyu, X. Xin, S. Gao, P. Ren, Z. Ren, Z. Chen, fuzi.mingcha, 2023, https:
+//github.com/irlab-sdu/fuzi.mingcha.
+[60] D. Dua, S. Gupta, S. Singh, M. Gardner, Successive prompting for decomposing
+complex questions, in: Proceedings of the 2022 Conference on Empirical Methods
+in Natural Language Processing, 2022, pp. 1251–1265.
+[61] S. Agrawal, C. Zhou, M. Lewis, L. Zettlemoyer, M. Ghazvininejad, In-context
+examples selection for machine translation, in: Findings of the Association for
+Computational Linguistics: ACL 2023, 2023, pp. 8857–8873.
+[62] J. Li, J. Wang, Z. Zhang, H. Zhao, Self-prompting large language models for
+zero-shot open-domain QA, 2024, arXiv:2212.08635.
+[63] O. Rubin, J. Herzig, J. Berant, Learning to retrieve prompts for in-context
+learning, in: Proceedings of the 2022 Conference of the North American Chapter
+of the Association for Computational Linguistics: Human Language Technologies,
+2022, pp. 2655–2671.
+[64] P. Shi, R. Zhang, H. Bai, J. Lin, XRICL: Cross-lingual retrieval-augmented incontext learning for cross-lingual text-to-SQL semantic parsing, in: Findings of the
+Association for Computational Linguistics: EMNLP 2022, 2022, pp. 5248–5259.
+
+[65] X. Li, K. Lv, H. Yan, T. Lin, W. Zhu, Y. Ni, G. Xie, X. Wang, X. Qiu, Unified
+demonstration retriever for in-context learning, 2023, arXiv:2305.04320.
+[66] F. Yu, L. Quartey, F. Schilder, Legal prompting: Teaching a language model to
+think like a lawyer, 2022, arXiv preprint arXiv:2212.01326.
+[67] J.C. Hage, D. von der Pfordten, Concepts in Law, vol. 88, Springer Science &
+Business Media, 2009.
+[68] K. Adnan, R. Akbar, An analytical study of information extraction from
+unstructured and multidimensional big data, J. Big Data 6 (1) (2019).
+[69] W. Baude, Precedent and discretion, Supreme Court. Rev. 2019 (1) (2020)
+313–334.
+[70] C. Jiang, X. Yang, Legal syllogism prompting: Teaching large language models
+for legal judgment prediction, in: Proceedings of the Nineteenth International
+Conference on Artificial Intelligence and Law, 2023, pp. 417–421.
+[71] C. Xiao, H. Zhong, Z. Guo, C. Tu, Z. Liu, M. Sun, Y. Feng, X. Han, Z. Hu,
+H. Wang, J. Xu, CAIL2018: A large-scale legal dataset for judgment prediction,
+2018, arXiv:1807.02478.
+[72] CAIL2019, China law research cup 2019 judicial artificial intelligence challenge,
+2019, https://github.com/china-ai-law-challenge/CAIL2019.
+[73] CAIL2022, China law research cup 2022 judicial artificial intelligence challenge,
+2022, https://github.com/china-ai-law-challenge/CAIL2022.
+[74] H. Liu, Crime assistant including crime type prediction and crime consult service
+based on nlp methods and crime kg, GitHub Repos. (2023).
+[75] H. Zhong, C. Xiao, C. Tu, T. Zhang, Z. Liu, M. Sun, JEC-QA: a legal-domain
+question answering dataset, in: Proceedings of the AAAI Conference on Artificial
+Intelligence, vol. 34, 2020, pp. 9701–9708.
+[76] Z. Fei, X. Shen, D. Zhu, F. Zhou, Z. Han, S. Zhang, K. Chen, Z. Shen, J. Ge,
+Lawbench: Benchmarking legal knowledge of large language models, 2023, arXiv
+preprint arXiv:2309.16289.
+[77] Y. Cui, Z. Yang, X. Yao, Efficient and effective text encoding for Chinese llama
+and alpaca, 2023, arXiv e-prints arXiv–2304.
+[78] P. Song, LaWGPT, Chinese-llama tuned with Chinese legal knowledge, GitHub
+Repos. (2023).
+[79] Z. Du, Y. Qian, X. Liu, M. Ding, J. Qiu, Z. Yang, J. Tang, GLM: General language
+model pretraining with autoregressive blank infilling, in: Proceedings of the 60th
+Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+Papers), 2022, pp. 320–335.
+[80] C. Zhou, P. Liu, P. Xu, S. Iyer, J. Sun, Y. Mao, X. Ma, A. Efrat, P. Yu, L. YU,
+S. Zhang, G. Ghosh, M. Lewis, L. Zettlemoyer, O. Levy, LIMA: Less is more
+for alignment, in: A. Oh, T. Neumann, A. Globerson, K. Saenko, M. Hardt,
+S. Levine (Eds.), Advances in Neural Information Processing Systems, vol. 36,
+Curran Associates, Inc., 2023, pp. 55006–55021.
+[81] L. Zheng, W.-L. Chiang, Y. Sheng, S. Zhuang, Z. Wu, Y. Zhuang, Z. Lin, Z. Li,
+D. Li, E. Xing, H. Zhang, J.E. Gonzalez, I. Stoica, Judging LLM-as-a-judge with
+MT-bench and chatbot arena, in: A. Oh, T. Neumann, A. Globerson, K. Saenko,
+M. Hardt, S. Levine (Eds.), Advances in Neural Information Processing Systems,
+vol. 36, Curran Associates, Inc., 2023, pp. 46595–46623.
+[82] I. Chalkidis, A. Jana, D. Hartung, M. Bommarito, I. Androutsopoulos, D.M. Katz,
+N. Aletras, LexGLUE: A benchmark dataset for legal language understanding in
+english, 2021, arXiv preprint arXiv:2110.00976.
+[83] J. Cui, X. Shen, S. Wen, A survey on legal judgment prediction: Datasets, metrics,
+models and challenges, IEEE Access (2023).
+[84] A. Mullick, A. Nandy, M. Kapadnis, S. Patnaik, R. Raghav, R. Kar, An evaluation
+framework for legal document summarization, in: Proceedings of the Thirteenth
+Language Resources and Evaluation Conference, 2022, pp. 4747–4753.
+[85] S. Tyss, M. Aly, M. Grabmair, LexAbSumm: Aspect-based summarization of
+legal decisions, in: Proceedings of the 2024 Joint International Conference on
+Computational Linguistics, Language Resources and Evaluation, LREC-COLING
+2024, 2024, pp. 10422–10431.
+
+15
+
+

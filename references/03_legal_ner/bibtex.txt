@@ -1,0 +1,103 @@
+@ARTICLE{Elwing Torres2026,
+	author = {Elwing Torres, Arthur and Silva de Moura, Edleno and Soares da Silva, Altigran and Nascimento, Mario A. and Mesquita, Filipe},
+	title = {An experimental study on data augmentation techniques for named entity recognition on low-resource domains},
+	year = {2026},
+	journal = {Natural Language Processing},
+	doi = {10.1017/nlp.2026.10019},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-105034570142&doi=10.1017%2fnlp.2026.10019&partnerID=40&md5=fff2488db25e60494a66b7ce67738352},
+	type = {Article},
+	publication_stage = {Article in press},
+	source = {Scopus},
+	note = {Cited by: 0; All Open Access, Green Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Oliveira2025361,
+	author = {Oliveira, Vitor and Nogueira, Gabriel and Faleiros, Thiago and Marcacini, Ricardo},
+	title = {Combining prompt-based language models and weak supervision for labeling named entity recognition on legal documents},
+	year = {2025},
+	journal = {Artificial Intelligence and Law},
+	volume = {33},
+	number = {2},
+	pages = {361 – 381},
+	doi = {10.1007/s10506-023-09388-1},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85185095994&doi=10.1007%2fs10506-023-09388-1&partnerID=40&md5=891f54f51aff67ab52d83a26901b3a9b},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 7}
+}
+
+@ARTICLE{Bellandi2024,
+	author = {Bellandi, Valerio and Bernasconi, Christian and Lodi, Fausto and Palmonari, Matteo and Pozzi, Riccardo and Ripamonti, Marco and Siccardi, Stefano},
+	title = {An entity-centric approach to manage court judgments based on Natural Language Processing},
+	year = {2024},
+	journal = {Computer Law and Security Review},
+	volume = {52},
+	doi = {10.1016/j.clsr.2023.105904},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85175050823&doi=10.1016%2fj.clsr.2023.105904&partnerID=40&md5=4a095f2a44c8d584960b66eeb4906eb1},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 13; All Open Access, Green Open Access}
+}
+
+@ARTICLE{Naik2023775,
+	author = {Naik, Varsha and Patel, Purvang and Kannan, Rajeswari},
+	title = {Legal Entity Extraction: An Experimental Study of NER Approach for Legal Documents},
+	year = {2023},
+	journal = {International Journal of Advanced Computer Science and Applications},
+	volume = {14},
+	number = {3},
+	pages = {775 – 783},
+	doi = {10.14569/IJACSA.2023.0140389},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85151794702&doi=10.14569%2fIJACSA.2023.0140389&partnerID=40&md5=b7b6349705c0eccd6f61805de7ded566},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 18; All Open Access, Gold Open Access}
+}
+
+@ARTICLE{Wang2025,
+	author = {Wang, Zhenhua and Chen, Huiru and Xu, Guang and Ren, Ming},
+	title = {A novel large-language-model-driven framework for named entity recognition},
+	year = {2025},
+	journal = {Information Processing and Management},
+	volume = {62},
+	number = {3},
+	doi = {10.1016/j.ipm.2024.104054},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85213205016&doi=10.1016%2fj.ipm.2024.104054&partnerID=40&md5=6537ee24b71a3b4a5a056e9f0115b8f3},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 23}
+}
+
+@ARTICLE{Moscato2023,
+	author = {Moscato, Vincenzo and Postiglione, Marco and Sperlí, Giancarlo},
+	title = {Few-shot Named Entity Recognition: Definition, Taxonomy and Research Directions},
+	year = {2023},
+	journal = {ACM Transactions on Intelligent Systems and Technology},
+	volume = {14},
+	number = {5},
+	doi = {10.1145/3609483},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85174921341&doi=10.1145%2f3609483&partnerID=40&md5=7c365ef3c4a51bd704f7dea79326d05a},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 25; All Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Correia2022,
+	author = {Correia, Fernando A. and Almeida, Alexandre A.A. and Nunes, José Luiz and Santos, Kaline G. and Hartmann, Ivar A. and Silva, Felipe A. and Lopes, Hélio},
+	title = {Fine-grained legal entity annotation: A case study on the Brazilian Supreme Court},
+	year = {2022},
+	journal = {Information Processing and Management},
+	volume = {59},
+	number = {1},
+	doi = {10.1016/j.ipm.2021.102794},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85118578654&doi=10.1016%2fj.ipm.2021.102794&partnerID=40&md5=a9d7df90dfe89c7c1e11108290d348e2},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 33}
+}

@@ -1,0 +1,2282 @@
+Journal of Business Ethics (2022) 180:455–479
+https://doi.org/10.1007/s10551-021-04878-1
+
+ORIGINAL PAPER
+
+Modern Slavery Disclosure Regulation and Global Supply Chains:
+Insights from Stakeholder Narratives on the UK Modern Slavery Act
+Muhammad Azizul Islam1 · Chris J. Van Staden2
+Received: 9 September 2020 / Accepted: 17 June 2021 / Published online: 6 July 2021
+© The Author(s) 2021
+
+Abstract
+The purpose of this article is to problematise a particular social transparency and disclosure regulation in the UK, that transcend national boundaries in order to control (modern) slavery in supply chains operating in the developing world. Drawing
+on notions from the regulatory and sociology literature, i.e. transparency and normativity, and by interviewing anti-slavery
+activists and experts, this study explores the limitations of the disclosure and transparency requirements of the UK Modern
+Slavery Act and, more specifically, how anti-slavery activists experience and interpret the new regulations and the regulators’ implementation of the regulation. This research found limited confidence among anti-slavery activists regarding the
+Act’s call for transparency in relation to the elimination of slavery from global supply chains. The research also found that
+the limits of the transparency provisions within the Act appear to hinder the attainment of normativity. This study provides
+new and unique insights into the critical role that social activists play in exposing the lack of corporate transparency and
+failures of responsibility to protect workers within global supply chains.
+Keywords Developing nations · Supply chains · UK Modern Slavery Act 2015 · Transparency · Normativity · Disclosures ·
+Anti-slavery activists · Regulation · Societal stakeholders
+
+Introduction
+Over the past two decades, stakeholder concerns and ubiquitous public pressures have led to evolving forms of social
+and environmental disclosure and transparency regulations
+in different countries. This has attracted a growing body of
+research on the effect of social and environmental disclosure regulations on corporate disclosure and transparency
+practices (see, for example, Islam & Van Staden, 2018;
+Birkey et al., 2018; Bebbington et al., 2012; Blacconiere
+& Patten, 1994; Blacconiere & Northcut, 1997; Chauvey
+et al., 2015; Larrinaga et al., 2002). Prior research mainly
+analysed disclosures (in annual reports, CSR/sustainability
+reports and websites) in response to regulation mandating
+disclosure.1We extend this body of research by focussing on
+a new and important piece of regulation, the UK Modern
+* Muhammad Azizul Islam
+azizul.islam@abdn.ac.uk
+1
+
+Accounting Discipline, Business School, University
+of Aberdeen, Aberdeen, UK
+
+2
+
+Department of Accounting, AUT Business School, Auckland
+University of Technology, Auckland, New Zealand
+
+Slavery Act of 2015, and stakeholder narratives on its success or limitations in achieving transparent modern slavery
+disclosures and attaining normativity (i.e. being regarded
+as good and desirable). Identifying and documenting critical issues in regulation enacted to address a social problem
+like modern slavery is important in order to improve future
+regulatory direction/s to eliminate unethical practices like
+modern slavery from supply chains and society.
+Modern slavery is an unethical practice (ILO and Walk
+Free Foundation, 2017; Blitz & Simic, 2019) and its pervasive presence in global supply chains has attracted global
+criticism (Ansett & Hantover, 2013; Arnold & Hewison,
+2005; Barrientos & Smith, 2007; Hughes et al., 2007;
+Kasperkevic, 2016; Kelly, 2014). Major disasters, such
+as the Rana Plaza collapse in 2013 that killed more than
+1100 workers in factories in Bangladesh that produced garments for western retailers, are indicative of weak moral and
+ethical standards applied by global retailers in their supply
+chains (Islam et al., 2021). This has led to new forms of
+regulation (such as the UK Modern Slavery Act of 2015; the
+1
+
+In particular, scholars have mainly focussed on the impact of particular regulations on corporate disclosures, without necessarily connecting ‘disclosure’ with ‘transparency’.
+Vol.:(0123456789)
+1
+3
+
+456
+
+US Dodd-Frank Act’s conflict mineral reporting rules, the
+California Transparency in Supply Chains Act, and the Australian Modern Slavery Act of 2018) that attracted significant academic and social activist attention (Roshitsh, 2021;
+Sobik, 2020; Rogerson et al., 2020; Hansard, 2019; LeBaron
+& Rühmkorf, 2019; Blitz & Simic, 2019; Stevenson & Cole,
+2018; Christ & Burritt, 2018; Birkey et al., 2018; Islam &
+Van Staden, 2018; The Guardian, 2015; New, 2015; Crane,
+2013; Gold et al., 2015). In relation to the UK Modern Slavery Act, while the Act is heralded to create transparency in
+relation to factory working conditions within global supply
+chains, there are concerns among academics and anti-slavery
+activists about the Act’s limitations and resulting effectiveness (The Guardian, 2015; Hansard, 2019; LeBaron & Rühmkorf, 2019; Stevenson & Cole, 2018).
+Drawing on notions of supply chain transparency (EgelsZandén et al., 2015; Gold & Heikkurinen, 2018) and regulatory normativity (Ewick & Silbey, 2003; Gray & Silbey,
+2014) and the literature on counter-accounts/narratives
+(Islam et al., 2021; Semeen & Islam, 2021; Neu et al., 2020;
+Lehman et al., 2016; Vinnari and Laine 2017; Gallhofer
+et al., 2006), we use interviews and publicly available reports
+and documents to provide an insight into the limitations of
+the UK Modern Slavery Act. Previous research examined the
+normativity of social and environmental disclosure regulations by documenting the extent of corporate disclosure in
+compliance with the regulations (see, for example, Birkey
+et al., 2018; Chauvey et al., 2015). Our focus differs from
+the previous research in that we draw on the sociology literature on normativity (Ewick & Silbey, 2003; Gray & Silbey,
+2014) to examine the content and quality of the UK Modern
+Slavery Act rather than focussing on the Act’s impact on
+corporate disclosures. We do this by obtaining stakeholder
+views and narratives on the content and quality of the Act
+to assess the achievement of transparency regarding modern slavery in global supply chains and the attainment of
+normativity for the Act within the public domain. By focussing on the views of anti-slavery activists and experts, we
+problematise a particular social transparency and disclosure
+regulation in the UK, that transcend national boundaries in
+order to control (modern) slavery in supply chains operating
+in the developing world. Our focus on anti-slavery activists
+is very pertinent, since anti-slavery activists not only played
+an important role in bringing about the UK Modern Slavery
+Act of 2015, they were also responsible for the inclusion of
+Section 54 on transparency to the legislation, as we discuss
+in the next part. They also represent society, which is arguable the most impacted by modern slavery as they can be the
+victims of this practice. Their views on whether the Act did,
+in fact, achieve its transparency aim and attained normativity
+are therefore topical and important.
+We find that the interviewees expressed concerns (or
+reservations) about the Act achieving transparency, for
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+respecting the public interest, and for attaining normativity.
+Based on the notions of normativity (Ewick & Silbey, 2003;
+Gray & Silbey, 2014) and supply chain transparency (EgelsZandén et al., 2015; Gold & Heikkurinen, 2018), we find
+that while Act’s minimum disclosure provisions did not lead
+to the achievement of transparency, this may also hamper the
+Act’s normativity. Improved transparency and normativity
+could result from the roles anti-slavery campaign groups can
+play through the surveillance of corporate compliance with
+the Act and their ability to trace the source of manufacturing within supply chains. Our study provides new insights
+into the critical role of anti-slavery activists and NGOs in
+understanding the limitations of a particular disclosure regulation to create transparency and attain normativity, as well
+as the roles these activists could play in holding regulators
+and companies responsible for their modern slavery-related
+unethical practices in global supply chains. We contribute to the interdisciplinary literature on transparency and
+regulatory normativity by highlighting anti-slavery activists’ critical evaluations of a new transparency and disclosure regulation with regards to the elimination of modern
+slavery within global supply chains. We also contribute to
+the counter-account/narrative literature (see, for example,
+Semeen & Islam, 2021; Islam et al., 2018, 2021) that shows
+that NGOs, activists and social movement organisations are
+crucial actors in exposing the lack of corporate transparency
+and accountability, and failures of responsibility to protect
+workers within the global supply chains.
+This paper is organised as follows. The Sect. “The UK
+Modern Slavery Act of 2015 and its Provisions for Global
+Supply Chains” provides a background for the UK Modern Slavery Act. The Sect. “Transparency and Normativity” describes the theoretical framework of this research.
+The Sect. “Research methods” explains the research methods, while the Sect. “Findings and analysis” sets out the
+findings and the analysis of the interviews conducted. The
+Sect. “Conclusion” provides a conclusion.
+
+The UK Modern Slavery Act of 2015 and its
+Provisions for Global Supply Chains
+Historically, slavery meant owning persons as legal property
+and principles of property law were applied to human beings
+(Allain, 2017). This meant that people were bought and sold
+as their owners saw fit and were made to work hard under
+often inhumane conditions. Although we do not see much
+of this form of slavery nowadays, different forms of slavery
+have emerged with globalisation. As a broad term, modern slavery encompasses unethical practices and may take
+many forms, among them unpaid labour, human trafficking, child or forced labour, and forced marriages. In 2016, it
+was estimated that over 40.3 million people worldwide were
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+enmeshed in some form of modern slavery, that is, there
+were 5.4 victims of modern slavery for every 1000 people
+in the world (ILO and Walk Free Foundation, 2017). In the
+United Kingdom, on any given day in 2016, 136,000 people
+lived in modern slavery conditions, that is, 2.1 victims for
+every 1000 people in the country (The Global Slavery Index,
+2018). However, forced labour is the main form of modern
+slavery within global supply chains and 25 million people
+are in forced labour worldwide (ILO and Walk Free Foundation, 2017). With regards to global supply chains, there is
+a ubiquitous public and academic discourse suggesting that
+the use of forced labour facilitates lower labour costs and
+boosts the revenues of multinational retailers and suppliers
+(Chalmers, 2013; FEE, 2017; Oxfam, 2018) and this, in turn,
+raise problematic issues regarding the ethical standing of
+both retailers and suppliers (Islam et al., 2021).2
+Modern slavery issues are gaining significant public and
+academic attention because high-profile human rights crises are emerging in global supply chains (Christ & Burritt,
+2018; Crane, 2013; Gadd & Broad, 2018; Gold et al., 2015;
+Islam et al., 2018, 2021; Landau & Marshall, 2018; Mehra
+& Shay, 2016; New, 2015; Turner, 2016), for example, the
+2013 Rana Plaza disaster in Bangladesh, and because new
+forms of modern slavery regulation are evolving to regulate
+MNCs and their suppliers in the developing world. Transparency and disclosure regulations such as the California
+Transparency in Supply Chains Act of 2010 (CTSCA), the
+US Dodd-Frank Act’s conflict minerals rules, the UK Modern Slavery Act 2015, the French Duty of Vigilance Law
+2017, The Netherlands Due Diligence on Child Labour Act
+2017 and the Australian Modern Slavery Act 2018, have
+implications for companies operating in the West as well
+as their suppliers in the developing world. What is new in
+these regulations is that they require companies to provide
+transparency statements or disclosures on tackling modern
+slavery and forced labour arising from their business operations. While research on corporate transparency, in general,
+
+2
+
+We acknowledge that defining modern slavery and unethical practices are complex phenomena and debatable. In particular, there are
+complex boundaries to determine ethical practices within supply
+chains located across developing and developed nations. What can
+be regarded as acceptable practice in the developing world, may not
+be regarded as ethical in many developed nations. For example, child
+labour is unethical in the western world, but the dismissal of already
+employed child workers in many parts of the developing world could
+have immediate and devastating impacts on the child workers and
+their families whose survival depends on the income earned by these
+children. The unemployment or immediate dismissal may lead to
+poverty conditions and result in increased (child) prostitution. While
+employment of child labour is not ethical in the UK, EU, USA or to
+the international community, such practice can be acceptable (even
+from an ethical perspective), in many parts of developing world
+where unemployment of children threatens their fundamental right to
+survival (Rahman et al., 1999).
+
+457
+
+is not new (see Bushman et al., 2004 for financial transparency and Islam & Van Staden, 2018 for social transparency), research investigating the extent to which particular
+transparency regulations is perceived to create transparency
+and accountability is sparse. While voluntary disclosure by
+companies is increasing over time (see, for example, KPMG,
+2008, 2017), disclosure practices as part of transparency in
+response to regulation are weak (Birkey et al., 2018; Chauvey et al., 2015). This is echoed in more recent industry
+research, which shows that initial modern slavery disclosures
+in response to the UK Modern Slavery Act 2015 are low
+(Steiner-Dicks, 2019). While it is still too early to gain a full
+understanding of how companies are responding to the UK
+Modern Slavery Act and whether this will bring long-term
+social justice, our research contributes to critical work on
+the limitations of modern slavery transparency regulations.
+Section 54 of the UK Modern Slavery Act 20153 requires
+companies with an annual turnover of £36 million or more to
+publish a modern slavery statement in relation to its supply
+chains every year on its website. Companies covered by this
+section need to disclose the following information (Home
+Office, 2015, p. 12):
+• Their organisational structure, business, and supply
+
+chains;
+
+• Their policies in relation to slavery and human traffick-
+
+ing;
+
+• Their due diligence processes in relation to slavery and
+
+human trafficking in their business and supply chains;
+
+• The parts of their business and supply chains where the
+
+risk of slavery and/or human trafficking arises, and the
+steps they have taken to assess and manage the risk;
+• Their effectiveness in ensuring that slavery and human
+trafficking are not taking place in their business or supply
+chains, measured against such performance indicators as
+they consider appropriate;
+• The training and capacity-building about slavery and
+human trafficking made available to their staff.
+Section 54 was not originally included in the act. This
+section was brought in at the amendment stage following
+civil society campaigns, which led to the ‘last minute’ attention given to supply chain disclosures with minimum compliance requirements (or minimum disclosure requirements)
+(The Guardian, 2015; LeBaron & Rühmkorf, 2019). The act
+was not applicable to the public sector. There was an attempt
+3
+
+As we are interested to explore how a new form of regulation creates transparency in global supply chains, we find Sect. 54 of the UK
+Modern Slavery Act 2015 the most relevant for our study. The Act
+also have a number of other provisions (including human trafficking
+offences and the creation of an independent anti-slavery commissioner) focussing more on the local context (i.e. the UK context).
+
+13
+
+458
+
+to introduce draft disclosure for public sector supply chains,
+but that was lost in the legislative processes when the 2017
+UK general election was called and has not subsequently
+been resurrected (Hansard, 2019).
+The minimum compliance requirements under Section 54
+do not specify what a modern slavery statement must include
+in terms of disclosures or how it should be structured. It
+provides a non-exhaustive list of information that may be
+included (Home Office, 2015). While the Act indicates that
+organisations should, as a minimum, describe the main
+actions they have taken during the financial year to deal
+with modern slavery risks in their supply chains and their
+own business (Home Office, 2015), it emphasises that these
+organisations should present a detailed picture of all the
+steps they have taken to address and remedy modern slavery,
+and the effectiveness of all such steps (The Barrister, 2019).
+The Act’s requirements appear quite broad and setting a minimum disclosure requirement leaves discretion to companies
+over the interpretation and implementation of the Act. As
+a result, there are flexibility and opportunities for different
+approaches to the level of desired disclosure and the degree
+of coordination within and between organisations. Moreover,
+while knowledge of how transparency reporting practices are
+set or regulated is sparse, a critical question relates to the
+degree to which regulated organisations have digested the
+Act so far, where the boundaries of implementation may be,
+and the effectiveness of the Act. At the same time, earlier
+research has found a limited response and low disclosure
+(Stevenson & Cole, 2018), and many companies have not
+published the required statements (Hansard, 2019). While
+there is the public and academic discourse on the limitations
+of the Act for protecting the public interest (The Guardian, 2015; Hansard, 2019; LeBaron & Rühmkorf, 2019;
+Roshitsh, 2021; Sobik, 2020; Stevenson & Cole, 2018), we
+specifically focus on supply chain transparency and the Act’s
+ability to become normative (i.e. being regarded as good or
+desirable or permissible). We argue that anti-slavery campaign groups and civil society organisations are in a better
+position to provide narratives about the limitations of the
+act. In other words, in line with the counter-account literature focussing on working conditions within global supply
+chains (Islam et al., 2021, 2018; Semeen & Islam, 2021),
+we problematise the disclosure regulations through counternarratives by anti-slavery campaign organisations. While
+the existing literature is rich in terms of exploring counternarratives/accounts on different social and environmental
+issues (see, for example, Semeen & Islam, 2021; Neu et al.,
+2020; Lehman et al., 2016), the issues of modern slavery are
+under-researched.
+Regulations are usually introduced in the name of protecting the ‘public interest’ or the welfare of the general
+public.4 However, there is a broader concern that the regulators’ purpose of protecting the public interest is sometimes
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+unclear, because it is unclear how the public interest should
+be defined and how it could be protected in practice. In
+particular, the broader tension highlighted in the critical
+regulation literature is that a particular regulation could be
+thwarted by regulatory capture. Regulatory capture results
+in regulation that gains support from different constituencies
+but may in fact not be in the public’s best interest (Baudot
+et al., 2017). History provides many examples of regulators
+prioritising the interest of the regulated who have power and
+wealth over that of the general public (Wilson et al., 2018).
+Accordingly, it can be argued that if certain powerful groups
+or multinational companies (MNCs) capture the regulatory
+process or the implementation of the regulation, policies or
+regulations like the Modern Slavery Act 2015 will probably
+be that much less effective in changing the way that organisations operate, i.e. the Act may not lead to the required or
+expected transparency about modern slavery and may not
+achieve normativity.
+
+Transparency and Normativity
+Previous research investigated the impact of regulations on
+corporate transparency and disclosures with regards to different social and environmental issues, using market theories (such as agency theory, Blacconiere & Northcut, 1997;
+Blacconiere & Patten, 1994) and non-market theories (i.e.
+legitimacy perspectives, Islam & McPhail, 2011; Larrinaga
+et al., 2002) to explain disclosures. In this paper, we use
+a non-market theoretical construct, which includes notions
+of transparency (Egels-Zandén & Hansson, 2016; EgelsZandén et al., 2015; Gardner et al., 2019) and regulatory
+normativity (Ewick & Silbey, 1998, 2003) to analyse the
+limitations of transparency required under the UK Modern
+Slavery Act. Each component of the theoretical framework
+for this research is discussed below.
+
+The Notion of Supply Chain Transparency
+A wide range of social science studies ranging from communication, business and accounting, development studies,
+ethics, law, political science to public administration have
+proliferated the concept of transparency (i.e. Islam & Van
+
+4
+
+Historically, regulation, in the name of protecting the welfare of the
+general people, is typically enacted after a (financial, social or environmental) crisis (Harnay & Scialom, 2016). For example, following
+Enron’s collapse, the US government introduced the Sarbanes–Oxley
+Act to protect shareholders by requiring companies to be more transparent about their internal controls (Coates, 2007). And following the
+2008 financial crisis, the governments of many countries brought in
+legislation to increase the monitoring of banks and thereby to protect
+the public interest (Kim & Muldoon, 2015).
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+Staden, 2018; Qian et al., 2015; Gardner et al., 2019; Gold
+& Heikkurinen, 2018; Egels-Zandén et al., 2015; Berliner,
+2014; Fung et al., 2007; Hollyer et al., 2011; Meijer, 2009;
+Bauhr & Nasiritousi, 2012; Finel & Lord, 1999, 2007; Grigorescu, 2003; Rosenfeld & Denice, 2015; Fenster, 2010;
+Pinto, 2009; Bernstein, 2017; Buell et al., 2017; Zhu, 2004)
+and our review of these studies suggest that transparency is a
+ubiquitous, relational concept. As a relational concept, transparency can relate to financial concerns (see, for example,
+Qian et al., 2015; Barth & Schipper, 2008), non-financial
+and/or social concerns (Islam & Van Staden, 2018; Quaak
+et al., 2007), political concerns (Heard-Lauréote, 2007) and
+so on. In the business literature, transparency studies can
+be broadly classified into financial and social transparency.
+While financial transparency, in general, relates to the disclosure of financial and market information by corporations
+(Barth & Schipper, 2008), social transparency relates to the
+disclosure of social responsibility information by corporations (Islam & Van Staden, 2018). In this paper, we focus
+on supply chain transparency—a form of social transparency
+mostly covered in the general business literature (Egels-Zandén et al., 2015; Gardner et al., 2019; Gold & Heikkurinen,
+2018; Islam & Van Staden, 2018; Steinfield et al., 2011).
+We specifically focus on supply chain-related transparency
+provisions within the UK Modern Slavery Act.
+Previous research that focussed on transparency within
+global supply chains, refers to corporate transparency as the
+disclosure of specific information, including the traceability
+of suppliers by providing the names and factory locations of
+suppliers involved in producing the organisation’s products
+and the working conditions associated with these suppliers
+(Egels-Zandén et al., 2015; Gardner et al., 2019). Arguably
+‘traceability’ of information is one of the critical ways to
+define the limits of transparency. That is, to be traceable, a
+member of the broader community (including consumers)
+should be able to easily trace where (which factory) and
+how a particular product was manufactured (this includes
+production, transport, and processing systems). Traceability
+of information provides transparency around factory operations and factory disclosures, and this could result in positive
+changes in the way that organisations manage their supply
+chain labour practices (Egels-Zandén & Hansson, 2016).
+However, there is a view that disclosing this information
+generates risks and expenses for a corporation if its competitors do not disclose similar information (Egels-Zandén &
+Hansson, 2016). ‘For that reason, mandatory factory disclosure would be justified as a measure to level the playing
+field and to help ensure that those corporations who do the
+least to police their supply chain labor practices are not
+rewarded by their ability to remain hidden in the shadows’
+(Doorey, 2011, p. 601).
+By focussing on global supply chains, Gold and Heikkurinen (2018) argue that while past research has claimed
+
+459
+
+that transparency leads to responsibility and thus drives
+sustainable changes in business organisations’ practices,
+this is not the case within global supply chains. They
+provide a theoretical framework that shows that claims
+(calls) for corporate transparency, as a means to increase
+the responsibility of MNCs for their supply chains, have
+proved inadequate. Gold and Heikkurinen’s (2018) insights
+are consistent with prior critical accounting literature that
+highlighted the difficulty of providing a nuanced contextualised understanding of transparency through corporate
+disclosures (see, for example, Coslor, 2016; Roberts,
+2009). While these authors did not examine transparency
+regulations, given the emerging trend to regulate for transparency across countries, we are particularly interested
+in the UK’s call for transparency in supply chains via the
+Modern Slavery Act 2015. Gold and Heikkurinen’s (2018)
+findings could be relevant for a situation where a regulator fails to achieve its regulatory objective of ensuring
+corporate transparency. We argue that there is a significant
+research gap, a need to address how regulations such as the
+UK Modern Slavery Act further the idea of transparency
+in an attempt to eliminate (modern) slavery from global
+supply chains. We argue that understanding this kind of
+social transparency is important, as there are situations or
+contexts (including regulatory contexts) in which compromising transparency for protecting corporate self-interest
+can be regarded as unethical and can have critical consequences for vulnerable stakeholders, including workers in
+global supply chains operating in developing countries.
+We take a stakeholder perspective using the narratives
+(interviews) of anti-slavery activists which can be regarded
+as counter-narratives and we, therefore, refer to the counteraccount literature to inform and motivate our approach. The
+literature on counter/alternative accounts argues that counter-narratives are the alternative representations or accounts
+of organisations and regulatory bodies, produced by NGOs
+and social movement organisations as a part of their actions
+against social inequality and irresponsibility (Vinnari &
+Laine, 2017; Gallhofer et al., 2006; Lehman et al., 2016;
+Semeen & Islam, 2021; Islam et al., 2018, 2021). Counteraccounts are often mobilised to make heard the voices of
+vulnerable groups by exposing social inequalities perpetuated by the elites (Gallhofer et al., 2006; Vinnari & Laine,
+2017). The counter-account literature that focuses on global
+supply chains (i.e. Semeen & Islam, 2021; Islam et al., 2018,
+2021) offers the insight that NGOs and activists are crucial
+actors in exposing problems with corporate transparency
+and accountability, and the failure to protect workers within
+global supply chains. Accordingly, we argue that the narratives of anti-slavery activists are very important to expose
+the problems and issues hindering the achievement of transparency with regards to modern slavery, and these narratives
+are essential catalysts for future change.
+
+13
+
+460
+
+The Notion of the Normativity of Regulation
+Drawing on the broader social science literature on the
+normativity of regulation (Baier, 2016; Chelli et al., 2018;
+Ewick & Silbey, 1998, 2003; Jackson, 2018; Schmidt &
+Rakoczy, 2018), we examine the disclosure provisions of
+the UK Modern Slavery Act. Normativity describes moral
+bases or values of regulation and regulatory compliance.
+Ewick and Silbey (1998) suggest that normativity provides
+a dimension of people’s belief about how participants (both
+professional and laypeople) should act in legal interactions.
+It also specifies why regulation should, or should not, be
+invoked, obeyed, or resisted. In short, ‘references to normativity describe the moral bases of legality’ (Ewick & Silbey,
+1998, p.83). When people repeatedly refer to regulation as
+being impartial and objective, they view this as normative.
+‘Impartiality corresponds to the absence of a historical,
+biographical and socially located, and thus “interested”,
+self’ (Ewick & Silbey, 2003, p. 1342). The notion of normativity may be further transformed from a normative claim
+about how things should be done to a factual description
+of how the real-world works (Ewick & Silbey, 2003). In
+other words, the idea of normativity posits that, other than
+the normative claim, those taking part in legal interactions
+provide the understanding of how actors mobilise the law
+and evaluate legal processes and their invocations, and even
+how they use the law outside formal legal settings. Accordingly, the normativity of regulation is about more than just
+the core legal phenomena with interest in the effectiveness of
+law or consequences of regulations (Sarat & Kearns, 1993)
+but also involves the evaluation of the due processes above
+and beyond the formal legal setting. Normativity, therefore,
+suggests that regulation is regarded as good or desirable.
+There are different reasons why regulators face a challenge in gaining normative status for regulation. Regulators
+can themselves be obstacles or barriers to the acceptance
+of regulations if they lack sufficient expertise to understand
+the work processes that they are regulating (Gray & Silbey,
+2014). This may manifest through a lack of monitoring or
+expertise in auditing compliance with the regulations or
+relate to other reasons. The regulators may also face challenges because the regulations lack impartiality (in particular during the implementation of the law). Ewick and Silbey
+(2003, p. 1347) describe the antithesis to normativity in the
+following way:
+‘…other accounts described the arbitrariness of legal
+authority, its unpredictability, and raw power. Here law
+was simply the power of the powerful. Rather than
+seeing legal authority as derived from moral principles, objective reasoning, or regulated processes that
+legitimated its power, these stories reversed the direction of legitimation, describing power as producing the
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+normative grounds upon which legality is exercised.
+Might, in these stories, makes right’.
+This statement illustrates a primary obstacle to the normativity of regulations, arbitrariness, unpredictability, or
+uncertainty of legal authority. At the same time, another
+major obstacle to normativity is the abuse of power in the
+regulatory process. Through the process of regulating, or of
+gaining legitimation for regulation, powerful groups may
+gain power by disregarding the moral principles underlying
+the regulations.
+While the notion of the normativity of regulation contains
+the moral bases for the legality, the moral basis of the UK
+Modern Slavery Act is in its aim, which is to eliminate modern slavery practices. Nevertheless, there is a risk that power
+imbalances may erode the Act’s normativity. While the limits of transparency can be assessed by exploring the normativity of the regulation, the issue remains under-researched.
+While normativity concerns the values underlying regulations, we assess the regulatory value by exploring the views
+of the broader community, including anti-slavery campaign
+groups, in responding to the regulations.
+Prior research (e.g. Buhmann, 2011; Bebbington et al.,
+2012; Manacorda, 2014; Chauvey et al., 2015; Acerete
+et al., 2019; Manacorda, 2014; Birkey et al., 2018; Senn &
+Giordano-Spring, 2020; Brusca et al., 2018; Chelli et al.,
+2018—summarised in Table 1), focuses on different regulations ranging from country-level environmental reporting
+laws and CSR, to public sector accountability and reporting standards, used different methods ranging from content
+analysis, reviews, discourse analysis to interviews, to investigate the normativity of regulations. What this research
+reveals is that, in general, social and environmental disclosure regulations have an impact on normativity. Chauvey
+et al. (2015) and Chelli et al. (2018) found that companies in
+certain countries, over time, disclosed high levels of information complying with the regulatory disclosure requirements resulting in high levels of normativity. Birkey et al.
+(2018) argued that during the early stages of disclosure regulation, attainment of normativity by the concerned companies appeared to be low. A few studies (see, for example,
+Chauvey et al., 2015) tried to separate the attainment of an
+act’s normativity from the quality of disclosure and found
+that while a level of normativity may be attained, disclosure
+quality is not high and therefore, the act’s goals of increased
+transparency may remain unmet.
+While prior disclosure research examined normativity of
+particular disclosure regulations by documenting the extent
+of corporate disclosure in compliance with the regulations,
+in this paper, we examine the attainment of the normativity
+of a disclosure regulation, the UK Modern Slavery Act, in
+the public domain, using stakeholder narratives. Our focus
+on stakeholder narratives is different from prior quantitative
+
+The study enhances our understanding of CSR normativity by
+drawing on the internationalisation of societal norms and law on
+social responsibility informing
+the demands on corporations. The
+study argues that the law need not
+conflict with the widespread view
+of CSR as ‘voluntary’
+Using a constructivist perspective, this study provides a better
+understanding of compliance with
+reporting regulations by showing
+evidence that the production of
+normativity not only depends on
+the enforcement of the law but also
+depends on less formal rules and
+the emergence of shared beliefs and
+internal legitimacy
+The study broadens our understanding of “normative hybridisation,”
+for tackling corruption, in which
+hard and soft laws, public and
+private initiatives are all merged
+together in a sole legal instrument
+This paper contributes to the literature by showing that regulations
+on CSR disclosure generated
+normativity over time. The study
+argued that while CSR disclosure
+has increased in terms of space
+and breadth, indicating a sense of
+greater normativity of regulations,
+the disclosures do not reach a quality level that allows complying with
+the goal of transparency set up by
+regulations
+
+Buhmann (2011)
+
+Chauvey et al. (2015)
+
+Manacorda, (2014)
+
+Bebbington et al. (2012)
+
+Contributions
+
+References
+
+Literature review
+
+Content analysis and regression
+analysis
+
+Electricity industry
+
+Industry neutral
+
+Publicly traded French companies
+from various industry sectors
+
+Spain and UK (Reporting regimes
+addressing environmental issues)
+
+The United Nations (Convention
+against Corruption (UNCAC))
+
+France (Regulation of disclosure of
+social and environmental information)
+
+Content analysis and Interviews
+
+Discourse and textual analysis
+
+Industry neutral
+
+EU context (CSR)
+
+Methods
+
+Industry context
+
+Country context (focus area)
+
+Table 1  Contributions of the prior literature on the normativity of corporate responsibility and disclosure regulations
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+461
+
+13
+
+Contributions
+
+With respect to company disclosure
+response, this study documents
+relatively high compliance with the
+legislation, although the disclosure
+responses appeared to be more
+symbolic than substantive in nature.
+The symbolic or limited quality of
+disclosure suggests that, without
+additional rules and guidance, the
+concerned law alone may not lead
+to meaningful social disclosure
+Chelli et al. (2018)
+In a comparative study, the authors
+found that the French parliamentary
+regime is more successful (in the
+production of normativity) than the
+Canadian regulation in generating
+environmental disclosures and that
+the external expectations including
+GRI combined with local regimes
+prompt the production of normativity
+Brusca et al. (2018)
+The study provides an understanding
+of the use of normativity theory in
+explaining the normativity process
+for issuing consolidated reporting
+standards for local governments in
+the European context
+Acerete et al. (2019)
+The study found a low level of environmental information (reported
+by sample companies) because
+of the lack of an open process of
+normativity
+Senn and Giordano-Spring (2020) This study offers a better understanding of how a common regulation
+may lead to interpretative strategies
+by different actors and networks
+of actors, contributing to shaping
+environmental accounting information
+
+Birkey et al. (2018)
+
+References
+
+Table 1  (continued)
+
+13
+Environmental sensitive industries
+
+France (Environmental reporting
+regulation)
+
+Content analysis, semi-structured
+interviews
+
+Content analysis
+
+Spanish toll sector corporations
+
+Content analysis and statistical model
+
+Spain (Environmental financial
+accounting regulation)
+
+Companies from various industry
+sectors
+
+France and Canada (Environmental
+disclosure regulations)
+
+Content analysis/ Regression model
+
+Interviews
+
+Retail sector
+
+USA (CTSCA)
+
+Methods
+
+Italy, Spain, and Sweden (Public sec- Local government
+tor reporting standards)
+
+Industry context
+
+Country context (focus area)
+
+462
+M. A. Islam, C. J. Van Staden
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+studies (see, for example, Chauvey et al., 2015; Chelli et al.,
+2018; Birkey et al., 2018) on the normativity of social
+and environmental disclosure regulations and qualitative
+(interview-based) studies (Bebbington et al., 2012; Senn &
+Giordano-Spring, 2020) that documented the views of corporate managers and industry representatives and offered an
+understanding of internal (managerial) perspectives regarding the normativity of particular social and environmental
+disclosure regulations.
+
+Research Methods
+This study draws on interviews with anti-slavery campaign
+organisations and experts on corporate compliance with the
+UK Modern Slavery Act 2015. Fourteen interviews were
+conducted between September 2018 and February 2019:
+three interviews with corporate and industry managers, two
+interviews with ethical investment firms, seven with antislavery campaign organisations (ACOs) (code 1–7), one
+with a government representative and one with a policy
+adviser from a professional accounting body in the UK.5
+The overall size and selection of the interviewees for this
+study is purposive. The overall strategy of interview data
+collection is often driven by the notion of data saturation—
+saturation is considered to have occurred when consecutive
+interviews do not provide the researcher with any new or
+additional insights (Malsch & Salterio, 2016). In relation to
+the data collection strategy and the saturation point, Malsch
+and Salterio (2016) argue that the central aim/research question of the study is an important driver of the sample size.
+They also argue that the authors’ expertise in the chosen
+topic, and research that uses more than one source of data
+collection (for example, interviews and documents) reduce
+the number of participants needed. Accordingly, as we
+mainly focussed on anti-slavery campaign organisations,
+we interviewed a sufficient number of activists from different anti-slavery campaign organisations, to meet our saturation point. We had three more interviews with people from
+anti-slavery campaign organisations, but these did not give
+us any additional insights (this approach is also consistent
+with Islam et al., 2018). Our extensive prior experience on
+the topic, interview methods and document analysis, and
+our use of multiple document sources in addition to interviews (see below) gives us confidence that our sample size
+is sufficient for our analysis. Interviews with other people
+(from government and industry) reflect mainly their official
+5
+While our extensive prior experience on the topic helped us to
+identify organisations working on modern slavery issues, a member
+of a global ethical trading campaign group was requested to identify
+suitable organisations that are active in the area of workers’ rights and
+anti-slavery movements in global supply chains.
+
+463
+
+responses, which were already available in government/legal
+documents, corporate reports and industry documents. The
+interviewees are listed in the Appendix, keeping the interviewee identity confidential, in line with the research ethics
+guidelines.
+Interviews were conducted with senior officials at various
+organisations. Interviewees were knowledgeable about modern slavery at different organisations working to eliminate
+modern slavery in the UK and its supply chains, and organisations experiencing higher levels of oversight and monitoring of corporate compliance with the Modern Slavery Act.
+The views of campaigners and experts represent a unique
+resource within the modern slavery context that has received
+relatively little research attention. The opinions documented
+via interviews with anti-slavery activists constitutes a form
+of counter-narrative, which were helpful to problematise the
+disclosure provisions of the modern slavery Act. Our selection of activists from anti-slavery campaign organisations as
+a producer of counter-narratives is purposive and consistent
+with the approach followed in critical and counter accounting research (Gallhofer et al., 2006; Semeen & Islam, 2021;
+Lehman et al., 2016), that challenges the prevailing official
+and hegemonic position.
+All people approached agreed to participate in telephone
+interviews and all were recorded with consent. The communication for appointments and consent was done via email.
+Interviews were transcribed within a week of the interview taking place. The interviews lasted from 30 min to
+one hour. While an interview guide was used, the questions
+were open-ended. Before commencing the interviews, the
+project was explained to each interviewee. As all interviews
+were conducted on a confidential basis, the observations
+reflected have not been attributed to a specific person or
+their organisation.
+Across a wide range of research settings, we held informal communications and meetings (during workshops and
+conferences) with a large group of academics and industry
+experts on modern slavery, which helped this research to
+stay focussed on the research questions. While interviews
+were designed to probe the interpretations experts and activists of the implementation of the UK Modern Slavery Act,
+informal talks and meetings with a broader group of people helped the researchers to understand how the regulation
+works, how the work is done and what practitioners find
+satisfying and frustrating about it. This approach is consistent with sociology research (Gray & Silbey, 2014) and we
+found this approach helped us gain a broader understanding
+of the UK Modern Slavery Act.
+In particular, through interviews and informal communication, we learned how the participants interpret the governing rules and procedures (Gray & Silbey, 2014). In line
+with this broader understanding, interviewees were explicitly asked to share their experience of whether the Act was
+
+13
+
+464
+
+achieving its primary purpose, to interpret the Act’s limitations or boundaries, and to interpret its merits or demerits.
+While these questions were an indirect way to examine the
+theoretical constructs – transparency and normativity – we
+found this one of the best ways to support the research.
+Without this approach, we would not have been able to fully
+understand the limitations to the transparency and disclosure
+provisions within the Modern Slavery Act.
+We analysed the data by drawing on Miles and Huberman’s (1994) approach for conducting qualitative research.
+We followed the following key steps to process our data:
+• All interview transcripts were read and coded in an
+
+attempt to interpret the data. All references to, and
+descriptions of, regulators and regulations by the people we interviewed were also collected and reviewed.
+The interviews helped us to analyse the implementation,
+transparency and normativity of the Modern Slavery
+Act during its early implementation and the associated
+mechanisms for UK companies sourcing products from
+overseas.
+• We reviewed all available documents (selected from
+our extensive web-search) including three legal documents, 25 reports by NGOs and anti-slavery campaign
+organisations (five of these reports were sent to us by
+our interviewees from anti-slavery campaign organisations) and law firms, 20 news articles in the British news
+media and five modern slavery statements and corporate
+reports produced by our corporate interviewee organisations. This helped us to understand and code statements
+both by regulatory bodies, corporations and anti-slavery
+activist groups.
+• By following a holistic coding system (Miles et al.,
+2014), we formed a comprehensive understanding of
+the overall contents of the interviews and documents. In
+our analysis, we mostly focussed on the statements and
+quotes from interviewees and we gave limited emphasis
+to the contents and statements from secondary documents as these were mostly overlapping with the interviews.
+Analysis of the narratives, particularly those of anti-slavery activists, was performed in the light of the adopted theoretical concepts including the notion of transparency and the
+notion of normativity. Key interview questions and findings
+are presented in Table 2. Before interviewing people and
+analysing relevant reports and documents, we have formed
+a broad understanding of transparency and normativity. During the analysis, we refined and reframed our theoretical
+constructs to explain our data better. We adopted the theoretical framework discussed in Sect. 3 to analyse the opinions provided by experts and this helped us to uncover the
+various ways in which the interviewees express and interpret
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+their relationships with the Modern Slavery Act as it seeks
+to regulate modern slavery in global supply chains.
+
+Findings and Analysis
+The UK Modern Slavery Act and Supply Chain
+Transparency
+We commence our analysis by discussing different aspects
+of the limitations of the UK Modern Slavery Act. We, in
+particular, provide narratives of anti-slavery activists as a
+part of a critical analysis of the Act’s attempts to eliminate
+modern slavery and ensure justice to less privileged groups
+(this being workers in developing nations) in global supply chains. A summary of the key findings is presented in
+Table 2.
+Limitations of Purpose and Scope of the Act
+We first consider activists and experts’ views on the purpose
+of the UK Modern Slavery Act of 2015. There are consensus
+views that the overall aim of the Act is to reduce modern
+slavery in UK companies’ supply chains. Regulatory actors
+interviewed echoed corporate actors who see the Act as aiming to create a ‘level playing field’ for reporting on human
+rights risks, managing reputational risks, and driving change
+in the internal systems and procedures of organisational culture. Anti-slavery campaign groups in the UK see the Act as
+a positive development, but its aim is sometimes misunderstood. There is scepticism about whether the requirements
+by themself could help reduce slavery and forced labour in
+the domestic and overseas operations of the UK organisations. ‘There is confusion because we believe the aim would
+be to reduce modern slavery and compensate victims, but
+corporations may have thought that the regulatory aim is
+to reduce business risk only’ (anti-slavery camping actor,
+3). There is a common view among anti-slavery activists
+that the Act should cover broader aims than corporations’
+desire to reduce business risks. There is also a consensus
+view that activists and civil society groups have played a
+significant role in the development of the present form of the
+act (including its purpose). ‘If you want to understand the
+Modern Slavery Act and whatever development behind this
+so far, you need to understand the roles of the civil society
+groups and NGOs’ (anti-slavery campaign actor, 1). In fact,
+civil society groups and NGO campaigns for the inclusion
+of Sect. 54 were emancipatory as their campaigns eventually led the UK government to introduce this section. This
+suggests, in line with the counter-account/narrative literature (Gallhofer et al., 2006; Vinnari & Laine, 2017), that
+civil society groups’ voices, to some extent, were heard
+by the regulator. However, as we will see in the following
+
+Limits to transparency
+
+Organisations required to disclose
+
+Disclosure provisions
+
+What do you see as the primary purpose of
+this legislation?
+
+Purpose of the act
+
+There are consensus views (except the views
+of anti-slavery activists) that the overall aim
+set in the Act is to reduce modern slavery in
+UK companies’ supply chains
+Regulatory actors interviewed echoed corporate actors and see the Act as aiming to
+create a ‘level playing field’. Anti-slavery
+activists see its aim as sometimes being
+misunderstood because corporations may be
+engaged to reduce business risk only and not
+the elimination of slavery
+Regulatory, corporate actors and industry
+actors find the minimum disclosure a positive development towards transparency
+The activists see minimum disclosure regulation as problematic because this does not
+create transparency and managers may use
+disclosure in an opportunistic manner
+
+Key responses from interviewees
+
+Anti-slavery activists believe that £36mil cutWhether and how the reporting entities
+off is arbitrary
+defined under the Act are objective and conducive to eliminate slavery on a large scale? Regulatory actors and corporate actors speculate on the inclusion of the public sector in
+the future. They are less concerned about the
+cut-off point
+What do you see as the limits to the transpar- The activists feel that the Act and its miniency provisions within the act?
+mum disclosure provision lacks insights into
+the traceability and verifiability of modern
+slavery
+Regulatory and industry actors agree that
+disclosure may not reflect the real corporate
+action
+Why do you see the transparency provisions
+The activists believe that the Act’s transparwithin the Act as critical?
+ency regulations are critical because the Act
+does not have clear provisions to protect
+workers in the global supply chains operating in the developing world
+
+Why do you see the minimum regulation as
+problematic?
+
+Why do you see the minimum regulation as
+effective?
+
+Why do you think the purpose is positive?
+Why do you see the purpose as critical?
+
+Main interview questions
+
+Key issues
+
+Table 2  Summary of key findings
+
+Traceability of information and the location of
+where products are sourced (suppliers/factories) is needed
+Issues with minimum disclosures and transparency
+Limited insights into whether suppliers (mostly
+from developing nations) abide by the Act
+Issues with verification and monitoring
+Workers and the broader community are
+excluded
+
+A few studies on normativity are supportive
+of minimum disclosure regulations given
+the presence of minimum regulation and/or
+guidance
+Corporate actors in particular always prefer
+guidance for disclosures
+The activists are very critical of the minimum
+disclosure requirement as this does not necessarily result in the elimination of slavery
+All organisations should be covered
+£36mil cut-off is arbitrary
+Concerns over the exemption of public sector
+organisations
+
+Limited confidence among interviewees in the
+Act’s purpose of meeting transparency
+The Act aims to reduce or eliminate concerns
+over disclosures to create transparency
+Significant concerns that Act’s goals are more
+for the reduction of business risk than for
+reduction of slavery (or reduction of workers’
+vulnerability)
+
+Findings based on interviews and documents
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+465
+
+13
+
+Main interview questions
+
+13
+
+Normativity and the act
+
+Tell us the about the negative aspects of the
+Act?
+
+Tell us about the positive aspects of the Act?
+
+Findings based on interviews and documents
+
+Powerful business interest limited the extent of
+regulation
+Interpretation of risk driven by business
+interests
+Concerns over the protection of corporate
+dominance and hegemony
+Issues associated with a call for transparency
+and actual actions for curbing slavery
+Modern slavery statements may not reflect
+modern slavery activities
+The activists feel that the normativity of the
+Issues that reduce normativity (lack of transparAct depends on stakeholder engagement
+ency and the influence of powerful interest
+and their own roles to influence companies
+groups)
+to be socially responsible. Government and Raises the awareness of corporate transparency
+corporate actors see positive sides of the
+issues
+minimum disclosure and ‘no penalty for
+Enhance normativity by encouraging greater
+non-compliance’ provisions as these may
+engagement by activists and foster change in
+hamper companies’ engagement to solve the
+corporate transparency
+slavery problem
+Issues with monitoring and surveillance by
+anti-slavery groups
+The activists find that the Act lacks the capacity to protect the public interest and workers’ Minimum disclosure requirement alone and
+lack of punitive measures are not supportive
+rights over corporate interests
+of normativity
+
+Key responses from interviewees
+
+The activists are concerned that the Act was
+Influence of powerful groups on the regulation Did the process and implementation of the
+a result of the influence of powerful groups
+regulation lead to dominance by powerful
+and the disconnection between disclosure
+like the business community. Also, while
+groups?
+and actions
+corporate and industry actors are happy to
+Did the focus on risk lead to a disregard of the
+see the Act as a risk minimisation tool, the
+effect on workers and victims of slavery?
+activists sees this as a problem because the
+Do you find a disparity between the Act’s
+Act does not address the risk of vulnerable
+transparency regulations and actual actions
+workers being victims of modern slavery
+for eliminating slavery?
+
+Key issues
+
+Table 2  (continued)
+
+466
+M. A. Islam, C. J. Van Staden
+
+467
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+discussions, the anti-slavery activist narrative, as shown by
+the interviews, revealed that Sect. 54 did not have enough
+substance, and the resulting change in transparency achieved
+was therefore limited.
+From interviews, we found mixed responses, ranging
+from a sense that the Act’s intention was to extend the
+elimination of modern slavery (to suppliers in developing nations) to a perception of inherent limitations (since
+it is merely a reporting requirement). The interviews also
+revealed diverse views around awareness, uptake and posture among organisations in relation to modern slavery legislation. There is a consistent view among civil society and
+anti-slavery campaign groups that massive efforts are needed
+to extend awareness and training to corporate officials and
+professionals such as lawyers and accountants working for
+corporations.
+While experts representing different stakeholders were
+generally positive about the perceived aims of the Act, they
+expressed concern about one provision within the regulation, which requires only organisations that have an annual
+turnover of £36 million or above to publish a modern slavery
+statement each year on their website. Many participants in
+this study argue that this provision in the Act caps human
+rights with reference to revenue and that numerous organisations are now not subject to the Act, i.e. there is the suggestion that those with ‘an annual turnover below £36 [million] do not need to care about human rights’ (anti-slavery
+campaign actor, 1). The anti-slavery campaign groups, in
+particular, find this provision problematic as managers might
+try to find a way to avoid their responsibilities. One group
+member told us ‘the cap may justify non-reporting companies’ increasing levels of human rights negligence in their
+supply factories located in many developing nations’ (antislavery campaign actor, 2). There is also a view that the £36
+million cap was rather strange, and many people wonder
+where this figure came from.
+Another problematic aspect of the Act is that it exempted
+public sector organisations from publishing modern slavery
+statements. Many government bodies (from healthcare to
+defence bodies) source some or all the products they require
+from suppliers in developing nations but are not covered
+under this Act.6 From a transparency perspective, if the aim
+is to create transparency, the revenue cap and the exclusion
+of the public sector from the reporting requirements appear
+to hinder the achievement of transparency at a broader level.
+6
+In the Modern Slavery independent review interim report, the
+experts suggested that like the Australian Modern Slavery Act of
+2018, the UK Government should extend Sect. 54 of the Act and
+include reporting obligations for the UK public sector (Home Office,
+2019). At the time of the revision of this article, we found that in
+line with experts’ recommendations and civil society concerns, the
+UK government has now suggested that public sector organisations
+(including ministerial departments in England and Wales—Scotland
+and Northern Ireland are considered separately) will be required to
+
+Limitations of the Minimum Disclosure Provisions
+The UK Modern Slavery Act 2015 suggests that relevant
+companies disclose whatever plans and actions they have
+put in place to curb modern slavery. Interviewees shared a
+concern over the minimum disclosure provisions of the Act.
+This remains effectively optional for organisations since if
+a company simply states that ‘it does not have any slavery
+in its entire operations, it meets the regulatory compliance’
+(anti-slavery campaign actor, 1). ‘Nowhere in the regulation
+clearly mentions [that] any information provided needs to
+be verified externally’ (independent supply chain auditor and
+anti-slavery campaign actor, 6).
+While minimum disclosure requirements can be a sensible early step for many organisations, the activists we
+interviewed expressed serious reservations that the disclosure provisions do not achieve the stated aim of the Act (i.e.
+the elimination of modern slavery), and there is no legal
+accountability associated with the disclosures. While the Act
+requires a senior manager (CEO, director or general manager) to sign the report, we found some uncertainty among
+interviewees about whether minimum disclosure requirements would help much in terms of holding the signatory
+accountable. Where a director or senior manager signs off a
+modern slavery statement, her/his responsibility is unclear,
+i.e. their accountability is reduced to the minimum disclosure requirements. A big question remains: ‘if a CEO signs
+a report with minimum information like “our company does
+not have any slavery in its entire operations”, does it really
+release [the] CEO’s responsibility and accountability to a
+greater extent?’ (anti-slavery actor, 1). There is also a view
+that the minimum disclosure requirements do not require
+companies to provide detailed and factual information to the
+wider community (anti-slavery campaign actor, 2).
+In addition, there are concerns about the government’s
+lack of initiative regarding the recording and availability of
+modern slavery report submissions. There should be a modern slavery registry mechanism through which the public
+can view submitted modern slavery statements with relative
+ease.7
+Interviewees share concerns that the minimum disclosure
+provisions under Section 54 give organisations discretion to
+disclose or not to disclose whatever they want to disclose
+or not. While this has some advantages, there is a broader
+Footnote 6 (continued)
+produce modern slavery statements from 2021 (see, https://​www.​gov.​
+uk/​gover​nment/​news/​new-​tough-​measu​res-​to-​tackle-​modern-​slave​ry-​
+in-​supply-​chains).
+7
+In response to broader stakeholder concerns, on 11 March 2021
+the UK government launched a ‘modern slavery statement register
+online’ and it “strongly” encourages concerned organisations to submit their most recently published modern slavery statement to the
+register to show what they have reported. However, this is still vol-
+
+13
+
+468
+
+concern that regulators may not be able to hold organisations
+accountable, given that many organisations do not apparently care about slavery practices in their supply chains.
+‘Through the minimum disclosure requirement [it appears]
+as if the entire transparency is reduced to [the] “disclosure”
+provision of the Act’ (policy advisor, professional accounting
+body). Past studies have revealed a level of concern about
+the effectiveness of the minimum disclosure requirements
+(Chilton & Sarfaty, 2017; Nolan, 2017; Phillips, 2015). Our
+findings are therefore consistent with the past research in this
+regard. However, there are studies that focus on the normativity of social and environmental disclosure regulations that
+found that minimum or low legal requirements and global
+norms/guidelines such as the GRI, may prompt the achievement of normativity (Chelli et al., 2018). At the same time,
+Chelli et al. (2018) suggest that minimum requirements,
+while achieving normativity, may not create transparency.
+We argue that minimum disclosure requirements may not
+create transparency if civil society or activist groups do not
+put pressure on companies to be socially accountable. We
+also argue, in line with the literature on alternative accounts
+(Islam et al., 2018, 2020; Gallhofer et al., 2006), that the
+narratives of anti-slavery activists need to be mobilised to
+create change in corporate accountability and transparency
+within global supply chains.
+There is a consensus view that ‘ensuring transparency is
+one of the key aims of the UK Modern Slavery Act’ (retail
+industry association leader). While political leaders express
+the same view when talking about the UK Modern Slavery
+Act, many may not be aware that the minimum disclosure
+provision (as discussed previously), may jeopardise transparency. A few industry experts stated that ‘the act was a positive development of transparency’ (policy advisor, professional accounting body), but the anti-slavery activists were
+concerned about the possible gap between disclosure and
+actual action – ‘I am concerned about how due diligence
+works or what is actually happening on the ground. There
+is a disparity between disclosure and what is happening on
+the ground’ (senior anti-slavery campaign actor, 2).
+Lack of Traceability, Verifiability and Transparency
+to the Broader Community
+While a few global retailers disclose supplier information
+(including factory locations), interviewees expressed mixed
+views about the traceability of factory locations. Surprisingly, one British retail company that was recently ranked
+among the top three modern slavery statement producers by
+
+Footnote 7 (continued)
+untary (see, https://​www.​gov.​uk/​gover​nment/​news/​gover​nment-​launc​
+hes-​modern-​slave​ry-​state​ment-​regis​try).
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+a global consultancy firm stated that it does not disclose factory locations, as to do so would impact negatively on their
+competitiveness. As their representative stated, ‘while we
+have been one of the best modern slavery statement providers this year, our statement is comprehensive and detailed;
+however, we maintain a fair level of privacy regarding
+disclosing our suppliers’ information for our competitive
+advantage’ (ethical trading manager, retail company). Such
+an approach indicates inadequate transparency and also
+calls into question the assessor (consultancy) firms that
+rank companies’ best practice reporting. Those who assess
+modern slavery statements should not disregard the issue
+of traceability of factory locations within global supply
+chains (Egels-Zandén & Hansson, 2016; Egels-Zandén et al.,
+2015). While traceability is just one aspect of transparency,
+this could be a good starting point for ensuring transparency to the broader community – some global companies,
+such as Nike, disclose factory locations worldwide. However, invoking confidentiality and/or competitive advantage,
+many retailers do not disclose their factory locations. Doing
+so prompts the question of what competitive advantage a
+company gains by hiding the location of the factories it uses?
+This appears to be a major barrier to tackling modern slavery within global supply chains. Anti-slavery activists are
+concerned over retailers’ use of ‘hidden factories’ with no
+record of their factory human rights conditions (anti-slavery
+actors, 1 and 3). While the Act is, to some extent, helpful in
+the sense that retailers have to publish modern slavery statements, it does not have the scope to locate ‘hidden factories’
+that retailers may have used (anti-slavery actor 3). In this
+context, the news media and NGO counter-accounts have
+played an important role in exposing poor working conditions in manufacturing (Islam et al., 2018) and related ethical
+concerns within global supply chains (Islam et al., 2021).
+Along with traceability, verifiability or monitoring is crucial to achieving transparency within global supply chains.
+Verifiability has two aspects – how to verify what organisations say in their modern slavery statement, and any external
+or independent auditor checks of modern slavery practices
+in their supply chains. Concerns were expressed that both
+aspects are disregarded in the Act. One member from an
+anti-slavery campaign group (2) stated, ‘monitoring and
+enforcement should be a big issue of [the] Modern Slavery
+Act. Lack of transparency comes from a lack of monitoring
+and sanctions, which in turn does not produce good results.’
+The problem with the existing transparency mechanisms is
+that in the absence of regulatory requirements on verifiability, organisations only respond when they run into trouble
+when human rights negligence is exposed through NGO and
+activist narratives (Islam et al., 2021). As an activist (antislavery campaign actor, 3) puts it, ‘lots of focus is related
+to writing the statement. But in my view, the activity behind
+the statement such as the due diligence process, audit and
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+monitoring supply factories, etc. is important. I am not sure
+how this can be changed over time.’
+Extant research (see, for example, Islam et al., 2018) has
+looked at social compliance audit practices within global
+supply chains and found tension surrounding the ability of
+an audit (given its nature) to create accountability to workers. They also found that companies only use independent
+or third-party auditors when faced with crises (such as the
+Rana Plaza incident or associated media concerns). The
+interviewees hold a pessimistic view of existing audit practices, expressing anxiety that as the Act includes no regulatory penalty or sanction, organisations’ audit or monitoring
+exercises remain light. ‘I am doubtful that companies following the Act would use an independent audit in the supply
+chains just to make sure there is no slavery in the chains’
+(anti-slavery campaign actor, 7). Past research has revealed
+that transparency and disclosure are crisis-led and retailers
+usually respond to supply chain-related legitimacy crises
+highlighted by news media with positive disclosures (Islam
+& Deegan, 2010).
+There is also a concern that workers’ or victims’ voices
+would remain unheard. ‘The Act does not empower workers
+and victims of modern slavery as there is no mechanism for
+workers to follow the Act and get remedy if they are victims’
+(anti-slavery campaign actor, 7). ‘At the grass-root level,
+workers do not know who is buying the goods and, given
+that some people may argue that workers have a right to
+know whose products they are producing, that is why we
+need to see transparency in the entire production process’
+(independent supply chain auditor and anti-slavery campaign
+actor, 6).
+Domination by Powerful Interests
+Domination by powerful corporate interests could be partly
+responsible for many of the failures of transparency. The
+central goal of the Modern Slavery Act, the assumption of
+transparency, has somehow been constrained or influenced
+(captured) by corporate interests and corporate risk management strategy. From the broader community perspective,
+this is problematic, since they see managers as far more
+concerned about business risk than the risk to the community. ‘To us, reporting is an important part of our risk
+management strategy’ (CEO, civil contract association).
+Anti-slavery campaign organisations are concerned about
+the interpretation of the risks of modern slavery by corporate
+management as a risk management strategy. One director of
+an NGO (anti-slavery campaign actor, 1) stated:
+The legislation talks about the risks of modern slavery,
+so of course, that would mean how do business operations create the risk of modern slavery and human
+trafficking. Do business operations deal with people
+
+469
+
+who are having a vulnerability, such as migrant workers, women workers, etc.? Does a company operate
+in remote locations where people cannot see what is
+going on? Does a company source product from a
+supplier in a country with the vulnerability of modern
+slavery? All of those things create the risk of slavery
+and human trafficking. That’s the way we think about
+risks. The way that the vast majority of businesses
+think about risk is ‘what if it’s a risk to my business, to
+my production or to my profit’. There is a tiny handful
+of companies that are now beginning to understand
+risk from the broader way than their own perspective,
+but there is a very long way to go before the majority [of] companies get that. There is a long way for
+businesses to realise people were victims of modern
+slavery.
+A follow-up interview with an anti-slavery campaign actor
+has a similar view:
+Whose risk? The risk to the business and not to the
+society and the environment? If the Modern Slavery
+Act is only a part of a manager’s risk management
+strategy and not for eradicating slavery, we need to
+have a big say!
+Their view is that the application of the Modern Slavery Act
+is problematic because it mainly protects industry interests
+while victims’ interests and voices remain unheard. In other
+words, it contains no strong provision stating that workers’
+interests are directly protected by the Act. Most importantly,
+supply chain complexities favour corporations over suppliers
+and workers. The complexities create a favourable position
+for powerful groups (Carpenter & Moss, 2013), leading to
+compromises with business by, for example, not imposing
+stringent requirements, such as for the independent audit of
+labour rights.
+The regulatory process is a political process in which
+power struggles occur, and powerful actors dominate and
+influence regulation for their own protection (Dal Bó & Di
+Tella, 2003; Etzioni, 2009; Wilson et al., 2018). Given that,
+one should not expect the process of formulating the Modern Slavery Act to be neutral or objective. One anti-slavery
+activist (anti-slavery campaign actor, 5) stated ‘while the
+Act remains the reflections of civil society organisations,
+the way [the] Act was created, and in particular, the way
+the regulation came up as a minimum disclosure requirement, was a result of the influence of powerful groups like a
+business community’. Another activist stated, ‘Who created
+weak regulation? Well, you need to understand there was a
+political lobby… Companies feel it is costly for the compliance and they do not want any mandatory requirements and
+penalty provision in case of non-compliance’ (anti-slavery
+campaign activist, 4).
+
+13
+
+470
+
+It has also been observed that a large number of companies are not subject to the Act, and neither is the public
+sector. One activist (anti-slavery campaign, 1) stated that
+‘you need to understand, the lobbies started even before the
+Parliamentary bill was placed, a large number of business
+members and industry groups perhaps lobbied the government to be excluded from the requirement’.
+The literature also highlights broad community concerns
+at how favourable the position is for organisations. LeBaron
+and Rühmkorf (2019, p.738), quoting from an interview,
+claimed that ‘there’s a lot of unwarranted excitement around
+transparency. Every company has slavery in their supply
+chain – anyone who says they don’t is lying or incompetent… Transparency legislation won’t do anything to change
+that’. A global law firm claimed that there is a fundamental
+flaw in the Act ‘as in reality, organizations could simply
+state that no precautions have been taken to ensure their
+organization is free of slavery and this would be accepted
+as a compliance’.8
+During the early stages of implementing a law, the regulator was either genuinely optimistic or at least prepared to
+deploy persuasive arguments for the possible success of the
+regulation. As the UK’s Prime Minister Theresa May stated,
+during the early stages of regulatory compliance:
+The first legislation of its kind in Europe, this act…
+has delivered enhanced protection and support for victims and a world-leading transparency requirement on
+businesses to show that modern slavery is not taking
+place in their companies or their supply chains… But
+we must not stop there. Just because we have some legislation does not mean that the problem is solved. So as
+Prime Minister, I am setting up the first-ever government task force on modern slavery (UK Government,
+2016, cross reference, Bloomfield & Lebaron, 2018).
+Despite such persuasive language by the Prime Minister,
+the broader concerns over regulatory capture are now more
+visible than before. At present, the regulation is regarded as
+doing more to serve large corporate interests than it does
+to address the suffering of vulnerable workers employed
+along global supply chains (Bloomfield & Lebaron, 2018).
+In 2018, the UK’s first-ever Independent Anti-Slavery Commissioner, Kevin Hyland, who had been appointed by the
+Prime Minister, resigned while citing government interference in his role (Dearden, 2018). Despite stating ‘the
+law guarantees the independence of the Independent Antislavery Commissioner, who is responsible for improving
+the prevention, detection, investigation and prosecution of
+slavery and human trafficking offences’ (Dearden, 2018), in
+his resignation letter Kevin Hyland ‘conceded failures over
+8
+
+Squire Patton Boggs (2015)
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+the lack of conviction of criminals, inadequate support for
+slavery victims, and limited action from businesses to tackle
+the problem’ (Ford, 2018). It appears that interest groups
+have captured the regulation in a way that prevented the
+Anti-slavery Commissioner from working independently to
+curb modern slavery. This evidence is consistent with how
+regulatory capture is defined within the diverse literature
+(Levine & Forrence, 1990; Hantke-Domas, 2003; Baudot
+et al., 2017; Dal Bó & Di Tella, 2003; Hines, 1991; Paisey
+& Paisey, 2012).
+Apparent Disconnection Between Anti‑Slavery Disclosure
+and Actual Action
+Previous research that examined transparency found a ‘transparency fallacy’ in global supply chains (Gold & Heikkurinen, 2018). Claimed transparency may not lead to socially
+responsible behaviour (Gold & Heikkurinen, 2018). Following the analysis of the limits of the Modern Slavery Act,
+it can be argued that, without substantive disclosure and
+sanction provisions within the Act, any call for transparency
+may not improve working conditions in supply chains. Such
+scepticism is encouraged by research into transparency and
+accountability in relation to the working conditions within
+global supply chains (e.g. Islam et al., 2018).
+One member from an anti-slavery campaign group (actor,
+1) expressed concern that (obviously) disclosure is not the
+same as performance and there are no basic processes set
+in place to monitor this. Even if processes are introduced,
+the question of how to implement this in the different
+countries from where organisations source their products
+remains. From this interviewee’s perspective, it is certainly
+questionable whether the Act is effective in curbing slavery
+and unethical practices and protecting human rights. There
+was general concern over how disclosure can be connected
+to the activities (if any) towards the elimination of modern
+slavery. Requiring corporations to disclose, rather than to
+act, in the hope that greater transparency and disclosures
+about organisations’ activities will foster improvement in
+working conditions may be misdirected. Prior research
+in accounting showed that the voluntary nature of social
+disclosure had the effect that social disclosures often do
+not reflect the real actions and disclosure can be used to
+maintain the existing hegemony and inequality as exposed
+through counter-narratives by NGOs, civil society organisations and the media (Semeen & Islam, 2021; Islam et al.,
+2021). Similarly, critical accounting research on transparency also found that transparency through corporate disclosures can be problematic (see, for example, Coslor, 2016;
+Roberts, 2009). The apparent disconnection between antislavery disclosures and real actions by corporations, may
+relate to the literature on organisational decoupling that
+suggests that organisations may decouple their institutional
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+practices (such as disclosures practices) from their actual
+organisational actions (Aguileraet al., 2007; Holder-Webb
+& Cohen, 2012; Jamali, 2010; Lepoutre & Valente, 2012;
+Sandholtz, 2012). Drawing on this literature, we argue that
+the UK Modern Slavery Act creates a context within which
+corporations’ decoupling via modern slavery disclosure
+appears to be ceremonial or symbolic—which may render
+a form of institutional ‘immunity’ to regulatory pressures
+(Lepoutre & Valente, 2012). However, we do not rule out
+the importance of a particular disclosure regulation if such
+regulation contain substantive provisions for the companies
+to be socially accountable.
+
+Critical Factors in the Creation of Normativity
+of the UK Modern Slavery Act
+While prior normativity research often found that regulations via external guidance, standards, and codes led to the
+creation of normativity (Buhmann, 2011; Chelli et al., 2018;
+Manacorda, 2014), we argue that more research is necessary to support or challenge these findings and interpretation. A problem (which prior normativity research did not
+address) arises when minimum compliance or disclosure
+requirements do not create transparency. Critical factors in
+the creation of normativity of the Act are presented next.
+Awareness Building Efforts and the Need for Broader
+Stakeholder Engagement
+For many, the Act’s normativity seems to lie in it being a
+starting point for dialogue, launching sensible conversations
+and actions focussed on modern slavery. Several anti-slavery
+activists observed that the Act has a long-term role to play,
+including raising awareness and creating transparent corporate practices in relation to modern slavery. In particular, many argue that the Act stimulates awareness of corporate transparency about modern slavery within business
+operations, including supply chain operations. Some also
+believe the Act is a part of efforts to raise global awareness of modern slavery. One anti-slavery campaign actor (3)
+stated the ‘good thing is this [is] a part of a global movement: Australia has come up with an Act [Modern Slavery
+Act 2018], Germany is coming forward and other countries
+[are] coming… this [is] a wide range of global awareness’.
+The Act creates the necessity for awareness-building collaborations among professional groups. There is consensus
+among anti-slavery activists about the need for corporations
+
+471
+
+to collaborate with NGOs and anti-slavery campaign organisations on training and raising awareness around assessing
+and tackling modern slavery risks in supply chains. One of
+our interviewees, a senior official from a UK-based accounting professional body, observed that since accountants and
+auditors are usually engaged in producing organisational disclosures and assurance practices, the Modern Slavery Act
+regime has implications for the profession. Accordingly, his
+organisation is collaborating with civil society and human
+rights bodies to run awareness-building training sessions
+and workshops for accountants and auditors. There is also a
+common view among interviewees that modern slavery is a
+multidisciplinary issue, and it is expected that collaborations
+among different professional and non-professional groups
+– including accountants/auditors, lawyers, business executives, consultants, trade unions, labour rights activists and
+other civil society groups – will emerge to create corporate
+accountability in relation to modern slavery.
+The normativity of the Act depends on how regulators
+in a democratic society encourage greater engagement by
+civil society actors to produce counter-narratives (Gallhofer
+et al., 2006; Semeen & Islam, 2021), and foster change in
+corporate transparency. Anti-slavery activists interviewed
+believe that the UK Modern Slavery Act does enhance the
+scope for NGOs, activist groups, and civil society organisations to monitor corporate behaviour and collaborate with
+the business to solve the issues (i.e. Islam & Van Staden,
+2018). One interviewee (anti-slavery campaign actor, 4)
+provided an interesting insight: ‘following the Act, several
+civil society organisations [have] come up with reporting
+and evaluations or their scores against companies’ modern
+slavery transparency so that the concerned companies do
+not want to see bad scores in the future. Several other civil
+society organisations directly engage and collaborate with
+the business to tackle modern slavery’. An anti-slavery campaign actor (1) who is pushing the government for legislation that holds companies accountable stated ‘we are active
+to hold companies liable for modern slavery, we are wanting government [to] take some solid action. A new Modern
+Slavery Act review has been released last week and you can
+see some of our recommendations. Our key recommendation
+is to move towards monitoring and sanctions’. An ethical
+investor regards the Act as helping to monitor companies
+in the public domain: ‘our monitoring efforts (which also
+depends on NGOs) is slow, but it is moving in a positive
+direction. The Act is helpful to monitor and score companies
+in terms of human rights. If you look at pension funds (larger
+
+13
+
+472
+
+funds), we are concerned about the modern slavery issue
+because pension funds should be socially responsible….’
+At the implementation stage of the Act, NGOs’ or campaign groups’ roles are crucial. Some anti-slavery campaign
+organisations have started ranking companies in terms of
+the quality of their reporting. Some companies have been
+ranked highly for reporting and a few were interviewed. One
+responded, ‘I do not know whether it is best reporting or not,
+but for sure, we have improved our quality of disclosures. We
+have now greater transparency in supply chains’ (sustainability manager, UK retail company). From this discussion,
+we argue that given the minimum disclosure requirements
+of the Act, the creation of normativity largely depends on
+NGOs and campaign organisations’ continued engagement
+and collaboration with corporations and regulators. While
+prior research on normativity found that along with regulation, external guidelines (for example, global guidelines such
+as the GRI) are a precondition for sustaining normativity
+(Buhmann, 2011; Chelli et al., 2018; Manacorda, 2014), we
+provide additional insights that direct or indirect engagement
+by NGOs and anti-slavery campaign organisations have a
+greater promise to create normativity. While our research
+adds to earlier research looking into the attainment of normativity (see Bebbington et al., 2012) and its relationship
+with disclosures and transparency (Chauvey et al., 2015),
+we argue that higher levels of normativity can be achieved if
+NGOs and campaign groups are empowered and emphasise
+public interest over corporate self-interest.
+Conformance with the Act and Broader Community
+Expectations
+The normativity of regulation also depends on how the regulatory environment encourages regulated (companies) to
+conform with broader community expectations. Chelli et al.
+(2018) found that French environmental disclosure regulations and broader community expectations, as reflected by
+the GRI guidelines, prompted the attainment of normativity.
+We argue that not only global expectations but also local
+(country-based) expectations, as reflected in NGO and activist narratives and accounts (Islam et al., 2021), are important contributing factors for the achievement of normativity. Accordingly, as mentioned earlier, some anti-slavery
+campaign actors stated that the Act partly reflects broader
+community expectations. This entails a level of normativity as, despite significant limitations, the Act has value or
+appears relevant to the broader community, including NGOs
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+and activists. As modern slavery statements required by the
+Act are publicly available on organisations’ websites, these
+are available to consumers, media, NGOs, and investors, i.e.
+key stakeholders can view them and evaluate them accordingly (anti-slavery campaign actor, 5). When interviewees
+were asked whether the regulations help to obtain a sense
+of normativity, a consensus view was expressed. One antislavery campaign actor (4) stated:
+Yes, the Act has merit. The Act does make the modern
+slavery statement publicly available. The more people
+read the statement, the more serious companies would
+be to provide objective information. If some people are
+enquiring whether a company meets the requirement
+and commenting on this accordingly, it does put pressure on companies to be responsive.
+Some participants have addressed the normativity issue by
+reviewing whether the Act meets the needs of the broader
+community. They do not think the Act is ideal, but they also
+think that the Act meets expectations to some extent as it has
+some social value. As anti-slavery campaign actor (4) stated,
+‘at least we have something to assess and score companies’
+compliance [against]’. And interestingly, one manager from
+an ethical investment company sees a significant advantage
+of the Act in the following: ‘the Act helps us to assess and
+score companies’ modern slavery performance. In line with
+the Act, we assess the companies’ modern slavery statements
+and provide our score and recommendation to our investee
+who are eager to invest their money in a responsible manner.
+I think this matter!
+Activist Concerns over the Regulator’s Priority to Protect
+Corporate Interests over the Public Interest
+One of the critical factors that can limit normativity is the
+regulator’s lack of power to protect the public interest. The
+limits of the transparency provision under the Act and the
+ongoing influence by powerful interest groups reduce the
+normativity of the UK Modern Slavery Act. ‘There are, of
+course, some issues that are associated with the demerits
+of the Act’ (anti-slavery campaign actor, 2). ‘It is a type of
+requirement that might encourage companies [to] provide
+some superfluous disclosure on modern slavery without necessarily engaging in the real change or elimination of slavery’ (chief policy advisor, accounting body). Another problem was highlighted: ‘it is difficult to compare between two
+companies even [where] both adopted the modern slavery
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+statement. In other words, it is difficult to differentiate good
+and bad companies because apparently, based on reporting,
+one may not find any difference. This can be risky for ethical
+investors’ (manager, ethical investment firm).
+The regulation setting process is a political process in
+which the voices of powerful interest groups such as the
+business community can be prioritised over civil society
+groups. Accordingly, in relation to the provision of penalties for non-compliance with the Act, the government feared
+that any provision for injunction or punishment would not
+be accepted by the regulated and, therefore, might hamper
+transparency. ‘[A] punitive approach might hamper transparency… we have not taken an injunction so far because
+the issue of global supply is so complex’ (a government policy advisor). This statement is consistent with prior research
+on the normativity of regulations that suggested that penalties for non-compliance should not be a necessary precondition of normativity (Chelli et al., 2018). But we argue that it
+is the dominant business interests that suppressed punitive
+actions against wrongdoers, which in turn suppress both normativity and transparency. From the interviews and reading around the subject, we detected a sense of resistance
+from the regulated, i.e. the business community. There is
+a view among anti-slavery activists that in order to protect
+the interests of regulated organisations and not the workers
+or victims, the government perhaps imposed a much more
+user-friendly form of regulation. ‘The Act does not impose
+any penalty even if a business does not produce any modern
+slavery statement’ (anti-slavery campaign actor, 4).
+All the critical factors that limit transparency, as discussed in earlier sections, have implications for normativity.
+As one anti-slavery campaign actor (anti-slavery campaign
+actor, 4) repeated, ‘if a company does not comply with the
+Act, nothing will happen. But there should be legal demerit
+to hold companies accountable.’ Some of these concerns
+are antithetical to the notion of normativity as ‘the moral
+bases of legality’ (Ewick & Silbey, 1998). This type of concern, along with variations in corporate responsiveness to
+the regulations, might lead to the adoption of future punitive
+tactics, including stringent regulation by regulators themselves (Ayres & Braithwaite, 1991). It follows then that if
+certain provisions of a particular regulation are problematic to create transparency, this may also be problematic in
+the creation of normativity. We discussed earlier that antislavery activists were concerned over the Act’s minimum
+disclosure provisions. While a growing amount of prior
+research on normativity (Buhmann, 2011; Chelli et al., 2018;
+
+473
+
+Manacorda, 2014) appeared supportive of minimum disclosure requirements, given that other guidance (i.e. from UN
+guidelines to the GRI guidelines) played a role in the process
+of achieving normativity, we find this notion problematic
+because achieving normativity largely depends on how well
+stakeholder activism, activist campaigns and social movements were mobilised to create transparency (Islam & Van
+Staden, 2018). If the broader community or activist groups
+do not put pressure upon companies to be socially accountable, minimum disclosure requirements alone may not create normativity. While our insights are not exhaustive, it is
+important for further research on this issue.
+
+Conclusion
+This article provides essential insights into the views of
+anti-slavery activists and experts on the UK modem slavery
+Act of 2015 and its implications in relation to eliminating
+modern slavery from global supply chains. Most of the interviewees of this study articulated cautious confidence in the
+Act and its aims to foster corporate transparency and support
+for the public interest and in the normativity of the Act. For
+many interviewees, the Act is a starting point for broader
+dialogue among stakeholder groups to encourage corporate
+transparency in relation to modern slavery. There is a consensus view that the disclosure provisions of the Act may not
+help to eliminate modern slavery in the shorter term but may
+help to build long-term solutions. Other views see the Act as
+having been influenced by powerful interest groups whose
+motivations were business risk management rather than minimising the risk of people falling victim to modern slavery
+in supply chains, mainly operated in developing nations. For
+many interviewees, the constructive aspect of the Act will
+be its normativity (Ewick & Silbey, 2003), which should
+encourage ‘more’ scrutiny of regulated organisations by civil
+society groups and human rights activists.
+While the interviewees find the transparency provisions
+of the UK Modern Slavery Act a persuasive concept, most
+of them are also sceptical about the way the Act operationalise these. The call for transparency in the Act is restricted
+by the limited disclosure requirements, limits to the range
+of entities required to publish modern slavery statements
+and limited means to hold regulated organisations responsible for their supply chain operations in developing nations.
+While the call for transparency is an important yardstick to
+measure corporate responsibility and sustainability (Gold
+
+13
+
+474
+
+& Heikkurinen, 2018), it has been observed that limited
+transparency requirements in the Act have led to limited
+corporate liability and responsibility for tackling modern
+slavery and unethical labour practices within global supply chains. In particular, the traceability of suppliers and
+their factory locations is a critical aspect of transparency
+within global supply chains (Egels-Zandén & Hansson,
+2016; Gardner et al., 2019) that is disregarded in the Modern Slavery Act. Anti-slavery activists believe that the Act
+has been influenced by corporations and some believe that
+there is little legal scope to hold organisations accountable
+for slavery practices. There is a view that the regulation has
+been captured by powerful corporate groups for their own
+interests (Baudot et al., 2017; Hantke-Domas, 2003; Hines,
+1991; Levine & Forrence, 1990; Paisey & Paisey, 2012),
+and that modern slavery disclosures, therefore, attempt to
+reduce business risk and do not address and reduce the risks
+of those falling victim to modern slavery. The interviewees
+observed that risk minimisation agendas, among both regulators and corporations, may not automatically reduce the
+severity of modern slavery practices within global supply
+chains. Although the normativity of the Act can be achieved
+(Ewick & Silbey, 2003) through collaboration with, and surveillance activities by, NGOs and anti-slavery activists, the
+ascendance of corporate self-interest over public interest
+may hamper normativity. Unlike prior research on normativity (Buhmann, 2011; Chelli et al., 2018; Manacorda, 2014),
+we argue that the Act’s creation of normativity is constrained
+by NGOs and activists’ capacity to mobilise pressures upon
+companies to be socially accountable. In line with the literature on counter-accounts (Semeen & Islam, 2021; Lehman
+et al., 2016; Gallhofer et al., 2006), we argue that the narratives of anti-slavery activists regarding unethical modern
+slavery practices, play an important role to mobilise pressures upon corporations to follow the Act.
+Through close observation of practices under the Modern
+Slavery Act 2015, we contribute to the current understanding of the limitations of corporate transparency and related
+regulation. First, we document not only the current limitations of transparency under the Act, but also the issues with
+relational compliance with the (minimal) disclosure requirements within a supply chain setting. Second, although some
+researchers provided a theoretical overview of the limits
+of transparency and accountability (see, for example, Gold
+& Heikkurinen, 2018), in this study, we have observed the
+phenomena through interviews with social and institutional
+actors who are knowledgeable in the area of corporate
+responsibility in relation to modern slavery. Third, in line
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+with the literature on counter-accounts/narratives (Gallhofer
+et al., 2006; Lehman et al., 2016), we observed how particular civil society groups, this being anti-slavery activists, produce narratives regarding the roles of regulators and corporate actors. Fourth, we also contribute to the understanding
+of regulatory capture by highlighting how businesses seek to
+minimise their own risk rather than show concern for victims
+of modern slavery. Finally, we extend the knowledge about
+normativity (Chelli et al., 2018) by providing new insights
+into how the normativity of the Act largely depend on the
+activism and campaigns by NGOs and anti-slavery groups.
+We acknowledge that while we problematised transparency limitations of the UK Modern Slavery Act, we
+mostly relied on the narratives of anti-slavery activists.
+Our approach is consistent with the counter-account literature (Lehman et al., 2016; Gallhofer et al., 2006; Semeen
+& Islam, 2021). Accordingly, we argue that, from a stakeholder/societal point of view, NGOs and social activists
+are in a better position than profit-driven shareholders or
+corporate managers to provide views and narratives on the
+limitations of a particular regulation to create transparency
+and ethical practices within global supply chains. We also
+argue that while the expectations of NGOs and social activists may be seen as unrealistic by some corporate managers, these expectations can be emancipatory to the broader
+community (including the victims of modern slavery within
+global supply change) and a catalyst for future change in
+corporate accountability. We encourage further research to
+investigate the emancipatory roles of different stakeholder
+groups, including anti-slavery activists, journalists, suppliers and workers, in global supply chains operating in the
+developing world. Moreover, while existing modern slavery
+disclosure regimes are new and emerging in nature, calling
+on corporations to disclose rather than to act and the idea
+that greater transparency and disclosures about organisations’ activities will foster improvement in working conditions, remains largely under-researched. Along these lines,
+we also call for more research into new modern slavery disclosure regimes.
+
+475
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+Appendix 1: Information on interviewees
+Positions
+
+Interview timing
+
+Description of experience
+
+Project lead, an anti-slavery and workers’
+rights organisation
+
+20th Nov 2018, 10–10.45 am
+
+Head of sustainability policy, a UK retail
+association
+
+25th Nov 2018,
+12.30–1.10 pm
+
+Lead ethical and responsible investment
+engagement, Ethical investment firm
+
+17th January 2019, 3–4 pm
+
+Head of slave-free business development,
+Anti-slavery campaign organisation
+
+25th January 2019, 10–11.30am
+
+Director, an ethical investment firm
+
+17th January 2019, 9.30–10.15 am
+
+Director, slave-free supply chains, Anti-slavery campaign organisation
+
+10th December 2018, 9.45–10.15 am
+
+Leading a project on human rights in the supply
+at a major global business and human rights
+NGO
+Co-chairing modern slavery strategy and implementation group – Transparency in supply
+chains at a major retail association in the UK
+Working as a research expert on modern slavery
+at the UK’s major charity fund management
+firm
+Leading the business development at a UK
+modern slavery NGO that is directly engaged
+with businesses to tackle modern slavery
+Senior director of shareholder advocacy at a
+major religious-based investment services
+company
+Independent supply chain auditor and a director
+of a UK modern slavery NGO that is directly
+engaged with businesses to tackle modern
+slavery
+Leading different UK government projects in
+relation to preventing modern slavery
+Managing ethical compliance, a UK retail
+company. S/he was responsible for preparing a modern slavery statement that was
+subsequently ranked by a consultancy firm in
+the top 3 modern slavery statements among
+FT100
+Working with a major NGO to run workshops
+for members of an accounting professional
+body in the UK; also, the author of an article
+on the UK Modern Slavery Act 2015
+Responsible for strategy and operations of
+major civil society coalition (NGO) on corporate accountability. Also working for various
+business and human rights projects
+Working for various business and human
+rights projects at major civil society coalition
+(NGO) on corporate accountability
+Director of an NGO and the independent auditor in UK companies’ supply chains operating
+in developing countries
+Working in various modern slavery projects at a
+global ethical trading NGO
+Responsible for the operations of an association of civil engineering contractors (many
+contractors in the UK are engaged in supply
+chain activities)
+
+28th January 2019, 10.15–10.45 am
+Head of modern slavery prevention, UK
+Government
+Ethical trading manager, a UK retail company 30th November 2018, 10–10.35 am
+
+Senior policy advisor, A UK professional
+accounting body
+
+27th November 2018, 10–10.30 am
+
+Director, Anti-slavery campaign organisation
+
+15th November 2018, 4–4.30 pm
+
+Policy advisor, Anti-slavery campaign organi- 25 January 2019 11–12 pm
+sation
+Director and independent auditor, Anti-slavery 28th November 2018, 10–11.30 am
+campaign organisation
+Modern slavery advisor and auditor, Antislavery campaign organisation
+Chief Executive Officer, a UK civil contractors’ association
+
+18th December 2018, 3–4 pm
+18th January 2019, 10–10.30 am
+
+Acknowledgements The authors would like to thank and acknowledge
+CPA Australia for partially supporting their data collection.
+
+Declarations
+Conflict of interest There is no known conflict of interest associated
+with this publication.
+
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long
+as you give appropriate credit to the original author(s) and the source,
+provide a link to the Creative Commons licence, and indicate if changes
+were made. The images or other third party material in this article are
+included in the article’s Creative Commons licence, unless indicated
+otherwise in a credit line to the material. If material is not included in
+
+13
+
+476
+the article’s Creative Commons licence and your intended use is not
+permitted by statutory regulation or exceeds the permitted use, you will
+need to obtain permission directly from the copyright holder. To view a
+copy of this licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+
+References
+Acerete, B., Gasca, M., & Llena, F. (2019). Analysis of environmental
+financial reporting in the Spanish toll roads sector. Spanish Journal of Finance and Accounting, 48(4), 430–463.
+Aguilera, R. V., Rupp, D. E., Williams, C. A., & Ganapathi, J. (2007).
+Putting the S back in corporate social responsibility: A multilevel
+theory of social change in organizations. Academy of Management Review, 32(3), 836–863.
+Allain, J. (2017). Contemporary Slavery and Its Definition in Law.
+Contemporary Slavery: Popular Rhetoric and Political Practice,
+37–66.
+Ansett, S. & Hantover, J. (2013). Bangladesh factory fires – the hidden
+dangers of subcontracting” Ethical Corporation Magazine, 5th
+February. Available from: http://​www.​ethic​alcorp.​com/​supply-​
+chains/​bangl​adesh-​facto​ry-​fires-​E280%​93-​hidden-​dange​rs-​subco​
+ntrac​ting
+Arnold, D., & Hewison, K. (2005). Exploitation in global supply
+chains: Burmese workers in Mae Sot. Journal of Contemporary
+Asia, 35(3), 319–340.
+Ayres, I., & Braithwaite, J. (1991). Tripartism: Regulatory capture and
+empowerment. Law & Social Inquiry, 16(3), 435–496.
+Barrientos, S., & Smith, S. (2007). Do workers benefit from ethical
+trade? Assessing codes of labour practice in global production
+systems”. Third World Quarterly, 28(4), 713–729.
+Baier, M. (2016). Social and legal norms: Towards a socio-legal understanding of normativity. Routledge Matthias Baier. https://​doi.​
+org/​10.​4324/​97813​15609​416
+Barth, M., & Schipper, K. (2008). Financial reporting transparency.
+Journal of Accounting, Auditing & Finance, 23(2), 173–190.
+Baudot, L., Roberts, R. W., & Wallace, D. M. (2017). An examination
+of the US public accounting profession’s public interest discourse
+and actions in federal policymaking. Journal of Business Ethics,
+142(2), 203–220.
+Bauhr, M., & Nasiritousi, N. (2012). Resisting transparency: corruption, legitimacy, and the quality of global environmental policies.
+Global Environmental Politics, 12(4), 9–29.
+Bebbington, J., Kirk, E. A., & Larrinaga, C. (2012). The production
+of normativity: a comparison of reporting regimes in Spain and
+the UK. Accounting, Organizations and Society, 37(2), 78–94.
+Berliner, D. (2014). The political origins of transparency. The Journal of Politics, 76(2), 479–491.
+Bernstein, E. (2017). Making transparency transparent: The evolution of observation in management theory. Academy of Management Annals, 11(1), 217–266.
+Birkey, R. N., Guidry, R. P., Islam, M. A., & Patten, D. M. (2018).
+Mandated social disclosure: an analysis of the response to the
+california transparency in supply chains act of 2010. Journal
+of Business Ethics, 152(3), 827–841.
+Blacconiere, W. G., & Northcut, W. D. (1997). Environmental information and market reactions to environmental legislation.
+Journal of Accounting, Auditing & Finance, 12(2), 149–178.
+Blacconiere, W. G., & Patten, D. M. (1994). Environmental disclosures, regulatory costs, and changes in firm value. Journal of
+Accounting and Economics, 18(3), 357–377.
+Blitz, B., & Simic, A. (2019). The modern slavery regime: A critical
+evaluation. Journal of the British Academy, 7(Supp. 1), 1–34.
+
+13
+
+M. A. Islam, C. J. Van Staden
+Bloomfield, M. & Lebaron, G. (2018). The UK Modern Slavery Act:
+Transparency through Disclosure in Global Governance, Sep
+2018, E-International Relations, https://​www.e-​ir.​info/​2018/​
+09/​21/​t he-​uk-​modern-​slave​r y-​act-​trans​paren​cy-​t hrou​gh-​discl​
+osure-​in-​global-​gover​nance/
+Brusca, I., Grossi, G., & Manes-Rossi, F. (2018). Setting consolidated
+reporting standards for local government. Public Money & Management, 38(7), 483–492.
+Buell, R. W., Kim, T., & Tsay, C. (2017). Creating reciprocal value
+through operational transparency. Management Science, 63(6),
+1673–1695.
+Buhmann, K. (2011). Integrating human rights in emerging regulation
+of corporate social responsibility: The EU case. International
+Journal of Law in Context, 7(2), 139–179.
+Bushman, R. M., Piotroski, J. D., & Smith, A. J. (2004). What determines corporate transparency? Journal of Accounting Research,
+42(2), 207–252.
+Chalmers, J. (2013). Special Report: How textile kings weave a hold on
+Bangladesh, Reuters, May, last viewed on May, 2021 at https://​
+www.​reute​rs.​com/​artic​le/​us-​bangl​adesh-​garme​nts-​speci​al-​report-​
+idUSB ​ R E941 ​ 1 CX20 ​ 1 30502? ​ f bclid= ​ I wAR1 ​ u koUa ​ 9 z3uM_
+X5PODfIvQshtMRNLwplNGFlptPzwFAZcWcA80LUpc1DrU
+Carpenter, D., & Moss, D. A. (Eds.). (2013). Preventing regulatory
+capture: Special interest influence and how to limit it. Cambridge
+University Press.
+Chauvey, J. N., Giordano-Spring, S., Cho, C. H., & Patten, D. M.
+(2015). The normativity and legitimacy of CSR disclosure: Evidence from France. Journal of Business Ethics, 130(4), 789–803.
+Chelli, M., Durocher, S., & Fortin, A. (2018). Normativity in environmental reporting: a comparison of three regimes. Journal of
+Business Ethics, 149(2), 285–311.
+Chilton, A. S., & Sarfaty, G. A. (2017). The limitations of supply chain
+disclosure regimes. Stanford Journal of International Law, 53,
+1–54.
+Christ, K. L., & Burritt, R. L. (2018). Current perceptions on the problem of modern slavery in business. Business Strategy & Development, 1(2), 103–114.
+Coates, J. (2007). The goals and promise of the Sarbanes-Oxley Act.
+Journal of Economic Perspectives, 21(1), 91–116.
+Coslor, E. (2016). Transparency in an opaque market: Evaluative frictions between “thick” valuation and “thin” price data in the art
+market. Accounting, Organizations and Society, 50, 13–26.
+Crane, A. (2013). Modern slavery as a management practice: Exploring
+the conditions and capabilities for human exploitation. Academy
+of Management Review, 38(1), 49–69.
+Dal Bó, E., & Di Tella, R. (2003). Capture by threat. Journal of Political Economy, 111(5), 1123–1154.
+Dearden, L. (2018). UK’s first Independent Anti-Slavery Commissioner
+resigns citing government interference, May 17 Independent,
+https://​www.​indep​endent.​co.​uk/​news/​uk/​polit​ics/​modern-​slave​
+ry-​uk-​commi​ssion​er-​resig​ns-​inter ​feren​ce-​kevin-​hyland-​gover​
+nment-​a8356​601.​html
+Doorey, D. J. (2011). The transparent supply chain: From resistance to
+implementation at Nike and Levi-Strauss. Journal of Business
+Ethics, 103(4), 587–603.
+Egels-Zandén, N., & Hansson, N. (2016). Supply chain transparency
+as a consumer or corporate tool The case of Nudie Jeans Co.
+Journal of Consumer Policy, 39(4), 377–395.
+Egels-Zandén, N., Hulthén, K., & Wulff, G. (2015). Trade-offs in supply chain transparency: The case of Nudie Jeans Co. Journal of
+Cleaner Production, 107, 95–104.
+Etzioni, A. (2009). The capture theory of regulations—revisited. Society, 46(4), 319–323.
+Ewick, P., & Silbey, S. (2003). Narrating social structure: Stories of
+resistance to legal authority. American Journal of Sociology,
+108(6), 1328–1372.
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+Ewick, P. & Silbey, S. S. (1998). The commonplace of law: Stories from
+everyday life. University of Chicago Press.
+FEE (2017). Fast Fashion Has Changed the Industry and the Economy,
+Foundation for Economic Education (FEE), July, last viewed on
+May, 1, 2021, at https://​fee.​org/​artic​les/​fast-​fashi​on-​has-​chang​
+ed-​the-​indus​try-​and-​the-​econo​my/
+Fenster, M. (2010). Seeing the state: Transparency as metaphor. Administrative Law Review, 62(3), 617–672.
+Finel, B. I., & Lord, K. M. (1999). The surprising logic of transparency.
+International Studies Quarterly, 43(2), 325–339.
+Ford, R. (2018). Anti-slavery tsar Kevin Hyland steps down amid criticism, 18 May, The Times, https://​www.​theti​mes.​co.​uk/​artic​le/​
+anti-​slave​ry-​tsar-​attac​ks-​home-​office-​qrvhl​c3bl
+Fung, A., Graham, M., & Weil, D. (2007). Full disclosure: The perils
+and promise of transparency. Cambridge University Press.
+Gadd, D., & Broad, R. (2018). Troubling recognitions in British
+responses to modern slavery. The British Journal of Criminology, 58(6), 1440–1461.
+Gallhofer, S., Haslam, J., Monk, E., & Roberts, C. (2006). The emancipatory potential of online reporting: The case of counter
+accounting. Accounting, Auditing & Accountability Journal,
+19(5), 681–718.
+Gardner, T. A., Benzie, M., Börner, J., Dawkins, E., Fick, S., Garrett,
+R., Godar, J., Grimard, A., Lake, S., Larsen, R. K., & Mardas,
+N. (2019). Transparency and sustainability in global commodity
+supply chains. World Development, 121, 163–177.
+Gold, S., & Heikkurinen, P. (2018). Transparency fallacy: Unintended
+consequences of stakeholder claims on responsibility in supply
+chains. Accounting, Auditing & Accountability Journal, 31(1),
+318–337.
+Gold, S., Trautrims, A., & Trodd, Z. (2015). Modern slavery challenges
+to supply chain management. Supply Chain Management: An
+International Journal, 20(5), 485–494.
+Gray, G. C., & Silbey, S. S. (2014). Governing inside the organization:
+Interpreting regulation and compliance. American Journal of
+Sociology, 120(1), 96–145.
+Grigorescu, A. (2003). International organizations and government
+transparency: Linking the international and domestic realms.
+International Studies Quarterly, 4(1), 643–667.
+Hansard (2019), Modern Slavery Act: Independent Review, House of
+Commons Hansard, June, 19, Vol. 662 (viewed at: https://​hansa​
+rd.​parli​ament.​uk/​commo​ns/​2019-​06-​19/​debat​es/​66FD5​FFB-​
+2058-​4CAE-​8B1F-​0EC4B​2E090​41/​Moder ​nSlav​eryAc​tInde​
+pende​ntRev​iew)
+Hantke-Domas, M. (2003). The public interest theory of regulation:
+Non-existence or misinterpretation? European Journal of Law
+and Economics, 15(2), 165–194.
+Harnay, S., & Scialom, L. (2016). The influence of the economic
+approaches to regulation on banking regulations: a short history of banking regulations. Cambridge Journal of Economics,
+40(2), 401–426.
+Heard-Lauréote, K. (2007). A transparency gap? The case of European
+agricultural committee governance. Public Policy and Administration, 22(2), 239–258.
+Hines, R. D. (1991). The FASB’s conceptual framework, financial
+accounting and the maintenance of the social world. Accounting, Organizations and Society, 16(4), 313–331.
+Holder-Webb, L., & Cohen, J. (2012). The Cut and Paste Society:
+Isomorphism in Codes of Ethics. Journal of Business Ethics,
+107(4), 485–509.
+Hollyer, J. R., Rosendorff, B. P., & Vreeland, J. R. (2011). Democracy
+and transparency. The Journal of Politics, 73(4), 1191–1205.
+Home Office, (2015). Statutory guidance: Slavery and human trafficking in supply chains: guidance for businesses, Gov.UK, viewed
+at https://​www.​gov.​uk/​gover ​nment/​publi​catio​ns/ transparencyin-supply-chains-a-practical-guide; full report at: https://​assets.​
+
+477
+
+publi​shing.​servi​ce.​gov.​uk/​gover ​nment/​uploa​ds/​system/​uploa​ds/​
+attac​hment_​data/​file/​649906/​Trans​paren​cy_​in_​Supply_​Chains_​
+A_​Pract​ical_​Guide_​2017.​pdf
+Home Office (2019). Independent Review of the Modern Slavery Act
+2015 second Interim Report: Transparency in Supply chains,
+viewed at: https://​assets.​publi​shing.​servi​ce.​gov.​uk/ government/
+uploads/system/uploads/attachment_data/file/796500/FINAL_
+Independent_MSA_Review_Interim_Report_2_-_TISC.pdf
+Hughes, A., Buttle, M., & Wrigley, N. (2007). Organisational geographies of corporate responsibility: A UK–US comparison of
+retailers’ ethical trading initiatives. Journal of Economic Geography: Transnational Retail, Supply Networks, and the Global,
+7(4), 491–513.
+International Labor Organization (ILO) and Walk Free Foundation.
+(2017). Global Estimates of Modern Slavery: Forced Labour and
+Forced Marriage, ILO and Walk Free Foundation https://​www.​
+ilo.​org/​wcmsp5/​g roups/​publi​c/---​dgrep​orts/---​dcomm/​docum​
+ents/​publi​cation/​wcms_​575479.​pdf
+Islam, M. A. (2018). Tackling Modern Slavery: What Role Can
+Accountants Play? Audit & Assurance, International Federation
+of Accountants (IFAC), see on this link: https://​www.​ifac.​org/​
+global-​knowl​edgeg​ateway/​audit-​assur​ance/​discu​ssion/​tackl​ing-​
+modern-​slave​ry-​what-​role-​can
+Islam, M. A., & Deegan, C. (2010). Media pressures and corporate disclosure of social responsibility performance information: A study
+of two global clothing and sports retail companies. Accounting
+and Business Research, 40(2), 131–148.
+Islam, M. A., Deegan, C., & Haque, S. (2021). Corporate human rights
+performance and moral power: A study of retail MNCs’ supply
+chains in Bangladesh. Critical Perspectives on Accounting, 74,
+102163.
+Islam, M. A., & McPhail, K. (2011). Regulating for corporate human
+rights abuses: The emergence of corporate reporting on the ILO’s
+human rights standards within the global garment manufacturing
+and retail industry. Critical Perspectives on Accounting, 22(8),
+790–810.
+Islam, M. A., & Van Staden, C. J. (2018). Social movement NGOs and
+the comprehensiveness of conflict mineral disclosures: Evidence
+from global companies. Accounting, Organizations and Society,
+65, 1–19.
+Islam, M. A., Deegan, C., & Gray, R. (2018). Social compliance audits
+and multinational corporation supply chain: Evidence from a
+study of the rituals of social audits. Accounting and Business
+Research, 48(2), 190–224.
+Jackson, J. (2018). Norms, normativity, and the legitimacy of justice
+institutions: International perspectives. Annual Review of Law
+and Social Science, 14, 145–165.
+Jamali, D. (2010). MNCs and international accountability standards
+through an institutional lens: evidence of symbolic conformity or
+decoupling. Journal of Business Ethics, 95, 717–640.
+Kasperkevic, J. (2016). Rana Plaza collapse: workplace dangers persist
+three years later, reports find. The Guardian, May 31, https://​
+www.​thegu​ardian.​com/​busin​ess/​2016/​may/​31/​rana-​plaza-​bangl​
+adesh-​colla​pse-​fashi​on-​worki​ng-​condi​tions.
+Kelly, A. (2014). Supermarket giants in Thailand for prawn slavery
+talks. The Guardian, 30 July https://​www.​t hegu​ardian.​com/​
+global-​devel​opment/​2014/​jul/​30/​super​marke​ts-​thail​and-​prawn-​
+slave​ry-​seafo​od.
+Kim, S., & Muldoon, C. (2015). The dodd-frank wall street reform and
+consumer protection act: accomplishments and shortcomings.
+The Journal of Applied Business and Economics, 17(3), 92–107.
+KPMG. (2017). The KPMG Survey of Corporate Responsibility
+Reporting 2017. viewed at: https://​home.​kpmg/​conte​nt/​dam/​
+kpmg/​xx/​pdf/​2017/​10/​kpmg-​survey-​of-​corpo​rate-​respo​nsibi​
+lity-​repor​ting-​2017.​pdf
+
+13
+
+478
+KPMG. (2008). The KPMG Survey of Corporate Responsibility
+Reporting 2008. viewed at: http://​s3.​amazo​naws.​com/​zanran_​
+stora​ge/​www.​kpmg.​bg/​Conte​ntPag​es/​45691​987.​pdf
+Landau, I., & Marshall, S. (2018). Should Australia be embracing the
+modern slavery model of regulation? Federal Law Review, 46(2),
+313–339.
+Larrinaga, C., Carrasco, F., Correa, C., Llena, F., & Moneva, J. (2002).
+Accountability and accounting regulation: The case of the Spanish environmental disclosure standard. European Accounting
+Review, 11(4), 723–740.
+LeBaron, G., & Rühmkorf, A. (2019). The domestic politics of corporate accountability legislation: Struggles over the 2015 UK
+Modern Slavery Act. Socio-Economic Review, 17(3), 709–743.
+Lepoutre, J., & Valente, M. (2012). Fools breaking out: the role of
+symbolic and material immunity in explaining institutional nonconformity. Academy of Management Journal, 55(2), 285–313.
+Levine, M. E., & Forrence, J. L. (1990). Regulatory capture, public
+interest, and the public agenda: Toward a synthesis. Journal of
+Law, Economics, and Organization, 6, 167–198.
+Lehman, C., Annisette, M., & Agyemang, G. (2016). Immigration and
+neoliberalism: Three cases and counter accounts. Accounting,
+Auditing & Accountability Journal, 29(1), 43–79.
+Malsch, B., & Salterio, S. E. (2016). Doing good field research: Assessing the quality of audit field research. Auditing A Journal of
+Practice & Theory, 35(1), 1–22.
+Manacorda, S. (2014). Towards an Anti-Bribery Compliance Model:
+Methods and Strategies for a “Hybrid Normativity”. In Preventing Corporate Corruption (pp. 3–30). Springer.
+Mehra, A., & Shay, K. (2016). Corporate responsibility and accountability for modern forms of slavery. Journal of International
+Criminal Justice, 14(2), 453–468.
+Meijer, A. (2009). Understanding modern transparency. International
+Review of Administrative Sciences, 75(2), 255–269.
+Miles, M. B. & Huberman, A. M. (1994). Qualitative data analysis:
+An expanded sourcebook. Sage
+Miles, M. B., Huberman, A. M. & Saldaña, J. (2014). Qualitative
+data analysis: An expanded sourcebook ­( 2 nd edition): Sage
+publications.
+Neu, D., Saxton, G., Everett, J., & Rahaman, A. S. (2020). Speaking
+truth to power: Twitter reactions to the Panama Papers. Journal
+of Business Ethics, 162(2), 473–485.
+New, S. J. (2015). Modern slavery and the supply chain: The limits
+of corporate social responsibility? Supply Chain Management:
+An International Journal, 20(6), 697–707.
+Nolan, J. (2017). Business and human rights: The challenge of
+putting principles into practice and regulating global supply
+chains. Alternative Law Journal, 42(1), 42–46.
+Oxfam (2018). Richest 1 percent bagged 82 percent of wealth created
+last- poorest half of humanity got nothing. January, last viewed
+on May, 1, 2021 at https://​www.​oxfam.​org/​en/​press-​relea​ses/​
+riche​st-1-​perce​nt-​bagged-​82-​perce​nt-​wealth-​creat​ed-​last-​year-​
+poore​st-​half-​human​ity
+Paisey, C., & Paisey, N. J. (2012). Whose rights? Professional discipline and the incorporation of a (human) rights framework:
+The case of ICAS. Critical Perspectives on Accounting, 23(1),
+17–35.
+Phillips, N. (2015). Private governance and the problem of trafficking
+and slavery in global supply chains. In Vulnerability, Exploitation and Migrants (pp. 15–27). Palgrave Macmillan, London.
+Pinto, J. G. (2009). Transparency policy initiatives in Latin America:
+Understanding policy outcomes from an institutional perspective. Communication and Law Policy, 14(1), 41–71.
+Rahman, M., Khanam, R., & Absar, N. (1999). Child labor in Bangladesh: a critical appraisal of Harkin’s Bill and the MOUtype schooling program. Journal of Economic Issues, 33(4),
+985–1003.
+
+13
+
+M. A. Islam, C. J. Van Staden
+Roberts, J. (2009). No one is perfect: The limits of transparency and
+an ethic for ‘intelligent’ accountability. Accounting, Organizations and Society, 34(8), 957–970.
+Rogerson, M., Crane, A., Soundararajan, V., Grosvold, J., & Cho,
+C. H. (2020). Organisational responses to mandatory modern
+slavery disclosure legislation: A failure of experimentalist
+governance? Accounting, Auditing & Accountability Journal,
+33(7), 1505–1534.
+Rosenfeld, J., & Denice, P. (2015). The power of transparency: Evidence from a British workplace survey. American Sociological
+Review, 80(5), 1045–1068.
+Roshitsh, K. (2021). U.K. Modern Slavery Act Isn’t Working as
+Intended, Expert Alleges. WWD, March, viewed on May, 3,
+2021 at https://​wwd.​com/​susta​inabi​lity/​busin​ess/u-​k-​modern-​
+slave​r y-​a ct-​i snt-​worki​n g-​a s-​i nten​d ed-​expert-​a lleg​e s-​1 2347​
+80434/
+Qian, C., Gao, X., & Tsang, A. (2015). Corporate philanthropy, ownership type, and financial transparency. Journal of Business
+Ethics, 130(4), 851–867.
+Quaak, L., Aalbers, T., & Goedee, J. (2007). Transparency of corporate social responsibility in Dutch breweries. Journal of Business Ethics, 76(3), 293–308.
+Sandholtz, K. W. (2012). Making Standards Stick: A Theory of Coupled vs. Decoupled Compliance. Organization Studies, 33(5/6),
+655–678.
+Sarat, A., & Kearns, T. (1993). Law in Everyday Life. University of
+Michigan Press.
+Senn, J., & Giordano-Spring, S. (2020). The limits of environmental
+accounting disclosure: Enforcement of regulations, standards
+and interpretative strategies. Accounting, Auditing & Accountability Journal, 33(6), 1367–1393.
+Schmidt, M. F. & Rakoczy, H. (2018) Developing an understanding of normativity. The Oxford Handbook of 4E Cognition,
+pp.685–706.
+Semeen, H. & Islam, M. A. (2021). Social impact disclosure and
+symbolic power: Evidence from UK fair trade organizations.
+Critical Perspectives on Accounting, 102182.
+Sobik, J. (2020). Five years after the UK Modern Slavery Act, it’s
+time to ramp it up. Anti-Slavery, March viewed on May, 3,
+2021 at https://​w ww.​a ntis​l avery.​o rg/​fi ve-​years-​u k-​m odern-​
+slave​r y-​act/
+Squire Patton Boggs. (2015). The Modern Slavery Act 2015: 10 Key
+Points for Businesses – What is this New Disclosure Obligation? Available at: https://​w ww.​g loba​l supp​lycha​i nlaw​b log.​
+com/​files/​2015/​09/​20453-​Modern-​Slave​r y-​Act-​Alert.​pdf (Last
+Accessed: 30/09/2018)
+Steiner-Dicks, K. (2019). We know most global companies have
+modern slavery in their supply chains. Ethical Corporation, August, 6, viewed at: http://​w ww.​e thic​a lcorp.​c om/​
+we- ​ k now- ​ m ost- ​ g lobal- ​ c ompa ​ n ies- ​ h ave- ​ m oder n- ​ s lave​
+ry-​their-​supply-​chains
+Steinfield, C., Markus, M. L., & Wigand, R. T. (2011). Through a
+glass clearly: Standards, architecture, and process transparency
+in global supply chains. Journal of Management Information
+Systems, 28(2), 75–108.
+Stevenson, M., & Cole, R. (2018). Modern slavery in supply chains:
+A secondary data analysis of detection, remediation and disclosure. Supply Chain Management: An International Journal,
+12(3), 81–99.
+The Barrister (2019). Modern Slavery Legislation: companies should
+not ignore the possibility of UK suppliers as a modern slavery
+risk. Sep 2, The Barrister, viewed at http://​www.​barri​sterm​
+agazi​ne.​com/​modern-​slave​r y-​legis​lation-​compa​nies-​should-​
+not-​ignore-​the-​possi​bility-​of-​uk-​suppl​iers-​as-a-​modern-​slave​
+ry-​r isk/
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+The Global Slavery Index (2018). United Kingdom, 2018 Slavery
+Index, viewed at https://​w ww.​globa​l slav​e ryin​d ex.​o rg/​2 018/​
+findi​ngs/​count​r y-​studi​es/​united-​kingd​om/
+Turner, R. J. (2016). Transnational supply chain regulation: Extraterritorial regulation as corporate law’s new frontier. Melbourne
+Journal of International Law, 7, 188–209.
+The Guardian (2015). The UK’s new slavery laws explained: what do
+they mean for business? Dec 14, Viewed at: https://​www.​thegu​
+ardian.​com/​susta​inable-​busin​ess/​2015/​dec/​14/​modern-​slave​r y-​
+act-​expla​ined-​busin​ess-​respo​nsibi​lity-​supply-​chain
+UK Government. (2016). Defeating modern slavery. article by Theresa May, Home Office, viewed at https://​www.​gov.​uk/​gover​
+nment/​speec​hes/​defea​ting-​modern-​slave​r y-​there​sa-​may-​artic​le
+
+479
+
+Wilson, C. E., Morrison, T. H., Everingham, J. A., & McCarthy, J.
+(2018). Capture and crush: Gas companies in the fracking dispute and deliberative depoliticization. Geoforum, 92, 106–116.
+Zhu, K. (2004). Information transparency of business-to-business electronic markets: A game-theoretic analysis. Management Science,
+50(5), 670–685.
+Publisher’s Note Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional affiliations.
+
+13
+
+

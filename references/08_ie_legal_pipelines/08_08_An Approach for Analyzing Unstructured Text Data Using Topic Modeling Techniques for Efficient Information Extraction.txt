@@ -1,0 +1,1976 @@
+New Generation Computing (2024) 42:109–134
+https://doi.org/10.1007/s00354-023-00230-5
+
+An Approach for Analyzing Unstructured Text Data Using
+Topic Modeling Techniques for Efficient Information
+Extraction
+Ashwini Zadgaonkar1
+
+· Avinash J. Agrawal1
+
+Received: 1 October 2022 / Accepted: 21 July 2023 / Published online: 27 August 2023
+© The Author(s), under exclusive licence to The Japanese Society for Artificial Intelligence and Springer Nature
+Japan KK, part of Springer Nature 2023
+
+Abstract
+Topic modeling techniques are popularly used for document clustering, large-scale
+text analysis, information extraction from unstructured text documents, feature selection from large corpus, and various recommendation systems. This work suggested
+a framework using topic modeling techniques for legal information extraction from
+the Indian judicial system’s unstructured legal judgments. The suggested approach
+aims to eliminate time-consuming manual judgment analysis in favor of automated
+judgment analysis that can quickly examine large number of judgments in reduced
+time span. In this work, we have experimented with different topic modeling methodologies for information extraction. The proposed framework is built on the Latent
+Dirichlet Allocation, to categorize legal judgments into extracted topic groups.
+Indian Supreme Court judgements are considered for the experimental setting. The
+three main elements of the framework are pre-processing, applying the topic model,
+and model evaluation using a coherence score metric. The framework was successfully applied to a corpus size of 100, 500, and 1000 legal judgments in batches. The
+proposed framework is used to measure legal judgment similarity to demonstrate its
+quantitative evaluation. In the future scope, various legal tasks that can benefit from
+the proposed framework for performance improvement are suggested.
+Keywords Information Retrieval · Information Extraction · Natural language
+processing (NLP) · Topic modeling · Latent Dirichlet Allocation (LDA) · Coherence
+score
+
+* Ashwini Zadgaonkar
+ashwinizadgaonkar24@gmail.com
+Avinash J. Agrawal
+agrawalaj@rknec.edu
+1
+
+Shri Ramdeobaba College of Engineering and Management, Nagpur, India
+Vol.:(0123456789)
+1
+3
+
+110
+
+New Generation Computing (2024) 42:109–134
+
+1 Background
+1.1 Information Extraction from Unstructured data
+The process of extracting meaningful information in a structured way from unstructured data in the form of entities, relations, objects, events, and many other forms is
+known as information extraction (IE). This can be very useful to analyze huge amount
+of unstructured text data in less time. The meaningful information extracted by IE is
+used for semantic data analysis. Efficient and relevant information extraction always
+improves the quality of data analysis. Nowadays, huge amount of unstructured data
+exist online, in multiple forms such as images, running text, audio as well as video
+clips, and time series data. All these different forms of data demand specialized techniques for IE and Data analysis. Peculiar characteristics of unstructured data are that it
+is generated from diverse resources and it is schema-less. IBM predicted that unstructured data from diverse resources will compose 95% of total data available online by
+2023. Due to the large volume and inherent characteristics of unstructured data, IE
+becomes a challenging task to process unstructured data.
+In today’s digital world, automated text analysis techniques are adapted to process
+huge amounts of text data and get key insights from it. Natural Language Processing
+(NLP) techniques which are derived from linguistics and statistics domain, along with
+machine learning, are used for language automation. NLP tasks for text data processing include Automatic Text Summarization [1], Part-of-Speech Tagging [2], Sentiment
+Analysis [3], Feature Extraction/Reduction [4], Relation/Event Extraction [5], and
+Information Retrieval (IR) systems [6].
+Information extraction methods are classified into three categories, i.e., rule based,
+machine learning based and knowledge based. The rule-based approach is claimed to
+be interpretable and suitable for rapid development and domain transfer [7], whereas
+the machine learning approach for information extraction [8] gives high accuracy in
+terms of precision and recall. But the machine learning approach is dependent on the
+availability of the tagged dataset and the appropriate feature selection methodology followed. A knowledge base is an organized machine-readable data repository. Knowledge base population (KBP) systems [9] extract knowledge from available resources
+and create knowledge bases based on the semantic and contextual information contained in the resources. The goal of a knowledge base population system is to automatically recognize entities from unstructured text documents, find facts about those
+entities, and represent them in a structured knowledge base format. Information extraction automatically extracts relevant information for a particular application problem
+from the available corpus and represents it in a machine-readable format. The objective
+of information retrieval is to identify relevant information sources, whereas information extraction automatically extracts relevant information from identified sources in a
+structured format.
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+111
+
+1.2 Legal Information Extraction: Introduction and Motivation
+IT, farming, manufacturing, and customer service are some of the industries
+where artificial intelligence (AI) is having a growing impact. The Indian legal
+sector has recently started gradually adapting AI for performance improvement.
+National Judicial Data Grid (NJDG) reported that a huge number of cases are
+pending in different courts in India which is reducing the effectiveness of the
+Judiciary system and denial of justice to people. Legal Experts claimed that AI in
+the legal sector will assist lawyers in conducting legal research quickly and effectively thus resolving the problem of significant pendency.
+AI-enabled legal systems can tackle complicated problems by quickly locating
+relevant cases and statutes. Such a system can highlight crucial points relevant
+to specific contracts, after being “trained” on a large historical dataset to analyze
+thousands of previous instances to create a legal knowledge base for reference.
+A legal expert must always consult prior judgments rendered by various courts
+when preparing a case file for a specific case in order to establish a solid case
+basis. It takes a lot of time and efforts to manually sort through thousands of
+declared judicial decisions to find the details that apply to the current case. There
+are some reliable search engines accessible in the modern internet age to conduct
+efficient legal searches. Speaking with legal professionals, we learn that the most
+common criteria used to guide legal searches are things such as a specific act,
+section, topics, facts, phrases, or keywords.
+Different courts of the Indian Judiciary system deliver thousands of judgments
+every month together. This large corpus of delivered judgments is an important
+resource for the legal community in India. Lawyers, as well as Judges, frequently
+refer to previous judgments for preparing case notes. Legal document analysis is
+a time-consuming and difficult task for legal practitioners as well as the common
+man due to the unstructured, lengthy, and complicated structure of legal documents. Automated legal document analysis can help legal practitioners and the
+common man for a better understanding of the legal domain. IR and IE techniques
+can be used for automatic processing and analysis of large number of unstructured legal documents like legal judgments.
+AI can play a significant role for legal researchers and law firms by providing
+legal intelligence for efficiency and transparency in the legal domain. Though AI
+cannot replace the judges, it can be used as a facilitative tool to provide wider
+access to justice for the common people. AI technology can be utilized in the
+legal domain for the following legal tasks:
+• Semantic legal search Legal community often needs to refer to previous
+
+judgments to prepare case notes. These previous judgments can be searched
+based on parameters such as judge name, different acts, articles, Appellant,
+Respondent, or keywords. Efficient legal search engines can be designed based
+on information-retrieval techniques from NLP.
+• Legal document classification Given the legal document, an AI-enabled legal
+system can classify the document as a criminal or civil, or revenue document
+
+13
+
+112
+
+•
+
+•
+
+•
+
+•
+
+New Generation Computing (2024) 42:109–134
+
+as provided by experts in the ontology. This will lead to faster search results in
+the legal domain using various machine learning models.
+Judgment prediction and explanation In India, there is a pending backlog of legal
+cases which impede the judicial process. There is a need for an automated system for assisting judges in predicting the outcome of the case at hand by considering previous judgments. To make such systems reliable, such systems should
+also explain the decision arrived which can be implemented using explainable
+AI.
+Legal document summarization Legal text summarization mechanisms generate summaries from court judgments using extractive summarization techniques.
+Headnote is a summary generated out of judgments manually in different courts.
+Due to the inherently complicated and unstructured nature of legal documents,
+it is a challenging problem. Legal document summarization is a much-explored
+research problem in the legal domain.
+Legal knowledge base creation A legal-professional assistant tool can help in
+expanding the criminal legal knowledge of the subjects (stakeholders) involved
+in the trial (case), namely lawyers, investigators, law enforcement authorities,
+public prosecutors, and judges. These professionals need to expand their knowledge, extracting relevant terminology from Court Decisions, possibly without
+reading them all entirely. Therefore, legal knowledge management is in high
+demand by the legal community.
+Measuring legal document semantic similarity The similarity analysis of court
+judgment documents is an interesting research problem that contributes to finding relevant previous judgments for preparing case notes. Several parameters of
+legal documents can be utilized to serve as the basis for measuring the similarity
+between two law case judgments.
+
+Knowledge management is the systematic organization, storage, review, and analysis of the knowledge assets of a domain to automate processes, increase value, and
+boost efficiency and productivity. Legal knowledge management is a means to document, store, retrieve and manage legal information efficiently to enhance performance. Figure 1 shows various legal knowledge management tasks that can be done
+using the different machine learning and natural language processing techniques.
+1.3 Representation Techniques for Text Documents
+Text corpora modeling containing discrete data is a popular research problem. This
+modeling finds data representation in the form of statistical relationships between
+the words to facilitate basic text processing. The most common methodology used
+by the IR community to model text documents is vectors. tf-idf [10] is a commonly
+used technique, where a variable length document is represented as a fixed length
+document-term matrix. the tf-idf score is calculated as the product of the frequency
+count of each word in the whole corpus and how many times a word appears in
+the individual document of a corpus. This score should be normalized for further
+processing:
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+113
+
+Fig. 1  Legal knowledge management tasks
+
+)
+(
+N
+W(i, j) = tf (i, j) X log
+df (i)
+
+(1)
+
+where tf (i, j) is the number of occurrences of ith word in jth document, df (i) is the
+number of documents containing ith word and N is the total number of documents in
+corpus. tf-id technique has some inherent drawbacks as follows:
+• Document term matrix representation does not consider dimensionality reduc-
+
+tion.
+
+• tf-idf technique does not explore inter/intra-document statistical structure.
+
+To overcome the shortcomings of the tf-idf scheme of sparse matrix representation, the IR research community invented a dimensionality reduction technique
+named topic modeling. Topic modeling is an unsupervised machine learning technique to locate hidden relationships in a large corpus of text data. It is a popular
+text mining method in NLP to gain insights from text documents. It does not require
+a tagged dataset for learning. The topic modeling algorithm is based on a dimensionality reduction technique fundamentally used for numerical data. NLP considers each word present in the corpus as a feature. Feature reduction using the topic
+modeling technique will focus on the right content of text instead of considering
+the whole text for processing. Topic modeling can process a large volume of text to
+organize and understand a huge corpus of documents.
+The rest of the document is organized as follows. The literature review on automated legal document processing systems developed for the Indian Judiciary system
+is presented to understand state of art of the domain. The proposed approach for
+automated legal document analysis using topic modeling is explained in next part.
+
+13
+
+114
+
+New Generation Computing (2024) 42:109–134
+
+The experimental setup and results obtained are discussed, and at the end, conclusion and future research directions are discussed.
+
+2 Literature Review
+Artificial intelligence is being explored extensively for automation purposes in all
+domains for better speed and accuracy. Use of AI in law is growing in popularity
+and assisting the global legal community worldwide. Artificial intelligence can help
+reduce the pendency of cases and increase the efficiency of the judiciary. But before
+its adoption in the legal system, challenges related to privacy, data protection and
+other ethical issues must be addressed for the domain.
+We started our research by exploring the Indian Judicial system and different
+methods proposed by researchers to automatically process and analyze legal documents. Different methods are proposed for legal automation purpose for the Indian
+Judiciary system. Based on our study, we have categorized those legal information
+processing systems into four categories described in Table 1.
+The legal community can benefit greatly from automatic legal document processing employing IE techniques for increased productivity. Researchers present an overview of different information extraction techniques for legal document analysis [24]
+of different countries to provide a state-of-the-art scenario of the domain worldwide.
+Topic modeling, an unsupervised machine learning technique, emerges as a useful IE tool for processing entirely unstructured text data. In natural language processing, topic modeling is a popular text mining technique for extracting important
+information from text. Every word in the corpus is viewed as a feature in NLP. The
+topic modeling approach, which relies on the feature reduction concept, is helpful
+for the analysis of lengthy text documents because it concentrates only on the important topics/subjects rather than the entire document. The goal of topic modeling is to
+identify underlying topic structures—which are probability distributions in a set of
+words—in the provided set of documents. The topic modeling mechanism’s primary
+relevance is that it is unsupervised and does not require a labeled dataset.
+Popular topic modeling techniques used to process unstructured text are:
+•
+•
+•
+•
+
+LDA (Latent Dirichlet Allocation)
+LSA (Latent Semantic analysis)
+NMF (nonnegative matrix factorization)
+BERTopic
+
+It is the common practice followed by legal professionals to do exhaustive research related to their case before presenting it in court. They need to
+go through several lengthy legal judgments to find relevant important information in the form of summaries. Researchers proposed an NLP-based automated
+legal text summarization approach [25] for the task. Latent Semantic analysis,
+one of the popular topic modeling techniques, is used to extract important concepts from the identified civil as well as criminal case documents to generate
+
+13
+
+Legal task
+
+Legal information retrieval
+
+Measuring legal document similarity
+
+Legal document summarization
+
+Legal knowledge base generation
+
+Sr. no.
+
+1
+
+2
+
+3
+
+4
+
+Table 1  Legal task automation proposed for the Indian Judiciary system
+
+Web crawling, entity relation extraction, knowledge graph construction [22]
+Generation of legal knowledge base and explanation of judgment decision [23]
+
+Rhetorical labels for sentences [18]
+DELSumm an unsupervised algorithm to incorporate legal domain knowledge [19]
+tf-idf vectors for all judgment and head note sentences for calculating cosine similarity [20]
+Head note-based text similarity measures [21]
+
+Paragraph links, tf-idf score [14]
+Similarity measures on concept graphs [15]
+All-term cosine similarity, legal-term cosine similarity, bibliographic coupling similarity,
+and co-citation similarity measures [16]
+tf-idf vectors and word embeddings [17]
+
+Keyword/phrase-based search and generation of Semantic Networks [11]
+tf-idf-based scoring for Catchphrase identification [12]
+Conditional random fields, BiLSTM for identifying rhetorical roles of a sentence [13]
+
+Approach used for addressing the legal task
+
+New Generation Computing (2024) 42:109–134
+115
+
+13
+
+116
+
+New Generation Computing (2024) 42:109–134
+
+summaries. The model is claimed to acquire an average ROGUE-1 score of 0.58.
+The generated summaries are also evaluated by lawyers for manual evaluation.
+Legal documents are difficult to model due to their inherent features such
+as lengthy structure and legal vocabulary. Topic modeling techniques discover
+semantic structure in the text. Work is proposed using BERTopic [26] for identifying topics in legal documents. They have used the dataset of landmark cases
+from the US Caselaw for domain-specific embeddings pre-trained from LEGALBERT. The research investigated different variations of generating sentence
+embeddings from the cases. They observed that text embeddings improved the
+quality of topic modeling.
+A system is proposed to process and analyze Czech Judicial system legal decisions using topic modeling techniques [27] for enhanced information retrieval
+through the identification of case law pointing towards the similar issues. They
+provided a comparative evaluation of Latent Dirichlet Allocation (LDA) and
+Non-negative Matrix Factorization (NMF) models according to CV coherence
+scores for a different number of topics ranging from ten to a hundred topics. The
+proposed model went through expert-use revaluation also.
+Legal discovery deals with identifying the facts of a case. An approach is
+proposed [28] using Latent Dirichlet Allocation to identify 100 topics from the
+known relevant documents. A categorizer was implemented using naïve Bayes as
+well as Support Vector Machine on a random selection of documents to achieve
+80% Recall. The model is claimed to be reasonable for a computer-assisted legal
+search process and complete topic coverage is assured by the Federal Rules of
+Civil Procedure.
+While exploring use of topic modeling techniques in legal domain, some
+other domains were identified where topic modeling techniques are successfully adapted. The LDA model has been used widely for social media analysis,
+information retrieval, and text mining. Journalistic texts were categorized using
+an LDA model in [29, 30]. In [31], the LDA model is used to analyze Twitter
+tweets, and the results show that LDA is less effective for short texts. Scientific paper summaries using LDA have been proposed [32]. For topic detection
+or clustering of related legal texts, LDA models are also employed in the legal
+arena [33, 34]. Latent Semantic Indexing (LSA) and Latent Dirichlet Allocation (LDA) are used in a system for determining the best-qualified applicant for
+a specific job [35]. LDA-based approach observed higher precision for profile
+matching.
+The BERTopic method is used to generate topics using sentence embeddings
+on Consumer Financial Protection Bureau (CFPB) data [36]. They tested their
+approach using coherence score and UMass evaluation parameters and discovered that BERTopic is more flexible than LSA and LDA. They discovered that
+domain-specific pre-trained embeddings can improve the performance of the
+system.
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+117
+
+LDA is also used in exploratory literature reviews [37] to determine which
+papers should be considered for review writing based on topics extracted by the
+LDA model. A system for classifying E-books using LSA and LDA topic modeling models is proposed in Ref. [38].
+
+3 Proposed Methodology
+The objective of this study is to design an unsupervised information extraction
+system to extract information from unstructured text data to generate knowledge
+base. We identified the legal domain for information extraction using unstructured legal documents. Legal documents include legal contracts, law commission
+reports, FIRs filed at various police stations, and legal judgments delivered by
+the Indian judicial system. Some of these are semi-structured, while others are
+completely unstructured. Judgments delivered by various courts are the most frequently searched resource by legal professionals among the available legal documents. These decisions are lengthy and completely unstructured. As a result,
+applying efficient IR and IE techniques for rapid analysis of these documents is a
+difficult task. As the availability of tagged legal datasets for court judgments from
+the Indian Judicial system is a major concern, we focused specifically on unsupervised learning techniques for legal information extraction. This research aims
+to use unsupervised learning techniques for Information Extraction from unstructured judgments.
+Automatic document processing systems must comprehend some specific
+aspects of the domain corpus. Distinguishing features of legal judgments are:
+•
+•
+•
+•
+
+Judgments are too lengthy spanning hundreds of pages.
+Having complex internal structure
+Extensive use of legal-specific vocabulary.
+A different interpretation of the same contents by different legal experts.
+
+A literature survey on different topic modeling techniques, suggested that LDA
+is the most frequently adapted topic modeling technique for processing lengthy
+text documents across multiple domains. Latent Dirichlet Allocation (LDA) is
+used for classifying/categorizing large text documents into observed topics. LDA
+algorithm is based on two key assumptions:
+• Documents are a collection of topics
+• Topics are a collection of words.
+
+LDA model discovers topics into a collection of documents and tags each document with topics.
+The output generated by a topic modeling algorithm can be used for:
+
+13
+
+118
+
+New Generation Computing (2024) 42:109–134
+
+Fig. 2  LDA graph model. Source: http://​www.​cs.​colum​bia.​edu/​~blei/​papers/​Blei2​012.​pdf
+
+Assume ‘K’ topics in the set of ‘m’ documents
+Loop through ‘m’ documents and randomly assign each
+word to one of the ‘K’ topics
+For each document loop through each word w
+and compute p(wj| tk) as well as p(t k| di)
+
+Initially different instances
+of same word can have
+different topic assignment
+p(wj | tk) is proportion of all
+documents assigned to topic
+tk for word wj
+p(t k| di)) is proportion of
+words in document di
+assigned to topic tk
+
+Update p(wi | tj, d) such that
+p (wi |tk,di) = p(wj| tk) x p(t k|di)
+Loop through each document, to reassign the
+topic to the word based on p (wi |tk,di)
+
+Gibbs Sampling
+
+NO
+No. of passes complete?
+
+Final Topic assignment
+YES
+
+Fig. 3  Stepwise working of LDA algorithm
+
+• Document clustering based on extracted topics.
+• Interpretation of topics to infer relationship between topics and documents.
+• Legal knowledge graph construction from observed topics
+
+Latent Dirichlet Allocation (LDA) [39] is a generative statistical model to
+determine a set of observations via unobserved groups. In LDA, each group or
+topic has justification about similarity existing between some parts of the data.
+LDA is a three-level hierarchical Bayesian model, where each document is modeled as a finite mix of underlying set of topics, whereas each topic is modeled as
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+119
+
+an infinite mixture of underlying set of topic probabilities. Probability distribution of words over topics and topics over documents are explained as a graph is
+explained in Fig. 2. Working of LDA algorithm is explained stepwise in Fig. 3.
+•
+•
+•
+•
+•
+•
+•
+
+θd is a mixture of topics for document d.
+Zd,n is the topic assigned to word n in document d.
+Wd, n is the nth word in document d.
+N is vocabulary size and M is the total number of documents in the corpus.
+K is the number of topics to be extracted from the corpus.
+βk is the distribution of words in topic k.
+α and β are the two Dirichlet distributions—α is the distribution of topics in documents and η is the distribution of words in topics.
+
+3.1 Methodology Adopted
+Legal documents have a fixed structure and must be customized to meet the needs
+of the client, whereas court judgments are mostly unstructured and used as a reference by the legal community. When compared to other domains, specific characteristics of legal judgments such as document size, internal structure, temporal properties, specific legal terminology, and heterogeneity make legal information retrieval
+quite complicated. We have used Indian Supreme Court judgements as our corpus to
+apply proposed topic modeling approach for legal information extraction.
+For experimental setup, we have a corpus of more than 5,000 judgments from
+1985 to 2015. This corpus is used in batches of 100, 500, and 1000 judgments.
+Legal judgments can be interpreted in various ways, such as considering the entire
+judgment, considering the headnotes for judgements, considering the summarized
+judgment, considering each paragraph in a judgment separately, or considering the
+RFC (reason for citation) context for judgment. The proposed method converts the
+entire judgment stored in a text file into vector representation for further processing.
+These judgements are obtained from the website http://​india​nkano​on.​org/.
+Judgements addressing various Civil Law topics considered for experimental
+setup are as follows:
+•
+•
+•
+•
+•
+•
+•
+
+Real Estate Law
+Business or Commercial Law
+Education Law
+Consumer Law
+Tax Law
+Contract Law
+Administrative Law
+
+13
+
+120
+
+New Generation Computing (2024) 42:109–134
+
+(Tokenization, stemming
+lemmatization, creation of
+Domain specific stop word list,
+stop word removal)
+
+(Supreme court case
+judgements text
+documents)
+
+Data Loading
+and cleaning
+
+Hyper parameter
+Tuning
+
+Phrase Modeling:
+Bi- grams and Tri-grams
+
+Final LDA model
+
+Data transformation:
+Corpus and Dictionary
+
+Visualization of Results
+obtained and interpretation
+of extracted topics
+
+LDA base model
+
+Fig. 4  Proposed system algorithm/flow graph
+
+Figure 4 depicts our proposed system flow graph. LDA algorithm is used for proposed system implementation.
+3.2 Data Preprocessing
+A critical step in developing any NLP application is data cleaning and pre-processing of the corpus to be used. The quality of pre-processing can influence the efficiency of NLP system. The problem domain can decide which pre-processing techniques to use. Our pre-processing procedure follows the following steps.
+a. Tokenization Tokenization is an essential step of the NLP pipeline which splits
+raw text into words or sentences. We have performed word tokenization on the
+text and removed all tokens having a length of fewer than three characters as short
+words do not contribute much to the concepts. Token filtering using specific POS
+tags is a common practice followed to process only relevant tokens further. We
+have retained tokens having POS tags as one of the following {‘NOUN’, ‘ADJ’,
+‘VERB’, ‘ADV’}
+b. Lemmatization Lemmatization is a text normalization method used popularly in
+NLP to convert each token to its root form. The goal of lemmatization is to reduce
+inflectional derivationally related forms of a word to a common base form. We
+have used a lemmatizer. lemmatize ()for lemmatization.
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+121
+
+c. Stop word removal Stop words are the words in a running text which are filtered
+to reduce text data volume for further processing. Legal documents have certain
+terms occurring frequently and are not very conceptual for a legal document. We
+have appended the stop word provided by NLTK for English with such legalspecific terms as {‘court’, ‘prosecution’, ‘case’, ‘appeal’, petitioner, petition,
+respondent…} based on commonly occurring words across the legal judgments
+and removed all stop words from the judgments.
+d. Removal of Punctuation symbols We have removed all punctuation symbols from
+the documents and converted the text into lowercase.
+e. Removal of special symbols Removal of all special symbols from documents
+makes them more interpretable for legal information extraction.
+f. Phrase modeling using bi-gram and tri-gram A language model is used to predict
+the probability of a sequence of words in a corpus. The N-gram model is used
+to find frequently co-occurring words in the document. It assumes that words
+occurring together in documents are semantically connected. Topic modeling
+techniques use phrase modeling to identify similar context words in a text. Genism’s Phrases model is used to implement the bi-gram and tri-gram models from
+the text.
+g. Creation of Dictionary and Document-Term-Matrix LDA model takes Dictionary
+and doc_term_matrix as two main parameters to run the model. A dictionary is
+a mapping of the word to words in a corpus. To create doc_term_matrix, a bag
+of words matrix representation is used where each document is represented as
+a vector of tokens and the entries in this matrix represent the number of times a
+word is found in a document.
+Following the pre-processing steps, the number of tokens to be processed further is significantly reduced. Table 2 shows the number of words in some sample
+legal judgments before and after pre-processing having compression ratio in the
+range 60 to 70%. The proposed algorithm for experimentation is given below.
+Proposed Algorithm
+
+Table 2  Result of preprocessing of documents
+
+Sr. no.
+
+Document ID
+
+Original no of
+words in a file
+
+No tokens extracted
+after pre-processing
+
+1
+
+case_198.txt
+
+16,139
+
+9052
+
+2
+
+case_177.txt
+
+7992
+
+4441
+10,087
+
+3
+
+case_170.txt
+
+17,995
+
+4
+
+case_158.txt
+
+2767
+
+1552
+
+5
+
+case_207.txt
+
+7104
+
+4139
+15,173
+
+6
+
+case_261.txt
+
+26,403
+
+7
+
+case_311.txt
+
+14,330
+
+7980
+
+8
+
+case_367.txt
+
+6122
+
+3463
+
+9
+
+case_432.txt
+
+11,946
+
+6478
+
+10
+
+case_500.txt
+
+5012
+
+2725
+
+13
+
+122
+
+New Generation Computing (2024) 42:109–134
+
+# Iterate over all the judgements stored in the corpus
+Input :- judgement Corpus JC , K
+# collection of judgements and No of topics to extract
+for judgement in JC:
+J_text =read_files(JC)
+J_data=preprocess(J_text)
+Corpus.append(J_data)
+# Remove stopwords and make bigrams and trigrams
+Corpus_nostopwords = remove_stopwords(Corpus)
+Corpus_bigrams = make_bigrams(Corpus_nostopwords )
+Corpus_trigrams = make_trigrams(Corpus_nostopwords )
+#Converting list of documents (corpus) into Document Term Matrix
+dictionary = corpora.Dictionary(Corpus_trigrams )
+doc_term_matrix = [dictionary.doc2bow(doc) for doc in Corpus_trigrams ]
+# Creating the object for LDA model using gensim library
+Lda = gensim.models.ldamodel.LdaModel
+lda_model = gensim.models.ldamodel.LdaModel(corpus=doc_term_matrix, id2word=dictionary,num_topics=K)
+coherence_model_lda = CoherenceModel(model=lda_model, texts=doc_corpus_trigrams, dictionary=dictionary)
+coherence_lda = coherence_model_lda.get_coherence()
+Return K_Topics, Coherence score
+
+4 Experimental Setup and Results
+The LDA topic model is applied to the preprocessed document corpus in batches of
+100, 500, and 1000 legal judgments. LDA is built into Python’s Gensim package.
+LDA model uses three parameters for hyper-parameter tunning as shown in Fig. 5.
+
+Topic 24
+['0.047*"permit" + 0.039*"scheme" + 0.035*"department" + 0.031*"central" + ''0.029*"licence" +
+0.022*"business" + 0.021*"area" + 0.020*"control" + '
+'0.019*"corporation" + 0.019*"notification" ‘]
+
+Topic 31
+['0.046*"post" + 0.039*"rule" + 0.030*"service" + 0.024*"promotion" + ' '0.022*"rules" +
+0.017*"year" + 0.014*"clause" + 0.014*"grade" + ' '0.013*"seniority" + 0.012*"examination“’]
+
+Topic 36
+['0.156*"land" + 0.044*"acquired" + 0.036*"acquisition" + 0.024*"rupee" + ' '0.023*"sale" +
+0.022*"court" + 0.019*"award" + 0.018*"compensation" + ' '0.016*"rate" + 0.015*"value“‘]
+
+Topic 32
+['0.094*"delhi" + 0.077*"mtnl" + 0.065*"ndmc" + ' '0.050*"supplemental_agreement" +
+0.027*"uip" + 0.027*"udi" + ' '0.011*"yellow_page" + 0.010*"printing_directory" + '
+'0.010*"telephone_directory" + 0.008*"publish_directory“ ‘ ]
+
+Topic 49
+['0.015*"education" + 0.015*"institution" + 0.011*"right" + 0.011*"state" + ' '0.011*"student"
++ 0.009*"society" + 0.008*"shall" + 0.008*"year" + ' '0.007*"school" + 0.007*"activity“‘ ]
+
+Fig. 5  Sample topics obtained from 1000 judgements
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+123
+
+1. Number of topics to be extracted from corpus denoted as ‘K’: Domain knowledge
+can help to select number of topics ‘K’ to some extent. Another way to choose the
+correct value of ‘K’ is to run an LDA model with different numbers of ‘K’ values
+and choose the value of ‘K’ for which the coherence score is the highest.
+2. Per document topic contribution denoted as ‘α’ the typical α value is 50/K, where
+K is the number of topics to be extracted from the corpus. The low value of ‘α’
+indicates fewer topics in the document and a higher value implies a higher number
+of topics in the mix.
+3. Per topic word distribution denoted as ‘β’ the typical value β value is 0.1 or
+200/N, where N is the number of words in the vocabulary of the corpus. At lower
+values of ‘β’, the topics will have fewer words and at higher values of ‘β’ topics
+will have more words
+Hyper-parameter tunning is done for a wide range of topic sizes from 5 to 50 and
+document corpus sizes of 100 to 1000 judgements. Each topic is having one unique
+id, and set of words with their associated probability in the document collection as
+shown in Fig. 5.
+As per the assumption of the LDA model, each document is a mix of topics. LDA
+model can also visualize this topic mix and dominant topic in each document. Topic
+mix in sample documents for 1000 judgements for K = 50 is shown in Table 3
+Along with the discovery of topics, LDA model also discovers the composition
+of different topics in each document by tagging it as explained in Fig. 6. The LDA
+topic model can visualize the keywords in a dominant topic once the topics mix
+for each document has been determined. These legal judgements tagged with topics
+identified from the corpus can be used as an input to any machine learning algorithm for classification. The dominant topic words for sample judgements mapping
+with civil law topics are displayed in Table 4.
+Topic models are evaluated using a coherence score metrics which is a measure
+of how good a topic model is in generating coherent topics ranging between 0 and
+1. A higher coherence score indicates a better topic model. A coherent topic should
+be semantically interpretable. The higher the value of the coherence score, better the
+topic model is built. There is no single method for determining whether a coherence
+score is good or bad. The score and its value are determined by the data from which
+it is calculated. For example, a score of 0.5 may be adequate in one case but unacceptable in another. The objective of topic modeling technique is to maximize the
+coherence score.
+Latent Semantic Analysis (LSA) [40] and Non-negative Matrix Factorization
+(NMF) [41] are the popular topic modeling techniques used for Information Extraction along with LDA. Topic modeling techniques such as LDA, LSA and NMF take
+K = no. of topics to be retrieved as a hyper-parameter. At the outset, it is difficult to
+predict the value of K, and generally, topic model needs to evaluated against different values of K to observe the coherence score and optimized value of K is labeled
+as the one which gives maximum coherence score.
+Latent Semantic Analysis is a topic modeling technique which takes as a input
+document-term matrix and decomposed it into document-topic matrix and a topicterm matrix. LSA training for latent topics is done using matrix decomposition on
+
+13
+
+13
+([(topic 8, 0.08802337) + (topic 15, 0.14120124) + (topic 18, 0.012002437) + (topic31,
+0.6111944) + (topic45, 0.015053362) + (topic 25, 0.11344942)])
+
+([(topic 12, 0.34717202) + (topic 17, 0.03013374) + (topic 22, 0.16670036) + (topic36,
+0.38485005) + (topic 41, 0.04461415)])
+
+([(topic 7, 0.1671529) + (topic 32, 0.34430975) (topic 11, 0.17305942) + (topic 14,
+0.22367604) + (topic 23, 0.018899191) + (topic 16, 0.024284719) + (topic 30, 0.041009612)])
+
+([(topic 5, 0.014117899) + (topic 9, 0.1562014), (topic 15, 0.030696807) + (topic
+17, 0.12675215) + (topic 21, 0.010607633) + (topic 27, 0.014116528) + (topic 29,
+0.023508998) + (topic 31, 0.04879271) + (topic 35, 0.14100952) + (topic 38, 0.0631299) + (topic
+49, 0.35922027)],
+
+([(topic 3, 0.023158973) + (topic 6 0.018725947) + (topic 9, 0.06040892) + (topic 13,
+0.12916094) + (topic 17, 0.03356753) + (topic 24, 0.36951813) + (topic 26, 0.10394967) + (topic
+34, 0.07272528) + (topic 40, 0.17616624)])
+
+Topic 31
+
+Topic 36
+
+Topic 32
+
+Topic 49
+
+Topic 24
+
+DOC-26
+
+DOC-85
+
+DOC-144
+
+DOC-678
+
+DOC-986
+
+The bold text is representing the extracted topic ids from the corpus by applying LDA model
+
+Different topic contribution percentage in a document
+
+Dominant topic ID
+
+Document Id
+
+Table 3  Topic word distribution in corpus of 1000 judgements for k = 50
+
+124
+New Generation Computing (2024) 42:109–134
+
+New Generation Computing (2024) 42:109–134
+
+125
+
+Fig. 6  Output generated by LDA model
+Table 4  Topic words in extracted topics
+Topic words identified with identified topics
+
+Mapping with Civil law
+
+Post, rule, service, promotion, rules, year, grade, seniority, examination
+
+Administrative Law
+
+Land, acquired, acquisition, rupee, sale, award, compensation, rate, value
+
+Real Estate Law
+
+Delhi. mtnl, ndmc, supplemental_agreement, uip, udi, yellow_page, printing_directory, telephone_directory, publish_directory
+
+Contract Law
+
+Permit, scheme, department, central, license, business, area, control, corporation, notification
+
+Business Law
+
+Education, institution, right, state, student, society, year, school, activity
+
+Education Law
+
+the document-term matrix using Singular value decomposition. NMF is a feature
+reduction technique which takes as a input document-term matrix. By comparing
+adjacent text segments, NMF gives the degree of semantic relatedness as output.
+LSA and (NMF) models are applied on our dataset along with LDA to get comparative performance analysis of different topic modeling techniques. LSA model can be
+evaluated using a coherence score; however, for NMF model, it cannot be directly
+calculated but can be derived by determining the similarity score for each pair of
+topics before averaging the results for all the pairs to produce the overall coherence
+value.
+The coherence score obtained by applying different topic modeling techniques
+to our dataset is shown in Table 5. In the experimental setup, for corpus size of
+100, 500 and 1000 judgements, number of topics extracted are in the range 1 to 50.
+By analyzing the experimental results, it can be observed that for a bigger corpus
+size, coherence score value is more and it is restricted to the value of K = 30 as further increasing the number of topics is decreasing the value of coherence score. For
+1000 judgment corpus, coherence score obtained through LDA technique is higher
+as compared to LSA and NMF techniques.
+The graph shown in Fig. 7 shows the coherence score for a different number of
+topics obtained through our experimental setup.
+From the graph shown in Fig. 5, it is evident for our experimental setup for 100
+documents, the optimal value of K = 10, for 500 document, the optimal value of
+K = 5 and for 1000 documents, the optimal value of K = 10 according to the highest
+coherence score. It can be also observed coherence score obtained increased with an
+increase in number of documents available in the corpus for topic extraction.
+Human interpretation of topics obtained is an important step as Coherence score
+alone is not sufficient to measure the performance of any topic modeling technique.
+
+13
+
+126
+
+New Generation Computing (2024) 42:109–134
+
+Table 5  Coherence score obtained by applying topic modeling techniques
+No of documents
+100
+
+500
+
+1000
+
+No of topics
+
+Coherence score
+(LDA)
+
+Coherence score
+(LSA)
+
+Coherence
+score (NMF)
+
+5
+
+0.4606
+
+0.4432
+
+0.4022
+
+10
+
+0.4901
+
+0.3559
+
+0.3872
+
+15
+
+0.4432
+
+0.3247
+
+0.3743
+
+20
+
+0.4402
+
+0.3407
+
+0.3566
+
+25
+
+0.4324
+
+0.3176
+
+0.3389
+
+30
+
+0.4263
+
+0.3003
+
+0.3200
+
+5
+
+0.5684
+
+0.5086
+
+0.5312
+
+10
+
+0.5567
+
+0.4057
+
+0.5045
+
+15
+
+0.5466
+
+0.3857
+
+0.4867
+
+20
+
+0.5188
+
+0.3361
+
+0.4598
+
+25
+
+0.4828
+
+0.3165
+
+0.4378
+
+30
+
+0.4609
+
+0.3002
+
+0.4054
+
+5
+
+0.5554
+
+0.5183
+
+0.5289
+
+10
+
+0.6138
+
+0.4042
+
+0.4923
+
+15
+
+0.6025
+
+0.3239
+
+0.4587
+
+20
+
+0.5849
+
+0.3165
+
+0.4111
+
+25
+
+0.5783
+
+0.2958
+
+0.3867
+
+30
+
+0.5551
+
+0.3098
+
+0.3567
+
+Fig. 7  Coherence score vs number of topics (LDA model)
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+127
+
+Each document’s topic words can be analyzed, and then a topic label can be
+assigned based on the interpretation of the topic keywords. We have applied LDA
+topic model at the document level. Major concern after applying topic modeling
+techniques to large document collection is to interpret if relevant and useful topics
+are being extracted using domain expertise. Topic modeling techniques extract most
+likely occurring words into groups referred as topics.
+To present the comparative analysis of our proposed approach with existing techniques of information extraction, we have tested our approach on a document similarity measurement problem. Finding relevant precedents (judgments) is a well-studied problem in legal information retrieval. The most fundamental activity involved
+in this is identifying the semantic matching of documents. Approaches for legal
+information retrieval are majorly focusing on:
+•
+•
+•
+•
+
+Concept-based similarity measurement and judgment retrieval
+Vector representation of the whole judgment using word embedding
+Vector representation of the summaries using word embedding
+Paragraph matching from judgements.
+
+Representation of a legal document is a key issue for calculating similarity. In this
+work, the representation of whole judgment in the form of extracted topic vectors
+is considered for measuring similarity between document pairs. As the topic modeling mechanism is a feature reduction technique, instead of focusing on the entire
+judgment text, we can be focused only on features extracted by topic modeling for
+measuring similarity. It is easy to determine how similar two documents are using a
+metric known as cosine similarity since the topics determined by the LDA model are
+a vectorized representation of each text.
+While searching for the legal dataset of similar judgements, we came across similar judgment pairs [14] annotated manually by law students which consists of judgements delivered by supreme court of India. A gold-standard similar legal document
+dataset consisting of 47 judgment pairs labeled with an expert score of similarity is
+used to evaluate our proposed approach. Each pair is labeled with a similarity score
+assigned by a domain expert on a scale of 0 to 10. Table 6 shows the cosine similarity calculated for 47 judgment pairs. We have compared results obtained by applying
+our approach with the existing two approaches.
+First approach suggested use of tf-idf and paragraph links for measuring similarity between two legal judgements. The score produced by the first approach is mentioning how many paragraphs from both judgements can be linked together.
+The second approach is based on doc2vec technique where the whole judgment
+is converted to vector and compared using cosine similarity between two legal document vectors generated via doc2vec. We have adapted topic modeling technique for
+legal information extraction in our proposed approach which is extracting the key
+legal concepts in given legal judgment. Using topic modeling as a feature reduction
+technique, we have reduced the dimension of legal judgment document vector for
+further comparison with cosine similarity.
+Table 6 shows comparative analysis of results for legal document similarity
+[42] by comparing our proposed approach with the existing approaches suggested
+
+13
+
+128
+
+New Generation Computing (2024) 42:109–134
+
+Table 6  Cosine similarity between judgment pairs using different approaches
+Case pairs
+
+Expert scores using
+domain knowledge
+
+Similarity score
+using paragraph
+links [7]
+
+Whole Doc
+with doc2vec
+[10]
+
+Cosine similarity
+score obtained
+through LDA
+
+1992_47 and
+1992_76
+
+0
+
+78
+
+0.160
+
+0.156
+
+1992_76 and
+1992_182
+
+0
+
+49
+
+0.146
+
+0.122
+
+1972_11 and
+1984_115
+
+0
+
+745
+
+0.084
+
+0.057
+
+1969_57 and
+1980_91
+
+0
+
+2303
+
+0.271
+
+0.322
+
+1959_151 and
+1982_28
+
+0
+
+522
+
+0.238
+
+0.267
+
+1976_200 and
+1959_151
+
+0
+
+583
+
+0.051
+
+0.081
+
+1985_114 and
+1959_151
+
+0
+
+756
+
+0.263
+
+0.311
+
+1966_236 and
+1967_267
+
+0
+
+322
+
+0.353
+
+0.342
+
+1961_34 and
+1979_110
+
+0
+
+486
+
+0.322
+
+0.312
+
+1961_34 and
+1987_37
+
+0
+
+146
+
+0.193
+
+0.197
+
+1992_47 and
+1987_315
+
+0
+
+279
+
+0.358
+
+0.323
+
+1971_138 and
+1992_47
+
+0
+
+645
+
+0.459
+
+0.511
+
+1992_47 and
+1992_76
+
+0
+
+78
+
+0.160
+
+0.143
+
+1984_115 and
+1987_315
+
+0
+
+390
+
+0.238
+
+0.244
+
+1983_129 and
+1983_27
+
+1
+
+806
+
+0.561
+
+0.521
+
+1979_110 and
+1953_28
+
+2
+
+327
+
+0.178
+
+0.123
+
+1963_170 and
+1979_158
+
+2
+
+2006
+
+0.492
+
+0.352
+
+1983_27 and
+1983_37
+
+2
+
+808
+
+0.527
+
+0.527
+
+1983_27 and
+1979_33
+
+2
+
+2420
+
+0.581
+
+0.534
+
+1984_115 and
+1981_49
+
+2
+
+536
+
+0.500
+
+0.49
+
+1979_110 and
+1989_233
+
+3
+
+356
+
+0.351
+
+0.321
+
+1983_129 and
+1976_176
+
+5
+
+574
+
+0.266
+
+0.267
+
+1971_111 and
+1972_291
+
+5
+
+1098
+
+0.393
+
+0.392
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+129
+
+Table 6  (continued)
+Case pairs
+
+Expert scores using
+domain knowledge
+
+Similarity score
+using paragraph
+links [7]
+
+Whole Doc
+with doc2vec
+[10]
+
+Cosine similarity
+score obtained
+through LDA
+
+1990_171 and
+1988_88
+
+5
+
+2058
+
+0.297
+
+0.244
+
+1972_31 and
+1984_115
+
+5
+
+2429
+
+0.536
+
+0.578
+
+1984_118 and
+1971_336
+
+5
+
+968
+
+0.356
+
+0.398
+
+1987_154 and
+1964_144
+
+5
+
+839
+
+0.492
+
+0.432
+
+1973_186 and
+1986_218
+
+5
+
+957
+
+0.393
+
+0.333
+
+1990_96 and
+1990_171
+
+5
+
+692
+
+0.439
+
+0.429
+
+1958_3 and
+1992_144
+
+5
+
+1073
+
+0.372
+
+0.322
+
+1979_158 and
+1965_111
+
+7
+
+618
+
+0.529
+
+0.50
+
+1962_303 and
+1972_291
+
+7
+
+535
+
+0.540
+
+0.45
+
+1987_37 and
+1989_233
+
+7
+
+32
+
+0.234
+
+0.265
+
+1953_40 and
+1953_24
+
+7
+
+2526
+
+0.836
+
+0.735
+
+1966_154 and
+1976_43
+
+7
+
+3223
+
+0.431
+
+0.432
+
+1953_24 and
+1957_52
+
+7
+
+3532
+
+0.177
+
+0.157
+
+1984_115 and
+1971_49
+
+7
+
+721
+
+0.482
+
+0.478
+
+1980_221 and
+1984_115
+
+8
+
+934
+
+0.539
+
+0.542
+
+1980_39 and
+1969_324
+
+8
+
+538
+
+0.648
+
+0.65
+
+1991_48 and
+1987_189
+
+9
+
+491
+
+0.537
+
+0.532
+
+1979_104 and
+1979_110
+
+9
+
+661
+
+0.695
+
+0.677
+
+1985_113 and
+1969_324
+
+9
+
+674
+
+0.619
+
+0.689
+
+1979_33 and
+1979_110
+
+9
+
+701
+
+0.838
+
+0.888
+
+1968_197 and
+1972_62
+
+10
+
+4265
+
+0.584
+
+0.6
+
+1992_47 and
+1984_115
+
+10
+
+487
+
+0.540
+
+0.65
+
+1991_12 and
+1985_113
+
+10
+
+675
+
+0.725
+
+0.843
+
+13
+
+130
+
+New Generation Computing (2024) 42:109–134
+
+Table 6  (continued)
+Case pairs
+
+Expert scores using
+domain knowledge
+
+Similarity score
+using paragraph
+links [7]
+
+Whole Doc
+with doc2vec
+[10]
+
+Cosine similarity
+score obtained
+through LDA
+
+1983_37 and
+1979_33
+
+10
+
+2368
+
+0.750
+
+0.876
+
+Correlation
+Coefficient
+
+0.33
+
+0.69
+
+0.70
+
+for the task. The correlation coefficient score is higher for our proposed approach
+as shown in Table 6. We suggest an efficient document similarity measurement
+technique to locate relevant judgment for faster legal search using the feature
+reduction technique of topic modeling with LDA.
+Table 6 shows that our method to computing legal document similarity outperformed the existing two approaches, which used paragraph links [7] and Doe2vec
+[10] and considered the entire judgment. The correlation coefficient score is
+higher for our proposed approach as shown in Table 6. We suggest an efficient
+document similarity measurement technique to locate relevant judgment for faster
+legal search using the feature reduction technique of topic modeling with LDA.
+Different calculations are performed to measure precision and recall values for
+information retrieval, as compared to traditional classification problems, which
+are explained by Eqs. 2 and 3:
+
+Precision =
+
+Recall =
+
+|{retrieved document} ∩ {relevant document}|
+|{retrieved documents}|
+
+|{retrieved document} ∩ {relevant document}|
+|{relevant documents}|
+
+(2)
+
+(3)
+
+We compare the results with previous work on the extraction of relevant judgments of the supreme court of India with our proposed approach in Table 7.
+Results in Table 7 indicate that our approach scores higher precision and recall
+values compared with existing methods.
+
+Table 7  Legal judgment similarity estimation
+Sr. no.
+
+Approach
+
+Precision
+
+Recall
+
+F score
+
+1
+
+Doc2vec
+
+0.764
+
+0.764
+
+0.764
+
+2
+
+Word2vec tf-idf
+
+0.706
+
+0.920
+
+0.800
+
+3
+
+Word2vec using ordered weighted average
+
+0.714
+
+0.769
+
+0.741
+
+4
+
+Proposed topic modeling approach-based similarity estimation
+
+0.785
+
+0.867
+
+0.8239
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+131
+
+5 Conclusion and Future Scope
+Our research goal is to build a knowledge foundation from the court decisions so
+that the Indian legal community can have a legal knowledge base to refer. The biggest challenge involved for legal document analysis is the length and unstructured
+format. The two most prominent techniques used for legal judgment representation
+is tf-idf vector and doc2Vec representation. But both the techniques are having the
+drawback of dealing with sparse vectors. BERT model is also popularly used for language modeling but not recommended for lengthy documents. Therefore, there is a
+need for an efficient legal document representation technique for dealing with sparse
+vectors.
+
+5.1 Use of Topic Modeling Techniques for Legal Knowledge Graph Construction
+We are recommending use of topic modeling techniques to extract legal information by focusing the important concepts of a judgment. Our long-term goal is to
+organize the extracted legal information in the form of topics into a machine-readable structure like knowledge graph or concept graph. Each topic extracted from the
+corpus can represent the individual concept of the judgment and linking between
+different judgements based on topics extracted. Traditional entity relation extraction-based technique for constructing knowledge graph will have issues with scalability and accuracy of the constructed graph. Constructing legal knowledge graph
+[43, 44] out of the topics extracted by our proposed approach can handle scalability
+and give conceptual representation of the judgment. This machine-readable legal
+knowledge graph can be helpful for a variety of legal applications, such as clustering
+judgments, semantic legal search, Classification of Judgments, measuring judgment
+similarity, and judgment summarization. The extracted topics are stored in lists for
+time being but in future, we will try to construct legal knowledge graph comprising
+of topics extracted from judgements as nodes and a vector representing the composition of a judgment topic wise. Though knowledge graph methods can be used for
+legal domain, there are some inherent challenges involved:
+• Meaning and representation of legal concepts are different for different coun-
+
+tries.
+
+• Constructing LegalAI knowledge graph is a complex process.
+• Traditional knowledge graphs focus on relation between entities and LegalAI
+
+demands legal concept explanation
+
+Our future research directions are aiming at overcoming above challenges to construct legal knowledge graph for Indian Judiciary system.
+Though unstructured text mining can be done effectively using Topic modeling
+techniques, evaluating the quality of extracted topics is a big challenge involved with
+it. Topic model evaluation is focusing on the ‘human interpretability’ or ‘semantic interpretability’ of the extracted topics. Evaluation of the topic model which
+
+13
+
+132
+
+New Generation Computing (2024) 42:109–134
+
+is implemented for some quantitative tasks like classification is easier to calculate
+with quantitative metrics like precision, recall, and F score. But if the topic model
+is implemented for some qualitative tasks like exploring semantic themes in an
+unstructured corpus, document clustering based on extracted topics, recommendation systems, etc. then evaluation of the such topic model is a big challenge. Domain
+knowledge plays an important role in the evaluation of topic models. Human judgment or evaluation by experts is the key to evaluating topic models implemented for
+the qualitative task. Quantitative metrics such as Perplexity and Coherence scores
+are generally used to evaluate topic models.
+To extract legal information from our dataset, we used three different topic modeling techniques: LDA, LSA, and NMF. We found that LDA performed better in
+comparison with all other topic modeling techniques. The objective of our endeavor
+is to extract legal information from court rulings and use that information to create a labeled dataset for the Indian judicial system that can be used for a variety of
+legal applications. After applying the topic modeling technique to our dataset, we
+can generate a labeled legal judgment corpus for the Indian judiciary system.
+Our future research objective is to utilize our proposed approach and generate
+tagged judgment dataset for performance improvement of legal tasks like:
+•
+•
+•
+•
+•
+
+Judgment similarity measurement problem
+Judgment classification problem
+Judgment clustering problem
+Recommendation system for legal search
+Annotation of legal datasets with different case laws
+
+Acknowledgements The above work is completed under the part-time fellowship of Visvesvaraya Ph.D
+scheme, MIETY, Government of India.
+Funding No funding was received to assist with the preparation of this manuscript.
+
+Declarations
+Conflict of Interest The authors have no competing interests to declare that are relevant to the content of
+this article.
+
+References
+1. Widyassari, A.P., Rustad, S., Shidik, G.F., Noersasongko, E., Syukur, A., Affandy, A.: Review of
+automatic text summarization techniques & methods. J. King Saud Univ. Comput. Inform. Sci.
+34(4):1029–1046 (2022)
+2. Chiche, A., Yitagesu, B.: Part of speech tagging: a systematic review of deep learning and machine
+learning approaches. J. Big Data 9(1), 1–25 (2022)
+3. Birjali, M., Kasri, M., Beni-Hssane, A.: A comprehensive survey on sentiment analysis: approaches,
+challenges and trends. Knowl.-Based Syst. 226, 107134 (2021)
+4. Zebari, R., et al.: A comprehensive review of dimensionality reduction techniques for feature selection and feature extraction. J. Appl. Sci. Technol. Trends 1(2), 56–70 (2020)
+
+13
+
+New Generation Computing (2024) 42:109–134
+
+133
+
+5. Xiang, W., Wang, B.: A survey of event extraction from text. IEEE Access 7, 173111–173137
+(2019)
+6. Sansone, C., Sperlí, G.: Legal Information retrieval systems: state-of-the-art and open issues. Inf.
+Syst. 106, 101967 (2022)
+7. Waltl, B., Georg, B., Florian, M.: Rule-based information extraction: advantages, limitations, and
+Perspectives, In: Jusletter IT 22 (2018)
+8. Téllez-Valero, A., Montes, M., Villaseñor-Pineda, L.: A machine learning approach to information
+extraction. Lecture Notes Comput. Sci. 3406, 539–547 (2005). https://​doi.​org/​10.​1007/​978-3-​540-​
+30586-6_​58
+9. Heng, J., Grishman, R.: Knowledge base population: successful approaches and challenges. In: Proceedings of the 49th annual meeting of the association for computational linguistics: human language technologies, pp. 1148–1158 (2011)
+10. Qaiser, S., Ali, R.: Text mining: use of TF-IDF to examine the relevance of words to documents. Int.
+J. Comput. Appl. (2018). https://​doi.​org/​10.​5120/​ijca2​01891​7395
+11. Giri, R., Porwal, Y., Shukla, V., Chadha, P., Kaushal, R.: Approaches for information retrieval in
+legal documents. IEEE (2017). https://​doi.​org/​10.​1109/​IC3.​2017.​82843​24
+12. Mandal, A., Kripabandhu, G., Arindam, P., Saptarshi, G.: Automatic catchphrase identification from
+legal court case documents. In: Proceedings of the 2017 ACM on Conference on Information and
+Knowledge Management (2017)
+13. Bhattacharya, P., Shounak P., Kripabandhu G., Saptarshi, G., Adam, Z.W.: Identification of rhetorical roles of sentences in indian legal judgments (2019). ArXiv abs/1911.05405.
+14. Kumar, S., Krishna., Polepalli., Reddy, V., Suri, M.: Finding similar legal judgements under common law system. 7813, 103–116 (2013). https://​doi.​org/​10.​1007/​978-3-​642-​37134-9_9.
+15. Wagh, R.S., Anand D.: Legal document similarity: a multi-criteria decision-making perspective. PeerJ Comput. Sci. 6, e262 (2020). https://​doi.​org/​10.​7717/​peerj-​cs.​262
+16. Kumar, S., Krishna R., Polepalli, Reddy, V., Singh, A.: Similarity analysis of legal judgments.
+Compute 2011—4th Annual ACM Bangalore Conference (2011). https://​doi.​org/​10.​1145/​19804​22.​
+19804​39.
+17. Mandal, A., Chaki, R., Saha, S., Ghosh, K., Pal, A., Ghosh, S.: Measuring similarity among legal
+court case documents. 1–9 (2017). https://​doi.​org/​10.​1145/​31401​07.​31401​19.
+18. Deroy, A., Bhattacharya, P., Ghosh, K., Ghosh, S.: An Analytical Study of Algorithmic and Expert
+Summaries of Legal Cases (2021). https://​doi.​org/​10.​3233/​FAIA2​10322
+19. Bhattacharya, P., Poddar, S.; Rudra, K., Ghosh, K., Ghosh, S.: Incorporating domain knowledge for
+extractive summarization of legal case documents. In: Proceedings of the eighteenth international
+conference on artificial intelligence and law, pp. 22–31 (2021). https://​doi.​org/​10.​1145/​34627​57.​
+34660​92
+20. Vedant, P., Vidit, M., Parth, M., Namita, M., Prasenjit, M.: LawSum: a weakly-supervised approach
+for Indian Legal Document Summarization (2021). arXiv:​2110.​01188
+21. Trivedi, A., Trivedi, A., Varshney, S., Joshipura, V., Mehta, R., Dhanani, J.: Extracted summary
+based recommendation system for indian legal documents. In: 2020 11th International Conference
+on Computing, Communication and Networking Technologies (ICCCNT), pp. 1–6 (2020). https://​
+doi.​org/​10.​1109/​ICCCN​T49239.​2020.​92252​90.
+22. Thilagam, P., Karur, S.: Crime base: towards building a knowledge base for crime entities and their
+relationships from online newspapers. Inform. Process. Manage. (2019). https://​doi.​org/​10.​1016/j.​
+ipm.​2019.​102059
+23. Malik, V., Sanjay, R., Kumar N., Shubham., Ghosh, K., Guha, S., Bhattacharya, A., Modi, A.: ILDC
+for CJPE: Indian legal documents corpus for court judgment prediction and explanation (2021).
+https://​doi.​org/​10.​18653/​v1/​2021.​acl-​long.​313
+24. Ashwini Z., Avinash A.: An overview of information extraction techniques for legal document analysis and processing. Int. J. Electr. Comput. Eng. (IJECE). 11(6) (2021)
+25. Merchant, K., Pande, Y.: NLP-based latent semantic analysis for legal text summarization. In: 2018
+international conference on advances in computing, communications and informatics (ICACCI), pp.
+1803–1807 (2018). https://​doi.​org/​10.​1109/​ICACCI.​2018.​85548​31.
+26. Silveira, R., Fernandes, C.G., Monteiro Neto, J.A., Furtado, V., Pimentel Filho, J.E.: Topic modelling of legal documents via LEGAL-BERT1. Relations in the Legal Domain Workshop, in conjunction with ICAIL 2021. São Paulo, Brazil (2021)
+27. Novotná, T., Harašta, J., Kól, J.: Topic modelling of the Czech Supreme Court Decisions. Proceedings of Automated Semantic Analysis of Information in Legal Text (2020)
+
+13
+
+134
+
+New Generation Computing (2024) 42:109–134
+
+28. Herbert, R.: Is there something I’m missing? Topic modeling in eDiscovery (2020). https://​doi.​org/​
+10.​48550/​arXiv.​2007.​15731
+29. Jacobi C., Van A., W., Welbers K.: Quantitative analysis of large amounts of journalistic texts usingtopicmodeling. Dig. Journalism 4(1), 89–106 (2016)
+30. Nikolenko, S., Koltcov S., Koltsova.: Topic modelling for qualitative studies. J. Inform. Sci. 43(1),
+88–102 (2017)
+31. Jonsson, E., Stolee, J.: An evaluation of topic modelling techniques for twitter. Research paper
+(2016). https://​www.​cs.​toron​to.​edu/​~jstol​ee/​proje​cts/​topic.​pdf.
+32. He L., Liu, Z., H.: Exploring differential topic models for comparative summarization of scientificpapers. In: Proceedings of COLING 2016, the 26th International Conference on Computational
+Linguistics, pp. 1028–1038 (2016)
+33. Kumar, V., Raghuveer, K.: Legal document summarization using latent dirichlet allocation. Int. J.
+Comput. Sci. Telecommun. 3(7), 114–117 (2012)
+34. Lu, Q., Conrad, J.G., Al-Kofahi, K., Keenan, W.: Legal document clustering with built-in topic segmentation. In: Proceedings of the 20th ACM International Conference on Information and Knowledge Management, pp. 383–392 (2001)
+35. Jain, L., Vardhan, M., Kathiresan, G., Narayan, A.: Optimizing people sourcing through semantic
+matching of job description documents and candidate profile using improved topic modelling techniques. (2021). https://​doi.​org/​10.​1007/​978-​981-​15-​3514-7_​66
+36. Sangaraju, V., Bolla, B., Nayak, D., Kh, J.: Topic modelling on consumer financial protection
+bureau data: an approach using BERT based embeddings. International Conference for Convergence
+in Technology (2022)
+37. BoyeAsmussen, C., Møller, C.: Smart literature review: a practical topic modeling approach to
+exploratory literature review. J. Big Data (2019). https://​doi.​org/​10.​1186/​s40537-​019-​0255-7
+38. Mohammed, S., Al-augby, S.: LSA & LDA topic modelling classification: comparison study on
+E-books. 2502–4752. (2020). https://​doi.​org/​10.​11591/​ijeecs.​v19.​i1.​pp/​25p.
+39. Blei, D., Ng, A., Jordan, M.: Latent Dirichlet allocation. J. Mach. Learn. Res. (2003). https://​doi.​
+org/​10.​1162/​jmlr.​2003.3.​4-5.​993
+40. Landauer, T., Foltz, P., Laham, D.: An introduction to latent semantic analysis. Discourse Process.
+25, 259–284 (1998). https://​doi.​org/​10.​1080/​01638​53980​95450​28
+41. Wang, Y., Zhang, Y.: Nonnegative matrix factorization: a comprehensive review. Knowled Data Eng
+IEEE Trans (2013). https://​doi.​org/​10.​1109/​TKDE.​2012.​51
+42. Sarika, J., Deepak, J., Kapil, G.: Investigating the similarity of court decisions. In: 2022 Advances
+in Computational Intelligence, its Concepts & Applications (ACI 2022), vol. 3283. pp. 316–326.
+CEUR-WS ISSN: 1613–0073 (2022)
+43. Pariskhit, K., Shubham, K., Suraj, S., Pooja, H., Nandana, M., Sarika, J., An Indian court decision
+annotated corpus and knowledge graph. In: Joint Proceedings of ISWC2022 Workshops: The International Workshop on Artificial Intelligence Technologies for Legal Documents (AI4LEGAL) and
+the International Workshop on Knowledge Graph Summarization (KGSum) (2022), CEUR Workshop Proceedings vol. 3257. pp. 79–90 (2022)
+44. Jain, S., Harde, P., Mihindukulasooriya, N. NyOn: a multilingual modular legal ontology for representing court judgements. In: Semantic intelligence: select proceedings of ISIC 2022 (pp. 175–183).
+Singapore: Springer Nature Singapore (2023)
+Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps
+and institutional affiliations.
+Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under
+a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted
+manuscript version of this article is solely governed by the terms of such publishing agreement and
+applicable law.
+
+13
+
+

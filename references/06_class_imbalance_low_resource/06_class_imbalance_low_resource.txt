@@ -1,0 +1,961 @@
+================================================================================
+PAPER: 06_01_Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data
+================================================================================
+
+--- TITLE ---
+Neurocomputing 592 (2024) 127801 Contents lists available at ScienceDirect Neurocomputing
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Real-world classification problems typically exhibit an imbalanced
+or long-tailed distribution [1–10], wherein some classes have fewer
+samples (minority classes), and some classes have more samples (ma­
+jority classes). Such imbalance poses a significant challenge for many
+machine learning algorithms [1,4,8,9,11–13]. Poor performance of the
+model on the minority classes during the training can have a negative
+impact on the overall performance when these classes are represented in
+the test set, or if the chosen performance metric places equal importance
+on all classes, regardless of their class frequency. The latter has been
+done because of various practical concerns, such as fairness or trans­
+ferability to new domains [14]. Moreover, the minority classes might
+have intrinsic importance, despite being rare [13,15]. Hence, a solution
+
+that improves the performance of the minority classes, while main­
+taining the good performance of the majority classes is of crucial
+importance.
+Fine-tuning is the prevalent paradigm for using large pretrained
+language models (LMs) [16–18] to perform downstream tasks. This
+paradigm, while widely used, is far from ideal, as the fine-tuning may
+predispose the pretrained model to overfitting and generalizing poorly
+to out-of-distribution (OOD) data due to the huge model and relatively
+small size of the domain-specific data [19–24]. In a class-imbalance
+scenario, the model tends to over-fit the minority classes due to their
+limited representation, even with the specialized class-balanced tech­
+niques such as re-sampling [1,4,13] and re-weighting [14,25–27].
+Empirically, it is shown that reweighting has a significant effect early
+in training, and the impact of the importance weighting diminishes over
+
+* Corresponding author.
+E-mail address: hualou.liang@drexel.edu (H. Liang).
+https://doi.org/10.1016/j.neucom.2024.127801
+Received 25 April 2023; Received in revised form 22 February 2024; Accepted 5 May 2024
+Available online 9 May 2024
+0925-2312/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/bync-nd/4.0/).
+
+T. ValizadehAslani et al.
+
+Neurocomputing 592 (2024) 127801
+
+the discussions and the conclusion.
+
+(a)
+
+Standard
+fine-tuning
+
+Pretrained model
+
+(b)
+Pretrained model
+
+Pre-fine-tuning
+with ChatGPT
+data
+augmentation
+
+--- CONCLUSION ---
+5.1. Conclusion
+Real-world classification problems typically exhibit a long-tailed or
+imbalanced distribution, wherein many classes are associated with only
+a few samples. This poses a challenge for learning on such data as it is
+susceptible to an undesirable bias towards majority classes, hence
+leading to poor performance for minority classes. To tackle this issue, we
+propose a new learning strategy: two-stage fine-tuning. In Stage 1, we
+pre-fine-tune the model with either class-balanced augmented data,
+generated using ChatGPT, or a class-balanced reweighing loss, to pro­
+vide the minority classes a head-start. In Stage 2 we resume the standard
+fine-tuning. We compare our two-stage fine-tuning with vanilla finetuning, LDAM, and CB, and show that our two-stage fine-tuning out­
+performs other methods on two manually created imbalanced bench­
+mark datasets (both two-class and multi-class) and a real-world
+application of ADME semantic labeling. Critically, we show that our
+two-stage fine-tuning using ChatGPT possesses a better generalization
+ability when tested on OOD data.
+
+5.3. Future work
+There are several extensions of our method. First, the effectiveness of
+our two-stage fine-tuning is primarily demonstrated in text classification
+tasks in this work. It is conceivable that our method can be equally
+applied to other domains of machine learning such as computer vision,
+where imbalanced data abound. Second, while the method we proposed
+in this work is designed for learning imbalanced data, the idea can also
+be beneficial for balanced data because the benefits of freezing the initial
+layers in the first stage might increase the performance of the balanced
+data as well. Third, in the current work, we have limited the fine-tuning
+at the first stage to only the final layer, which is mainly determined by
+the theoretical analysis [29]. In practice, it is plausible to fine-tune the
+last few layers, rather than only the final layer, for improved perfor­
+mance. Finally, our work focuses on the imbalanced classification.
+Extending our investigation to imbalanced regression [72–74] is also of
+interest.
+
+5.2. Discussion
+Fine-tuning has become the de facto standard to leverage large pre­
+trained models to perform downstream tasks [16–18]. Despite being
+widely used, fine-tuning may predispose the pretrained model to over­
+fitting and generalizing poorly to OOD data due to the huge model and
+relatively small size of the domain-specific data. To address this gap, we
+showed that the pre-finetuning we introduced in this work, as an in­
+termediate training stage in between the pretrained model and
+fine-tuning, is effective to yield better performance. Having such an
+additional training stage encourages the pretrained model to be better
+adapted to the target data before the vanilla fine-tuning takes place.
+ChatGPT has demonstrated remarkable performance in a variety of
+intricate linguistic tasks in a zero-shot manner. In this work, we leverage
+ChatGPT for data augmentation via rephrasing to generate diverse new
+samples that maintain semantic consistency to mitigate the problem of
+imbalanced learning. In addition, we implement two additional
+methods, RW and back translation, at the first stage of our proposed
+strategy. The goal of the first stage is to provide a good initialization for
+the standard fine-tuning, i.e., Stage 2, by giving a head start to the mi­
+nority classes. The ChatGPT data augmentation method achieves this
+goal with class-balanced augmented data, whereas the reweighting is to
+assign a larger penalty to the errors in the minority classes in the loss
+function of the model. Results of Table 1 demonstrate that our two-stage
+fine-tuning using ChatGPT outperforms the state-of-the-art methods of
+class-imbalanced training, and other implementations of our proposed
+approach.
+We additionally tested whether the model performance could be
+
+Funding
+This work was partly supported by The United States Food and Drug
+Administration Contract #: 75F40119C10106.
+CRediT authorship contribution statement
+Hualou Liang: Conceptualization, Formal analysis, Funding acqui­
+sition, Investigation, Methodology, Supervision, Writing – review &
+editing. Yiwen Shi: Writing – review & editing. Taha ValizadehAsla­
+nia: Conceptualization, Data curation, Formal analysis, Investigation,
+Methodology, Validation, Writing – original draft, Writing – review &
+editing. Ping Ren: Resources. Jing Wang: Resources. Meng Hu: Re­
+sources, Writing – review & editing. Yi Zhang: Resources. Liang Zhao:
+Resources, Writing – review & editing.
+Declaration of Competing Interest
+The authors declare the following financial interests/personal
+10
+
+T. ValizadehAslani et al.
+
+Neurocomputing 592 (2024) 127801
+
+relationships which may be considered as potential competing interests:
+Hualou Liang reports financial support was provided by US Food and
+Drug Administration
+
+Learning for NLP, Association for Computational Linguistics, 2020, https://doi.
+org/10.18653/v1/2020.repl4nlp-1.18.
+[20] D. Guo, A.M. Rush, Y. Kim, Parameter-Efficient Transfer Learning with Diff
+Pruning, CoRR abs/2012 (07463) (2020) https://arxiv.org/abs/2012.07463.
+[21] E. Radiya-Dixit, X. Wang, How fine can fine-tuning be? Learning efficient language
+models, CoRR abs/2004 (14129) (2020) https://arxiv.org/abs/2004.14129.
+[22] E.B. Zaken, S. Ravfogel, Y. Goldberg, BitFit: Simple Parameter-efficient Fine-tuning
+for Transformer-based Masked Language-models, CoRR abs/2106 (10199) (2021)
+https://arxiv.org/abs/2106.10199.
+[23] S. Zhao, R. Gupta, Y. Song, D. Zhou, Extreme language model compression with
+optimal subwords and shared projections, CoRR abs/1909 (11687) (2019) http://
+arxiv.org/abs/1909.11687.
+[24] A. Kumar, A. Raghunathan, R. Jones, T. Ma, P. Liang, Fine-Tuning can Distort
+Pretrained Features and Underperform Out-of-Distribution, (2022). https://doi.
+org/10.48550/ARXIV.2202.10054.
+[25] Y. Cui, M. Jia, T.-Y. Lin, Y. Song, S. Belongie, Class-Balanced Loss Based on
+Effective Number of Samples, 2019 IEEE/CVF Conf. Comput. Vis. Pattern Recognit.
+(CVPR) (2019) 9260–9269, https://doi.org/10.1109/CVPR.2019.00949.
+[26] Q. Dong, S. Gong, X. Zhu, Class rectification hard mining for imbalanced deep
+learning, CoRR abs/1712 (03162) (2017) http://arxiv.org/abs/1712.03162.
+[27] C. Huang, Y. Li, C.C. Loy, X. Tang, Learning Deep Representation for Imbalanced
+Classification, Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR) (2016).
+[28] J. Byrd, Z. Lipton, What is the Effect of Importance Weighting in Deep Learning?,
+in: K. Chaudhuri, R. Salakhutdinov (Eds.), Proceedings of the 36th International
+Conference on Machine Learning, PMLR, 2019: pp. 872–881. https://proceedings.
+mlr.press/v97/byrd19a.html.
+[29] C. Fang, H. He, Q. Long, W.J. Su, Exploring deep neural networks via layer-peeled
+model: Minority collapse in imbalanced training, Proc. Natl. Acad. Sci. 118 (2021)
+e2103091118, https://doi.org/10.1073/pnas.2103091118.
+[30] OpenAI, GPT-4 Technical Report, (2023). http://arxiv.org/abs/2303.08774
+(accessed April 25, 2023).
+[31] Y. Shi, T. ValizadehAslani, J. Wang, P. Ren, Y. Zhang, M. Hu, H. Liang, Improving
+Imbalanced Learning by Pre-finetuning with Data Augmentation, in: International
+Workshop on Learning with Imbalanced Domains, 2022.
+[32] S. Bengio, Sharing Representations for Long Tail Computer Vision Problems, in:
+Proceedings of the 2015 ACM on International Conference on Multimodal
+Interaction, Association for Computing Machinery, New York, NY, USA, 2015: p. 1.
+https://doi.org/10.1145/2818346.2818348.
+[33] Y. Geifman, R. El-Yaniv, Deep Active Learning over the Long Tail, CoRR. abs/
+1711.00941 (2017). http://arxiv.org/abs/1711.00941.
+[34] N. Japkowicz, S. Stephen, The class imbalance problem: a systematic study, Intell.
+Data Anal. 6 (2002) 429–449.
+[35] B. Krawczyk, Learning from imbalanced data: open challenges and future
+directions, Prog. Artif. Intell. 5 (2016) 221–232, https://doi.org/10.1007/s13748016-0094-0.
+[36] T. Wolf, L. Debut, V. Sanh, J. Chaumond, C. Delangue, A. Moi, P. Cistac, T. Rault,
+R. Louf, M. Funtowicz, J. Davison, S. Shleifer, P. von Platen, C. Ma, Y. Jernite,
+J. Plu, C. Xu, T.L. Scao, S. Gugger, M. Drame, Q. Lhoest, A.M. Rush, Transformers:
+State-of-the-art Natural Language Processing, HuggingFace’S. (2020).
+[37] Y.-X. Wang, D. Ramanan, M. Hebert, Learning to Model the Tail, in: I. Guyon, U.V.
+Luxburg, S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, R. Garnett (Eds.),
+Advances in Neural Information Processing Systems, Curran Associates, Inc., 2017.
+https://proceedings.neurips.cc/paper/2017/file/
+147ebe637038ca50a1265abac8dea181-Paper.pdf.
+[38] B. Li, Y. Liu, X. Wang, Gradient harmonized single-stage detector, Proc. AAAI Conf.
+Artif. Intell. 33 (2019) 8577–8584, https://doi.org/10.1609/aaai.
+v33i01.33018577.
+[39] T.-Y. Lin, P. Goyal, R. Girshick, K. He, P. Dollar, Focal Loss for Dense Object
+Detection, in: Proceedings of, IEEE Int. Conf. Comput. Vis. (ICCV) (2017).
+[40] P.W. Koh, P. Liang, Understanding Black-box Predictions via Influence Functions,
+(2017). https://doi.org/10.48550/ARXIV.1703.04730.
+[41] M. Ren, W. Zeng, B. Yang, R. Urtasun, Learning to Reweight Examples for Robust
+Deep Learning, CoRR. abs/1803.09050 (2018). http://arxiv.org/abs/1803.09050.
+[42] N.V. Chawla, A. Lazarevic, L.O. Hall, K.W. Bowyer, SMOTEBoost: Improving
+Prediction of the Minority Class in Boosting, in: N. Lavrač, D. Gamberger, L.
+Todorovski, H. Blockeel (Eds.), Knowledge Discovery in Databases: PKDD 2003,
+Springer Berlin Heidelberg, Berlin, Heidelberg, 2003: pp. 107–119.
+[43] Z. Liu, W. Cao, Z. Gao, J. Bian, H. Chen, Y. Chang, T.-Y. Liu, Self-paced Ensemble
+for Highly Imbalanced Massive Data Classification, in: 2020 IEEE 36th
+International Conference on Data Engineering (ICDE), 2020: pp. 841–852. https://
+doi.org/10.1109/ICDE48307.2020.00078.
+[44] S. Wang, X. Yao, Diversity analysis on imbalanced data sets by using ensemble
+models, 2009 IEEE Symp. . Comput. Intell. Data Min. (2009) 324–331, https://doi.
+org
+
+
+================================================================================
+PAPER: 06_02_Pre‑trained transformer‑based language models for Sundanese
+================================================================================
+
+--- TITLE ---
+(2022) 9:39 Wongso et al. Journal of Big Data https://doi.org/10.1186/s40537-022-00590-7 Open Access
+
+--- ABSTRACT ---
+The Sundanese language has over 32 million speakers worldwide, but the language
+has reaped little to no benefits from the recent advances in natural language understanding. Like other low-resource languages, the only alternative is to fine-tune existing multilingual models. In this paper, we pre-trained three monolingual Transformerbased language models on Sundanese data. When evaluated on a downstream text
+classification task, we found that most of our monolingual models outperformed larger
+multilingual models despite the smaller overall pre-training data. In the subsequent
+analyses, our models benefited strongly from the Sundanese pre-training corpus size
+and do not exhibit socially biased behavior. We released our models for other researchers and practitioners to use.
+
+--- INTRODUCTION ---
+Recently, there has been a multitude of advances in the field of natural language, especially since the release of the Transformer [1] architecture. Before Transformers, RNNs
+(Recurrent neural networks) [2] like LSTMs (Long short-term memory networks) [3],
+and GRUs (Gated recurrent units) [4] were prevalent due to their network architecture
+design that suited the domain of natural language in the form of texts. However, most of
+these older architectures struggled to model long-term sequential dependency and are
+often slow to train due to the inability of parallelization.
+On the other hand, the Transformer solves this issue by being parallelizable during training and extensively applying the attention mechanism to better model long
+sequences of inputs. Several modern architectures were then derived from the original Transformer model, such as the OpenAI GPT (Generative Pre-Training) [5], BERT
+(Bidirectional Encoder Representations from Transformers) [6], and subsequently variants like GPT-2 [7], GPT-3 [8], and RoBERTa (Robustly Optimized BERT Pre-training
+Approach) [9].
+For instance, the GPT architecture stacks decoder blocks of the original Transformer
+architecture, while BERT stacks encoder blocks of the original Transformer and modifies
+them to become naturally bidirectional by design. Due to this discrepancy, GPT-based
+© The Author(s) 2022. Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits
+use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original
+author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third
+party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or
+exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://​
+creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+
+Wongso et al. Journal of Big Data
+
+(2022) 9:39
+
+models are normally pre-trained as causal/generative language models, whereas BERTbased models are pre-trained as masked language models. Once these models have been
+pre-trained, they can similarly be fine-tuned to downstream natural language understanding tasks. This scheme allowed for breakthroughs in tasks like text classification,
+question-answering, natural language inference, among many others.
+However, most of these recent successes occur in the domain of high-resource languages like English, Chinese, and Spanish where data are abundant. Low-resource languages, conversely, have reaped little benefits despite the recent advances; attributing
+to the lack of data and existing work [10]. The best alternative is to fine-tune a multilingual model whose corpus contains that specific low-resource language. However, previous studies [11, 12] showed that multilingual models often perform poorly compared to
+monolingual models of low-resource languages.
+To that, we propose the pre-training of various Transformer-based language models
+on a low-resource language, namely Sundanese. The Sundanese language is Indonesia’s
+third-most spoken language [13], with over 32 million speakers worldwide and is the
+52nd most spoken language in the world [14]. It is the official language in larger regions
+of Banten and West Java, as well as a minority language in various parts of Jakarta, Lampung, Central Java, and other nearby provinces in Indonesia [15]. Linguists usually classify the language into as many as 8 dialects [16], with the Priangan dialect being the most
+prominent of them all.
+Moreover, a previous study [17] showed that the Sundanese language remains the main
+communication tool for adults and parents living in those regions. In the same paper, the
+authors concluded that there is a desire to preserve the Sundanese language in the fastgrowing modern technological world as a cultural identity of the people. Another study
+[18] similarly noted that a great deal of Indonesian social media activity in platforms like
+Twitter originates from West Java, where the Sundanese language is most often used.
+With that many speakers and a huge market, it would be beneficial to have Sundanese
+language models that could be applied to various business processes.
+Contrarily, there is very limited Sundanese corpus to be used for pre-training. Hence,
+on top of the pre-existing multilingual corpora like OSCAR (Open Super-large Crawled
+Aggregated Corpus) [19], CC-100 [20, 21], and C4 [22], Sundanese documents from
+Wikipedia were also used during the pre-training of our language models to cater to the
+scarcity of data availability.
+Having been pre-trained, these models were thus fine-tuned to a downstream task of
+classifying emotions from tweets and were subsequently benchmarked against existing
+traditional machine learning algorithms and multilingual Transformer models such as
+the multilingual BERT [6] and the RoBERTa variant of XLM (Cross-lingual Language
+Model Pre-training) [20].
+Once these models have been fully pre-trained and fine-tuned, they are subsequently
+released in the HuggingFace Transformers Model Hub1, in hopes of encouraging other
+researchers to work on the field of Sundanese language modeling with open access to
+our models.
+
+1
+
+https://​hf.​co/​models?​filter=​su.
+
+Page 2 of 17
+
+Wongso et al. Journal of Big Data
+
+(2022) 9:39
+
+In the following sections, we will continue by discussing the background of Sundanese
+language modeling in greater detail, followed by the methodology used and experiments
+performed during the pre-training of our models, and finally, various analyses, discussions, and conclusions thereafter.
+
+--- CONCLUSION ---
+We have pre-trained three different Sundanese, Transformer-based language models,
+namely GPT-2, BERT, and RoBERTa, using limited pre-training data. Afterward, we
+evaluated these models by fine-tuning them to a downstream task of emotion classification of Sundanese tweets and found that our RoBERTa model significantly improved the
+results of larger multilingual models due to the discrepancy in pre-training corpus size,
+while our BERT model performed slightly better than XLM-RoBERTa. An investigation
+of social biases present in our language model was also conducted, to which the model
+seems to return neutral results.
+
+Page 14 of 17
+
+Wongso et al. Journal of Big Data
+
+(2022) 9:39
+
+Abbreviations
+BART:: Bidirectional and Auto-Regressive Transformers;; BERT:: Bidirectional Encoder Representations from Transformers;;
+ELMo:: Embeddings from Language Models;; GELU:: Gaussian Error Linear Unit;; GLUE:: General Language Understanding
+Evaluation;; GPT:: Generative Pre-Training;; GPU:: Graphical Processing Units;; GRU:: Gated Recurrent Unit;; LSTM:: Long
+Short-Term Memory;; MBERT:: Multilingual BERT;; MLM:: Masked Language Modeling;; NSP:: Next Sentence Prediction;;
+OSCAR:: Open Super-large Crawled Aggregated Corpus;; RNN:: Recurrent Neural Network;; RoBERTa:: Robustly Optimized
+BERT Pre-training Approach;; SVC:: C-Support Vector Classifier;; TF-IDF:: Term Frequency-Inverse Document Frequency;;
+TPU:: Tensor Processing Units;; ULMFiT:: Universal Language Model Fine-Tuning;; XLM:: Cross-lingual Language Model
+Pre-training..
+
+
+================================================================================
+PAPER: 06_03_Pre-Trained Transformer-Based Models for Text Classification Using Low-Resourced Ewe Language
+================================================================================
+
+--- TITLE ---
+systems Article Pre-Trained Transformer-Based Models for Text Classification
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Licensee MDPI, Basel, Switzerland.
+
+Text classification (TC) is a valuable text retrieval task for handling enormous text
+inputs. It automatically classifies and establishes different text samples using natural
+language processing (NLP) and data mining tools with machine and deep learning techniques [1]. In the TC procedure, various texts are accepted, and a model represents the
+text as a vector. The vector is then fed into a model for training until a satisfactory mean
+is achieved [2]. Generally, TC tasks are handled by deep learning (DL) models. These
+
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+
+Systems 2024, 12, 1. https://doi.org/10.3390/systems12010001
+
+https://www.mdpi.com/journal/systems
+
+Systems 2024, 12, 1
+
+--- CONCLUSION ---
+Recent developments in NLP studies and applications have barely considered the Ewe language.
+The Ewe language is one of Africa’s widely spoken languages yet it is extremely low-resourced, with
+a complex “unique” structure, poorly curated data, unavailable NLP statistical literature, and no
+publicly available datasets.
+This study developed and preprocessed an Ewe dataset to solve the classification problem
+associated with the language. The study leveraged recent word embedding techniques to build an
+Ewe-based word embedding. Additionally, we provided baseline results using seven fine-tuned
+pre-trained models and assessed their stability and robustness in representing the exact semantics
+of the low-resourced Ewe text. The findings in this current study demonstrated that fine-tuned
+BERT-based cases were superior and best comprehended the Ewe context semantically compared
+with other models. In our experiment, the fine-tuned DeBERTa model performed averagely, showing
+its capability to efficiently capture long-range dependencies of the Ewe text. This study is positioned
+to provide the necessary resources and gain future research opportunities in the DL field. To this end,
+the new dataset and word embedding contribute to the existing literature on Ewe text processing.
+Researchers seeking to derive insights or patterns from the dataset will obtain more robust and reliable
+results using the dataset. The dataset becomes a valuable resource for researchers and developers
+aiming to derive meaningful insights and build robust models in the context of the Ewe language.
+In our future study, we plan to report on other embeddings and transformer-based and hybrid
+deep learning techniques like CBOW, FastText, GloVe, XLNET, Alberta, multi-channel CNN with
+Attention, etc. Furthermore, we intend to address multilingual issues in LRLs such as Fón, Twi,
+Arabic, and Gbe by capitalizing on linguistic similarities and developing more robust learning models.
+Author Contributions: Conceptualization, methodology, V.K.A.; software, methodology, S.B.Y.; validation, S.B.Y. and N.A.K.; formal analysis, C.C.A.; investigation, C.C.U. and C.C.A.; resources,
+M.A.H., N.A.S., and M.M.J.; visualization, M.A.H. and N.A.K.; data curation, V.K.A. and C.C.A.;
+writing—original draft, V.K.A.; writing—review and editing, N.A.S., M.M.J. and M.A.A.-a.; supervision, W.C. and M.A.A.-a.; project administration, C.C.U. and N.A.K.; funding acquisition, M.A.A.-a.,
+M.M.J. and N.A.S. All authors have read and agreed to the published version of the manuscript.
+Funding: This research was funded by Princess Nourah bint Abdulrahman University Researchers
+Supporting Project number (PNURSP2023R104), Princess Nourah bint Abdulrahman University,
+Riyadh, Saudi Arabia.
+Data Availability Statement: The Ewe dataset, along with the PyTorch code we utilized in our
+experiment is currently not accessible to the general public. However, it will be made available
+through this link once the study is published: https://github.com/VictorAgbesi/Ewe-News-Dataset.
+
+
+================================================================================
+PAPER: 06_04_An Integrated Topic Modelling and Graph Neural Networkfor Improving Cross-lingual Text Classification
+================================================================================
+
+--- TITLE ---
+An Integrated Topic Modelling and Graph Neural Network for Improving Cross-lingual Text Classification THAM VO, Thu Dau Mot University, Binh Duong, Vietnam
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Along with tremendous developments of the Internet and multiple networked data platforms (e.g.,
+social networks, e-commercial networks, online news networks, etc.), there is a huge number of
+textual data resources [1, 2] (e.g., posts, micro-blogs, product’s reviews, etc.) that is generated on
+these platforms every day. The massive amounts of data are in different types of languages. Thus,
+it is necessary to develop cross-language-based text analysis and mining models [3] that can be
+This research is funded by Thu Dau Mot University, Binh Duong, Vietnam.
+Authors’ address: T. Vo (corresponding author), Number 6, Tran Van On Street, Phu Hoa Ward, Thu Dau Mot City, Binh
+Duong Province, 820000, Vietnam; email: thamvth@tdmu.edu.vn.
+Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee
+provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and
+the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored.
+Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires
+prior specific permission and/or a fee. Request permissions from permissions@acm.org.
+© 2022 Association for Computing Machinery.
+2375-4699/2022/11-ART22 $15.00
+https://doi.org/10.1145/3530260
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22
+
+22:2
+
+T. Vo
+
+adapted in the context of non-English annotated low-resources. In general, different from the traditional singular language-based classification problem, the cross-lingual text classification model
+is designed to learn the latent textual features of the source language. Then, these learned distinctive features are transferred into the knowledge of other target low-resource languages. Therefore,
+cross-lingual text classification (CLC) is considered to be more challenging than the traditional
+mono-language-based classification task in which the model training must adopt advanced natural language processing (NLP) techniques. In this approach, different advanced NLP methods are
+combined to simultaneously learn and transfer the learned textual features (normally in English)
+into other target low-resource languages that facilitate the cross-language classification task. In the
+past, most CLC-based models utilized the translation-based mechanism [4]/dual-language dataset
+[5] or external language resources (e.g., multilingual dictionaries) [6, 7] to efficiently handle the
+linguistic knowledge transferring problem. However, these traditional CLC-based models are considered laborious and high cost due to the sufficient requirements of human interactions and expert
+knowledge on constructing the translated datasets or cross-language dictionary-related resources.
+In addition, the traditional CLC-based approaches also suffer limitations related to the capability
+of efficiently preserving the contextual latent representations of text in the context of multiple
+languages. In recent years, with the significant progress in deep learning and advanced neural
+architectures in the NLP domain, different primitive tasks in this domain, such as text clustering,
+classification, or machine reading comprehension, have been remarkably handled with state-ofthe-art performance. Specifically, for English language NLP-based tasks, with the huge amounts
+of annotated datasets available, these recent deep learning-based language models have made impressive strides in tackling the existing challenges of low-quality representation and shallow understanding of textual data. However, for other types of languages, the amounts of corresponding
+labelled datasets might be insufficient, and they cannot be adopted in complex deep neural representation learning processes, as it is too cost prohibitive. These deep neural textual learning
+processes require a huge numbers of training data to achieve reasonable accuracy performance.
+In fact, for most deep learning–based CLC models, in the situation of non-English, labeled data
+are usually unavailable, and thus many researchers have attempted to build deep neural network
+classifiers that can be trained upon the rich-resource languages, like English, and then applied the
+transfers to targeted languages that lack annotated training data.
+1.1 Recent Achievements and Existing Challenges
+In the cross-language classification task, finding an appropriated textual representation learning
+technique to fully preserve the syntactical and semantic gaps between multilingual text documents
+is important. In recent years, several deep learning–based efforts have demonstrated the successes
+in efficiently exploiting the structural and semantic latent language-varied information in text
+to handle the CLC problem, such as CLNB [8], DNN/Pivot-CLCD [9], and ADAN [10]. However,
+these previous deep learning–based approaches still encounter problems related to the capability
+of fully exploring the contextual similarity among different languages. It effectively learns the
+rich semantic language-agnostic representations for multilingual text corpora. Recently, with the
+rise of transformer-based architectures (e.g., ELMo [11], GPT-2 [12], and BERT [13]), proposed
+CLC-based models have been shifted to the utilization of an advanced multilingual pre-trained
+language platform in which complex deep neural networks are pre-trained upon large-scale crosslinguistic corpora. However, these transformer-based models still suffer limitations regarding the
+ability to explicitly preserve the global long-range dependent relationships as well as syntactic
+structures of documents in the multilingual datasets that might lead to a downgrade in the
+performance of knowledge transferring between the source and target language. Moreover, most
+of these multilingual transformer-based techniques also requires a huge amount of cross-linguistic
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:3
+
+Fig. 1. Illustration of the overall architecture of our proposed TG-CTC model.
+
+annotated training resources as well as high computational efforts with new target languages that
+are considered as inflexible and time-consuming for practical implementations. To deal with the
+limitation related to the syntactical structural representation learning of text, recently researchers
+have focused on the utilization of graph neural network– (GNN) based architecture, such as
+GraphSage [14], graph convolutional network (GCN) [15], and graph attention network
+(GAT) [16], and so on, to efficiently obtain the global word long-range dependent relationships and
+syntactical structures of documents. There are many contemporary notable GNN-based works in
+text analysis and mining area (e.g., TextGCN [17], TensorGCN [18], and TG-Transformer [19]) that
+have shown state-of-the-art performances in comparing with the transformer-based approaches.
+The potentiality of neural topic modelling and text graph embedding integration. However, in general these GNN-based techniques still lack thorough evaluations of the global semantic
+information of text documents, such as topics that can be utilized to enrich the textual representations of cross-linguistic text corpora. In recent times, multiple studies [17–19] have concentrated
+on modelling long-range heterogeneous dependent relationships between documents to leverage
+the quality of textual representations. These extensive experiments [19] have demonstrated the effectiveness of heterogeneous text graph modelling and representation learning via different graph
+neural network–based architectures. The achieved graph-structured text representations are later
+utilized to achieve better fine-tuning results in primitive NLP’s tasks including classification.
+Recent studies on textual representation learning have also demonstrated the effectiveness
+of other textual global information, such as topic attributes [20, 21]. Several recent works have
+presented the success and potentiality of integrating a topic modelling approach with different
+neural text embedding architectures such as auto-encoding [22], transformer [23, 24], and so
+on. These works have proved that latent topic modelling and extraction within the neural
+representation learning process can directly improve the quality of textual embedding as well
+as multiple task-driven fine-tuning processes. Thus, the fusion between neural topic modelling
+and text graph–based representation learning via GNN is considered a promising direction for
+enhancing the performance of cross-lingual contextual embedding and classification.
+1.2
+
+Our Contributions and Motivations
+
+Inspired by the achievements of recent GNN-based efforts in CLC and motivated to tackle the
+above listed challenges, in this article we propose a novel CLC-based model called TG-CTC (see
+Figure 1). In our proposed TG-CTC model, we utilize the combination between neural latent topic
+modelling with heterogeneous multi-typed text graph representation learning by using GAT [16]
+to achieve the rich structural and contextual representations of multilingual texts for handling
+CLC tasks. In particular, to efficiently extract latent topic representations of documents, we used
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+22:4
+
+T. Vo
+
+previous neural topic modelling techniques [25, 26] that are designed upon the topic modelling
+inference paradigm via the neural variational auto-encoding (VAE) mechanism.
+Then, the latent topic embedding vectors are fused with the rich contextual representations
+that are produced by utilizing existing multilingual pre-trained language models, such as XLMRoBERTa [27]. Then, these rich semantic and contextual representations of texts are used to assist
+the heterogeneous text graph embedding process via GAT. Similarly to previous studies [17–19,
+28] in a GNN-based text analysis and representation learning approach, we transform and represent multilingual documents in a given corpus in forms of heterogeneous networks with different
+word–word, word–document, and document–document heterogeneous sub-networks/subgraphs. From the given constructed heterogeneous text graphs, we applied a multi-layered
+GAT-based architecture to efficiently capture and aggregate the joint contextual and structural
+representations of documents and their associated words through the graph-based propagation
+learning process. In our approach, the graph-based attention mechanism is applied to sufficiently
+preserve the importance of different neighboring multi-typed word and document nodes that
+leverage the performance of a document’s class prediction through a neural full-connected layer
+with a softmax function. In general, our contributions in this article can be summarized as follows:
+• First, we present a combination of a neural topic modelling and pre-trained language textual representation learning approach to capture the joint global semantic and contextual
+information of documents in a given multilingual corpus. To efficiently merge the latent
+topic representations with rich contextual information of documents, we applied a neural network–based fusion mechanism to transform different textual embedding vectors of
+words and documents into the unified embedding spaces.
+• Next, we utilized previous rich semantic textual latent representations in the heterogeneous
+text graph construction and embedding process by using a multi-layered GAT-based architecture that effectively learns and aggregates latent structural information of documents.
+The utilization of self-attention in GAT identifies important information of multi-typed
+word and document nodes during the propagation learning strategy, which directly facilitates the global structural document embedding process as well as the cross-language
+classification task.
+• Finally, we conducted extensive experiments in three benchmark datasets (Amazon
+Reviews-{Book, DVD and Music}, XGLUE News, and Facebook Multilingual SLU) to present
+the effectiveness of our proposed TG-CTC model compared with recent state-of-the-art
+CLC-based techniques. The comparative experimental outputs showed the usefulness of
+our proposed ideas in this article.
+Difference between our works and previous studies. Within the proposed TG-CTC model,
+we introduced a novel integration between the latent topic extraction and the multi-lingual heterogeneous text graph construction strategy to improve the performance of global information
+and long-range relationship capturing. To efficiently extract and learn latent topics from a given
+cross-linguistic text corpus, we utilize the neural topic modelling approach in which distributions
+of latent topics over documents are fully preserved during the variational auto-encoding-based
+generative process. Then the generative latent topic embedding vectors are combined with graphbased document representations that are produced by using graph attention neural network architecture over the constructed heterogeneous cross-linguistic text graphs. Different from previous approaches [28–30], in our proposed model the combination between global latent topic
+information with the long-range dependent relational features enables us to capture richer contextual features from documents in a given cross-linguistic text corpus. These rich contextual
+ACM Trans. Asian Low-Resour. Lang. Inf. Process., Vol. 22, No. 1, Article 22. Publication date: November 2022.
+
+An Integrated Topic Modelling and Graph Neural Network for Improving CLC
+
+22:5
+
+representations of documents are later utilized to achieve better fine-tuning results for the text
+classification task.
+In general, the remainder of our article is divided into four sections. In the next section, we
+briefly review recent efforts in CLC as well as discuss pros/cons of each approach. In the third
+section, we formally demonstrate the methodology, background concepts, and detailed implementations of our proposed TG-CTC model. In the fourth section, we present extensive empirical studies on the CLC task by using different CLC-based techniques within standard datasets. Finally, we
+conclude this article as well as provide potential directions for future work in the fifth section.
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 06_05_From_Pre-Training_to_Meta-Learning_A_Journey_in_Low-Resource-Language_Representation_Learning
+================================================================================
+
+--- TITLE ---
+Received 10 October 2023, accepted 18 October 2023, date of publication 20 October 2023, date of current version 25 October 2023. Digital Object Identifier 10.1109/ACCESS.2023.3326337 From Pre-Training to Meta-Learning:
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Language representation learning has emerged as a pivotal
+area of research in Natural Language Processing (NLP)
+and Machine Learning. The ability to effectively represent
+and understand the complex structure and semantics of
+language is essential for a wide range of NLP tasks, including
+machine translation, sentiment analysis, question answering,
+and text classification. Language representation learning
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Arianna Dulizia
+VOLUME 11, 2023
+
+.
+
+aims to capture the underlying meaning and context of words,
+sentences, and documents, enabling machines to comprehend
+and generate human-like text.
+Representation learning involves the process of transforming raw textual data into a compact and meaningful
+numerical representation. Traditionally, handcrafted features
+and linguistic knowledge were employed for this purpose.
+However, these approaches were limited in their ability to
+capture the rich and nuanced aspects of language. In recent
+years, the advent of deep learning and neural network
+architectures [1] has revolutionized the field, allowing for
+
+2023 The Authors. This work is licensed under a Creative Commons Attribution 4.0 License.
+For more information, see https://creativecommons.org/licenses/by/4.0/
+
+115951
+
+D. Zaikis, I. Vlahavas: From Pre-Training to Meta-Learning: A Journey in LRL Representation Learning
+
+the development of more powerful and adaptive language
+representation models [2].
+Furthermore, recent research has demonstrated the utility
+of transformer-based models in diverse domains, including
+bioinformatics [43]. These models, have been successfully
+employed to encode complex biological sequences and
+improve predictive accuracy. They have also been integrated
+with explainable machine learning techniques like SHAP
+(SHapley Additive exPlanations) to enhance feature selection
+and interpretability in predictive models [44].
+While language representation learning has witnessed
+significant advancements, much of the research and progress
+has been centered around resource-rich languages, such as
+English. Low-resource languages, on the other hand, suffer
+from limited availability of linguistic resources, including
+labeled datasets, lexicons, and pre-trained models. This
+presents a formidable challenge in developing effective
+language representation models for these languages [3].
+However, the importance of representation learning for
+low-resource languages cannot be overstated. These languages often belong to underrepresented communities and
+regions, and facilitating their inclusion in NLP tasks can lead
+to more inclusive and diverse applications. Furthermore, lowresource languages may lack well-established linguistic rules
+and standards, making it even more crucial to leverage datadriven approaches to capture their unique characteristics.
+Text classification tasks, such as sentiment analysis, emotion detection, irony detection, and hate speech identification,
+heavily rely on the quality of language representations.
+Effective representations capture the nuanced cues and
+contextual information required for accurate classification.
+For instance, sentiment analysis aims to determine the
+sentiment expressed in a text, whether it is positive, negative,
+or neutral. Similarly, identifying irony or detecting hate
+speech requires a deep understanding of the underlying
+linguistic nuances and the ability to capture subtle cues in the
+text.
+Language representations serve as a bridge between raw
+text data and the models employed for text classification
+tasks [1], [6]. Well-designed representations not only encode
+the semantic meaning of words and sentences but also
+capture the syntactic structures and contextual dependencies.
+By leveraging powerful representation learning techniques,
+classifiers can make informed decisions based on the encoded
+knowledge, leading to improved performance and robustness
+across various text classification tasks.
+This paper presents a comprehensive exploration of lowresource-language representation learning, with a specific
+focus on the Greek language. We address various NLP tasks
+in Greek, including Sentiment Analysis, Irony Detection,
+Hate Speech Detection, Emotion Classification, and three
+custom text classification tasks, called Tags, Mention types
+and Focus. Our objective is to overcome the challenges posed
+by limited linguistic resources for Greek NLP.
+To achieve this, we leverage the Greek BERT [4] model,
+which has been pre-trained and fine-tuned on a carefully
+115952
+
+curated dataset tailored to the Greek language and fine-tuned
+on the Greek media domain (domain-adaption). This model
+exhibits accurate classification of instances containing up to
+512 tokens. Additionally, we develop a novel Greek Longformer model by capitalizing on the pre-training datasets used
+for Greek BERT, followed again by domain adaptation to the
+Greek media domain. The Greek Longformer substantially
+enhances our ability to comprehend and process larger Greek
+text.
+To further enhance the performance and robustness of
+our approach, we explore various training and classification
+strategies. We introduce an ensemble and meta-learning
+framework that combines the outputs of three models: the
+Greek BERT model with a token limit of 512, the Greek
+BERT model with rolling predictions, which splits texts into
+512-token chunks, and the Greek Media Longformer. This
+meta learner approach yields further improved results across
+all classification tasks.
+To evaluate the effectiveness of our models, we conducted extensive evaluations using custom expert-annotated
+datasets. The results demonstrate increased performance in
+all tasks, reaffirming the significant contributions made by
+each component. Our approach highlights the efficacy of
+a comprehensive pipeline that encompasses pre-training,
+domain adaptation, contrastive learning and classification
+strategies that include task-specific models, ensembles
+and meta-learning for low-resource-language representation
+learning that could potentially provide valuable insights for
+similar endeavors in other languages with limited resources.
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 06_06_Enhancing Indian legal judgment classification with embeddings
+================================================================================
+
+--- TITLE ---
+Artificial Intelligence and Law (2026) 34:523–564 https://doi.org/10.1007/s10506-025-09438-w ORIGINAL RESEARCH Enhancing Indian legal judgment classification
+
+--- ABSTRACT ---
+Legal document analysis presents significant challenges due to its complexity and
+domain-specific nature. This study introduces an innovative approach for classifying
+Indian court judgments into legal domains using diverse machine learning and deep
+learning techniques. The method incorporates feature engineering and deep learning
+algorithms for extracting meaningful features, supported by a wide range of classifiers, including voting classifiers, gradient boosting, and random forest. Embeddings
+are generated using models such as InLegalBERT, InCaseLawBERT, CustomInLawBERT, Mamba, T5, RoBERTa, CodeT5, SBERT, DistilBERT, XLM, XLM
+Large, LegalBERT, GPT2, ALBERT, Electra, DeBERTa, TFDeBERTa, FlanT5,
+FlanT-Large, BART, BigBird Pegasus, LongFormer, and LUKE. To address class
+imbalance, the SMOTE technique is employed, and dimensionality is reduced using
+PCA and forward feature selection. The T5+SMOTE+feature selection+voting classifier configuration achieves a notable accuracy of 98%, highlighting the effectiveness of the proposed approach. These advancements have significant implications
+for applications such as document retrieval, legal discovery, and case law analysis,
+enhancing the accuracy and efficiency of legal document classification.
+
+--- INTRODUCTION ---
+AI has been applied in the legal domain (Sil et al. 2021) since the 1980s (Nitta
+and Satoh 2020), initially through expert systems leveraging rules and domain
+knowledge for specific tasks, such as product liability dispute resolution (Waterman and Peterson 1981). These early systems were limited in scope and lacked
+adaptability for broader applications. With advancements in deep learning, AI’s
+role in the legal field has expanded significantly, enabling tasks such as legal
+event detection (Yao et al. 2022), legal judgment prediction (Zhong et al. 2020;
+Xiao 2018), legal text classification (Chalkidis and Søgaard 2022; Hendrycks
+2021), legal information extraction (Hong et al. 2021), and legal content generation (Tonguz et al. 2021). Legal judgment classification, in particular, involves
+assigning court decisions to predefined legal domains, such as criminal law, family law, or intellectual property law, using machine learning algorithms trained to
+identify patterns within legal texts. This task is crucial for improving information
+retrieval, legal trend analysis, and case management. While classification techniques have been effectively applied in countries with standardized legal systems
+like the UK, Canada, and the US, the Indian legal system presents unique challenges that remain underexplored (Prabhakar et al. 2022).
+The Indian legal system is characterized by its complexity, combining elements of common, civil, and customary law traditions (Jain 2021; Rankin and
+Claus 2016). It includes multiple court levels (Supreme Court, High Courts, and
+subordinate courts), an extensive body of statutes, and diverse legal principles.
+Legal judgments often lack standardized structures and exhibit verbose, domainspecific language, further complicating automated classification (Ruhl and Katz
+2015). For instance, judgments may include lengthy narratives before presenting
+legal findings, and the terminology varies significantly across legal domains, even
+within the same case type.
+The scale of India’s judicial system compounds these challenges. With millions of pending cases and thousands of new ones added annually, the Supreme
+Court alone faces an immense caseload (Zain et al. 2018; Galanter et al. 2003).
+Efficient classification of judgments is critical for managing this workload,
+streamlining document retrieval, and supporting case prioritization. However,
+most prior research has focused on regions with less complex legal systems, leaving the unique needs of India unaddressed.
+To address these gaps, this study proposes a novel method for classifying Indian legal judgments into specific legal domains. The approach combines
+machine learning (ML) and deep learning (DL) techniques with advanced feature
+engineering to enhance classification accuracy. Techniques such as SMOTE (synthetic minority over-sampling technique) are utilized to address class imbalance,
+ensuring fair representation across legal domains. Additionally, the development
+of voting classifier ensembles integrates the strengths of multiple algorithms for
+improved performance.
+
+Enhancing Indian legal judgment classification with…
+
+525
+
+The study further emphasizes the inclusion of underexplored legal domains
+such as Land Revenue, Execution Petition, and Disciplinary Jurisdiction, providing comprehensive coverage of the Indian judicial corpus. Feature extraction
+methods like TF-IDF, Word2Vec, and contextualized embeddings are tailored to
+capture the linguistic and structural complexities of Indian legal texts. The contributions of this paper are as follows:
+• Domain-specific dataset: The introduction of a novel, manually curated dataset
+•
+•
+•
+•
+•
+•
+
+spanning 14 legal domains addresses the lack of comprehensive datasets in Indian
+legal AI research.
+Hybrid classification approach: Integration of ML and DL techniques allows for
+robust and context-sensitive classification of legal texts.
+Advanced feature engineering: Techniques like TF-IDF, Word2Vec, and contextualized embeddings enable precise representation of complex legal language.
+Class imbalance handling: SMOTE effectively addresses class imbalance, improving classification accuracy for underrepresented domains.
+Voting classifiers: Ensemble models combine multiple classifiers for enhanced
+accuracy and minimized biases.
+Comprehensive coverage: The inclusion of underexplored domains enriches the
+scope of AI applications in the Indian legal system.
+Practical applications: Automated classification enhances legal professionals’ efficiency by enabling faster document categorization, aiding research, and supporting
+case analysis.
+
+This study represents a significant step forward in addressing India’s legal complexities through AI. By integrating advanced techniques and focusing on India’s unique
+legal challenges, the proposed approach sets a benchmark for accuracy and efficiency
+in legal judgment classification, paving the way for broader AI adoption in the legal
+system. One important aspect of this research is its alignment with the United Nations
+Sustainable Development Goals (UN SDGs). By facilitating the management and categorization of large volumes of legal documents, the proposed approach contributes to
+SDG 16: Peace, Justice, and Strong Institutions. SDG 16 specifically emphasizes the
+importance of effective and accountable institutions, access to justice, and the rule of
+law. Overall, the research not only introduces a novel approach for automatic classification of Indian court judgments but also aligns with the UN SDGs, particularly SDG
+16. The emphasis on retrieval addresses the practical challenge of efficiently accessing
+pertinent legal information from diverse datasets, thus contributing to more effective
+legal information systems.
+The paper is structured as follows. Section II presents the background information
+and Section III provides an overview of previous research conducted by scholars. Section IV explains the dataset used this proposed work and Section V outlines the methodology employed in this study, followed by the evaluation results discussed in Section
+VI. Finally; Section VII concludes the paper.
+
+526
+
+P. Prabhakar, P. B. Pati
+
+2 An overview of Indian legal system
+The Indian legal system is one of the most intricate and historically significant
+judicial frameworks in the world. It has evolved as a hybrid system, incorporating
+elements of common law, civil law, customary law, and personal laws, shaped by
+British colonial influence, ancient Hindu and Islamic legal traditions, and modern
+constitutional principles. India follows a federal structure, where both the central
+and state governments have the authority to enact laws, with the judiciary playing
+a crucial role in interpreting and enforcing them. The Constitution of India serves
+as the supreme law, laying down fundamental rights, directive principles, and the
+framework for governance. Alongside constitutional law, the legal framework is
+shaped by statutory laws enacted by Parliament and state legislatures, judicial
+precedents under the doctrine of stare decisis, and customary and personal laws
+that govern family matters like marriage, divorce, and inheritance across Hindu,
+Muslim, Christian, and Parsi communities.
+India’s judicial hierarchy follows a three-tier system. The Supreme Court of
+India, as the apex court, has the authority for constitutional review and final
+appellate jurisdiction. Below it, High Courts operate at the state level, handling
+appeals and writ petitions. Further down, Subordinate Courts, including District Courts, Magistrate Courts, and Special Tribunals, handle civil, criminal,
+and administrative disputes. Legal matters in India are categorized into various
+domains, such as civil, criminal, constitutional, administrative, family, taxation,
+and corporate law. Each domain serves distinct legal purposes—for example,
+civil law governs disputes over contracts, property, and rights, while criminal law
+deals with offenses like theft and murder. Family law addresses issues related to
+marriage, divorce, and child custody, while constitutional law involves the interpretation and enforcement of fundamental rights and governance structures. The
+domain and subdoamin are as show in Table 1 with reference that validate the
+classification. To modernize India’s legal framework, significant legal reforms
+were introduced in 2023, replacing colonial-era laws with updated statutes. The
+Bharatiya Nyaya Sanhita (BNS) replaced the Indian Penal Code (IPC), updating criminal definitions and penalties. The Bharatiya Nagarik Suraksha Sanhita
+(BNSS) replaced the Code of Criminal Procedure (CrPC), streamlining investigations and trial procedures. The Bharatiya Sakshya Adhiniyam (BSA) replaced
+the Indian Evidence Act, expanding the scope of digital and forensic evidence
+in legal proceedings. These reforms aim to increase judicial efficiency, improve
+access to justice, and modernize procedural laws to better reflect India’s evolving
+legal landscape.
+In practice, despite recent advancements, professionals and researchers face
+significant challenges in managing the vast volume and complexity of Indian
+legal texts. Legal judgments often lack a standardized structure, complicating the
+extraction of relevant information. Each judgment may be presented in varying
+formats, requiring manual parsing and interpretation to identify key elements such
+as the case subject, legal arguments, and conclusions. Additionally, the complexity of legal language, with its formalized terms and domain-specific terminology,
+
+Criminal Offenses, Juvenile Justice, Revision Petition (if
+criminal offense included), Disciplinary Jurisdiction (if
+criminal misconduct recorded)
+
+Tax law
+
+Indian Constitution (Articles 32, 226, 136, 141); Supreme Court
+Rules
+
+Bharatiya Nyaya Sanhita (BNS) (replacing Indian Penal Code
+(IPC)); Bharatiya Nagarik Suraksha Sanhita (BNSS) (replacing
+CrPC); Juvenile Justice (Care and Protection of Children) Act,
+2015; Prevention of Corruption Act, 1988
+
+Income Tax, Sales Tax, Excise, Labor Law (if taxation-related) Income Tax Act, 1961; Goods and Services Tax (GST) Act; Central Excise Act, 1944; Employees’ Provident Fund (EPF) Act,
+1952; Employees’ State Insurance (ESI) Act, 1948
+
+Constitutional and administrative law Writ, Constitution
+
+Criminal law
+
+Family Law, Land Revenue, Execution Petition, Revision Peti- Hindu Marriage Act, 1955; Muslim Personal Law; Land Revenue
+tion, Labor Law, Disciplinary Jurisdiction
+Act; Code of Civil Procedure (CPC), Order 21 (Execution Petitions); Industrial Disputes Act, 1947; Prevention of Corruption
+Act, 1988
+
+Civil law and family matters
+
+Standard references
+
+Sub domains
+
+Legal domain
+
+Table 1  Classification of legal domains and subdomains in light of 2023 reforms to Indian penal code, criminal procedure code, and evidence law
+
+Enhancing Indian legal judgment classification with…
+527
+
+528
+
+P. Prabhakar, P. B. Pati
+
+further complicates understanding. The multilingual (Scao et al. 2022) nature of
+India’s legal system adds another layer of difficulty. Legal documents may be in
+English, Hindi, or various regional languages, making accurate translation and
+processing a demanding task. Further complicating matters is the absence of predefined labels for legal texts, which means researchers must manually categorize
+each document, a process that is both time-consuming and prone to human error.
+Without automated tools or standardized systems, this process remains inefficient,
+and inconsistencies often arise, hindering the seamless classification of legal documents. These challenges underscore the need for effective legal domain classification, which organizes judgments in a systematic manner, streamlining legal
+research, case retrieval, and precedent analysis. AI-driven domain classification
+is crucial in this regard, enabling legal professionals to quickly locate relevant
+precedents. By categorizing legal texts into defined domains, AI tools improve
+the speed and efficiency of legal research, enhance access to case law, and facilitate better decision-making. Recent advancements in natural language processing (NLP) and machine learning models like BERT (Kengton et al. 2019) and
+LegalBERT have revolutionized legal text classification, allowing these models
+to analyze legal language, capture contextual nuances, and automate tasks such
+as document categorization, summarization, and retrieval. With structured classification, legal professionals can access concise summaries of key judgments,
+accelerating legal argumentation and research.
+The Indian legal system continues to evolve, integrating technological advancements, legal reforms, and AI-driven automation to address challenges in legal text
+processing and judicial efficiency. By leveraging legal domain classification and AIbased NLP techniques, India’s judiciary is progressively enhancing access to legal
+information, case law organization, and justice delivery. These transformations are
+essential for improving the accessibility, efficiency, and responsiveness of India’s
+legal system while maintaining its fundamental principles of fairness, justice, and
+equality.
+
+3 Related work
+Smart Legal domain categorization has been a topic of interest in the field of NLP in
+recent years. Literature review is subdivided into (i) legal text processing techniques
+(ii) classification of legal documents (iii) advanced machine learning approaches for
+legal analysis (iv) deep learning innovations in legal text understanding (v) leveraging transformer-based models in legal NLP (vi) feature engineering and selection
+techniques (vii) concept of domain concept extraction (DCE) and its significance in
+legal text processing (viii) challenges and gaps of exciting technologies.
+3.1 Legal text processing techniques
+Legal text processing techniques encompass a range of foundational methods aimed
+at transforming unstructured legal texts into analyzable formats. These include
+
+Enhancing Indian legal judgment classification with…
+
+529
+
+linguistic preprocessing steps, such as normalization, part-of-speech tagging, and
+sentence segmentation, tailored to address the unique challenges of legal language
+(Leitner et al. 2019). Indian languages are multilingual and diverse with their own
+complexities (Lalitha and Gupta 2021) Techniques like semantic parsing and discourse analysis are employed to uncover the logical flow and argumentative structure in legal documents (Chalkidis et al. 2019). Advanced methodologies leverage
+hybrid approaches combining rule-based and statistical models to extract key legal
+concepts and relationships, such as obligations, rights, and temporal events (Waltl
+et al. 2018). Additionally, methods for handling multilingual and cross-jurisdictional
+legal texts are gaining traction, addressing the need for harmonized processing in
+globalized legal contexts (Avram et al. 2021). These innovations provide a robust
+framework for more advanced applications in legal NLP. Domain-specific term
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{ValizadehAslani2024, author = {ValizadehAslani, Taha and Shi, Yiwen and Wang, Jing and Ren, Ping and Zhang, Yi and Hu, Meng and Zhao, Liang and Liang, Hualou}, title = {Two-stage fine-tuning with ChatGPT data augmentation for learning class-imbalanced data},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

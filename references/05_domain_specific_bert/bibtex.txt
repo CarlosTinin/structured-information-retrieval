@@ -1,0 +1,73 @@
+@ARTICLE{Song2022,
+	author = {Song, Dezhao and Vold, Andrew and Madan, Kanika and Schilder, Frank},
+	title = {Multi-label legal document classification: A deep learning-based approach with label-attention and domain-specific pre-training},
+	year = {2022},
+	journal = {Information Systems},
+	volume = {106},
+	doi = {10.1016/j.is.2021.101718},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85100111664&doi=10.1016%2fj.is.2021.101718&partnerID=40&md5=97a23b899bc648d79f7aa90e1ccbe3b0},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 84}
+}
+
+@ARTICLE{Jain2024165,
+	author = {Jain, Deepali and Borah, Malaya Dutta and Biswas, Anupam},
+	title = {A sentence is known by the company it keeps: Improving Legal Document Summarization Using Deep Clustering},
+	year = {2024},
+	journal = {Artificial Intelligence and Law},
+	volume = {32},
+	number = {1},
+	pages = {165 – 200},
+	doi = {10.1007/s10506-023-09345-y},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85147300795&doi=10.1007%2fs10506-023-09345-y&partnerID=40&md5=9d774bfadd96f705445720aae392b82c},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 33}
+}
+
+@ARTICLE{Song202275835,
+	author = {Song, Dezhao and Gao, Sally and He, Baosheng and Schilder, Frank},
+	title = {On the Effectiveness of Pre-Trained Language Models for Legal Natural Language Processing: An Empirical Study},
+	year = {2022},
+	journal = {IEEE Access},
+	volume = {10},
+	pages = {75835 – 75858},
+	doi = {10.1109/ACCESS.2022.3190408},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85134248812&doi=10.1109%2fACCESS.2022.3190408&partnerID=40&md5=dbc72f5ae2bb606a0269b0068e760925},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 32; All Open Access, Gold Open Access}
+}
+
+@ARTICLE{Licari2024,
+	author = {Licari, Daniele and Comandè, Giovanni},
+	title = {ITALIAN-LEGAL-BERT models for improving natural language processing tasks in the Italian legal domain},
+	year = {2024},
+	journal = {Computer Law and Security Review},
+	volume = {52},
+	doi = {10.1016/j.clsr.2023.105908},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85175155572&doi=10.1016%2fj.clsr.2023.105908&partnerID=40&md5=accfb96d0030e348a7c523c754fc48f1},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 28}
+}
+
+@ARTICLE{Imran202355664,
+	author = {Imran, Ali Shariq and Hodnefjeld, Henrik and Kastrati, Zenun and Fatima, Noureen and Daudpota, Sher Muhammad and Wani, Mudasir Ahmad},
+	title = {Classifying European Court of Human Rights Cases Using Transformer-Based Techniques},
+	year = {2023},
+	journal = {IEEE Access},
+	volume = {11},
+	pages = {55664 – 55676},
+	doi = {10.1109/ACCESS.2023.3279034},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85161038665&doi=10.1109%2fACCESS.2023.3279034&partnerID=40&md5=a8b656a465be9ee321e71dfad2f783bd},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 17; All Open Access, Gold Open Access, Green Open Access}
+}

@@ -1,0 +1,44 @@
+@ARTICLE{Koh2023,
+	author = {Koh, Huan Yee and Ju, Jiaxin and Liu, Ming and Pan, Shirui},
+	title = {An Empirical Survey on Long Document Summarization: Datasets, Models, and Metrics},
+	year = {2023},
+	journal = {ACM Computing Surveys},
+	volume = {55},
+	number = {8},
+	doi = {10.1145/3545176},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85148981059&doi=10.1145%2f3545176&partnerID=40&md5=36d3aba9819f401941084d057da4ac7c},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 129; All Open Access, Green Open Access}
+}
+
+@ARTICLE{Ivgi2023284,
+	author = {Ivgi, Maor and Shaham, Uri and Berant, Jonathan},
+	title = {Efficient Long-Text Understanding with Short-Text Models},
+	year = {2023},
+	journal = {Transactions of the Association for Computational Linguistics},
+	volume = {11},
+	pages = {284 – 299},
+	doi = {10.1162/tacl_a_00547},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85151404318&doi=10.1162%2ftacl_a_00547&partnerID=40&md5=cd2cd7ed20f1881ac4b590ead2969f97},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 64; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{Moro2023,
+	author = {Moro, Gianluca and Ragazzi, Luca and Valgimigli, Lorenzo and Frisoni, Giacomo and Sartori, Claudio and Marfia, Gustavo},
+	title = {Efficient Memory-Enhanced Transformer for Long-Document Summarization in Low-Resource Regimes},
+	year = {2023},
+	journal = {Sensors},
+	volume = {23},
+	number = {7},
+	doi = {10.3390/s23073542},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85152347466&doi=10.3390%2fs23073542&partnerID=40&md5=939ab06c671e3aabdca81ed8937a7b33},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 52; All Open Access, Gold Open Access, Green Open Access}
+}

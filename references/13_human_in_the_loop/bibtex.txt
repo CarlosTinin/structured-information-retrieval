@@ -1,0 +1,42 @@
+@ARTICLE{Amin2023,
+	author = {Amin, Sareer Ul and Hussain, Adnan and Kim, Bumsoo and Seo, Sanghyun},
+	title = {Deep learning based active learning technique for data annotation and improve the overall performance of classification models[Formula presented]},
+	year = {2023},
+	journal = {Expert Systems with Applications},
+	volume = {228},
+	doi = {10.1016/j.eswa.2023.120391},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85159349194&doi=10.1016%2fj.eswa.2023.120391&partnerID=40&md5=a1bcd7d592c660891e257e66c8250bdf},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 139}
+}
+
+@ARTICLE{Das2023,
+	author = {Das, Anubrata and Liu, Houjiang and Kovatchev, Venelin and Lease, Matthew},
+	title = {The state of human-centered NLP technology for fact-checking},
+	year = {2023},
+	journal = {Information Processing and Management},
+	volume = {60},
+	number = {2},
+	doi = {10.1016/j.ipm.2022.103219},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85147017712&doi=10.1016%2fj.ipm.2022.103219&partnerID=40&md5=2ece0e88a227b0a2935ffa7341c75328},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 82; All Open Access, Green Open Access}
+}
+
+@ARTICLE{Pandey2022,
+	author = {Pandey, Rahul and Purohit, Hemant and Castillo, Carlos and Shalin, Valerie L.},
+	title = {Modeling and mitigating human annotation errors to design efficient stream processing systems with human-in-the-loop machine learning},
+	year = {2022},
+	journal = {International Journal of Human Computer Studies},
+	volume = {160},
+	doi = {10.1016/j.ijhcs.2022.102772},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85122836351&doi=10.1016%2fj.ijhcs.2022.102772&partnerID=40&md5=82c472e3fc524da98d753edbba618523},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 43; All Open Access, Green Open Access}
+}

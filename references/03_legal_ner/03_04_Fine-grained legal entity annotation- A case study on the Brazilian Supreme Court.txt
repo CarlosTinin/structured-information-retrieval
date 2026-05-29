@@ -1,0 +1,1784 @@
+Information Processing and Management 59 (2022) 102794
+
+Contents lists available at ScienceDirect
+
+Information Processing and Management
+journal homepage: www.elsevier.com/locate/ipm
+
+Fine-grained legal entity annotation: A case study on the Brazilian
+Supreme Court
+Fernando A. Correia a,b ,∗, Alexandre A.A. Almeida a,b , José Luiz Nunes a,b ,
+Kaline G. Santos a,b , Ivar A. Hartmann b , Felipe A. Silva b , Hélio Lopes a
+a
+b
+
+Department of Informatics, PUC-Rio, Rua Marquês de São Vicente, 225, Rio de Janeiro, RJ, 22451-900, Brazil
+FGV Direito Rio, Fundação Getulio Vargas, Praia de Botafogo, 190, Rio de Janeiro, RJ, 22250-900, Brazil
+
+ARTICLE
+
+INFO
+
+Keywords:
+Named Entity Recognition
+Legal documents
+Manual annotation task
+Annotated corpus in Portuguese
+Brazilian Supreme Court
+
+ABSTRACT
+The exploration of legal documents in the Brazilian Judiciary context lacks reliable annotated
+corpus to support the development of new Natural Language Process (NLP) applications.
+Therefore, this paper presents a step toward exploring legal decisions with Named Entity
+Recognition (NER) in the Brazilian Supreme Court (STF) context. We aim to present a case
+study on the fine-grained annotation task of legal decisions, performed by law students as
+annotators where two levels of nested legal entities were annotated. Nested entities mapped
+in a preliminary study composed of four coarser legal named entities and twenty-four nested
+ones (fine-grained). The final result is a corpus of 594 decisions published by the STF annotated
+by the 76 law students, those with the highest average inter-annotator agreement score. We also
+present two baselines for NER based on Conditional Random Fields (CRFs) and Bidirectional
+Long-Short Term Memory Networks (BiLSTMs). This corpus is the first of its kind, the most
+extensive corpus known in Portuguese dedicated for legal named entity recognition, open and
+available to better support further research studies in a similar context.
+
+1. Introduction
+As a natural consequence of the Brazilian Judicial System’s digitization a large and increasing number of legal documents have
+become available on the Internet, especially judicial decisions. The Brazilian Supreme Court (STF, or Supremo Tribunal Federal)
+alone has produced 115,603 thousand decisions in 2019 (Supremo Tribunal Federal, 2020) – adding up to 1.2 million during the
+last decade. The high volume of rulings fueled a growing demand for quantitative studies focused on exploring legal information
+in those documents. This demand comes not just from researchers or members of the legal profession (e.g., Judges, Lawyers, and
+Prosecutors) (Veçoso et al., 2014) but also from lay people who wish to understand how the Judiciary actually works (Silva et al.,
+2019). No lawyer can possibly get up to date on the Brazilian Supreme Court output by reading its opinions. The sheer amount of
+rulings makes it so that computer science is a key element in processing and making sense of Brazilian case law.
+Technology applied to the legal market in many countries has significantly increased the online availability of court rulings
+worldwide, not only in Brazil. This, in turn, spurred the development of sophisticated natural language processing (NLP) techniques
+for legal information extraction that are useful for various purposes, including legal search (Dadgosari et al., 2020), legal document
+summarizing (Kanapala et al., 2019; Merchant & Pande, 2018), quantifying citation relevance (Correia et al., 2019; Galgani et al.,
+
+∗ Corresponding author at: Department of Informatics, PUC-Rio, Rua Marquês de São Vicente, 225, Rio de Janeiro, RJ, 22451-900, Brazil.
+E-mail addresses: fjunior@inf.puc-rio.br (F.A. Correia), alex.aaa@aluno.puc-rio.br (A.A.A. Almeida), jnunes@inf.puc-rio.br (J.L. Nunes),
+ksantos@inf.puc-rio.br (K.G. Santos), ivar.hartmann@fgv.br (I.A. Hartmann), felipe.asilva@fgv.br (F.A. Silva), lopes@inf.puc-rio.br (H. Lopes).
+
+https://doi.org/10.1016/j.ipm.2021.102794
+Received 28 January 2021; Received in revised form 30 July 2021; Accepted 11 October 2021
+Available online 6 November 2021
+0306-4573/© 2021 Elsevier Ltd. All rights reserved.
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+2015), legal contracts inspection and management (Chalkidis et al., 2017), legal judgment prediction (Chalkidis et al., 2020;
+Medvedeva et al., 2020), etc. Seen as a primary task for many of those NLP approaches, the Named Entity Recognition (NER)
+aims to identify entity mentions in free text and classify them into types of information elements, called Named Entities (NE). Most
+of the existing studies in NER have focused on languages such as English, French, and German, with a limited number of experiments
+conducted in Portuguese (de Araujo et al., 2020; Freitas et al., 2010), and even fewer in the legal domain (Luz de Araujo et al.,
+2018). In order to enable further studies using Brazilian Portuguese in a legal setting, in this article, we address the problem of
+NER.
+Works in NER are commonly based on newspaper text data or social media messages. Legal texts (e.g., opinions, rulings, and
+contracts), however, constitute ‘‘a special case of highly conventionalized language that strives, and often struggles, to find an optimal
+balance between rigorousness and flexibility, formality and understandability’’ (Höfler & Piotrowski, 2011). Moreover, most NER systems
+deal only with flat named entities (NE) (e.g., date, person, and location) and ignore the inner nested ones. This approach fails to
+capture fine-grained semantic information underlying legal texts.
+As an illustration, in an STF ruling, a Justice’s name tagged as a ‘person’ in the text refers to one of possibly four different roles:
+(i) the Justice who wrote the current opinion, (ii) the Justice who wrote a past decision (precedent) cited in the current the ruling,
+(iii) the author of an academic work cited by the opinion, and (iv) a Justice who is part of the collegiate body deciding the case
+at hand and who wrote a separate (either concurring or dissenting) opinion. Each of those four alternatives would lead to different
+types of information. Suppose the intention is to explore whether his/her peers will cite opinions written by a particular Justice.
+In this case, we need to identify references to the author of previous opinions (ii). However, if the goal is to identify the most
+influential Justices, we should look at each of those meanings separately in order to attribute the proper weights.
+In this paper, we present a case study on the fine-grained annotation task of court rulings by law students, in which two levels of
+nested legal entities were annotated. Nested entities mapped in a preliminary study composed of four coarser legal named entities
+and twenty-four nested ones (fine-grained). In that study, we took into account findings in previous legal research produced with
+our research team’s support, such as Falcão et al. (2019), Pereira et al. (2020).
+To ensure reliability and capture the nuances of legal reasoning, the annotation task had the collaboration of 95 law students from
+the Escola de Direito do Rio de Janeiro da Fundação Getúlio Vargas (FGV-Direito Rio Law School). A collaboration that was possible
+when aligning teaching and research: the task was performed as part of coursework of two disciplines focused on technology. The
+annotation process was composed of three phases: two shorter training efforts and one longer final task. To measure the quality
+of annotations and adjust the guidelines and instructions when needed, we used Cohen’s Kappa to measure the inter-annotator
+agreement throughout the task.
+Furthermore, for the annotation task, we assembled a set of 764 decisions published by the STF between 2009 and 2018.
+The collection was carefully selected to ensure that it was somewhat representative of STF’s output, given the different origins
+(authorship) and types of decisions produced by the Court. Since the decisions in the scope we were sampling from were usually
+long (20 pages in average1 ), to ensure uniformity in size and workload per annotator, we broke long decisions into smaller texts
+(excerpts): the initial corpus of 764 decisions became a collection of 1363 excerpts.
+As a result, we built a manually annotated corpus based on those annotations that exceeded our qualities criteria: excerpts
+annotated by at least two annotators and those with an average inter-annotator agreement score greater than 0.7. Therefore, we
+present the most complete corpus of Brazilian legal decisions manually annotated for NER task with nested legal entities. The given
+corpus contains excerpts from 594 decisions (62,933 sentences; 1,782,395 tokens; 33,055 coarser-grained annotations, and 57,573
+fine-grained annotations). We also experimented with the presented corpus with two different NER strategies: Conditional Random
+Fields (CRF) and bidirectional Long-Short Term Memory Networks with CRF (BiLSTM-CRF) for both levels of NE. The best results
+were obtained with a CRF where the F1 score exceeds 0.9 for the majority of the named entities. We believe the methods employed
+to construct the dataset are innovative and can be replicated in areas beyond the law, providing a strong baseline for further work.
+In summary, the main contributions of the paper are as follows:
+• We present a case study on the fine-grained annotation task of legal decisions performed by law students as annotators.
+Annotation task performed as part of coursework for two disciplines focused on technology, an experiment in large-scale
+annotation tasks integrating both teaching and research in legal technology.
+• We present a detailed description of the annotation task design. Our main concern was avoiding turning the task into a burden
+to the students by not competing for their attention with the other course activities. At the same time, make the most of their
+attention to annotate a relevant collection of legal content that is somewhat representative of STF’s output.
+• We introduce the first version of the largest corpus known in Portuguese dedicated for legal named entity recognition (detailed
+description in 5.2).
+• The preliminary results show the potential of the presented corpus to support further studies in NER.
+The paper is organized into seven sections. Section 2 presents a brief review of the process of producing decisions by STF, which
+was used as part of the decisions sampling process, and how NER can help researchers explore the massive amount of decisions
+produced by the Brazilian judiciary. Section 3 presents a literature review of the subject. Section 4 describes the annotation task,
+introduces the legal entities mapped, the methodology used in the annotation task, and the challenges we faced. The annotated
+
+1 The majority has less than ten pages, a median of nine pages. The smallest ones have a single page. The largest one is a collegiate decision with 464 pages,
+available on the Court’s website (accessed on April 3, 2021).
+
+2
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+corpus description with statistical analysis is presented in Section 5, and experimental results with popular algorithms for NER is
+presented in Section 6. Finally, Section 7 presents our conclusion sets out possible paths forward, briefly considering some of the
+most promising ways to improve the area of legal elements extraction.
+2. Background
+2.1. The STF
+The STF is the highest judicial body in Brazil and has its jurisdiction directed towards deciding constitutional issues and over
+elected federal politicians and ministers.2 It is constituted of eleven Justices, with the role of Chief Justice being rotated every two
+years. Each Justice sits in one of two different Panels and in the Plenary Court, where the Justices decide cases on the full bench.
+Every new case filled in the STF is randomly assigned to one Justice, who might take individual decisions (which are dubbed
+monocratic decisions and are subject to appeal towards one of the collegiate bodies) on cases or send them straight to one of the
+collegiate bodies of the Court.3 In other words, a decision may have fourteen different origins: eleven Justices, two Panels, and the
+Plenary (Veçoso et al., 2014).
+The Justice assigned with a case is called the reporting Justice and is responsible for reporting the relevant facts of the case,
+and issuing the first vote in cases decided by a Panel or the Plenary. Every other Justice in that collegiate body then gets his turn
+and might subscribe to any previous opinions or render their dissenting or concurring own. The Court’s final decision is the result
+of the aggregation of the opinions individually submitted. A summary of the decision is written by the first Justice to propose the
+majority favored opinion.
+Along with the judicial system’s digitization, decisions published by the STF became available on the Court’s website. According
+to the official data, the Court has produced 126 thousand rulings solely in 2019. Given that information overload, it is humanly
+impossible to extract relevant information in a systematic way. Therefore, computer science and information systems are vital to
+process and digest the case law coming out of Brazilian courts. However, very little has been done. Few works were published
+seeking to extract information from this increasing volume of documents (Correia et al., 2019; de Souza & Finger, 2020).
+2.2. Named entities recognition
+Seen as one of the most important subtasks for information extraction, the NER is a primary task for many of the NLP approaches.
+This task aims to identify entity mentions in free text and classify them into types of information elements, called Named Entities
+(NE). This task became popular in the mid-90s, and, since then, several studies have been published, and many annotated corpora
+have been made available openly on the Internet. However, despite the relevance of NER, this area has received little academic
+attention for languages not researched worldwide, like Portuguese.
+Most of NER’s works focus on flat-mentioned structures which ignore essential information that can be useful for downstream
+tasks. We focused on nested mentions structure, or nested named entities, to capture the fine-grained detail in legal documents. As
+benefits of this strategy Ringland et al. (2019) enlists three phenomenons possible to embedded in this type of annotation:
+• The Entity-entity relationships. For instance, in Fig. 1, the location of the ‘‘1a Turma Recursal Criminal’’ from the ‘‘Estado do
+Rio de Janeiro’’.
+• Entity attribute values. For instance, the title is the embedded ROLE ‘‘Ministro’’, which also encodes the employment relation
+of the person ‘‘Herman Benjamin’’ being a justice at the court ‘‘STJ ’’.
+• Part-whole relationships. For instance, the panel ‘‘Primeira Turma’’ is part of the court STF.
+There are no limits to the number of levels for this kind of annotation. For instance, Fig. 2 illustrates two other types of multilevel
+annotations. The first one is an example of expanded annotation of a precedent, identified by one decision and its court of origin.
+The decision, in turn, is identified by its type and the legal procedure to which it is related. Its class and number usually identify the
+legal procedure. However, both class and number may vary according to the standard defined by its court of origin.4 The second
+citation in Fig. 2 is related to an academic citation, which a peculiar example. The citation refers to the book entitled ‘‘Mandado
+de segurança’’ (in English, Writ of Mandamus) written by Luiz Fux. The peculiarity is that the author is also an STF’s Justice, who
+has previously been a Justice of the Superior Court of Justice (STJ), and ‘‘Mandado de segurança’’ is also a name of a typical legal
+procedure class.
+Most of those legal entities could be extracted with a partner-match approach, if not for the variety of patterns and levels that
+turns those techniques error-prone for the automatic identifications of the different phenomenons embedded in the annotation. Like
+the entity attribute values: the ‘‘ROLE’’ of the person ‘‘Luiz Fux’’ may be ambiguous if not explicit in the text.
+In order to facilitate the annotation process we adopted a hierarchical entity taxonomy of two levels: the coarser-grained (the
+main categories) and the fine-grained (the sub-categories) (further details in Section 4.4).
+
+2
+
+For issues decided based on Federal Law, without Constitutional repercussions, the highest court in Brazil is the Superior Court of Justice (STJ).
+More about the structure and organization of the STF can be found in the Court’s website https://www2.stf.jus.br/portalStfInternacional/cms/verConteudo.
+php?sigla=portalStfSobreCorte_en_us&idConteudo=120283. Accessed in 04/02/2021.
+4 The STF has 72 different classes and two different number formats: ‘‘CNJ ID’’ is one of then. The National Council of Justice (CNJ) defines a standard for
+both information, but it is still a standard in implementation in the Brazilian Courts.
+3
+
+3
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 1. Example of nested mentions in legal context.
+
+Fig. 2. Example of complex nested mentions in legal context.
+
+3. Related work
+In this section, we focus on works directly related to the exploration of NER activities in the legal domain, mainly focused on
+constructing annotated corpus including, but not limited to, the Brazilian judicial context. Since we also concerned ourselves with
+the quality of the annotation task, we also present related works which focus on annotation reliability.
+Despite the relevance of NER in the legal domain, this area received little academic attention. One of the first works to explore
+the nuances of the legal entities, Chalkidis et al. (2017), presents a dataset with approximately 3500 English contracts manually
+annotated with 11 categories of contract elements. With a flat category of named entities, they have mapped 11 legal NE to represent
+essential contractual elements. Unlike generic NER systems, however, that may recognize dates without distinguishing whether they
+mark the start or the end of a period, they proposed specific entities that take such contextual information into account: ‘start
+date’, ‘terminative date’, and ‘effective date’. Also, they added legal NEs like ‘jurisdiction’ (which specifies the courts responsible
+for resolving disputes), and ‘legislation references’ (for legal dispositions that the contract relies on). Ten law students performed
+the annotation. To ensure quality, they conducted preliminary training rounds before the final annotation task. To evaluate the
+|𝐴𝐵|
+quality of annotations between rounds, they used 𝑚𝑎𝑥(|𝐴|,|𝐵|)
+as an inter-annotator agreement measure, where 𝐴 and 𝐵 are sets
+of contract elements marked by the two annotators, respectively. For the contract entity extraction, they tried different methods
+combining manually written rules and linear classifiers (Logistic Regression (LR) and Linear Support Vector Machines (SVM)) with
+hand-crafted features, word embedding, and part-of-speech (POS) tag embeddings. Our work is similar to Chalkidis et al. (2017)
+in the sense of seeking to give more context to entities typically treated in a generic way. Besides, we also turn to law students as
+domain experts for the annotation task.
+In regards to legal decisions, Leitner et al. (2019) explored NER in Germany. Due to the complete absence of an annotated
+dataset, they created and made available their own annotated dataset with 750 decisions manually annotated by one Computational
+Linguistics student with fine-grained detailed legal entities. The source texts were manually annotated with 19 fine-grained categories
+4
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+of NE – an approach similar to the one presented by Chalkidis et al. (2017) –, which then generalized into seven more coarse-grained
+entities. As an illustration: an example of a coarse-grained entity is ‘person’, which can be one of three different fine-grained entities:
+‘Person’, ‘Judge’, or ‘Lawyer’. They applied models based on CRFs and BiLSTM-CRF for both types of grained NE for the NER task.
+They got the best performance with a BiLSTM-CRF model achieving a 95.46 F1 score for the fine-grained classes and 95.95 for the
+coarse-grained ones. Their work inspired us in aspects related to the annotation design, although their results surpass our in terms
+of experiment results. Their annotation procedure differs from ours in terms of strategy and the number of annotators involved. Our
+main concerns were at the annotation quality to build a reliable corpus in Portuguese where annotations could capture Brazilian
+legal texts’ nuances.
+Focusing on the information extraction task, Ji et al. (2020) also explores the legal domain, and propose a model for evidence
+information extraction task from court record documents (named BLACN). Their work is closely related to NER, but instead of
+a sequence labeling problem, they model the evidence information extraction as a combination task of intermediate paragraph
+classification and final sequence labeling. The evidence information extracted from paragraphs are divided into five categories,
+which consists of ‘evidence provider’, ‘evidence name’, ‘evidence content’, ‘cross-examination party’, ‘and cross-examination opinion’.
+To facilitate the evidence information extraction, the paragraphs are classified into two possible categories: ‘evidence production’
+and ‘evidence cross-examination’. The presented model adopts a shared encoder followed by separated encoders for paragraph
+classification and evidence extraction. To validate their proposal, they used a manually annotated dataset from Chinese courts with
+1128 documents. Documents were collected from courts from several provinces and cities in China from 2013 to 2019 and annotated
+by experts in the legal field. When compared with other approaches, the model outperforms by a large margin, with 72.36 F1. The
+BLACN, presented by Ji et al. (2020), illustrates the exploration of the legal information extraction over a large collection of legal
+documents. Our focus is not on the extraction task but on the annotation task. Even so, Ji et al. (2020) illustrates the value of
+a relevant manually annotated dataset for the development of an effective method for legal information extraction. We hope to
+support similar studies with our results.
+For any NLP task, languages not widely researched worldwide, like Portuguese, suffer from the lack of annotated corpora. The
+main barrier is the cost of building large and reliable datasets. Also, the annotation quality might be a limiting factor. According
+to Galgani et al. (2015), ‘‘the persistent difficulty with building more sophisticated NLP systems is the extraordinary variety in which
+certain content may be presented in natural language’’. Popular works like Luz de Araujo et al. (2018) in Portuguese have relied on
+the collaboration of a few annotators with specialized knowledge in linguistics, but in order to annotate Brazil court rulings, legal
+knowledge and expertise are a must. As academic researchers, we decided to stay in the academic environment and invite students
+with specialized knowledge in law. To make it possible, we have developed an approach for fine-grained annotation tasks conducted
+in a law school.
+Very few studies focused on the Brazilian legal domain, and we have found only one dataset made available by Luz de Araujo
+et al. (2018). This corpus is based on 70 legal documents, where 66 of those are decisions published by at least 10 different Brazilian
+Courts and four legislation documents. With flat categories of named entities, the dataset is composed of six legal entities: ‘person’,
+‘organization’, ‘time’, ‘location’, ‘legal case’, and ‘legislation’. Only the last two categories are closely related to the legal domain,
+as ‘legal case’ refers to the citation of precedent and ‘legislation’ to statute dispositions. Due to the entities’ flat nature, the corpus
+tends to represent those categories in a very simplified way that glosses over important fine-grained details, a shortcoming also
+present in Chalkidis et al. (2017), and Leitner et al. (2019). Furthermore, their corpus has a large breadth, covering a large amount
+of Courts with few documents in each. Our work, on the other hand, has targeted a more representative dataset in order to provide
+enough data to develop information extraction, with the downside that it focus on a single court.
+4. The annotation task design
+4.1. A preliminary step with a pattern-match approach
+As a preliminary step, we developed a precedent citation extractor using regular expressions. Unlike the U. S., there is no formal
+standard procedure for precedent citation in the Brazilian judiciary. So, we tracked mentions of legal procedures on judicial opinions
+by searching for a limited number of combinations of the procedural classes and the number each case receives upon filing. An
+algorithm limited by common writing patterns used by the Justices of the STF: the legal procedure class (72 possible classes)
+followed by a sequential number with less than six digits.5 This resulted in a noisy extraction. For instance, it does not allow
+us to identify which opinion was cited as precedent if the cited case contained multiple ruling, e.g., a monocratic decision followed
+by a collegiate decision on appeal (further details in Section 4.3.1). However, the method offered a useful first step towards our
+current goals, enabling some exploratory research with valuable findings, as presented in (Correia et al., 2019).
+We have processed the whole collection of decisions with this algorithm as a preliminary step before the sampling. We considered
+it essential to ensure that the sample would contain a large number of entities to be identified. Important not only because we already
+had direct evidence that one of our coarse-grained entities was present, but also because our prior is that there is a correlation
+between a higher number of precedents citation and the likelihood of the opinion citing academic works.
+An important point to state, is that with a pattern-match solution we were unable to recover most of the nested entities mapped
+for this study. Furthermore, despite our best efforts we were unable to create a reliable pattern-matching solution to extract academic
+citations and its inner entities, as presented in Fig. 5.
+
+5
+
+A version of this the algorithm adapted for both courts STF and Superior Tribunal of Justice (STJ) are available in https://github.com/joseluizn/extrator.
+5
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 1
+Distribution of decisions per origins in the initial collection of decisions.
+Type
+
+Monocratic decisions
+
+Collegiate decisions
+
+Origin
+
+Qtd.
+
+Justice Ayres Britto
+Justice Alexandre de Moraes
+Justice Joaquim Barbosa
+Justice Edson Fachin
+Justice Marco Aurélio
+Justice Teori Zavascki
+Justice Roberto Barroso
+Justice Gilmar Mendes
+Justice Ricardo Lewandowski
+Justice Cármen Lúcia
+Justice Rosa Weber
+Justice Celso de Mello
+Justice Luiz Fux
+Justice Dias Toffoli
+
+8
+14
+15
+19
+20
+21
+27
+29
+32
+33
+39
+40
+40
+45
+
+Second Panel
+First Panel
+Plenary
+
+91
+138
+153
+
+4.2. Selection of decisions
+For the annotation task, we assembled a set of 764 decisions published between 2009 and 2018. They were selected according
+to the following criteria: (1) At least one precedent was identified in the decision content using the method described earlier; (2)
+50% of them were monocratic decisions and 50% were collegiate decisions, and (3) stratified by its seventeen possible origins:
+fourteen for monocratic decisions (eleven Justice from Court composition in 2018 plus three other Justices that were in previous
+composition6 ), and 3 for collegiate decisions (both Panels and the Plenary), see Table 1 for the distribution summary.
+In addition to those criteria, we were able to ensure a minimum representation of decisions per year of publication. On average,
+76 decisions per year, the year 2009 was the least represented with 49 decisions, and 2018 was the most represented with 172
+decisions. Aside from these years, the distribution is close to uniform for the remaining years.7
+The second and third criteria were included to ensure that the corpus was somewhat representative of STF’s output. As presented
+in Table 1, the origin with the fewest decisions was Justice Ayres Britto deciding individually, with only eight decisions, and the
+Justice with the most extensive collection, was Justice Dias Toffoli, with 45 monocratic decisions. Because the decisions in the scope
+we were sampling from were usually long, to ensure uniformity in size and workload per annotator, we broke long decisions into
+smaller text documents.8 As a result, the initial corpus of 764 decisions became a collection of 1363 excerpts.
+4.3. Annotated elements
+As observed by Galgani et al. (2015), some factors make it challenging to capture the domain knowledge in systems where human
+intuition guides the learning process. In order to best capture the detailed semantic information underlying the legal documents, we
+conducted a preliminary study to map the entities presented in this work. In that study, we took into account findings in previous
+legal research produced with the our team’s support, such as Falcão et al. (2019), Pereira et al. (2020). These entities were chosen
+to take into account (1) the legal relevance of each entity in a broad perspective and (2) the intellectual effort required for the
+classification. The first factor is related to how often the entity might appear in legal documents, how many values it can assume,
+and how valuable it is in the context of legal reasoning. The second factor addresses the intellectual effort in the annotation process.
+To avoid meaning conflicts between entities, or major disagreements between annotators, we have considered only entities that have
+a meaning that is common sense in the legal domain.
+We mapped four coarser legal entities: the precedent, the academic citation, the legislative reference, and the person. The
+entity ‘person’ is the only one with no inner elements linked to it. This entity’s primary purpose is disambiguation, as both precedent
+and academic citations have inner entities related to personal identification. The tag ‘person’ registers a person’s occurrence in the
+text out of the context of these two other entities. In the following subsections, we explore each of these entities, along with the
+inner entities related to them.
+
+6 Justices Ayres Brittos and Joaquim Barbosa who retired in 2012 and 2014, and Justice Teori Zavascki who died in 2017 before leaving the Court; Justices
+Roberto Barroso, Edson Fachin and Alexandre de Moraes were selected to take up those vacancies, respectively.
+7 We opted not to stratify the sample by year since the year has a strong correlation with the reporting Justice, since there were some changes in the
+composition during the time period (i.e., Justice Alexandre de Moraes joined the Court in 2017) also because it would lead to a large amount of strata which
+would be hard to balance with the workload we could take for the annotation task.
+8 The threshold was 30,000 characters, something close to 12 pages, larger documents were divided in chunks of 30,000 characters
+
+6
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 2
+The complete list of fine-grained entities mapped for precedents.
+Fine-grained entity
+
+Type
+
+Description
+
+Legal Procedure Number
+
+Number
+
+The number that identifies the legal
+procedure in court.
+
+Legal Procedure Class
+
+Text
+
+Signals the kind of legal procedure. It
+is often used along the case number to
+uniquely identify a legal procedure
+within STF.
+
+Legal Procedure Origin
+
+Text
+
+Indicates from what state (or federation
+unit) the legal procedure came, usually
+just the acronym (e.g. RJ stands for Rio
+de Janeiro).
+
+Decision type
+
+Text
+
+Indicates if the decision referred is
+related to an internal appeal or motion.
+
+Reporting Justice
+
+Text
+
+Identifies the Justice responsible for
+the decision (if a monocratic decision,
+the Justice is also the origin).
+
+Court
+
+Text
+
+The court which rendered the decision.
+
+Judgment date
+
+Date
+
+When the decision was taken.
+
+Publication date
+
+Date
+
+When the decision was introduced to the
+official record.
+
+Fig. 3. Example with two precedent long precedents citations.
+
+Fig. 4. Example with one precedent citations in its simplest form.
+
+4.3.1. The precedent
+The precedent is a textual citation of a prior court ruling. This undoubtedly has great value in a common-law based judicial
+system (Galgani et al., 2015; Leibon et al., 2018) – where courts are bound to their previous rulings, such as the United States,
+Canada, and India. In the U.S., the citation of a precedent in a legal document follows a very standardized format, at least in
+the Supreme Court. Due to that level of standardization, search databases for legal data, based on precedents, such as Shepard’s
+Citations9 and Westlaw,10 have existed since the early 90s. Unfortunately, references to precedent in STF decisions do not follow a
+formal standard.
+Since a specific lawsuit in Brazil may have multiple decisions related to it, the reference must inform some further element,
+temporal or legal, to identify which ruling is being referenced. To do so, the citation usually comes with the legal procedure
+identification and the judgment date or the decision’s publication date — or sometimes both. It usually also contains the rapporteur
+and the decision type (e.g., merit, injunction, internal appeal).
+The legal procedure identification is a number with the format regulated by the Conselho Nacional de Justiça (2009). Still, every
+court in Brazil has its identification system, usually composed of a number and the procedure classification according to classes.
+The STF alone has 72 different procedural classes. Table 2 presents the complete list of fine-grained entities mapped for precedents.
+Put together, this information identifies a unique ruling, even if the case referred to in the citation has multiple decisions. To
+illustrate, Fig. 3 shows tags for two different precedents and their inner elements, enough for their accurate identification.
+
+9
+10
+
+https://www.lexisnexis.com/en-us/products/lexis/shepards.page Accessed at: 09/20/2020.
+https://www.westlaw.com Accessed at: 09/20/2020.
+7
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 3
+The complete list of fine-grained entities mapped for academic citations.
+Fine-grained entity
+
+Type
+
+Description
+
+Title
+Collection Title
+
+Text
+Text
+
+Author
+Co-author
+Publisher
+Year of Publication
+
+Text
+Text
+Text
+Number
+
+The work published title.
+The collection title, if the publication
+is part of a collection (e.g., journal
+title).
+The publication first author.
+The publication co-author(s).
+The work’s publisher.
+Year of publication of the work.
+
+Fig. 5. Example of academic citations. First scenario, when the reference follows the cited work passage.
+
+Fig. 6. Example of academic citations. Second scenario, when the author’s name precedes the cited passage.
+
+However, not all precedent citations have all their inner elements explicitly discriminated. Fig. 4 presents an example. Even in
+this incomplete form, however, the citation represents valuable information that can tell us how relevant a given legal procedure
+was, is, and will be for the court, as explored by Correia et al. (2019).
+4.3.2. The academic citation
+An academic citation is a direct citation to a book, book chapter, or journal article. In the STF rulings, its presence is not as
+common as the precedents citation or legislative references, but this is by no means a sign of the lesser importance of scholarly
+citations in Brazilian law. Instead, it is a result of the types of legal issues brought to the STF, and the court’s strategy in dealing
+with the gigantic workload alluded to earlier. An academic publication can provide data, concept definitions, or arguments to support
+a ruling. Recently, it became a study object in the legal community where researchers have explored the academic citations in order
+to capture the influence of certain authors in the legal debate.
+We targeted mentions made within the ruling to published academic works, such as studies, scientific articles, and books, as an
+element of judicial reasoning. Thus, we tried to map all and any case where such a mention occurred. Table 3 presents the complete
+list of fine-grained entities mapped for the academic citation.
+We observed that the citation of academic works mostly follows two styles. Either the reference follows the quote, as illustrated
+in Fig. 5, or the author’s name precedes the quote, and the rest of the reference is provided following it, as shown in Fig. 6.
+4.3.3. The legislative reference
+The legislative reference is a fundamental feature of legal reasoning, consisting of the legal dispositions referenced in each
+decision. This court ruling element is even more relevant in a civil law system, where statutory law supports most decisions. We
+expect the STF to cite the constitution heavily since the most significant element of its jurisdiction is the constitutional review.
+Unlike other coarser entities, it took us time to define the fine-grained entities that could be present in a legislative reference.
+After an experimentation (further details in Section 5), we mapped seven entities that are presented in Table 4.
+In its shortest form, the citation of a legislative reference may accrue to an indication of a statute or the constitution itself, such
+as ‘‘in accordance with the Federal Constitution of 1988’’ where we consider ‘‘Federal Constitution of 1988’’ to be the legal act. Fig. 7
+shows a small excerpt of a decision with three different citation styles citation for three different statutes.
+8
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 4
+The complete list of fine-grained entities identified for legislative references.
+Fine-grained entity
+
+Type
+
+Description
+
+Legal Act
+
+Text
+
+The legislative act that was cited (e.g.
+Federal or State Constitution, Legal
+Statutes).
+
+Institution
+
+Text
+
+When the act is not legislative, such as
+regulations or internal rules, which
+institution issued it (e.g. STF internal
+rules or Federal Reserve resolution).
+
+Origin
+
+Text
+
+The Federation entity that issued
+regulation, municipality, state, or the
+Union.
+
+Section
+
+Number
+
+The legal act section.
+
+Paragraph
+
+Number
+
+The legal act paragraph.
+
+Subsection
+
+Letter
+
+The legal act subsection.
+
+Clause
+
+Letter
+
+The legal act clause.
+
+Fig. 7. Citations to Legislative References.
+
+4.4. The annotation task
+We used two different groups of students for our annotation – one of 54 and the other of 85 students. These students were taking
+Courses dedicated to providing law students with Python programming knowledge. This initial cohort of 139 annotators enabled
+us to select only the work of those who performed best, discarding poor quality annotations but still retaining a substantially large
+dataset. The final annotated corpus used for the tests in this study results from the contribution of only 95 students: 48 from the
+first group and 47 from the second. They were selected based on the average inter-annotator agreement measured with Cohen’s
+Kappa (further details in Section 5).
+We are committed to the use of open-source annotation tools. After exploring various web-based, open-source annotation
+solutions, we chose the Doccano project.11 We considered that Doccano struck the best cost-benefit balance for our goals. Every
+annotator engaged in the task had their own Doccano account where annotation tasks were automatically assigned. Due to the
+tool’s limitations, we split the annotation task into two specific periods. The first was dedicated to annotating the coarse-grained
+elements from the ruling excerpts, and the second was oriented toward fine-grained annotation from the previous coarse annotations.
+Fig. 8, presents an illustration of the annotation process.
+In the first step, all the excerpts were randomly distributed among annotators through Doccano. Also, to assure a similar
+workload, each participant received the same amount of excerpts, and every excerpt was delivered to at least two different
+annotators. We asked the annotators to tag only the four coarse legal entities in the excerpt in the coarse-grained annotation.
+Once completed, all the coarse annotated entities were saved into the database.
+In the second step, all unique coarse entities were randomly distributed among students for the fine-grained annotation regardless
+of who performed them. Again, every annotator had the same workload. Also, every coarser annotation was delivered to at least
+two annotators. In the Doccano interface, these annotations were grouped by types (precedent, academic citation, and legislative
+reference). We then asked students to perform the fine-grained annotation.
+At the end of the second step, all fine-grained annotations were properly saved in different databases. It is important to state
+that equal coarser annotations taken from different excerpts were treated as a single one in the second step. Two annotations will
+be considered equals if they have the same sequence of symbols, constituting literal copies. If Annotator X tagged the sequence ‘‘§4◦
+do art . 103 - B da CF ’’ as a legislative reference in excerpt 01, and Annotator Y has also tagged the same sequence as a legislative
+reference, but in excerpt 02, both sequences will be treated as if they were only one regardless of their origins. As a consequence of
+this strategy, we have a natural reduction in the total amount of coarse annotations to be annotated in the second step.
+
+11
+
+https://github.com/doccano/.
+9
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 8. Annotation task process. (1) excerpts are randomly distributed among annotators for the coarse-grained annotation; (2) - the coarse annotations are
+saved into the database and pooled together; (3) - these coarser annotations are randomly distributed among annotators for the fine-grained annotation; and (4)
+the fine-grained annotations are saved in a specific database.
+
+All annotations carry a reference to their origins, including the identity of the annotator. Hence, by combining saved data from
+the three databases, as presented in Fig. 8, it is possible to reconstruct the excerpt with its coarse and fine-grained annotations.
+Nevertheless, that approach cannot guarantee that all the texts presented in the second step will indeed be annotated. The assigned
+annotator might refrain from performing a fine-grained annotation for different reasons, e.g., they might have failed to do it within
+the deadline, ignored that specific annotation altogether, or encountered a portion of text that was incorrectly identified in the
+previous step, such as when a precedent is tagged as a legislative reference.
+4.5. Training tasks
+In order to build the corpus, we performed two shorter training annotation tasks, followed by a final and long task. During
+the whole procedure, follow-up meetings were held to present each phase and to discuss possible difficulties the students might
+be encountering. Also, the annotator was allowed to make revisions over their annotations until the end of each step. So they
+could consult our team experts and fix possible misunderstandings. Such meetings, along with the inter-rater agreement measured
+between phases, played an essential role in improving the guidelines, student annotation performance, and accuracy, resulting in
+overall better annotations.
+For the training phases, we selected a collection of ten documents: four documents used in the first training task and six in the
+second. Every student performed the training tasks over the same collection of excerpts and was given two weeks to conclude each
+training task: one week for each annotation step. For these ten documents, experienced researchers produced a golden set from our
+team, enabling us to track and compare student annotation performance in the training phase.
+For the final task, students were given four weeks to conclude annotations: two weeks for coarse entities and two weeks for
+fine-grained entities.
+4.6. The inter-annotator agreement
+From the very beginning, we closely followed students’ progress, proactively identifying problematic issues that surfaced during
+the training tasks and discussing them with annotators at meetings. To do so, we kept an open communication channel with the
+annotators throughout, allowing them to share their difficulties and propose guideline improvements. Furthermore, to measure the
+evolution of annotations’ quality of, we have used Cohen’s Kappa as an inter-annotator agreement measure.
+Cohen’s kappa is one of the most common agreement metrics found in the literature, although it is not without its shortcom|𝐴𝐵|
+ings (Krippendorff, 2004). Same as in other studies, Chalkidis et al. (2017) use 𝑚𝑎𝑥(|𝐴|,|𝐵|)
+as an inter-annotator agreement measure,
+where A and B are sets of contract elements marked by the two annotators, respectively. Wyner et al. (2013) argues against the use
+of Cohen’s kappa for problems concerning the annotation span and how such a task is difficult to conceptualize as a classification
+task — instead they measure the precision, recall, and F1 measure between annotators.
+The conceptualization as a classification task concerns the idea that not annotating something is different from annotating it as
+a ‘‘negative example’’ of your standard, which would be needed for the Cohen’s Kappa coefficient. To find out how each of these
+alternatives would affect our final results, we decided to compare all three after the annotation task before building the final corpus
+presented here. Again, the large number of students participating in the task and the ensuing significant number of total annotations
+enabled us to discard thousands of annotations and still be left with a substantially-sized corpus.
+In all cases, we expected that most of each excerpt would not be annotated and reflected this assumption in our calculations.
+After all, only a fraction of the length of a judicial opinion can be tagged with our entities, regardless if coarse or fine-grained.
+As expected, 85.21% of the tokens in the corpus were not annotated. Looking for the overlap between two annotations without
+taking this into account might create distortions in all metrics’ result due to highly different marginals and higher agreement than
+10
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 9. Average of inter-annotator agreement score for different types of annotated text.
+
+expected. As such, we decided to remove all cases where both annotators left the tokens without any tag. This meant we effectively
+excluded from our measurements a large number of tokens where both students agreed there was no entity to be marked.
+We then calculated the Pearson’s correlation between the Cohen’s Kappa, the F1 measure, and the percentage of agreement on
+tokens of all pairs of students at the final task in order to check whether different agreement metrics would render us different
+results. We found a correlation of over .9 between them, thus showing that the selection among any of these agreement metrics
+itself was not decisive to our results.
+5. The annotated corpus
+As mentioned before, two groups of students over almost a year performed the annotation task under close supervision. At
+introductory meetings, we explained the activity’s academic impact in the legal domain by emphasizing the importance of this
+annotated corpus to our study and to other studies that will follow it.
+Both groups performed annotations on the same collection of 1363 excerpts. Despite the distribution criteria presented in
+Section 4.2, there was no guarantee that every excerpt distributed would indeed be annotated since the number of annotations per
+student varied greatly. Unfortunately, with the second group, there were dropouts at the end of the final task, which reduced the
+number of effective participation in the fine-grained annotation step to less than half — the only 48% of the participants completed
+the fine-grained annotations.
+Not all pairs of students had an excerpt in common, which means that the agreement distribution of a given student with the
+others does not span everyone else. Each excerpt was annotated on average by 5.4 students.
+To build the final corpus presented here, the data annotated by both groups were treated as a single collection. Also, excerpts were
+filtered based on who made the annotation by selecting the annotators with average Kappa score above 0.7. We have measured the
+average inter-agreement score for every annotator considering four different scenarios: the excerpt annotation and the three types
+of fine-grained annotation. As a result, we could take a closer view of the inter-agreement score and how the annotation quality
+varies between scenarios. The more frequent the high scores are, the more widespread the understanding of the annotators about
+the entities.
+The scenario where we had the lowest agreement was the excerpt annotation for coarser entities, as presented in Fig. 9, something
+already expected since the coarser annotation demands more effort than the fine-grained annotation performed in the second step. An
+excerpt has an average of 16,087 tokens and 55.84 coarser annotations. Meanwhile, a precedent has an average of 10.28 tokens and
+3.69 fine-grained annotations. Even so, the fine-grained annotation in precedents seems more difficult than in legislative references,
+which in turn, seems more difficult than in academic citations.
+With this criterion, we selected what we considered to be the best annotators for each scenario. As a result, Table 5 presents
+the number of annotators that passed the criterion. The legislative reference fine-grained annotations were performed only by the
+second group.12 In comparison to the other elements, it was the most diverse in structure.
+Also, as a result, the amount of annotated data dropped after the filtering.
+
+12 We used the first group annotations (coarser annotations) to understand its format better. We then acted on this knowledge to prepare the fine-grained
+annotation format used for the second group.
+
+11
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 5
+Selected annotators.
+
+Annotators with Kappa score > .7
+Excerpts
+Precedents
+Academic Citations
+Legislative References
+
+67
+76
+75
+28
+
+Table 6
+Summary of the count: sentences, tokens, coarse and fine-grained annotations.
+Total
+
+Sentences
+Tokens
+Coarser-grained
+Fine-grained
+
+Per excerpt
+
+62,933
+1,782,395
+33,055
+57,573
+
+min
+
+max
+
+average
+
+std
+
+median
+
+3
+121
+1
+0
+
+551
+16,087
+267
+507
+
+105.97
+3,000.66
+55.65
+96.92
+
+81.33
+2,501.79
+42.44
+69.21
+
+93.0
+2,692.5
+47.0
+81.0
+
+Table 7
+Coarser-grained entities count.
+Legal elements
+
+Per excerpt
+
+Total
+
+With fine-grained
+
+Avg. tokens
+
+Precedents
+Acad. Citations
+Leg. References
+Person
+
+15.33
+2.99
+17.22
+20.11
+
+9,108
+1,775
+10,229
+11,943
+
+8,486 (93.17% )
+965 (54.37% )
+8,439 (82.50% )
+N/A
+
+10.27
+24.60
+8.41
+3.38
+
+5.1. The annotations merge
+The presented corpus is the result of the combination of all annotations performed by those different selected annotators. Since
+the annotation task has two different types of texts to be annotated, excerpts, and the coarser annotations, the annotation merge
+process has two moments. First, the annotation merges per text, regardless of the type, and then, rebuilding the link between the
+coarser and fine-grained annotation into one single, and final, representation per excerpt.
+The annotation merging strategy employed was majority voting. The label for a word is picked based on whether most annotators
+agree with it — for the tiebreaker criterion, we used the vote of the annotator with the highest average inter-annotator agreement
+score. As stated before, we have selected the best annotators and reduced the amount of annotated data to ensure a higher quality
+of the merging process.
+5.2. The corpus
+The presented approach’s final result of is a corpus with 595 annotated excerpts, built from 532 decisions — the initial set
+contained 1363 excerpts from 764 decisions. Table 6 presents a summary of the count of sentences, tokens, coarse and fine-grained
+annotations in the corpus. The variation in size of the excerpt is due to the decision-splitter strategy employed after the decision
+selection (see Section 4.2), but also a consequence of the high number of short decisions in the initial set of 750 decisions — 50%
+of those were monocratic decisions, which are often very short rulings.
+As presented in Table 7, every excerpt has at least one coarser annotation tagged. The most popular coarser element is the person,
+followed by the legislative references, and the precedent. The rarest is the academic citation, which is also the element with less
+fine-grained annotations: only 54.37% of the occurrences were annotated. Despite the higher inter-annotator agreement (presented
+in Fig. 9), a considerable amount of those elements were not annotated by the participants.
+The shorter the text, the greater the chances of it being fully annotated. The legislative reference element illustrates this: it is
+the smallest text entity, with an average size of 8.42 tokens. As mentioned before, this element’s fine-grained annotation task was
+introduced only to the second group, and 28 annotators have contributed to the final corpus. Even so, the legislative reference had
+94.05% of the occurrences in corpus annotated with the fine-grained annotations.
+The Table 8 shows how diverse is the distribution of fine-grained entities in the corpus. The Reporting Justice (from precedents)
+and Legal Act (from Legislative References) are the most popular in the corpus. Meanwhile, entities like Institution and Origin (both
+inner elements of Legislative References) are rare in the corpus — only 79 tokens tagged as Institution in the whole corpus.
+To better support further research studies using this corpus to test algorithms for legal element extraction, we have also added
+part-of-speech (POS) information. Every token from every sentence was tagged with its corresponding POS tag by its context in the
+sentence. The POS tagging process was performed with the spaCy13 library for text processing with Python. The corpus generated
+
+13
+
+https://spacy.io/.
+12
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 8
+Fine-grained Entities count.
+Fine-grained entity
+
+Total of tokens
+
+%
+
+Avg. per coarser
+annotation
+
+Court
+Decision_Date
+Decision_Type
+Legal_Procedure_Class
+Legal_Procedure_Number
+Origin
+Publication_Date
+Reporting_Justice
+
+3154
+728
+2561
+10970
+9562
+4279
+2426
+18825
+
+0.18%
+0.04%
+0.14%
+0.62%
+0.54%
+0.24%
+0.14%
+1.06%
+
+0.37
+0.09
+0.30
+1.29
+1.13
+0.50
+0.29
+2.22
+
+Author
+Co-author
+Collection_Title
+Publisher
+Title
+Year_of_Publication
+
+3107
+493
+569
+1060
+5969
+802
+
+0.17%
+0.03%
+0.03%
+0.06%
+0.33%
+0.04%
+
+3.22
+0.51
+0.59
+1.10
+6.19
+0.83
+
+Clause
+Institution
+Legal_Act
+Origin
+Paragraph
+Section
+Subsection
+
+608
+79
+19549
+305
+2836
+7735
+2813
+
+0.03%
+0.00%
+1.10%
+0.02%
+0.16%
+0.43%
+0.16%
+
+0.07
+0.01
+2.32
+0.04
+0.34
+0.92
+0.33
+
+Table 9
+Example of tagged content with a Precedent.
+Sen. ID
+
+Token
+
+POS
+
+Coarser-grained
+
+Fine-grained
+
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+9b4f40
+
+;
+Inq
+2126
+,
+Relator
+Sepúlveda
+Pertence
+,
+Pleno
+,
+DJe
+26.04.2007
+.
+
+PUNCT
+PROPN
+NUM
+PUNCT
+NOUN
+NOUN
+NOUN
+PUNCT
+NOUN
+PUNCT
+NOUN
+NOUN
+PUNCT
+
+O
+B_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+I_Precedent
+O
+
+O
+B_Legal_Procedure_Class
+B_Legal_Procedure_Number
+O
+B_Reporting_Justice
+B_Reporting_Justice
+I_Reporting_Justice
+O
+B_Court
+O
+B_Publication_Date
+B_Publication_Date
+O
+
+Table 10
+Example of tagged content with a Legislative Reference.
+Sen. ID
+
+Token
+
+POS
+
+Coarser-grained
+
+Fine-grained
+
+efde0c
+efde0c
+efde0c
+efde0c
+efde0c
+efde0c
+efde0c
+efde0c
+efde0c
+
+no
+artigo
+175
+,
+III
+da
+Constituição
+Federal
+.
+
+PRON
+NOUN
+NUM
+PUNCT
+PROPN
+NOUN
+NOUN
+NOUN
+PUNCT
+
+O
+B_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+O
+
+O
+O
+B_Section
+O
+B_Subsection
+O
+B_Legal_Act
+I_Legal_Act
+O
+
+during this study is available under request,14 where every annotated excerpt is in CSV format. Each line in the file is made of five
+columns separated by space, which identify in order: (1) the sentence ID, (2) the token, (3) the POS tag, (4) the coarser-grained
+tag, and (5) the fine-grained tag. Tables 9 and 10 presents examples of tagged texts with a Precedent and Legislative Reference,
+respectively.
+For the coarse and fine-grained entities, the tokens tagged with O are outside of named entities, the B_* prefix tag indicates the
+first token of a named entity, and I_* prefix indicates all following tokens of the same entity. Nevertheless, in cases where coarse
+entities have no fine-grained annotation, the last column is filled with X, such as in Table 11:
+
+14
+
+The dataset generated during the current study is available from the corresponding author on reasonable request.
+13
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 11
+Example of tagged text when coarse entities has no fine-grained annotation.
+Sen. ID
+
+Token
+
+POS
+
+Coarser-grained
+
+Fine-grained
+
+62ef86
+62ef86
+62ef86
+62ef86
+62ef86
+62ef86
+62ef86
+
+da
+Resolução
+n◦
+80
+do
+CNJ
+–
+
+NOUN
+NOUN
+NOUN
+NUM
+PROPN
+NOUN
+PROPN
+
+O
+B_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+I_Legislative_Reference
+O
+
+O
+X
+X
+X
+X
+X
+O
+
+6. Experimenting with CRF and with BiLSTM-CRF
+To illustrate the potential of the presented corpus, we conducted two experiments for the task of named entity recognition:
+with (1) the CRF model (CRF) (Lafferty et al., 2001), and (2) the standard BiLSTM-CRF model (Lample et al., 2016). For the
+model evaluation procedure, we follow the CoNLL evaluation schema in requiring an exact match of mention start, end, and entity
+type (Tjong Kim Sang, 2002).
+6.1. Experiment setup
+Since the standard BiLSTM-CRF model cannot handle nested entities, we have implemented a two-step strategy (similarly to the
+annotation task procedure). The first step is dedicated only to coarser-entities identifications over a sentence, a trivial use case of
+those algorithms. The second step is dedicated only to the fine-grained entity and specialized in it, where we have trained one model
+for each type of coarser-grained entity. For instance, to extract fine-grained entities over a Legislative Reference, we have a model
+trained solely over annotated fine-grained entities found in the corpus, which had been annotated as Legislative References. In other
+words, our corpus was divided into four collections: (1) the complete corpus with coarser-grained tags only, (2) the collections of
+legislative references annotations with the fine-grained tags, (3) the collections of precedents annotations with the fine-grained tags,
+and (4) the collections of academic citations annotations with the fine-grained tags. As a result, we have four models trained: one
+for coarser-grained and three other specifics for fine-grained entities, one for each coarser type.
+For the experimental setup, we randomly split the dataset into training and test sets for every implemented model. For the first
+step (the coarser-grained entities), 70% of the sentences in the corpus were used for training and 30% for test. We used the same
+procedure for the second step but selecting coarser annotations, 70% of the annotations for training and 30% for testing.
+It is important to state that the very same coarser entity can be written in different formats and also, have multiple repeated
+annotations in the corpus. In our selection process of decisions, we put an extra effort into selecting a very diverse collection of
+texts to be annotated (as stated in Section 4.2). Consequently, we expected to reduce the amount of repeated content. During the
+whole annotation task, the students were asked to annotate every entity regardless of whether it is a repetition, the same entity
+with a different structure, or how many times it appears on the text. We did no direct intervention for the models’ training and test
+regarding this matter.
+For the CRF models, we used the sklearn-crfsuite15 with a standard configuration and a context window between −2 and +2. We
+ran each model 10 times, varying the test and training sets’ samples but maintaining the proportions.
+For the BiLSTM-CRF models, we used the Keras16 framework with the keras-contrib17 for the CRF layer. We used the values that
+achieved the best results for the first layer hyperparameters according to (Lample et al., 2016). We ran each model with a maximum
+number of 10 epochs. Also, We used a pre-trained embedding, a word2vec model trained with 200 thousand decisions,18 regardless
+of its origins or type (monocratic or collegiate). With that, we expected to improve the model’s capacity of generalization and the
+results reliability.
+6.2. Experiment results
+As presented earlier, the performed experiments mimic the annotations task procedure. For the experiment’s second step, the
+models’ input was limited to the coarser-grained annotation — the sequence of tokens previously annotated as a coarser entity.19
+A different approach would be to use the first step output as input for the second step. However, this approach would impact the
+quality measurements of the second step’s model due to the error propagation from the previous step. This approach is much closer
+to a real scenario of using these models, but we decided to limit the context and focus on the corpus evaluation throughout the
+experiments.
+
+15
+
+www.sklearn-crfsuite.readthedocs.io.
+https://keras.io/.
+17 https://github.com/keras-team/keras-contrib.
+18 These decisions were randomly selected from our collection of decisions published by the STF between 2009 and 2018.
+19 We tried using the entire sentence as context, but the result was considerably lower in quality for the BiLSTM, where the average weighted precision for
+academic citations dropped from 0.84 to 0.70. For the CRF models, the change seemed to render no relevant differences. Therefore, we have opted to not further
+explore this option to avoid a long discussion with the same results.
+16
+
+14
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+Table 12
+Precision, recall and F1 for the models trained for coarser-grained entities.
+CRF
+
+Precedent
+Acad. Citation
+Leg. Reference
+Person
+Total
+
+BiLSTM-CRF
+
+Precision
+
+Recall
+
+F1
+
+Precision
+
+Recall
+
+F1
+
+0.93
+0.94
+0.93
+0.90
+0.93
+
+0.87
+0.85
+0.90
+0.85
+0.87
+
+0.90
+0.90
+0.91
+0.88
+0.90
+
+0.89
+0.90
+0.90
+0.85
+0.89
+
+0.91
+0.90
+0.93
+0.84
+0.91
+
+0.90
+0.91
+0.91
+0.85
+0.90
+
+Fig. 10. Normalized Confusion Matrices, CRF model for coarser-grained entities .
+
+6.2.1. Classifying coarser-grained entities
+For the coarse-grained entities, both models had similar results. Table 12 presents a summary of the metrics grouped by entities,
+each value is the weighted average of the metric regarding the classification of the beginning and intermediary tags (‘B_*’ and ‘I_*’
+tags) of each entity.
+The CRF models reached the highest precision but suffered from a lower recall, unlike the BiLSTM-CRF that had better recall
+values. The F1 of both models performed comparably, except for academic citations where the BiLSTM-CRF outperforms, and for
+person identification where the CRF gave a better result. To verify the significance of the both models performance, we have
+performed the 5x2cv combined F test procedure to compare both algorithm’s performance (Alpaydin, 1999). The p-value returned
+was smaller than 0.005, thus we reject the null hypothesis indicating that there is a significant difference between the two models’
+performance.20
+The confusion matrices presented in Figs. 10 and 11, provides a detailed description of both models’ errors. For both models, we
+have similar error scenarios: both had difficulties identifying the start of the named entity, especially with the entities ‘Person’ and
+‘Academic Citation’, where the BiLSTM-CRF had more troubles than the CRF. In contrast, the CRF made more mistakes confusing
+named entities with ‘O’, the outside entity. A possible justification is that the pre-trained embedding gave the BiLSTM-CRF a better
+ability to distinguish the named entities from outsiders. We believe that this error may be related to the annotator’s difficulty
+identifying the boundaries of some complex entities’ citations. However, for both models, the entity ‘Person’ had a significant
+number of misclassification as ‘O’. Our best guess is that most of these cases are related to the rarity of words — uncommon names
+or misspelled names. For the BiLSTM, 46% of these cases are related to words not present in the vocabulary of the pre-trained
+word2vec.
+
+20 In fact, we have performed two tests. Since the tag ‘O’ (outside) is much more common than any other tag, the first test includes all occurrences of the
+outside tag and, in the second test, we have excluded cases where the real and the predicted output were both outsiders. For both scenarios the returned 𝑝-value
+was smaller than 0,05 (0,000059 and 0,000001, respectively).
+
+15
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 11. Normalized Confusion Matrices, BiLSTM-CRF model for coarser-grained entities .
+
+Table 13
+Precision, recall and F1 for the models trained for Precedent’s fine-grained entities.
+CRF
+
+Court
+Decision_Date
+Decision_Type
+Legal_Procedure
+_Class
+Legal_Procedure
+_Number
+Origin
+Publication_Date
+Reporting_Justice
+
+BiLSTM-CRF
+
+Precision
+
+Recall
+
+F1
+
+Precision
+
+Recall
+
+F1
+
+0.85
+0.84
+0.91
+0.98
+
+0.71
+0.69
+0.90
+0.97
+
+0.78
+0.75
+0.90
+0.98
+
+0.66
+0.86
+0.78
+0.93
+
+0.65
+0.52
+0.78
+0.95
+
+0.65
+0.61
+0.78
+0.94
+
+0.97
+
+0.96
+
+0.97
+
+0.89
+
+0.92
+
+0.90
+
+0.99
+0.90
+0.90
+
+0.99
+0.85
+0.87
+
+0.99
+0.87
+0.88
+
+0.95
+0.74
+0.74
+
+0.95
+0.83
+0.88
+
+0.95
+0.77
+0.80
+
+Table 14
+Precision, recall and F1 for the models trained for Academic Citation’s fine-grained entities.
+CRF
+
+Author
+Co_author
+Collection_Title
+Non_author
+Publisher
+Title
+Year_of_Publication
+
+BiLSTM-CRF
+
+Precision
+
+Recall
+
+F1
+
+Precision
+
+Recall
+
+F1
+
+0.95
+0.92
+0.88
+0.78
+0.93
+0.96
+0.98
+
+0.96
+0.84
+0.73
+0.42
+0.93
+0.96
+0.97
+
+0.96
+0.88
+0.79
+0.54
+0.93
+0.96
+0.97
+
+0.82
+0.40
+1.00
+0.00
+0.78
+0.88
+0.94
+
+0.90
+0.22
+0.09
+0.00
+0.62
+0.90
+0.88
+
+0.85
+0.28
+0.18
+0.00
+0.68
+0.89
+0.91
+
+6.2.2. Classifying finer-grained entities
+For the fine-grained entities, the CRF model outperformed the BiLSTM-CRF in every aspect. Tables 13–15 presents the model
+metrics grouped by entities (similar to Table 12). For that second step, we have a very limited context — only words and entities
+related to one type of coarser annotation. It seems that the CRF uses it better than the BiLSTM. The CRF could also overcome the low
+number of fine-grained entities tagged in the academic citations, where the most popular entity is present in 0.03% of the tokens
+in the whole corpus.
+The detailed error description for the precedents’ fine-grained entities classification (presented in Figs. 12 and 13) shows that
+the error is closely related to the entities rarity. Both models have struggled with rare intermediary tags like ‘I_Decision_Date’ and
+‘I_Publication_Date’. A justification for this is that in the corpus is much more common the date citation in its simplified form,
+one single token (Day–Month–Year with leading zeros). Even so, the CRF model outperformed the BiLSTM-CRF. An interesting
+16
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Table 15
+Precision, recall and F1 for the models trained for Legislative Reference’s fine-grained entities.
+CRF
+
+Clause
+Institution
+Legal_Act
+Origin
+Paragraph
+Section
+Subsection
+
+BiLSTM-CRF
+
+Precision
+
+Recall
+
+F1
+
+Precision
+
+Recall
+
+F1
+
+0.96
+0.21
+0.97
+0.79
+0.87
+0.98
+0.98
+
+0.95
+0.06
+0.99
+0.68
+0.83
+0.98
+0.98
+
+0.95
+0.09
+0.98
+0.72
+0.85
+0.98
+0.98
+
+0.88
+0.00
+0.96
+0.88
+0.86
+0.98
+0.94
+
+0.94
+0.00
+0.97
+0.37
+0.80
+0.98
+0.97
+
+0.90
+0.00
+0.96
+0.51
+0.83
+0.98
+0.96
+
+Fig. 12. Normalized Confusion Matrices, CRF model for Precedent’s Fine-grained Entities.
+
+point about the BiLSTM-CRF is that it had a better performance with identifications of the ‘Court’ entity, probably an effect of the
+pre-trained ‘word2vec’.
+For legislative References, we have a very similar scenario to the precedents but the worst performance of the BiLSTM-CRF (see
+Figs. 14 and 15). The most frequent error was the misclassification of the ‘Institution’ entity as ‘Legal Act’. ‘Institution’ is also one
+of the rarest entities in the corpus (as presented in Table 8).
+The academic citations’ fine-grained entities recognition was the most challenging classification due to the complexity of the
+nature of the entity (larger entity with diverse vocabulary) and the entity rarity. As a result, the CRF model outperformed the
+BiLSTM-CRF by far, see Figs. 16 and 17. Its most common error was the misclassification of the ‘Co-author’ and ‘Non-author’
+entities, which rare entities and also related to very similar content: persons’ names and roles — same issue observed with the
+‘Person’ coarser entity. The BiLSTM got lost in the classification process. Our best guess is that the CRF got the advantage of the
+limited context of the input data (limited to the coarser annotated entity) while the BiLSTM had struggled to define and correlate
+contexts of use and classes.
+7. Conclusions and future work
+In this paper, we presented a case study on the fine-grained annotation task of legal decisions performed by law students as
+annotators. The annotation task was conducted as part of the coursework for two disciplines focused on technology: ‘‘Computer
+Programming for Lawyers’’ and ‘‘Legal Data Science’’. Our primary motivation was to involve the students in practical applications
+of technology for legal innovation. We also took a step further, building the most extensive corpus known in Portuguese dedicated
+for legal named entity recognition.
+The approach presented for the annotation task had a particular concern with the annotator workload, avoiding turning the task
+into a burden by not competing for the student’s attention with other course activities. Even so, we observed that the workload
+could be lower, with a smaller set of text to be annotated, the excerpts could be even smaller, and with a better distribution of
+coarser annotations for fine-grained annotation.
+17
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 13. Normalized Confusion Matrices, BiLSTM-CRF model for Precedent’s Fine-grained Entities.
+
+Fig. 14. Normalized Confusion Matrices, CRF model for Legislative Reference’s Fine-grained Entities.
+
+A prior selection of coarser annotation can significantly improve the fine-grained annotation step. Observing the inter-annotator
+agreement after the coarse-grained annotation, we were able to select the most qualified coarser annotations for the fine-grained
+annotation, avoiding unnecessary work and reducing the workload at this stage. The fine-grained annotation quality can also be
+improved by reducing the number of entities annotated, which can be accomplished by ignoring very rare entities. An example is the
+‘subsection’ entity for fine-grain annotation of legislative references, present in less than 4% of the annotated legislative references.
+Also, the fine-grained annotation could be improved with a label suggestion tool based on a pattern-matching strategy (e.g., to
+suggest legal procedure numbers and class) where the annotator could accept or not the suggestion. The pattern-matching approach
+can produce a good result for the extraction of simple precedent citations (only the references to previous legal procedures and its
+number). Our results showed that 93% of the precedent citations have the legal procedure class followed by the legal procedure
+number — following a pattern similar to the one described in Section 4.1. However, only 22% of the annotated precedents citations
+do not have other fine-grained information, 78% also have other fine-grained entities, and 43% have at least 4 fine-grained entities.
+18
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 15. Normalized Confusion Matrices, BiLSTM-CRF model for Legislative Reference’s Fine-grained Entities.
+
+Fig. 16. Normalized Confusion Matrices, CRF model for Academic Citation’s Fine-grained Entities.
+
+We have an even more difficult scenario for this type of strategy regarding the recognition of the other coarser-grained entities. We
+have a gamut of different writing patterns for legislative references and an even more complex scenario for academic citations.
+The corpus presented is in its first version. Still, we hope to improve it with future annotations tasks with the collaboration of
+law students and focus on other Brazilian courts’ rulings.
+The experiments presented show the potential of the corpus to support further studies and data enhancements. Since the
+majority of the STF’s decisions are available on Internet, the entities extraction means add another level of valuable and structured
+information over the text. Future works can get a better result with pre-trained embedding models for word and text conversion,
+like BERT (Bidirectional Encoder Representations from Transformers) (Devlin et al., 2019) and the BERTimbau (a BERT model for
+Portuguese) (Carmo et al., 2020).
+The main contributions of this study are both methodological and substantive. From a methodological perspective, we have
+conducted a groundbreaking experiment in large-scale annotation tasks integrating both teaching and research in legal technology.
+19
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Fig. 17. Normalized Confusion Matrices, BiLSTM-CRF model for Academic Citation’s Fine-grained Entities.
+
+On the one hand, over a hundred law students with prior training in programming acquired knowledge and experience on practical
+aspects of machine learning that are crucial for understanding public policy about artificial intelligence. On the substantive side,
+the resulting dataset is unprecedented in size, considering manually annotated sets in the legal domain in Portuguese. Lastly, it
+has enabled the training of models that would allow the accurate extraction, from court rulings, of entities that are central to
+legal reasoning and argumentation. The STF itself has, until this date, not been able to produce such metadata about its decisions.
+Therefore, even from a merely substantive point of view, the findings achieved in this study represent a significant contribution to
+the Brazilian legal system, the legal community, and any other interested in exploring this knowledge.
+CRediT authorship contribution statement
+Fernando A. Correia: Conceptualization, Methodology, Formal analysis, Writing – original draft. Alexandre A.A. Almeida:
+Formal analysis, Writing – review & editing. José Luiz Nunes: Formal analysis, Writing – review & editing. Kaline G. Santos: Data
+curation, Investigation, Validation. Ivar A. Hartmann: Conceptualization, Resources, Methodology, Supervision. Felipe A. Silva:
+Investigation, Software. Hélio Lopes: Methodology, Supervision.
+Declaration of competing interest
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared
+to influence the work reported in this paper.
+Acknowledgments
+This study was supported by the Getulio Vargas Foundation (FGV), Brazil, the National Council for Scientific and Technological
+Development (CNPq), Brazil and Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Finance Code
+001.
+References
+Alpaydin, E. (1999). Combined 5 x 2 cv F test for comparing supervised classification learning algorithms. Neural Computation, 11(8), 1885–1892. http:
+//dx.doi.org/10.1162/089976699300016007, URL: http://direct.mit.edu/neco/article-pdf/11/8/1885/814248/089976699300016007.pdf.
+Carmo, D., Piau, M., Campiotti, I., Nogueira, R., & Lotufo, R. (2020). PTT5: Pretraining and validating the T5 model on Brazilian Portuguese data.
+Chalkidis, I., Androutsopoulos, I., & Aletras, N. (2020). Neural legal judgment prediction in English. In ACL 2019 - 57th annual meeting of the association for
+computational linguistics, proceedings of the conference (pp. 4317–4323). Association for Computational Linguistics (ACL), http://dx.doi.org/10.18653/v1/p191424, URL: https://www.echr.coe.
+Chalkidis, I., Androutsopoulos, I., & Michos, A. (2017). Extracting contract elements. In Proceedings of the international conference on artificial intelligence and
+law (pp. 19–28). New York, New York, USA: Association for Computing Machinery, http://dx.doi.org/10.1145/3086512.3086515, URL: http://dl.acm.org/
+citation.cfm?doid=3086512.3086515.
+20
+
+Information Processing and Management 59 (2022) 102794
+
+F.A. Correia et al.
+
+Conselho Nacional de Justiça (2009). Resolução No 65 de 16/12/2008: DJE/CNJ No 02/2009, (pp. 2–27). URL: https://atos.cnj.jus.br/atos/detalhar/119.
+Correia, F. A., Nunes, J. L., De Almeida, G. F., Almeida, A. A., & Lopes, H. (2019). An exploratory analysis of precedent relevance in the Brazilian supreme
+court rulings. In Proceedings of the ACM symposium on document engineering (pp. 1–4). New York, New York, USA: Association for Computing Machinery, Inc,
+http://dx.doi.org/10.1145/3342558.3345416, URL: http://dl.acm.org/citation.cfm?doid=3342558.3345416.
+Dadgosari, F., Guim, M., Beling, P. A., Livermore, M. A., & Rockmore, D. N. (2020). Modeling law search as prediction. Artificial Intelligence and Law, 1–32.
+http://dx.doi.org/10.1007/s10506-020-09261-5.
+de Araujo, P. H., de Campos, T. E., Ataides Braz, F., & da Silva, N. (2020). VICTOR: a dataset for Brazilian legal documents classification. In Proceedings of the
+12th language resources and evaluation conference (pp. 1449–1458). Marseille, France: European Language Resources Association, URL: https://www.aclweb.
+org/anthology/2020.lrec-1.181.
+de Souza, J. J., & Finger, M. (2020). Robust ranking of Brazilian Supreme Court decisions. In R. Cerri, & R. C. Prati (Eds.), Intelligent systems (pp. 581–594).
+Cham: Springer International Publishing.
+Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In NAACL HLT
+2019 - 2019 conference of the north american chapter of the association for computational linguistics: Human language technologies - proceedings of the conference,
+Vol. 1 (pp. 4171–4186). Association for Computational Linguistics (ACL), URL: https://github.com/tensorflow/tensor2tensor.
+Falcão, J., Góes, S. B. C., Hartmann, I., & Almeida, G. F. C. F. (2019). A Realidade do Supremo Criminal: Technical report, Rio de Janeiro: FGV Direito Rio, URL:
+http://bibliotecadigital.fgv.br/dspace/handle/10438/27510.
+Freitas, C., Mota, C., Santos, D., Oliveira, H. G., & Carvalho, P. (2010). Second HAREM: Advancing the state of the art of named entity recognition in Portuguese.
+In Proceedings of the Seventh International Conference on Language Resources and Evaluation (pp. 3630–3637). Valletta, Malta: European Language Resources
+Association (ELRA), URL: http://www.lrec-conf.org/proceedings/lrec2010/pdf/412_Paper.pdf.
+Galgani, F., Compton, P., & Hoffmann, A. (2015). LEXA: Building knowledge bases for automatic legal citation classification. Expert Systems with Applications,
+42(17–18), 6391–6407. http://dx.doi.org/10.1016/j.eswa.2015.04.022.
+Höfler, S., & Piotrowski, M. (2011). Building corpora for the philological study of Swiss legal texts. Journal for Language Technology and Computational Linguistics,
+26(2), 77–89, URL: http://www.zora.uzh.ch/54761/.
+Ji, D., Tao, P., Fei, H., & Ren, Y. (2020). An end-to-end joint model for evidence information extraction from court record document. Information Processing and
+Management, 57(6), Article 102305. http://dx.doi.org/10.1016/j.ipm.2020.102305.
+Kanapala, A., Pal, S., & Pamula, R. (2019). Text summarization from legal documents: a survey. Artificial Intelligence Review, 51(3), 371–402. http://dx.doi.org/
+10.1007/s10462-017-9566-2.
+Krippendorff, K. (2004). Reliability in content analysis. Human Communication Research, 30(3), 411–433. http://dx.doi.org/10.1111/j.1468-2958.2004.tb00738.x,
+URL: https://academic.oup.com/hcr/article/30/3/411-433/4331534.
+Lafferty, J. D., McCallum, A., & Pereira, F. C. N. (2001). Conditional random fields: Probabilistic models for segmenting and labeling sequence data. In Proceedings
+of the eighteenth international conference on machine learning (pp. 282–289). San Francisco, CA, USA: Morgan Kaufmann Publishers Inc..
+Lample, G., Ballesteros, M., Subramanian, S., Kawakami, K., & Dyer, C. (2016). Neural architectures for named entity recognition. In 2016 conference of the North
+American Chapter of the Association for Computational Linguistics: Human language technologies, NAACL HLT 2016 - Proceedings of the conference (pp. 260–270).
+Association for Computational Linguistics (ACL), http://dx.doi.org/10.18653/v1/n16-1030, URL: https://github.com/.
+Leibon, G., Livermore, M., Harder, R., Riddell, A., & Rockmore, D. (2018). Bending the law: geometric tools for quantifying influence in the multinetwork of
+legal opinions. Artificial Intelligence and Law, 26(2), 145–167. http://dx.doi.org/10.1007/s10506-018-9224-2.
+Leitner, E., Rehm, G., & Moreno-Schneider, J. (2019). Fine-grained named entity recognition in legal documents. In LNCS: vol. 11702, Lecture notes in computer
+science (Including subseries Lecture notes in artificial intelligence and lecture notes in bioinformatics) (pp. 272–287). Springer, http://dx.doi.org/10.1007/978-3030-33220-4{_}20.
+Luz de Araujo, P. H., de Campos, T. E., de Oliveira, R. R., Stauffer, M., Couto, S., & Bermejo, P. (2018). LeNER-Br: A dataset for named entity recognition
+in Brazilian legal text. In LNAI: vol. 11122, Lecture notes in computer science (Including subseries Lecture notes in artificial intelligence and lecture notes in
+bioinformatics) (pp. 313–323). Springer Verlag, http://dx.doi.org/10.1007/978-3-319-99722-3{_}32.
+Medvedeva, M., Vols, M., & Wieling, M. (2020). Using machine learning to predict decisions of the European Court of Human Rights. Artificial Intelligence and
+Law, 28(2), 237–266. http://dx.doi.org/10.1007/s10506-019-09255-y, URL: https://doi.org/10.1007/s10506-019-09255-y.
+Merchant, K., & Pande, Y. (2018). NLP based latent semantic analysis for legal text summarization. In 2018 international conference on advances in computing,
+communications and informatics (pp. 1803–1807). Institute of Electrical and Electronics Engineers Inc., http://dx.doi.org/10.1109/ICACCI.2018.8554831.
+Pereira, T., Arguelhes, D. W., & Almeida, G. F. C. F. (2020). Quem decide no Supremo?: Technical report, Rio de Janeiro: FGV Direito Rio, URL: http:
+//bibliotecadigital.fgv.br/dspace/handle/10438/29679.
+Ringland, N., Dai, X., Hachey, B., Karimi, S., Paris, C., & Curran, J. R. (2019). NNE: A dataset for nested named entity recognition in English newswire. In
+ACL 2019 - 57th annual meeting of the association for computational linguistics, proceedings of the conference (pp. 5176–5181). Association for Computational
+Linguistics (ACL), URL: http://arxiv.org/abs/1906.01359.
+Silva, J. A., Ferreira, G. V., & Prata, A. A. (2019). Desempenho em Juizados Especiais no Brasil: uma análise do período 2009–2016. Revista de Estudos Empíricos
+em Direito, 6(3), 231–250. http://dx.doi.org/10.19092/reed.v6i3.349, URL: https://reedrevista.org/reed/article/view/349.
+Supremo Tribunal Federal (2020). Relatório de atividades 2019: Technical report, Brasilia: Supremo Tribunal Federal, URL: http://www.stf.jus.br/arquivo/cms/
+centralDoCidadaoAcessoInformacaoGestaoEstrategica/anexo/2020_01_24_13.08_RelatoriodeAtividades2019_completo.pdf.
+Tjong Kim Sang, E. F. (2002). Introduction to the CoNLL-2002 shared task. In Proceeding of the 6th conference on natural language learning, Vol. 20 (pp. 1–4).
+Morristown, NJ, USA: Association for Computational Linguistics (ACL), http://dx.doi.org/10.3115/1118853.1118877, URL: http://portal.acm.org/citation.
+cfm?doid=1118853.1118877.
+Veçoso, F. F. C., Pereira, B. R., Perruso, C. A., Marinho, C. M., Babinski, D. B. d. O., Wang, D. W. L., Berrini, E. W., De Palma, J. B., & Salinas, N. S. C. (2014).
+A Pesquisa em Direito e as Bases Eletrônicas de Julgados dos Tribunais: matrizes de análise e aplicação no Supremo Tribunal Federal e no Superior Tribunal
+de Justiça. Revista de Estudos Empíricos em Direito, 1(1), 105–139. http://dx.doi.org/10.19092/reed.v1i1.10, URL: http://www.cnj.jus.
+Wyner, A., Peters, W., & Katz, D. (2013). A case study on legal case annotation. In Frontiers in artificial intelligence and applications, Vol. 259 (pp. 165–174).
+http://dx.doi.org/10.3233/978-1-61499-359-9-165, URL: https://cronfa.swan.ac.uk/Record/cronfa50696.
+
+21
+
+

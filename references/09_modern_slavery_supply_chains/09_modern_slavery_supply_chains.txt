@@ -1,0 +1,1008 @@
+================================================================================
+PAPER: 09_01_A systematic literature review of modern slavery in supply chain
+================================================================================
+
+--- TITLE ---
+Journal of Cleaner Production 435 (2024) 140301 Contents lists available at ScienceDirect Journal of Cleaner Production
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Modern slavery has received increasing attention in recent years,
+across a range of stakeholders such as businesses, non-government or­
+ganisations (NGOs), policy makers, and academics (Gold et al., 2015;
+New, 2015). In practice, high profile modern slavery cases have
+heightened public awareness. Across social media, recent protests
+including those around the Qatar FIFA World Cup have highlighted
+social injustices, and modern slavery exemplifies global social injustice,
+as workers in supply chains from the global south are more likely to be
+subjected to it. There has been a raft of legislation in the last decade,
+with California being the first US State to introduce the ‘Transparency in
+Supply Chains’ Act (California, 2010), followed by the UK Modern
+Slavery Act (2015), Australia Modern Slavery Act (2018) and the EU has
+proposed sweeping new regulations to ban products made with forced
+labour, which are likely to be in force from 2025. The effectiveness of
+such legislation is however questioned, with recent studies indicating
+that the modern slavery equivalent of “greenwashing” is taking place, e.
+g., through the commodification of anti-slavery initiatives in market­
+isation (Gutierrez-Huerter et al., 2021, McGrath et al., 2022; Richards,
+2022, Pesterfieldc and Rogerson, 2023).
+
+There has also been a spike in academic interest in modern slavery,
+with journal papers exploring modern slavery increasing year on year.
+Much of it has been driven by the recent availability of corporate
+statements on modern slavery in US, UK, and Australian contexts. Re­
+searchers have mined this source of secondary data to investigate what
+firms are doing to tackle modern slavery and why they are doing it
+(Birkey et al., 2018; Stevenson and Cole, 2018; Christ and Burritt, 2021;
+Flynn and Walker, 2021; Schaper and Pollach, 2021; Jones et al., 2022;
+Pinnington et al., 2023). Another significant development has been the
+Covid-19 pandemic. It exposed modern slavery risks in the supply chains
+of personal protective equipment (PPE), apparel and other manufac­
+tured products (Trautrims et al., 2020b; Cole and Shirgholami, 2021;
+Hughes et al., 2023) and ensured that the issue stayed in the public
+spotlight. Attempts at reviewing existing research on modern slavery
+have already been made, both from accounting (Mehmood et al., 2022)
+and supply chain perspectives (Han et al., 2022; Ishaya et al., 2023) and
+these have yielded useful insights on progress to date. This SLR aims to
+provide a more comprehensive review of modern slavery in supply
+chains literature by searching a broader range of journals and updating
+and extending Gold et al.’s (2015) early framework with recent
+
+--- CONCLUSION ---
+This study conducted a systematic literature review on modern
+slavery in SCM, provided an updated definition, and elaborated upon
+Gold et al.’s (2015) model. We introduce new factors to the model,
+highlight additional external stakeholders, and extend detection and
+response by adding prevention and remediation as discrete phases in
+managing modern slavery risks.
+Our research has several limitations. This SLR is a secondary databased study and does not provide empirical data to the research com­
+munity. Although SLRs are considered rigorous, this study focuses on
+academic journal articles in English, published after 2010 in Scopus or
+Web of Science. Research on modern slavery in supply chains has been
+published through other organisations and databases, prior to 2010, and
+
+6.3.2. Industry 4.0 and modern slavery
+Injecting visibility into existing supply chain processes and, there­
+after, upgrading these same processes is part of the promise of industry
+4.0 technologies like internet of things (IoT), artificial intelligence (AI),
+data analytics and blockchain (Agrawal et al., 2020; van Hoek et al.,
+13
+
+V. Strand et al.
+
+Journal of Cleaner Production 435 (2024) 140301
+
+in other languages than English, thus it is unlikely that this review is
+comprehensive of all literature. The selection process (e.g. search terms,
+inclusion and exclusion criteria) we followed to identify articles may
+have been too restrictive, potentially causing us to exclude relevant
+articles. We also sought to elaborate upon Gold et al. (2015) conceptual
+model, fleshing out the details from our review of the literature. We may
+have missed some occurrences of themes and sub-themes across the
+papers, and may have presented the new elements within Gold et al.‘s
+model in ways that could be further refined. For example, there is
+inevitably overlap between remedy and response phases, but we chose
+to present them as separate categories for the sake of conceptual clarity.
+In order to scrutinize the robustness of the revised conceptual model, it
+would benefit from empirical testing, allowing a further iteration in
+theory elaboration.
+The study has several implications for future research. We identify a
+number of gaps in our revised conceptual model (section 6.2.1), which
+could be a starting point for future research directions. We renamed the
+centre of Gold et al. (2015) model the corporate-stakeholder context as
+numerous studies identified the importance of stakeholders. Yet a
+stakeholder theory lens (Freeman, 1984) was not applied in the studies
+we reviewed, a theoretical gap that would be worth addressing. Insti­
+tutional theory has been adopted to explore sustainable SCM practices
+(e.g., Yawar and Kauppi, 2018) and could help to explain organisational
+adaptations to modern slavery risks. Some authors have already gone
+down this route and found early indications of institutional isomorphism
+across corporate structures, policies, and practices for combating mod­
+ern slavery (Flynn and Walker, 2021). We recommend that modern
+slavery researchers start to align their work with established theoretical
+and methodological approaches from SCM. It would also be fruitful to
+explore alternatives to traditional business culture, which seem to
+perpetuate the conditions for modern slavery. There is also potential in
+exploring how corporate stances on modern slavery relate to established
+environmental social governance (ESG) aspects. Are “greener” firms
+better at tackling modern slavery, for instance, and is there a relation­
+ship between how firms manage their own employees and attitudes to
+modern slavery in supply chains?
+Modern slavery researchers can learn from methodological tech­
+niques that elicit primary data on sensitive subjects. Benstead et al.
+(2018) action research on supplier auditing in the garment sector is a
+case in point. Taking inspiration from this type of fieldwork is crucial
+because modern slavery researchers have over-relied on secondary data,
+especially modern slavery statements, for their empirical findings (Han
+et al., 2022). In terms of primary data collection, there is a need to
+represent the perspectives of lower tier suppliers close to the point of
+production, and most importantly the voices of people with lived ex­
+periences, which are currently missing from research on modern slavery
+
+in supply chains. It would also be beneficial to conduct more quantita­
+tive research, using mathematical modelling approaches from data sci­
+ence to explore the relationships between the factors that influence
+modern slavery in supply chains. We hope this literature review is a step
+towards a richer understanding of the current state of modern slavery
+research in SCM, and potential future research directions.
+CRediT authorship contribution statement
+Helen Walker: Conceptualization, Data curation, Formal analysis,
+Funding acquisition, Investigation, Methodology, Project administra­
+tion, Resources, Software, Supervision, Validation, Visualization,
+Writing – original draft, Writing – review & editing. Anthony Flynn:
+Conceptualization, Data curation, Formal analysis, Funding acquisition,
+Investigation, Methodology, Project administration, Resources, Soft­
+ware, Supervision, Validation, Visualization, Writing – original draft,
+Writing – review & editing. Maryam Lofti: Conceptualization, Data
+curation, Formal analysis, Funding acquisition, Investigation, Method­
+ology, Project administration, Resources, Software, Supervision, Vali­
+dation, Visualization, Writing – original draft, Writing – review &
+editing. Vanja Strand: Conceptualization, Data curation, Formal anal­
+ysis, Investigation, Methodology, Project administration, Resources,
+Validation, Visualization, Writing – original draft, Writing – review &
+editing, Funding acquisition, Software, Supervision
+Notes
+a
+
+We conducted the literature review search and analysis in 2021,
+and we used the same search procedure to identify and include key 2022
+and 2023 papers in the analysis as ad hoc inclusions which were added
+in the text and Appendix C.
+Declaration of competing interest
+The authors declare that they have no known competing financial
+interests or personal relationships that could have appeared to influence
+the work reported in this paper.
+Data availability
+Data will be made available on request.
+
+
+================================================================================
+PAPER: 09_02_Modern slavery challenge
+================================================================================
+
+--- TITLE ---
+Supply Chain Management: An International Journal Modern slavery challenges to supply chain management Stefan Gold, Alexander Trautrims, Zoe Trodd, Article information:
+
+--- ABSTRACT ---
+Purpose – This paper aims to draw attention to the challenges modern slavery poses to supply chain management. Although many international
+supply chains are (most often unknowingly) connected to slave labour activities, supply chain managers and researchers have so far neglected the
+issue. This will most likely change as soon as civil society lobbying and new legislation impose increasing litigation and reputational risks on
+companies operating international supply chains.
+Design/methodology/approach – The paper provides a definition of slavery; explores potentials for knowledge exchange with other disciplines;
+discusses management tools for detecting slavery, as well as suitable company responses after its detection; and outlines avenues for future research.
+Findings – Due to a lack of effective indicators, new tools and indicator systems need to be developed that consider the specific social, cultural
+and geographical context of supply regions. After detection of slavery, multi-stakeholder partnerships, community-centred approaches and supplier
+development appear to be effective responses.
+Research limitations/implications – New theory development in supply chain management (SCM) is urgently needed to facilitate the
+understanding, avoidance and elimination of slavery in supply chains. As a starting point for future research, the challenges of slavery to SCM are
+conceptualised, focussing on capabilities and specific institutional context.
+Practical implications – The paper provides a starting point for the development of practices and tools for identifying and removing slave labour
+from supply chains.
+Originality/value – Although representing a substantial threat to current supply chain models, slavery has so far not been addressed in SCM
+research.
+
+--- INTRODUCTION ---
+the International Labour Organization (ILO) (including the 10
+per cent of slaves who are in state-imposed enslavement), while
+only 22 per cent are in forced sexual exploitation (ILO, 2012a).
+Most slaves are used in simple, non-technological, traditional
+work: agriculture, brick-making, mining and quarrying, textile
+manufacture, leather working, gem-working and jewellerymaking, cloth and carpet-making, domestic service, forest
+clearing and charcoal-making (Bales and Trodd, 2013). As
+well, the focus on trafficking ignores the majority of slaves who
+were enslaved without being trafficked. By recent ILO
+numbers, only 29 per cent of slaves crossed borders. Another
+15 per cent were moved within their countries and 56 per cent
+were not moved at all (ILO, 2012a).
+By shifting our focus from sex trafficking to labour slavery,
+we are able to shift our attention to supply chains. Slavery
+taints numerous of our raw materials, commodities and goods.
+International supply chains driven by the principle of
+comparative cost advantages find their way to this slave labour
+(and might even be seen as nourishing it) (cf. Lund-Thomsen
+
+In 2014, the Global Slavery Index (GSI) counted 35.8 million
+slaves worldwide. Although slavery is officially outlawed
+everywhere, this estimate is the highest absolute number of
+slaves in the history of mankind. The most affected countries
+are India, China, Pakistan, Uzbekistan, Russia, Nigeria, the
+Democratic Republic of the Congo, Indonesia, Bangladesh
+and Thailand (Walk Free Foundation, 2014, GSI), though
+slavery is by no means limited to Africa and Asia: the GSI
+estimates over half a million slaves within the European Union
+(Walk Free Foundation, 2014, GSI)[1].
+Although much of the public debate on modern slavery circles
+around the topics of trafficking and sexual exploitation, the
+majority of slaves are in forced labour: 78 per cent, according to
+
+The current issue and full text archive of this journal is available on
+Emerald Insight at: www.emeraldinsight.com/1359-8546.htm
+
+Received 2 February 2015
+Revised 28 May 2015
+17 June 2015
+Accepted 17 June 2015
+
+Supply Chain Management: An International Journal
+20/5 (2015) 485–494
+© Emerald Group Publishing Limited [ISSN 1359-8546]
+[DOI 10.1108/SCM-02-2015-0046]
+
+485
+
+Downloaded by University of Nottingham At 06:12 31 October 2018 (PT)
+
+Modern slavery challenges
+
+Supply Chain Management: An International Journal
+
+Stefan Gold, Alexander Trautrims and Zoe Trodd
+
+Volume 20 · Number 5 · 2015 · 485–494
+
+and Lindgreen, 2014). Supply chains leverage the profitable
+exploitation of cheap human resources – facilitated by global
+inequality and hierarchical social relations (LeBaron, 2015) –
+for the production of goods to be sold on the world market.
+While this constant striving to reduce costs is inherent to many
+supply chains, in the case of slave labour, slave-holders retain
+the bulk of the profits, which never reach actors further down
+the supply chain because the origin of slave-made
+commodities is concealed (Datta and Bales, 2013).
+Slave-made commodities are inseparably mixed up with
+commodities of other provenance at the next supply chain tier
+down towards the consumer, for example at the exporter or
+wholesaler level. Slave labour therefore appears to be largely
+hidden from focal companies predominantly placed in the big
+consumer markets of the industrialised world.
+However, non-governmental organisations (NGOs) might
+blame focal companies for deliberately not trying hard enough
+to detect those exploitative practices (Wolf, 2014). As supply
+chains are internationally connected and highly outsourced
+today, the risk of using slave labour somewhere in the supply
+chain is present in almost all industries, from electronics,
+high-tech, automotive and steel to agriculture, seafood,
+mining, garment and textiles (David et al., 2012). One
+illustrative real-world example of how slavery affects global
+supply chains and threatens the brand reputation of focal
+companies is the case of European and US supermarkets
+(including Carrefour, Tesco and Walmart) selling prawns
+produced with slave labour. In 2014, the Thai supplier
+Charoen Pokphand Foods was accused of utilising fishmeal
+stemming from fishing boats operated by slaves on their prawn
+farms (Hodal et al., 2014). Public pressure forced the
+supermarkets to remove this supplier’s prawn products from
+their shelves.
+In recent years, legislators have started to address this issue.
+As early as 2005, the Brazilian Government launched a
+voluntary multi-stakeholder initiative (MSI) called the
+National Pact for the Eradication of Slave Labour (2005) in
+collaboration with the ILO. It engages signatory companies in
+attempts to eradicate slave labour from their supply chains:
+they must cut ties with businesses that make use of slavery,
+incorporate contractual clauses associated with practices that
+characterise slavery and implement mechanisms to track
+products. The Pact’s committee also offers free training on
+slavery to employees of signatory companies and their
+suppliers. More than 400 companies have joined so far, with
+supply chain studies undertaken every three years at the
+government’s request by the ILO, NGOs and trade unions.
+Brazil’s Ministry of Labour also publishes a “dirty list” (Lisa
+Suja do Trabalho Escravo) that it updates every six months,
+listing the names of individuals and corporations deemed
+responsible for situations of slavery, subjecting them to
+sanctions (such as preventing them from accessing public
+funds). The list goes to public service agencies and banks so
+that they can deny finance, grants and public credit to those
+listed. New legislation is also holding companies accountable
+in the USA. Since 2012, the California Transparency in Supply
+Chains Act requires big companies who are doing business in
+California to report on their efforts to abolish slavery and human
+trafficking in their supply chains[2]. In the UK, a Modern
+Slavery Bill (2015) became law in March 2015, requiring
+
+companies to prepare and make publically available a statement
+every financial year that explains the steps taken to ensure that
+slavery is not taking place in any of its supply chains[3]. And at
+the level of international law, in June 2014, the ILO revised its
+Convention on Forced or Compulsory Labour to address the still
+existing implementation gaps (Pollitt, 2014).
+Therefore, the use of slave labour (including by
+beyond-first-tier suppliers) becomes a considerable legal risk
+for focal companies. The avoidance of expensive and
+reputation-damaging litigation might be seen as a crucial task,
+similar to the obligation to report on conflict metals including
+tin, tantalum, tungsten and gold by the Dodd–Frank financial
+reforms act in the USA. Although there is no fine for having
+conflict minerals in the supply chain, the act is a de facto ban
+on those materials, at least for companies susceptible to
+naming and shaming (Bosco and Munck, 2013). Industry has
+responded through initiatives like the Conflict Free Smelter
+Program, which uses third-party audits at smelters and
+refineries since 2010 to ensure conflict-free provenance of
+minerals supplied to the world market (Bafilemba et al.,
+2014). Following the traditional managerial paradigm of profit
+maximisation, the investments in ensuring a slavery-free
+supply chain trade-off against the risks of litigation and
+reputation damage. From this point of view, government
+regulation and risk minimisation drive SCM (Magnan et al.,
+2011; CIPS-Walk Free, 2013). But a distinctive strategy of
+marketing sustainable products for a premium price may also
+incentivise companies to ensure that their supply chains are
+slavery-free (Seuring and Müller, 2008).
+Against this background, we ask the following questions
+relevant for academic research and supply chain practice: How
+should we define slavery today? Avoiding slave labour in
+supply chains requires knowing what the term entails and how
+it is legally defined. Then, recognising that we can only
+approach the problem of slavery in our supply chains if we
+really understand the phenomenon, including insights from
+other disciplines that have been researching slavery from
+various angles over the past 15 years, we ask: What can supply
+chain research learn from other disciplines about slavery in
+supply chains? Subsequently, we turn to the issue of how to
+improve the current situation by taking suitable actions
+concerning SCM: Which management tools and indicator
+systems might be suitable for detecting slavery within
+international supply chains? and What is a suitable response
+by a focal company when it detects slavery at any point in its
+upstream supply chain? We provide insights through current
+best-practice examples of detecting and responding to slavery
+in supply chains. Finally, we conclude by asking: Which
+avenues for future research would facilitate a better
+understanding of the problem and support supply chain
+managers in formulating an adequate response? The
+remainder of the paper is structured around these research
+questions.
+Defining slavery
+The definition of slavery has been controversial since the early
+days of the modern anti-slavery movement in the 1990s, but
+we recommend the definition put forward in the Bellagio–
+Harvard Guidelines on the Legal Parameters of Slavery, written
+by the Members of the Research Network on the Legal
+486
+
+Modern slavery challenges
+
+Supply Chain Management: An International Journal
+
+Stefan Gold, Alexander Trautrims and Zoe Trodd
+
+Volume 20 · Number 5 · 2015 · 485–494
+
+Parameters of Slavery in 2012. The Guidelines use the legal
+definition of slavery found in the 1926 Slavery Convention,
+which defines slavery in international law as “the status or
+condition of a person over whom any or all of the powers
+attaching to the right of ownership are exercised”
+(Bellagio-Harvard Guidelines, 2012, p. 1). As slavery is banned
+in every country of the world, slave-holders can no longer rely
+on law to enforce ownership. Instead, the Guidelines explain,
+they exercise the powers attaching to the right of ownership
+through possession: “control over a person by another such as
+a person might control a thing”. Therefore, “slavery” in its
+contemporary form, as a by-product of our global production
+system, may be defined as controlling a person:
+
+What can supply chain research learn from other
+disciplines about slavery in supply chains?
+Despite being new to the supply chain agenda, slavery has
+been a research topic in many other areas of social sciences
+and humanities, including law, sociology, geography, politics,
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 09_03_Modern Slavery Disclosure Regulation and Global Supply Chains- Insights from Stakeholder Narratives on the UK Modern Slavery Act
+================================================================================
+
+--- TITLE ---
+Journal of Business Ethics (2022) 180:455–479 https://doi.org/10.1007/s10551-021-04878-1 ORIGINAL PAPER Modern Slavery Disclosure Regulation and Global Supply Chains:
+
+--- ABSTRACT ---
+The purpose of this article is to problematise a particular social transparency and disclosure regulation in the UK, that transcend national boundaries in order to control (modern) slavery in supply chains operating in the developing world. Drawing
+on notions from the regulatory and sociology literature, i.e. transparency and normativity, and by interviewing anti-slavery
+activists and experts, this study explores the limitations of the disclosure and transparency requirements of the UK Modern
+Slavery Act and, more specifically, how anti-slavery activists experience and interpret the new regulations and the regulators’ implementation of the regulation. This research found limited confidence among anti-slavery activists regarding the
+Act’s call for transparency in relation to the elimination of slavery from global supply chains. The research also found that
+the limits of the transparency provisions within the Act appear to hinder the attainment of normativity. This study provides
+new and unique insights into the critical role that social activists play in exposing the lack of corporate transparency and
+failures of responsibility to protect workers within global supply chains.
+
+--- INTRODUCTION ---
+Over the past two decades, stakeholder concerns and ubiquitous public pressures have led to evolving forms of social
+and environmental disclosure and transparency regulations
+in different countries. This has attracted a growing body of
+research on the effect of social and environmental disclosure regulations on corporate disclosure and transparency
+practices (see, for example, Islam & Van Staden, 2018;
+Birkey et al., 2018; Bebbington et al., 2012; Blacconiere
+& Patten, 1994; Blacconiere & Northcut, 1997; Chauvey
+et al., 2015; Larrinaga et al., 2002). Prior research mainly
+analysed disclosures (in annual reports, CSR/sustainability
+reports and websites) in response to regulation mandating
+disclosure.1We extend this body of research by focussing on
+a new and important piece of regulation, the UK Modern
+* Muhammad Azizul Islam
+azizul.islam@abdn.ac.uk
+1
+
+Accounting Discipline, Business School, University
+of Aberdeen, Aberdeen, UK
+
+--- CONCLUSION ---
+This article provides essential insights into the views of
+anti-slavery activists and experts on the UK modem slavery
+Act of 2015 and its implications in relation to eliminating
+modern slavery from global supply chains. Most of the interviewees of this study articulated cautious confidence in the
+Act and its aims to foster corporate transparency and support
+for the public interest and in the normativity of the Act. For
+many interviewees, the Act is a starting point for broader
+dialogue among stakeholder groups to encourage corporate
+transparency in relation to modern slavery. There is a consensus view that the disclosure provisions of the Act may not
+help to eliminate modern slavery in the shorter term but may
+help to build long-term solutions. Other views see the Act as
+having been influenced by powerful interest groups whose
+motivations were business risk management rather than minimising the risk of people falling victim to modern slavery
+in supply chains, mainly operated in developing nations. For
+many interviewees, the constructive aspect of the Act will
+be its normativity (Ewick & Silbey, 2003), which should
+encourage ‘more’ scrutiny of regulated organisations by civil
+society groups and human rights activists.
+While the interviewees find the transparency provisions
+of the UK Modern Slavery Act a persuasive concept, most
+of them are also sceptical about the way the Act operationalise these. The call for transparency in the Act is restricted
+by the limited disclosure requirements, limits to the range
+of entities required to publish modern slavery statements
+and limited means to hold regulated organisations responsible for their supply chain operations in developing nations.
+While the call for transparency is an important yardstick to
+measure corporate responsibility and sustainability (Gold
+
+13
+
+474
+
+& Heikkurinen, 2018), it has been observed that limited
+transparency requirements in the Act have led to limited
+corporate liability and responsibility for tackling modern
+slavery and unethical labour practices within global supply chains. In particular, the traceability of suppliers and
+their factory locations is a critical aspect of transparency
+within global supply chains (Egels-Zandén & Hansson,
+2016; Gardner et al., 2019) that is disregarded in the Modern Slavery Act. Anti-slavery activists believe that the Act
+has been influenced by corporations and some believe that
+there is little legal scope to hold organisations accountable
+for slavery practices. There is a view that the regulation has
+been captured by powerful corporate groups for their own
+interests (Baudot et al., 2017; Hantke-Domas, 2003; Hines,
+1991; Levine & Forrence, 1990; Paisey & Paisey, 2012),
+and that modern slavery disclosures, therefore, attempt to
+reduce business risk and do not address and reduce the risks
+of those falling victim to modern slavery. The interviewees
+observed that risk minimisation agendas, among both regulators and corporations, may not automatically reduce the
+severity of modern slavery practices within global supply
+chains. Although the normativity of the Act can be achieved
+(Ewick & Silbey, 2003) through collaboration with, and surveillance activities by, NGOs and anti-slavery activists, the
+ascendance of corporate self-interest over public interest
+may hamper normativity. Unlike prior research on normativity (Buhmann, 2011; Chelli et al., 2018; Manacorda, 2014),
+we argue that the Act’s creation of normativity is constrained
+by NGOs and activists’ capacity to mobilise pressures upon
+companies to be socially accountable. In line with the literature on counter-accounts (Semeen & Islam, 2021; Lehman
+et al., 2016; Gallhofer et al., 2006), we argue that the narratives of anti-slavery activists regarding unethical modern
+slavery practices, play an important role to mobilise pressures upon corporations to follow the Act.
+Through close observation of practices under the Modern
+Slavery Act 2015, we contribute to the current understanding of the limitations of corporate transparency and related
+regulation. First, we document not only the current limitations of transparency under the Act, but also the issues with
+relational compliance with the (minimal) disclosure requirements within a supply chain setting. Second, although some
+researchers provided a theoretical overview of the limits
+of transparency and accountability (see, for example, Gold
+& Heikkurinen, 2018), in this study, we have observed the
+phenomena through interviews with social and institutional
+actors who are knowledgeable in the area of corporate
+responsibility in relation to modern slavery. Third, in line
+
+13
+
+M. A. Islam, C. J. Van Staden
+
+with the literature on counter-accounts/narratives (Gallhofer
+et al., 2006; Lehman et al., 2016), we observed how particular civil society groups, this being anti-slavery activists, produce narratives regarding the roles of regulators and corporate actors. Fourth, we also contribute to the understanding
+of regulatory capture by highlighting how businesses seek to
+minimise their own risk rather than show concern for victims
+of modern slavery. Finally, we extend the knowledge about
+normativity (Chelli et al., 2018) by providing new insights
+into how the normativity of the Act largely depend on the
+activism and campaigns by NGOs and anti-slavery groups.
+We acknowledge that while we problematised transparency limitations of the UK Modern Slavery Act, we
+mostly relied on the narratives of anti-slavery activists.
+Our approach is consistent with the counter-account literature (Lehman et al., 2016; Gallhofer et al., 2006; Semeen
+& Islam, 2021). Accordingly, we argue that, from a stakeholder/societal point of view, NGOs and social activists
+are in a better position than profit-driven shareholders or
+corporate managers to provide views and narratives on the
+limitations of a particular regulation to create transparency
+and ethical practices within global supply chains. We also
+argue that while the expectations of NGOs and social activists may be seen as unrealistic by some corporate managers, these expectations can be emancipatory to the broader
+community (including the victims of modern slavery within
+global supply change) and a catalyst for future change in
+corporate accountability. We encourage further research to
+investigate the emancipatory roles of different stakeholder
+groups, including anti-slavery activists, journalists, suppliers and workers, in global supply chains operating in the
+developing world. Moreover, while existing modern slavery
+disclosure regimes are new and emerging in nature, calling
+on corporations to disclose rather than to act and the idea
+that greater transparency and disclosures about organisations’ activities will foster improvement in working conditions, remains largely under-researched. Along these lines,
+we also call for more research into new modern slavery disclosure regimes.
+
+475
+
+Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder…
+
+
+================================================================================
+PAPER: 09_04_The Role of Supply Chains in the Global Business of Forced Labour
+================================================================================
+
+--- TITLE ---
+Journal of Supply Chain Management 2021, 57(2), 29–42 © 2021 The Authors. Journal of Supply Chain Management published by Wiley Periodicals LLC.
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Achieving decent work for all is an aspiration
+enshrined in the United Nations Sustainable Development Goals. But this is a major and accelerating challenge given research suggesting that decent work is
+shrinking across several sectors and parts of the world
+(Anner, 2020; ILO, 2019). Low-waged and insecure
+
+The Editors of this special issue, Vivek Soundararajan, Andrew
+Crane, and Miriam Wilhelm, were extraordinarily helpful in
+reviewing and commenting on previous drafts of this paper. Miriam, in particular, worked with me to improve its legibility to
+supply chain management scholars. I am indebted to them for
+their efforts. The research discussed in this article was funded by
+the UK ESRC (ES/N001192/1) and Ford Foundation. Field
+research for the ESRC Global Business of Forced Labour project
+was supported by a research team including E. Gore, D. OttieBoakye, O. Afrane Obed, P. Ekka, H. Babu, A. Kumar, R. Goswami, M. Rahman, H. Sarkar, N. Howard, P. Roberts, V. Ampiah
+and J. Nyarko. I am thankful for their assistance.
+
+work is widespread today; the International Labour
+Organization (ILO) estimates that “the majority of the
+3.3 billion people employed globally in 2018 had
+inadequate economic security, material well-being and
+equality of opportunity,” over 700 million lived in
+“extreme or moderate poverty despite having employment,” and most jobs are insecure and informal (ILO,
+2019; see also ILO, 2020). And these statistics predate the economic upheaval wrought by the COVID19 pandemic that has triggered mass unemployment
+for some workers while heightening vulnerability to
+labor exploitation for others.
+The way supply chains are designed and managed is
+fundamental to the question of whether decent work
+flourishes or not. Not only do supply chains shape
+employment and working conditions in crucial ways,
+but they influence the business models and management practices that pattern dynamics of labor
+exploitation (Barrientos, 2019; Crane, 2013; LeBaron
+& Gore, 2020). Supply chains permeate distributions
+
+April 2021
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.
+
+29
+
+of wealth and opportunity across the global economy,
+as scholars have recently sought to capture through
+concepts like “global wealth chains” (Seabrooke &
+Wigan, 2017) and “global poverty chains” (Selwyn,
+2019). We need to understand better how—as they
+facilitate international trade, transform the dynamics
+of migration and migrant work (Gordon, 2017;
+Soundararajan, Khan, & Tarba, 2018), and shape business models (Allain et al., 2013)—global supply
+chains give rise to decent and indecent work. We also
+need stronger evidence to identify which forms of
+governance can best detect, prevent, and address indecent work and promote fair, equitable labor standards
+and worker rights (see Editors’ introduction, Reinecke
+& Donaghey, 2020, this volume).
+As decent work moves up the scholarly agenda of
+business and supply chain scholars, there is considerable value in understanding indecent forms of work
+and how, when, why, and with what consequences
+they are used by contemporary businesses. As a contribution to this wider project, in this article, I explore
+the role of supply chains in facilitating one indecent
+type of work widely deployed by business today:
+forced labor. Forced labor encompasses a variety of
+practices that use coercion to extract involuntary labor
+from people, severely curtailing their freedom; it
+includes slavery, debt bondage, and human trafficking
+(ILO, 1930; ILO, Walk Free Foundation, & IOM,
+2017). While reliable statistics on the prevalence of
+forced labor are hard to come by (Brunner, 2015;
+M€
+ugge, 2017), the data that do exist suggest that
+forced labor is alarmingly common (cf. LeBaron &
+Gore, 2020; McGrath, 2013; Phillips, 2013). Forced
+labor has been well-documented across a variety of
+product supply chains including those that create garments, footwear, food, and electronics, as well as
+within labor supply chains linked to agriculture, construction, and hospitality (Allain et al., 2013; Gordon,
+2017; LeBaron, 2018b). A labor supply chain “consists
+of the sequence of employment relationships that a
+worker goes through in order to be deployed in a productive capacity” (Allain et al, 2013: 42). Although
+forced labor was made illegal in most countries following formal abolition of slavery during the 19th
+century and is widely condemned given the human
+suffering and unfreedom it entails, it remains a widespread business practice deployed by enterprises in
+both wealthy and lower income countries (Crane,
+LeBaorn, et al., 2019; Crane, Soundararajan, et al.,
+2019).
+Despite the clear relevance of supply chains to the
+
+--- CONCLUSION ---
+Growing interest in the global business of forced
+labor is a positive phenomenon. Forced labor remains
+one of the greatest obstacles to achieving decent work
+in supply chains, so there is considerable merit and
+value in understanding it better. Recent scholarship
+from across the social sciences has underscored how
+vital a role supply chains play, so it is crucial that
+these are investigated more seriously and deeply than
+they have been so far. The limited research that has
+been done to date has revealed many assumptions
+made about the business of forced labor to be inaccurate and partial; yet, we are a long way off from having a comprehensive understanding of how the
+business of forced labor operates across different types
+of supply chains, and of the dynamics that give rise to
+or eliminate it. Business scholars are perfectly positioned to make a contribution to advancing this
+research through: a focus on topics most closely
+
+aligned with their disciplinary focus and expertise;
+connecting to and building from the existing research
+on the business of forced labor from across the social
+sciences; developing rigorous research methods; and
+upholding meticulous ethics.
+
+DATA AVAILABILITY STATEMENT
+Data is on file with the author.
+
+
+================================================================================
+PAPER: 09_05_Detecting and remediating modern slavery in supply chains  a targeted audit approach
+================================================================================
+
+--- TITLE ---
+Production Planning & Control The Management of Operations ISSN: 0953-7287 (Print) 1366-5871 (Online) Journal homepage: www.tandfonline.com/journals/tppc20 Detecting and remediating modern slavery in
+
+--- ABSTRACT ---
+ARTICLE HISTORY
+
+This paper investigates modern slavery detection and remediation. Action research has been conducted in the textiles and fashion industry, with the primary engagement involving a multi-billion
+pound (GBP) turnover company and their modern slavery investigation at a high-risk supplier in South
+East Asia. This paper responds to calls from the literature to investigate the modern slavery detection
+process and provides empirical evidence involving collaboration with a large multinational NGO and
+another of the audited supplier’s customers. Findings are presented from a first-hand account of the
+detection process and suggest that a targeted audit is more likely to identify key indicators of modern
+slavery. This type of audit includes investigating the end-to-end recruitment process by using a parallel
+structure of management and worker interviews and documentation review. Evidence is also provided
+of the company’s remediation process, which includes partnering with a local NGO to empower workers and collaboratively develop suppliers.
+
+Received 12 March 2019
+Accepted 8 July 2020
+
+--- INTRODUCTION ---
+Modern slavery, as occurring in the context of supply chains,
+has been defined as: ‘the exploitation of a person who is
+deprived of individual liberty anywhere along the supply chain
+from raw material extraction to the final customer for service
+provision or production” (Gold, Trautrims, and Trodd 2015,
+487). The extent of this contemporary phenomenon is
+emphasised by recent research conducted by the
+International Labour Organisation (ILO) and the Walk Free
+Foundation that estimated that, globally, 16 million people
+are victims of economic forced labour exploitation, including
+through modern day slavery in supply chains (ILO
+(International Labour Organisation) 2017). In particular,
+according to the recent ‘Global Slavery Index 2018’ published
+in July 2018, the textiles and fashion industry is one of the
+largest perpetrators of modern slavery globally (Walk Free
+Foundation 2018). Modern slavery is thus a global issue with
+instances in both developing and developed countries. For
+example, there have been recent cases reported in the UK
+news such as of ‘a slave workforce’ being discovered at
+Kozee Sleep, a UK bed manufacturer supplying well-known
+high street retailers (BBC 2016) and human trafficking discovered in a Sports Direct warehouse (The Guardian 2017;
+BBC 2019).
+Legislation has begun to be introduced around the world
+in response to the modern slavery threat. Recent examples
+include the ‘California Transparency in Supply Chains Act’
+(State of California Department of Justice 2010) and the ‘UK
+CONTACT Amy V. Benstead
+
+amy.benstead@manchester.ac.uk
+
+KEYWORDS
+
+Modern slavery; supply
+chain auditing; remediation;
+transparency
+
+Modern Slavery Act’ (UK Government 2015). The UK legislation contains the ‘Transparency in Supply Chains’ clause that
+requires organisations with a turnover in excess of the currently stated threshold of £36 million to publish a statement
+each financial year regarding action that is being taken to
+combat modern slavery in their supply chains. The introduction of modern slavery legislation has provoked discussion of
+this issue in the broader management literature (e.g. Crane
+2013), and two recent key conceptual papers by New (2015)
+and Gold, Trautrims, and Trodd (2015) along with empirical
+research by Benstead, Hendry, and Stevenson (2018) have
+contributed to a growing literature on sustainable supply
+chain management (SSCM). It has been acknowledged that
+slavery can enter the supply chain where labour intensity is
+high and profit margins low (Crane 2013). A growing body
+of research has also considered the heightened modern slavery risk when production and labour recruitment is outsourced (Allain et al. 2013; LeBaron and Lister 2015).
+Amongst others, The Ethical Trade Initiative (ETI) has provided guidance for companies to improve their awareness of
+deception and coercion during the sub-tier recruitment process. Practices identified that lead to forced labour is, for
+example, withholding wages, recruitment fees, and passport
+retention (ETI 2017). According to the ILO (International
+Labour Organisation) (2019), ‘The retention of passports and
+other identity documents is one of the most common forms of
+coercion, restricting a migrant worker’s freedom of movement,
+preventing them from seeking help and trapping them in
+forced labour’.
+
+Department of Materials, University of Manchester, Manchester, UK
+
+ß 2020 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use,
+distribution, and reproduction in any medium, provided the original work is properly cited.
+
+PRODUCTION PLANNING & CONTROL
+
+Amongst the organisational responses to this new legislation, as disclosed in modern slavery statements, is the use of
+supplier audits to detect modern slavery (Stevenson and
+Cole 2018). Whilst it is well documented that auditing is
+commonly used to investigate social standards in a factory
+(Jiang 2009; Lund-Thomsen and Lindgreen 2014; Helin and
+Babri 2015), many authors have questioned the effectiveness
+n et al. 2006; Tallontire et al. 2011;
+of audits (Prieto-Carro
+
+Guenin-Paracini, Malsch, and Paille 2014; Power and Gendron
+2015). In particular, both New (2015) and Gold, Trautrims,
+and Trodd (2015) highlighted that the illegal and hidden
+nature of modern slavery makes detection difficult in fragmented multi-tier supply chains. These specific issues
+deserve attention, yet research into modern slavery from a
+supply chain perspective is limited, with authors calling for
+more empirical work to identify effective means of detection
+and remediation (e.g. Gold, Trautrims, and Trodd 2015).
+Modern slavery is an important phenomenon to investigate
+in order to advance the field of Operations and Supply Chain
+Management as it relates to a number of important streams
+of literature in the field. It can be seen as a particular branch
+of the literature on socially Sustainable Supply Chain
+Management (SSCM) and a threat that represents a specific
+type of supply risk. Modern slavery legislation, such as that
+introduced in the UK, questions the sourcing practices of
+buyer firms and seeks to incentivise focal firms to improve
+the transparency of their supply chains while remediation
+speaks to the literature on supplier development practices.
+Given that organisations claim to be using audits to address
+socially SSCM related modern slavery risks (Stevenson and
+Cole 2018), it is argued here that one such line of muchneeded research is to determine whether a new form of
+audit process could be used that is better able to detect
+modern slavery, alleviating at least some of the pitfalls associated with the approach. We therefore seek to answer the
+following research question:
+How can audits be improved to better detect modern slavery in
+the supply chain, and how can an appropriate remediation plan
+be established when modern slavery is discovered?
+
+To answer the above research question, we present
+empirical evidence from an action research project in the
+textiles and fashion industry with a multi-billion pound (GBP)
+turnover company, hereafter referred to as Buyer A. The first
+implementation of an audit process targeted at modern slavery detection at a high-risk factory in South East Asia
+(Supplier) is investigated, beginning with the initial preparation for the audit through to the post-audit follow-up. The
+first author was actively engaged in this process, which
+involved Buyer A collaborating with a large multinational
+NGO (NGO A) and another of Supplier’s key customers
+(Buyer B). Together, Buyer A and Buyer B represent 80% of
+Supplier’s business and Buyer B was invited to observe the
+audit process and add leverage. Empirical evidence is then
+used to understand Buyer A’s ongoing remediation involving
+a local NGO (NGO B).
+The remainder of this paper is organised as follows. First,
+a review of the relevant literature is provided in Section 2.
+The research method is then outlined in Section 3 followed
+
+1137
+
+by the findings in Section 4, which are then discussed in
+Section 5. The paper is drawn together in a conclusion in
+Section 6, including implications for practice and
+future research.
+
+--- CONCLUSION ---
+This paper started by asking ‘How can audits be improved to
+better detect modern slavery in the supply chain, and how
+can an appropriate remediation plan be established when
+modern slavery is discovered?’ Action research has been
+used within the textiles and fashion industry to understand
+an attempt at modern slavery detection and the development of a remediation plan. This method has enabled the
+gathering of rich qualitative data concerning a sensitive
+high-profile issue, further advocating the use of innovative
+
+1150
+
+A. V. BENSTEAD ET AL.
+
+research methods for researching SSCM (Touboulic and
+Walker 2016).
+To the best of our knowledge, this is the first empirical
+paper to consider how modern slavery is being investigated
+and remediated within a supplier factory. Whilst prior literature has highlighted the shortcomings of supply chain auditing and questioned the suitability of this approach for
+detecting modern slavery, this paper suggests that a more
+targeted audit can identify key indicators of modern slavery.
+This type of audit includes investigating the end-to–end
+recruitment process by using a parallel structure of management and worker interviews and documentation review. This
+has also included the investigation of third-party recruitment
+agency practices. Further, the audit involved collaborating
+with another buyer and an NGO to add leverage, share
+resources and develop capabilities. Although the targeted
+audit is resource intensive and therefore its scalability can be
+questioned, it is argued that companies could initially
+engage in this level of investigation to develop their longterm plans for modern slavery detection and remediation.
+The research also documents the evolving and ongoing
+remediation process, which has led to collaboration with a
+local NGO to support workers and develop suppliers. This
+provides an alternative approach to remediation that simultaneously provides continual detection of the indicators of
+modern slavery by focussing on day-to-day collaboration
+with suppliers and workers, which in turn reduces reliance
+on resource-intensive audits.
+Given the issues of trust, power and control that can be
+at play when investigating issues of a criminal nature, such
+as modern slavery, this research has highlighted the need to
+find appropriate ways to hear the worker voice during both
+the initial audit and the ongoing detection and remediation.
+Their voice is an essential part of understanding the reality
+of their working environment. It is therefore important to
+overcome the power asymmetries between the buyer, supplier, NGO and the workers. By using a collaborative, developmental approach with the supplier, the audit and ongoing
+remediation has fostered trust between buyer and supplier,
+which in turn fosters the supplier’s willingness for workers to
+be involved in the process of detecting and then improving
+standards. Whilst other studies have drawn attention to the
+potential power of the buyer over the NGO, this study suggests that a collaborative partnership between buyers and
+NGOs is also possible, and is more conducive to combatting
+the modern slavery threat.
+
+recruitment agencies. Conducting a targeted audit in a highrisk supplier is encouraged to help the business understand
+risk, which will in turn help develop a process to detect and
+remediate modern slavery. However, it is noted that this may
+not be feasible on a larger scale.
+A targeted audit can be facilitated by collaboration with
+other buyers or non-business actors such as NGOs to help
+provide mediation, leverage, share resources, and develop
+knowledge and expertise. In particular, collaboration with
+other buyers can help to address resource intensity and
+develop a cohesive approach to resolving issues such as
+modern slavery. It is also important for buyers to develop an
+equal relationship with their suppliers, ensuring that a buyer
+does not assume a more powerful position and exert pressure on suppliers to comply with policy that has only been
+developed from the buyer’s perspective. Meanwhile, enlisting
+the help of NGOs who are experts in modern slavery investigation can help to verify risks and provide country and
+regional specific data such as laws and geographic information, which is key when investigating migrant labour. It may
+however not always be feasible to have an NGO and/or
+native speaker present. There may therefore be practical difficulties due to being unable to speak to workers in their own
+language and build a rapport.
+Companies should also consider collaborating with local
+partners, including local NGOs, to facilitate ‘bottom-up’
+detection and remediation by providing day-to-day ‘on the
+ground’ support through developing and empowering workers and suppliers. Whistleblowing is encouraged by working
+closely with workers and educating them on their rights so
+they are able to request advice, report issues and assume a
+more active role in the detection and remediation process.
+This can be facilitated using an NGO-operated smartphone
+application, providing the NGO with the means to verify
+issues and resolve them with the supplier without alerting
+the buyer.
+It is also important for all factory-facing employees to
+understand the causes and signs of modern slavery. Buyers
+are therefore encouraged to focus on their internal processes
+and embed modern slavery awareness throughout their company by improving purchasing practices and transparency,
+and by providing internal training and resources to support
+employees at all levels of the business. Developing a collaborative approach in the detection and remediation of modern slavery is meaningless if the buyer’s internal practices are
+not continually reviewed.
+
+6.1. Implications for practice
+
+6.2. Limitations and future research
+
+This paper will be of benefit to managers, particularly in the
+textiles and fashion industry, aiding the improvement of
+social sustainability in the context of recent modern slavery
+legislation. The findings provide managers with a protocol
+for designing a targeted modern slavery audit and developing a remediation plan, which is argued to be different from
+the practices employed for other social issues due to the hidden and criminal nature and the requirement to investigate
+the end-to-end recruitment process, including third-party
+
+In light of the prior literature, the targeted audit process
+could still have flaws. Firstly, the master list of employees,
+from which we selected interviewees, may not have included
+everyone. Additionally, there is of course no guarantee that
+the workers were not coached on what to say. The research
+is also limited in terms of its supply chain scope given that it
+investigated modern slavery detection and remediation for
+Buyer A and one of their tier-one suppliers. Further investigation could be conducted of product assembly that takes
+
+PRODUCTION PLANNING & CONTROL
+
+place outside the factory walls and beyond the immediate
+first tier, such as homeworking – a context in which many
+vulnerable workers are employed in the textile industry in
+developing countries. The research could also be extended
+to include other lower tier materials and component suppliers. Additionally, third-party recruitment agencies could be
+involved in future studies. Such studies could potentially
+uncover new issues and challenges or require a different
+approach to the detection and remediation of modern slavery. This could also build on the literature that has considered how responsibility is delegated for managing
+sustainability amongst sub-suppliers in complex multi-tier
+supply chains (Wilhelm, Blome, Wieck, et al. 2016; Wilhelm,
+Blome, Bhakoo, et al. 2016; Grimm et al. 2016).
+Additionally, research could validate and further develop
+the audit protocol presented. Future research could also continue to assess the remediation process by, for example,
+investigating the effectiveness of the smartphone application
+and modern slavery toolkit. For example, it will be important
+to further investigate how issues of trust, power and control
+impact their implementation. In particular, it is necessary to
+understand the views of more of the stakeholders involved,
+including the workers. Finally, as the audit and remediation
+processes presented here are clearly not fool-proof and the
+criminal perpetrators of modern slavery may become wise to
+these approaches, there is an ongoing need to research
+smarter methods of modern slavery detection and
+remediation.
+
+1151
+
+Linda C. Hendry is a Professor of Operations
+Management at Lancaster University Management
+School, UK. Her research interests include: global
+supply chain management, including sustainable
+sourcing and supply chain responses to modern slavery legislation; manufacturing strategy, planning &
+control for product customisation contexts; and process improvement approaches, such as Six Sigma.
+Linda is Member of the European Operations
+Management Association (and was formerly on the Board as a member
+of the Finance Team). She has published extensively in a wide variety of
+journals, including those that focus on Operations Management,
+Production and Operational Research.
+
+Mark Stevenson is a Professor of Operations
+Management at Lancaster University Management
+School, UK. His research interests include socially
+sustainable supply chain management, supply chain
+risk and resilience, supply chain flexibility, and production planning and control in high-variety contexts. Mark is a member of the European Operations
+Management Association (EurOMA), and his work
+has appeared in various operations management
+journals, including the International Journal of Operations & Production
+Management (IJOPM), Production & Operations Management (POM), the
+Journal of Business Ethics, the International Journal of Production
+Economics (IJPE), and the International Journal of Production
+Research (IJPR).
+
+ORCID
+Amy V. Benstead
+Linda C. Hendry
+Mark Stevenson
+
+http://orcid.org/0000-0002-5307-9598
+http://orcid.org/0000-0003-4186-4908
+h
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{LeBaron202129, author = {LeBaron, Genevieve}, title = {The Role of Supply Chains in the Global Business of Forced Labour},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

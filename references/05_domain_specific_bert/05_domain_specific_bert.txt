@@ -1,0 +1,1635 @@
+================================================================================
+PAPER: 05_01_Recommendation as Language Processing A Unified Pretrain, Personalized Prompt Predict Paradigm
+================================================================================
+
+--- TITLE ---
+Recommendation as Language Processing (RLP): A Unified Pretrain, Personalized Prompt & Predict Paradigm (P5) Shijie Geng, Shuchang Liu, Zuohui Fu, Yingqiang Ge, Yongfeng Zhang
+
+--- ABSTRACT ---
+1
+
+For a long time, different recommendation tasks require designing
+task-specific architectures and training objectives. As a result, it is
+hard to transfer the knowledge and representations from one task
+to another, thus restricting the generalization ability of existing
+recommendation approaches. To deal with such issues, considering
+that language can describe almost anything and language grounding is a powerful medium to represent various problems or tasks, we
+present a flexible and unified text-to-text paradigm called “Pretrain,
+Personalized Prompt, and Predict Paradigm” (P5) for recommendation, which unifies various recommendation tasks in a shared
+framework. In P5, all data such as user-item interactions, user descriptions, item metadata, and user reviews are converted to a common format — natural language sequences. The rich information
+from natural language assists P5 to capture deeper semantics for personalization and recommendation. Specifically, P5 learns different
+tasks with the same language modeling objective during pretraining. Thus, it serves as the foundation model for various downstream
+recommendation tasks, allows easy integration with other modalities, and enables instruction-based recommendation. P5 advances
+recommender systems from shallow model to deep model to big
+model, and will revolutionize the technical form of recommender
+systems towards universal recommendation engine. With adaptive
+personalized prompt for different users, P5 is able to make predictions in a zero-shot or few-shot manner and largely reduces the
+necessity for extensive fine-tuning. On several benchmarks, we conduct experiments to show the effectiveness of P5. To help advance
+future research on Recommendation as Language Processing (RLP),
+Personalized Foundation Models (PFM), and Universal Recommendation Engine (URE), we release the source code, dataset, prompts,
+and pretrained P5 model at https://github.com/jeykigung/P5.
+
+For the past decades, recommender systems (RS) have witnessed
+significant advancements and played an essential role in people’s
+daily life. In retrospect, the development trend of modern RS is
+towards a more comprehensive system that accommodates diverse
+features and a wide spectrum of application scenarios.
+On one hand, feature engineering and learning in RS has evolved
+from simple to complex. In early ages, RS typically adopt logistic
+regression or collaborative filtering [20, 29, 44, 46] which utilize
+user-item interaction records to model users’ behavioral patterns.
+Later on, the contextual features such as user profile and item metadata are further integrated into the system through more sophisticated models such as factorization machines [42] and GBDT [15].
+Recently, deep neural network models [3, 4, 14, 67] facilitate crossing and combination among even more diverse and sophisticated
+features. As a result, these models gain better representation ability
+compared with traditional feature engineering based approaches.
+On the other hand, more recommendation tasks have emerged.
+Except for classical rating prediction and direct user-item matchingbased recommendation tasks, recent works are broadening the spectrum to new application scenarios such as sequential recommendation [16, 53, 56, 73], conversational recommendation [6, 54, 69],
+explainable recommendation [26, 55, 63, 70] and so on. While the
+approaches to the aforementioned recommendation tasks are often
+proposed separately, there is an evident trend of utilizing multiple
+recommendation tasks to jointly learn the transferable representations [26, 49, 50, 65]. Although existing recommender systems
+achieved great success, there is still a considerable gap between
+current solutions and the foreseeable intersection of the aforementioned trends – a comprehensive universal recommendation engine
+that can accommodate diverse features and different types of tasks.
+Inspired by the recent progress in multitask prompt-based training [1, 45, 60], in this work, we propose a unified “Pretrain, Personalized Prompt & Predict Paradigm” (denoted as P5). We show that P5
+is possible to learn multiple recommendation related tasks together
+through a unified sequence-to-sequence framework by formulating these problems as prompt-based natural language tasks, where
+user–item information and corresponding features are integrated
+with personalized prompt templates as model inputs. P5 sheds light
+on a promising technical route for unified and instruction-based
+recommendation. It has three main advantages: 1) P5 deeply immerses recommendation models into a full language environment,
+where all recommendation tasks are reformulated to NLP tasks
+with the help of personalized prompts. Since language grounding
+is sufficiently flexible and powerful to express various kinds of features in text templates, so there is no need to design feature-specific
+encoders. As a result, P5 can exploit the abundant semantics and
+knowledge inside the training corpora; 2) P5 integrates mu
+
+--- INTRODUCTION ---
+RecSys ’22, September 18–23, 2022, Seattle, WA, USA
+
+Shijie Geng, Shuchang Liu, Zuohui Fu, Yingqiang Ge, Yongfeng Zhang
+
+Sequential Recommendation
+I find the purchase history list of user_15466:
+4110 -> 4467 -> 4468 -> 4472
+I wonder what is the next item to recommend to the user. Can you help
+me decide?
+
+1581
+
+Rating Prediction
+What star rating do you think user_23 will give item_7391?
+
+5.0
+
+Explanation Generation
+
+P5
+
+Help Hong "Old boy" generate a 5-star explanation about this product:
+OtterBox Defender Case for iPhone 3G, 3GS (Black) [Retail Packaging]
+
+you can protect your prescious
+iphone more safe
+
+Review Summarization
+Give a short sentence describing the following product review from
+Mom of 3 yo girl:
+First it came with the packaging open and then as soon as my son
+took it out it was so easily broken. Hopefully a little glue will fix it.
+
+broke immediately
+
+Direct Recommendation
+Pick the most suitable item from the following list and recommend
+to user_250 : \n 4915 , 1823 , 3112 , 3821 , 3773 , 520 , 7384 ,
+7469 , 9318 , 3876 , 1143 , 789 , 595 , 3824 , 3587 , 10396 , 2766 ,
+7498 , 2490 , 3232 , 9711 , 2975 , 1427 , 9923 , 3097 , 3594 ,
+6469 , 9460 , 6956 , 9154
+
+520
+
+Multi-task Pretraining with Personalized Prompt Collection
+Zero-shot Generalization to New Product & Personalized Prompt
+Predict user_14456 's preference about the new product
+( 1 being lowest and 5 being highest ) : \n title : Hugg-A-Moon
+\n price : 13.22 \n brand : Hugg-A-Planet
+
+4.7
+
+Figure 1: P5 pretrains on an encoder–decoder Transformer model that takes in textual inputs and produces target responses.
+We trained P5 on a multitask collection of personalized prompts. After multitask prompt-based pretraining on recommendation datasets, P5 achieves the capability of zero-shot generalization to unseen personalized prompts and new items.
+recommendation tasks into a shared text-to-text encoder-decoder
+architecture and trains them with the same language modeling
+loss rather than designing task-specific architectures and objective
+functions; 3) Trained with instruction-based prompts, P5 attains
+sufficient zero-shot performance when generalizing to novel personalized prompts or unseen items in other domains.
+In experiments, we study how P5 performs compared with taskspecific approaches on all five task families as well as P5’s zero-shot
+generalization ability. We also conduct ablation studies to justify
+the design details of P5. Overall, our main contributions are:
+• To the best of our knowledge, this is the first work to propose
+a unified “Pretrain, Personalized Prompt & Predict Paradigm”
+which integrates various recommendation related tasks into a
+shared conditional language generation framework.
+• We create a collection of personalized prompts that cover five
+different recommendation task families.
+• According to the experimental results, P5 achieves promising
+performances on the five task families when taking seen prompt
+templates as model inputs.
+• P5 shows sufficient zero-shot generalization ability for novel
+personalized prompts and new items in unseen domains.
+
+--- CONCLUSION ---
+In this paper, we present P5 which unifies various recommendation
+tasks into a shared language modeling and generation framework.
+
+RecSys ’22, September 18–23, 2022, Seattle, WA, USA
+
+Shijie Geng, Shuchang Liu, Zuohui Fu, Yingqiang Ge, Yongfeng Zhang
+
+Figure 6: Performance of P5-S and P5-I on Beauty showing the influence of how to implement personalization.
+Based on personalized prompts covering five task families, we transfer all raw data such as the user-item interactions, user descriptions,
+item metadata and user reviews to the same format – input-target
+text pairs. We then pretrain P5 to help it discover deeper semantics
+for various recommendation tasks. Experiments show that P5 can
+beat or achieve similar performance with several representative
+approaches on all five task families. Moreover, P5 shows the generalization ability on zero-shot transfer to new items, new domains,
+and new prompts. In the future, we will further explore larger
+model size of P5 and employ more powerful base models such as
+GPT-3, OPT, and BLOOM. Besides, P5 is a flexible paradigm and
+it is promising to extend P5 to diverse modalities and tasks such
+as conversational recommendation, comparative recommendation,
+cross-platform recommendation, or even search tasks by integrating user queries into P5. Finally, in this work, we designed explicit
+prompts since they are intuitive, flexible, close to the natural way
+of human communication, and enables instruction-based recommendation, while in the future, we will also explore prompt search
+and latent prompts or leverage retrieval-enhanced generation to
+further boost P5’s performance on downstream tasks.
+
+
+================================================================================
+PAPER: 05_02_Multi-label legal document classification- A deep learning-based
+================================================================================
+
+--- TITLE ---
+Information Systems 106 (2022) 101718 Contents lists available at ScienceDirect Information Systems
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Multi-label document classification has a broad range of realworld applications, such as sentiment analysis [1], medical code
+classification [2], tweets classification [3], etc. A variety of methods have been developed for such problems, including traditional
+one-vs-all classifiers [4,5], classical machine learning approaches
+(e.g., Random Forest [6] and Multi-layer Perceptron [7]) and deep
+neural networks [8–10]. Advancements in machine learning and
+related fields have enabled multi-label classification algorithms
+to achieve continued improvements on datasets from different
+domains [11–16].
+In the legal domain, there exists a strong demand for high performing multi-label classification algorithms for different tasks,
+such as legal motion detection [17] and case outcome prediction [18]. However, researchers and practitioners are often faced
+with two major challenges. On one hand, there exists only a few
+∗ Corresponding author.
+E-mail addresses: dezhao.song@thomsonreuters.com (D. Song),
+frank.schilder@thomsonreuters.com (F. Schilder).
+https://doi.org/10.1016/j.is.2021.101718
+0306-4379/© 2021 Elsevier Ltd. All rights reserved.
+
+human annotated legal textual datasets [15,16], and the lack of
+high-quality manually labeled data has become a major obstacle
+in further advancing state-of-the-art research in this field. On
+the other hand, while existing methods have been continuing
+to achieve a higher performance in the respective tasks, they
+primarily focus on the majority classes and struggle to achieve
+decent performance for classes that do not have sufficient training samples. This could be especially problematic for tasks in the
+legal domain. For example, for legal motion detection [17], compared to major motion categories (e.g., Motion to Dismiss), less
+frequent types (e.g., Motion for Permanent Injunction) also play an
+important role in the litigation process. Missing low-frequency
+but important motions may result in impactful consequences for
+parties involved in a lawsuit.
+In order to address the above challenges, in this paper, we
+first present the POSTURE50K dataset, which we will release to
+the research community. It contains 50K legal cases that were
+annotated by legal subject matter experts with a selection of
+the most important Legal Procedural Postures, ranging from
+frequent types (e.g., On Appeal) to rare ones with only one occurrence in the entire dataset. Procedural postures are motions
+
+D. Song, A. Vold, K. Madan et al.
+
+Information Systems 106 (2022) 101718
+
+on which a judge has ruled and are subsequently challenged in
+a higher court. In addition, they also need to be substantively
+discussed by the judge of the higher court. We provide training,
+development and test sets with the text of the case opinion and
+the respective postures if they exist. An inter-annotator agreement study of the ten most frequent labels showed a high Cohen’s
+Kappa score of 0.81 averaged over these ten labels. Many of the
+low-frequency labels also show high agreement.
+The labels in this dataset follow a Zipfian distribution with
+many of them having just a few samples. This is common in realworld scenarios, which often prevents supervised methods from
+producing satisfying results, as indicated by the low Macro-F1
+scores (<0.28) of all evaluated systems in Table 4. We believe
+that this challenging classification task goes beyond topic classification [16] and also requires legal reasoning, such as identifying
+the parties involved and encoding the knowledge of motions and
+other procedures of a lawsuit. Also, due to the long tail nature
+of the labels, some labels only occur in the test set, making this
+dataset especially attractive for few-shot or zero-shot learning
+techniques.
+As a second contribution of this paper, we propose a deep
+learning-based system that is built on top of RoBERTa [19] for
+multi-label legal document classification. Instead of simply using
+the out-of-the-box (OOB) RoBERTa Large model, we perform continued pre-training on the given dataset in order to facilitate the
+downstream multi-label classification task. In order to address
+the issue of not having sufficient training samples for the lowfrequency classes, we adopt a label-attention mechanism that
+helps to bridge the semantic gap between a given legal document
+and the classes. To further strengthen the signals of the lowfrequency classes, we utilize multi-task learning where a second
+task specifically focuses on those classes. We show that our
+proposed system outperforms two baseline and another four recent state-of-the-art deep learning methods on both POSTURE50K
+and EUROLEX57 [16], another legal multi-label dataset covering
+diverse topics, e.g., privacy, finance, etc.
+The rest of the paper is organized as following. We first discuss
+
+--- CONCLUSION ---
+Fig. 8. Distribution of individual class F1-Scores.
+
+In this paper, we first describe the POSTURE50K dataset that
+we will release to the research community, including the manual
+tagging process, the details of the groundtruth and the textual
+content. This dataset presents a real-world and challenging multilabel classification task, i.e., tagging legal cases with procedural
+postures, a very important concept in the legal domain and for
+the litigation process. Furthermore, we propose LAMT_MLC, a
+deep learning system that is based on the RoBERTa language
+model for performing multi-label classification. Instead of using
+the OOB RoBERTa model, we performed further pre-training on
+domain-specific datasets. When targeting datasets with a long
+tail of labels where some labels lack sufficient training samples,
+we adopted a label-attention mechanism and multi-task learning
+in order to achieve better coverage, especially on small classes.
+By carrying out an evaluation with two large-scale datasets, our
+proposed system substantially outperforms two baseline and another four state-of-the-art systems. For future work, it would be
+interesting to continue exploring how to better handle classes
+without sufficient training samples (e.g. by using data augmentation techniques [44,45]). It would also be interesting and necessary to explore how to better deal with the long texts both
+algorithmically and computationally.
+
+the Macro-F1 scores of APLC_XLNet and our proposed LAMT_MLC
+on the POSTURE50K dataset for each epoch.
+We can see that both systems achieved their highest P@1
+scores with just a few epochs of training; however, for the rest of
+the training process, the P@1 scores kept dropping. In the meantime, we see a different trend for the Macro-F1 scores where they
+continue to improve and become stable after 15 to 20 epochs.
+Therefore, for systems with the goal of being able to cover a broad
+range of classes, the P@1 metric may not be the most appropriate
+option; instead, one may consider using the Macro-F1 score and
+a longer training process.
+Micro-F1 vs. Macro-F1. In Table 5, one observation is that
+although our proposed system shows clear advantages in its
+coverage (i.e., higher Macro-F1 scores), all variations were able to
+achieve very similar Micro and Weighted-F1 scores. For example,
+on POSTURE50K, our system achieved a 3% higher Macro-F1
+score than the OOB RoBERTa system while their Micro-F1 and
+Weighted-F1 scores only differ by about 1%. Even more concerning, on the same dataset, Table 4 shows that BIGRU-LWAN’s
+Micro-F1 score is only 0.8% lower than that of our system while
+9
+
+D. Song, A. Vold, K. Madan et al.
+
+Information Systems 106 (2022) 101718
+
+Table A.6
+Cohen’s Kappa scores for the 80 least frequent posture categories.
+Posture category
+
+Cohen’s Kappa
+
+Count (Annotator A)
+
+Count (Annotator B)
+
+Motion to Deposit Funds
+Motion to Withdraw Reference
+Motion to Vacate Attachment
+Motion to Vacate Arbitration Award
+Motion to Determine Tax Liability
+Declinatory Exception of Insufficiency of Service of Process
+Motion to Change Schools
+Declinatory Exception of Improper Venue
+Motion to Obtain Credit, Postpetition Financing, or Incur Debt
+Motion to Increase/Reduce Security
+Motion to Withdraw an Admission
+Petition to Withdraw Consent to Adoption
+Motion to Reject Executory Contract or Unexpired Lease
+Motion to Consolidate or for Joint Administration of Bankruptcy Cases
+Motion to Vacate Summary Judgment
+Dilatory Exception of Unauthorized Use of Summary Proceeding
+Motion to Modify a Subpoena
+Declinatory Exception of Lack of Personal Jurisdiction
+Motion for Expedited Appeal
+Motion to Vacate Wardship
+Motion to Dissolve Joint Custody
+Plea in Abatement
+Motion to Continue Temporary Stay
+Application for Bankruptcy Trustee Fees
+Objection to Administrative Expense Claim
+Petition to Prevent Relocation
+Objection to Disclosure Statement
+Motion to Set Aside Verdict
+Motion for Maritime Attachment and Garnishment
+Motion for Approval to Assume and Assign Unexpired Lease or Executory Contract
+Motion to Allow Late Filing of Proof of Claim
+Motion to Enforce Child Custody Decree
+Motion for Separate Trials
+Motion to Reinstate Visitation or Parenting Time
+Motion to Decertify Collective Action
+Motion for Subordination of Claim
+Motion to Vacate and for Damages for Wrongful Arrest of Vessel
+Motion to Post Bond
+Motion for Claim Construction
+Motion to Domesticate Decree or Register Foreign Decree
+Juvenile Wardship Petition
+Petition for Temporary Guardianship
+Motion to Vacate Stay of State Action in Limitation of Liability Proceeding
+Motion to Remove a Non-Suit
+Motion to Approve Disclosure Statement
+Motion for Adequate Protection
+Motion to Suspend Child Support
+Motion to Compel Abandonment
+Motion Prohibiting Use of Cash Collateral
+Motion Authorizing and Approving Payment of Certain Prepetition Obligations
+Motion for Daubert Hearing
+Peremptory Exception of Nonjoinder of a Party
+Motion For Order Confirming Termination of Automatic Stay
+Motion to Deny Class Certification
+Motion for Appointment of an Expert
+Petition for Increased or Additional Visitation or Parenting Time
+Motion for Entry of Discharge
+Motion for Primary Custody
+Petition for Annulment
+Motion to Vacate or Set Aside Discharge
+Dilatory Exception of Improper Cumulation of Actions
+Motion for Witness List or Production of Witnesses
+Motion to Serve Additional Discovery Requests
+Motion to Extend Claims Bar Date
+Motion for Order to Show Cause for Failure to Pay Child Support
+Motion to Change Residence (within state)
+Motion to Determine Lien Priority
+Joinder
+Petition for Special Action
+Petition for Emancipation
+Motion for Relief from Default Paternity Judgment
+Motion to Admonish Jury
+Request for Home Evaluation
+
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+1.00
+0.89
+0.85
+0.85
+0.85
+0.85
+0.85
+0.85
+0.83
+0.80
+0.80
+0.80
+0.80
+0.80
+0.80
+0.80
+0.79
+0.79
+0.74
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.66
+0.59
+0.59
+0.56
+0.56
+0.50
+0.50
+0.50
+0.40
+0.40
+0.40
+0.39
+0.32
+0.00
+0.00
+0.00
+0.00
+0.00
+
+5
+5
+2
+4
+3
+3
+3
+3
+3
+2
+3
+2
+2
+2
+2
+2
+2
+2
+1
+1
+1
+1
+1
+4
+3
+4
+3
+3
+3
+3
+5
+3
+3
+2
+2
+3
+3
+4
+5
+5
+4
+1
+1
+2
+2
+1
+2
+2
+2
+2
+1
+2
+4
+4
+3
+5
+6
+6
+4
+3
+1
+3
+1
+4
+1
+1
+2
+4
+1
+0
+0
+1
+0
+
+5
+5
+2
+4
+3
+3
+3
+3
+3
+2
+3
+2
+2
+2
+2
+2
+2
+2
+1
+1
+1
+1
+1
+5
+4
+3
+4
+4
+4
+4
+7
+2
+2
+3
+3
+2
+2
+6
+5
+5
+4
+2
+2
+1
+1
+2
+1
+1
+1
+1
+2
+4
+2
+2
+3
+7
+4
+4
+3
+4
+3
+1
+3
+1
+4
+4
+3
+2
+0
+2
+1
+0
+1
+(continued on next page)
+
+10
+
+D. Song, A. Vold, K. Madan et al.
+
+Information Systems 106 (2022) 101718
+
+Table A.6 (continued).
+Posture category
+
+Cohen’s Kappa
+
+Count (Annotator A)
+
+Count (Annotator B)
+
+Motion for Abandonment of Property
+Request for Chemical Dependency Evaluation
+Motion to Close Case
+Motion to Appoint Substitute Custodian of Vessel
+Motion to Assume and Assign Executory Contract or Unexpired Lease
+Motion to Surcharge Collateral
+Motion to Correct Record
+
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+
+0
+0
+0
+0
+0
+0
+0
+
+1
+1
+1
+1
+0
+0
+0
+
+Average
+
+0.668
+
+2.4
+
+2.5
+
+Declaration of competing interest
+
+[10] W. Chang, H. Yu, K. Zhong, Y. Yang, I.S. Dhillon, Taming pretrained
+transformers for extreme multi-label text classification, in: R. Gupta, Y. Liu,
+J. Tang, B.A. Prakash (Eds.), KDD ’20: The 26th ACM SIGKDD Conference
+on Knowledge Discovery and Data Mining, Virtual Event, CA, USA, August
+23-27, 2020, ACM, 2020, pp. 3163–3171.
+[11] D.D. Lewis, Y. Yang, T.G. Rose, F. Li, RCV1: A new benchmark collection
+for text categorization research, J. Mach. Learn. Res. 5 (2004) 361–397.
+[12] J.J. McAuley, J. Leskovec, Hidden factors and hidden topics: understanding
+rating dimensions with review text, in: Seventh ACM Conference on
+Recommender Systems, RecSys ’13, Hong Kong, China, October 12-16,
+2013, 2013, pp. 165–172, http://dx.doi.org/10.1145/2507157.2507163.
+[13] A.E.W. Johnson, T.J. Pollard, L. Shen, L. wei H. Lehman, M. Feng, M.M.
+Ghassemi, B. Moody, P. Szolovits, L.A. Celi, R.G. Mark, MIMIC-III, a freely
+accessible critical care database, Sci. Data 3 (2016).
+[14] A. Zubiaga, Enhancing navigation on wikipedia with social tags, 2012, CoRR
+arXiv:1202.5469.
+[15] C. Xiao, H. Zhong, Z. Guo, C. Tu, Z. Liu, M. Sun, Y. Feng, X. Han, Z. Hu, H.
+Wang, J. Xu, CAIL2018: A large-scale legal dataset for judgment prediction,
+2018, CoRR arXiv:1807.02478.
+[16] I. Chalkidis, M. Fergadiotis, P. Malakasiotis, I. Androutsopoulos, Large-scale
+multi-label text classification on EU legislation, in: Proceedings of the 57th
+Conference of the Association for Computational Linguistics, ACL 2019,
+Florence, Italy, July 28- August 2, 2019, Volume 1: Long Papers, 2019,
+pp. 6314–6322, http://dx.doi.org/10.18653/v1/p19-1636.
+[17] T. Vacek, D. Song, H. Molina-Salgado, R. Teo, C. Cowling, F. Schilder,
+Litigation analytics: Extracting and querying motions and orders from US
+federal courts, in: W. Ammar, A. Louis, N. Mostafazadeh (Eds.), Proceedings
+of the 2019 Conference of the North American Chapter of the Association
+for Computational Linguistics: Human Language Technologies, NAACL-HLT
+2019, Minneapolis, MN, USA, June 2-7, 2019, Demonstrations, Association
+for Computational Linguistics, 2019, pp. 116–121, http://dx.doi.org/10.
+18653/v1/n19-4020.
+[18] M. Medvedeva, M. Vols, M. Wieling, Using machine learning to predict
+decisions of the European court of human rights, Artif. Intell. Law 28 (2)
+(2020) 237–266, http://dx.doi.org/10.1007/s10506-019-09255-y.
+[19] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L.
+Zettlemoyer, V. Stoyanov, RoBERTa: A robustly optimized BERT pretraining
+approach, 2019, CoRR arXiv:1907.11692.
+[20] Y. Prabhu, M. Varma, FastXML: a fast, accurate and stable tree-classifier
+for extreme multi-label learning, in: S.A. Macskassy, C. Perlich, J. Leskovec,
+W. Wang, R. Ghani (Eds.), The 20th ACM SIGKDD International Conference
+on Knowledge Discovery and Data Mining, KDD ’14, New York, NY, USA August 24 - 27, 2014, ACM, 2014, pp. 263–272, http://dx.doi.org/10.1145/
+2623330.2623651.
+[21] W. Siblini, F. Meyer, P. Kuntz, CRAFTML, an efficient clustering-based
+random 
+
+
+================================================================================
+PAPER: 05_03_A sentence is known by the company it keeps Improving
+================================================================================
+
+--- TITLE ---
+Artificial Intelligence and Law (2024) 32:165–200 https://doi.org/10.1007/s10506-023-09345-y ORIGINAL RESEARCH A sentence is known by the company it keeps: Improving
+
+--- ABSTRACT ---
+The appropriate understanding and fast processing of lengthy legal documents are
+computationally challenging problems. Designing efficient automatic summarization techniques can potentially be the key to deal with such issues. Extractive summarization is one of the most popular approaches for forming summaries out of such
+lengthy documents, via the process of summary-relevant sentence selection. An efficient application of this approach involves appropriate scoring of sentences, which
+helps in the identification of more informative and essential sentences from the
+document. In this work, a novel sentence scoring approach DCESumm is proposed
+which consists of supervised sentence-level summary relevance prediction, as well
+as unsupervised clustering-based document-level score enhancement. Experimental
+results on two legal document summarization datasets, BillSum and Forum of Information Retrieval Evaluation (FIRE), reveal that the proposed approach can achieve
+significant improvements over the current state-of-the-art approaches. More specifically it achieves ROUGE metric F1-score improvements of (1−6)% and (6−12)% for
+the BillSum and FIRE test sets respectively. Such impressive summarization results
+suggest the usefulness of the proposed approach in finding the gist of a lengthy legal
+document, thereby providing crucial assistance to legal practitioners.
+
+--- INTRODUCTION ---
+Nowadays legal documents such as legal bills, case judgments, legal reports, etc., are
+easily available due to the recent growth of the world wide web. But such documents
+are quite lengthy and in most of the cases, these documents are unstructured also
+(Bhattacharya et al. 2019a; Kanapala et al. 2019). In such scenarios, it becomes very
+difficult even for legal practitioners to understand them completely and focus on the
+important aspect of such documents. For common citizens, legal documents are far
+from comprehensible and they are not able to draw any conclusions which can benefit them. Considering these situations, there should be some automatic techniques
+which summarize these lengthy documents and these summaries must contain all
+the important information. There have been several summarization approaches proposed in the literature for various kinds of legal documents (Jain et al. 2021d). In
+this work, an effective sentence scoring approach is proposed via the application of
+Legal BERT and deep clustering techniques, which significantly improves the scores
+of summary relevant sentences. This clustering enhanced sentence scoring approach
+enables high quality extractive summarization of legal documents.
+An automatic summary of any document can be generated in two ways: (1)
+Extractive (2) Abstractive. In case of the former, summary formation is done via
+the selection of salient sentences from the document itself. Whereas in case of the
+later, natural language generation techniques are employed in order to produce novel
+sentences. The key idea involved in the process of extractive summarization, which
+is the primary focus of this work, is to perform appropriate sentence scoring and
+identification of summary relevant sentences by considering high scoring ones. Several sentence scoring approaches have been proposed in the literature (Edmundson
+1969; Luhn 1958; Mihalcea and Tarau 2004; Nenkova and Vanderwende 2005),
+among which the study of sentence-level information content is one of the most
+common approaches. Before the recent developments of Deep Learning (DL) based
+techniques, traditional Natural Language Processing (NLP) based handcrafted sentence features like named entities, noun-adjective phrase counts, etc. were considered for the purpose of vectorized representation of sentences. Such representations
+were then used as part of a summary relevance learning problem. However, with
+the advent of effective DL techniques in the recent years, more appropriate abstract
+sentence representations with the help of pretrained embedding approaches, are
+becoming more common. Recently, BERT based sentence embedding techniques
+have been utilized by several researchers for various NLP tasks which has been able
+to provide considerable improvements (Eidelman 2019; Cohan et al. 2019). It is
+important to note here however, that for a long document summarization task, such
+sentence level representation alone can’t capture the global informativeness of the
+individual sentences (Xiao and Carenini 2019). This is especially crucial in case of
+lengthy documents like those in the legal domain. Therefore, a novel summarization
+approach is proposed in this work to address this problem, that enhances domainspecific Legal BERT based sentence scores via deep embedded sentence clustering.
+Clustering based improvement of extractive summarization has been explored
+widely in the literature (Akter et al. 2017; Alguliyev et al. 2019; Mallick et al.
+
+13
+
+DCESumm: Legal Document Summarization
+
+167
+
+2021; Wang et al. 2011), for the task of general text summarization. But most of
+these approaches utilize clustering techniques for grouping sentences and identifying informative cluster representative ones. However, such kind of approaches
+do not contain any supervised learning component and ignores the possible
+availability of labeled training data. We deal with this problem by considering
+sentence clustering techniques for improving supervised sentence-level scores,
+thereby realizing an effective combination of supervised as well as unsupervised
+learning. Moreover, since traditional clustering techniques ignore the task of representation learning, we consider the idea of deep embedding based clustering
+(Xie et al. 2016) which simultaneously improves the cluster assignments and the
+representation of sentences.
+A Deep Clustering Enhanced Summarization approach (DCESumm) is proposed in
+this work, where firstly we find the summary relevance scores of each sentence in a
+document via Legal BERT based Multi-Layer Perceptron (MLP) model. Then, these
+scores are improved via deep clustering approach (Xie et al. 2016) to get the modified
+scores of the sentences. Finally, using the modified scores, we pick the sentences as
+per the desired summary length and sort them according to their original order in the
+document to get a summary. The main idea with respect to the clustering based score
+enhancement is that if a sentence is having high summary relevance and also belongs
+to a cluster that contains other summary relevant sentences, then the particular sentence
+should have a higher probability of inclusion in the predicted summary. Whereas, if a
+sentence individually scores high, but belongs to a cluster containing low scoring sentences, then the particular sentence should also be scored lower.
+The key contributions of this work are:
+• Summarization of legal documents is formulated as a sentence classification task
+
+in which we find the summary relevance scores of each sentence individually,
+via a domain-specific Legal BERT based MLP model.
+• A novel sentence scoring approach is proposed using deep clustering to further
+enhance sentence-level summary relevance scores, thereby enabling the incorporation of global document-level information.
+The organization of the rest of the paper is as follows: Sect. 2 presents a detailed literature review of previous related works. The methodology of this work is described
+in Sect. 3. Section 4 presents a detailed description of the dataset along with evaluation metrics, comparison methods and experimental setup. The experimental results
+are presented in Sect. 5, while Sect. 6 gives a detailed discussion on the findings
+from the experimental analysis. Finally we conclude the paper in Sect. 7 along with
+potential future research directions.
+
+2 Related work
+The problem of text summarization is well explored in the field of Natural Language
+Processing. To address this problem, several approaches have been proposed in
+the literature such as frequency based approaches (Luhn 1958; Edmundson 1969;
+
+13
+
+168
+
+D. Jain et al.
+
+Nenkova and Vanderwende 2005), meta heuristic approaches (Clarke and Lapata
+2008; Saini et al. 2019), Bayesian approaches (Vanderwende et al. 2007; Ma and
+Nakagawa 2013), etc. There are several supervised approaches also for solving text
+summarization problem, but these approaches require a large amount of labeled data
+(Louis et al. 2010). Graph-based approaches have recently been applied to solve the
+text summarization problem, where sentences and their pairwise similarity scores
+are considered as the nodes and edge weights respectively. Some of the graph based
+approaches are Textrank (Mihalcea and Tarau 2004) and Lexrank (Erkan and Radev
+2004).
+When it comes to summarizing legal documents, most of the work revolves
+around extractive summarization techniques, in which researchers make use of rhetorical labels for the formation of summaries (Hachey and Grover 2004; Saravanan
+et al. 2006; Bhattacharya et al. 2019b). There have been research where optimization based approaches are proposed for legal document summarization (Kanapala
+et al. 2019; Bhattacharya et al. 2021). Several comparative analysis works on legal
+judgment documents, considering extractive summarization techniques, have been
+carried out in the literature (Bhattacharya et al. 2019a; Jain et al. 2021d; Gupta et al.
+2022). Most of the work have been carried out on case judgment documents in the
+past, but recently researchers have been exploring other legal documents as well,
+which includes legal bills, legal reports, patents, etc., (Eidelman 2019; Huang et al.
+2021; Jain et al. 2020, 2021a, b). With the development of deep learning approaches,
+researchers nowadays are proposing solutions which involves deep learning components for solving the legal document summarization problem (Duan et al. 2019; Jain
+et al. 2021c).
+Solving the summarization problem with the help of clustering technique
+is not new. There have been several works done which has used clustering based
+approaches ( Mallick et al. 2021; Wang et al. 2011) for text summarization in general. There have been works which proposes only the clustering based approach such
+as K-means approach for finding the salient sentences and hence for performing
+text summarization (Akter et al. 2017; Shetty and Kallimani 2017). Whereas there
+are other lines of research where researchers have used clustering based approach
+along with optimization techniques for the summarization task (Mishra et al. 2022).
+Recently researchers have utilized the contextualized embeddings for the formation
+of the clusters, following which the important sentences are picked from each cluster to form a summary (Moradi and Samwald 2019). Alguliyev et al. (2019) firstly
+discovered all the topics using the K-means clustering approach. In order to create optimal summary, a modified differential evolution (DE) technique is developed
+which allows to cover all the important topics in a summary and removes redundancy. Akter et al. (2017) calculated word score using the tf-idf approach and sentence score is the summation of its individual words’ scores with its position along
+with the help of cue words and skeleton words. Finally the summary is created by
+using the K-means algorithm. Srikanth et al. (2022) proposed a dynamic way for
+determining the number of sentences from each cluster for summary generation. For
+the formation of clusters, K-means algorithm is used which clusters the BERT-based
+embeddings. Shetty and Kallimani (2017) used K-means algorithm to form clusters,
+which depend upon the cosine similarity measure. Finally important sentences are
+
+13
+
+DCESumm: Legal Document Summarization
+
+169
+
+chosen from each cluster selected to build a summary. Alqaisi et al. (2020) proposes
+a clustering-based approach along with multi-objective optimization techniques
+inspired by evolutionary algorithms. This optimization based approach addresses the
+key aspects of relevancy, diversity/redundancy and coverage for building the final
+summary. Recently, a novel sentence clustering approach is proposed by Mishra
+et al. (2022) which is based on multi-objective differential evolution technique.
+Although clustering based summarization has been explored widely in the literature, very little or no work is done on feature learning. Clustering algorithms depend
+upon the notion of distance or dissimilarity among the data points in the feature
+space. For example, in case of the K-means clustering algorithm, we consider the L2
+norm between data points represented in a particular feature space. But how this feature space is chosen, is left as a research problem for the specific domain under consideration. Moreover, in case of lengthy documents, considering only sentence level
+information is not sufficient. We should also consider how does a sentence contribute towards the context of the entire document. In order to deal with these research
+gaps and also considering our domain specific dataset, we propose a Deep Clustering Enhanced Summarization approach (DCESumm) in this work. The main idea
+is to combine sentence-level summary relevance classification with deep sentence
+clustering based score enhancement. This kind of combination improves sentence
+scoring, thereby capturing both the global as well as the local context of the sentences. Moreover, due to the application of Deep Embedded Clustering approach,
+we overcome the limitations of traditional clustering techniques, thereby achieving
+better score enhancements.
+
+3 Methodology
+In this work, an improved sentence scoring mechanism DCESumm is proposed for
+performing extractive summarization of legal documents. The individual sentence
+scores in each document are firstly calculated by utilizing a trained MLP model
+based on Legal BERT embeddings. This probability score gives the summary relevance of each of the sentence of a document, based on the contents of individual
+sentences. Since these scores do not capture the global information of a document,
+therefore we propose to enhance these scores further with the help of deep embedded clustering based approach (DEC) which tries to capture the global information
+as well. The proposed approach is pictorially depicted in Fig. 1.
+The DCESumm approach is firstly focused on the task of summary relevance prediction for individual sentences, as shown in Fig. 1. In this step we first find the
+contextual representation of the sentences using a pretrained language model and
+then create an extractive summarization dataset. This dataset can be utilized to train
+a sentence-level summary relevance prediction model. Once we have the summary
+relevance predictions for individual sentences, then we move on to the next step of
+clustering. In the second step, we perform Deep Embedded Sentence Clustering to
+form sentence clusters. Once the sentence clustering is done, in the third step we
+enhance the individual summary relevance scores of the sentences by using the cluster scores. Finally, using the enhanced scores we rank the document sentences for
+
+13
+
+170
+
+D. Jain et al.
+
+Fig. 1  Illustration of getting predicted summaries using DCESumm
+
+generating the final predicted summary. In this way, with the help of the proposed
+approach, we are able to achieve improved legal document summarization by combining the power of supervised sentence level predictions and unsupervised sentence
+clustering. The detailed description of each of these steps is presented in the subsections below.
+3.1 Contextual representation
+Given a document, the first task is to figure out which of the sentences in the document are individually informative, without considering the global context. In order
+to achieve this, firstly sentence embeddings are created for the individual sentences
+
+13
+
+DCESumm: Legal Document Summarization
+
+171
+
+present in the document under consideration. Using a labeled training dataset we
+can learn a binary classification model that can give us sentence level predictions for
+summary relevance. A BERT based pre-trained model is utilized to obtain the sentence representations. The domain specific application of BERT based pre-trained
+models are being explored by several researchers since these approaches are able to
+achieve state-of-the-art results on many different tasks (Devlin et al. 2018). Recently,
+a legal domain specific BERT model has been developed by Chalkidis et al. (2020),
+where
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 05_04_On_the_Effectiveness_of_Pre-Trained_Language_Models_for_Legal_Natural_Language_Processing_An_Empirical_Study
+================================================================================
+
+--- TITLE ---
+Received 11 May 2022, accepted 2 July 2022, date of publication 12 July 2022, date of current version 22 July 2022. Digital Object Identifier 10.1109/ACCESS.2022.3190408 On the Effectiveness of Pre-Trained Language
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+In recent years, pre-trained language model (PLM) based
+methods have gained significant traction in the natural
+language processing (NLP) field among both academic
+researchers and industrial practitioners. They typically follow
+a ‘‘pre-train and fine-tune’’ paradigm. First, a PLM is
+pre-trained on large-scale corpora of texts on masked word
+prediction, next sentence prediction, and/or other tasks in
+order to learn dependencies and contextual information over
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Fan Zhang
+VOLUME 10, 2022
+
+.
+
+longer pieces of text rather than just over a few adjacent
+words. Then, the model can be further fine-tuned on the texts
+of a specific domain, targeting a downstream task of that
+domain. Researchers have proposed a number of PLMs in the
+past a few years (e.g., BERT [1], RoBERTa [2], BART [3],
+PEGASUS [4], BIGBIRD [5], etc.) and have demonstrated
+their advantages over traditional methods on a variety of NLP
+tasks in different domains. For the rest of this paper, we call
+PLMs that are pre-trained on general-domain texts ‘‘generaldomain’’ PLMs. In addition to those that were pre-trained
+on general-domain texts, several domain-specific PLMs have
+also been released to the community and have achieved
+
+This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/
+
+75835
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+superior performances compared to general-domain models.
+These include SCIBERT [6], BioBERT [7], MatBERT [8],
+GraphCodeBERT [9] and LegalBERT [10].
+NLP tasks in the legal domain present several unique and
+significant challenges. First of all, the lack of large-scale,
+high-quality datasets has been a major hurdle in advancing
+legal NLP research. More so than other domains, annotating
+legal documents for a specific task requires substantial
+domain knowledge, which makes annotation processes both
+time-consuming and monetarily expensive. Furthermore,
+legal documents possess a distinctive vocabulary, containing
+both unique legal terms (e.g., ‘‘estoppel’’) as well as terms
+with specific legal meanings that differ from their regular
+English meanings. For instance, the word ‘‘standing’’ in
+the legal sense refers to a party’s right to initiate a lawsuit
+or petition; however, in general-domain texts, ‘‘standing’’
+typically encodes the meaning of the verb ‘‘to stand’’.
+Also, legal texts may require custom pre-processing, which
+poses a challenge for existing NLP tools developed for
+general-domain texts. For instance, legal citations (e.g.,
+Schwenker v. St. Louis County National Bank, 682 S.W.2d
+868, 870 (Mo.App.1984)) in caselaw opinions are extremely
+important as they may indicate the precedents1 for new
+cases, and methods have been specifically developed for the
+extraction and resolution of such information [11]. Lastly,
+legal documents are often significantly longer than texts from
+other domains. For example, Song et al. showed that in a
+dataset of 50K U.S. cases, about 35% of them have 3,000
+words or more [12]. In contrast, news stories typically consist
+of only a few hundred words. This poses another critical
+challenge for legal NLP systems, especially those based on
+PLMs.
+Despite the challenges mentioned above, PLMs have
+drawn substantial attention from legal NLP researchers.
+A growing number of datasets have been released to facilitate
+research in this area on different tasks, including binary
+classification [13], [14], multi-label classification [12], [15],
+[16], question answering [14], [17], summarization [18]–[20]
+and information retrieval [21]. Datasets in languages other
+than English have also become more readily available, such
+as a trilingual (French/German/Italian) outcome prediction
+dataset [22], the 2.6 million-case dataset from China’s
+Supreme Court [23], and GerDaLIR (a German information
+retrieval dataset with 123K queries) [24].
+Much effort has been devoted to the design and
+development of novel techniques for legal NLP applications. Vacek et al. [25] implemented an outcome extraction system that combines SVM [26] and deep neural
+networks. Chalkidis et al. [15] compared several classical and PLM-based methods for a multi-label document classification task with more than 4,000 labels.
+By utilizing a label embedding mechanism and multi-task
+learning, LAMT_MLC [12] obtained higher performance
+than state-of-the-art methods on two large-scale multi-label
+1 Prior cases that serve as authority to justify the current decision.
+
+75836
+
+classification datasets. On two different question answering
+tasks [14], [27], general-domain and domain-specific PLMs
+have respectively shown superior performance over other
+methods. In the information retrieval field, Shao et al. [28]
+developed a system that utilizes both domain-specific pretraining and fine-tuning of BERT [1] and secured one of the
+top ranks in the COLIEE2020 competition [29].
+Despite the substantial developments in several aspects
+of legal NLP research, the effectiveness of different types
+of approaches on a diverse range of legal NLP tasks are
+not well understood because they have not been directly
+and comprehensively compared in a single study. First of
+all, although there exist several NLP benchmarks, such
+as GLUE [30], SuperGLUE [31], CLUE [32], KILT [33],
+CUGE [34], LexGLUE [35] and GEM [36], most of
+them focus on general-domain texts rather than legal data.
+Therefore, it is difficult to understand how well existing
+approaches work for legal tasks, given the specific challenges
+of legal texts as discussed above. Furthermore, existing legal
+NLP benchmarks typically have limited coverage on different
+types of tasks. For example, Niklaus et al. [22] studied the
+effectiveness of simple baselines and several PLMs only on
+a binary judgment prediction task. LexGLUE [35] is a recent
+effort with broader coverage that evaluated several PLMs on
+seven legal datasets; however, six out of the seven datasets
+are multi-class/multi-label classification tasks. Also, it only
+evaluated general-domain or domain-specific PLMs with no
+coverage on state-of-the-art systems.
+Considering the challenging nature of legal NLP tasks,
+the growing interest in this field and the limited availability and coverage of existing benchmarks, we present
+a comprehensive and up-to-date empirical study on eight
+datasets across five different legal NLP tasks: binary classification, multi-label classification, multiple choice question answering, summarization and information retrieval.
+We start with simple baselines (e.g., unsupervised methods,
+classical machine learning algorithms or non-PLM deep
+learning approaches) in order to set up the basis for
+further comparison. Next, we employ several mainstream
+general-domain PLMs on each dataset to examine their
+effectiveness over baselines. We further run domain-specific
+PLMs (pre-trained on top of general-domain models or from
+scratch by using legal documents) on these datasets in order
+to study whether PLMs embedded with legal knowledge
+can outperform general-domain models. Finally, we apply
+six recent state-of-the-art systems that were developed for
+general-domain texts to these legal datasets in order to
+understand their applicability to the legal domain. By conducting extensive experiments, we try to answer the following
+questions:
+1) Are simple baseline systems able to achieve decent
+performance on legal NLP tasks?
+2) Would mainstream general-domain PLMs outperform
+simple baselines?
+3) Would domain-specific PLMs achieve better performance than general-domain models?
+VOLUME 10, 2022
+
+D. Song et al.: On the Effectiveness of Pre-Trained Language Models for Legal NLP: An Empirical Study
+
+4) Are PLM-based state-of-the-art systems developed for
+general domains generalizable to legal data?
+5) What are the challenges and future directions for legal
+natural language processing?
+We organize the rest of the paper as following. In Section II,
+we discuss existing work on different legal NLP tasks.
+We then describe the selected datasets and our evaluation
+strategy in Section III, and present the evaluation results in
+Section IV. We discuss the results, the challenges and future
+directions in Section V and conclude in Section VI.
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: 05_05_ITALIAN-LEGAL-BERT models for improving natural language processing 
+================================================================================
+
+--- TITLE ---
+Computer Law & Security Review 52 (2024) 105908 Contents lists available at ScienceDirect Computer Law & Security Review: The International
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+In many domains, specialized models performed better than pretrained models on general domains [1–5]. In general, the more seman­
+tically distant a domain-specific language is from the common language
+than the greater the advantages of using specialized models, especially
+for complex tasks.
+In the Italian legal context, the discrepancy between the specific
+language and the general language is even more pronounced. The Italian
+legal language has its unavoidable complexity, like all technical lan­
+guages, but it is made even more obscure by stylistic expedients that
+often forcibly show a continuity with the languages of the past (Latin or
+old Italian). Full understanding of legal texts is the exclusive prerogative
+of experts in the field, who are able to grasp the meaning of these ex­
+pressions. Carofiglio [6], a former Italian magistrate and politician,
+compared legal jargon to a foreign language that one learns in college to
+be admitted to a guild. A language capable of excluding the uninitiated
+from courtrooms and judicial acts. It can be perceived by software as a
+bizarre language that violates Italian grammar and syntax (character­
+ized by imprecision, vagueness, opacity, stereotypes, archaisms,
+redundant circumlocutions, formular phrases, abuse of subordinates). It
+contains technical terms with specific and unambiguous meanings such
+as “contumacia”, “anticresi”, “anatocismo”, and “sinallagma” (contu­
+macy, antichresis, compound interest, reciprocity). It also makes
+extensive use of terms that are in common use, but are often used with
+their own and specific meanings, if not completely different from those
+* Corresponding author.
+E-mail address: d.licari@santannapisa.it (D. Licari).
+https://doi.org/10.1016/j.clsr.2023.105908
+Available online 28 October 2023
+2212-473X/© 2023 Elsevier Ltd. All rights reserved.
+
+in common use. For example, “nullita`”, “annullabilita`”, “inefficacia”,
+“inutilizzabilita`” (nullity, voidability, ineffectiveness,inadmissibility),
+which outside of legal language are synonyms for annulment, refer to
+entirely different and distinct concepts and situations. Such locutions as
+“buon padre di famiglia” (good family man) and “possessore di buona
+fede” (possessor of good faith) indicate different concepts from the
+language of common use [7].
+Traditional language models often struggle to overcome the limita­
+tions posed by the linguistic complexity of legal text. Their training does
+not adequately prepare them to understand and process the intricate
+nature of legal language, including its grammar, syntax, and specialized
+terminology. However, these limitations can be effectively addressed by
+employing models that are specifically trained and fine-tuned to handle
+legal text. By focusing on the unique characteristics and nuances of legal
+language, these specialized models offer improved accuracy and profi­
+ciency in comprehending and analyzing legal documents.
+Chalkidis et al. [8] made significant contributions to the field of legal
+natural language processing by developing the LEGAL-BERT framework,
+which encompasses a family of transformer-based models tailored spe­
+cifically for the English legal domain. Their research aimed to enhance
+the performance of the general-purpose BERT-BASE model in various
+prediction tasks by incorporating legal domain expertise. LEGAL-BERT
+consists of multiple variants, each distinct in terms of its pre-training
+methodology and the sources of training data. Chalkidis et al.
+employed two primary methods of domain adaptation within the
+LEGAL-BERT framework: 1. Additional Pre-training: In this approach, a
+
+D. Licari and G. Comandè
+
+Computer Law & Security Review: The International Journal of Technology Law and Practice 52 (2024) 105908
+
+BERT-BASE model underwent further pre-training on a diverse range of
+legal text sources, such as EU legislation, UK legislation, US contracts,
+and US cases. This additional pre-training equipped the model with
+domain-specific knowledge, enabling it to understand and classify legal
+documents more effectively. 2. From-Scratch Pre-training: Another
+variant of LEGAL-BERT was pre-trained entirely from scratch using legal
+documents as the sole training data source. This model, starting with no
+prior knowledge from a general BERT model, learned directly from legal
+text corpora, including court cases, statutes, and legal articles. These
+variants of LEGALBERT were trained on diverse legal text sources,
+allowing them to capture the nuanced linguistic patterns, terminologies,
+and contextual cues unique to the legal domain. Chalkidis et al. con­
+ducted a series of experiments to evaluate the performance of
+LEGAL-BERT across various legal prediction tasks, such as legal docu­
+ment classification, legal entity recognition, sentiment analysis in legal
+texts, and legal question answering. The findings of their research
+demonstrated that LEGAL-BERT consistently outperformed the
+general-purpose BERT-BASE model across these tasks. The incorpora­
+tion of domain-specific knowledge led to higher prediction accuracy,
+improved comprehension of legal language, and enhanced contextual
+representation for legal documents. The development of LEGAL-BERT
+bears substantial practical implications for the legal profession. It pro­
+vides a powerful tool for legal research, document analysis, and infor­
+mation retrieval. Legal professionals can leverage LEGAL-BERT to
+efficiently categorize and analyze legal documents, identify relevant
+case law, extract legal concepts, and make more informed decisions.
+Inspired by LEGAL-BERT, we present the development of
+ITALIANLEGAL-BERT models, capable of understanding the semantic
+meaning of Italian legal texts as never before.
+In this paper, we make the following contributions:
+
+trained NPL models. Some researchers have demonstrated that the use
+of domain-specific pre-trained models can improve the performance of
+downstream tasks in the legal domain. Chalkidis et al. [8] proposed the
+LEGAL-BERT models pre-trained from scratch on 11.5 GB of legal texts
+and its variant further pre-training BERT-base model on legal corpora.
+Their experiments showed more substantial improvement in the most
+challenging end-task (i.e., multilabel classification in ECHR-CASES and
+contract header, lease details in CONTRACTS-NER), where in-domain
+knowledge is more important. Furthermore, no significant differences
+in performance were found between the two LEGAL-BERT variants.
+Similar results are reported by Zheng et al. [10]. They also trained
+LEGAL-BERT models both with additional pre-training from the BERT
+base and with pre-training from scratch using a 37GB legal text collec­
+tion. They compared their LEGAL-BERT and BERT-Base models on
+several downstream NLP tasks with different levels of difficulty and
+domain specificity. They suggest using domain-specific pre-trained
+models for very difficult legal tasks. They outperformed BERT-Base on
+complex downstream tasks such as identifying whether contract terms
+are potentially unfair [11]. In contrast, additional domain pre-training
+adds little value to simpler tasks compared to BERT-Base.
+Recent works by Zhang et al. [12,13] on legal argument mining
+confirm this trend. Domain-specific BERT variants have achieved strong
+performance in many tasks. No significant differences were found be­
+tween the two different methods of domain adaptation.
+’Vanilla’ Transformer models, such as LEGAL-BERT, may have dif­
+ficulty capturing long-range relationships between words, and their use
+is limited to small portions of the text (typically 512 tokens) due to the
+computational cost of the attention mechanism. Condevaux and Harispe
+[14] proposed a new Local-Sparse-Global (LSG) attention mechanism to
+handle long sequences. Local attention allows the model to focus on
+specific parts of the input, sparse connections are used to extend the
+local context by selecting an additional set of tokens according to a set of
+rules (e.g. using norm, stride, pooling, LSH approach), while global
+attention allows the model to consider the relationships between
+different parts of the input. They demonstrated the superiority of the
+LEGAL-BERT with LSG attention mechanism over the original
+LEGAL-BERT model on three Multi-class classification legal tasks
+[15–17].
+The success in this area encouraged researchers to build pre-trained
+language models on legal corpora in different languages [18]. Masala
+et al. 2021 [19] published the jurBERT model pretrained on a large
+Romanian legal corpus. It outperformed several strong baselines for
+legal judgment prediction tasks. In the same year, Douka et al. [20]
+created a language model adapted to French legal texts and showed that
+their model outperformed its generalized counterparts in the French
+legal domain. In China, researchers [21] have improved many predictive
+tasks on long Chinese legal documents using a pretrained language
+model on millions of documents published by the Chinese government.
+In 2022, AL-Qurishi et al. presented AraLegal-BERT [22], a pretrained
+language model for Arabic legal text, and showed that their model
+achieved better accuracy than the general BERT over the Arabic legal
+text. In Italy, A. Tagarelli and A. Simeri 2022 [23] proposed LamBERTa
+models for retrieving law articles, developing a BERT further pre-trained
+on the Italian Civil Code (ICC, few megabytes of data). Their model
+outperformed the ``predecessors” of BERT text classification models
+(BiLSTM, TextCNN, TextRCNN, Seq2Seq, Transformer) for prediction
+tasks on ICC articles.
+In the same year, we introduced the ITALIAN-LEGAL-BERT model
+[24], which involved an extended pre-training process of the Italian
+BERT-base model using Italian civil cases. This current paper expands
+upon the initial ITALIAN-LEGAL-BERT paper presented at the confer­
+ence and encompasses several noteworthy contributions. Primarily, we
+present the distillation of ITALIAN-LEGAL-BERT’s knowledge into a
+smaller and more efficient model that operates at three times the speed
+while preserving its effectiveness. Additionally, we introduce a novel
+model based on CamemBERT, which undergoes comprehensive
+
+1. We publicly release1 on hunggingface hub [9] the ITALIAN-LEGAL
+BERT models to support Italian legal NLP research; to the best of
+our knowledge, they are the first language models pre-trained on a
+large corpus of Italian legal cases.
+
+--- CONCLUSION ---
+TOTAL
+
+Classifier
+
+ITA-LEGAL-BERT-FP
+
+• BERT±Linear, it adds a Dropout layer on BERT pooled output with a
+Dropout rate 0.1 and an output Linear layer (BERT+Linear). Finally,
+the cross-entropy loss weighted class distribution of the training set is
+computed between the output of the last layer and target labels. The
+class weights are estimated from the class weight function of Sklearn
+[36] for unbalanced datasets.
+• BERT±MLP, it adds two fully connected layers (FC) followed by
+REctify Linear Unit (RELU), a Normalization layer, an output Linear
+layer, and weighted cross-entropy loss.
+• BERT±CNN, it adds three 1D convolution layers (Conv1d) incre­
+mental kernel sizes (3,4,5). Each layer is followed by RELU. A
+maximum global pooling layer is applied to the last convolution
+layer, followed by a Dropout layer (rate 0.1), an output Linear layer,
+and weighted cross-entropy loss.
+• BERT±LSTM, it adds a bidirectional Long short-term memory
+(LSTM) layer on BERT sequence output, a Dropout layer with rate
+0.1, an output Linear layer, and weighted cross-entropy loss.
+
+SECTION NAME
+
+Encoder
+
+8
+
+D. Licari and G. Comandè
+
+Computer Law & Security Review: The International Journal of Technology Law and Practice 52 (2024) 105908
+
+4.3. Semantic similarity with bi-encoders
+
+Table 7
+Thresholds, F-score (F1), and sentence encoding time of text similarity classifi­
+cation task using ITALIAN BERT and ITALIAN LEGAL BERT variants as biencoder.
+
+We tested the ability of the model on the task of determining whether
+two pieces of legal text are similar, in terms of meaning. The strong
+assumption is that two contiguous sentences within a specific section are
+semantically related and refer to the same context, instead, two sen­
+tences taken randomly from two different documents and different
+sections can refer to a different context.
+Dataset. We built the dataset by taking, from 1503 civil law judg­
+ments, pairs of contiguous portions of the text (of 5 sentences) in the
+"CONCLUSION OF PARTIES" and "DEVELOPMENT OF PROCESS" sec­
+tions and text pairs from two different documents and sections. We
+labeled as ‘similar’ the contiguous pairs from the same document and
+‘unsimilar’ the pairs from different documents. The final dataset con­
+tains 4018 text pairs (2009 labeled as ‘similar’ and the other 2009 as
+‘unsimilar’). The choice of taking similar sentences from the two sec­
+tions was made on the basis that the "CONCLUSION OF THE PARTIES"
+and "DEVELOPMENT OF THE PROCESS" sections are more descriptive
+and with self-contained concepts than other sections such as "REASON"
+or "CONCLUSION" that contain many references to the previous sec­
+tions. The initial assumption on the similarity has been validated by
+experts on a subset of the dataset.
+Similarity Procedure. The semantic similarity between the text
+pairs in the dataset was evaluated using the Italian BERT and ITALIANLEGALBERT models to obtain the context vectors of the two sentences to
+be compared (using mean pooling on the last layer) and, then, the cosine
+similarity for the similarity scores between the pair of vectors (cos(x,y) =
+xy
+‖x|⋅‖y‖). For each model, a similarity threshold was established to identify
+
+Encoder
+
+Threshold
+
+F1
+
+Time (secs)
+
+ITA-BERT
+ITA-LEGAL-BERT-FP
+ITA-LEGAL-BERT-SC
+DISTIL-ITA-LEGAL-BERT
+
+0.835
+0.969
+0.752
+0.968
+
+0.7509
+0.7651
+0.8230
+0.7868
+
+96.42
+96.26
+94.73
+18.52
+
+’similar’, and conversely, a value that is too high could lead to classi­
+fying all pairs of sentences as ’unsimilar’. The choice of a correct simi­
+larity threshold depends on the data under consideration and the
+specific vector space of a model. Therefore, we optimized its value
+independently on all models by selecting the best value that maximizes
+the F1-score on the dataset. The values tested are in the range of 0 to 1
+with step 0.001. The best thresholds for the four models are reported in
+Table 7.
+4.4. Legal document classification
+Legal Document Classification is a crucial task in the legal domain
+that involves assigning specific labels or categories to legal documents
+based on their content, purpose, or characteristics. This classification
+process enables efficient organization, retrieval, and analysis of legal
+documents, facilitating legal research and decision-making. It encom­
+passes identifying the subject matter, type, jurisdiction, or outcome of a
+legal document.
+In this particular context, we are evaluating the performance of
+ITALIANLEGAL-BERT models on a challenging long text classification
+task. The objective is to accurately identify the precise legal topic
+addressed in the document, considering that the documents in question
+exceed the token limit of 512, which is the capacity of the standard BERT
+model. To overcome this limitation, we employ the LSG (Local-SparseGlobal) versions of the models, which are specifically designed to handle
+long texts efficiently.
+
+similar and non-similar texts. The Fig. 2 shows the similarity scores
+distribution over the groups of ‘similar’ and ‘unsimilar’ pairs of sen­
+tences, calculated using the Italian BERT and ITALIAN-LEGAL-BERT
+models as contextual sentence encoders.
+Optimized threshold. A similarity threshold is a numerical value
+that is applied to the similarity scores to identify the two classes
+(’similar’ and ’unsimilar’). Different thresholds produce different results
+in terms of precision, recall, and F1-score when compared to the anno­
+tated dataset. A threshold that is too low classifies all sentences as
+
+Fig. 2. Box plots showing the different range of semantic similarity scores over the groups of ‘similar’ and ‘unsimilar’ pairs of sentences using the Italian BERT and
+ITALIANLEGAL-BERT models. The red dashed line shows the optimized similarity threshold on the results of the four models.
+9
+
+D. Licari and G. Comandè
+
+Computer Law & Security Review: The International Journal of Technology Law and Practice 52 (2024) 105908
+
+Table 8
+It summarizes the number of tokens using the ITALIAN-LEGAL-BERT tokenizer. It shows the central tendency, dispersion, minimum, maximum, and 25th, 50th, 75th
+percentiles.
+Label
+
+Count
+
+Mean
+
+STD
+
+Min
+
+25%
+
+50%
+
+75%
+
+Max
+
+Joint divorce – Religious
+Joint divorce – Civil
+Litigation divorce - Religious
+Litigation divorce - Civil
+Judicial separation
+TOTAL
+
+200
+200
+200
+200
+200
+1000
+
+1811.5
+1760.5
+2021.8
+1925.4
+2499.1
+2003.7
+
+941
+875.1
+1363.1
+1490.5
+1947.4
+1402.4
+
+934
+835
+733
+631
+641
+631
+
+1342.2
+1319.5
+1186
+1075
+945.7
+1200.7
+
+1558
+1569
+1514
+1389
+1961
+1561
+
+1914.7
+1917
+2216
+2129.2
+3383.5
+2195.75
+
+9898
+9522
+9606
+10062
+11396
+11396
+
+The Table 8 presents a summary of token counts using the
+ITALIANLEGAL-BERT tokenizer for different labels or categories. It in­
+cludes statistical measures such as count, mean, standard deviation,
+minimum, maximum, and percentiles (25th, 50th, and 75th) to describe
+the distribution of token counts within each label. Additionally, the
+table provides an overall "TOTAL" row that showcases statistics for the
+entire dataset. This information offers valuable insights into the length
+and variability of token counts, providing a better understanding of the
+characteristics of the legal documents that are being classified.
+The evaluation encompasses both the standard ITALIAN-LEGAL-BERT
+models and their LSG variants, which incorporate the LSG attention
+mechanism to effectively process long sequences. By comparing the per­
+formance of these models, we aim to assess their effectiveness in handling
+lengthy legal texts and their potential application in real-world scenarios
+where accurate classification of lengthy documents is required.
+The results obtained from this benchmark will provide valuable in­
+sights into the capabilities of ITALIAN-LEGAL-BERT models in handling
+long legal texts and their potential applicability in various legal do­
+mains. Moreover, it highlights the advantages of utilizing the LSG ver­
+sions of the models, which enable improved performance on long text
+classification tasks that surpass the token limit of the standard BERT
+model.
+Dataset. Also, for this task, we created an ad-hoc dataset by taking
+1000 judgments of 5 topics on family law from the Civil Court of Genoa
+with which we have an agreement. The dataset contains an equal
+number of documents relating to Civil and Religious joint divorces, Civil
+and Religious litigation divorces, and separations. It was split stratified
+on the topic of the document, 70% of the data was used to train the
+models, 10% of the training data for validation, and 30% for testing.
+Training procedure. The training procedure involved fine-tuning
+the Italian BERT and ITALIAN-LEGAL BERT models, including their
+LSG (Local-Sparse-Global) variants, with a linear sequence classifier on
+top. All models were trained using the same hyperparameter configu­
+ration, as detailed in Table A.15 in the Appendix. To handle the chal­
+lenge of processing long documents efficiently, we set the maximum
+sequence length for LSG models to 2500 tokens, which corresponds to
+the 80th percentile of the dataset. This choice of sequence length aims to
+balance capturing the necessary information while maintaining
+computational efficiency. In addition to the maximum sequence length,
+we also explored a sliding window approach to handle very long doc­
+uments. This approach involves dividing a long text into smaller chunks,
+typically consisting of 512 tokens, with a certain amount of overlap
+between the chunks. In this case, we used a 50 percent overlap to
+minimize information loss that may occur due to abrupt cuts. Each
+chunk was then assigned a document label.
+During training, the model was trained on these sub-sequences (or
+chunks) to predict the corresponding document label. The final predic­
+tion for a document was determined by selecting the mode (most
+frequent prediction) across all sub-sequences (or chunks) of the docu­
+ment. This aggregation strategy helps consolidate predictions and pro­
+vide a single label for the entire document. By employing this training
+procedure, we aim to optimi
+
+
+================================================================================
+PAPER: 05_06_Classifying_European_Court_of_Human_Rights_Cases_Using_Transformer-Based_Techniques
+================================================================================
+
+--- TITLE ---
+Received 9 March 2023, accepted 14 May 2023, date of publication 22 May 2023, date of current version 8 June 2023. Digital Object Identifier 10.1109/ACCESS.2023.3279034 Classifying European Court of Human Rights
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+We live in a society increasingly governed by legal rules and
+regulations [1]. The juridification of society increases the
+importance of defending and/or upholding one’s legal rights.
+High-quality legal representation is often expensive, so those
+who cannot afford it rely on public legal aid programs [2].
+The associate editor coordinating the review of this manuscript and
+approving it for publication was Arianna Dulizia
+55664
+
+.
+
+Studies of several countries’ legal systems indicate that legal
+aid is not being provided to all those in need. An analysis of
+the legal system in Norway [3] shows that only approximately
+9% of the population is qualified for legal aid. A study of the
+legal system in the U.K. [4] indicates that there are several
+issues with providing free legal aid. At the maximum level
+of disposable income at which legal aid is available, many
+households do not have sufficient income to meet a minimum
+standard of living before legal fees are paid. Typically, their
+
+This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 License.
+For more information, see https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+VOLUME 11, 2023
+
+A. S. Imran et al.: Classifying European Court of Human Rights Cases Using Transformer-Based Techniques
+
+disposable incomes are 10 to 30 percent too low to meet a
+minimum budget [5].
+Even those with the lowest incomes, the most vulnerable
+individuals, are excluded from legal aid if they have savings
+or assets worth more than £8,000, or in some cases, £3,000.
+If a person has this much money in the bank, they can pay for
+some legal expenses without affecting their current ability to
+maintain a minimum standard of living [4].
+A means test is used to determine whether a person or
+household is eligible for a particular benefit or payment [6].
+However, the means test also considers the value of people’s
+homes. As a result, homeowners who are not employed may
+be excluded from legal aid, despite having no realistic option
+for paying the legal fees [4].
+However, by improving the effectiveness of the provision
+of legal assistance, the cost of legal aid may be reduced,
+and increase the number of cases assisted within the publicly
+funded legal aid budgets. Through this research paper, we aim
+to look at a solution to improve efficiency, thereby lowering
+the legal system’s costs for private plaintiffs and defendants,
+by automating the classification of legal cases.
+We adopted several transformer-based models to classify
+large legal documents regarding human rights violations.
+With transformer-based architectures, it has become easier
+to build more capable models, and pretraining has made it
+possible to use this capability effectively for a wide variety
+of tasks. This article is based on the authors’ previous thesis
+work and the readers are advised to read the thesis for more
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{Song2022, author = {Song, Dezhao and Vold, Andrew and Madan, Kanika and Schilder, Frank}, title = {Multi-label legal document classification: A deep learning-based approach with label-attention and domain-specific pre-training},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+

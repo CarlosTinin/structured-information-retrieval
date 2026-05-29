@@ -1,0 +1,60 @@
+@ARTICLE{Pereira20211087,
+	author = {Pereira, Denilson Alves},
+	title = {A survey of sentiment analysis in the Portuguese language},
+	year = {2021},
+	journal = {Artificial Intelligence Review},
+	volume = {54},
+	number = {2},
+	pages = {1087 – 1115},
+	doi = {10.1007/s10462-020-09870-1},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85087645432&doi=10.1007%2fs10462-020-09870-1&partnerID=40&md5=19740bef56f1bb70062d1e7b923d17da},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 48}
+}
+
+@ARTICLE{de Menezes-Neto2022,
+	author = {de Menezes-Neto, Elias Jacob and Clementino, Marco Bruno Miranda},
+	title = {Using deep learning to predict outcomes of legal appeals better than human experts: A study with data from Brazilian federal courts},
+	year = {2022},
+	journal = {PLoS ONE},
+	volume = {17},
+	number = {7 July},
+	doi = {10.1371/journal.pone.0272287},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85135026611&doi=10.1371%2fjournal.pone.0272287&partnerID=40&md5=a317d663629fa3085bd0bef1fca2fe69},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 37; All Open Access, Gold Open Access, Green Open Access}
+}
+
+@ARTICLE{de Sousa2022,
+	author = {de Sousa, Weslei Gomes and Fidelis, Rafael Antunes and de Souza Bermejo, Paulo Henrique and da Silva Gonçalo, Ana Gersica and de Souza Melo, Bruno},
+	title = {Artificial intelligence and speedy trial in the judiciary: Myth, reality or need? A case study in the Brazilian Supreme Court (STF)},
+	year = {2022},
+	journal = {Government Information Quarterly},
+	volume = {39},
+	number = {1},
+	doi = {10.1016/j.giq.2021.101660},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85120873086&doi=10.1016%2fj.giq.2021.101660&partnerID=40&md5=20324e81a87a2a027a20736f4db68278},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 34}
+}
+
+@ARTICLE{Pereira2025,
+	author = {Pereira, Jayr and Assumpcao, Andre and Trecenti, Julio and Airosa, Luiz and Lente, Caio and Cléto, Jhonatan and Dobins, Guilherme and Nogueira, Rodrigo and Mitchell, Luis and Lotufo, Roberto},
+	title = {INACIA: Integrating Large Language Models in Brazilian Audit Courts: Opportunities and Challenges},
+	year = {2025},
+	journal = {Digital Government: Research and Practice},
+	volume = {6},
+	number = {1},
+	doi = {10.1145/3652951},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-105003098361&doi=10.1145%2f3652951&partnerID=40&md5=6cb7d9e04983605d170dd597cb6bcd36},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 5; All Open Access, Bronze Open Access}
+}

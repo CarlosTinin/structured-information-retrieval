@@ -1,0 +1,47 @@
+@ARTICLE{LeBaron202129,
+	author = {LeBaron, Genevieve},
+	title = {The Role of Supply Chains in the Global Business of Forced Labour},
+	year = {2021},
+	journal = {Journal of Supply Chain Management},
+	volume = {57},
+	number = {2},
+	pages = {29 – 42},
+	doi = {10.1111/jscm.12258},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85100865535&doi=10.1111%2fjscm.12258&partnerID=40&md5=db39bd36756f861b18dc29e3671aeb6f},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 155; All Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Benstead20211136,
+	author = {Benstead, Amy V. and Hendry, Linda C. and Stevenson, Mark},
+	title = {Detecting and remediating modern slavery in supply chains: a targeted audit approach},
+	year = {2021},
+	journal = {Production Planning and Control},
+	volume = {32},
+	number = {13},
+	pages = {1136 – 1157},
+	doi = {10.1080/09537287.2020.1795290},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85088505818&doi=10.1080%2f09537287.2020.1795290&partnerID=40&md5=c038b98709878b9e81a2e6f25b007f1a},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 79; All Open Access, Green Open Access, Hybrid Gold Open Access}
+}
+
+@ARTICLE{Islam2022455,
+	author = {Islam, Muhammad Azizul and Van Staden, Chris J.},
+	title = {Modern Slavery Disclosure Regulation and Global Supply Chains: Insights from Stakeholder Narratives on the UK Modern Slavery Act},
+	year = {2022},
+	journal = {Journal of Business Ethics},
+	volume = {180},
+	number = {2},
+	pages = {455 – 479},
+	doi = {10.1007/s10551-021-04878-1},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-85109299287&doi=10.1007%2fs10551-021-04878-1&partnerID=40&md5=c5002369222e8c05de07421a4386cc4d},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+	note = {Cited by: 72; All Open Access, Hybrid Gold Open Access}
+}

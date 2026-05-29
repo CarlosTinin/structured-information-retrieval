@@ -1,0 +1,1274 @@
+Information Processing and Management 62 (2025) 104054
+
+Contents lists available at ScienceDirect
+
+Information Processing and Management
+journal homepage: www.elsevier.com/locate/infoproman
+
+A novel large-language-model-driven framework for named
+entity recognition
+Zhenhua Wang a,b , Huiru Chen b, Guang Xu a , Ming Ren a,*
+a
+b
+
+School of Information Resource Management, Renmin University of China, Beijing 100872, PR China
+School of Computing, National University of Singapore 117417, Singapore
+
+A R T I C L E I N F O
+
+A B S T R A C T
+
+Keywords:
+Large language model
+Named entity recognition
+In-context learning
+Contrastive learning
+Knowledge graph
+
+Named entity recognition (NER) stands as the foundational pillar of knowledge graphs across
+multiple domains. Despite progress in NER using large language models (LLMs), challenges
+persist regarding the selection of LLMs, the retrieval of demonstrations, and the design of
+prompts. We introduce a novel framework for NER, termed LLMCC, which elucidates the syn­
+ergistic interactions between different LLMs. Two new methods, SemnRank and InforLawthought, are proposed to address the issue of redundancy in demonstrations and to elevate
+prompt quality for boosting LLM’s capabilities. Furthermore, LLMCC is trained through a new
+entity-aware contrastive learning. Extensive experiments across five domains confirm the
+competitiveness of LLMCC (surpassing ten recent studies by a margin of over 5% in F1 score), as
+well as the effectiveness of SemnRank and InforLaw-thought. We uncover a series of insights
+regarding information laws, prompting strategies, demonstration selections, and training designs.
+This research significantly advances the incorporation of LLMs into the construction of knowledge
+graphs.
+
+1. Introduction
+Named entity recognition (NER) plays an indispensable role in the construction and enhancement of knowledge graphs (KGs) and
+artificial intelligence (AI). Central to its mission is the identification and extraction of entities such as personal names, product titles,
+and machinery-embedded terms within textual data, thereby facilitating the extraction of valuable insights from vast, interconnected
+networks, digital repositories, technical documents, and other information sources. By transforming unstructured text into structured
+knowledge representations, NER enables the construction, expansion, and continuous updating of KGs, which, in turn, support
+reasoning and predictive analytics across a wide range of downstream applications (Dong, 2023; Fan & Chen, 2024; Gao et al., 2024;
+Wang et al., 2022a; Wang et al., 2022b; Wang et al., 2023d; Wang et al., 2024a).
+Research efforts to improve NER performance have been extensive and ongoing. Initially, NER relies on manually crafted syntactic
+and semantic rules created by domain experts. Subsequently, NER hasshifted towards deep learning-based methods, which auto­
+matically capture latent features within text, leading to substantial improvements in NER. Recently, the advent of large language
+models (LLMs) such as GPT-4 has injected new momentum into KGs. LLMs, with their advanced text comprehension, have further
+enhanced NER capabilities through in-context learning (ICL). For instance, Polak & Morgan (2024) introduce the ChatExtract method,
+* Corresponding author.
+E-mail addresses: wangzhenhua@u.nus.edu (Z. Wang), huiru.chen@u.nus.edu (H. Chen), 2020000919@ruc.edu.cn (G. Xu), renm@ruc.edu.cn
+(M. Ren).
+https://doi.org/10.1016/j.ipm.2024.104054
+Received 31 July 2024; Received in revised form 8 November 2024; Accepted 18 December 2024
+Available online 30 December 2024
+0306-4573/© 2024 Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+which extracts scientific entities from academic papers through ChatGPT and ICL; Dagdelen et al. (2024) leverage GPT-3 to extract
+materials and equipment-related entities from chemical texts; and Wang et al. (2023b) develop GPT-NER, which employs various types
+of prompts to enable GPT-3 to perform NER across different domains; etc. (Kan et al., 2023; Huang et al., 2024; Hu et al., 2024; Gao
+et al., 2024; Keloth et al., 2024).
+Despite these advancements, several concerns remain. Firstly, generative LLMs such as OpenAI’s GPT-4, primarily built on
+Transformer decoders and trained autoregressively, are inherently aligned with text generation patterns (Achiam et al., 2023).
+However, NER necessitates context-sensitive sequence understanding, which may not be optimally addressed by directly employing
+these decoder-based LLMs (DLLMs). While fine-tuning DLLMs can align them more closely with NER, such adjustment often comes at
+the cost of their generality (Qi et al., 2023).
+Secondly, ICL, which includes prompt engineering techniques such as Chain-of-Thought (Kocoń et al., 2023; Triguero et al., 2024),
+can substantially harness the powerful reasoning capabilities of DLLMs. However, its effectiveness heavily depends on the quality and
+variety of the demonstrations provided (Wang et al., 2023b). Current methods still exhibit limitations; for example, GPT-NER selects
+demonstrations from the training set that are semantically closest to the test set, but overlooks the issue of meaning redundancy among
+demonstrations. This redundancy restricts performance improvements, as, ideally, demonstrations should expose DLLMs to diverse
+contexts. When multiple demonstrations convey essentially the same information, they fail to provide DLLMs with new insights,
+instead offering redundant knowledge that could have been communicated in a single demonstration. This redundancy reduces the
+overall amount of useful information DLLMs can learn, thereby diminishing its effectiveness.
+Thirdly, existing research has not yet fully explored how ICL prompts can more effectively guide DLLMs to comprehend given texts.
+A deeper understanding of the text by DLLMs could lead to more effective sequence-related processing, which remains an area ripe for
+exploration.
+To address the first challenge, we propose to harness the strengths of both encoder-based LLMs (ELLMs) and DLLMs for NER.
+ELLMs, such as Microsoft’s DeBERTa-v2, may have fewer parameters relative to DLLMs, but their architecture - centered around
+Transformer encoders trained with masked language modeling, makes them inherently more suitable for NER. Specifically, we propose
+two complementary strategies. (a) We use DLLMs to extend the training dataset for ELLMs. Based on the original input, DLLMs can
+generate additional contextually-rich text, and potentially introduce new knowledge and insights that are inherent to DLLMs, which is
+beneficial for the training of ELLMs (Kocoń et al., 2023). (b) We combine the predictions from DLLMs and ELLMs to capitalize their
+respective strength. By doing so, we can leverage the context sensitivity of ELLMs and the inferential prowess of DLLMs, allowing them
+to contribute distinctively to the NER process.
+For the second challenge, our focus is to ensure that demonstrations are not only semantically relevant but also free from
+redundancy in meaning. To ascertain semantic relevance, we employ the commonly-used and effective method of embedding simi­
+larity, with the embeddings being generated by ELLMs. To address redundancy, a straightforward approach is to evaluate potential
+information overlap from the perspective of textual entailment. Inspired by the DLLMs’ adeptness at managing meaning relationships
+(Farquhar et al., 2024), we leverage DLLMs to ascertain whether there is an entailment - meaning consistency - between demon­
+strations. Building on this, we introduce a new demonstration retriever, SemnRank, which integrates ELLM-based semantic compu­
+tations with DLLM-based bidirectional meaning entailment detection.
+To tackle the third challenge, we draw on insights from information laws, which delineate deterministic patterns between the
+macro-structure of text (the text itself) and its micro-components, such as words and characters. These laws provide a more funda­
+mental understanding of the textual system (Stanisz et al., 2024). This framework is particularly enlightening across both natural and
+social sciences, such as Zipf’s law. This law encapsulates the principle of least effort in information transmission, manifesting as a
+quantifiable phenomenon where word frequency is inversely proportional to its ranking (DeMarzo et al., 2021). Therefore, we propose
+a new prompting method, InforLaw-thought, which leverages information laws to guide DLLMs in processing a given text. By modeling
+the text through the lens of information laws, DLLMs can gain a better understanding of the content.
+Formally, we propose a novel framework for NER called LLMCC, which integrates ICL (with SemnRank, InforLaw-thought), and
+cross-interactions between DLLMs and ELLMs. Moreover, to enhance the robustness of LLMCC, especially in mitigating potential errors
+that may arise during the generation process of DLLMs, we introduce a new training method called entity-aware Contrastive learning
+(EACL). Extensive experiments conducted across five domains (Entertainment, Energy, Ecommerce, Chemical, News) demonstrate the
+competitiveness of LLMCC, surpassing recent studies. Furthermore, SemnRank has proven superior, outperforming common-used
+methods like KNN-semantics. Likewise, InforLaw-thought has demonstrated its progressive advantage, surpassing recent methods
+like Tree-of-Thought1.
+This study advances NER by integrating LLM with knowledge graphs, making contributions on multiple fronts. First, the LLMCC
+framework sets a successful paradigm for NER development in the LLM era. In addition, SemnRank, InforLaw-thought, and EACL
+provide valuable inspiration for future research, shedding light on how NER can be better developed and refined. Second, we extend
+the information laws to DLLMs and demonstrate their potential to improve NER. Notably, we find that Zipf’s law yields the most
+significant benefits, followed by Heaps’ law. Furthermore, we explore how different information laws activate distinct reasoning
+processes within DLLMs, thus broadening the application of information laws and providing new interdisciplinary perspectives. Third,
+we establish synergistic interactions between DLLMs and ELLMs, offering actionable implications for future research. For instance, we
+observe that while NER performance improves with the increase of the number of demonstrations, the marginal gain gradually
+
+1
+
+https://github.com/wzh-ins/LLM_NER
+2
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+decreases. Additionally, we show that DLLMs can serve as an assistant for ELLM predictions. Last, we discover that simply incorpo­
+rating prompts like “analyze the text using Zipf’s law” into popular reasoning frameworks, such as Chain-of-Thought, can boost NER
+performance, which opens up new possibilities for ICL.
+2. Related work
+2.1. Knowledge graph and named entity recognition
+KGs are structured representations of knowledge in which entities are depicted as nodes, forming a semantic framework that allows
+machines to understand and infer information about the real world. At the core of KGs lies NER, a crucial process that involves the
+identification and classification of key textual elements—referred to as named entities—including names of people, organizations, and
+other significant terms. The primary objective of NER is to locate these entities and categorize them into predefined classes, thereby
+transforming unstructured text into structured data. NER serves as a crucial driver for the development and refinement of KGs. For
+instance, in the construction of KGs, NER directly facilitates their initial assembly; in the expansion of KGs, as new data emerges, NER
+can identify previously unrecognized entities, ensuring that the KG remains current and comprehensive; and in the updating of KGs, it
+can address changes in entities such as organizational restructurings, name alterations, or new affiliations (Dong, 2023; Fan & Chen,
+2024; Gao et al., 2024; Wang et al., 2022a; Wang et al., 2022b; Wang et al., 2023a).
+The emergence of LLMs has recently breathed new life into NER by leveraging their powerful text generation capabilities, which
+often goes beyond the confines of traditional deep learning approaches. Extensive research has been conducted across various domains
+to explore this potential. For example, the ChatExtract method extracts entities from academic papers using a set of engineering
+prompts in ChatGPT, where the prompts not only locate relevant sentences but also validate the extracted data through follow-up
+questions (Polak & Morgan, 2024). The SpiralPrompt method applies a spiral "prompt engineering" process to extract entities from
+medical text notes by submitting batch queries to ChatGPT via OpenAI’s API (Huang et al., 2024). In chemistry, GPT-3 helps extract
+entities related to materials and devices by incorporating formatted extractive summaries within prompts (Dagdelen et al., 2024).
+Additionally, the GPT-NER method improves GPT-3′s in-context learning by using K-nearest neighbors (KNN) to retrieve demon­
+strations from the training set and adding self-verification prompts to minimize errors during generation (Wang et al., 2023b). The
+performance of GPT-3.5 and GPT-4 in clinical NER is assessed, resulting in the development of a task-specific prompt framework called
+HuPrompt, which includes task descriptions, annotation guidelines, and error-analysis-based prompts (Hu et al., 2024).
+Instruction-based learning is applied to LLaMA-7B to develop BioNER-LLaMA, which simplifies biomedical NER training and evalu­
+ation by automatically reusing existing datasets (Keloth et al., 2024). Similarly, the CPGF method reframes NER using prompt learning
+by training a T5 model on prompts designed to fill predefined slots, thereby enhancing entity recognition tasks (Kan et al., 2023).
+Lastly, a Knowledge-injected Actionable Information Extraction Model (KAIEM), based on BERT-Large, is introduced to extract
+actionable information from crisis-related tweets in few-shot and zero-shot settings, with the model automatically constructing a label
+word space for utterances using word embeddings (Gao et al., 2024a).
+However, there are concerns regarding the application of generative LLMs. These models, primarily based on Transformer decoders
+and trained autoregressively, align naturally with text generation, which does not fully match the needs of NER, a task that requires
+context-sensitive sequence tagging (Achiam et al., 2023).
+2.2. Large language model and in-context learning
+Recently, the development of decoder-based LLMs (DLLMs), such as OpenAI’s GPT-4, has seen an unstoppable surge in interest due
+to their impressive performance across various NLP tasks (Achiam et al., 2023). Additionally, the remarkable ability of DLLMs to follow
+instructions has captivated both the academic community and the general public. Given the extensive computational resources
+required, fine-tuning DLLMs is often impractical; moreover, such fine-tuning could significantly impair their inherent generality (Qi
+et al., 2023). Currently, a more prevalent approach involves the design of prompts to accomplish specific tasks (Kocoń et al., 2023).
+When provided with demonstrations, the output from DLLMs becomes more controllable—this is known as in-context learning (ICL), a
+novel learning paradigm that does not require any parameter updates. However, the performance of ICL is influenced by several
+factors, including the selection of demonstrations and the presentation of the prompt. Numerous studies have optimized ICL (Voronov
+et al., 2024); for instance, in NER, Wang et al. (2023b) propose integrating k-nearest neighbors to retrieve demonstrations from a
+training set to enhance the demonstrations. Nonetheless, they do not account for potential meaning redundancy between demon­
+strations, which could limit the effectiveness of ICL.
+Regarding the presentation of prompts, also known as prompt engineering (Kocoń et al., 2023; Triguero et al., 2024), a plethora of
+techniques has emerged. One of them is the Role-playing, which involves assigning a specific role to DLLMs, such as "You are an NLP
+expert." This method capitalizes on the anthropomorphic capabilities of DLLMs to simulate expertise, thereby enhancing user
+engagement and the quality of interactions. To improve the reasoning of DLLMs, Touvron et al. (2023) introduce the Few-Shot-Prompt,
+which uses example-based demonstrations within the prompt itself to better convey task requirements. This technique proves essential
+in scenarios where mere direct instructions might fall short, providing the contextual clues necessary for DLLMs to produce more
+accurate outputs. Building on the idea of structured interaction, Wei et al. (2022) develop the Chain-of-Thought (CoT). This method
+decomposes complex tasks into simpler, sequential subtasks, making the reasoning process explicit and thereby enhancing the DLLM’s
+problem-solving accuracy. Such structured thinking is crucial for tasks that involve deep cognitive processing. To further refine CoT,
+Kojima et al. (2022) combine the Few-shot and CoT to form the Few-shot-CoT. By adding step-by-step guidance (such as "Let’s think
+3
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+step by step") directly within the prompts, this innovation aids DLLMs in navigating complex reasoning paths, ensuring clarity in task
+execution. In a similar vein, Zhou et al. (2022) propose the Least-To-Most method, which organizes the resolution of problems by
+progressively addressing smaller subproblems. This method facilitates a cumulative knowledge-building process, where each step
+informs and refines the subsequent ones, thus aiding tasks that require an accumulation of insights. Complementing these de­
+velopments, Yao et al. (2024) present the Tree-of-Thought, which expands on CoT by organizing thoughts into a tree structure. This
+allows multiple reasoning pathways to be explored and integrated, supporting complex decision-making by providing a framework to
+evaluate various intermediate choices. Simultaneously, Zhou et al. (2024) emphasize the importance of output reliability with their
+Self-Consistency method. By generating multiple responses to the same prompt and selecting the most consistent one, this approach
+uses repetition to enhance the precision and trustworthiness of the DLLM’s outputs. Also, Liu et al. (2021) introduce Generated
+Knowledge Prompting, a technique that fosters a pseudo-collaborative environment between multiple DLLMs. By generating
+domain-specific insights through demonstrations and using them to guide another DLLM’s decisions, this approach simulates
+knowledge transfer between DLLMs, enriching their response capabilities.
+While these methodologies have achieved commendable performance in reasoning tasks such as solving mathematical problems,
+their effectiveness in entity extraction may still be insufficient.
+
+Fig. 1. Architecture of LLMCC.
+4
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+3. Research objective
+This paper aims to integrate DLLMs and ELLMs, capitalizing on their respective strengths in natural language generation and
+understanding to enhance NER performance. Our research objectives are outlined as follows:
+RO1: To propose a novel demonstration retriever capable of retrieving demonstrations that are semantically relevant and free from
+redundant meanings.
+RO2: To introduce a novel prompting strategy that encourages LLMs to delve deeper into the contextual fabric of the text.
+RO3: To develop a new learning method that strengthens the training process for NER.
+4. Methodology
+The LLMCC framework synergizes DLLMs and ELLMs, as shown in Fig. 1. Since ELLMs are inherently context-sensitive, they are
+naturally well-suited to NER’s base; to maximize their effectiveness, fine-tuning is essential. In general, the performance of an ELLM
+improves with the size and richness of the training data. To this end, we design Module 1, which utilizes the powerful text generation
+capabilities of an DLLM to extend the training data, that also incorporates additional insights and knowledge embedded in the DLLM
+itself. To transform this extended text into data suitable for ELLMs, Module 2 is designed, which employs in-context learning (ICL) to
+drive DLLM in generating an LLM-tagged set. This process involves two key components: demonstration retrieval and prompt con­
+struction. To train the ELLM more effectively, Module 3 is developed, which implements a contrastive learning strategy based on both
+the LLM-tagged set and the original training set. Finally, to mitigate potential prediction errors in the ELLM, Module 4 is designed,
+which drives ICL-based (from Module 2) DLLM to correct ELLM predictions. The details of the four modules are as follows.
+Module 1: Text Extension. We direct a DLLM to sequentially extend each sentence from the training set with the prompt such as "As
+an expert in the [X] field, please extend the given text based on your understanding" for obtaining the extended corpus, Cextended , where [X]
+aligns with the dataset’s context. We impose no length limit and allow DLLMs to freely apply the knowledge, which can avoid potential
+hallucinations or erroneous outputs that may arise if the amount exceeds the corresponding knowledge base of DLLM (McIntosh et al.,
+2023). This module leverages the very vast knowledge embedded in DLLMs to enrich the contextual depth and diversity of the training
+set, thereby benefiting subsequent modules.
+Module 2: Entity Tagging. It involves unsupervised annotation of entities within Cextended based on the DLLM, which serves the
+subsequent model training. To better accomplish this complex task, we introduce a new in-context learning approach comprising two
+parts: the demonstration retriever, SemnRank (details in Section 4.1), and the prompt constructor, InforLaw-thought (details in Section
+)
+(
+)
+(
+4.2). SemnRank retrieves k demonstrations, Dk = f(x1 , y1 ), …, f xk , yk , where f xi , yi is a predefined function that transforms dem­
+onstrations into natural language prompts; xi and yi are sentences and corresponding labels (in BIO format) from the training set. Based
+on Dk and the task I, for the new input xk+1 from Cextended , InforLaw-thought guides a DLLM to produce the output yk+1 , resulting in the
+LLM-tagged set.
+LLM(I, f(x1 , y1 ), …, f(xk , yk ), f (xk+1 ,
+
+))→yk+1
+
+Module 3: Entity-aware contrastive learning. Based on the LLM-tagged set and training set, we implement a supervised learning
+strategy for the training of the entity recognizer (an ELLM-based model). Recognizing the potential errors in Cextended and LLM-tagged
+set, we treat LLM-tagged set as the reference rather than ground truth, and present a new contrastive learning framework (details in
+Section 4.3).
+Module 4: Entity Prediction Enhancement. It aims to assist and correct potential prediction errors or omissions of the entity
+recognizer in Module 3, thereby achieving a more robust and reliable NER. During the prediction process, we guide a DLLM to verify
+the outputs of the entity recognizer. The demonstrations are from SemnRank, and the designed prompt is derived from InforLawthought. For example: “Assume the role of an NLP expert with a deep understanding of entity tagging in BIO format, brought into a team
+with three distinguished peers from your field. Your collective task is to verify the accuracy of BIO labels provided for the text [T] where the types
+of entities include ... Begin by independently reviewing [T] through the information law (add information in Table 1), and its associated BIO
+labels. Identify any inaccuracies or inconsistencies in the labeling. After your individual assessment, convene with your peers to discuss your
+findings. Each of you will present the discrepancies you’ve discovered and propose corrections based on your expertise. Engage in a detailed
+collaborative review, challenging each other’s assessments and refining the labels through collective insight. This iterative process of evaluation,
+Table 1
+Information laws. The parameters here are not shared with those in Section 4.1 & 4.3.
+Law
+
+Expression
+
+Parameter definition
+
+Main insight
+
+Zipf’s law
+Heaps’ law
+Taylor’s law
+Hilberg’s law
+Ebeling’s law
+Menzerath’s law
+Benford’s law
+Mandelbrot’s law
+
+f(r)∝1/rs
+V(N)∝Nβ
+σ2 ∝μb
+H(L)∝Lα
+C(L)∝Ld
+Φ(L)∝L− γ
+P(d) = log10 (1 + 1 /d)
+F(q, τ)∝LqH(q)
+
+f(r): word frequency; r: rank
+V(N): vocabulary size; N: corpus size
+σ2: f(r) variance; μ: f(r) mean
+H(L): entropy of text; L: word count
+C(L): variability of text; L: character count
+Φ(L): character length; L: word count
+P(d): first digit frequency; d: first digit
+F(q, τ): long-range correlation; L: text scales; q: order
+
+Principle of least effort
+Redundancy in language
+Predictability of word usage
+Redundancy of information volume
+Density and randomness in information
+Larger the whole, smaller the parts
+Naturalness of information
+Self-similarity of language
+
+5
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+debate, and adjustment continues until all of you agree on the correctness of every label. Conclude by documenting the final, consensus-driven
+labels for [T], ensuring they accurately represent the entities as per your combined expert analysis.”
+4.1. SemnRank
+SemnRank aims to retrieve better demonstrations from the training set, addressing the issues of random selection or meaning
+redundancy present in previous research. Considering that each demonstration is often presented in sentence form, we denote the
+training set as S = {s1 ,s2 …,sn }, where each si is a sentence. The encoder E uses an ELLM to map si to a d-dimensional vector space via its
+CLS embedding.
+vi = E(si )
+To find the top n sentences in the training set that are semantically closest to the sentence set T in the test set, we calculate the
+frequently-used Euclidean distance between vi and the average embedding vT of T.
+√̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅̅
+√ d
+√∑
+Sim(vi , vT ) = √
+(vik − vT )2
+k=1
+
+The set of n nearest sentences is selected as candidate demonstration set D, where i1 , …, in are the indices of the sentences in S.
+D = argmini1 ,…,in {si |Sim(vi , vT )}
+It is important to note that there may be meaning redundancy between demonstrations, which can undermine the effectiveness of
+in-context learning. To better illustrate this issue, we take two demonstrations (text part) from the chemical domain dataset as
+examples:
+Demonstration 1: “The solvent regeneration system consists of rich solution flashing tanks that increase pressure, causing the solvent
+regeneration tower to overload and gas to enter the flare mainline.”
+Demonstration 2: “The rich solution flashing tank’s liquid level rises, increasing pressure in the solvent regeneration tower, which can result
+in gas entering the flare mainline.”
+We can see that, both demonstrations convey nearly identical information, and the content they provide can have been commu­
+nicated by a single demonstration. This redundancy limits the value of one of the demonstrations, as it fails to offer new or additional
+context for the DLLM to learn from, thereby reducing the amount of useful information.
+To address this issue, we present the detection of meaning entailment. We denote Imp(a, b) as a function of meaning entailment that
+returns 1 if demonstration a implies the meaning of demonstration b, and 0 otherwise. We use a DLLM to launch the Imp(a, b) with
+prompt like “Do the two sentences convey the same meaning? Only answer Yes or No”, since the DLLM-based approach has been
+proven to be effective (Farquhar et al., 2024). Then we have:
+Equiv(a, b) = Imp(a, b) × Imp(a, b)
+The function Equiv(a, b) returns 1 if a and b are considered to have equivalent meanings, otherwise it returns 0. Thus, we can cluster
+the demonstrations that convey equivalent meanings together, and define C = {c1 , c2 …, cm } as the set of all clusters where m is the
+number of clusters. We assign each demonstration di to a cluster cj :
+{
+}
+cj = di |∃dk ∈ cj : Equiv(di , dk ) = 1
+For k-shot demonstration selection, if k ≤ m, for the highest similarity demonstration from each cluster, we select the top k:
+({
+} )
+D1,…,k = Top
+
+argminSim(vd , vT )|j = 1, 2, …, m , k
+d∈cj
+
+If k > m, initially, we retrieve the highest similarity demonstration from each cluster, and then proceed to select the second highest
+until k demonstrations are retrieved:
+{
+}
+({
+}
+)
+D1,…,k =
+
+argminSim(vd , vT )|j = 1, 2, …, m
+d∈cj
+
+∪ Top
+
+argminSim(vd , vT )|j = 1, 2, …, m , k − m
+d∈cj {dj }
+
+4.2. InforLaw-thought
+Information laws refer to the patterns between the text (macro-structure) and its micro-components (such as words and characters)
+(Stanisz et al., 2024), which reflect human communication and thought processes, as human text serves as a channel to the mind,
+intellect, and ideas. There are eight commonly-used information laws, as shown in Table 1 (Wang et al., 2024b), which reflect different
+insights across different dimensions.
+Modeling information laws requires examining the relationships between different constituent elements in the text, which to some
+extent provides more contextual effects for DLLMs. Hence, InforLaw-thought is designed to allow information laws to better prompt
+6
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+DLLMs. In the first stage, due to the diversity of text types and lengths, not all laws hold uniformly. To this end, we propose a dynamic
+law selector (DLS) to evaluate the characteristics of the given a text T, thus determining the applicability of information laws. Spe­
+cifically, we have Information Law Pool (ILP), denote the set of M laws available for selection, here M = 8.
+ILP = {L1 , L2 , …, LM }
+From the T, we extract empirical data points Di =
+
+)
+}
+{(
+xij , yij |j = 1, 2, …, ni relevant to law Li , where, x and y are variables (such as
+
+the scale variation, see Table 1 and the study (Wang et al., 2024b)), ni is the number of data points. We define the theoretical model
+fLi (x; θi ), where θi represents the set of parameters for Li . Hence, we estimate θi by minimizing the sum of squared residuals:
+θ∗i = argminθi
+
+ni (
+∑
+(
+))2
+yij − fLi xij ; θi
+j=1
+
+We calculate the applicability metric for Li , such as the commonly-used coefficient of determination (R2 ):
+(
+))2
+∑ ni (
+∗
+j=1 yij − fLi xij ; θi
+2
+Ri = 1 −
+(
+)2
+∑ ni
+∑ ni
+1
+j=1 yij − ni
+j=1 yij
+Generally, R2 ≥ 0.9 indicates that Li is applicable, and the larger R2 , the higher the applicability. Hence, we define the law selection
+threshold R2threshold = 0.9, and construct the candidate set of applicable laws:
+{
+}
+S = Li ∈ ILP|R2i ≥ R2threshold
+}
+{
+If S ∕
+= ∅, we determine S as the final selection; else, we select Li with the highest R2 , S = argmaxLi ∈ILP R2i ; which ensures that the
+selected law is as closely aligned as possible with T.
+In the next stage, we guide DLLMs to play the role of an NLP expert specializing in the field X, responsible for entity tagging (BIO
+format) of given text. In addition, inspired by Generated Knowledge Prompting method (GKP), we guide DLLMs to invite three
+renowned peers, and collaborate on the brainstorming. Note that although GKP uses other DLLMs, this significantly increases
+computational resources. We prompt them to model and analyze T using S with information in Table 1. This process continues until the
+
+Algorithm 1
+Input: text T; dataset domain X; demonstration D
+Parameter: DLLM; dynamic law selector DLS
+Output: LLM-tagged set T’
+1: T’ = Ø
+2: S = DLS(T)
+3: Prompt = {
+You are an NLP expert in the [X] field, tasked with performing NER (in BIO format) on the given text. You have invited three renowned peers to collaborate in a
+comprehensive analysis.
+Model and analyze the text [T] using the information law(s) [S]:
+**Instructions:**
+1. **Collaborative Modeling:**
+- Discuss and model the text using the provided information laws.
+- Examine the relationships between text elements.
+- Utilize the mathematical formulations of the laws to deepen your understanding.
+2. **Independent Entity Identification:**
+- Each expert independently identifies and categorizes entities within the text, labeling them in BIO format.
+- Incorporate unique insights derived from the analysis.
+3. **Peer Review and Refinement:**
+- Share your findings with the group.
+- Engage in critical discussion, challenging and validating each other’s results.
+- Make necessary corrections and adjustments based on the feedback.
+4. **Consensus Building:**
+- Reach a consensus on the final entity tagging, ensuring accuracy and consistency.
+- Document any important observations or insights from the discussion.
+**Output Requirements:**
+- Provide the final entity-tagged version of the text in BIO format.
+- Include a brief summary of the key insights from your analysis and how the information laws informed your tagging decisions.
+- Ensure clarity and adherence to BIO tagging conventions.
+**The text [T]: …
+**The information law(s) [S]: …
+}
+4: T’ = T’ ∪ DLLM(Prompt, D)
+5: return T’
+
+7
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+peers jointly conclude indicating that they could have sufficiently understood T. On this basis, each peer independently identifies and
+categorizes entities based on their understanding, adding unique insights. Subsequently, they engage in challenging and validating
+each other’s views, making corrections, and adjusting their analyses until a consensus is reached on the identified entities.
+We can obtain the LLM-tagged set, by combining InforLaw-thought with demonstrations (from SemnRank), as shown in Algorithm
+1. For example, for the text: “From the high-temperature oil and gas from the reactor, which exchanges heat with the circulating gas
+from the circulating gas compressor inside E-5,611,102″, the tag sequence is: “O B-MAT I-MAT I-MAT I-MAT O B-EQU, O B-MAT I-MAT
+O B-EQU I-EQU I-EQU O B-EQU”, where “EQU” and “MAT” refer to the equipment and material.
+Note that the training set and the LLM-tagged set are combined in Module 3 to train the entity recognizer. Although directly using
+ELLMs is a common approach, in this paper, the two set are not identical. Hence, we introduce the entity-aware contrastive learning to
+focus on different entities, which is detailed in Section 4.3.
+4.3. Entity-aware contrastive learning
+We detail the training of the entity recognizer based on the training set and LLM-tagged set, where the training goal is to assign each
+token xi in a sequence X = {x1 , x2 , …, xK } to a predefined entity category yi ∈ Y or assign it as a non-entity yi = 0, where, Y represents
+the set of entity categories, and K is the length of the token sequence. Note that the symbols here are not shared with those in Section
+4.1 and 4.2.
+We use an ELLM and a linear layer to construct the model architecture of entity recognizer, which is common and effective, where
+the former encodes X into embeddings H(X), the latter predicts the categories, X is from the training set and LLM-tagged set. To
+enhance the recognizer’s robustness and combat potential errors in LLM-tagged set, we propose a new entity-aware contrastive
+learning to train the recognizer, with new positive and negative pairs, as follows.
+(1) We present two types of positive pairs:
+Human-tagged entity / Human-tagged entity: Given two embedding sequences H1 = {h11 , h12 , …, h1m } and H2 = {h21 , h22 , …, h2n }
+both from the training set, we form a positive pair when both sequences contain the same entity category at corresponding positions k:
+(h1k , h2k ) ∈ P+ , if ∃k ∈ [1, min(m, n)] : y1k = y2k ∕
+=0
+LLM-tagged entity / Human-tagged entity: For an embedding sequence H3 = {h31 , h32 , …, h3r } from LLM-tagged set and H1 from
+the training set, we create a positive pair when they share the same entity category at k:
+=0
+(h3k , h1k ) ∈ P+ , if ∃k ∈ [1, min(r, n)] : y3k = y1k ∕
+(2) We present two types of negative pairs:
+Human-tagged entity / Human-tagged non-entity: For two sequences H1 and H2 from the training set, we design a negative pair
+when one has an entity label and the other has a non-entity label at the same position:
+(h1k , h2k ) ∈ P− , if ∃k ∈ [1, min(m, n)] : y1k ∕
+= 0 & y2k = 0
+}
+{
+LLM-tagged entity / LLM-tagged entity: For two sequences H3 and H4 = h41 , h42 , …, h4q from LLM-tagged set, we construct a
+negative pair when they have different entity categories at the same position:
+= y4k & y3k ∕
+= 0 & y4k ∕
+=0
+(h3k , h4k ) ∈ P− , if ∃k ∈ [1, min(r, q)] : y3k ∕
+On this basis, to complement this training, we design a new loss function, which includes three aspects:
+Ltotal = LCE + Lcontrastive + Lcontext
+(1) Cross-Entropy Loss LCE : It is commonly-used, and performs NER from the perspective of entity classification, where, C is the
+number of entity categories; I{⋅} is the indicator function; zic is the logit output for category c.
+(
+)
+∑
+∑ C
+1 K
+exp (zic )
+LCE = −
+I{yi =c} log ∑C
+( )
+K i=1 c=1
+j=1 exp zij
+(2) Contrastive Loss Lcontrastive : It is designed to distinguish similar and dissimilar entity embeddings, where, d(h1 , h2 ) is the
+Euclidean distance between the embeddings h1 and h2 ; hak , hpk , hnk are the normalized anchor embedding, positive embedding,
+and negative embedding at position k; δ is the margin.
+K
+(
+) ∑
+)
+)
+(
+(
+Lcontrastive ha , hp , hn =
+max 0, d hak , hpk − d(hak , hnk ) + δ
+k=1
+
+8
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+(3) Contextual Continuity Loss Lcontext : Considering that entities may have different contexts in different sentences and sets, we
+minimize the variance in embeddings between consecutive tokens that belong to the same entity. This would help the entity
+recognizer learn that tokens within the same entity boundary should have similar contexts.
+Lcontext =
+
+K−
+∑1
+i=1
+
+I{yi =yi+1 } ⋅ ‖ hi − hi+1 ‖22
+
+5. Experiment
+5.1. Dataset
+We select five commonly-used datasets from different knowledge domains: News, Entertainment, Energy, Ecommerce, and
+Chemical (Jehangir et al., 2023; Wang et al., 2021a; Wang et al., 2021b; Wang et al., 2022a; Wang et al., 2022b; Wang et al., 2023a;
+Wang et al., 2023b; Zhang et al., 2024a, Zhang et al., 2024b), to support a comprehensive experiment evaluation. Detailed information
+is provided in Table 2.
+5.2. Baseline
+Recent powerful NER studies are chosen as our baselines: GPT-NER: GPT-3′s in-context learning, incorporating the k-nearestneighbours method to retrieve demonstrations from a training set and adding self-verification prompts (Wang et al., 2023b).
+BERT-Tagger: fine-tunes BERT on the training set (Devlin et al., 2019). MRC-NER: formulates NER as a machine reading compre­
+hension (MRC) task and trains the MRC-NER model on the training set (Li et al., 2020). GNN-SL: fine-tunes RoBERTa on the training set
+based on nearest examples via graph neural networks (Wang et al., 2023c). ACE-document-context: optimizes the controller to find
+better concatenations of embeddings on the training set (Wang et al., 2021b). DeFFSi: trains neural networks based on Fourier Series
+Multifractal Analysis and Sital activation function (Wang et al., 2024c). CPGF: prompts T5 models designed to fill slots within
+pre-defined prompt types (Kan et al., 2023). HuPrompt: uses GPT-4 based on prompts with task descriptions, formatting rules,
+annotation guidelines, and error analysis (Hu et al., 2024). ChatExtract: uses ChatGPT based on prompts that identify sentences
+containing data and validate the data through follow-up questions (Polak & Morgan, 2024). SpiralPrompt: utilizes spiral prompt
+engineering to process ChatGPT through batch queries (Huang et al., 2024).
+To evaluate the competitiveness of InforLaw-thought, it is compared with recent popular prompting methods: Role-Playing
+(Sinan, 2023); Few-Shot-Prompt (Touvron et al., 2023); Chain-of-Thought (Wei et al., 2022); Few-shot-CoT (Kojima et al., 2022);
+Self-Consistency (Zhou et al., 2024); Least-to-Most (Zhou et al., 2022); Tree-of-Thought (Yao et al., 2024); Generated Knowledge
+Prompting (Liu et al., 2021). See Section 2.2 for more information. All methods are provided with the same contextual background,
+such as, "You are an expert of natural language processing in the field of [X], and you are performing NER task where the categories of
+entities include ..."
+In addition, for methods requiring demonstrations, we select k-shot from the training set, and they are consistent with InforLawthought. For Chain-of-Thought and related methods, such as Self-Consistency, a DLLM first identifies entities in the text and then
+classifies them. In Few-shot-CoT, the "Let’s think step by step" is added at the beginning. In Self-Consistency, a DLLM performs NER
+three rounds. Due to the large number of entities, it is not appropriate to select the most consistent output, so we take the union of the
+three outputs as the final entities. In Least-to-Most, NER is decomposed into steps: a DLLM first identifies and classifies entities from the
+text; then, based on the history information, the DLLM further provides the final entities. For Tree-of-Thought, we use the prompt
+based on https://github.com/dave1010/tree-of-thought-prompting, adapting them for NER. In Generated Knowledge Prompting, the
+first DLLM extracts entities from the given text with prompts consistent with Chain-of-Thought, and the second DLLM provides
+additional knowledge for the text with the prompt: “You are an expert of natural language processing in the field of [X], Please
+supplement the given text with more knowledge and insights, keeping it around 500 words”, where, the combinations for the first and
+second DLLMs are: GPT-4-Turbo / GPT-3.5-Turbo.
+
+Table 2
+Dataset description.
+Name
+
+Domain
+
+Entity category
+
+Entity count
+
+Word count
+
+Entertainment
+Energy
+Ecommerce
+Chemical
+News
+
+Youku Entertainment
+Shenhua Energy
+Taobao E-commerce
+Brunei Chemical
+Conll2003 News
+
+Television, person, MISC
+Equipment, material
+Pattern, product, brand, MISC
+Equipment, material, state, consequence
+Location, person, organization, MISC
+
+15,905
+4649
+10,025
+9834
+35,089
+
+179,798
+82,657
+240,814
+109,631
+301,418
+
+9
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+5.3. Setting
+For the DLLM, we select the currently representative OpenAI’s GPT-4-Turbo (GPT-4); and for the ELLM, we select the popular
+DeBERTa-v2-xlarge. In all experiments involving DLLMs, we use the same inference methods and parameters, set to default settings;
+and in all training involving ELLMs, the configuration remains consistent, such as batch-size = 8, learning-rate = 2e-5, epoch = 5, δ =
+0.5, etc. We randomly divide each dataset into training and test sets in an 8:2 ratio, and use the commonly-used F1-score (F1, %) as the
+evaluation metric, where, F1 is the harmonic mean of precision and recall, which provides a comprehensive and balanced measure.
+Each round of experiments is repeated five times, with the results averaged to ensure reliability. The prompts involved in the baselines
+can be adjusted based on the domain of datasets. For example, in the entertainment domain, the prompts related to clinical in
+HuPrompt are replaced with entertainment related terms.
+6. Result
+6.1. Competitiveness of LLMCC
+Table 3 demonstrates that our LLMCC outperforms all baselines across all datasets, achieving the highest performance. For
+instance, LLMCC surpasses a series of recently proposed approaches led by DLLMs, such as GPT-NER, by margins of 4.89 %, 5.32 %, 5.7
+%, 8.53 %, and 4.91 %, respectively. Moreover, LLMCC excels beyond the models driven by language model training, such as out­
+performing DeFFSi by 2.25 %, 2.61 %, 1.7 %, 2.11 %, and 2.18 %, respectively. These results confirm the advancement of integrating
+LLM into NER.
+6.2. Effectiveness of Inforlaw-thought
+Table 4 highlights the enhancement of GPT-4′s performance through our InforLaw-thought. Compared to Role-Playing, which relies
+solely on GPT-4′s inherent capabilities, InforLaw-thought achieves performance improvements of over 1 % across all datasets, and even
+leads by over 2 % in entertainment and energy domains. Moreover, InforLaw-thought exhibits competitiveness against recent methods.
+For instance, it outperforms Tree-of-Thought by 1.2 % in the ecommerce domain and exceeds Self-Consistency by 1.34 % in the
+chemical domain. Undoubtedly, InforLaw-thought is advanced.
+6.3. Progressiveness of SemnRank
+The role of demonstration retrieval is crucial for DLLMs. To evaluate the advancement of our demonstration retriever, SemnRank,
+we compare it against commonly-used methods, such as the Random method and the KNN-semantics method (Wang et al., 2023b;
+Polak & Morgan, 2024). Also, considering that the number of demonstrations, k, is a critical factor, we extend our evaluation to include
+variations in k. The results are depicted in Fig. 2.
+SemnRank consistently outshines previous methods across all datasets. Its superior performance is especially evident as k increases,
+showing its robustness. Notably, the performance gap widens when k > 5, highlighting a signal where the redundancy among dem­
+onstrations can become detrimental to model efficiency, that once k reaches a certain threshold. Thus, SemnRank proves to be
+increasingly powerful.
+A finding is the presence of diminishing marginal returns with increasing k. While the initial increments in k substantially enhance
+the performance of LLMCC, the benefits taper off as k continues to rise. This phenomenon underscores a balance, beyond which
+additional demonstrations do not translate to proportional gains.
+6.4. Impact of text extension
+To investigate the impact of the amount (word count) settings on LLMCC’s Module 1, we direct GPT-4 to generate text extensions of
+Table 3
+Competition results (F1, %) between NER methods, k = 15.
+Method/Model
+
+Entertainment
+
+Energy
+
+Ecommerce
+
+Chemical
+
+News
+
+GPT-NER
+BERT-Tagger
+MRC-NER
+GNN-SL
+ACE-document-context
+CPGF
+HuPrompt
+SpiralPrompt
+ChatExtract
+DeFFSi
+LLMCC
+
+79.83
+81.43
+81.92
+81.41
+81.99
+79.50
+79.13
+78.47
+79.04
+82.47
+84.72
+
+66.63
+68.44
+68.06
+68.60
+68.22
+66.63
+65.96
+65.52
+66.22
+69.34
+71.95
+
+83.53
+85.60
+86.43
+86.43
+86.22
+83.25
+83.41
+82.46
+83.64
+87.53
+89.23
+
+80.41
+84.10
+85.61
+84.38
+85.23
+80.90
+80.11
+79.57
+80.93
+86.83
+88.94
+
+90.91
+92.80
+93.04
+93.20
+94.60
+88.93
+89.88
+89.13
+90.64
+93.67
+95.85
+
+10
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+Table 4
+Competition results (F1, %) between prompting methods.
+Method
+
+Entertainment
+
+Energy
+
+Ecommerce
+
+Chemical
+
+News
+
+Role-Playing
+Few-Shot-Prompt
+Chain-of-Thought
+Few-Shot-CoT
+Self-Consistency
+Least-to-Most
+Tree-of-Thought
+Generated Knowledge Prompting
+InforLaw-thought
+
+82.61
+83.26
+83.89
+84.12
+82.97
+83.88
+83.96
+84.00
+84.72
+
+69.94
+70.34
+70.73
+70.79
+70.97
+70.78
+70.74
+70.34
+71.95
+
+88.25
+88.81
+88.82
+88.84
+88.59
+88.21
+88.03
+88.76
+89.23
+
+87.54
+88.19
+88.36
+88.40
+87.60
+87.53
+87.69
+87.65
+88.94
+
+94.95
+95.56
+95.49
+95.58
+95.05
+95.12
+95.52
+95.37
+95.85
+
+Fig. 2. LLMCC’s performance changes (F1, %) based on the demonstration retrieval.
+
+varying lengths, ranging from 50 to 800 words, and observe changes in LLMCC’s performance, as depicted in Fig. 3.
+We find that LLMCC’s performance is relatively lower with fewer words. This outcome is attributed to the reduced number of
+entities expanded and the limited knowledge of GPT-4 embedded within the extended text. As the word count increases, LLMCC’s
+performance gradually improves, however, beyond a certain point, performance begins to fluctuate and even slightly decline. We
+believe that prompting GPT-4 to extend each sentence to excessive lengths may exceed its inherent knowledge constraints, leading to
+potential errors such as hallucinations in the extended text, which in turn hampers model performance.
+These results show the effectiveness of our strategy (see the No-limit), which leverages dynamic text volumes to optimize benefits.
+By not rigidly restricting the word count, GPT-4 dynamically adjusts based on the content’s complexity and depth, ensuring a balance
+between information richness and accuracy.
+6.5. Ablation experiment for entity-aware contrastive learning
+In Section 4.3, we present our Contextual Continuity Loss (CCL), and various positive and negative pairs: Human-tagged entity /
+Human-tagged entity; LLM-tagged entity / Human-tagged entity; Human-tagged entity / Human-tagged non-entity; and LLM-tagged
+entity / LLM-tagged entity (pair type 1–4). By observing changes in LLMCC’s performance upon the removal of each of them, we assess
+their respective contributions.
+Experiment results (Table 5) demonstrate a decline in LLMCC’s performance upon the exclusion of each pair type, confirming their
+beneficial roles. This indicates that our learning approach effectively bridges DLLMs and ELLMs, enhancing their utility for NER.
+Furthermore, the results affirm the effectiveness of CCL.
+
+Fig. 3. LLMCC’s performance changes (F1, %) based on the word count.
+11
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+Table 5
+Ablation results (F1, %) for entity-aware contrastive learning.
+Method/Model
+
+Entertainment
+
+Energy
+
+Ecommerce
+
+Chemical
+
+News
+
+LLMCC (without pair type 1)
+LLMCC (without pair type 2)
+LLMCC (without pair type 3)
+LLMCC (without pair type 4)
+LLMCC (without CCL)
+LLMCC (total)
+
+84.07
+84.17
+84.49
+84.16
+84.32
+84.72
+
+71.55
+71.27
+71.62
+71.25
+71.40
+71.95
+
+88.97
+88.75
+88.89
+88.94
+88.97
+89.23
+
+88.22
+88.21
+88.62
+88.30
+88.39
+88.94
+
+95.39
+95.42
+95.12
+95.55
+95.24
+95.85
+
+6.6. Influence of information laws
+To explore the impact of various information laws on LLMCC’s performance, we conduct experiments by fixing each individual law
+to InforLaw-thought’s DLS. Fig. 4 indicates that all laws can improve LLMCC’s capabilities, outperforming the baseline InforLawthought without a law. Specifically, Zipf’s law often provides the highest gain, followed by Heaps’ law, and in some scenarios,
+such as the ecommerce domain, Heaps’ law outperforms Zipf’s law (89.02 % vs. 88.88 %). The other six laws do not perform as well as
+these two.
+We speculate that this is because Zipf’s law and Heaps’ law directly model word and vocabulary in the text, which are the basic
+structural units of text and carry meaning information, thus helping DLLMs to have a more intuitive understanding of text. In contrast,
+other laws focus on different aspects, such as Benford’s law on numerical patterns, which may not provide an intuitive understanding
+of the text, resulting in weaker improvements.
+Another observation is that Ebeling’s law proves to be most effective in the chemical domain, which we suppose is due to the law’s
+focus on the composition and density of text. Chemical texts typically contain highly structured information involving the precise use
+of chemical nomenclature and the sequential nature of specific chemical processes (see the demonstrations in Section 4.1), which
+aligns closely with the modeling of Ebeling’s law, thereby allowing DLLMs to gain a better understanding of chemical texts.
+6.7. Gain of entity prediction enhancement
+LLMCC’s Module 4, Entity Prediction Enhancement (EPE), reflects the assistance that DLLMs can provide to ELLM predictions. To
+better evaluate this potential, we conduct assessments not only with GPT-4 but also incorporate representative DLLMs such as GPT-3.5Turbo and GPT-4o.
+Experiment results displayed in Fig. 5 demonstrate that LLMCC configurations equipped with EPE consistently outperform those
+without EPE. This substantiates the effectiveness of EPE, and illustrates the clever utilization of DLLMs’ capabilities to guide and assist
+ELLMs in a predictive enhancement format.
+6.8. Zipf’s law for chain-of-thought
+Considering that Zipf’s law can bring more benefits to DLLM compared to other laws, we use it as a representative to explore its
+impact on the currently most popular method, Chain-of-Thought (CoT). We find that simply adding a prompt like "analyze the text
+using Zipf’s law" to CoT can significantly enhance DLLM’s effectiveness for NER, see Fig. 6. For example, in the energy domain, GPT4o-based LLMCC performance is improved by 1.72 %, and GPT-3.5-Turbo’s is improved by 1.91 %. This interesting phenomenon
+suggests that deliberately guiding DLLMs to " analyze " the text step by step via Zipf’s law can improve their performance. We hope this
+insight can be extended to future research as an option for exploratory attempts.
+
+Fig. 4. LLMCC’s performance changes (F1, %) based on information laws.
+12
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+Fig. 5. LLMCC’s performance changes (F1, %) based on the entity prediction enhancement.
+
+Fig. 6. Gain (F1, %) brought by Zipf’s law to the CoT.
+
+7. Discussion
+This paper presents an innovative integration of DLLMs and ELLMs, showcasing strategic learning and training to complement their
+respective strengths. This integration establishes a new NER paradigm in the era of LLMs, thereby broadening the scope of previous
+NER frameworks that tend to predominantly focus on either DLLMs or ELLMs. The LLMCC framework not only outperforms existing
+methodologies in performance, but also yields a series of additional contributions.
+Firstly, addressing RO1, we address the issue of demonstration meaning redundancy for in-context learning, illustrating that it can
+be effectively managed through LLM-based meaning entailment. This insight is likely to extend to other demonstration-based sce­
+narios, paving the way for better utilization of LLMs. Moreover, regarding the number of demonstrations, we find that while more
+demonstrations generally improve LLM’s performance, there is a balance to be struck - beyond a certain threshold, additional dem­
+onstrations do not yield proportional gains. This balance is crucial for maintaining computational efficiency and avoiding diminishing
+returns.
+Secondly, addressing RO2, we pioneer an interaction between information laws and LLMs by strategically encouraging LLMs to
+model information laws, which enhances LLM performance beyond that of existing popular strategies. We find that Zipf’s law can bring
+the highest gain. Additionally, we show that information laws can improve existing prompting methods (for example, Zipf’s law” can
+enhance Chain-of-Thought), potentially inspiring subsequent research in other tasks such as text classification and sentiment analysis.
+Thirdly, addressing RO3, we construct a novel learning approach that allows the model to learn from differences, and context
+across entities. Moreover, we consider entities within and beyond the categories from humans and LLMs, and introduce the contextual
+continuity loss, which can serve as complements to contrastive learning, aiding peers in their research.
+Next, we discuss the underlying mechanisms by which information laws enhance LLM performance. Under InforLaw-thought, we
+replace the dynamic law selector with distinct information laws to track the response and thinking processes of LLM, represented by
+GPT-4. The example text we have chosen comes from the Energy dataset, due to its real-world and practical significance:
+Text: “… Operators shut down the CO process in the drying tower and initiate the regeneration process, introducing nitrogen gas at
+0.8 MPa (using steel cylinder liquid nitrogen which vaporizes to produce nitrogen gas, with the safety valve of the liquid nitrogen tank
+13
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+set to activate at 0.8 MPa). The external wall electric heater of the drying tower heats up to over 200 ◦ C to regenerate the desiccant. The
+heated nitrogen gas after regeneration is vented after passing through a water cooler. No collection data is available for the drying
+tower’s skid-mounted equipment …”
+It is observed that LLMs initially leverage insights derived from information laws to comprehend text. This process typically follows
+a sequence of operations: Text Extraction –> Data Analysis –> Calculation of Information Law Properties (e.g., the mean and variance
+of text for Taylor’s Law) –> Model Fitting Using Information Law –> Interpreting the Results –> Insight Generation (e.g., the term
+"valve" displays high variance relative to its mean, indicating its importance). During this process, the LLM may engage in multiple
+rounds of Insight Generation, such as Adjustments and Re-evaluations, particularly under Taylor’s Law. Subsequently, the LLM invites
+three peers for a brainstorming session to collaboratively discuss entity selection and classification. Due to space constraints, this
+section presents the results of brainstorming under Zipf’s Law, Taylor’s Law, and Menzerath’s Law (see the Appendix).
+It is found that across different laws, LLMs consistently emphasize understanding contextual relevance. Whether considering the
+term frequency and ranking (Zipf’s Law), variability and distribution (Taylor’s Law), or sentence structure and length (Menzerath’s
+Law), each discussion assesses how these elements impact text processing and the relevance and classification of entities. This
+contextual understanding of the given text is beneficial for entity extraction, the sequential task. Moreover, the experts involved with
+LLM are interdisciplinary. Typically, AI specialist, language specialist, and NLP specialist are invited. In certain cases, such as under
+Taylor’s Law, where term variability in the text may be pronounced, specialists like chemical process specialists, safety systems an­
+alysts, and equipment design engineers are invited. These experts analyze the changes from a practical standpoint, such as considering
+a "Steel Cylinder" as an operational container, thereby classifying it as an equipment entity. This analysis goes beyond mere linguistic
+context, focusing instead on the practical implications of the terms within their real-world applications.
+In addition, different laws automatically guide LLM to question and discuss entities differently, for example:
+1. Focus based on characteristics: Zipf’s Law: Discussions often revolve around the most frequently mentioned entities and their
+ranking. This leads to emphasizing entities like "nitrogen gas" or "heat exchangers" due to their frequent mention. Taylor’s Law:
+Variability and distribution are key, which brings different entities into focus, such as "safety valve" or "pressure relief systems,"
+especially if their mentions vary significantly across different sections. Menzerath’s Law: The focus on sentence structure and word
+length highlights entities described using shorter, more frequent terms in complex descriptions, like "reactor" or "steel cylinder."
+2. Criteria for importance: In Zipf’s, the frequency can make an entity seem more critical, which results in more straightforward
+debates based strictly on frequency data. In Taylor’s, the variability in mentions across text sections can indicate critical items,
+reflecting interpretations of how entities relate to energy variability. In Menzerath’s, the structural significance (e.g., shorter terms
+in longer sentences) might highlight entities that simplify complex operational descriptions, influencing how the significance of
+entities is perceived.
+Also, under various laws, while LLMs exhibit similar reasoning procedures, such as Interdisciplinary Engagement (involving ex­
+perts from multiple disciplines in all discussions), Multi-Stage Review (multiple rounds of discussion), Consensus Building (empha­
+sizing the need to establish consensus among experts), and Focus on Contextual Relevance (strong emphasis on understanding the
+background and relevance of entities), there are still differences in the discussion approaches. For instance, under Taylor’s Law, the
+term "Steel Cylinder" becomes a focal point where the first two experts classify it as a material, while the last considers it as equipment.
+In contrast, under Zipf’s Law, "Steel Cylinder" is not a focal point, and LLM directly categorizes it as equipment without the need for
+expert discussion. This highlights how the application of different information laws can lead to varying interpretations and handling of
+the same terms within a text, shaping the model’s decision-making process.
+8. Conclusion
+In this study, we focus on NER for knowledge graphs during the LLM era. To address the limitations of previous research regarding
+the LLM selection, demonstration retrieval, and prompt design, we propose a novel and comprehensive NER framework, LLMCC.
+Specifically, we synergistically bridge DLLMs and ELLMs, combining their respective strengths to enhance NER. Additionally, to
+improve the in-context learning, we introduce SemnRank, which addresses the redundancy of demonstration retrieval through se­
+mantic similarity computations and bidirectional meaning entailment detection. We also propose InforLaw-thought, a prompting
+strategy informed by insights from information laws, to achieve superior prompt designs. Furthermore, we introduce Entity-aware
+Contrastive Learning to train the LLMCC effectively, ensuring an entity-focused learning process.
+Extensive experiments have been conducted across five domains, demonstrating the competitiveness of LLMCC. Moreover, we
+contribute additional insights regarding the interaction between different LLMs, the selection and application of information laws,
+considerations around prompts and the number of demonstrations, and strategies for enhancing demonstration quality and model
+training, among other factors.
+Future work could pursue more direct coupling between DLLMs and ELLMs. For instance, these models could be jointly trained,
+allowing for the interchange of parameters between decoders and encoders; Also, they could implement an interactive feature sharing
+where DLLMs can directly utilize the features gained by ELLMs and vice versa. This could involve developing shared attention
+mechanisms or memory layers that allow models to access and benefit from each other’s processed data in real-time.
+
+14
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+CRediT authorship contribution statement
+Zhenhua Wang: Writing – original draft, Resources, Methodology, Investigation, Data curation, Conceptualization. Huiru Chen:
+Resources, Investigation. Guang Xu: Methodology, Investigation. Ming Ren: Writing – original draft, Supervision, Funding acqui­
+sition, Data curation.
+Acknowledements
+This research is supported by the Outstanding Innovative Talents Cultivation Funded Programs 2023 of Renmin University of
+China, and Major Project by Ministry of Education Key Research Institute of Humanities and Social Sciences (No. 22JJD870001).
+Appendix 1: DLLM’s thoughts on Zipf’s law
+
+### Initial Entity Session:Expert 1 (AI Specialist) focuses on statistical significance:
+• Proposes entities based on the highest frequencies and most significant ranks from Zipf’s analysis.
+• Initial list includes "nitrogen gas", "valve", "drying tower", "reaction vessel", "heat exchangers".
+Expert 2 (Language Specialist) emphasizes context:
+• Reviews the usage context of each term to ensure the relevance to equipment or materials.
+• Suggests that "sour gas" and "highly volatile liquid chemical" are critical materials due to their specific mentions in critical process descriptions.
+Expert 3 (NLP Specialist) assesses semantic consistency:
+• Examines how terms are related within the text, advocating for the inclusion of "steel cylinder" and "liquid nitrogen tank" as equipment due to their roles in
+containing and processing materials.
+### First Round of Discussions: Challenging Initial Findings:Regarding "Steel Cylinder":
+• Expert 1 views it merely as a container, questioning its operational significance.
+• Expert 2 and Expert 3 argue for its critical role in safety and process control, detailing how it integrates with the system’s pressure management.
+On the Classification of "Nitrogen Gas":
+• Expert 1 categorizes it straightforwardly as a material.
+• Expert 2 raises a point about its dual role, also affecting safety protocols, which might blur lines between material and equipment.
+• Expert 3 supports its listing as material, emphasizing its consistent usage across different operational phases.
+### Second Round of Discussions: Refining Entity List
+• Dispute over "Water Cooler":
+○ Expert 1 initially overlooks it as non-essential.
+○ Expert 2 highlights its essential role in controlling process temperature, crucial for safety.
+○ Expert 3 aligns with Expert 2, emphasizing its functional necessity in maintaining system integrity.
+• Re-evaluation of "Reaction Vessel":
+○ All agree on its importance but revisit its description to ensure comprehensive understanding.
+○ Expert 2 and Expert 3 provide detailed explanations on how it interacts with other components like "valve LV1003″ and "sour gas", ensuring a holistic view.
+### Final Consensus Building: Agreement on Entities
+• Experts review the entire list, ensuring every entity is justified with textual evidence and expert analysis.
+• They finalize the terms, with each expert agreeing on the importance and context of every listed entity, ensuring no critical component is missed.
+• Final Adjustments:
+○ Minor adjustments are made based on the last discussions, such as adding "external wall electric heater" after Expert 3 argues for its significance in the
+regeneration process not initially covered.
+
+Appendix 2: DLLM’s thoughts on Taylor’s Law
+
+### Initial Entity Session:Expert 1 (Chemical Process Specialist), Expert 2 (Safety Systems Analyst), and Expert 3 (Equipment Design Engineer) start by
+listing entities from the text. They use their respective expertise to focus on different aspects of the text:
+• Expert 1 notes all terms related to chemical processes and materials.
+• Expert 2 focuses on safety components and implications.
+• Expert 3 identifies all mechanical and structural equipment.
+### Discussion Round 1: Reconciling Different PerspectivesOn "Steel Cylinder"
+• Expert 1: Argues that the "steel cylinder" should be considered as part of the material because it’s directly involved in handling and storing the nitrogen gas, which
+is critical to the process.
+• Expert 2: Supports Expert 1, emphasizing the cylinder’s role in safety due to its pressure specifications and links to the safety valve.
+• Expert 3: Suggests classifying it as equipment because it’s a physical container used operationally.
+Consensus: After discussion, they agree to classify "steel cylinder" as equipment because it serves a functional role in the operational setup, beyond just containing
+material.On "Nitrogen Gas"
+• Expert 1: Highlights its role as a material used in the process.
+(continued on next page)
+
+15
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+(continued )
+• Expert 2: Notes the safety implications of nitrogen gas pressure and temperature.
+• Expert 3: Considers it incidental to the equipment function.
+Consensus: Unanimously agreed to be classified as a material due to its use in the chemical process.
+### Discussion Round 2: Clarifying AmbiguitiesOn "Water Cooler"
+• Expert 1: Initially overlooks this, focusing more on gases and chemicals.
+• Expert 2: Points out its critical role in cooling and safety after heated processes.
+• Expert 3: Stresses its importance in maintaining equipment integrity and preventing overheating.
+Consensus: Classified as equipment. The discussion helps highlight its operational necessity, affecting both safety and process efficiency.On "Reaction Vessel"
+• Expert 1: Identifies it as central to the chemical reaction process.
+• Expert 2: Concerned with the safety aspects, particularly with overpressure and chemical imbalances.
+• Expert 3: Focuses on its design and structural integrity.
+Consensus: Clearly classified as equipment, pivotal in all respects—process, safety, and design.
+### Discussion Round 3: Final AdjustmentsThey review the list to ensure no entity is misclassified and check for consistency in their reasoning. They also verify
+that the entities align with both the operational and safety protocols described in the text.Final Validations
+• Each expert reviews the entire list to ensure no key entity is omitted and that their classification reflects both the text’s content and their expert understanding.
+• They discuss the implications of missing data (e.g., no collection data for drying tower’s skid-mounted equipment) and agree on caution in assuming roles or
+importance without explicit mentions.
+
+Appendix 3: DLLM’s thoughts on Menzerath’s law
+
+### Initial ObservationsExpert 1 (AI Specialist) starts by presenting a detailed analysis:
+• Calculates average word lengths across various sentence lengths, discovering that technical sections with numerous equipment mentions defy typical Menzerath’s
+law patterns by using unusually concise terminology more frequently than expected.
+• Highlights specific sections where complexity is reduced due to shorter words in longer sequences, such as descriptions involving "reactor", "steel cylinder", and
+"heat exchangers".
+Expert 2 (Language Specialist) examines these findings:
+• Confirms that shorter, frequent terms in lengthy descriptions often pertain to technical components crucial to understanding the operational processes.
+• Notes specific instances where procedural descriptions involve safety components like "safety valve" and "pressure relief systems", which use compact yet frequent
+terminology.
+Expert 3 (NLP Specialist) analyses semantic structure:
+• Maps relationships between terms highlighted by Expert 1, confirming that "nitrogen gas" and "reactor" are often discussed in conjunction with safety measures.
+• Validates that the semantic context supports the clustering of technical terms in specific operational descriptions.
+### Discussion Round 1: Resolving DiscrepanciesDebate on "liquid nitrogen tank":
+• Expert 1 questions its significance based on average word length, noting it falls within typical parameters.
+• Expert 2 argues for its critical role, evidenced by repeated mentions in safety protocols.
+• Expert 3 provides semantic analysis showing strong links between "liquid nitrogen tank" and "safety valve", indicating critical operational importance.
+### Discussion Round 2: Clarifying AmbiguitiesClassification of "external wall electric heater" and "water cooler":
+• Expert 1 notes these terms appear in sentences that align well with Menzerath’s law, suggesting they are not as critical.
+• Expert 2 emphasizes their importance in maintaining operational temperatures and pressures, critical for safety and efficiency.
+• Expert 3 agrees, pointing out that semantic connections to "thermal variation" and "regeneration process" justify their inclusion as key equipment.
+### Discussion Round 3: Reviewing Uncertain Terms
+• All experts revisit terms like "steel cylinder" and "external wall electric heater" to ensure their classifications align with both linguistic patterns and operational
+context.
+• Expert 1 reassesses the linguistic data, confirming anomalies where important terms defy expected patterns due to their technical significance.
+• Expert 2 and Expert 3 refine the contextual and semantic justifications, ensuring all terms are correctly categorized and linked.
+### Final Entity List Approval
+• After extensive discussions and adjustments, a final review session confirms the accuracy of the entity list.
+• All terms are agreed upon, with clear classifications under "Equipment" and "Material", ensuring that the entity list reflects a deep understanding of the text’s
+content and the complexities of the operations described.
+
+Data availability
+Data will be made available on request.
+References
+Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I., Aleman, F.L. et al. (2023). Gpt-4 technical report. arXiv preprint arXiv:2303.08774.
+Dagdelen, J., Dunn, A., Lee, S., Walker, N., Rosen, A. S., Ceder, G., et al. (2024). Structured information extraction from scientific text with large language models.
+Nature Communications, 15(1), 1418.
+
+16
+
+Information Processing and Management 62 (2025) 104054
+
+Z. Wang et al.
+
+Devlin, J., Chang M., Lee K., and Toutanova K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In NAACL, pages
+4171–4186.
+Dong, X. L. (2023). Generations of Knowledge Graphs: The Crazy Ideas and the Business Impact. Proceedings of the VLDB Endowment, 16(12), 4130–4137.
+Fan, Z., & Chen, C. (2024). CuPe-KG: Cultural perspective–based knowledge graph construction of tourism resources via pretrained language models. Information
+Processing & Management, 61(3), Article 103646.
+Farquhar, S., Kossen, J., Kuhn, L., & Gal, Y. (2024). Detecting hallucinations in large language models using semantic entropy. Nature, 630(8017), 625–630.
+Gao, J., Peng, P., Lu, F., Claramunt, C., Qiu, P., & Xu, Y. (2024a). Mining tourist preferences and decision support via tourism-oriented knowledge graph. Information
+Processing & Management, 61(1), Article 103523.
+Gao, W., Zheng, C., Zhu, X., Deng, H., Wang, Y., & Hu, G. (2024b). Knowledge-injected prompt learning for actionable information extraction from crisis-related
+tweets. Computers and Electrical Engineering, 118, Article 109398.
+Huang, J., Yang, D. M., Rong, R., Nezafati, K., Treager, C., Chi, Z., et al. (2024). A critical assessment of using ChatGPT for extracting structured data from clinical
+notes. npj Digital Medicine, 7(1), 106.
+Hu, Y., Chen, Q., Du, J., Peng, X., Keloth, V. K., Zuo, X., et al. (2024). Improving large language models for clinical named entity recognition via prompt engineering.
+Journal of the American Medical Informatics Association, ocad259.
+Jehangir, B., Radhakrishnan, S., & Agarwal, R. (2023). A survey on named entity recognition—datasets, tools, and methodologies. Natural Language Processing Journal,
+3, Article 100017.
+Kan, Z., Feng, L., Yin, Z., Qiao, L., Qiu, X., & Li, D. (2023). A composable generative framework based on prompt learning for various information extraction tasks.
+IEEE Transactions on Big Data, 9(4), 1238–1251.
+Keloth, V. K., Hu, Y., Xie, Q., Peng, X., Wang, Y., Zheng, A., et al. (2024). Advancing entity recognition in biomedicine via instruction tuning of large language models.
+Bioinformatics, 40(4), btae163.
+Kocoń, J., Cichecki, I., Kaszyca, O., Kochanek, M., Szydło, D., Baran, J., et al. (2023). ChatGPT: Jack of all trades, master of none. Information Fusion, 99, Article
+101861.
+Kojima, T., Gu, S. S., Reid, M., Matsuo, Y., & Iwasawa, Y. (2022). Large language models are zero-shot reasoners. Advances In Neural Information Processing Systems, 35,
+22199–22213.
+Li, X., Feng, J., Meng, Y., Han, Q., Wu, F., & Li, J. (2020). A unified MRC framework for named entity recognition. In Proceedings of the 58th Annual Meeting of the
+Association for Computational Linguistics (pp. 5849–5859).
+Liu, J., Liu, A., Lu, X., Welleck, S., West, P., Bras, R.L. et al. (2021). Generated knowledge prompting for commonsense reasoning. arXiv preprint arXiv:2110.08387.
+McIntosh, T. R., Liu, T., Susnjak, T., Watters, P., Ng, A., & Halgamuge, M. N. (2023). A culturally sensitive test to evaluate nuanced gpt hallucination. IEEE Transactions
+on Artificial Intelligence.
+Polak, M. P., & Morgan, D. (2024). Extracting accurate materials data from research papers with conversational language models and prompt engineering. Nature
+Communications, 15(1), 1569.
+Qi, X., Zeng, Y., Xie, T., Chen, P.Y., Jia, R., Mittal, P. et al. (2023). Fine-tuning aligned language models compromises safety, even when users do not intend to!. arXiv
+preprint arXiv:2310.03693.
+Stanisz, T., Drożdż, S., & Kwapień, J. (2024). Complex systems approach to natural language. Physics Reports, 1053, 1–84.
+Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.A., Lacroix, T. et al. (2023). Llama: Open and efficient foundation language models. arXiv preprint arXiv:
+2302.13971.
+Triguero, I., Molina, D., Poyatos, J., Del Ser, J., & Herrera, F. (2024). General purpose artificial intelligence systems (GPAIS): Properties, definition, taxonomy, societal
+implications and responsible governance. Information Fusion,, 103, Article 102135.
+Voronov, A., Wolf, L., & Ryabinin, M. (2024). Mind your format: Towards consistent evaluation of in-context learning improvements. arXiv preprint arXiv:
+2401.06766.
+DeMarzo, G., Gabrielli, A., Zaccaria, A., & Pietronero, L. (2021). Dynamical approach to Zipf’s law. Physical Review Research, 3(1), Article 013084.
+Wang, Z., Zhang, B., & Gao, D. (2021a). Text mining of hazard and operability analysis reports based on active learning. Processes, 9(7), 1178.
+Wang, X., Jiang, Y., Bach, N., Wang, T., Huang, Z., Huang, F., et al. (2021b). Automated concatenation of embeddings for structured prediction. In Proceedings of the
+59th annual meeting of the association for computational linguistics and the 11th international joint conference on natural language processing (Volume 1: Long Papers)
+(pp. 2643–2660).
+Wang, Z., Liu, H., Liu, F., & Gao, D. (2022a). Why KDAC? A general activation function for knowledge discovery. Neurocomputing, 501, 343–358.
+Wang, Z., Zhang, B., & Gao, D. (2022b). A novel knowledge graph development for industry design: a case study on indirect coal liquefaction process. Computers in
+Industry, 139, Article 103647.
+Wang, Z., Ren, M., Gao, D., & Li, Z. (2023a). A Zipf’s law-based text generation approach for addressing imbalance in entity extraction. Journal of Informetrics, 17(4),
+Article 101453.
+Wang, S., Sun, X., Li, X., Ouyang, R., Wu, F., Zhang, T. et al. (2023b). Gpt-ner: Named entity recognition via large language models. arXiv preprint arXiv:2304.10428.
+Wang, S., Meng, Y., Ouyang, R., Li, J., Zhang, T., Lyu, L. et al. (2023c). GNN-SL: Sequence labeling based on nearest examples via GNN. In Findings of the association
+for computational linguistics: acl 2023 (pp. 12679–12692).
+Wang, Z., Wang, B., Ren, M., & Gao, D. (2023d). A new hazard event classification model via deep learning and multifractal. Computers in Industry, 147, Article
+103875.
+Wang, Z., He, S., Xu, G., & Ren, M. (2024a). Will sentiment analysis need subculture? A new data augmentation approach. Journal of the Association for Information
+Science and Technology, 75(6), 655–670.
+Wang, Z., Xu, G., & Ren, M. (2024b). LLM-generated natural language meets scaling laws: New explorations and data augmentation methods. arXiv preprint arXiv:
+2407.00322.
+Wang, Z., Zhang, F., Ren, M., & Gao, D. (2024c). A new multifractal-based deep learning model for text mining. Information Processing & Management, 61(1), Article
+103561.
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. Advances in Neural
+Information Processing Systems, 35, 24824–24837.
+Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., et al. (2024). Tree of thoughts: Deliberate problem solving with large language models. Advances in Neural
+Information Processing Systems, 36.
+Zhang, F., Wang, B., Gao, D., Yan, C., & Wang, Z. (2024a). When grey model meets deep learning: A new hazard classification model. Information Sciences, 670, Article
+120653.
+Zhang, H., Zhang, C., & Wang, Y. (2024b). Revealing the technology development of natural language processing: A Scientific entity-centric perspective. Information
+Processing & Management, 61(1), Article 103574.
+Zhou, D., Schärli, N., Hou, L., Wei, J., Scales, N., Wang, X. et al. (2022). Least-to-most prompting enables complex reasoning in large language models. arXiv preprint
+arXiv:2205.10625.
+Zhou, W., Wang, Q., Xu, M., Chen, M., & Duan, X. (2024, May). Revisiting the self-consistency challenges in multi-choice question formats for large language model
+evaluation. In LREC-COLING 2024. (pp. 14103–14110).
+
+17
+
+

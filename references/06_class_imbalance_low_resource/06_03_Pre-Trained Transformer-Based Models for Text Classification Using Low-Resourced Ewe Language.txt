@@ -1,0 +1,2417 @@
+systems
+Article
+
+Pre-Trained Transformer-Based Models for Text Classification
+Using Low-Resourced Ewe Language
+Victor Kwaku Agbesi 1 , Wenyu Chen 1, *, Sophyani Banaamwini Yussif 1 , Md Altab Hossin 2 ,
+Chiagoziem C. Ukwuoma 3,4 , Noble A. Kuadey 1 , Colin Collinson Agbesi 5 , Nagwan Abdel Samee 6 ,
+Mona M. Jamjoom 7 and Mugahed A. Al-antari 8, *
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+*
+
+Citation: Agbesi, V.K.; Chen, W.;
+Yussif, S.B.; Hossin, M.A.; Ukwuoma,
+C.C.; Kuadey, N.A.; Agbesi, C.C.;
+Abdel Samee, N.; Jamjoom, M.M.;
+Al-antari, M.A. Pre-Trained
+Transformer-Based Models for Text
+Classification Using Low-Resourced
+Ewe Language. Systems 2024, 12, 1.
+https://doi.org/10.3390/
+systems12010001
+Academic Editor: Vladimír Bureš
+Received: 23 October 2023
+Revised: 25 November 2023
+Accepted: 15 December 2023
+Published: 19 December 2023
+
+School of Computer Science and Engineering, University of Electronic Science and Technology of
+China (UESTC), Chengdu 611731, China; vkagbesi@std.uestc.edu.cn (V.K.A.);
+sophyaniyussif2@yahoo.com (S.B.Y.); nkuadey@htu.edu.gh (N.A.K.)
+School of Innovation and Entrepreneurship, Chengdu University, No. 2025 Chengluo Avenue,
+Chengdu 610106, China; altabbd@cdu.edu.cn
+College of Nuclear Technology and Automation Engineering, Chengdu University of Technology,
+Chengdu 610059, China; ukwuoma@std.uestc.edu.cn
+Sichuan Engineering Technology Research Center for Industrial Internet Intelligent Monitoring and
+Application, Chengdu University of Technology, Chengdu 610059, China
+Faculty of Applied Science and Technology, Koforidua Technical University,
+Koforidua P.O. Box KF-981, Ghana; ccagbesi@ktu.edu.gh
+Department of Information Technology, College of Computer and Information Sciences, Princess Nourah bint
+Abdulrahman University, P.O. Box 84428, Riyadh 11671, Saudi Arabia; nmabdelsamee@pnu.edu.sa
+Department of Computer Sciences, College of Computer and Information Sciences, Princess Nourah bint
+Abdulrahman University, Riyadh 11671, Saudi Arabia; mmjamjoom@pnu.edu.sa
+Department of Artificial Intelligence, College of Software & Convergence Technology, Daeyang AI Center,
+Sejong University, Seoul 05006, Republic of Korea
+Correspondence: cwy@uestc.edu.cn (W.C.); en.mualshz@sejong.ac.kr (M.A.A.-a.)
+
+Abstract: Despite a few attempts to automatically crawl Ewe text from online news portals and magazines, the African Ewe language remains underdeveloped despite its rich morphology and complex
+"unique" structure. This is due to the poor quality, unbalanced, and religious-based nature of the
+crawled Ewe texts, thus making it challenging to preprocess and perform any NLP task with current
+transformer-based language models. In this study, we present a well-preprocessed Ewe dataset for
+low-resource text classification to the research community. Additionally, we have developed an
+Ewe-based word embedding to leverage the low-resource semantic representation. Finally, we have
+fine-tuned seven transformer-based models, namely BERT-based (cased and uncased), DistilBERTbased (cased and uncased), RoBERTa, DistilRoBERTa, and DeBERTa, using the preprocessed Ewe
+dataset that we have proposed. Extensive experiments indicate that the fine-tuned BERT-base-cased
+model outperforms all baseline models with an accuracy of 0.972, precision of 0.969, recall of 0.970,
+loss score of 0.021, and an F1-score of 0.970. This performance demonstrates the model’s ability to
+comprehend the low-resourced Ewe semantic representation compared to all other models, thus
+setting the fine-tuned BERT-based model as the benchmark for the proposed Ewe dataset.
+Keywords: Ewe language; text classification; pre-trained language models; natural language processing
+
+Copyright: © 2023 by the authors.
+
+1. Introduction
+
+Licensee MDPI, Basel, Switzerland.
+
+Text classification (TC) is a valuable text retrieval task for handling enormous text
+inputs. It automatically classifies and establishes different text samples using natural
+language processing (NLP) and data mining tools with machine and deep learning techniques [1]. In the TC procedure, various texts are accepted, and a model represents the
+text as a vector. The vector is then fed into a model for training until a satisfactory mean
+is achieved [2]. Generally, TC tasks are handled by deep learning (DL) models. These
+
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+4.0/).
+
+Systems 2024, 12, 1. https://doi.org/10.3390/systems12010001
+
+https://www.mdpi.com/journal/systems
+
+Systems 2024, 12, 1
+
+2 of 22
+
+models classify documents into diverse classes: entertainment, international, business,
+politics, health tips, and sports, leading to several automated systems, including detection
+systems [3], customer-centered chat or feedback systems [4], news event systems [5], sentiment or emotional applications [6], and spontaneous text summarization [7]. With the
+power of systems based on the Internet of Things (IoT) and linguistic development, the
+world is moving toward a machine-to-human (M2H) era where data is constantly generated
+across different channels [8].
+Currently, DL models have proven to be efficient in downstream tasks, including
+text classification and analysis [9,10] and language recognition [11]. These studies have
+demonstrated their efficacy in retrieving contextual information and patterns on different
+scales. They also automatically acquire valuable features from any set of raw texts [11].
+Recurrent neural networks (RNN) [12] perform accurately with NLP tasks such as partof-speech (POS) tagging and question-and-answer (QA). However, when dealing with
+long-term dependencies, typical RNNs are restricted. This occurs when the input sequence
+covers lengthy intervals, resulting in disappearing and ballooning gradient issues. The
+long-short-term memory (LSTM) [13] and the gated recurrent unit (GRU) [14] neural
+networks (NN) are two typical solutions that handle these challenges. They are effective at
+capturing long-term dependencies, making them extensively utilized in a good number
+of high-resource language (HRL) applications. The NLP community has recently shown
+much interest in pre-trained language models (PLMs) [15,16]. With these models, a generic
+language, for instance, Spanish, Chinese, or English, is used to learn a procedure to predict
+the next word in a phrase. The retained data can then be applied to diverse downstream
+NLP tasks. The pre-trained Bidirectional Encoder Representations from Transformers
+(BERT), as introduced in [17] and its cohorts, are pre-trained and based on well-known
+transformer architectures [18]. BERT is a deeply bidirectional model pre-trained using a
+large volume of text to predict randomly masked words from documents using a masked
+language model (MLM). However, BERT and its associated PLMs prove their robustness in
+various natural language tasks [19–22]. Yet, their performance with African low-resource
+languages (ALRLs) like Ewe is not established due to the unavailability of labeled datasets
+for these models to comprehend the semantics of these ALRLs as their native speakers do.
+Transformer-based language models and pre-trained semantic representations shown
+by word embedding (including Glove, word2vec, CBOW, and FastText) continuously
+improve the performance of HRLs such as English, Chinese, German, and Spanish in
+several NLP-based studies, yet researchers constantly focus on these HRLs for new NLP
+systems [23–25]. However, little attention has been given to most African languages,
+popularly classified as “low resource languages” (LRLs). The ÉV(Ewe), Swahili, Shumom,
+N’Ko, Oromo, Twi, Amharic, and Fon are part of Africa’s dozens of languages grouped
+as extremely low-resourced (vulnerable) [26]. These LRLs are languages with poor datasetting and a lack of available resources, including annotated datasets, lexical, syntactic,
+and semantic tools such as dictionaries, dependency tree corpora, baseline algorithms with
+results, and NLP statistical tools.
+This study focuses on the Ewe language (ÉVegbe), spoken by over 20 million people,
+primarily in Benin, Togo, Ghana, Liberia, Nigeria, and Niger-Congo. The language also
+forms part of academic curricula studied at various education levels in West Africa. For
+example, in Ghana, the language is learned in elementary through tertiary education, while
+in Togo, the language is taught throughout the elementary education system. As natives
+call it, it is a natural phonic language like many African languages and part of a group
+of related languages known as Gbe, popularly in West Africa. The ÉVe (Ewe) language
+is part of African languages that are highly low-resourced, complex-numerous, and lack
+standard datasets [27]. Despite the necessity to boost regional trade and increase socioeconomic benefits across the sub-region in Africa, the undeveloped Ewe language, which
+remains one of the significant languages in these regions, hinders native speakers from
+achieving these goals. Additionally, today’s globalization guide, trade, and investment
+benefits, among others, will not be achieved. Given this, developing and digitizing the Ewe
+
+Systems 2024, 12, 1
+
+3 of 22
+
+language will benefit its native speakers, researchers, and investors. Additionally, it will
+prevent language loss, expand regional trade, increase investment and development, and
+improve educational and linguistic knowledge systems that can keep track of political and
+demographic changes.
+The high-performance scores of PLMs have proven their robustness and capabilities in
+solving multi-class classification problems with several HRLs. However, this milestone is
+yet to be achieved in the low-resourced Ewe language. The unavailability of a preprocessed
+Ewe dataset, the absence of benchmark results, and the language’s complicated syntax
+and dynamic sentence structure result in minimal research on using the Ewe text to solve
+an NLP-based problem. Furthermore, researchers may doubt the language’s efficiency in
+real-world applications due to its syntax and the large volume of noise it may generate
+during its data-gathering phase since the noise may influence decision confidence, leading
+to decision reversal. This is due to the text’s syntax complexity, limited resources, irrelevant
+information in the text, data sparsity, and dialect variations, among others. The Ewe
+language, like many African languages, has a complex and agglutinative syntax. This
+means that words can be composed of multiple morphemes, and the word order may differ
+from languages with more linear syntax, such as English. The intricate syntax can make it
+challenging for NLP models to accurately parse and understand the structure of sentences,
+which is essential for tasks like part-of-speech tagging and syntactic analysis. Also, Ewe is
+a relatively low-resource language in NLP. This means fewer pre-trained models, datasets,
+and language resources are available for Ewe than in widely spoken languages like Chinese,
+English, or Spanish. Limited resources can also hinder the development of accurate
+language models and classifiers for Ewe texts. Irrelevant or unintended information
+in the Ewe text can influence decision confidence during training. The Ewe text data
+may contain dialectal variations, code-switching between Ewe and other languages like
+English, Arabic, or Swahili, spelling variations, and informal language usage. This noise
+can make it challenging for text classification models to categorize the text into predefined
+classes correctly. Lastly, Ewe is spoken in several countries (including Togo, Benin, and
+Ghana), and there are dialectal variations among Ewe speakers in different countries. These
+dialectal variations can affect the text’s syntax, vocabulary, and language usage. Text
+classification models must account for these variations when working with Ewe texts from
+diverse sources.
+To this end, this study aims to provide a preprocessed dataset for the Ewe language to
+solve the problem of the lack of data resources. This is to make data resources available for
+future studies, preserve them, and provide a platform for their growth. Precisely, the “Ewe
+news dataset” consists of six classes, namely coronavirus (COVID-19) news, local news,
+business news, entertainment news, sports news, and political news. We also fine-tuned
+seven transformer-based language models to explore the Ewe semantic representation. To
+our knowledge, this is the first study to explore recent transformer-based models with the
+Ewe language. The main contributions are as follows:
+1.
+
+2.
+
+3.
+
+We developed and preprocessed a low-resource EWE dataset for news classification.
+The Ewe news dataset consists of 4264 news articles with six distinct classes. Each
+news article comprises an average of 400 words;
+Based on the Ewe news dataset, we developed a word embedding process for exploiting the semantic representation in the low-resource language. We further fine-tuned
+seven transformer-based language models using the proposed Ewe dataset to explore
+its semantic representation for text classification;
+We evaluated the robustness and stability of our fine-tuned models in capturing the
+exact semantic representation of the low-resourced Ewe text. State-of-the-art results
+were achieved with the fine-tuned language models in each class. A deep comparative
+study analyzed each model’s ability to capture strong semantic Ewe information.
+
+The rest of this study is structured as follows. Section 2 provides the current literature
+on low-resource languages; Section 3 describes the processes involved in creating the Ewe
+news dataset and the methodology. We further present our results and analysis in Section 4.
+
+Systems 2024, 12, 1
+
+4 of 22
+
+Finally, we conclude and recommend future studies on the low-resourced Ewe language
+in Section 5.
+2. Related Work
+Interest in developing LRLs grows among native speakers, organizations, and researchers. This development generated only a few LRL studies compared with the number
+of available studies on HRLs.
+In [28], the authors developed and curated South Africa’s Sepedi and Setswana
+datasets for a TC task. They affirmed that augmenting small data sets significantly affects the dataset’s quality and can produce an optimal result. The authors of [29] made
+available two previously generated datasets for the Filipino language, each with two classes.
+They argued that the dataset contained enough samples to train various DL methods. The
+authors utilized the BERT and DistilBERT models with the new Filipino dataset, which
+recorded an accuracy of 74.15% and 73.70% with a loss score of 0.5220 and 0.5274, respectively. The authors utilized a new dataset for a low-resourced Urdu-Arabic text and
+adopted a DL method for a downstream task [30]. Kanan et al. upgraded the P-Stemmer
+model with a combination of support vector machines (SVM), k-nearest neighbors (KNN),
+naive Bayes (NB), Random Forest, and K-Star methods [31]. They focused on improving
+the accuracy of the Arabic text classification task. They also developed an Arabic-based
+dataset of 5000 Arabic texts divided into 5 different classes. Their Arabic-based dataset
+comprised articles from online magazines, newspapers, and media portals. Although it has
+been highlighted that their combined methods enhance the classification performance, the
+NB classifier with P-Stemmer recorded an optimal F1-measure score (F1 = 0.752), which
+is a significant improvement of about 2.44% compared with the same classifier without
+P-Stemmer (F1 = 0.728). The sensitivity and effectiveness of feature-based classification
+approaches using Arabic texts were examined in [32]. Specifically, the authors compared
+semantic fusion and multiple-word (SF-MW) approaches with DL methods. They proposed
+several improvements to the existing feature selection algorithms. These improvements
+were made by combining the term frequency-inverse document frequency (TF-IDF) method
+with the Chi-Square, Information Gain, and Gini Index feature selection approaches. They
+utilized NB, SVM, and Decision Tree (DT) as their classifiers in their experiments. Their
+study split the BBC-Arabic dataset, which has 1250 data samples, into 4 classes, and the
+Alj-News5 dataset, which has 1500 texts, into 5 classes. These samples were used to test
+each classifier accordingly. They represented each text with a vector in their testing, so
+70% of each dataset was used for training and 30% for testing. The SF-MW approach
+to the SVM classifier performed better than the NB and DT classifiers, as shown by the
+precision, recall, and F1-measure scores of 0.954, 0.945, and 0.945 (using the BBC-Arabic
+dataset), respectively, and precision = 0.96, recall = 0.986, and F1-measure score = 0.969
+(using Alj-News5). The findings from these approaches were significant to the linguistic
+development of the Arabic language.
+A new Vietnamese dataset for a classification task was introduced in [33]. Specifically,
+the authors changed the original pipeline for Vietnamese text classification by reducing
+the dimension of feature vectors based on the term frequency over the entire corpus that
+was merged in the TF-IDF weighting phase, as opposed to applying feature selection
+techniques after extracting a TFI document frequency feature vector with a substantial
+dimension. Although the procedure decreased the computational complexity, we realized
+the input vectors were weak because they ignored the excellent feature selection process.
+Additionally, the authors adopted DL techniques to solve the TC problem associated with
+some LRLs. A convolutional neural network (CNN) method was utilized to classify Arabic
+texts [34]. With them, the fundamental difficulty was reducing the number of different terms
+before implementing their tagging procedure. They also proposed a grouping mechanism
+for efficiently classifying related Arabic semantics. The authors divided a 6000-word Arabic
+news dataset into 4 categories. Their experiment combined the proposed Gstem method
+with CNN to achieve an Arabic text classification task. They recorded an accuracy of 92.42%
+
+Systems 2024, 12, 1
+
+5 of 22
+
+with the proposed method compared to 88.75% without Gstem. The authors used nine DL
+methods to examine the effect of single- and multi-label Arabic TC [35]. The authors debated
+the sensitivity of the Arabic TC process to the Word2Vec embedding model. They also
+developed two Arabic-based datasets (SANAD and NADiA) for an Arabic classification.
+According to them, the SANAD dataset on the HANGRU model was superior to the Arabic
+classification. It achieved an accuracy of 0.958 compared to 0.886 in the NADiA dataset.
+Recently, Liu et al. [36] constructed a multi-labeled corpus using short-text sentiment
+texts for a downstream task. The authors of [9] explored a neural-network-based feature
+extraction technique for a downstream task. According to them, an attention-based twolayer bidirectional gated recurrent (BiGRU) unit with a two-dimensional convolutional
+neural network (2dCNN) was designed for the task. Their BiGRU layers extracted the
+compositional semantics of the low-resource Ewe document. They later introduced a
+feature selection algorithm to select distinct features for the classification task.
+Researchers in [37] developed a colossal parallel religious-based dataset for the Ghanaian Twi language. They addressed problems uncounted during the data processing and
+development phase and a latent desire for a successful NLP task. They further performed a
+classification task with an unsupervised learning technique. From their study, it was clear
+that it was not easy to make a “clean” dataset for a language with few resources, primarily
+when the target samples were based on religion. Transformer-based PLMs incorporating fine-turning techniques have recently produced superior classification accuracy than
+feature-based methods with several HRL datasets. Aside from our initial Ewe BERT-based
+study [26], which utilizes a tiny Ewe news size for a TC task, BERT [17] and its successor
+language models, such as robustly optimized BERT (RoBERTa) [38], DistilBERT [39], and
+XLNet (Generalized Autoregressive Pretraining for Language Understanding) [40], have
+been reported to attain state-of-the-art (SOTA) performance on downstream tasks with the
+advent of large-scale PLMs. However, these models have yet to be utilized for the Ewe
+language; hence, their efficacy cannot be rated superior to the Ewe language. Motivated by
+these SOTA performances with the language models mentioned above, this study seeks to
+solve the text classification problem associated with the low-resourced Ewe language. To
+our knowledge, no standard datasets or results use transformer-based models for the Ewe
+language. Thus, this is the first study to add to the literature on LRLs.
+3. Materials and Methodology
+This section describes the details of the Ewe dataset, which includes data collection
+and dataset description steps (See Figures 1 and 2). Additionally, we explain the efforts to
+clear the collected data to ensure a standard Ewe text and create the Ewe text classification
+conclude
+Systems 2023, 11, x FOR PEER REVIEWdataset. Also, we present a detailed description of each pre-trained model and 7 of
+24
+with their fine-tuning procedure. We also present the overall framework for solving the
+text classification problem associated with the Ewe language in Figure 3.
+
+Figure1.1.Sources
+Sourcesofofthe
+theEwe
+Ewenews
+newsdataset.
+dataset.
+Figure
+
+Systems 2024, 12, 1
+
+6 of 22
+
+Systems 2023, 11, x FOR PEER REVIEW
+
+12 of
+
+Figure 1. Sources of the Ewe news dataset.
+
+ΥW
+
+, K =ΥW
+
+~
+
+.H 0 = softmax  Α / 3d  X (
+
+
+
+, X =ΥW X ,C ,Qr = ZWq ,r , K r = ZWk ,r
+
+QC = ~ q ,C C k ,C C
+KαCT
++
+Αi ,α = QiC
+
+( a ) content −to − content
+
+QiC KϕCT( i ,α )T
+
+
++
+
+KαC Qϕr ( α ,i )T
+
+
+( a ) content −to − position ( a ) position −to −content
+
+where, K C , X C , and QC are the probable Ewe content vectors generated using the m
+trices WqC ,WX ,C ,WkC ∈ R
+and
+
+d ×d
+
+while the embedding vectors of all layers Z ∈ R
+
+2k ×d
+
+,Q
+
+Kr are probable relative position vectors of the Ewe content using matrice
+~
+
+~
+
+Wq,r ,Wk ,r ∈ Rd ×d . Furthermore, Α i ,α is an element of the attention matrix Α , repr
+senting the attention score from token i to α . Qi
+
+C
+
+and α
+(a)
+
+th
+
+the row of K C is Kα . The ϕ (i, α )
+C
+
+(
+
+)
+
+−1
+
+th
+
+is the i
+
+th
+
+row of the matrix Q
+r
+
+row of Kr is Kϕ ( i ,α ) . Finally, we sca
+(b)
+
+Figure
+A pictorial
+the Ewe
+news dataset
+based on each
+class. (a)PLMs
+Number
+of news
+artic
+3dview
+Α
+by
+a 2. of
+factor
+which
+isbased
+crucial
+stabilizing
+large-scale
+during
+trainin
+Figure 2. A pictorial
+view
+the Ewe
+newsof
+dataset
+on for
+each class.
+(a) Number
+of news
+articles
+in each class; (b) Words in each article.
+in each class; (b) [49].
+Words in each article.
+Table 1. Description of the Ewe news dataset.
+Class
+
+Ewe Text
+
+English Meaning
+According to research, more than
+Le numekukuwo nu la, ame siwo wu
+Coronavirus
+770,000 people were infected by
+770,000 ye xɔ COVID-19 le Ghana.
+COVID-19 in Ghana.
+Ghana Dukplɔla yɔ demokrasiThe Ghanaian President called the demPolitical
+dukɔmeviwo ƒe habɔbɔa be woƒe tagbɔ ocratic–republican community to be
+kɔ wu wo hatiwo.
+more intelligent than its peers.
+Habɔbɔ aɖe si xɔa ame ɖe agbe tso nya A life-saving organization has decided
+Business
+me be yeana hehe Ghanatɔ ewo.
+to train ten Ghanaians.
+The Nigerian government has taken
+Nigeria dziɖuɖua wɔ afɔɖeɖe sesẽwo ɖe
+Local
+drastic measures against road accimɔdododzifɔkuwo ŋu.
+dents.
+Srɔ̃a ɖee fia be dɔléle sesẽ aɖe le fu ɖem Olu Jacob is suﬀering from a severe ailEntertainment
+na Olu Jacob.
+ment, his wife disclosed.
+Xexeame ƒe Lãmesẽ Habɔbɔ ɖo lɛta ɖe The World Health Organization (WHO)
+Ghana be woado go ame alafa ɖeka
+has sent a letter to Ghana to meet a
+Sports
+hena hehexɔxɔ.
+hundred people for training purposes.
+Figure
+3.
+The
+proposed
+framework.
+Figure 3. The proposed framework.
+Total size
+
+Note:Fine-tuning
+Example of a collection of articles from diﬀerent African web sources.
+3.3.6.
+
+Size
+
+794
+
+358
+
+1082
+
+614
+
+766
+
+650
+
+4264
+
+3.1. Ewe Dataset Formation
+Training
+model suchthe
+as Ewe
+BERTnews
+on a dataset.
+small dataset
+This part 3.2.
+describes
+all an
+theextensive
+procedures
+for
+developing
+Thiscan lead
+Preprocessing
+and
+Wordlanguage
+Embedding
+overfitting
+issues.
+Therefore,
+leveraging
+a
+pre-trained
+language
+model
+trained
+includes the article selection process, a brief dataset description, preprocessing, and wordon a distin
+In our preprocessing phase, all upper-case letters were changed to lower-case for u
+dataset is advisable [49]. In this study, we leverage the knowledge acquired during pr
+embedding procedures.
+cased models and vice versa for cased models. We proceeded to clean the collected E
+training for each model, allowing the model to adapt to our text classification task usin
+texts (removing noises: hashtags, empty spaces, full stops, and punctuation from ea
+the proposed Ewe news dataset.
+3.1.1. Data Collection
+We
+fine-tuned
+both the
+cased
+uncased
+versions ofnews
+our BERT
+models
+The quality of a
+news
+dataset is
+critical
+in and
+creating a
+high-quality
+dataset
+since separate
+on
+the
+proposed
+Ewe
+dataset
+using
+the
+RAdam
+optimizer.
+The
+initial
+learning
+it defines its classification effectiveness. English-based news datasets such as 20 News-rate was s
+to 1e-4 and the batch size was 16. During this process, we adhered to a maximum sequen
+groups1 , Reuters-215782 , and RCV13 comprise thousands of articles collected from several
+length of 128. We used the Adam optimizer to finetune the DistilBERT cased and uncase
+news websites, news magazines, and newsletters (newspapers) to create the different news
+models on the Ewe dataset, just as with the BERT models. The learning rate was 1e-4 an
+corpora. Similarly, news datasets in Arabic (ALJ-news dataset [41]), Uzbek [42], Urdu
+the batch size was 32, even though the model was smaller. During the fine-tuning stag
+(Urdu-news [43]), and South African (Setswana and Sepedi-news [28]) languages were
+we realized that the generalization of both case and uncased DistilBERT models was n
+also collected from
+a cross-section of news portals. For our study, the Ewe news dataset
+satisfactory with the larger batch size; hence, we used a smaller batch size, 16. For th
+4 , Voice of Africa5 ,
+was collected from
+popular
+portals, which
+include
+Ghana News
+RoBERTa andnews
+DistilRoBERTa
+models,
+we fine-tuned
+according
+to [40] and used th
+8 My Joy News9 , and Citi News10 . The portals were
+Togo First6 , Punch
+News7 ,
+BBC-Africa
+argmax
+directly on
+the ,
+outputs
+of the last layer with a learning rate of 1e-4 and a bat
+selected to represent
+various
+categories,
+as politics,
+coronavirus,
+business,
+size of 8. For
+DeBERTa,
+we such
+fine-tuned
+based on the
+exact sports,
+hyperparameters
+described
+entertainment,the
+and local
+were
+automatically
+extracted
+using the
+originalnews.
+studyThe
+[47].news
+The articles
+validation
+and test
+accuracies were
+recorded
+for all expe
+11 , as
+mentallibrary
+configurations,
+with
+each
+setup
+k-fold
+cross-validation,
+where
+k = 5.
+open-source Python
+Beautiful
+Soup
+in using
+[29,42].
+Eight native
+speakers
+of the
+Ewe language are invited to label the dataset simultaneously. The ultimate designation is
+verified after obtaining confirmation from all participants in a solitary, sealed gathering.
+
+Systems 2024, 12, 1
+
+7 of 22
+
+11, x FOR PEER REVIEW
+
+of 24 as agreed. ApproxiHence each article was labeled with its corresponding category7 data
+mately 9815 news articles were extracted from these portals, and 6756 were clean. During
+the cleaning phase, we realized that several article duplications led to the deletion and
+reduction of some classes. For example, we recorded over 500 newspaper duplications in
+the coronavirus class. This is because most of these news portals obtain COVID-19 news
+from other websites and credit the source. In total, 4264 news articles were labeled and
+grouped into 6 categories.
+
+3.1.2. Ewe News Dataset Description
+Compared to HRLs, developing a labeled dataset for the low-resourced Ewe language
+has been a major challenge due to the unavailability of Ewe texts.
+In this study, we collected and preprocessed an Ewe-based text named “Ewe news
+dataset” using publicly available news articles from web sources in Togo, Benin, Ghana,
+Liberia, and Nigeria, as illustrated in Figure 1. These articles were translated using the
+Google Translate application and further validated by eight professional Ewe tutors in
+Ghana [44]. The aim was to ensure lingual efficiency, validate proper Ewe text represenFigure 1. Sources of the Ewe news dataset.
+tation, and avoid errors in representation or article duplication in the proposed dataset.
+A total of 1,705,600 Ewe words were translated, making 4264 different Ewe news articles
+grouped into six classes. Each article had an average of 400 words (see Figure 2a). The
+dataset consists of the following classes: COVID-19 news, political news, business news,
+local news, entertainment news, and sports news, as shown in Table 1. The COVID-19
+news articles comprise articles related to the coronavirus (SARS-CoV-2), delta, omicron,
+and alpha variants, totaling 794 articles. The political news articles are items pertaining to
+governmental policies and politics in Ghana, Togo, Burkina Faso, and Nigeria, comprising
+358 articles. A total of 1082 articles were developed for the business news, which includes
+news on development, investment and finance, and local trade within the listed countries.
+In the entertainment news, we collected 614 articles, comprising gossip, lifestyle, music,
+and movie articles. The local news includes articles on education and technology and some
+daily reports in Ghana, Burkina Faso, Nigeria, and Togo, with 766 articles. Finally, the
+sports news recorded 650 articles based on the news in football, hockey, boxing, athletics,
+and players’ lifestyle news, including transfers (see Figure 2b). We also show an example
+(a)
+of each Ewe news headline, its (b)
+English meaning in each class, and its corresponding size
+(see
+Table
+1).
+To
+enhance
+data
+conciseness
+accuracy,
+Figure 2. A pictorial view of the Ewe news dataset based
+each class.and
+(a) Number
+of redundant
+news articlesinformation, such as
+repeating
+news
+and
+symbols,
+was
+removed
+from
+the
+dataset.
+All references to pictures,
+in each class; (b) Words in each article.
+emojis, and URLs were deleted from the data to maintain the textual relevance for the
+classification
+Table 1. Description of the
+Ewe newstask.
+dataset.
+Class
+Coronavirus
+Class
+Coronavirus
+Political
+Political
+
+Business
+Business
+Local Local
+Entertainment
+Entertainment
+Sports
+
+Sports
+
+Ewe Text of the Ewe news dataset.
+English Meaning
+Table 1. Description
+
+Size
+According to research, more than
+Le numekukuwo nu la, ame siwo wu
+770,000 people
+were infected
+by
+794
+Text le Ghana.
+English
+Meaning
+770,000 ye xɔEwe
+COVID-19
+COVID-19 in Ghana.
+Le numekukuwo nu la, ame siwo wu
+According to research, more than 770,000
+Ghana Dukplɔla yɔ demokrasiThe Ghanaian President called the dem770,000 ye xO COVID-19 le Ghana.
+people were infected by COVID-19 in Ghana.
+dukɔmeviwo
+ƒe habɔbɔa
+community
+be the 358
+Ghana
+DukplOlabeyOwoƒe tagbɔ ocratic–republican
+The Ghanaian
+President to
+called
+kɔ
+wu wo hatiwo.
+more
+intelligent than its
+peers. to be more
+demokrasi-dukOmeviwo
+ƒe habObOa be
+democratic–republican
+community
+organization
+has
+decided
+Habɔbɔ
+aɖe
+si xɔa
+tso nya A life-savingintelligent
+woƒe
+tagbO
+kOame
+wu ɖe
+woagbe
+hatiwo.
+than
+its peers.
+1082
+HabObO
+aãe
+si xOa
+ame ãe
+agbe tso
+A
+life-saving
+organization
+has decided to train
+yeana
+hehe
+Ghanatɔ
+ewo.nya
+to
+train ten
+Ghanaians.
+me be
+me be yeana hehe GhanatO ewo.
+ten
+Ghanaians.
+The Nigerian government has taken
+Nigeriadziãuãua
+dziɖuɖua wO
+wɔ afOãeãe
+afɔɖeɖe sesẽwo
+ɖe
+Nigeria
+sesẽwo ãe
+The Nigerian
+government
+has
+taken drastic
+drastic
+measures
+against road
+acci614
+mɔdododzifɔkuwo ŋu.
+mOdododzifOkuwo
+measures against road accidents.
+dents.
+SrOã ãee fia be dOléle sesẽ aãe le fu ãem
+Olu Jacob is suffering from a severe ailment,
+Srɔ̃a ɖee fia be
+sesẽ aɖe le fu ɖem Olu Jacob is suﬀering
+from
+a severe ailnadɔléle
+Olu Jacob.
+his wife
+disclosed.
+766
+Olu Jacob.
+wife disclosed.
+Xexeame ƒe na
+Lãmesẽ
+HabObO ão lEta ãe
+Thement,
+Worldhis
+Health
+Organization (WHO) has
+(WHO)
+Xexeame
+Lãmesẽ
+ɖo lɛta
+Ghana beƒewoado
+goHabɔbɔ
+ame alafa
+ãekaɖe The World
+sent aHealth
+letter toOrganization
+Ghana to meet
+a hundred
+hehexOxO.
+forGhana
+training
+purposes.
+has sent apeople
+letter to
+to meet
+a
+650
+Ghana be hena
+woado go
+ame alafa ɖeka
+Total size
+hundred people for training purposes.
+hena hehexɔxɔ.
+Total sizeof articles from different African web sources.
+4264
+Note: Example of a collection
+
+Note: Example of a collection of articles from diﬀerent African web sources.
+
+3.2. Preprocessing and Word Embedding
+In our preprocessing phase, all upper-case letters were changed to lower-case for uncased models and vice versa for cased models. We proceeded to clean the collected Ewe
+texts (removing noises: hashtags, empty spaces, full stops, and punctuation from each
+
+Size
+794
+358
+1082
+614
+766
+650
+4264
+
+Systems 2024, 12, 1
+
+8 of 22
+
+3.2. Preprocessing and Word Embedding
+In our preprocessing phase, all upper-case letters were changed to lower-case for
+uncased models and vice versa for cased models. We proceeded to clean the collected Ewe
+texts (removing noises: hashtags, empty spaces, full stops, and punctuation from each Ewe
+text, except for unique alphabetical letters, etc.) as indicated in [45]. We later tokenized
+each sentence into words. In the Ewe language, words are typically separated by spaces.
+However, considering the complexities of agglutinative languages like Ewe, which involve
+words formed by multiple morphemes, Ewe, like many African languages, exhibits an
+agglutinative feature where various morphemes are combined to form words. For example,
+in the Ewe word “dzigbordi,” “dzi” is a prefix, “gbor” is the root, and “di” is a suffix.
+Recognizing these morphemes is essential for accurate tokenization. This work explores the
+SpaCy Python library for tokenizing the Ewe text. Then, we reviewed all tokenized words
+to ensure proper tokenized words. Additionally, we performed a lemmatization process
+after tokenization [30]. Lemmatization of the Ewe text typically requires a language-specific
+lemmatization model or rules (build custom rules) since the popular NLP libraries do not
+provide a pre-trained lemmatization model for the Ewe text as of the time of this study.
+To this end, for lemmatizing the tokens generated with the dataset, we considered setting
+a custom rule based on the linguistic characteristics of Ewe [30]. The rule set employed
+was based on five Ewe tutors in Ghana to lemmatize ão, e, me, dzi, dzO, wo, a, mi, nO, and
+vi since they represent most of the minor units of linguistic representation in the dataset.
+A statistical summary of the proposed Ewe dataset is summarized in Table 2. The Ewe
+dataset consists of about 52K tokens, and 43,849 tokens after lemmatization were recorded.
+Table 2. Statistics of the Ewe news dataset.
+Class
+
+No. of Articles
+
+No. of Sentences
+
+No. of Tokens
+
+No. of Tokens after
+Lemmatization
+
+Coronavirus
+Political
+Business
+Local
+Entertainment
+Sports
+
+794
+358
+1082
+614
+766
+650
+
+4596
+1674
+6338
+4230
+2880
+5436
+
+7734
+5009
+11,441
+9273
+6456
+11,736
+
+7121
+4701
+10,506
+8513
+5887
+7121
+
+Mean (µ)
+Standard deviation (σ)
+
+710.67
+238.70
+
+4192.33
+1695.83
+
+8608.16
+2705.56
+
+308.17
+2028.05
+
+Word Embedding
+Word embedding is a technique used for feature learning and language modeling
+in NLP. It is vital for any word or document that needs to be represented as a vector or
+tensor. Several word embeddings have been explored for downstream tasks such as text
+classification, topic modeling, or sentiment analysis.
+In this study, we developed an embedding layer utilizing the word lexicon model
+to extract features from the Ewe texts. These features were fed into each model as input
+vectors, or tensors, to solve the classification problem. In TC tasks, words in sentences
+carry significant semantic features for their appropriate classification. Hence, a sentence
+is represented by a set of words. The sentence is measured as a sequence of words η. In
+our setup, each word in the sentence was mapped to a multi-dimensional continuous
+tensor. Assume that the word tensor ωi ∈ N m corresponds to ith in the sentence where m
+represents the dimension of the word tensor. In a simple mathematical concatenation ⊕ of
+the words η, the tensor matrix, W for the sentence of length is described as:
+W = ( ω1 ⊕ ω2 ⊕ ω3 ⊕ . . . ⊕ ω n ) .
+
+(1)
+
+Systems 2024, 12, 1
+
+9 of 22
+
+3.3. Methodology
+In this part, we first explain why the transformer-based models are chosen. Then,
+we give a detailed description of each modified, pre-trained model. Finally, an exact
+fine-tuning procedure is provided for each pre-trained model.
+3.3.1. Reason for Choosing These Transformer-Based Models
+Transformer-based models are newly introduced architectures created to solve the
+sequence-to-sequence challenge in neural networks, including LSTM and RNN, for sequence modeling. These models from Hugging-Face [46] scripts include BERT (cased and
+uncased version) [17], RoBERTa [38], DistilBERT (cased and uncased version) [39], DistilRoBERTa [39], and Decoding-Enhanced BERT with Disentangle Attention [47] (DeBERTa)
+models. It is important to note that the choice of model depends on the specific requirements of the task, in our case, text classification, the available computational resources, and
+the trade-offs between model size and performance. BERT [17] and its variants, including
+DistilBERT [39], DistilRoBERTa, RoBERTa [38], and DeBERTa [47], have shown several merits over other pre-trained models in NLP tasks [1,24,48]. A key component in these models
+is the engineered transformer mechanism. Transformers [49] have proven effective in
+capturing long-range dependencies in sequences, making them suitable for tasks requiring
+contextual understanding. With BERT, the model introduced bidirectional training, allowing it to consider both the left and right context in a sentence. This bidirectional approach
+helps capture high semantic relationships between words. RoBERTa [38], on the other
+hand, incorporates modifications to BERT’s training objectives, removing the Next Sentence Prediction (NSP) task and using dynamic masking. These changes lead to improved
+robustness and better performance on text classification tasks. RoBERTa is also designed to
+handle sentences and documents more effectively by training on longer sequences than
+other pre-trained models. This improvement contributes to better performance on tasks
+involving longer Ewe texts. DistilBERT and DistilRoBERTa are distillation-based models designed to be smaller and faster than their parent models (BERT and RoBERTa, respectively).
+They achieve similar performance to the larger models but with reduced computational
+requirements compared with other models. DistilBERT and DistilRoBERTa leverage parameter sharing and knowledge distillation techniques to compress the model while retaining
+its performance. This makes them suitable for deployment in resource-constrained environments. DeBERTa [47] introduces enhancements to handle long sequences more effectively.
+It incorporates ideas like disentangled and positional attention, improving the model’s
+ability to capture relationships in lengthy text compared to models such as ALBERT [50]
+and XLM-RoBERTa [51].
+To our knowledge, no study fine-tuned these models for a low-resource Ewe text
+classification. Therefore, this is the first comprehensive study to explore these models to
+solve the classification problem associated with the Ewe language.
+3.3.2. BERT Model
+The BERT-based model [17] is designed to pre-train “deep-bidirectional representations” that can be fine-tuned for downstream tasks. BERT has achieved outstanding
+performance on several HRLs [1,17], but it is yet to be deployed with the low-resourced
+Ewe text. BERT is based on an attention mechanism that allows a network to give weight
+to a set of tokens sequentially. This enables it to represent not just sequences but also the
+relevance of each word’s weight inside a sequence relating to other sequences and the
+sequence itself. This study formulates an attention mechanism as follows:
+ p
+0.5 
+
+
+
+
+( XMη )
+√
+Attention( X, M, K ) = so f tmax
+⊗ K,
+(2)
+
+
+dm
+
+
+
+Systems 2024, 12, 1
+
+10 of 22
+
+where, dm is the critical matrix dimension. Note that the attention is a set of computational
+matrices X, while M and K are the matrix’s key and value, respectively. We used our Ewe
+news dataset to build a BERT WordPiece lexicon using the tokenizer library, making a total
+of 57,769 tokens. During our setup, we followed all procedures in the novel BERT (basecased) model [19] requirement. Additionally, we took advantage of the smaller version of
+BERT named “BERT-base-uncased” due to the nature and size of our dataset.
+In this study, we set pre-trained as TRUE for both BERT-base-cased and BERT-baseuncased models with 12 layers, 768 hidden neurons per layer, and 12 attention heads
+with an input of [CLS] T [SEP]C [SEP] N. By standard practice, 15% of the tokens in each
+input vector are masked as Tmask and Cmask , which are randomly collected from T and C
+for maximum masking. The goal is to determine the actual tokens that are masked out.
+Mathematically, this is presented as:
+
+∑
+
+Loss MLM =
+
+− log ρ( xi ),
+
+(3)
+
+xi ∈ Tmask ∪Cmask
+
+where the probability of determining the actual token is ρ( xi ) in the right position ( xi ).
+Most language models do not explicitly capture the semantic relationship between a
+mathematical formula and its context. Like the NSP task in BERT, we utilized the pre-train
+model for the binarized context correspondence prediction (CCP) task. Precisely, 50% of
+context C in the pre-trained sample is changed with another context in the dataset. The
+objective is to appropriately match the current input Ci with the corresponding context T.
+This is formulated as follows:
+LossCCP = [(−ξ log ρ − (1 − ξ )) ⊗ (log(1 − ρ))],
+ξ=
+
+n
+
+1 i f C = Ci .
+0 otherwise.
+
+(4)
+(5)
+
+We used the rectified Adam optimizer (RAdam) for our BERT model with an initial
+learning rate of 1e-4 and a batch size of 16.
+3.3.3. DistilBERT Model
+We explore a faster, cheaper, smaller, and lighter knowledge distillation model called
+DistilBERT [39] with DistilBERT-base-cased and DistilBERT-base-uncased models, the
+distilled version of BERT.
+In this part, the model’s last four hidden layers are aggregated and fed to the classifier, as specified when implementing a BERT model for the downstream task. For this
+reason, we employ our pre-trained standard DistilBERT-base-cased and DistilBERT-baseuncased models without whole-word masking as a teacher model and use its weights to
+activate the layers of a different student model. We set both DistilBERT-base-cased and
+DistilBERT-base-uncased models with the learning setup of the BERT [17] model but with
+the Adam optimizer and a batch size of 16, which is significantly larger due to the nature
+of DistilBERT [39].
+3.3.4. RoBERTa and DistilRoBERTa Models
+PLMs have significantly impacted performance accuracy, but a substantive comparison
+has been challenging. Training on a low-resource dataset like the Ewe news dataset is
+computationally expensive since its hyperparameters will significantly affect the final
+result. Due to this challenge, developers enhanced the BERT model by adjusting its static
+masking procedure to a dynamic masking procedure and naming it RoBERTa [38]. On the
+other hand, DistilRoBERTa is a compressed version of RoBERTa that trains faster while
+maintaining up to 95% of the original’s performance.
+We utilized each model’s pre-trained transformers-based library from Hugging Face
+in this part. We modified the RoBERTa and DistilRoBERTa models to solve the classification
+problem. Specifically, we added an attention layer on top of the embedded, pre-trained
+
+Systems 2024, 12, 1
+
+11 of 22
+
+model. Instead of using the tanh activation function in the original work, we used penalized
+tanh, which works better for NLP tasks, along with a cross-entropy loss function. In our
+classifying layer, we did not use softmax as in the original work but rather used argmax
+directly on the outputs of the last layer to make the prediction. A tiny learning rate of 1e-4
+was used for both models to solve the problem with a batch size of 8 and 16, respectively.
+3.3.5. DeBERTa Model
+DeBERTa [47] is an improved version of the RoBERTa [38] and BERT [17] models,
+which is pre-trained with the mask language models’ objectives and fine-turned using the
+adversarial setting. This method enhances its interpretability and robustness in adversarial
+settings. DeBERTa [47] introduces an attention layer with decoupled components. Unlike transformers, which combine positional encoding with word content embedding to
+construct the input representation, DeBERTa [47] encodes words and locations separately.
+The attention results for each position are calculated using disentangled matrices and
+depend precisely on the word’s content and relative position in the sentence. Additionally, the decoder is changed to accommodate absolute word positions when predicting a
+masked token.
+In our study, a token at position is presented in sequence with two vectors, Yi and Zi ,
+displaying the content and relative position of the token at position α. Mathematically, the
+four scores of the cross-attention between i and α are decomposed as:
+n
+on
+o T  
+ 
+ 
+ 
+
+Ai||α =
+Yi , Zi||α · Yi , Zi||α
+= Yi YαT + Yi ZαT||i + Zi||α YαT + Zi||α ZαT||i
+,
+(6)
+where the attention weight of the Ewe text pair is computed as the sum of all four attention
+scores using disentangled matrices on their positions and contents (i.e., content-to-content,
+position-to-content, content-to-position, and position-to-position), respectively. We argue
+that the attention weight of a word pair depends not only on content but also on their
+relative positions, as experienced in the Ewe text, which can only be represented using both
+the content-to-position and position-to-content terms. Since we emphasized the relative
+positions of the Ewe text, the position-to-position in Equation (6) did not add any additional
+parameters; hence, we did not include it in our implementation. The relative distance
+between i and α is presented as:
+
+f or i − α ≤ −k
+
+0
+ϕ(i, α) 2k − 1
+(7)
+f or i − α ≥ k
+
+
+i − α + k others.
+where the maximum relative distance is denoted as k, and ϕ(i, α) ∈ [0, 2k]. In addition to
+the relative position, the disentangled self-attention is represented as:
+YWq,C ,KC =YWk,C ,XC =YWX,C ,Qr = ZWq,r ,Kr = ZWk,r
+T
+C r
+T
+Ai,α =
+QiC KαCT + QiC K CT
++ Kα Q ϕ(α,i )
+ϕ(i,α)
+
+QC = ∼
+
+| {z }
+
+( a) content−to −content
+
+|
+
+{z
+
+}
+
+( a) content−to − position
+
+|
+
+{z
+
+ √ 
+∼
+.H0 = so f tmax A/ 3d XC ,
+
+(8)
+
+}
+
+( a) position−to −content
+
+where, KC , XC , and QC are the probable Ewe content vectors generated using the matrices WqC , WX,C ,
+WkC ∈ Rd×d while the embedding vectors of all layers Z ∈ R2k×d , Qr , and Kr are probable relative
+∼
+
+position vectors of the Ewe content using matrices: Wq,r , Wk,r ∈ Rd×d . Furthermore, Ai,α is an element
+∼
+
+of the attention matrix A, representing the attention score from token i to α. QiC is the ith row of the
+matrix QC and αth the row of KC is KαC . The ϕ(i, α)th row of Kr is K rϕ(i,α) . Finally, we scale >A by a
+ √  −1
+factor
+3d
+which is crucial for stabilizing large-scale PLMs during training [49].
+
+3.3.6. Fine-Tuning
+Training an extensive language model such as BERT on a small dataset can lead to overfitting
+issues. Therefore, leveraging a pre-trained language model trained on a distinct dataset is advis-
+
+Systems 2024, 12, 1
+
+12 of 22
+
+able [49]. In this study, we leverage the knowledge acquired during pre-training for each model,
+allowing the model to adapt to our text classification task using the proposed Ewe news dataset.
+We fine-tuned both the cased and uncased versions of our BERT models separately on the
+proposed Ewe dataset using the RAdam optimizer. The initial learning rate was set to 1e-4 and the
+batch size was 16. During this process, we adhered to a maximum sequence length of 128. We used
+the Adam optimizer to finetune the DistilBERT cased and uncased models on the Ewe dataset, just
+as with the BERT models. The learning rate was 1e-4 and the batch size was 32, even though the
+model was smaller. During the fine-tuning stage, we realized that the generalization of both case and
+uncased DistilBERT models was not satisfactory with the larger batch size; hence, we used a smaller
+batch size, 16. For the RoBERTa and DistilRoBERTa models, we fine-tuned according to [40] and used
+the argmax directly on the outputs of the last layer with a learning rate of 1e-4 and a batch size of 8.
+For DeBERTa, we fine-tuned based on the exact hyperparameters described in the original study [47].
+The validation and test accuracies were recorded for all experimental configurations, with each setup
+using k-fold cross-validation, where k = 5.
+
+4. Experiments and Analysis
+This part explains the fine-tuned models’ evaluation metrics in detail, presents results, and
+analyzes their implications in solving the semantic representation of the low-resource Ewe classification. Using our newly created Ewe news dataset, we also compute the area under the ROC (receiver
+operating characteristic curve) (ROC-AUC) curve for each fine-tuned model.
+
+4.1. Evaluation Metric
+To solve the classification problem associated with the Ewe language, we set x to be the total
+number of categories in the Ewe news dataset, where x = 6. Let ( TPµ ) represent True Positive and
+False Positive be ( FPµ ) of the i − th class. Similarly, let True and False Negatives be ( TNµ /FNµ ) of
+the i − th class, respectively. Finally, we adopt Accuracy, Precision, Macro-F1, and Hamming loss as
+the evaluation criteria for measuring a model’s robustness and ability to properly comprehend and
+represent the Ewe text semantically for a fair comparison. We describe each metric as follows:
+Accuracy (Acc) and Loss: We define accuracy as the proportion or percentage of appropriately
+classified samples in the overall sample as:
+n
+
+Accuracy =
+
+n
+∑ µ =1
+
+∑µ=1 ( TPµ + TNµ )
+.
+(TPµ +TNµ + FPµ + FNµ )
+
+(9)
+
+While; Loss = 1-Accuracy.
+Precision (Prec): This correctly classified positive samples in the overall samples predicted to
+be positive for the i-th class as:
+TPµ
+Precision =
+.
+(10)
+TPµ + FPµ
+Recall (Rec): The fraction of positive samples that were correctly categorized out of all positive
+samples for the i-th class as:
+TPµ
+.
+(11)
+Recall =
+TPµ + FNµ
+F1 Score (F1s): The cumulative sum of accuracy and recall for the i-th class is defined as:
+F1s =
+
+2( Prec × Rec)
+.
+Prec + Rec
+
+(12)
+
+F1-Macro: The mean value of F1 across all classes.
+F1macro =
+
+1 n
+F1s.
+n µ∑
+=1
+
+(13)
+
+F1-Micro: The Micro F1 is a measurement that considers all labels’ total precision and recall. It
+is defined as:
+2( Prec × Rec)
+F1micro =
+.
+(14)
+Prec + Rec
+
+Systems 2024, 12, 1
+
+13 of 22
+
+Hamming Loss (HL): The HL [52] scores declassified instance-label combinations in which a
+relevant label is omitted, or an unrelated label is predicted. Thus, H : φ → 2y for distribution D.
+Statistically, HL loss is denoted as:
+HL =
+
+1
+E
+[h(φ)∀Y ],
+n (φ,Y )∼ D
+
+(15)
+
+where ∀ is a symmetric difference, n1 is to ensure a value between [0, 1]. Additionally, we create a
+function using LabelBinarizer () to compute the area under the receiver operating characteristic curve
+(ROC-AUC) score for the classification problem as described in [53].
+
+4.2. Implementation Details
+All experiments run on a single RTX 2080Ti GPU and are implemented with the PyTorch deep
+learning framework. We set the learning rate to 1e-4 with a dropout of 0.5 using the Rectified
+Adam optimizer (RAdam), otherwise as specified in the model description. All implementations are
+conducted in k-fold cross-validation, where k = 5 with 50 epochs. In this study, our cross-fold is split
+into two parts, i.e., four folds were used for training while one fold was used for testing. Additionally,
+we use the cross-entropy loss function as our primary training loss function. The batch size is set to
+16 and 8, respectively. During training, we configure pre-trained as accurate for each model.
+
+4.3. Results and Discussion
+Firstly, a visualization of each fine-tuned mode’s class feature separability components on
+the proposed Ewe news dataset is presented (see Figure 4). Additionally, we evaluate each class’s
+accuracy using each fine-tuned model (see Table 3). A comprehensive comparison is presented with
+experimental results for each fine-tuned model (see Table 4). We also validate the performance of
+these fine-tuned models with several learning rates (1e-2, 1e-3, 1e-4, 1e-5, 2e-3, and 2e-4) and batch
+sizes 8 and 16 to select the optimum learning rate with a best-fit batch size.
+Table 3. Accuracy score of each class.
+Class
+
+BERT-BasedCased
+
+BERT-BasedUncased
+
+RoBERTa
+
+DistilRoBERTa
+
+DistilBERTBased-Cased
+
+DistilBERTBased-Uncased
+
+DeBERTa
+
+AVG
+
+Business
+Coronavirus
+Entertainment
+Local
+Sports
+Politics
+
+99.07
+98.73
+97.54
+97.39
+97.67
+100.00
+
+97.22
+96.84
+98.36
+92.16
+100.00
+100.00
+
+97.22
+100.00
+96.72
+92.16
+98.45
+100.00
+
+94.44
+100.00
+94.26
+96.08
+98.45
+100.00
+
+95.37
+98.73
+98.36
+97.39
+100.00
+100.00
+
+96.30
+96.20
+100.00
+97.39
+100.00
+100.00
+
+100.00
+100.00
+96.72
+90.85
+96.90
+93.55
+
+97.09(5)
+98.64(3)
+97.42(4)
+94.77(6)
+98.78(2)
+99.08(1)
+
+Table 4. Classification performance of each fine-tuned transformer model on the Ewe news dataset.
+Model
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-Macro
+
+F1-Micro
+
+Average
+
+Loss
+
+BERT-based-cased
+BERT-based-uncased
+RoBERTa
+DistilRoBERTa
+DistilBERT-based-cased
+DistilBERT-based-uncased
+DeBERTa
+
+0.972
+0.964
+0.959
+0.960
+0.963
+0.968
+0.961
+
+0.969
+0.962
+0.957
+0.959
+0.962
+0.964
+0.958
+
+0.970
+0.961
+0.949
+0.960
+0.961
+0.966
+0.959
+
+0.972
+0.963
+0.953
+0.961
+0.962
+0.967
+0.961
+
+0.968
+0.960
+0.956
+0.958
+0.964
+0.965
+0.957
+
+0.970
+0.962
+0.955
+0.960
+0.962
+0.966
+0.960
+
+0.021
+0.037
+0.049
+0.039
+0.033
+0.023
+0.031
+
+4.3.1. Visualization of Class Feature Separability
+Generally, DL networks provide complex features via cascading layer structures. In our study,
+we visualized all the hidden features based on the six classes in the Ewe news dataset using the
+modified fine-tuned models. This aims to analyze the separability of the Ewe word features and their
+impact on these models.
+We further extracted 128-D hidden feature vectors from each pre-trained model separately. Then,
+we used the t-distributed stochastic neighbor embedding (t-SNE) to place them in a 2-D embedding
+space. To enhance the visual appearance of all articles, we utilized the t-SNE tool to characterize each
+embedded feature. All clusters were labeled with diverse colors (see Figure 4). The results for each
+
+Systems 2024, 12, 1
+
+14 of 22
+
+Systems 2023, 11, x FOR PEER REVIEW
+
+class are provided to evaluate the accuracy of the proposed dataset (see Table 3). The accuracy of
+15 of 24
+each class was ranked in a curly brace using the average performance of each fine-tuned model. In
+this study, the politics, sports, and coronavirus classes were ranked first, second, and third, while the
+entertainment, business, and local classes were ranked fourth, fifth, and sixth, respectively.
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+(f)
+
+(g)
+Figure
+4. Feature
+embeddings
+at diﬀerent
+depths
+of classes.
+(a) BERT-based-cased;
+(b) (b)
+BERT-basedFigure
+4. Feature
+embeddings
+at different
+depths
+of classes.
+(a) BERT-based-cased;
+BERT-baseduncased; (c) DistilBERT-based-cased; (d) DistilBERT-based-uncased; (e) DistilRoBERTa; (f) RoBuncased; (c) DistilBERT-based-cased; (d) DistilBERT-based-uncased; (e) DistilRoBERTa; (f) RoBERTa;
+ERTa; (g) DeBERTa.
+(g) DeBERTa.
+Table 3. Accuracy score of each class.
+Class
+Business
+
+BERTBERT-BasedBased-Cased
+Uncased
+99.07
+97.22
+
+RoBDistilBERT- DistilBERT-BasedDistilRoBERTa
+ERTa
+Based-Cased
+Uncased
+97.22
+94.44
+95.37
+96.30
+
+DeBERTa
+
+AVG
+
+100.00
+
+97.09(5)
+
+Systems 2024, 12, 1
+
+15 of 22
+
+4.3.2. Models’ Performance Comparison
+We compared each fine-tuned model in terms of the model’s best-fitting capability (lower loss)
+with an improved generalization. As presented in Table 4, the BERT-cased model recorded the highest
+classification performance of 0.972 and the lowest loss score of 0.021. The model was also superior in
+precision, recall, and F1-macro, with corresponding scores of 0.969, 0.970, and 0.972, respectively.
+In the case of the BERT-based-uncased model, there was a slight drop of 0.008 in terms of
+accuracy compared with the BERT-based-cased and a high loss score of 0.037. Experimentally, we
+realized that the Bert-base-uncased model recorded a few fluctuations in various folds, ultimately
+affecting its classification performance. It, however, recorded a low precision of 0.962, a recall of
+0.961, and an F1-macro of 0.963. Additionally, the recently introduced DeBERTa model performed
+moderately with the low-resourced Ewe text compared with the RoBERTa model. DeBERTa recorded
+a classification accuracy of 0.961 and a loss of 0.031. The newly introduced model recorded a precision
+score of 0.958, and recall and F1-macro scores of 0.959 and 0.961, respectively. Based on these findings,
+we concluded that the DeBERTa model best represents semantic features in the low-resourced Ewe
+text. For the DistilBERT-base-cased model, a classification accuracy of 0.963 with a loss score of 0.033
+was recorded.
+As presented in Table 4, the model also recorded its precision, recall, and F1-macro scores as
+0.962, 0.961, and 0.962, respectively. On the other hand, the DistilBERT-base-uncased model recorded
+a classification accuracy of 0.968, a tiny loss score of 0.023, and a precision and a recall score of 0.964
+and 0.966, respectively, with an F1-macro score of 0.967. An accuracy of 0.960 was recorded for
+the DistilRoBERTa model, with a loss of 0.039. The RoBERTa model recorded 0.959 accuracy and a
+0.049 loss.
+Finally, we illustrated a confusion matrix for predicting exact text classes based on the features
+generated from the proposed Ewe news dataset (see Figure 5). Figure 5b shows that four news
+articles from the business, coronavirus, and entertainment classes were misclassified as local news.
+Similarly, in Figure 5d (DistilBERT-base-uncased), four articles from local news were misclassified
+as coronavirus news. This is because there is a semantic similarity between both class contexts. It
+means the misclassified articles had parts like local news, which is why they were misclassified. In
+Figure 5f (Roberta), 12 business news articles were misclassified as local news. In the same instance,
+10 business news articles were misclassified as local news, as shown for DeBERTa (see Figure 5g). This
+is because there is a semantic relationship between business news features and local news features.
+From these misclassified examples, we conclude that business and local news share a few related
+semantic features. From this experimental evidence, we can conclude that all the fine-tuned models
+produce optimal predictive results. Due to the optimal performance exhibited by these models,
+exploring different feature engineering may not affect the performance significantly (see Figure 6).
+Furthermore, we computed the area under the curve of the receiver operating characteristics
+(AUC-ROC) on the newly proposed Ewe news dataset (see Table 5). The experimental results from
+Table 5 show that BERT-base-cased recorded a lower HL than the other fine-tuned models, showing its
+ability to solve the classification problem more efficiently. This proves that the fine-tuned BERT-cased
+model is more robust in representing the Ewe semantic features and can classify Ewe texts more
+efficiently. Generally, the fine-tuned BERT-cased model outperformed all other compared models
+regarding classification accuracy, performance, and loss scores. This indicates a much stronger word
+representation than the Ewe text, demonstrating robustness. Additionally, the models’ high precision,
+recall, and F1-macro scores prove their stability with the low-resourced Ewe text. Our fine-tuned
+DeBERTa model’s performance accuracy was reduced by a small margin, indicating it can also solve
+the classification problem associated with the Ewe language. To our knowledge, this is the first
+study incorporating DeBERTa with the Ewe text. Hence, its word relationships significantly affected
+learning the Ewe context. The BERT-based cased model was ranked first on the Ewe news dataset,
+followed by the DistilBERT-uncased model. The BERT-uncased was ranked third, the DistilBERTcased was ranked fourth, the DistilRoBERTa was ranked fifth, and the DeBERTa and RoBERTa models
+were ranked sixth and seventh, respectively.
+
+Systems 2023, 11, x FOR PEER REVIEW
+
+Systems 2024, 12, 1
+
+17 of 24
+
+0.967. An accuracy of 0.960 was recorded for the DistilRoBERTa model, with a loss of 0.039.
+16 of 22
+The RoBERTa model recorded 0.959 accuracy and a 0.049 loss.
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+(f)
+
+(g)
+Figure
+exacttext
+textclass.
+class.(a)
+(a)BERT-based-cased;
+BERT-based-cased;
+BERT-basedFigure5.5.Confusion
+Confusionmatrix
+matrix for
+for predicting
+predicting exact
+(b)(b)
+BERT-baseduncased;
+(c)
+DistilBERT-based-cased;
+(d)
+DistilBERT-based-uncased;
+(e)
+DistilRoBERTa;
+(f) RoBuncased; (c) DistilBERT-based-cased; (d) DistilBERT-based-uncased; (e) DistilRoBERTa; (f) RoBERTa;
+ERTa;
+(g)
+DeBERTa.
+(g) DeBERTa.
+
+(g)
+Systems 2024, 12, 1
+
+Figure 5. Confusion matrix for predicting exact text class. (a) BERT-based-cased; (b) BERT-baseduncased; (c) DistilBERT-based-cased; (d) DistilBERT-based-uncased; (e) DistilRoBERTa; (f) RoB- 17 of 22
+ERTa; (g) DeBERTa.
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+(f)
+
+(g)
+Figure 6. Classification results of fine-tuned models at different epochs. (a) BERT-based-cased;
+(b) BERT-based-uncased; (c) DistilBERT-based-cased; (d) DistilBERT-based-uncased; (e) DistilRoBERTa; (f) RoBERTa; (g) DeBERTa.
+Table 5. ROC-AUC results on the Ewe news dataset.
+Model
+
+ROC-AUC
+
+ROC-AUC Weight
+
+HL
+
+BERT-based-cased
+BERT-based-uncased
+RoBERTa
+DistilRoBERTa
+DistilBERT-based-cased
+DistilBERT-based-uncased
+DeBERTa
+
+0.995
+0.993
+0.973
+0.985
+0.989
+0.994
+0.984
+
+0.994
+0.989
+0.971
+0.983
+0.984
+0.992
+0.983
+
+0.029
+0.040
+0.041
+0.043
+0.037
+0.034
+0.038
+
+DistilRoBERTa
+DistilBERT-based-cased
+DistilBERT-based-uncased
+DeBERTa
+
+0.985
+0.989
+0.994
+0.984
+
+Systems 2024, 12, 1
+
+0.983
+0.984
+0.992
+0.983
+
+0.04
+0.03
+0.03
+0.03
+18 of 22
+
+4.3.3. Ablation Study
+
+The performance of each fine-tuned model with learning rates 1e-2, 1e-3, 1e-4
+2e-3,
+4.3.3. Ablation Studyand 2e-4 and batch sizes 8 and 16 was evaluated. The goal was to determi
+optimum
+(best)
+and most
+eﬀective
+learningrates
+rate1e-2,
+with1e-3,
+a best-fit
+batch
+sizeand
+for the pro
+The performance
+of each
+fine-tuned
+model
+with learning
+1e-4, 1e-5,
+2e-3,
+Ewe
+dataset.
+The
+results
+shown
+in
+Figure
+7
+indicate
+that
+the
+choice
+of
+learning
+rate
+2e-4 and batch sizes 8 and 16 was evaluated. The goal was to determine the optimum (best) and most
+icantly
+aﬀects
+the batch
+model’s
+performance.
+effective learning rate
+with
+a best-fit
+size for the
+proposed Ewe dataset. The results shown in
+Figure 7 indicate that the choice of learning rate significantly affects the model’s performance.
+
+Systems 2023, 11, x FOR PEER REVIEW
+
+20 of 24
+
+Figure 7. Eﬀects of additional learning rates. (a) Batch size 8; (b) Batch size 16.
+
+In Figure 7a, we realized that fine-tuning RoBERTa and DistilRoBERTa converged
+(a) classification accuracy using batch size 8.(b)
+well, achieving improved
+However, other finetuned models could not converge well with a batch size of 8. In Figure 7b, we increased
+Figure 7. Effects of additional learning rates. (a) Batch size 8; (b) Batch size 16.
+the
+batch size to 16 to confirm if there was a significant improvement in the model’s performance.
+Most
+models
+recorded
+an enhanced
+generalization
+when
+batch
+In Figure
+7a, fine-tuned
+we realized that
+fine-tuning
+RoBERTa
+and DistilRoBERTa
+converged
+well,the
+achieving
+size
+was
+set
+to
+16.
+A
+learning
+rate
+of
+1e-2
+was
+relatively
+high
+for
+fine-tuning
+BERT-based,
+improved classification accuracy using batch size 8. However, other fine-tuned models could not
+RoBERTa,well with a
+DistilBERT-based,
+andIn Figure
+DeBERTa
+models.
+Thistheshows
+thattothe
+model
+training
+converge
+batch size of 8.
+7b, we
+increased
+batch size
+16 to
+confirm if
+there
+was
+a
+significant
+improvement
+performance.
+Most a
+fine-tuned
+modelsof 1e-3
+recorded
+an
+diverges
+at
+1e-2, resulting
+inin the
+lowermodel’s
+accuracy.
+Additionally,
+learning rate
+was
+enhanced
+generalization
+when
+the
+batch
+size
+was
+set
+to
+16.
+A
+learning
+rate
+of
+1e-2
+was
+relatively
+lower and improved the model’s performance slightly compared to 1e-2, but it was still
+high for fine-tuning
+BERT-based,
+DistilBERT-based,
+and DeBERTa
+models.
+This shows
+relatively
+low. However,
+for theRoBERTa,
+1e-4 learning
+rate, the results
+significantly
+improved
+the
+that
+the
+model
+training
+diverges
+at
+1e-2,
+resulting
+in
+lower
+accuracy.
+Additionally,
+a
+learning
+rate
+fine-tuning model’s accuracy, except for the RoBERTa and DistilRoBERTa models. With
+of 1e-3 was lower and improved the model’s performance slightly compared to 1e-2, but it was still
+the proposed Ewe dataset, this is an optimal learning rate for fine-tuning the BERT, Distilrelatively low. However, for the 1e-4 learning rate, the results significantly improved the fine-tuning
+BERT-based,
+and DeBERTa models that have converged well, achieving high accuracy.
+model’s accuracy, except for the RoBERTa and DistilRoBERTa models. With the proposed Ewe dataset,
+However,
+the learning
+slightly
+higher the
+thanBERT,
+1e–4 but still
+within the
+range
+for
+this
+is an if
+optimal
+learning is
+rate for
+fine-tuning
+DistilBERT-based,
+andtypical
+DeBERTa
+models
+fine-tuning,
+the
+accuracy
+decenthigh
+but not
+as high as
+withif the
+1e-4.learning is
+Experimentally,
+learning
+that
+have
+converged
+well, is
+achieving
+accuracy.
+However,
+slightly a
+higher
+than
+rate
+1e–6
+relatively
+low and,
+shown
+in both
+sizesis (see
+Figure
+7),as
+the
+accuracy
+1e–4of
+but
+still is
+within
+the typical
+rangeasfor
+fine-tuning,
+thebatch
+accuracy
+decent
+but not
+high as
+with
+1e-4.
+Experimentally,
+learning
+of time
+1e–6 is
+relatively
+as for
+shown in
+both rate
+batch 2e-3,
+sizes we
+(see
+is
+good but
+trainingatakes
+a rate
+longer
+(see
+Figurelow
+8). and,
+Finally,
+learning
+Figure 7),
+theit is
+accuracy
+good but
+training
+takes a longer
+time (see
+Figure
+8). Finally,
+for in
+learning
+rate
+realize
+that
+high,iswhich
+leads
+to rapid
+divergence
+during
+training,
+resulting
+lower
+2e-3,
+we
+realize
+that
+it
+is
+high,
+which
+leads
+to
+rapid
+divergence
+during
+training,
+resulting
+in
+lower
+accuracy, and 2e-4 is relatively low and might be suitable for fine-tuning.
+accuracy, and 2e-4 is relatively low and might be suitable for fine-tuning.
+
+Figure 8. Training time for each fine-tuning model.
+Figure 8. Training time for each fine-tuning model.
+
+Learning rates are crucial in fine-tuning the BERT-based, RoBERTa, DistilBERTbased, and DeBERTa models. Our validations found that 1e-4 was the best and most accurate learning rate for fine-tuning the BERT-based, RoBERTa, DistilBERT-based, and
+
+Systems 2024, 12, 1
+
+19 of 22
+
+Learning rates are crucial in fine-tuning the BERT-based, RoBERTa, DistilBERT-based, and
+DeBERTa models. Our validations found that 1e-4 was the best and most accurate learning rate for
+fine-tuning the BERT-based, RoBERTa, DistilBERT-based, and DeBERTa models for the proposed
+Ewe dataset. However, lower learning rates (1e-5 and 1e-6) and higher learning rates (1e-2 and 2e-3)
+appeared less optimal, resulting in lower accuracy or divergence.
+
+5. Conclusions
+Recent developments in NLP studies and applications have barely considered the Ewe language.
+The Ewe language is one of Africa’s widely spoken languages yet it is extremely low-resourced, with
+a complex “unique” structure, poorly curated data, unavailable NLP statistical literature, and no
+publicly available datasets.
+This study developed and preprocessed an Ewe dataset to solve the classification problem
+associated with the language. The study leveraged recent word embedding techniques to build an
+Ewe-based word embedding. Additionally, we provided baseline results using seven fine-tuned
+pre-trained models and assessed their stability and robustness in representing the exact semantics
+of the low-resourced Ewe text. The findings in this current study demonstrated that fine-tuned
+BERT-based cases were superior and best comprehended the Ewe context semantically compared
+with other models. In our experiment, the fine-tuned DeBERTa model performed averagely, showing
+its capability to efficiently capture long-range dependencies of the Ewe text. This study is positioned
+to provide the necessary resources and gain future research opportunities in the DL field. To this end,
+the new dataset and word embedding contribute to the existing literature on Ewe text processing.
+Researchers seeking to derive insights or patterns from the dataset will obtain more robust and reliable
+results using the dataset. The dataset becomes a valuable resource for researchers and developers
+aiming to derive meaningful insights and build robust models in the context of the Ewe language.
+In our future study, we plan to report on other embeddings and transformer-based and hybrid
+deep learning techniques like CBOW, FastText, GloVe, XLNET, Alberta, multi-channel CNN with
+Attention, etc. Furthermore, we intend to address multilingual issues in LRLs such as Fón, Twi,
+Arabic, and Gbe by capitalizing on linguistic similarities and developing more robust learning models.
+Author Contributions: Conceptualization, methodology, V.K.A.; software, methodology, S.B.Y.; validation, S.B.Y. and N.A.K.; formal analysis, C.C.A.; investigation, C.C.U. and C.C.A.; resources,
+M.A.H., N.A.S., and M.M.J.; visualization, M.A.H. and N.A.K.; data curation, V.K.A. and C.C.A.;
+writing—original draft, V.K.A.; writing—review and editing, N.A.S., M.M.J. and M.A.A.-a.; supervision, W.C. and M.A.A.-a.; project administration, C.C.U. and N.A.K.; funding acquisition, M.A.A.-a.,
+M.M.J. and N.A.S. All authors have read and agreed to the published version of the manuscript.
+Funding: This research was funded by Princess Nourah bint Abdulrahman University Researchers
+Supporting Project number (PNURSP2023R104), Princess Nourah bint Abdulrahman University,
+Riyadh, Saudi Arabia.
+Data Availability Statement: The Ewe dataset, along with the PyTorch code we utilized in our
+experiment is currently not accessible to the general public. However, it will be made available
+through this link once the study is published: https://github.com/VictorAgbesi/Ewe-News-Dataset.
+Acknowledgments: The authors would like to express their grateful to Princess Nourah bint Abdulrahman University Researchers Supporting Project number (PNURSP2023R104), Princess Nourah bint
+Abdulrahman University, Riyadh, Saudi Arabia. This work was supported by the National Research
+Foundation of Korea (NRF) grant funded by the Korean government (MSIT) (No. RS-2022-00166402
+and RS-2023-00256517).
+Conflicts of Interest: The authors have no relevant financial or non-financial interests to disclose.
+The authors have no conflicts of interest to declare that are relevant to the contents of this article.
+
+Notes
+1
+
+http://qwone.com/~jason/20Newsgroups/ (accessed on 11 November 2021)
+
+2
+
+https://paperswithcode.com/dataset/reuters-21578
+
+3
+
+https://paperswithcode.com/dataset/rcv1
+
+4
+
+https://ghananewsonline.com.gh/ (accessed on 20 October 2021)
+
+5
+
+https://www.voaafrica.com/ (accessed on 17 January 2022)
+
+Systems 2024, 12, 1
+
+6
+
+https://www.togofirst.com/en (accessed on 19 January 2022)
+
+7
+
+https://punchng.com/ (accessed on 16 January 2022)
+
+8
+
+https://www.bbc.com/news/world/africa (accessed between 11 January to February 23 2022)
+
+9
+
+https://www.myjoyonline.com/ (accessed between 11 December 2021 to 30 January 2022)
+
+10
+
+https://citinewsroom.com/ (accessed on 25 February 2022)
+
+11
+
+beautifulsoup4·PyPI
+
+20 of 22
+
+References
+1.
+2.
+3.
+
+4.
+5.
+6.
+7.
+
+8.
+9.
+
+10.
+11.
+12.
+
+13.
+
+14.
+
+15.
+
+16.
+17.
+
+18.
+19.
+20.
+21.
+
+Wang, Z.; Wang, L.; Huang, C.; Sun, S.; Luo, X. BERT-based chinese text classification for emergency management with a novel
+loss function. Appl. Intell. 2023, 53, 10417–10428. [CrossRef]
+Muñoz, S.; Iglesias, C.A. A text classification approach to detect psychological stress combining a lexicon-based feature framework
+with distributional representations. Inf. Process. Manag. 2022, 59, 103011. [CrossRef]
+Borjali, A.; Magnéli, M.; Shin, D.; Malchau, H.; Muratoglu, O.K.; Varadarajan, K.M. Natural language processing with deep
+learning for medical adverse event detection from free-text medical narratives: A case study of detecting total hip replacement
+dislocation. Comput. Biol. Med. 2021, 129, 104140. [CrossRef] [PubMed]
+Masood, K.; Khan, M.A.; Saeed, U.; Al Ghamdi, M.A.; Asif, M.; Arfan, M. Semantic Analysis to Identify Students’ Feedback.
+Comput. J. 2022, 65, 918–925. [CrossRef]
+Dogra, V.; Alharithi, F.S.; Álvarez, R.M.; Singh, A.; Qahtani, A.M. NLP-Based Application for Analyzing Private and Public Banks
+Stocks Reaction to News Events in the Indian Stock Exchange. Systems 2022, 10, 233. [CrossRef]
+Abdelhady, N.; Elsemman, I.E.; Farghally, M.F.; Soliman, T.H.A. Developing Analytical Tools for Arabic Sentiment Analysis of
+COVID-19 Data. Algorithms 2023, 16, 318. [CrossRef]
+Hayashi, T.; Yoshimura, T.; Inuzuka, M.; Kuroyanagi, I.; Segawa, O. Spontaneous Speech Summarization: Transformers All The
+Way Through. In Proceedings of the European Signal Processing Conference, Dublin, Ireland, 23–27 August 2021; pp. 456–460.
+[CrossRef]
+Palanivinayagam, A.; El-Bayeh, C.Z.; Damaševičius, R. Twenty Years of Machine-Learning-Based Text Classification: A Systematic
+Review. Algorithms 2023, 16, 236. [CrossRef]
+Agbesi, V.K.; Chen, W.; Gizaw, S.M.; Ukwuoma, C.C.; Ameneshewa, A.S.; Ejiyi, C.J. Attention Based BiGRU-2DCNN with
+Hunger Game Search Technique for Low-Resource Document-Level Sentiment Classification. In ACM International Conference
+Proceeding Series; 2023; pp. 48–54. [CrossRef]
+Li, Q.; Peng, H.; Li, J.; Xia, C.; Yang, R.; Sun, L.; Yu, P.S.; He, L. A Survey on Text Classification: From Traditional to Deep Learning.
+ACM Trans. Intell. Syst. Technol. 2022, 13, 1–41. [CrossRef]
+Richardson, F.; Reynolds, D.; Dehak, N. Deep neural network approaches to speaker and language recognition. IEEE Signal
+Process. Lett. 2015, 22, 1671–1675. [CrossRef]
+Guggilla, C. Discrimination between Similar Languages, Varieties and Dialects using {CNN}- and {LSTM}-based Deep Neural
+Networks. In Proceedings of the Third Workshop on {NLP} for Similar Languages, Varieties and Dialects ({V}ar{D}ial3), Osaka,
+Japan; 2016; pp. 185–4824.
+Agbesi, V.K.; Chen, W.; Odame, E.; Browne, J.A. Efficient Adaptive Convolutional Model Based on Label Embedding for Text
+Classification Using Low Resource Languages. In Proceedings of the 2023 7th International Conference on Intelligent Systems,
+Metaheuristics & Swarm Intelligence, Virtual, 23–24 April 2023; pp. 144–151. [CrossRef]
+Cho, K.; van Merriënboer, B.; Bahdanau, D.; Bengio, Y. On the properties of neural machine translation: Encoder–decoder
+approaches. In Proceedings of the SSST 2014-8th Workshop on Syntax, Semantics and Structure in Statistical Translation, Doha,
+Qatar, 25 October 2014; pp. 103–111. [CrossRef]
+Howard, J.; Ruder, S. Universal language model fine-tuning for text classification. In Proceedings of the ACL 2018-56th Annual
+Meeting of the Association for Computational Linguistics, Proceedings of the Conference (Long Papers), Melbourne, Australia,
+15–20 July 2018; pp. 328–339. [CrossRef]
+Radford, A. Improving Language Understanding by Generative Pre-Training. Homol. Homotopy Appl. 2007, 9, 399–438.
+Devlin, J.; Chang, M.W.; Lee, K.; Toutanova, K. BERT: Pre-training of deep bidirectional transformers for language understanding.
+In Proceedings of the NAACL HLT 2019-2019 Conference of the North American Chapter of the Association for Computational
+Linguistics: Human Language Technologies-Proceedings of the Conference, Minneapolis, MN, USA, 2–7 June 2019; pp. 4171–4186.
+Nassiri, K.; Akhloufi, M. Transformer models used for text-based question answering systems. Appl. Intell. 2023, 53, 10602–10635.
+[CrossRef]
+Cruz, J.C.B.; Cheng, C. Establishing Baselines for Text Classification in Low-Resource Languages. arXiv 2020, arXiv:2005.02068.
+Alzanin, S.M.; Azmi, A.M.; Aboalsamh, H.A. Short text classification for Arabic social media tweets. J. King Saud Univ.-Comput.
+Inf. Sci. 2022, 34, 6595–6604. [CrossRef]
+Chen, X.; Cong, P.; Lv, S. A Long-Text Classification Method of Chinese News Based on BERT and CNN. IEEE Access 2022, 10,
+34046–34057. [CrossRef]
+
+Systems 2024, 12, 1
+
+22.
+
+23.
+24.
+
+25.
+26.
+
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+34.
+35.
+36.
+37.
+
+38.
+39.
+40.
+41.
+
+42.
+43.
+44.
+45.
+46.
+
+47.
+
+21 of 22
+
+Islam, K.I.; Islam, M.S.; Amin, M.R. Sentiment analysis in Bengali via transfer learning using multi-lingual BERT. In Proceedings of the ICCIT 2020-23rd International Conference on Computer and Information Technology, Proceedings, Virtual,
+19–21 December 2020. [CrossRef]
+Alkhurayyif, Y.; Sait, A.R.W. A comprehensive survey of techniques for developing an Arabic question answering system. PeerJ
+Comput. Sci. 2023, 9, e1413. [CrossRef] [PubMed]
+Cunha, W.; Mangaravite, V.; Gomes, C.; Canuto, S.; Resende, E.; Nascimento, C.; Viegas, F.; França, C.; Martins, W.S.; Almeida, J.M.;
+et al. On the cost-effectiveness of neural and non-neural approaches and representations for text classification: A comprehensive
+comparative study. Inf. Process. Manag. 2021, 58, 102481. [CrossRef]
+Kim, J.; Jang, S.; Park, E.; Choi, S. Text classification using capsules. Neurocomputing 2020, 376, 214–221. [CrossRef]
+Agbesi, V.K.; Wenyu, C.; Kuadey, N.A.; Maale, G.T. Multi-Topic Categorization in a Low-Resource Ewe Language: A Modern
+Transformer Approach. In Proceedings of the 2022 7th International Conference on Computer and Communication Systems
+(ICCCS), Wuhan, China, 22–25 April 2022; pp. 42–45.
+Azunre, P.; Osei, S.; Addo, S.; Adu-Gyamfi, L.A.; Moore, S.; Adabankah, B.; Opoku, B.; Asare-Nyarko, C.; Nyarko, S.; Amoaba, C.;
+et al. NLP for Ghanaian Languages. arXiv 2021, arXiv:2103.15475.
+Marivate, V.; Sefara, T.; Chabalala, V.; Makhaya, K.; Mokgonyane, T.; Mokoena, R.; Modupe, A. Investigating an approach for low
+resource language dataset creation, curation and classification: Setswana and Sepedi. arXiv 2020, arXiv:2003.04986.
+Cruz, J.C.B.; Cheng, C. Evaluating Language Model Finetuning Techniques for Low-resource Languages. arXiv 2019,
+arXiv:1907.00409. [CrossRef]
+Asim, M.N.; Ghani, M.U.; Ibrahim, M.A.; Mahmood, W.; Dengel, A.; Ahmed, S. Benchmarking performance of machine and deep
+learning-based methodologies for Urdu text document classification. Neural Comput. Appl. 2021, 33, 5437–5469. [CrossRef]
+Kanan, T.; Hawashin, B.; Alzubi, S.; Almaita, E.; Alkhatib, A.; Maria, K.A.; Elbes, M. Improving Arabic Text Classification Using
+P-Stemmer. Recent Adv. Comput. Sci. Commun. 2020, 15, 404–411. [CrossRef]
+Elnahas, A.; Elfishawy, N.; Nour, M.; Tolba, M. Machine Learning and Feature Selection Approaches for Categorizing Arabic Text:
+Analysis, Comparison, and Proposal. Egypt. J. Lang. Eng. 2020, 7, 1–19. [CrossRef]
+Vinh, T.N.P.; Kha, H.H. Vietnamese News Articles Classification Using Neural Networks. J. Adv. Inf. Technol. 2021, 12, 363–369.
+[CrossRef]
+Galal, M.; Madbouly, M.M.; El-Zoghby, A. Classifying Arabic text using deep learning. J. Theor. Appl. Inf. Technol. 2019, 97,
+3412–3422.
+Elnagar, A.; Al-Debsi, R.; Einea, O. Arabic text classification using deep learning models. Inf. Process. Manag. 2020, 57, 102121.
+[CrossRef]
+Liu, X.; Zhou, G.; Kong, M.; Yin, Z.; Li, X.; Yin, L.; Zheng, W. Developing Multi-Labelled Corpus of Twitter Short Texts: A
+Semi-Automatic Method. Systems 2023, 11, 390. [CrossRef]
+Adjeisah, M.; Liu, G.; Nortey, R.N.; Song, J.; Lamptey, K.O.; Frimpong, F.N. Twi corpus: A massively Twi-to-handful languages
+parallel bible corpus. In Proceedings of the 2020 IEEE Intl Conf on Parallel & Distributed Processing with Applications, Big Data
+& Cloud Computing, Sustainable Computing & Communications, Social Computing & Networking, Exeter, UK, 17–19 December
+2020; pp. 1043–1049. [CrossRef]
+Liu, Y.; Ott, M.; Goyal, N.; Du, J.; Joshi, M.; Chen, D.; Levy, O.; Lewis, M.; Zettlemoyer, L.; Stoyanov, V. RoBERTa: A Robustly
+Optimized BERT Pretraining Approach. arXiv 2019, arXiv:1907.11692.
+Sanh, V.; Debut, L.; Chaumond, J.; Wolf, T. DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter. arXiv 2019,
+arXiv:1910.01108.
+Yang, Z.; Dai, Z.; Yang, Y.; Carbonell, J.; Salakhutdinov, R.; Le, Q.V. XLNet: Generalized autoregressive pretraining for language
+understanding. Adv. Neural Inf. Process. Syst. 2019, 2019, 5753–5763.
+Mohammad, S.M.; Bravo-Marquez, F.; Salameh, M.; Kiritchenko, S. SemEval-2018 Task 1: Affect in Tweets. In Proceedings of
+the NAACL HLT 2018-International Workshop on Semantic Evaluation, SemEval 2018-Proceedings of the 12th Workshop, New
+Orleans, LA, USA, 5–6 June 2018; pp. 1–17. [CrossRef]
+Kuriyozov, E.; Salaev, U.; Matlatipov, S.; Matlatipov, G. Text classification dataset and analysis for Uzbek language. arXiv 2023,
+arXiv:2302.14494.
+Javed, T.A.; Shahzad, W.; Arshad, U. Hierarchical Text Classification of Urdu News using Deep Neural Network. arXiv 2021,
+arXiv:2107.03141.
+Ghafoor, A.; Imran, A.S.; Daudpota, S.M.; Kastrati, Z.; Batra, R.; Wani, M.A. The Impact of Translating Resource-Rich Datasets to
+Low-Resource Languages through Multi-Lingual Text Processing. IEEE Access 2021, 9, 124478–124490. [CrossRef]
+Gan, C.; Feng, Q.; Zhang, Z. Scalable multi-channel dilated CNN–BiLSTM model with attention mechanism for Chinese textual
+sentiment analysis. Futur. Gener. Comput. Syst. 2021, 118, 297–309. [CrossRef]
+Wolf, T.; Debut, L.; Sanh, V.; Chaumond, J.; Delangue, C.; Moi, A.; Cistac, P.; Rault, T.; Louf, R.; Funtowicz, M.; et al. Transformers:
+State-of-the-Art Natural Language Processing. In Proceedings of the 2020 Conference on Empirical Methods in Natural Language
+Processing: System Demonstrations, Online, 16–20 November 2020; pp. 38–45. [CrossRef]
+He, P.; Liu, X.; Gao, J.; Chen, W. DeBERTa: Decoding-enhanced BERT with Disentangled Attention. arXiv 2020, arXiv:2006.03654.
+
+Systems 2024, 12, 1
+
+48.
+
+49.
+50.
+51.
+
+52.
+53.
+
+22 of 22
+
+Sun, C.; Huang, L.; Qiu, X. Utilizing BERT for aspect-based sentiment analysis via constructing auxiliary sentence. In Proceedings
+of the NAACL HLT 2019-2019 Conference of the North American Chapter of the Association for Computational Linguistics:
+Human Language Technologies-Proceedings of the Conference, Minneapolis, MN, USA, 2–7 June 2019; pp. 380–385.
+Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A.N.; Kaiser, Ł.; Polosukhin, I. Attention is all you need. Adv.
+Neural Inf. Process. Syst. 2017, 30, 5999–6009.
+Lan, Z.; Chen, M.; Goodman, S.; Gimpel, K.; Sharma, P.; Soricut, R. ALBERT: A Lite BERT for Self-supervised Learning of
+Language Representations. arXiv 2019, arXiv:1909.11942.
+Conneau, A.; Khandelwal, K.; Goyal, N.; Chaudhary, V.; Wenzek, G.; Guzmán, F.; Grave, E.; Ott, M.; Zettlemoyer, L.; Stoyanov,
+V. Unsupervised cross-lingual representation learning at scale. In Proceedings of the Annual Meeting of the Association for
+Computational Linguistics, Online, 5–10 July 2020; pp. 8440–8451. [CrossRef]
+Schapire, R.E.; Singer, Y. Improved boosting algorithms using confidence-rated predictions. Mach. Learn. 1999, 37, 297–336.
+[CrossRef]
+Hand, D.J.; Till, R.J. A Simple Generalisation of the Area Under the ROC Curve for Multiple Class Classification Problems. Mach.
+Learn. 2001, 45, 171–186. [CrossRef]
+
+Disclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual
+author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to
+people or property resulting from any ideas, methods, instructions or products referred to in the content.
+
+

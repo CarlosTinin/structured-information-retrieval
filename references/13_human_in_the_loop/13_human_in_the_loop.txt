@@ -1,0 +1,734 @@
+================================================================================
+PAPER: 13_01_An open source machine learning framework for efficient and transparent systematic reviews
+================================================================================
+
+--- TITLE ---
+Articles https://doi.org/10.1038/s42256-020-00287-7 An open source machine learning framework for
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+We designed a system to accelerate the step of screening titles
+and abstracts to help researchers conduct a systematic review or
+meta-analysis as efficiently and transparently as possible. Our system uses active learning to train a machine learning model that
+predicts relevance from texts using a limited number of labelled
+examples. The classifier, feature extraction technique, balance
+strategy and active learning query strategy are flexible. We provide an open source software implementation, ASReview with
+state-of-the-art systems across a wide range of real-world systematic
+reviewing applications. Based on our experiments, ASReview provides defaults on its parameters, which exhibited good performance
+on average across the applications we examined. However, we
+stress that in practical applications, these defaults should be carefully examined; for this purpose, the software provides a simulation mode to users. We encourage users and developers to perform
+further evaluation of the proposed approach in their application,
+and to take advantage of the open source nature of the project by
+contributing further developments.
+Drawbacks of machine learning-based screening systems,
+including our own, remain. First, although the active learning step
+greatly reduces the number of manuscripts that must be screened, it
+also prevents a straightforward evaluation of the system’s error rates
+without further onerous labelling. Providing users with an accurate
+estimate of the system’s error rate in the application at hand is therefore a pressing open problem. Second, although, as argued above,
+the use of such systems is not limited in principle to reviewing, no
+empirical benchmarks of actual performance in these other situations yet exist to our knowledge. Third, machine learning-based
+screening systems automate the screening step only; although the
+screening step is time-consuming and a good target for automation, it is just one part of a much larger process, including the initial
+search, data extraction, coding for risk of bias, summarizing results
+and so on. Although some other works, similar to our own, have
+looked at (semi-)automating some of these steps in isolation53,54, to
+our knowledge the field is still far removed from an integrated system that would truly automate the review process while guaranteeing the quality of the produced evidence synthesis. Integrating the
+various tools that are currently under development to aid the systematic reviewing pipeline is therefore a worthwhile topic for future
+development.
+Possible future research could also focus on the performance
+of identifying full text articles with different document length and
+domain-specific terminologies or even other types of text, such
+as newspaper articles and court cases. When the selection of past
+
+knowledge is not possible based on expert knowledge, alternative
+methods could be explored. For example, unsupervised learning or
+pseudolabelling algorithms could be used to improve training55,56. In
+addition, as the NLP community pushes forward the state of the art
+in feature extraction methods, these are easily added to our system
+as well. In all cases, performance benefits should be carefully evaluated using benchmarks for the task at hand. To this end, common
+benchmark challenges should be constructed that allow for an even
+comparison of the various tools now available. To facilitate such a
+benchmark, we have constructed a repository of publicly available
+systematic reviewing datasets57.
+The future of systematic reviewing will be an interaction with
+machine learning algorithms to deal with the enormous increase
+of available text. We invite the community to contribute to open
+source projects such as our own, as well as to common benchmark
+challenges, so that we can provide measurable and reproducible
+improvement over current practice.
+
+Data availability
+
+The results described in this paper are available at the Open Science
+Framework
+(https://doi.org/10.17605/OSF.IO/2JKD6)43.
+The
+answers to the quantitative questions of the UX test can be found at
+the Open Science Framework (OSF.IO/7PQNM)52.
+
+Code availability
+
+All code to reproduce the results described in this paper can be
+found on Zenodo (https://doi.org/10.5281/zenodo.4024122)42. All
+code for the software ASReview is available under an Apache 2.0
+license (https://doi.org/10.5281/zenodo.3345592)27, is maintained
+on GitHub63 and includes documentation (https://doi.org/10.5281/
+zenodo.4287120)28.
+Received: 4 June 2020; Accepted: 17 December 2020;
+Published online: 1 February 2021
+
+
+================================================================================
+PAPER: 13_02_Deep learning based active learning technique for data annotation and improve the overall performance of classification models
+================================================================================
+
+--- TITLE ---
+Expert Systems With Applications 228 (2023) 120391 Contents lists available at ScienceDirect Expert Systems With Applications journal homepage: www.elsevier.com/locate/eswa
+
+--- ABSTRACT ---
+Keywords:
+Iterative learning
+Active learning
+Deep learning
+Image classification
+Pattern matching
+Finetuning
+
+Deep learning (DL) models achieved a lot of success due to the availability of labeled training data. In
+contrast, labeling a huge amount of data by a human is a time-consuming and expensive solution. Active
+Learning (AL) efficiently addresses the issue of labeled data collection at a low cost by picking the most
+useful samples from a large number of unlabeled datasets. However, current AL techniques largely depend on
+regular human involvement to annotate the most uncertain/informative samples in the collection. Therefore,
+we introduce a Deep Learning Based Active Learning (DLBAL) method that may incrementally learn from a
+small number of annotated training samples to build an effective classifier with optimum feature representation.
+The proposed DLBAL method improves the contemporary AL approaches in two steps. First, EfficientNet-B0
+networks are integrated into AL. The incrementally annotated useful samples may be used to update both the
+representation of the feature and the classification algorithm concurrently. Second, we provide an effective
+technique for sample selection that improves the performance of the classifier with fewer manual annotations
+at a lower cost. In contrast to previous approaches that emphasize only uncertain instances with low prediction
+confidence, we obtain a significant number of instances with high-confidence from the unannotated set for
+pattern learning. Particularly, these instances are randomly picked and assigned labels to them continuously.
+Detailed experiments are conducted to show that the proposed DLBAL system obtained reasonable results on
+two difficult image classification datasets, namely Cross-Age Celebrity face recognition Dataset (CACD) and
+Caltech-256.
+
+--- INTRODUCTION ---
+labeling appears to be a factor that restricts the use of deep learning in other research fields and institutions with a smaller labeling
+budget. However, the AL approaches (Settles, 2012) try to address
+this issue by minimizing the effort required for annotation. The main
+idea of AL is that a machine learning algorithm may gain sufficient
+performance with a portion of the training instances provided, if it
+is permitted to select which instance to be label. In AL, the system has been trained on a limited collection of starting labeled data
+known as the initial labeled set. An external oracle annotates samples
+chosen by an acquisition function. The recently annotated samples
+are appended to the labeled training set, and the algorithm is then
+retrained using the updated labeled training set. This procedure is
+continued till the budget for labeling is depleted. AL integrated with
+deep learning enables the building of an approach where the deep
+
+Large-scale datasets having annotations, – for example ImageNet
+for image classification (Deng et al., 2009) and PASCAL VOC for
+segmentation and detection (Everingham, Van Gool, Williams, Winn, &
+Zisserman, 2010), have empowered deep learning methods to achieve
+notable performance in a various of computer vision-related jobs, including classification (He, Zhang, Ren, & Sun, 2016), object detection (Redmon, Divvala, Girshick, & Farhadi, 2016), and segmentation (Chen, Zhu, Papandreou, Schroff, & Adam, 2018; Ul Amin et al.,
+2022). In addition, the process of collecting proper annotations is
+tough and time-consuming. Labeling huge amounts of data is frequently difficult or impractical because of significant labeling costs,
+such as labeling by specialists (Esteva et al., 2017). The expense of
+
+The code (and data) in this article has been certified as Reproducible by Code Ocean: (https://codeocean.com/). More information on the Reproducibility
+Badge Initiative is available at https://www.elsevier.com/physical-sciences-and-engineering/computer-science/journals.
+∗ Corresponding author.
+E-mail addresses: sareer2021@cau.ac.kr (S.U. Amin), adnanhussain.std@icp.edu.pk (A. Hussain), bumsookim00@gmail.com (B. Kim), sanghyun@cau.ac.kr
+(S. Seo).
+https://doi.org/10.1016/j.eswa.2023.120391
+Received 29 November 2022; Received in revised form 3 May 2023; Accepted 4 May 2023
+Available online 10 May 2023
+0957-4174/© 2023 Elsevier Ltd. All rights reserved.
+
+Expert Systems With Applications 228 (2023) 120391
+
+S.U. Amin et al.
+
+learning network architecture is connected with conventional methods
+for data point selection. Active collection of data for a network is
+expected to result in faster convergence, improved efficiency using less
+data, and enhanced robustness because of the targeted extraction of
+data points that are characterized as outliers or difficult cases. There
+are several AL approaches, including uncertainty sampling, predicted
+model change, variation reduction, and query-by-committee (Settles,
+2012). Uncertainty sampling, for which several techniques have been
+presented (Beluch, Genewein, Nürnberger, & Köhler, 2018; Gal, Islam,
+& Ghahramani, 2017; Ozdemir, Peng, Tanner, Fuernstahl, & Goksel,
+2018), is among the most popular frameworks. Several researchers
+have used the AL technique to minimize the time and expense of
+data labeling in a variety of projects. For example, in Stark, Hazırbas,
+Triebel, and Cremers (2015), the researchers describe querying samples
+based on the difference between the probabilities of the first and second
+highest class. Next, Feng, Liu, Kao, and Lee (2017) presented a ResNet
+model; for querying unlabeled samples, they employed two techniques,
+including uncertainty sampling and positive sampling. Beluch et al.
+(2018) proved that ensemble-based uncertainty measures produced the
+most favorable results in their study. Cao, Yao, Xu, and Meng (2020)
+suggested an AL-based technique for the classification of hyperspectral
+images, they integrated AL and DL into a single framework. CNNs
+are initially trained with a small amount of labeled data, and then
+the most important samples from the candidate pool are selected for
+labeling. Next, the newly annotated data is then utilized to fine-tune
+the CNN model using the training set. This phase is repeated with
+the preceding step, and then Markov Random Field (MRF) is used
+to enhance the classification performance of the model by enforcing
+class label smoothness. However, the literature review concludes that
+extensive human involvement in the AL technique results in increased
+computation time and costs. To address each of these concerns, we
+suggested an DLBAL architecture with the following key contributions:
+
+Munsif, Khan, & Lee, 2022; Tanveer, Rajani, Rastogi, Shao, & Ganaie,
+2022), and so on. The acquisition functions are a quick and simple
+method for classifying datasets. The primary idea of AL is that if a
+learning system is permitted to choose the training samples from which
+it learns, it should perform more accurately with fewer labeled training
+instances (Settles, 2009). As a result, this increases the significance of
+the sample selection mechanism. In addition, the most used sample
+selection technique is an uncertainty-based selection (Tong & Koller,
+2001; Wang, Zhang, Li, Zhang, & Lin, 2016), which estimates the
+uncertainty of unannotated data based on the predictions of earlier
+classifiers, is one of the most prevalent techniques. Wang et al. (2016)
+suggested that the sample with the greatest entropy on the conditional probability distribution of estimated labels be extracted as its
+most uncertain sample. According to the SVM-based technique (Tong
+& Koller, 2001), the distance between the most likely instances and
+the decision border was used to select the unsure samples. Earlier
+publications (Freund, Seung, Shamir, & Tishby, 1997; Kee, Del Castillo,
+& Runger, 2018) also identified the sampling uncertainty relating to
+a group of classification models (𝑖.𝑒. , the difference amid class labels
+supplied by a group of classification models). In the literature, this
+architecture is referred to as query-by-committee (Settles, 2009). All
+of the aforementioned uncertainty-based approaches often disregard
+the major portion of unlabeled data; therefore, they are susceptible
+to outliers. In sample selecting, later approaches accounted for the
+information density metrics and utilized the information of unlabeled
+data. To reduce the prediction error of the trained classifier over unlabeled samples, these methods typically successively pick useful samples
+based on probability estimates (Joshi, Porikli, & Papanikolopoulos,
+2012; Wang, Sung, & Yau, 2011) or previous information (Kapoor,
+Hua, Akbarzadeh, & Baker, 2009). For Instance, Joshi, Porikli, and
+Papanikolopoulos (2009) evaluated the uncertainty-based sampling approach, which is effective in handling the multi-class scenario by using
+the probability assessment of classes for each sample in the unlabeled
+pool. In Kapoor et al. (2009), a priori context restrictions are included
+to help users tag face photos more effectively. Simultaneously, it is suggested in several publications (Li & Guo, 2013; Zhao, Sun, Wang, & Cao,
+2020) that samples must be taken in a way that maximizes the mutual
+information that can be gained among the candidate sample and the
+other unannotated samples when using the framework of the Gaussian
+Process. Li and Guo (2013) introduced a unique adaptive AL technique
+that labels crucial instances for image classifications by combining an
+information density measure and the most uncertainty measure. In
+addition, the variety of the picked sample within the given category has
+been considered in Brinker (2003). This is the first research to extend
+the SVM assisted AL method to batch mode. Elhamifar, Sapiro, Yang,
+and Sasrty (2013a) have recently incorporated uncertainty assessment
+across a single batching paradigm using convex scripting for selection
+of unlabeled data. Such a technique is very compatible with all types of
+classification models and is not restricted to those based on maximum
+margin. All of the aforementioned AL approaches only evaluate lowconfidence data instances, ignoring the vast majority of high-confidence
+data instances. However, it is believed that the more confidence data
+instances will help to increase the classification accuracy and maintain
+the consistency of classification models because of their prevalence and
+stability. In addition, the employing of more confidence data instances
+in our work will help to reduce manual annotation effort.
+
+• To the best of our knowledge, the proposed DLBAL framework is
+the one to tackle image classification challenges using the architecture of AL and fine-tuned efficientNet-B0. Our proposed DLBAL
+system is easily extensible to other image classification-related
+
+--- CONCLUSION ---
+Data availability
+
+Declaration of competing interest
+The authors affirm that they have no known conflicts of interest or
+personal relationships that might have affected the integrity of the work
+presented in this paper.
+
+Data will be made available on request.
+
+Nowadays, DL algorithms have been showing reasonable performance in a variety of industrial applications because of the massive
+amount of video data generated every day (Amin, Kim, Sami, Park,
+& Seo, 2023). However, gathering annotated data on such a massive scale requires a lot of time and money, consequently making it
+impossible to deploy DL models on many industrial systems. Therefore, AL has been concentrating on automating the procedure of data
+annotation, although they often rely on humans for annotating ambiguous samples. In contrast to previous approaches that emphasize
+only uncertain instances with low prediction confidence, the proposed
+DLBAL framework gained a significant number of instances with higher
+confidence from the unannotated set for pattern learning. Particularly,
+these instances were randomly picked and assigned labels to them
+continuously. Besides that, the high-confidence samples increased the
+classification accuracy, reduced user annotation effort, and maintained
+the stability of the classifier. Lastly, the average error rate at the
+first iteration of the training process is relatively low, around 1.3%
+and 5.5% on Caltech-256 and CACD datasets respectively. As a result,
+the suggested DLBAL method can assign accurate pseudo-labels to
+unannotated data while maintaining a reasonable error rate. Detailed
+experiments are conducted to show that the proposed DLBAL system
+obtained reasonable performance on two difficult image classification
+datasets (CACD and Caltech-256). The proposed method performs well
+than existing techniques but we believe that the classification accuracy
+of the proposed method can be further improved. In the future, we
+want to employ the Attention mechanism in our method and integrate
+more celebrity data from the CACD dataset to improve the classification
+accuracy.
+
+
+================================================================================
+PAPER: 13_03_The state of human-centered NLP technology for fact-checking
+================================================================================
+
+--- TITLE ---
+Information Processing and Management 60 (2023) 103219 Contents lists available at ScienceDirect Information Processing and Management journal homepage: www.elsevier.com/locate/ipm
+
+--- ABSTRACT ---
+Misinformation threatens modern society by promoting distrust in science, changing narratives
+in public health, heightening social polarization, and disrupting democratic elections and
+financial markets, among a myriad of other societal harms. To address this, a growing cadre
+of professional fact-checkers and journalists provide high-quality investigations into purported
+facts. However, these largely manual efforts have struggled to match the enormous scale of the
+problem. In response, a growing body of Natural Language Processing (NLP) technologies have
+been proposed for more scalable fact-checking. Despite tremendous growth in such research,
+however, practical adoption of NLP technologies for fact-checking still remains in its infancy
+today.
+In this work, we review the capabilities and limitations of the current NLP technologies
+for fact-checking. Our particular focus is to further chart the design space for how these
+technologies can be harnessed and refined in order to better meet the needs of human factcheckers. To do so, we review key aspects of NLP-based fact-checking: task formulation,
+dataset construction, modeling, and human-centered strategies, such as explainable models
+and human-in-the-loop approaches. Next, we review the efficacy of applying NLP-based factchecking tools to assist human fact-checkers. We recommend that future research include
+collaboration with fact-checker stakeholders early on in NLP research, as well as incorporation
+of human-centered design practices in model development, in order to further guide technology
+development for human use and practical adoption. Finally, we advocate for more research
+on benchmark development supporting extrinsic evaluation of human-centered fact-checking
+technologies.
+
+--- INTRODUCTION ---
+Misinformation and related issues (disinformation, deceptive news, clickbait, rumors, and information credibility) increasingly
+threaten society. While concerns of misinformation existed since the early days of written text (Marcus, 1992), with recent
+development of social media, the entry barrier for creating and spreading content has never been lower. Moreover, polarization
+online drives the spread of misinformation that in turn increases polarization (Cinelli et al., 2021a, 2021b; Vicario, Quattrociocchi,
+Scala, & Zollo, 2019). Braking such a vicious cycle would require addressing the problem of misinformation at its root.
+Fields such as journalism (Graves, 2018b; Graves & Amazeen, 2019; Neely-Sardon & Tignor, 2018) and archival studies (LeBeau,
+2017) have extensively studied misinformation, and recent years have seen a significant growth in fact-checking initiatives to address
+this problem. Various organizations now focus on fact-checks (e.g., PolitiFact, Snopes, FactCheck, First Draft, and Full Fact), and
+
+∗ Corresponding author.
+E-mail address: anubrata.das@utexas.edu (A. Das).
+
+https://doi.org/10.1016/j.ipm.2022.103219
+Received 15 June 2022; Received in revised form 29 November 2022; Accepted 30 November 2022
+Available online 21 December 2022
+0306-4573/© 2022 Elsevier Ltd. All rights reserved.
+
+Information Processing and Management 60 (2023) 103219
+
+A. Das et al.
+
+organizations such as the International Fact-Checking Network (IFCN)1 train and provide resources for independent fact-checkers
+and journalists to further scale expert fact-checking.
+While professional fact-checkers and journalists provide high-quality investigations of purported facts to inform the public,
+human effort struggles to match the global Internet scale of the problem. To address this, a growing body of research has investigated
+Natural Language Processing (NLP) to fully or partially automate fact-checking (Graves, 2018a; Guo, Schlichtkrull, & Vlachos, 2022;
+Nakov, Corney et al., 2021; Zeng, Abumansour, & Zubiaga, 2021; Zhou & Zafarani, 2020). However, even state-of-the-art NLP
+technologies still cannot match human capabilities in many areas and remain insufficient to automate fact-checking in practice.
+Experts argue (Arnold, 2020; Nakov, Corney et al., 2021) that fact-checking is a complex process and requires subjective judgment
+and expertise. While current NLP systems are increasingly better at addressing simple fact-checking tasks, identifying false claims
+that are contextual and beyond simple declarative statements remains beyond the reach for fully automated systems (Chen, Sriram,
+Choi, & Durrett, 2022; Fan et al., 2020). For example, claims buried in conversational systems, comment threads in social media
+community, and claims in multimedia contents are particularly challenging for automated systems. Additionally, most fact-checking
+practitioners desire NLP tools that are integrated into the existing fact-checking workflow and reduce latency (Alam, Shaar et al.,
+2021; Graves, 2018b; Nakov, Corney et al., 2021).
+In this literature review, we provide the reader with a comprehensive and holistic overview of the current state-of-the-art
+challenges and opportunities to more effectively leverage NLP technology in fact-checking. Our objectives in this work are twofold.
+First, we cover all aspects of the NLP pipeline for fact checking: task formulation, dataset construction, and modeling approaches.
+Second, we emphasize the human-centered approaches that seek to augment and accelerate human fact-checking, rather than
+supplant it. In contrast, prior literature reviews (Guo et al., 2022; Oshikawa, Qian, & Wang, 2020; Zeng et al., 2021) either provide
+an overview of the existing approaches or capture the details of only a specific part of the fact-checking pipeline (Demartini, Mizzaro,
+& Spina, 2020; Hanselowski et al., 2018; Hardalov, Arora, Nakov, & Augenstein, 2021; Kotonya & Toni, 2020a).
+Furthermore, we argue that it is important to extend the review of NLP technologies for fact-checking from modeling development
+to the area of Human–Computer Interaction (HCI) because technology design should reflect user needs so that its development can be
+better integrated in the real-world use context (Graves, 2018a; Juneja & Mitra, 2022; Kovatchev et al., 2020; Lease, 2020; Micallef,
+Armacost, Memon, & Patil, 2022; Nakov, Corney et al., 2021). Specifically, we point the reader toward Section 7 where we propose
+concrete directions for future work.
+Current challenges are largely due to the relatively early stage of development of the automated fact-checking technology.
+Specifically, current studies tend to adopt an intrinsic evaluation of components of the fact-checking pipeline rather than an endto-end extrinsic evaluation of the entire fact-checking task. Moreover, component-wise accuracies may remain below the threshold
+required for practical adoption. Furthermore, while the research community’s focus on prediction accuracy has yielded laudable
+improvements, human factors (e.g., usability, intelligibility, trust) have garnered far less attention or progress yet are crucial for
+practical adoption.
+Such limitations have implications for future research. First, practical use of NLP technologies for fact-checking is likely to come
+from hybrid, human-in-the-loop approaches rather than full automation. Second, as the technology matures, end-to-end evaluation
+becomes increasingly important to ensure practical solutions are being developed to solve the real-world use-case. To this end,
+new benchmarks that facilitate the extrinsic evaluation of automated fact-checking applications in practical settings may help drive
+progress on solutions that can be adopted for use in the wild. Finally, to craft effective human-in-the-loop systems, more cross-cutting
+NLP and HCI integration could strengthen design of fact-checking tools, so that they are accurate, scalable, and usable in practice.
+Toward this end, it may be fruitful to collaborate more with stakeholders early on in NLP research and incorporate human-centered
+design practices in developing models.
+We have written this article with different audiences in mind. For researchers and fact-checkers who are new to automated factchecking, this article provides a comprehensive overview of the problem. We discuss the challenges, the state-of-the-art capabilities,
+and the opportunities in the field, and we emphasize how machine learning and natural language processing can be used to combat
+disinformation. We recommend researchers new to this topic read the article in its entirety, following the logical structure of sections.
+Other readers who have more experience in the field may already be familiar with some of the concepts that we discuss. For them,
+this paper offers a novel human-centered perspective of automated fact checking and a discussion on how that perspective can affect
+system design, implementation, and evaluation. To facilitate the use of the paper by more experienced readers, we provide a quick
+overview of the content covered in each section.
+• Section 2 introduces the automated fact-checking pipeline. We provide an overview of the process for human fact-checkers
+and for automated solutions.
+• Section 3 discusses the task formulation: the goals and formal definitions of different sub-tasks in fact checking.
+• Section 4 describes the process of dataset construction, presents the most popular corpora for automated fact checking, and
+outlines some limitations of the data.
+• Section 5 reviews approaches for automating fact checking. We discuss general NLP capabilities (Section 5.1), explainable
+approaches (Section 5.2), and human-in-the-loop (Section 5.3) approaches for fact-checking.
+• Section 6 surveys existing tools that apply NLP for fact-checking in a practical, real-world context. We argue that the
+human-centered perspective is necessary for the practical adoption of automated solutions.
+
+1 https://www.politifact.com/, https://www.snopes.com/, https://www.factcheck.org/, https://firstdraftnews.org/, https://fullfact.org/, and https://www.
+poynter.org/ifcn/, respectively.
+
+--- CONCLUSION ---
+This review highlights the practices and development of the state-of-the-art in using NLP for automated fact-checking, emphasizing both the advances and the limitations of existing task formulation, dataset construction, and modeling approaches. We partially
+discuss existing practices of applying these NLP tasks into real-world tools that assist human fact-checkers. In recent years we have
+seen significant progress in automated fact-checking using NLP. A broad range of tasks, datasets, and modeling approaches have
+been introduced in different parts of the fact-checking pipeline. Moreover, with recent developments in transformers and large
+language models, the model accuracy has improved across tasks. However, even state-of-the-art models on existing benchmarks –
+such as FEVER and CLEF! – may not yet be ready for practical adoption and deployment.
+To address these limitations, we advocate development of hybrid, HITL systems for fact-checking. As a starting point, we may
+wish to reorient the goals of existing NLP tasks from full automation toward decision support. In contrast with fully-automated
+systems, hybrid systems instead involve humans-in-the-loop and facilitate human-AI teaming (Bansal, Nushi, Kamar, Horvitz and
+Weld, 2021; Bansal et al., 2019; Bansal, Wu et al., 2021). Such use of hybrid systems can help (a) scale-up human decision making;
+(b) augment machine learning capabilities with human accuracy; and (c) mitigate unintended consequences from machine errors.
+Additionally, we need new benchmarks and evaluation practices that can measure how automated and hybrid systems can improve
+downstream human accuracy (Fan et al., 2020; Smeros, Castillo, & Aberer, 2021) and efficiency in fact-checking.
+CRediT authorship contribution statement
+Anubrata Das: Conceptualization, Investigation, Visualization, Writing – original draft, Writing – review & editing. Houjiang
+Liu: Investigation, Writing – original draft. Venelin Kovatchev: Supervision, Writing – review & editing. Matthew Lease: Funding
+acquisition, Supervision, Project administration, Writing – review & editing.
+Data availability
+No data was used for the research described in the article.
+
+
+================================================================================
+PAPER: 13_04_Modeling and mitigating human annotation errors to design efficient stream processing systems with human-in-the-loop machine learning
+================================================================================
+
+--- TITLE ---
+Int. J. Human–Computer Studies 160 (2022) 102772 Contents lists available at ScienceDirect International Journal of Human - Computer Studies
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+Filtering high-volume, high-velocity data streams is a typical process
+in many application domains such as journalism, public health, and
+crisis management. In this process, an avalanche of data must be filtered
+and classified to prevent recipient information overload and filter failure
+(Shirky, 2008). These continuous streams of data are often noisy, sparse,
+
+and redundant. Humans cannot keep pace with the high velocity and
+volume of data. A purely human-annotation based filtering system does
+not scale. These data streams are also problematic for purely
+automated/machine-annotation based filtering systems; depending on
+the application, they may have limited accuracy. In the case of super­
+vised classifiers for such automated filtering, data sampled from previ­
+ously collected streams can bootstrap classifier training. However, it is
+
+* Corresponding author.
+E-mail address: rpandey4@gmu.edu (R. Pandey).
+URL: http://mason.gmu.edu/~rpandey4/ (R. Pandey).
+https://doi.org/10.1016/j.ijhcs.2022.102772
+Received 17 June 2020; Received in revised form 22 December 2021; Accepted 4 January 2022
+Available online 10 January 2022
+1071-5819/© 2022 Elsevier Ltd. All rights reserved.
+
+R. Pandey et al.
+
+International Journal of Human - Computer Studies 160 (2022) 102772
+
+invaluable to have annotations on samples specifically from the current
+data stream to adapt the pre-trained classifier model for the new data.
+Hence, to achieve high accuracy in this process, online human annota­
+tion tasks are needed within an active learning paradigm (Gama et al.,
+2014), sometimes at a large scale. Fortunately, social media and mobile
+devices have provided an unprecedented opportunity for the public to
+participate by volunteering in stream processing applications for digital
+humanitarianism, citizen science purposes, etc. A popular option for
+annotating complex data streams has been to create hybrid stream
+processing systems through a composition of human annotation tasks
+and automatic online classification (Imran et al., 2013; Lofi and Maarry,
+2014).
+In this paper, we study a hybrid online classification setting that
+categorizes relevant instances from a social media data stream using
+human annotation tasks and an active learning paradigm. Drawing on
+both classic (Ebbinghaus, 1913) and contemporary (Anderson, 2000)
+cognitive psychology, we analyze the effective decay related to atten­
+tional processes (described below) in human memory in contributing to
+errors while doing human annotation tasks.1
+Data challenges in hybrid stream processing. A key challenge in stream
+processing is temporal variation in the concept space. This includes
+changes in the distribution of data that leads to change in decision
+boundaries (virtual drifts), changes in the population from which future
+samples will be drawn (population drift), and changes in the definition
+of a concept (concept drift) (Gama et al., 2014) as illustrated in Fig. 1.
+For example, consider the task of processing crisis-related instances
+posted on social media during a natural disaster, such as a hurricane. To
+find instances that can help emergency managers in a response agency,
+we need to categorize them as irrelevant or relevant for actionable
+services (Purohit et al., 2018b), and in the case of relevant instances,
+further categorize them into fine-grained information classes such as
+infrastructure damage, donations, and so on (Castillo, 2016). In this
+setting, both virtual drifts and population drifts occur as the crisis un­
+folds. An example of virtual drift is content variation as a crisis evolves
+(Olteanu et al., 2015; Sutton et al., 2015). Consider a class concept such
+as caution and advice. In the beginning, instances might be urgent and
+generic, warning the public about a potentially dangerous event (such as
+a hurricane warning). Later, the same category of instances may become
+
+more specific and less urgent (such as warning people to avoid drinking
+contaminated water). An example of population drift is change in the
+prevalence of different class instances, which follow a certain progres­
+sion across many events (Olteanu et al., 2015). For instance, immedi­
+ately after a sudden onset crisis event, instances of caution and advice
+appear. Later on, other classes of information may be prevalent such as
+appeals for relief donations. These temporal variations are expected.
+They have a potential effect on annotation quality due to the learning
+behavior of human annotators about the representation of a class
+concept, which, in turn, impacts the entire system when used to train the
+automatic part of a hybrid system.
+Human challenges in hybrid stream processing. Human factors in the
+annotation process affect the quality of annotations for hybrid stream
+processing systems. Systems that rely on some form of crowdsourcing
+are affected by cognitive properties of human annotators, including
+their attentional heuristics (e.g., the fit with prior experience, the
+associated positive or negative affect) and vigilance (the ability to sus­
+tain high attention over time) (Burghardt et al., 2018). High mental
+workload (e.g., demands on inference and decision making) causes a
+deterioration in annotation quality, known as annotator burnout
+(Marshall and Shipman, 2013), which can cause increased fatigue and
+reduced motivation to maintain accuracy. To prevent annotator
+burnout, one may cap the maximum number of annotation tasks per unit
+of time that the annotator must perform, which can reduce workload
+(Purohit et al., 2018a). Nevertheless, human error persists in the
+execution of annotation tasks.
+Psychologists distinguish between two types of human error: mis­
+takes and slips (Reason, 2000). Mistakes result from incorrect or
+incomplete knowledge (Reason, 2000). In the annotation task context,
+this corresponds to annotators who have not yet grasped the concept to
+be annotated or who are annotating new instances for which they have
+not yet acquired a correct representation. Slips are errors in the presence
+of correct and complete knowledge (Norman, 1981; Reason, 2000), i.e.,
+annotator knowledge is correct, but idiosyncrasies in the activation of
+this knowledge modify accessibility, resulting in an incorrect annotation
+assignment. Persistent slips after a large number of examples may result
+from vigilance decrements in underlying attentional processes (Wiener,
+1987). The classic serial position effect (Murdock, 1962) supports this
+distinction between knowledge-based mechanisms and attentional
+processes, in which early items are properly encoded and hence
+remembered while later items are only stored temporarily and subject to
+decay. Item order matters, particularly when the content to be acquired
+changes over time (Jacoby et al., 2001), as explained above under data
+challenges.
+1.1. Contributions
+This paper extends our prior conference publication (Pandey et al.,
+2019), with the following new contributions.
+– First, we present a generic human error framework of mistakes and
+slips, adapted from the psychological theories that cover some
+common types of human errors and apply it to study human errors
+possible in an annotation task for streaming data, using the active
+learning system in a HITL-ML paradigm (Sections 3 and 4).
+– Second, we extend the validation of the proposed human error
+framework using a quantitative error model by presenting details of
+both lab-based and crowdsourcing-based testing experiments for the
+annotation task to filter relevant information from social media data
+streams collected during crises (Sections 5 and 6).
+– Third, we present a novel method for human error-mitigation in the
+active learning paradigm for designing a stream processing system
+against several baselines (Section 7). We also provide additional
+novel insights on different automated algorithmic approaches to
+prevent human error (Section 8).
+
+Fig. 1. Categories of drift in streaming data Gama et al. (2014).
+
+1
+We appreciate the distinction between absent memory traces and the
+challenges of retrieval (Tulving and Pearlstone, 1966). For the purposes of this
+paper, the net result is memory decay that results in effective forgetting.
+
+--- CONCLUSION ---
+We defined a framework of human errors, including mistakes and
+slips in the context of stream processing, based on psychological theories
+of human errors. We specifically focused on a quantitative model of
+memory decay behavior in the context of annotation tasks of humans,
+given that it is a common cause for both mistakes and slips. We validated
+the existence of memory decay-based annotation errors in a variety of
+experimental setups from lab-scale to crowdsourcing and provided ev­
+idence for the conceptual distinction between slips and mistakes for
+stream processing applications. We performed simulation-based studies
+to test a novel error mitigation algorithm targeted to slips that minimizes
+the likelihood of memory decay in an active learning paradigm-based
+human annotation task. The proposed method for human error mitiga­
+tion can help design Human-AI collaboration systems for efficient
+stream processing for social media and web data in general. Such sys­
+tems would require not only fewer human annotations but also reduce
+errors and decrease annotator memory decay.
+Limitations and future work. We have provided a proof-of-concept
+using an over-simplified model of human memory (Anderson, 2000).
+In particular, we have simplified the activation and decay functions and
+the self-reinforcing effect of classification on persisting knowledge of
+class concepts in an annotation task. Different error probability score
+functions other than sigmoid may better model the memory decay
+behavior of humans. Our approach to the characterization of human
+annotation error is also focused on cognition and ignorant of exogenous
+influences on cognition, including the physical and social environment
+(Hollnagel, 1998). We do not claim that this study covers all types of
+human annotation errors in stream processing, in particular, the
+knowledge modification problem posed by changes in streaming con­
+tent. In focusing on serial effects, we have ignored the effect of absolute
+time.
+Our small crowd-scale study provided insufficient power to defini­
+tively distinguish the mistake-based error. A future large-scale crowd­
+sourced study could provide more definitive support for the
+effectiveness of our proposed error mitigation algorithm. Nevertheless,
+we have documented that blind confidence in human annotation as a
+gold standard is gravely erroneous. Dramatic performance improvement
+results when the annotation is utilized with an appreciation for the
+human processes that generated it and might lead to errors. We hope
+that our framework provides a foundation for studying diverse types of
+
+7.5. Discussion
+We mimicked a real-world annotation scenario by inducing different
+types of memory decay-based human errors (slow vs. fast decaying) in a
+simulated annotation schedule. The error mitigation algorithm based on
+our error-avoidance sampling technique can select instances for a
+human to annotate, which mitigates the effect of human memory decay
+and improves AUC scores over time across all the event datasets, despite
+varying numbers of instances per interval. Also, for the first three in­
+tervals, both the simple uncertainty-based and error-avoidance sam­
+pling-based algorithms are equivalent in performance during the initial
+time. This is consistent with an interpretation in which our algorithm
+may still be learning about the class that induces errors to other classes
+or make other classes forgotten by the annotator. Both of these algo­
+rithms show a gradual increment of performance as the new instances
+arrive, compared to the random sampling algorithm with highly variant
+behavior of the learning model. These observations support the claim
+that our proposed algorithm could help improve active learning
+paradigm-based real-time systems.
+In the case of a no-decaying simulation setting, where the oracle
+always (but unrealistically) provides the correct label, all mitigation
+algorithms perform similarly to each other. This is possible due to
+similarity in frequency and the amount of correct oracle feedback, which
+10
+
+R. Pandey et al.
+
+International Journal of Human - Computer Studies 160 (2022) 102772
+
+annotation errors and causes, beyond text to image object recognition
+for a variety of stream processing applications, such as addressing
+burnout or inattentive worker errors in the future for human-AI teaming.
+Reproducibility. Human annotations and code implementations are
+available upon request for research purposes.
+
+Ebbinghaus, H., 1913. Memory: A Contribution to Experimental Psychology, vol. 3.
+Teachers College, Columbia University.
+Gama, J., Fernandes, R., Rocha, R., 2006. Decision trees for mining data streams. Intell.
+Data Anal. 10 (1), 23–45. https://doi.org/10.3233/IDA-2006-10103.Publisher: IOS
+Press
+Gama, J., Žliobaitė, I., Bifet, A., Pechenizkiy, M., Bouchachia, A., 2014. A survey on
+concept drift adaptation. ACM Comput. Surv. 46 (4), 44:1–44:37. https://doi.org/
+10.1145/2523813.
+Grant, M.J., Button, C.M., Snook, B., 2017. An evaluation of interrater reliability
+measures on binary tasks using d-prime. Appl. Psychol. Meas. 41 (4), 264–276.
+https://doi.org/10.1177/0146621616684584.Publisher: SAGE Publications Inc
+Hansen, D.L., Schone, P.J., Corey, D., Reid, M., Gehring, J., 2013. Quality control
+mechanisms for crowdsourcing: peer review, arbitration, & expertise at familysearch
+indexing. Proceedings of the 2013 Conference on Computer Supported Cooperative
+Work. Association for Computing Machinery, San Antonio, Texas, USA, pp. 649–660.
+https://doi.org/10.1145/2441776.2441848.
+Helmbold, D.P., Long, P.M., 1994. Tracking drifting concepts by minimizing
+disagreements. Mach. Learn. 14 (1), 27–45. https://doi.org/10.1007/BF00993161.
+Hollnagel, E., 1998. Cognitive Reliability and Error Analysis Method (CREAM). Elsevier.
+Hulten, G., Spencer, L., Domingos, P., 2001. Mining time-changing data streams.
+Proceedings of the Seventh ACM SIGKDD International Conference on Knowledge
+Discovery and Data Mining. Association for Computing Machinery, San Francisco,
+California, pp. 97–106. https://doi.org/10.1145/502512.502529.
+Ikonomovska, E., Gama, J., Džeroski, S., 2011. Learning model trees from evolving data
+streams. Data Min. Knowl. Discov. 23 (1), 128–168. https://doi.org/10.1007/
+s10618-010-0201-y.
+Imran, M., Lykourentzou, I., Naudet, Y., Castillo, C., 2013. Engineering crowdsourced
+stream processing systems. arXiv preprint arXiv:1310.5463.
+Jacoby, L.L., Hessels, S., Bopp, K., 2001. Proactive and retroactive effects in memory
+performance: dissociating recollection and accessibility bias. The Nature of
+Remembering: Essays in Honor of Robert G. Crowder. American Psychological
+Association, Washington, DC, US, pp. 35–54. https://doi.org/10.1037/10394-003.
+Kahneman, D., Tversky, A., 1979. Prospect theory: an analysis of decision under risk.
+Econometrica 47 (2), 263–291. https://doi.org/10.2307/1914185.Publisher:
+[Wiley, Econometric Society]. https://www.jstor.org/stable/1914185
+Klinkenberg, R., 2004. Learning drifting concepts: example selection vs. example
+weighting. Intell. Data Anal. 8 (3), 281–300.
+Klinkenberg, R., Joachims, T., 2000. Detecting concept drift with support vector
+machines. ICML, pp. 487–494.
+Klinkenberg, R., Renz, I., 1998. Adaptive information filtering: learning in the presence
+of concept drifts. Learning for text Categorization, pp. 33–40.
+Koren, Y., 2010. Collaborative filtering with temporal dynamics. Commun. ACM 53 (4),
+89–97. https://doi.org/10.1145/1721654.1721677.
+Koychev, I., 2000. Gradual Forgetting for Adaptation to Concept DriftURL: https://resea
+rch.uni-sofia.bg/handle/10506/57. Accepted: 2008-01-18T15:13:52Z Publisher:
+Proceedings of ECAI 2000 Workshop on Current Issues in Spatio-Temporal
+Reasoning.
+Koychev, I., 2002. Tracking changing user interests through prior-learning of context. In:
+De Bra, P., Brusilovsky, P., Conejo, R. (Eds.), Adaptive Hypermedia and Adaptive
+Web-Based Systems. Springer, Berlin, Heidelberg, pp. 223–232. https://doi.org/
+10.1007/3-540-47952-X_24.
+Lanquillon, C., 2001. Enhancing text classification to improve information filtering.
+Lofi, C., Maarry, K.E., 2014. Design patterns for hybrid algorithmic-crowdsourcing
+workflows. 2014 IEEE 16th Conference on Business Informatics, vol. 1, pp. 1–8.
+https://doi.org/10.1109/CBI.2014.16.ISSN: 2378-1971
+Loftus, G.R., 1985. Evaluating forgetting curves. J. Exp. Psychol. 11 (2), 397.
+Mackworth, N.H., 1948. The breakdown of vigilance during prolonged visual search.
+Q. J. Exp. Psychol. 1 (1), 6–21. https://doi.org/10.1080/17470214808416738.
+Publisher: Routledge eprint:
+Marshall, C.C., Shipman, F.M., 2013. Experiences surveying the crowd: reflections on
+methods, participation, and reliability. Proceedings of the 5th Annual ACM Web
+Science Conference. Association for Computing Machinery, Paris, France,
+pp. 234–243. https://doi.org/10.1145/2464464.2464485.
+Melton, A.W., 1963. Implications of short-term memory for a general theory of memory.
+J. Verbal Learn. Verbal Behav. 2 (1), 1–21. https://doi.org/10.1016/S0022-5371
+(63)80063-8.https://www.sciencedirect.com/science/article/pii/S0022537
+163800638
+Murdock Jr., B.B., 1962. The serial position effect of free recall. J. Exp. Psychol. 64 (5),
+482.
+Ng, W., Dash, M., 2008. A test paradigm for detecting changes in transactional data
+streams. In: Haritsa, J.R., Kotagiri, R., Pudi, V. (Eds.), Database Systems for
+Advanced Applications. Springer, Berlin, Heidelberg, pp. 204–219. https://doi.org/
+10.1007/978-3-540-78568-2_17.
+Nguyen, D., Trieschnigg, D., Doğruöz, A.S., Gravel, R., Theune, M., Meder, T., de
+Jong, F., 2014. Why gender and age prediction from tweets is hard: lessons from a
+crowdsourcing experiment. Proceedings of COLING 2014, the 25th International
+Conference on Computational Linguistics: Technical Papers. Dublin City University
+and Association for Computational Linguistics, Dublin, Ireland, pp. 1950–1961. htt
+ps://www.aclweb.org/anthology/C14-1184.https://www.aclweb.org/anthology
+/C14-1184
+Norman, D.A., 1981. Cate
+
+
+================================================================================
+PAPER: bibtex
+================================================================================
+
+--- TITLE ---
+@ARTICLE{Amin2023, author = {Amin, Sareer Ul and Hussain, Adnan and Kim, Bumsoo and Seo, Sanghyun}, title = {Deep learning based active learning technique for data annotation and improve the overall performance of classification models[Formula presented]},
+
+--- ABSTRACT ---
+ABSTRACT NOT FOUND
+
+--- INTRODUCTION ---
+INTRODUCTION NOT FOUND
+
+--- CONCLUSION ---
+CONCLUSION NOT FOUND
+
+
