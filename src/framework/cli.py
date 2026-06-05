@@ -35,6 +35,10 @@ def build_parser() -> argparse.ArgumentParser:
     p2e.add_argument("--target-labels", default="condenação,extinto,absolvição")
     p2e.add_argument("--strip-punctuation", action="store_true", default=False,
                       help="Remove punctuation before embedding (ablation study)")
+    p2e.add_argument("--strip-stopwords", action="store_true", default=False,
+                      help="Remove Portuguese stopwords before embedding (ablation study)")
+    p2e.add_argument("--strip-numbers", action="store_true", default=False,
+                      help="Remove purely numeric tokens before embedding (ablation study)")
 
     p2l = sub.add_parser("stage2-llm-baseline", help="Etapa 2 - Baseline LLM (zero-shot + few-shot)")
     p2l.add_argument("--input", required=True)
@@ -79,6 +83,10 @@ def build_parser() -> argparse.ArgumentParser:
     p2x.add_argument("--max-tokens", type=int, default=256)
     p2x.add_argument("--strip-punctuation", action="store_true", default=False,
                       help="Remove punctuation before embedding (ablation study)")
+    p2x.add_argument("--strip-stopwords", action="store_true", default=False,
+                      help="Remove Portuguese stopwords before embedding (ablation study)")
+    p2x.add_argument("--strip-numbers", action="store_true", default=False,
+                      help="Remove purely numeric tokens before embedding (ablation study)")
 
     p4v = sub.add_parser("stage4-viz", help="Etapa 4 - Visualizações NER (heatmap + tabela LaTeX)")
     p4v.add_argument("--input-by-section", default="files/NER/ner_results_by_section_v2.json")
@@ -133,6 +141,8 @@ def main() -> None:
                 k_folds=args.k_folds,
                 target_labels=target_labels,
                 strip_punctuation=args.strip_punctuation,
+                strip_stopwords=args.strip_stopwords,
+                strip_numbers=args.strip_numbers,
             )
         )
         return
@@ -199,6 +209,8 @@ def main() -> None:
                 num_background=args.num_background,
                 max_tokens=args.max_tokens,
                 strip_punctuation=args.strip_punctuation,
+                strip_stopwords=args.strip_stopwords,
+                strip_numbers=args.strip_numbers,
             )
         )
         return

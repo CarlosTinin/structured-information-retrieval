@@ -39,7 +39,7 @@ from sklearn.svm import SVC
 
 from .io_utils import ensure_parent_dir, read_csv_smart, save_json
 from .stage2_embeddings import load_dataset
-from .stage2_embeddings import strip_punctuation_from_text
+from .stage2_embeddings import strip_punctuation_from_text, strip_stopwords_from_text, strip_numbers_from_text
 
 try:
     import xgboost as xgb
@@ -526,6 +526,8 @@ def run_stage2_explainability(
     num_background: int = 20,
     max_tokens: int = 256,
     strip_punctuation: bool = False,
+    strip_stopwords: bool = False,
+    strip_numbers: bool = False,
 ) -> dict:
     """Run SHAP explainability analysis on Stage 2 classifiers.
 
@@ -575,6 +577,16 @@ def run_stage2_explainability(
     if strip_punctuation:
         print("[Ablation] Removendo pontuação dos textos...")
         df["text"] = df["text"].apply(strip_punctuation_from_text)
+        df = df[df["text"].str.len() > 10]
+
+    if strip_stopwords:
+        print("[Ablation] Removendo stopwords dos textos...")
+        df["text"] = df["text"].apply(strip_stopwords_from_text)
+        df = df[df["text"].str.len() > 10]
+
+    if strip_numbers:
+        print("[Ablation] Removendo tokens numéricos dos textos...")
+        df["text"] = df["text"].apply(strip_numbers_from_text)
         df = df[df["text"].str.len() > 10]
 
     encoder = LabelEncoder()
@@ -843,6 +855,10 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-tokens", type=int, default=256)
     parser.add_argument("--strip-punctuation", action="store_true", default=False,
                         help="Remove punctuation before embedding (ablation study)")
+    parser.add_argument("--strip-stopwords", action="store_true", default=False,
+                        help="Remove Portuguese stopwords before embedding (ablation study)")
+    parser.add_argument("--strip-numbers", action="store_true", default=False,
+                        help="Remove purely numeric tokens before embedding (ablation study)")
     return parser
 
 
@@ -861,6 +877,8 @@ def main() -> None:
         num_background=args.num_background,
         max_tokens=args.max_tokens,
         strip_punctuation=args.strip_punctuation,
+        strip_stopwords=args.strip_stopwords,
+        strip_numbers=args.strip_numbers,
     )
 
 

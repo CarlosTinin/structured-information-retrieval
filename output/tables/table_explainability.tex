@@ -7,65 +7,59 @@
 \toprule
 Model & Sample & Type & True$\rightarrow$Pred & Top-5 Tokens & SHAP \\
 \midrule
-SVM (Linear) & S0 & correct & absolvição$\rightarrow$absolvição & \texttt{e} & -0.0644 \\
- &  &  &  & \texttt{apurou} & -0.0594 \\
- &  &  &  & \texttt{meses} & +0.0559 \\
- &  &  &  & \texttt{quatro} & +0.0444 \\
- &  &  &  & \texttt{acompanhou} & -0.0422 \\
+SVM (Linear) & S83 & correct & absolvição$\rightarrow$absolvição & \texttt{fato} & +0.1055 \\
+ &  &  &  & \texttt{peculiar} & -0.1025 \\
+ &  &  &  & \texttt{deve} & +0.1024 \\
+ &  &  &  & \texttt{mantendo} & -0.0890 \\
+ &  &  &  & \texttt{lavatórios} & +0.0406 \\
 \cmidrule(lr){2-6}
- & S28 & correct & condenação$\rightarrow$condenação & \texttt{a} & +0.0483 \\
- &  &  &  & \texttt{21} & -0.0474 \\
- &  &  &  & \texttt{p} & +0.0427 \\
- &  &  &  & \texttt{05} & +0.0416 \\
- &  &  &  & \texttt{ação} & -0.0411 \\
+ & S73 & correct & condenação$\rightarrow$condenação & \texttt{reclusão} & -0.0034 \\
+ &  &  &  & \texttt{subsidiariamente} & -0.0033 \\
+ &  &  &  & \texttt{acusado} & -0.0033 \\
+ &  &  &  & \texttt{banheiro} & +0.0032 \\
+ &  &  &  & \texttt{presente} & -0.0029 \\
 \cmidrule(lr){2-6}
- & S8 & correct & extinto$\rightarrow$extinto & \texttt{01} & +0.1395 \\
- &  &  &  & \texttt{01} & -0.1237 \\
- &  &  &  & \texttt{a} & +0.1050 \\
- &  &  &  & \texttt{09} & +0.1041 \\
- &  &  &  & \texttt{é} & +0.0902 \\
+ & S8 & correct & extinto$\rightarrow$extinto & \texttt{litispendência} & -0.0573 \\
+ &  &  &  & \texttt{determino} & +0.0016 \\
 \cmidrule(lr){2-6}
- & S51 & misclassified & condenação$\rightarrow$absolvição & \texttt{nr} & -0.0410 \\
- &  &  &  & \texttt{12} & -0.0405 \\
- &  &  &  & \texttt{nr} & +0.0356 \\
- &  &  &  & \texttt{s} & +0.0238 \\
- &  &  &  & \texttt{31} & -0.0079 \\
+ & S20 & misclassified & condenação$\rightarrow$absolvição & \texttt{multa} & -0.0240 \\
+ &  &  &  & \texttt{eletronicamente} & -0.0236 \\
+ &  &  &  & \texttt{dias} & +0.0223 \\
+ &  &  &  & \texttt{culpa} & -0.0220 \\
+ &  &  &  & \texttt{determino} & +0.0214 \\
 \cmidrule(lr){2-6}
- & S37 & misclassified & absolvição$\rightarrow$extinto & \texttt{486} & +0.0865 \\
- &  &  &  & \texttt{cinco} & -0.0814 \\
- &  &  &  & \texttt{sujeitando} & -0.0780 \\
- &  &  &  & \texttt{à} & +0.0709 \\
- &  &  &  & \texttt{o} & +0.0661 \\
+ & S69 & misclassified & absolvição$\rightarrow$condenação & \texttt{desprovido} & -0.1164 \\
+ &  &  &  & \texttt{apelo} & +0.1162 \\
+ &  &  &  & \texttt{socorros} & -0.1022 \\
+ &  &  &  & \texttt{salário} & +0.1022 \\
+ &  &  &  & \texttt{menos} & -0.0003 \\
 \midrule
-XGBoost & S0 & correct & absolvição$\rightarrow$absolvição & \texttt{submissão} & +0.0284 \\
- &  &  &  & \texttt{a} & -0.0220 \\
- &  &  &  & \texttt{e} & +0.0109 \\
- &  &  &  & \texttt{submissão} & +0.0061 \\
- &  &  &  & \texttt{a} & -0.0057 \\
+XGBoost & S83 & correct & absolvição$\rightarrow$absolvição & \texttt{fato} & +0.0651 \\
+ &  &  &  & \texttt{peculiar} & -0.0614 \\
+ &  &  &  & \texttt{ciriaco} & +0.0595 \\
+ &  &  &  & \texttt{café} & -0.0563 \\
+ &  &  &  & \texttt{pode} & +0.0450 \\
 \cmidrule(lr){2-6}
- & S28 & correct & condenação$\rightarrow$condenação & \texttt{densidade} & +0.0813 \\
- &  &  &  & \texttt{mg} & -0.0451 \\
- &  &  &  & \texttt{cinco} & +0.0233 \\
- &  &  &  & \texttt{2019} & -0.0221 \\
- &  &  &  & \texttt{05} & -0.0217 \\
+ & S73 & correct & condenação$\rightarrow$condenação & \texttt{autodeterminação} & +0.0462 \\
+ &  &  &  & \texttt{autodeterminação} & -0.0419 \\
+ &  &  &  & \texttt{criança} & +0.0389 \\
+ &  &  &  & \texttt{roupas} & -0.0352 \\
+ &  &  &  & \texttt{condições} & +0.0305 \\
 \cmidrule(lr){2-6}
- & S8 & correct & extinto$\rightarrow$extinto & \texttt{determino} & +0.1525 \\
- &  &  &  & \texttt{litispendência} & -0.0917 \\
- &  &  &  & \texttt{carneiro} & +0.0689 \\
- &  &  &  & \texttt{sentença} & -0.0517 \\
- &  &  &  & \texttt{14003} & -0.0419 \\
+ & S8 & correct & extinto$\rightarrow$extinto & \texttt{determino} & -0.0370 \\
+ &  &  &  & \texttt{litispendência} & -0.0097 \\
 \cmidrule(lr){2-6}
- & S51 & misclassified & condenação$\rightarrow$absolvição & \texttt{5} & -0.0597 \\
- &  &  &  & \texttt{e} & +0.0405 \\
- &  &  &  & \texttt{sendo} & +0.0389 \\
- &  &  &  & \texttt{no} & +0.0370 \\
- &  &  &  & \texttt{e} & +0.0263 \\
+ & S20 & misclassified & condenação$\rightarrow$absolvição & \texttt{multa} & +0.0609 \\
+ &  &  &  & \texttt{condições} & +0.0546 \\
+ &  &  &  & \texttt{reclusão} & -0.0480 \\
+ &  &  &  & \texttt{sustenta} & -0.0469 \\
+ &  &  &  & \texttt{apreço} & -0.0021 \\
 \cmidrule(lr){2-6}
- & S37 & misclassified & absolvição$\rightarrow$extinto & \texttt{o} & +0.0861 \\
- &  &  &  & \texttt{publique} & -0.0666 \\
- &  &  &  & \texttt{a} & +0.0578 \\
- &  &  &  & \texttt{a} & +0.0535 \\
- &  &  &  & \texttt{absolvição} & -0.0508 \\
+ & S69 & misclassified & absolvição$\rightarrow$condenação & \texttt{apelo} & +0.0590 \\
+ &  &  &  & \texttt{especializada} & +0.0451 \\
+ &  &  &  & \texttt{desprovido} & -0.0444 \\
+ &  &  &  & \texttt{considera} & +0.0403 \\
+ &  &  &  & \texttt{exaustiva} & -0.0401 \\
 \bottomrule
 \end{tabular}}
 \end{table}
