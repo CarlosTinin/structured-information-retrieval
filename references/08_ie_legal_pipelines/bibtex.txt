@@ -1,3 +1,43 @@
+@article{bellandi2024entity,
+  title={An entity-centric approach to manage court judgments based on natural language processing},
+  author={Bellandi, Valerio and Bernasconi, Christian and Lodi, Fausto and Palmonari, Matteo and Pozzi, Riccardo and Ripamonti, Marco and Siccardi, Stefano},
+  journal={Computer Law \& Security Review},
+  volume={52},
+  pages={105904},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@article{sakhaee2021information,
+  title={Information extraction framework to build legislation network},
+  author={Sakhaee, Neda and Wilson, Mark C},
+  journal={Artificial Intelligence and Law},
+  volume={29},
+  number={1},
+  pages={35--58},
+  year={2021},
+  publisher={Springer}
+}
+
+@inproceedings{zhong2021frustratingly,
+  title={A frustratingly easy approach for entity and relation extraction},
+  author={Zhong, Zexuan and Chen, Danqi},
+  booktitle={Proceedings of the 2021 conference of the North American chapter of the association for computational linguistics: human language technologies},
+  pages={50--61},
+  year={2021}
+}
+
+@article{huang2021strategic,
+  title={A strategic framework for artificial intelligence in marketing},
+  author={Huang, Ming-Hui and Rust, Roland T},
+  journal={Journal of the academy of marketing science},
+  volume={49},
+  number={1},
+  pages={30--50},
+  year={2021},
+  publisher={Springer}
+}
+
 @ARTICLE{Castano2022,
 	author = {Castano, Silvana and Falduti, Mattia and Ferrara, Alfio and Montanelli, Stefano},
 	title = {A knowledge-centered framework for exploration and retrieval of legal documents},

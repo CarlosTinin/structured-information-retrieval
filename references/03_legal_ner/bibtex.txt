@@ -1,3 +1,32 @@
+@article{zhu2022design,
+  title={Design of knowledge graph retrieval system for legal and regulatory framework of multilevel latent semantic indexing},
+  author={Zhu, Guicun and Hao, Meihui and Zheng, Changlong and Wang, Linlin},
+  journal={Computational Intelligence and Neuroscience},
+  volume={2022},
+  number={1},
+  pages={6781043},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+
+@article{wang2025adversarial,
+  title={Adversarial training flat-lattice transformer for named entity recognition of chinese legal texts},
+  author={Wang, Jiabao and Wang, Kaixuan and Weng, Yang and Li, Xin},
+  journal={Artificial Intelligence and Law},
+  pages={1--22},
+  year={2025},
+  publisher={Springer}
+}
+
+@article{wang2025domain,
+  title={A domain-specific cross-lingual semantic alignment learning model for low-resource languages},
+  author={Wang, Yurong and Lin, Min and Hu, Qitu and Bai, Shuangcheng and Li, Yanling and Bao, Longjie},
+  journal={Neural Networks},
+  pages={108114},
+  year={2025},
+  publisher={Elsevier}
+}
+
 @ARTICLE{Elwing Torres2026,
 	author = {Elwing Torres, Arthur and Silva de Moura, Edleno and Soares da Silva, Altigran and Nascimento, Mario A. and Mesquita, Filipe},
 	title = {An experimental study on data augmentation techniques for named entity recognition on low-resource domains},

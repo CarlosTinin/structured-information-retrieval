@@ -1,3 +1,14 @@
+@article{zhu2022design,
+  title={Design of knowledge graph retrieval system for legal and regulatory framework of multilevel latent semantic indexing},
+  author={Zhu, Guicun and Hao, Meihui and Zheng, Changlong and Wang, Linlin},
+  journal={Computational Intelligence and Neuroscience},
+  volume={2022},
+  number={1},
+  pages={6781043},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+
 @ARTICLE{Boulot202213,
 	author = {Boulot, Emille and Sterlin, Joshua},
 	title = {Steps Towards a Legal Ontological Turn: Proposals for Law’s Place beyond the Human},

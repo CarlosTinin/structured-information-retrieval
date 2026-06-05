@@ -1,3 +1,43 @@
+@article{resck2022legalvis,
+  title={Legalvis: Exploring and inferring precedent citations in legal documents},
+  author={Resck, Lucas E and Ponciano, Jean R and Nonato, Luis Gustavo and Poco, Jorge},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  volume={29},
+  number={6},
+  pages={3105--3120},
+  year={2022},
+  publisher={IEEE}
+}
+
+@article{nuranti2025systematical,
+  title={A systematical procedure to extracting legal entities from Indonesian judicial decisions},
+  author={Nuranti, Eka Qadri and Intizhami, Naili Suri and Yulianti, Evi and Latief, A Muh Iqbal and Al Ghozy, Osama Iyad},
+  journal={MethodsX},
+  pages={103610},
+  year={2025},
+  publisher={Elsevier}
+}
+
+@article{almalki2025legal,
+  title={Legal judgment prediction in the Saudi Arabian commercial court},
+  author={Almalki, Ashwaq and Alsafari, Safa and Alotaibi, Noura M},
+  journal={Future Internet},
+  volume={17},
+  number={10},
+  pages={439},
+  year={2025},
+  publisher={MDPI}
+}
+
+@article{guha2022multi,
+  title={A multi-modal approach to digital document stream segmentation for title insurance domain},
+  author={Guha, Abhijit and Alahmadi, Abdulrahman and Samanta, Debabrata and Khan, Mohammad Zubair and Alahmadi, Ahmed H},
+  journal={IEEE Access},
+  volume={10},
+  pages={11341--11353},
+  year={2022},
+  publisher={IEEE}
+}
 
 @ARTICLE{Guimarães2024,
 	author = {Guimarães, Gabriel M.C. and da Silva, Felipe X.B. and Queiroz, Andrei L. and Marcacini, Ricardo M. and Faleiros, Thiago P. and Borges, Vinicius R.P. and Garcia, Luís P.F.},

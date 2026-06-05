@@ -1,3 +1,24 @@
+@article{strand2024systematic,
+  title={A systematic literature review of modern slavery in supply chain management: State of the art, framework development and research opportunities},
+  author={Strand, Vanja and Lotfi, Maryam and Flynn, Anthony and Walker, Helen},
+  journal={Journal of Cleaner Production},
+  volume={435},
+  pages={140301},
+  year={2024},
+  publisher={Elsevier}
+}
+
+@article{gold2015modern,
+  title={Modern slavery challenges to supply chain management},
+  author={Gold, Stefan and Trautrims, Alexander and Trodd, Zoe},
+  journal={Supply chain management: an international journal},
+  volume={20},
+  number={5},
+  pages={485--494},
+  year={2015},
+  publisher={Emerald Group Publishing Limited}
+}
+
 @ARTICLE{LeBaron202129,
 	author = {LeBaron, Genevieve},
 	title = {The Role of Supply Chains in the Global Business of Forced Labour},

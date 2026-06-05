@@ -1,3 +1,14 @@
+@article{van2021open,
+  title={An open source machine learning framework for efficient and transparent systematic reviews},
+  author={Van De Schoot, Rens and De Bruin, Jonathan and Schram, Raoul and Zahedi, Parisa and De Boer, Jan and Weijdema, Felix and Kramer, Bianca and Huijts, Martijn and Hoogerwerf, Maarten and Ferdinands, Gerbrich and others},
+  journal={Nature machine intelligence},
+  volume={3},
+  number={2},
+  pages={125--133},
+  year={2021},
+  publisher={Nature Publishing Group UK London}
+}
+
 @ARTICLE{Amin2023,
 	author = {Amin, Sareer Ul and Hussain, Adnan and Kim, Bumsoo and Seo, Sanghyun},
 	title = {Deep learning based active learning technique for data annotation and improve the overall performance of classification models[Formula presented]},

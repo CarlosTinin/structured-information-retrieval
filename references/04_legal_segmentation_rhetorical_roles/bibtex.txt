@@ -1,0 +1,43 @@
+@article{ragazzi2025lawsuit,
+  title={LAWSUIT: a LArge expert-Written SUmmarization dataset of ITalian constitutional court verdicts: L. Ragazzi et al.},
+  author={Ragazzi, Luca and Moro, Gianluca and Guidi, Stefano and Frisoni, Giacomo},
+  journal={Artificial Intelligence and Law},
+  volume={33},
+  number={4},
+  pages={1151--1187},
+  year={2025},
+  publisher={Springer}
+}
+
+@article{bhattacharya2023deeprhole,
+  title={DeepRhole: deep learning for rhetorical role labeling of sentences in legal case documents},
+  author={Bhattacharya, Paheli and Paul, Shounak and Ghosh, Kripabandhu and Ghosh, Saptarshi and Wyner, Adam},
+  journal={Artificial Intelligence and Law},
+  volume={31},
+  number={1},
+  pages={53--90},
+  year={2023},
+  publisher={Springer}
+}
+
+@article{chen2025cothssum,
+  title={CoTHSSum: Structured long-document summarization via chain-of-thought reasoning and hierarchical segmentation},
+  author={Chen, Xiaoyong and Chen, Zhiqiang and Cheng, Shi},
+  journal={Journal of King Saud University Computer and Information Sciences},
+  volume={37},
+  number={4},
+  pages={40},
+  year={2025},
+  publisher={Springer}
+}
+
+@article{sheik2025legal,
+  title={Legal sentence boundary detection using hybrid deep learning and statistical models: R. Sheik et al.},
+  author={Sheik, Reshma and Ganta, Sneha Rao and Nirmala, S Jaya},
+  journal={Artificial Intelligence and Law},
+  volume={33},
+  number={2},
+  pages={519--549},
+  year={2025},
+  publisher={Springer}
+}
