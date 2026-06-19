@@ -377,7 +377,7 @@ def run_stage2_llm_baseline(
         report["models"][display_names[mode]] = model_report
 
         rows_for_table.append({
-            "Modelo": display_names[mode],
+            "Model": display_names[mode],
             "Accuracy": float(np.mean([m["accuracy"] for m in by_fold[mode]])),
             "Precision": float(np.mean([m["precision"] for m in by_fold[mode]])),
             "Recall": float(np.mean([m["recall"] for m in by_fold[mode]])),
@@ -413,13 +413,13 @@ def run_stage2_llm_baseline(
             cm, annot=True, fmt="d", cmap="Blues",
             xticklabels=encoder.classes_, yticklabels=encoder.classes_, cbar=False,
         )
-        plt.title(f"Matriz de Confusão - {display_names[mode]}")
-        plt.xlabel("Predito")
-        plt.ylabel("Verdadeiro")
+        plt.title(f"Confusion Matrix - {display_names[mode]}")
+        plt.xlabel("Predicted")
+        plt.ylabel("True")
         plt.tight_layout()
 
         slug = re.sub(r"[^a-z0-9]+", "_", mode.lower()).strip("_")
-        plt.savefig(images_dir / f"matriz_confusao_gemini_{slug}.png", dpi=200)
+        plt.savefig(images_dir / f"confusion_matrix_gemini_{slug}.png", dpi=200)
         plt.close()
 
     # --- Save results JSON ---

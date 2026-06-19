@@ -375,7 +375,7 @@ def run_stage2_embeddings(
             continue
         rows.append(
             {
-                "Modelo": name,
+                "Model": name,
                 "Accuracy": float(np.mean([m["accuracy"] for m in metrics])),
                 "Precision": float(np.mean([m["precision"] for m in metrics])),
                 "Recall": float(np.mean([m["recall"] for m in metrics])),
@@ -426,13 +426,13 @@ def run_stage2_embeddings(
             yticklabels=encoder.classes_,
             cbar=False,
         )
-        plt.title(f"Matriz de Confusão - {name}")
-        plt.xlabel("Predito")
-        plt.ylabel("Verdadeiro")
+        plt.title(f"Confusion Matrix - {name}")
+        plt.xlabel("Predicted")
+        plt.ylabel("True")
         plt.tight_layout()
 
         model_slug = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-        image_path = images_dir / f"matriz_confusao_{model_slug}{suffix}.png"
+        image_path = images_dir / f"confusion_matrix_{model_slug}{suffix}.png"
         plt.savefig(image_path, dpi=200)
         plt.close()
 
