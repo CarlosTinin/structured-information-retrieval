@@ -1,0 +1,41 @@
+{
+  "description": "spaCy NER baseline comparison with Legal-BERT NER",
+  "spacy_model": "pt_core_news_lg",
+  "legal_bert_model": "dominguesm/legal-bert-ner-base-cased-ptbr",
+  "total_documents": 25,
+  "spacy_summary": {
+    "total_unique_entities": 5188,
+    "avg_per_doc": 207.52,
+    "entity_type_distribution": {
+      "LOC": 1361,
+      "MISC": 1701,
+      "ORG": 741,
+      "PER": 1385
+    }
+  },
+  "legal_bert_summary": {
+    "total_unique_entities": 4282,
+    "avg_per_doc": 171.28,
+    "entity_type_distribution": {
+      "JURISPRUDENCIA": 338,
+      "LEGISLACAO": 895,
+      "LOCAL": 432,
+      "ORGANIZACAO": 632,
+      "PESSOA": 1159,
+      "TEMPO": 826
+    }
+  },
+  "comparison": {
+    "comparable_jaccard": 0.20589529256489222,
+    "comparable_overlap": 936,
+    "comparable_only_legal_bert": 1131,
+    "comparable_only_spacy": 2479,
+    "spacy_comparable_count": 3415,
+    "legal_bert_comparable_count": 2067,
+    "legal_bert_exclusive_count": 2059,
+    "spacy_misc_count": 1701
+  },
+  "interpretation": {
+    "note": "spaCy pt_core_news_lg provides PER/ORG/LOC/MISC entity types. Legal-BERT provides PESSOA/ORGANIZACAO/LOCAL/TEMPO/LEGISLACAO/JURISPRUDENCIA. Comparison is limited to overlapping types (PER↔PESSOA, ORG↔ORGANIZACAO, LOC↔LOCAL). Legal-BERT's unique types (TEMPO, LEGISLACAO, JURISPRUDENCIA) represent domain-specific value that general-purpose NER cannot provide."
+  }
+}

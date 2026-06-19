@@ -1,0 +1,1383 @@
+{
+  "description": "Regex-based segmentation baseline vs LLM segmentation",
+  "method": "Keyword/regex header detection with state-machine section assignment",
+  "total_documents": 25,
+  "total_sentences": 4232,
+  "overall_accuracy": 0.22920604914933837,
+  "per_section_accuracy": {
+    "OUTROS": {
+      "agree": 165,
+      "total": 336,
+      "accuracy": 0.49107142857142855
+    },
+    "RELATORIO": {
+      "agree": 142,
+      "total": 328,
+      "accuracy": 0.4329268292682927
+    },
+    "DOS_FATOS": {
+      "agree": 0,
+      "total": 481,
+      "accuracy": 0.0
+    },
+    "FUNDAMENTACAO": {
+      "agree": 518,
+      "total": 2103,
+      "accuracy": 0.24631478839752735
+    },
+    "DISPOSITIVO": {
+      "agree": 71,
+      "total": 232,
+      "accuracy": 0.30603448275862066
+    },
+    "DOSIMETRIA": {
+      "agree": 74,
+      "total": 752,
+      "accuracy": 0.09840425531914894
+    }
+  },
+  "docs_with_no_headers_detected": [
+    6,
+    9,
+    10,
+    16,
+    19,
+    23
+  ],
+  "num_docs_with_no_headers": 6,
+  "per_document_results": [
+    {
+      "total_sentences": 451,
+      "sentences_agree": 28,
+      "overall_accuracy": 0.06208425720620843,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 13,
+          "total": 34,
+          "accuracy": 0.38235294117647056
+        },
+        "RELATORIO": {
+          "agree": 15,
+          "total": 15,
+          "accuracy": 1.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 213,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 163,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 15,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 0,
+      "headers_detected": 1,
+      "sections_detected": [
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 88,
+      "sentences_agree": 13,
+      "overall_accuracy": 0.14772727272727273,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 5,
+          "total": 8,
+          "accuracy": 0.625
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 10,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 31,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 8,
+          "total": 9,
+          "accuracy": 0.8888888888888888
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 23,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 1,
+      "headers_detected": 1,
+      "sections_detected": [
+        "DISPOSITIVO"
+      ]
+    },
+    {
+      "total_sentences": 228,
+      "sentences_agree": 21,
+      "overall_accuracy": 0.09210526315789473,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 10,
+          "accuracy": 0.4
+        },
+        "RELATORIO": {
+          "agree": 12,
+          "total": 12,
+          "accuracy": 1.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 57,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 126,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 18,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 5,
+          "total": 5,
+          "accuracy": 1.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 2,
+      "headers_detected": 2,
+      "sections_detected": [
+        "DISPOSITIVO",
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 101,
+      "sentences_agree": 37,
+      "overall_accuracy": 0.36633663366336633,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 18,
+          "accuracy": 0.2222222222222222
+        },
+        "RELATORIO": {
+          "agree": 13,
+          "total": 13,
+          "accuracy": 1.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 37,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 5,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 20,
+          "total": 20,
+          "accuracy": 1.0
+        }
+      },
+      "regex_sections_found": [
+        "DOSIMETRIA",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 3,
+      "headers_detected": 2,
+      "sections_detected": [
+        "DOSIMETRIA",
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 171,
+      "sentences_agree": 67,
+      "overall_accuracy": 0.391812865497076,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 8,
+          "total": 15,
+          "accuracy": 0.5333333333333333
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 59,
+          "total": 59,
+          "accuracy": 1.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 17,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 61,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "FUNDAMENTACAO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 4,
+      "headers_detected": 1,
+      "sections_detected": [
+        "FUNDAMENTACAO"
+      ]
+    },
+    {
+      "total_sentences": 168,
+      "sentences_agree": 18,
+      "overall_accuracy": 0.10714285714285714,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 2,
+          "total": 32,
+          "accuracy": 0.0625
+        },
+        "RELATORIO": {
+          "agree": 16,
+          "total": 19,
+          "accuracy": 0.8421052631578947
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 32,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 66,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 5,
+      "headers_detected": 1,
+      "sections_detected": [
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 27,
+      "sentences_agree": 4,
+      "overall_accuracy": 0.14814814814814814,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 4,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 6,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 6,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 262,
+      "sentences_agree": 19,
+      "overall_accuracy": 0.07251908396946564,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 6,
+          "total": 8,
+          "accuracy": 0.75
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 166,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 13,
+          "total": 14,
+          "accuracy": 0.9285714285714286
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 61,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 7,
+      "headers_detected": 1,
+      "sections_detected": [
+        "DISPOSITIVO"
+      ]
+    },
+    {
+      "total_sentences": 262,
+      "sentences_agree": 111,
+      "overall_accuracy": 0.42366412213740456,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 8,
+          "accuracy": 0.5
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 13,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 107,
+          "total": 107,
+          "accuracy": 1.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 13,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 113,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "FUNDAMENTACAO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 8,
+      "headers_detected": 1,
+      "sections_detected": [
+        "FUNDAMENTACAO"
+      ]
+    },
+    {
+      "total_sentences": 84,
+      "sentences_agree": 6,
+      "overall_accuracy": 0.07142857142857142,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 6,
+          "total": 6,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 10,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 14,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 39,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 9,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 60,
+      "sentences_agree": 8,
+      "overall_accuracy": 0.13333333333333333,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 8,
+          "total": 8,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 9,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 14,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 10,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 12,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 10,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 234,
+      "sentences_agree": 29,
+      "overall_accuracy": 0.12393162393162394,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 11,
+          "total": 43,
+          "accuracy": 0.2558139534883721
+        },
+        "RELATORIO": {
+          "agree": 18,
+          "total": 18,
+          "accuracy": 1.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 90,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 31,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 12,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 40,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 11,
+      "headers_detected": 1,
+      "sections_detected": [
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 158,
+      "sentences_agree": 61,
+      "overall_accuracy": 0.3860759493670886,
+      "per_section_accuracy": {
+        "RELATORIO": {
+          "agree": 0,
+          "total": 21,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 23,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 61,
+          "total": 62,
+          "accuracy": 0.9838709677419355
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 19,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 32,
+          "accuracy": 0.0
+        },
+        "OUTROS": {
+          "agree": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "FUNDAMENTACAO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 12,
+      "headers_detected": 1,
+      "sections_detected": [
+        "FUNDAMENTACAO"
+      ]
+    },
+    {
+      "total_sentences": 192,
+      "sentences_agree": 142,
+      "overall_accuracy": 0.7395833333333334,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 3,
+          "total": 15,
+          "accuracy": 0.2
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 14,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 127,
+          "total": 128,
+          "accuracy": 0.9921875
+        },
+        "DISPOSITIVO": {
+          "agree": 12,
+          "total": 13,
+          "accuracy": 0.9230769230769231
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 14,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "FUNDAMENTACAO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 13,
+      "headers_detected": 3,
+      "sections_detected": [
+        "DISPOSITIVO",
+        "FUNDAMENTACAO"
+      ]
+    },
+    {
+      "total_sentences": 267,
+      "sentences_agree": 37,
+      "overall_accuracy": 0.13857677902621723,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 11,
+          "total": 24,
+          "accuracy": 0.4583333333333333
+        },
+        "RELATORIO": {
+          "agree": 19,
+          "total": 19,
+          "accuracy": 1.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 186,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 7,
+          "total": 8,
+          "accuracy": 0.875
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 23,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 14,
+      "headers_detected": 2,
+      "sections_detected": [
+        "DISPOSITIVO",
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 228,
+      "sentences_agree": 211,
+      "overall_accuracy": 0.9254385964912281,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 8,
+          "total": 13,
+          "accuracy": 0.6153846153846154
+        },
+        "RELATORIO": {
+          "agree": 20,
+          "total": 21,
+          "accuracy": 0.9523809523809523
+        },
+        "FUNDAMENTACAO": {
+          "agree": 129,
+          "total": 131,
+          "accuracy": 0.9847328244274809
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 9,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 54,
+          "total": 54,
+          "accuracy": 1.0
+        }
+      },
+      "regex_sections_found": [
+        "DOSIMETRIA",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 15,
+      "headers_detected": 3,
+      "sections_detected": [
+        "DOSIMETRIA",
+        "FUNDAMENTACAO",
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 297,
+      "sentences_agree": 10,
+      "overall_accuracy": 0.03367003367003367,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 10,
+          "total": 10,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 20,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 181,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 4,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 82,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 16,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 119,
+      "sentences_agree": 14,
+      "overall_accuracy": 0.11764705882352941,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 8,
+          "total": 16,
+          "accuracy": 0.5
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 9,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 3,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 67,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 6,
+          "total": 6,
+          "accuracy": 1.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 18,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 17,
+      "headers_detected": 1,
+      "sections_detected": [
+        "DISPOSITIVO"
+      ]
+    },
+    {
+      "total_sentences": 69,
+      "sentences_agree": 13,
+      "overall_accuracy": 0.18840579710144928,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 3,
+          "total": 7,
+          "accuracy": 0.42857142857142855
+        },
+        "RELATORIO": {
+          "agree": 10,
+          "total": 11,
+          "accuracy": 0.9090909090909091
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 4,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 17,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 5,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 25,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 18,
+      "headers_detected": 1,
+      "sections_detected": [
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 139,
+      "sentences_agree": 14,
+      "overall_accuracy": 0.10071942446043165,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 14,
+          "total": 14,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 4,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 84,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 15,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 19,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 33,
+      "sentences_agree": 15,
+      "overall_accuracy": 0.45454545454545453,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 5,
+          "accuracy": 0.8
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 7,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 6,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 11,
+          "total": 11,
+          "accuracy": 1.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "FUNDAMENTACAO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 20,
+      "headers_detected": 1,
+      "sections_detected": [
+        "FUNDAMENTACAO"
+      ]
+    },
+    {
+      "total_sentences": 140,
+      "sentences_agree": 13,
+      "overall_accuracy": 0.09285714285714286,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 3,
+          "total": 5,
+          "accuracy": 0.6
+        },
+        "RELATORIO": {
+          "agree": 10,
+          "total": 15,
+          "accuracy": 0.6666666666666666
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 81,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 9,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 28,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 21,
+      "headers_detected": 1,
+      "sections_detected": [
+        "RELATORIO"
+      ]
+    },
+    {
+      "total_sentences": 326,
+      "sentences_agree": 37,
+      "overall_accuracy": 0.11349693251533742,
+      "per_section_accuracy": {
+        "RELATORIO": {
+          "agree": 0,
+          "total": 14,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 25,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 195,
+          "accuracy": 0.0
+        },
+        "OUTROS": {
+          "agree": 17,
+          "total": 18,
+          "accuracy": 0.9444444444444444
+        },
+        "DISPOSITIVO": {
+          "agree": 20,
+          "total": 20,
+          "accuracy": 1.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 54,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "DISPOSITIVO",
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 22,
+      "headers_detected": 1,
+      "sections_detected": [
+        "DISPOSITIVO"
+      ]
+    },
+    {
+      "total_sentences": 66,
+      "sentences_agree": 5,
+      "overall_accuracy": 0.07575757575757576,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "RELATORIO": {
+          "agree": 0,
+          "total": 13,
+          "accuracy": 0.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 4,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 0,
+          "total": 29,
+          "accuracy": 0.0
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 4,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 11,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "OUTROS"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 23,
+      "headers_detected": 0,
+      "sections_detected": []
+    },
+    {
+      "total_sentences": 62,
+      "sentences_agree": 37,
+      "overall_accuracy": 0.5967741935483871,
+      "per_section_accuracy": {
+        "OUTROS": {
+          "agree": 4,
+          "total": 9,
+          "accuracy": 0.4444444444444444
+        },
+        "RELATORIO": {
+          "agree": 9,
+          "total": 9,
+          "accuracy": 1.0
+        },
+        "DOS_FATOS": {
+          "agree": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "FUNDAMENTACAO": {
+          "agree": 24,
+          "total": 25,
+          "accuracy": 0.96
+        },
+        "DISPOSITIVO": {
+          "agree": 0,
+          "total": 8,
+          "accuracy": 0.0
+        },
+        "DOSIMETRIA": {
+          "agree": 0,
+          "total": 9,
+          "accuracy": 0.0
+        }
+      },
+      "regex_sections_found": [
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "llm_sections_found": [
+        "DISPOSITIVO",
+        "DOSIMETRIA",
+        "DOS_FATOS",
+        "FUNDAMENTACAO",
+        "OUTROS",
+        "RELATORIO"
+      ],
+      "doc_id": 24,
+      "headers_detected": 2,
+      "sections_detected": [
+        "FUNDAMENTACAO",
+        "RELATORIO"
+      ]
+    }
+  ],
+  "interpretation": {
+    "note": "Regex baseline relies on explicit section headers being present in the text. Documents without clear headers (common in shorter or less formally structured sentences) default to OUTROS for all content, yielding 0% accuracy on those documents.",
+    "strengths": "100% reproducible, zero cost, no API dependency, instant execution",
+    "weaknesses": "Cannot detect implicit section boundaries, fails on documents without explicit headers, cannot handle interleaved factual/legal content within a single section"
+  }
+}

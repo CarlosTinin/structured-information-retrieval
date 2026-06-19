@@ -1,0 +1,367 @@
+{
+  "description": "Statistical significance analysis for Stage 2 classification",
+  "method": "Bootstrap CIs from fold-level F1 + paired t-test on fold scores",
+  "caveat": "With k=3 folds, statistical power is very low. CIs are wide and tests are underpowered. Results should be interpreted cautiously.",
+  "bootstrap_cis": {
+    "legal_bert_no_punct": {
+      "Logistic Regression": {
+        "mean": 0.6631517086795806,
+        "ci_lower": 0.5987330316742081,
+        "ci_upper": 0.725,
+        "ci_width": 0.12626696832579187,
+        "fold_f1s": [
+          0.5987330316742081,
+          0.725,
+          0.665790652179037
+        ],
+        "reported_mean": 0.663174561284415,
+        "reported_std": 0.05158145513795518
+      },
+      "SVM (Linear)": {
+        "mean": 0.6370607033004985,
+        "ci_lower": 0.6168831168831168,
+        "ci_upper": 0.665790652179037,
+        "ci_width": 0.04890753529592018,
+        "fold_f1s": [
+          0.628701406120761,
+          0.6168831168831168,
+          0.665790652179037
+        ],
+        "reported_mean": 0.637125058394305,
+        "reported_std": 0.020835949548790367
+      },
+      "Random Forest": {
+        "mean": 0.5858208232258798,
+        "ci_lower": 0.5609710550887022,
+        "ci_upper": 0.6036590436590437,
+        "ci_width": 0.042687988570341506,
+        "fold_f1s": [
+          0.5609710550887022,
+          0.6036590436590437,
+          0.5928981282883279
+        ],
+        "reported_mean": 0.5858427423453579,
+        "reported_std": 0.018127326428141497
+      },
+      "XGBoost": {
+        "mean": 0.5060001307049948,
+        "ci_lower": 0.45747126436781604,
+        "ci_upper": 0.5535828877005348,
+        "ci_width": 0.09611162333271872,
+        "fold_f1s": [
+          0.5535828877005348,
+          0.5065934065934066,
+          0.45747126436781604
+        ],
+        "reported_mean": 0.5058825195539192,
+        "reported_std": 0.03924062567628761
+      }
+    },
+    "legal_bert_raw": {
+      "Logistic Regression": {
+        "mean": 0.5400210830459681,
+        "ci_lower": 0.48846430674605773,
+        "ci_upper": 0.6114285714285714,
+        "ci_width": 0.1229642646825137,
+        "fold_f1s": [
+          0.6114285714285714,
+          0.5197788697788698,
+          0.48846430674605773
+        ],
+        "reported_mean": 0.5398905826511663,
+        "reported_std": 0.05217543063691374
+      },
+      "SVM (Linear)": {
+        "mean": 0.5415968905634595,
+        "ci_lower": 0.49716394716394713,
+        "ci_upper": 0.6088888888888888,
+        "ci_width": 0.11172494172494168,
+        "fold_f1s": [
+          0.6088888888888888,
+          0.4971639471639472,
+          0.5185344827586207
+        ],
+        "reported_mean": 0.5415291062704856,
+        "reported_std": 0.04842299855578069
+      },
+      "Random Forest": {
+        "mean": 0.5409504763267449,
+        "ci_lower": 0.3737543909957703,
+        "ci_upper": 0.6743859649122806,
+        "ci_width": 0.30063157391651035,
+        "fold_f1s": [
+          0.6743859649122806,
+          0.5735198135198136,
+          0.3737543909957703
+        ],
+        "reported_mean": 0.5405533898092881,
+        "reported_std": 0.12492644403294813
+      },
+      "XGBoost": {
+        "mean": 0.6114834748173471,
+        "ci_lower": 0.5163636363636364,
+        "ci_upper": 0.7268376068376069,
+        "ci_width": 0.21047397047397054,
+        "fold_f1s": [
+          0.7268376068376069,
+          0.5163636363636364,
+          0.5910243407707911
+        ],
+        "reported_mean": 0.6114085279906781,
+        "reported_std": 0.08712618962643019
+      }
+    },
+    "legal_bert_no_punct_no_stop_no_num": {
+      "Logistic Regression": {
+        "mean": 0.8351967227390782,
+        "ci_lower": 0.7907792427315753,
+        "ci_upper": 0.8941611127209504,
+        "ci_width": 0.10338186998937515,
+        "fold_f1s": [
+          0.7907792427315753,
+          0.8210678210678211,
+          0.8941611127209504
+        ],
+        "reported_mean": 0.8353360588401156,
+        "reported_std": 0.043394621152627245
+      },
+      "SVM (Linear)": {
+        "mean": 0.7999824283109273,
+        "ci_lower": 0.7489177489177489,
+        "ci_upper": 0.8583099906629318,
+        "ci_width": 0.10939224174518292,
+        "fold_f1s": [
+          0.7931034482758621,
+          0.7489177489177489,
+          0.8583099906629317
+        ],
+        "reported_mean": 0.8001103959521808,
+        "reported_std": 0.04493319949519976
+      },
+      "Random Forest": {
+        "mean": 0.8091944779246177,
+        "ci_lower": 0.7505597850425437,
+        "ci_upper": 0.851515606242497,
+        "ci_width": 0.10095582119995328,
+        "fold_f1s": [
+          0.8257693733778273,
+          0.7505597850425437,
+          0.851515606242497
+        ],
+        "reported_mean": 0.809281588220956,
+        "reported_std": 0.04283226784464872
+      },
+      "XGBoost": {
+        "mean": 0.7261103247049879,
+        "ci_lower": 0.6045751633986928,
+        "ci_upper": 0.8273244781783681,
+        "ci_width": 0.2227493147796753,
+        "fold_f1s": [
+          0.8273244781783681,
+          0.6045751633986928,
+          0.746482683982684
+        ],
+        "reported_mean": 0.7261274418532483,
+        "reported_std": 0.09206905459242602
+      }
+    },
+    "neuralmind_base_no_punct": {
+      "Logistic Regression": {
+        "mean": 0.5460323691628548,
+        "ci_lower": 0.5291176470588236,
+        "ci_upper": 0.5781305114638448,
+        "ci_width": 0.04901286440502117,
+        "fold_f1s": [
+          0.5781305114638448,
+          0.5291176470588236,
+          0.5307240034715007
+        ],
+        "reported_mean": 0.5459907206647231,
+        "reported_std": 0.022735723867805042
+      },
+      "SVM (Linear)": {
+        "mean": 0.5555605192967952,
+        "ci_lower": 0.5036251105216623,
+        "ci_upper": 0.6083916083916084,
+        "ci_width": 0.10476649786994618,
+        "fold_f1s": [
+          0.6083916083916084,
+          0.5542857142857144,
+          0.5036251105216623
+        ],
+        "reported_mean": 0.5554341443996617,
+        "reported_std": 0.04277845203509454
+      },
+      "Random Forest": {
+        "mean": 0.5770504006644697,
+        "ci_lower": 0.5044610561851941,
+        "ci_upper": 0.6415523215523216,
+        "ci_width": 0.13709126536712746,
+        "fold_f1s": [
+          0.6415523215523216,
+          0.5846153846153846,
+          0.5044610561851941
+        ],
+        "reported_mean": 0.5768762541176334,
+        "reported_std": 0.056234179201122614
+      },
+      "XGBoost": {
+        "mean": 0.5591052595651453,
+        "ci_lower": 0.4904781704781705,
+        "ci_upper": 0.6154760815878533,
+        "ci_width": 0.12499791110968278,
+        "fold_f1s": [
+          0.5717171717171717,
+          0.4904781704781705,
+          0.6154760815878533
+        ],
+        "reported_mean": 0.5592238079277319,
+        "reported_std": 0.051789204470478245
+      }
+    },
+    "neuralmind_large_no_punct": {
+      "Logistic Regression": {
+        "mean": 0.6373798001714477,
+        "ci_lower": 0.6103896103896104,
+        "ci_upper": 0.6679527369182544,
+        "ci_width": 0.05756312652864404,
+        "fold_f1s": [
+          0.6339981006647674,
+          0.6103896103896104,
+          0.6679527369182543
+        ],
+        "reported_mean": 0.6374468159908774,
+        "reported_std": 0.023626236997436798
+      },
+      "SVM (Linear)": {
+        "mean": 0.6296808857801748,
+        "ci_lower": 0.5700364544177932,
+        "ci_upper": 0.7081669691470053,
+        "ci_width": 0.13813051472921212,
+        "fold_f1s": [
+          0.7081669691470054,
+          0.6103896103896104,
+          0.5700364544177932
+        ],
+        "reported_mean": 0.6295310113181363,
+        "reported_std": 0.05799313003548615
+      },
+      "Random Forest": {
+        "mean": 0.5254827932655002,
+        "ci_lower": 0.4859781411505549,
+        "ci_upper": 0.5950000000000001,
+        "ci_width": 0.10902185884944521,
+        "fold_f1s": [
+          0.49523809523809526,
+          0.5950000000000001,
+          0.48597814115055493
+        ],
+        "reported_mean": 0.5254054121295502,
+        "reported_std": 0.04935579454713957
+      },
+      "XGBoost": {
+        "mean": 0.5288183047244244,
+        "ci_lower": 0.47,
+        "ci_upper": 0.609035409035409,
+        "ci_width": 0.139035409035409,
+        "fold_f1s": [
+          0.609035409035409,
+          0.47,
+          0.5072152999130687
+        ],
+        "reported_mean": 0.5287502363161591,
+        "reported_std": 0.05876805456382313
+      }
+    }
+  },
+  "pairwise_tests": {
+    "Legal-BERT vs BERTimbau-base (LR)": {
+      "comparison": "Legal-BERT vs BERTimbau-base (LR)",
+      "a": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "b": "neuralmind_base_no_punct / Logistic Regression (F1=0.5460)",
+      "paired_t_test": {
+        "t_stat": 2.28060086760128,
+        "p_value": 0.15013753525711532,
+        "significant_005": false,
+        "significant_001": false,
+        "mean_diff": 0.117183840619692,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": true
+    },
+    "Legal-BERT vs BERTimbau-large (LR)": {
+      "comparison": "Legal-BERT vs BERTimbau-large (LR)",
+      "a": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "b": "neuralmind_large_no_punct / Logistic Regression (F1=0.6374)",
+      "paired_t_test": {
+        "t_stat": 0.565978523823604,
+        "p_value": 0.6284434545002263,
+        "significant_005": false,
+        "significant_001": false,
+        "mean_diff": 0.02572774529353768,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": false
+    },
+    "LR vs SVM (Legal-BERT)": {
+      "comparison": "LR vs SVM (Legal-BERT)",
+      "a": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "b": "legal_bert_no_punct / SVM (Linear) (F1=0.6371)",
+      "paired_t_test": {
+        "t_stat": 0.6211767672119773,
+        "p_value": 0.5978457398164044,
+        "significant_005": false,
+        "significant_001": false,
+        "mean_diff": 0.0260495028901101,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": false
+    },
+    "LR vs Random Forest (Legal-BERT)": {
+      "comparison": "LR vs Random Forest (Legal-BERT)",
+      "a": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "b": "legal_bert_no_punct / Random Forest (F1=0.5858)",
+      "paired_t_test": {
+        "t_stat": 3.1916971027183876,
+        "p_value": 0.08572992725692558,
+        "significant_005": false,
+        "significant_001": false,
+        "mean_diff": 0.07733181893905712,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": false
+    },
+    "No-punct vs raw (Legal-BERT LR)": {
+      "comparison": "No-punct vs raw (Legal-BERT LR)",
+      "a": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "b": "legal_bert_raw / Logistic Regression (F1=0.5399)",
+      "paired_t_test": {
+        "t_stat": 1.8006872491850527,
+        "p_value": 0.2135517994197343,
+        "significant_005": false,
+        "significant_001": false,
+        "mean_diff": 0.1232839786332487,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": false
+    },
+    "No-punct-no-stop-no-num vs no-punct (Legal-BERT LR)": {
+      "comparison": "No-punct-no-stop-no-num vs no-punct (Legal-BERT LR)",
+      "a": "legal_bert_no_punct_no_stop_no_num / Logistic Regression (F1=0.8353)",
+      "b": "legal_bert_no_punct / Logistic Regression (F1=0.6632)",
+      "paired_t_test": {
+        "t_stat": 4.362342408984371,
+        "p_value": 0.048738781084799114,
+        "significant_005": true,
+        "significant_001": false,
+        "mean_diff": 0.17216149755570057,
+        "note": "Paired t-test with k=3 folds (low power due to small k)"
+      },
+      "ci_non_overlapping": true
+    }
+  },
+  "interpretation": {
+    "note": "With only k=3 folds, the paired t-test has very low statistical power (df=2). Most comparisons will not reach significance even for genuinely different methods. This is an inherent limitation of the small dataset (N=89) and should be explicitly acknowledged in the paper.",
+    "recommendation": "Report CIs to convey uncertainty. State that sample size prevents definitive significance claims for most comparisons. The LLM vs embedding gap (~0.31 F1) would be significant by any test; encoder differences (~0.03-0.12 F1) cannot be reliably distinguished at this N."
+  }
+}
