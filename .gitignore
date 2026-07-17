@@ -6,3 +6,4 @@ stage3_*.log
 stage4_*.log
 files/datasets/*.numbers
 references/**/*.pdf
+paper/
