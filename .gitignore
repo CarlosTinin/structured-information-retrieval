@@ -5,5 +5,11 @@ texput.log
 stage3_*.log
 stage4_*.log
 files/datasets/*.numbers
-references/**/*.pdf
 paper/
+
+# Internal working documents (kept locally, not tracked)
+AGENTS.md
+EXPERIMENT_PLANS.md
+EXPERIMENT_PROGRESS.md
+IMPROVEMENTS.md
+references/
