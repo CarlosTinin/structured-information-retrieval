@@ -88,8 +88,10 @@ def build_parser() -> argparse.ArgumentParser:
     p2x.add_argument("--strip-numbers", action="store_true", default=False,
                       help="Remove purely numeric tokens before embedding (ablation study)")
 
-    p4v = sub.add_parser("stage4-viz", help="Etapa 4 - Visualizações NER (heatmap + tabela LaTeX)")
+    p4v = sub.add_parser("stage4-viz", help="Etapa 4 - Visualizações NER (heatmap + tabela LaTeX + co-occurrence)")
     p4v.add_argument("--input-by-section", default="files/NER/ner_results_by_section_v2.json")
+    p4v.add_argument("--input-by-sentence", default="files/NER/ner_results_by_sentence_v2.json",
+                     help="Path to by-sentence JSON for co-occurrence figure")
     p4v.add_argument("--output-root", default="output")
     p4v.add_argument("--doc-id", type=int, default=0, help="doc_id for the single-document LaTeX table")
 
@@ -218,7 +220,12 @@ def main() -> None:
     if args.command == "stage4-viz":
         from .stage4_ner_viz import run_stage4_viz
 
-        print(run_stage4_viz(args.input_by_section, args.output_root, args.doc_id))
+        print(run_stage4_viz(
+            args.input_by_section,
+            args.output_root,
+            args.doc_id,
+            input_by_sentence=args.input_by_sentence,
+        ))
         return
 
     if args.command == "stage4":

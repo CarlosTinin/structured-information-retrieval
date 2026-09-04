@@ -219,7 +219,6 @@ def get_models(seed: int) -> dict:
             max_iter=1000,
             random_state=seed,
             class_weight="balanced",
-            n_jobs=-1,
         ),
         "SVM (Linear)": SVC(kernel="linear", random_state=seed, class_weight="balanced"),
         "Random Forest": RandomForestClassifier(
@@ -230,7 +229,7 @@ def get_models(seed: int) -> dict:
             min_samples_leaf=3,
             max_features="sqrt",
             class_weight="balanced",
-            n_jobs=-1,
+            n_jobs=1,
         ),
     }
 
@@ -240,7 +239,7 @@ def get_models(seed: int) -> dict:
             max_depth=4,
             learning_rate=0.1,
             random_state=seed,
-            n_jobs=-1,
+            n_jobs=1,
             eval_metric="mlogloss",
         )
     else:
